@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * @author allineo
- * @modified 04/15/2010
+ * @modified 04/19/2010
  */
 public class Classe implements Serializable {
 
@@ -21,6 +21,8 @@ public class Classe implements Serializable {
 	private String modifiers;
 
 	private String task;
+
+	private int priority;
 
 	private Classe[] links;
 
@@ -86,6 +88,14 @@ public class Classe implements Serializable {
 
 	public void setLinks(Classe[] links) {
 		this.links = links;
+	}
+
+	public int getPriority() {
+		return priority;
+	}
+
+	public void setPriority(int priority) {
+		this.priority = priority;
 	}
 
 }
