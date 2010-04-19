@@ -1,6 +1,12 @@
 package com.agiledoc.server;
 
 import com.agiledoc.client.GreetingService;
+import com.agiledoc.server.sourceClasses.GetClasse;
+import com.agiledoc.server.sourceClasses.GetJavadocClass;
+import com.agiledoc.server.sourceClasses.ListSourceClasses;
+import com.agiledoc.server.sourceMethods.ListSourceMethods;
+import com.agiledoc.shared.model.Classe;
+import com.agiledoc.shared.model.Method;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
@@ -10,8 +16,28 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 public class GreetingServiceImpl extends RemoteServiceServlet implements
 		GreetingService {
 
-	public String greetServer(String input) throws IllegalArgumentException {
+	@Override
+	public Classe[] listClasses(String root, String pack) {
 
-		return "";
+		return ListSourceClasses.ListClasses(root, pack);
 	}
+
+	@Override
+	public Method[] listMethods(String root, String pack, Classe classe) {
+
+		return ListSourceMethods.listMethods(root, pack, classe);
+	}
+
+	@Override
+	public String showClass(String root, String pack, Classe classe) {
+
+		return GetJavadocClass.showClass(root, pack, classe);
+	}
+
+	@Override
+	public Classe getClasse(String root, String pack, String className) {
+
+		return GetClasse.returnClasse(root, pack, className);
+	}
+
 }
