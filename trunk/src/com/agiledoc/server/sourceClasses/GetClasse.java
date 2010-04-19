@@ -69,6 +69,11 @@ public class GetClasse {
 		} else if (classDoc.tags(Tag.TASK).length > 0) {
 
 			classe.setTask(Tag.TASK);
+
+		} else if (classDoc.tags(Tag.TODO).length > 0) {
+
+			classe.setTask(Tag.TODO);
+			//classe.setPriority(classDoc.tags(Tag.TODO)[0]);
 		}
 
 		com.sun.javadoc.Tag[] tags = classDoc.tags(Tag.LINK);
