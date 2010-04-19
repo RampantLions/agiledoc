@@ -1,5 +1,7 @@
 package com.agiledoc.client;
 
+import com.agiledoc.shared.model.Classe;
+import com.agiledoc.shared.model.Method;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
@@ -8,5 +10,13 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  */
 @RemoteServiceRelativePath("greet")
 public interface GreetingService extends RemoteService {
-	String greetServer(String name) throws IllegalArgumentException;
+
+	String showClass(String root, String pack, Classe classe);
+
+	Classe[] listClasses(String root, String pack);
+
+	Method[] listMethods(String root, String pack, Classe classe);
+
+	Classe getClasse(String root, String pack, String className);
+
 }

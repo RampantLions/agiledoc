@@ -1,9 +1,13 @@
 package com.agiledoc.client;
 
+import com.agiledoc.client.view.main.InitSystem;
 import com.google.gwt.core.client.EntryPoint;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
+ * 
+ * @author allineo
+ * @modified 04/14/2010
  */
 public class AgileDoc implements EntryPoint {
 
@@ -12,5 +16,6 @@ public class AgileDoc implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 
+		InitSystem.init();
 	}
 }
