@@ -40,7 +40,7 @@ public class JavadocView {
 
 		FlexTable table = new FlexTable();
 		table.setBorderWidth(1);
-		table.setSize("100%", "100%");
+		table.setSize("97%", "100%");
 
 		table.getColumnFormatter().setWidth(0, "300");
 		table.setWidget(0, 0, PacksList.getPacksPanel());
