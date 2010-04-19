@@ -3,6 +3,8 @@ package com.agiledoc.client.view.main;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.control.ListSourceClasses;
 import com.agiledoc.client.view.main.topPanel.TopPanel;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -57,6 +59,10 @@ public class InitSystem {
 		vp.add(TopPanel.show());
 
 		GlobalVariables.getVP_BODY().setSize("100%", "100%");
+		GlobalVariables.getVP_BODY().setHorizontalAlignment(
+				HasHorizontalAlignment.ALIGN_CENTER);
+		GlobalVariables.getVP_BODY().setVerticalAlignment(
+				HasVerticalAlignment.ALIGN_TOP);
 		vp.add(GlobalVariables.getVP_BODY());
 
 		return vp;
