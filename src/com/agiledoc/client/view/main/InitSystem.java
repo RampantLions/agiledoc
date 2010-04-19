@@ -56,6 +56,7 @@ public class InitSystem {
 
 		vp.add(TopPanel.show());
 
+		GlobalVariables.getVP_BODY().setSize("100%", "100%");
 		vp.add(GlobalVariables.getVP_BODY());
 
 		return vp;
