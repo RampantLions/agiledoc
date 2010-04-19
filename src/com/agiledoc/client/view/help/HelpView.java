@@ -37,7 +37,7 @@ public class HelpView {
 	public static FlexTable preparePage() {
 
 		FlexTable table = new FlexTable();
-		table.setSize("100%", "100%");
+		table.setSize("97%", "100%");
 		table.setBorderWidth(1);
 		table.setCellPadding(15);
 
