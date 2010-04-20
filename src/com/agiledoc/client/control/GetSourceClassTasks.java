@@ -3,7 +3,7 @@ package com.agiledoc.client.control;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.GreetingService;
 import com.agiledoc.client.GreetingServiceAsync;
-import com.agiledoc.client.view.tasks.TaskPage;
+import com.agiledoc.client.view.scope.TaskPage;
 import com.agiledoc.shared.model.Classe;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;

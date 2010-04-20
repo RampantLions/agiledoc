@@ -3,7 +3,8 @@ package com.agiledoc.client.control;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.GreetingService;
 import com.agiledoc.client.GreetingServiceAsync;
-import com.agiledoc.client.view.tasks.ShowSteps;
+import com.agiledoc.client.view.scope.ScopeView;
+import com.agiledoc.client.view.scope.ShowSteps;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Method;
 import com.google.gwt.core.client.GWT;
@@ -28,7 +29,7 @@ public class ListSourceMethods {
 
 			public void onSuccess(Method[] result) {
 
-				ShowSteps.showMethods(result);
+				ScopeView.vpBodyScope.add(ShowSteps.showMethods(result));
 			}
 
 			public void onFailure(Throwable caught) {
