@@ -23,7 +23,6 @@ public class PacksList {
 	public static ScrollPanel getPacksPanel() {
 
 		VerticalPanel vp = new VerticalPanel();
-		vp.setSpacing(5);
 
 		String pacName = "";
 

@@ -23,7 +23,6 @@ public class ClassesList {
 	public static ScrollPanel getClassesPanel(String pack) {
 
 		VerticalPanel vp = new VerticalPanel();
-		vp.setSpacing(5);
 
 		for (final Classe classe : GlobalVariables.getCLASSES_LIST()) {
 
