@@ -10,7 +10,7 @@ public class GlobalVariables {
 	// "C:/eclipse/workspace/PALMS_Browser/src";
 	// public static final String firstPackage = "org";
 
-	private static String ROOT = "C:/eclipse-jee-galileo-SR2-win32 (1)/eclipse/workspace/AgileDoc/src";
+	private static String ROOT = "C:/eclipse2/workspace/AgileDoc/src";
 	private static String PACK = "com.agiledoc";
 	private static String INIT_CLASS = "com.agiledoc.client.view.main.InitSystem";
 
