@@ -2,7 +2,6 @@ package com.agiledoc.client.view.main;
 
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.control.ListSourceClasses;
-import com.agiledoc.client.view.main.topPanel.TopPanel;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.RootPanel;
