@@ -42,7 +42,7 @@ public class GetJavadocClass {
 				+ classe.containingPackage().name() + "</FONT>" + "<BR>"
 				+ "Class " + classe.name() + "</H2>" + "<PRE>"
 				+ classe.superclass() + "<BR>"
-				+ "<IMG SRC=\"resources/inherit.gif\" ALT=\"extended by \">"
+				+ "<IMG SRC=\"img/inherit.gif\" ALT=\"extended by \">"
 				+ "<B>" + classe.toString() + "</B></PRE>";
 
 		html += "<HR><DL>" + "<DT><PRE>" + classe.modifiers() + " class <B>"
@@ -72,7 +72,7 @@ public class GetJavadocClass {
 					+ "<CODE>"
 					+ field.type()
 					+ "</CODE></FONT></TD>"
-					+ "<TD><CODE><B><A HREF=\"../../../../../../org/paceproject/palms/browser/client/model/ObservationSetListUIEntity.html"
+					+ "<TD><CODE><B><A HREF=\" "
 					+ "#" + field.name() + "\">" + field.name() + "</A></B>"
 					+ "</CODE><BR></TD></TR>";
 
