@@ -3,6 +3,7 @@ package com.agiledoc.client.view.help;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.control.GetSourceClassHelp;
 import com.google.gwt.user.client.ui.FlexTable;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -42,6 +43,8 @@ public class HelpView {
 		table.setCellPadding(15);
 
 		table.getColumnFormatter().setWidth(0, "200");
+		table.getFlexCellFormatter().setHorizontalAlignment(0, 0,
+				HasHorizontalAlignment.ALIGN_LEFT);
 		table.setWidget(0, 0, TopicsList.createHelpMenu());
 
 		vpBodyHelp.setSpacing(15);
