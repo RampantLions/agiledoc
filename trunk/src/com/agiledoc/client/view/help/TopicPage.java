@@ -34,8 +34,8 @@ public class TopicPage {
 					+ classe.getDescription();
 		}
 
+		HelpView.vpBodyHelp.clear();
 		HelpView.vpBodyHelp.add(new HTML(text));
-
 		HelpView.vpBodyHelp.add(showLinks(classe));
 	}
 
