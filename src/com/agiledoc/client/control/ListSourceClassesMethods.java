@@ -3,7 +3,7 @@ package com.agiledoc.client.control;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.GreetingService;
 import com.agiledoc.client.GreetingServiceAsync;
-import com.agiledoc.client.view.measurements.MeasurementsView;
+import com.agiledoc.client.view.performance.PerformanceView;
 import com.agiledoc.shared.model.Classe;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -39,7 +39,7 @@ public class ListSourceClassesMethods {
 
 						GlobalVariables.setCLASSES_LIST(result);
 
-						MeasurementsView.init();
+						PerformanceView.init();
 					}
 
 					public void onFailure(Throwable caught) {
