@@ -8,7 +8,7 @@ import com.sun.javadoc.RootDoc;
 /**
  * @task
  */
-public class ListSourceClasses {
+public class ListSourceClassesAndMethods {
 
 	public static Classe[] ListClasses(String root, String pack) {
 
@@ -20,7 +20,7 @@ public class ListSourceClasses {
 
 		for (int i = 0; i < classesDoc.length; ++i) {
 
-			classes[i] = GetClasse.createClasse(classesDoc[i]);
+			classes[i] = GetClasse.createClasse(classesDoc[i]);	
 
 			classes[i].setDateModified(GetFileClasse.getLastModified(root,
 					classes[i]));
