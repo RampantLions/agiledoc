@@ -2,6 +2,7 @@ package com.agiledoc.client.view.main;
 
 import com.agiledoc.client.view.help.HelpView;
 import com.agiledoc.client.view.javadoc.JavadocView;
+import com.agiledoc.client.view.measurements.MeasurementsView;
 import com.agiledoc.client.view.scope.ScopeView;
 import com.agiledoc.client.view.todo.ToDoView;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -71,7 +72,7 @@ public class SystemViews {
 		measure.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
-				ScopeView.init();
+				MeasurementsView.init();
 			}
 		});
 		hp.add(measure);
