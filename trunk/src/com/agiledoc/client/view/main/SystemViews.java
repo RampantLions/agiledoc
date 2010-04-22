@@ -2,7 +2,7 @@ package com.agiledoc.client.view.main;
 
 import com.agiledoc.client.view.help.HelpView;
 import com.agiledoc.client.view.javadoc.JavadocView;
-import com.agiledoc.client.view.measurements.MeasurementsView;
+import com.agiledoc.client.view.performance.PerformanceView;
 import com.agiledoc.client.view.scope.ScopeView;
 import com.agiledoc.client.view.todo.ToDoView;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -19,9 +19,6 @@ import com.google.gwt.user.client.ui.Label;
  * 
  * @userTask
  * 
- * @author allineo
- * @modified 04/15/2010
- * 
  * @link com.gwtjavadoc.client.view.help.HelpView
  * @link com.gwtjavadoc.client.view.tasks.TasksView
  * @link com.gwtjavadoc.client.view.javadoc.JavadocView
@@ -31,8 +28,6 @@ public class SystemViews {
 	/**
 	 * Show a panel with the system view options to be selected by the user.
 	 * 
-	 * @author allineo
-	 * @modified 04/15/2010
 	 * @link com.gwtjavadoc.client.view.help.HelpView
 	 * @link com.gwtjavadoc.client.view.tasks.TasksView
 	 * @link com.gwtjavadoc.client.view.javadoc.JavadocView
@@ -68,11 +63,11 @@ public class SystemViews {
 		lb2.setWidth("30");
 		hp.add(lb2);
 
-		Anchor measure = new Anchor("MEASUREMENTS");
+		Anchor measure = new Anchor("PERFORMANCE");
 		measure.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
-				MeasurementsView.init();
+				PerformanceView.init();
 			}
 		});
 		hp.add(measure);
