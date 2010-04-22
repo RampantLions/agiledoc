@@ -1,6 +1,7 @@
 package com.agiledoc.shared.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author allineo
@@ -23,6 +24,10 @@ public class Classe implements Serializable {
 	private String task;
 
 	private int priority;
+
+	private Date dateModified;
+
+	private int methodsCount;
 
 	private Classe[] links;
 
@@ -96,6 +101,22 @@ public class Classe implements Serializable {
 
 	public void setPriority(int priority) {
 		this.priority = priority;
+	}
+
+	public int getMethodsCount() {
+		return methodsCount;
+	}
+
+	public void setMethodsCount(int methodsCount) {
+		this.methodsCount = methodsCount;
+	}
+
+	public Date getDateModified() {
+		return dateModified;
+	}
+
+	public void setDateModified(Date dateModified) {
+		this.dateModified = dateModified;
 	}
 
 }
