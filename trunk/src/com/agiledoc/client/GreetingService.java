@@ -19,4 +19,6 @@ public interface GreetingService extends RemoteService {
 
 	Classe getClasse(String root, String pack, String className);
 
+	Classe[] listClassesAndMethods(String root, String pack);
+
 }
