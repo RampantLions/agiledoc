@@ -1,6 +1,10 @@
 package com.agiledoc.client;
 
+import java.util.ArrayList;
+
 import com.agiledoc.shared.model.Classe;
+import com.agiledoc.shared.model.Measurement;
+import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -10,11 +14,15 @@ public class GlobalVariables {
 	// "C:/eclipse/workspace/PALMS_Browser/src";
 	// public static final String firstPackage = "org";
 
+	public static DateTimeFormat dayFormat = DateTimeFormat.getFormat("yyyy MM dd");
+	
 	private static String ROOT = "C:/eclipse2/workspace/AgileDoc/src";
 	private static String PACK = "com.agiledoc";
 	private static String INIT_CLASS = "com.agiledoc.client.view.main.InitSystem";
 
 	private static Classe[] CLASSES_LIST;
+
+	private static ArrayList<Measurement> measurements;
 
 	private static VerticalPanel VP_BODY = new VerticalPanel();
 
@@ -57,6 +65,14 @@ public class GlobalVariables {
 	public static void setVP_BODY(Widget w) {
 		VP_BODY.clear();
 		VP_BODY.add(w);
+	}
+
+	public static ArrayList<Measurement> getMeasurements() {
+		return measurements;
+	}
+
+	public static void setMeasurements(ArrayList<Measurement> measurements) {
+		GlobalVariables.measurements = measurements;
 	}
 
 }

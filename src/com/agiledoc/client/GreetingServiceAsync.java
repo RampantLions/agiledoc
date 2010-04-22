@@ -20,4 +20,7 @@ public interface GreetingServiceAsync {
 	void getClasse(String root, String pack, String className,
 			AsyncCallback<Classe> callback);
 
+	void listClassesAndMethods(String root, String pack,
+			AsyncCallback<Classe[]> callback);
+
 }
