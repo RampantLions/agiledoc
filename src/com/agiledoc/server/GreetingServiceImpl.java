@@ -4,6 +4,7 @@ import com.agiledoc.client.GreetingService;
 import com.agiledoc.server.sourceClasses.GetClasse;
 import com.agiledoc.server.sourceClasses.GetJavadocClass;
 import com.agiledoc.server.sourceClasses.ListSourceClasses;
+import com.agiledoc.server.sourceClasses.ListSourceClassesAndMethods;
 import com.agiledoc.server.sourceMethods.ListSourceMethods;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Method;
@@ -38,6 +39,12 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 	public Classe getClasse(String root, String pack, String className) {
 
 		return GetClasse.returnClasse(root, pack, className);
+	}
+
+	@Override
+	public Classe[] listClassesAndMethods(String root, String pack) {
+
+		return ListSourceClassesAndMethods.ListClasses(root, pack);
 	}
 
 }
