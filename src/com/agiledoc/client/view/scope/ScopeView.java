@@ -9,31 +9,19 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
  * @userTask
- * 
- * @author allineo
- * @modified 04/20/2010
  */
 public class ScopeView {
 
 	public static VerticalPanel vpBodyScope = new VerticalPanel();
 
-	/**
-	 * @author allineo
-	 * @modified 04/20/2010
-	 */
 	public static void init() {
 
 		GlobalVariables.getVP_BODY().clear();
 		GlobalVariables.setVP_BODY(preparePage());
 
-		new GetSourceClassTasks(GlobalVariables.getINIT_CLASS());
+		new GetSourceClassTasks(GlobalVariables.INIT_CLASS);
 	}
 
-	/**
-	 * 
-	 * @author allineo
-	 * @modified 04/20/2010
-	 */
 	public static FlexTable preparePage() {
 
 		FlexTable table = new FlexTable();
