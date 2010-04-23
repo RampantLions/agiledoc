@@ -11,9 +11,6 @@ import com.google.gwt.user.client.ui.Image;
  * selected.
  * 
  * @userTask
- * 
- * @author allineo
- * @modified 04/15/2010
  */
 public class IconChangeRoot {
 
@@ -21,9 +18,6 @@ public class IconChangeRoot {
 	 * Return the button widget that implements the Change Root functionality on
 	 * the click event. After the click the system will start again with the new
 	 * root and domain selected.
-	 * 
-	 * @author allineo
-	 * @modified 04/20/2010
 	 * 
 	 * @link com.gwtjavadoc.client.control.ListSourceClasses
 	 */
@@ -35,6 +29,7 @@ public class IconChangeRoot {
 			@Override
 			public void onClick(ClickEvent event) {
 
+				ChangeRootForm.init();
 			}
 		});
 
