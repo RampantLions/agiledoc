@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Tag;
+import com.google.gwt.i18n.client.DateTimeFormat;
 
 public class PerformanceConvertion {
 
@@ -22,10 +23,10 @@ public class PerformanceConvertion {
 
 				Performance date = dates.get(i);
 
-				if (GlobalVariables.dayFormat.format(classe.getDateModified())
-						.equals(
-								GlobalVariables.dayFormat
-										.format(date.getDate()))) {
+				if (DateTimeFormat.getShortDateFormat().format(
+						classe.getDateModified()).equals(
+						DateTimeFormat.getShortDateFormat().format(
+								date.getDate()))) {
 
 					classeMeasurement = date;
 					break;
