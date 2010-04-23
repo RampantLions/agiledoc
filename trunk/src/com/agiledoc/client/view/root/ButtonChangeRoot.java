@@ -5,6 +5,7 @@ import com.agiledoc.client.control.ListSourceClasses;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.TextBox;
 
 /**
  * Clicking at the button "Change Root and Domain", the user can change the root
@@ -29,7 +30,7 @@ public class ButtonChangeRoot {
 	 * 
 	 * @link com.gwtjavadoc.client.control.ListSourceClasses
 	 */
-	public static Button getButton(final String root, final String pack) {
+	public static Button getButton(final TextBox root, final TextBox pack) {
 
 		Button button = new Button("Change Root and Domain",
 				new ClickHandler() {
@@ -37,8 +38,8 @@ public class ButtonChangeRoot {
 					@Override
 					public void onClick(ClickEvent event) {
 
-						GlobalVariables.setROOT(root);
-						GlobalVariables.setPACK(pack);
+						GlobalVariables.setROOT(root.getValue());
+						GlobalVariables.setPACK(pack.getValue());
 
 						new ListSourceClasses(GlobalVariables.getPACK());
 					}
