@@ -17,9 +17,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * @userTask
  * 
- * @author allineo
- * @modified 04/15/2010
- * 
  * @link com.gwtjavadoc.client.view.help.HelpView
  */
 public class InitSystem {
@@ -44,8 +41,6 @@ public class InitSystem {
 	 * Show the main structure of the system web page, including the system
 	 * navigation.
 	 * 
-	 * @author allineo
-	 * @modified 04/19/2010
 	 * @link com.gwtjavadoc.client.view.main.ShowTopPanel
 	 */
 	public static VerticalPanel prepareMainPage() {
