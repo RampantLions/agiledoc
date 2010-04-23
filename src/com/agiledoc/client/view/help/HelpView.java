@@ -9,32 +9,19 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
  * @userTask
- * 
- * @author allineo
- * @modified 04/19/2010
  */
 public class HelpView {
 
 	public static VerticalPanel vpBodyHelp = new VerticalPanel();
 
-	/**
-	 * 
-	 * @author allineo
-	 * @modified 04/19/2010
-	 */
 	public static void init() {
 
 		GlobalVariables.getVP_BODY().clear();
 		GlobalVariables.setVP_BODY(preparePage());
 
-		new GetSourceClassHelp(GlobalVariables.getINIT_CLASS());
+		new GetSourceClassHelp(GlobalVariables.INIT_CLASS);
 	}
 
-	/**
-	 * 
-	 * @author allineo
-	 * @modified 04/19/2010
-	 */
 	public static FlexTable preparePage() {
 
 		FlexTable table = new FlexTable();
