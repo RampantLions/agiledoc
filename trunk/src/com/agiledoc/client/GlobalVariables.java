@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import com.agiledoc.client.view.performance.Performance;
 import com.agiledoc.shared.model.Classe;
-import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -14,12 +13,10 @@ public class GlobalVariables {
 	// "C:/eclipse/workspace/PALMS_Browser/src";
 	// public static final String firstPackage = "org";
 
-	public static DateTimeFormat dayFormat = DateTimeFormat
-			.getFormat("yyyy MM dd");
+	public static final String INIT_CLASS = "com.agiledoc.client.view.main.InitSystem";
 
 	private static String ROOT = "C:/eclipse2/workspace/AgileDoc/src";
 	private static String PACK = "com.agiledoc";
-	private static String INIT_CLASS = "com.agiledoc.client.view.main.InitSystem";
 
 	private static Classe[] CLASSES_LIST;
 
@@ -42,14 +39,6 @@ public class GlobalVariables {
 
 	public static void setPACK(String pACK) {
 		PACK = pACK;
-	}
-
-	public static String getINIT_CLASS() {
-		return INIT_CLASS;
-	}
-
-	public static void setINIT_CLASS(String iNITCLASS) {
-		INIT_CLASS = iNITCLASS;
 	}
 
 	public static Classe[] getCLASSES_LIST() {
