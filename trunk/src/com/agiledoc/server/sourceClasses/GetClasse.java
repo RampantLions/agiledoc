@@ -34,16 +34,18 @@ public class GetClasse {
 
 		ClassDoc classDoc = getClasseDoc(root, pack, className);
 
-		Classe classe = createClasse(classDoc);
+		if (classDoc != null) {
 
-		return classe;
+			return createClasse(classDoc);
+
+		} else {
+
+			return null;
+		}
 	}
 
 	/**
 	 * Convert the source class into classe attributes.
-	 * 
-	 * @author allineo
-	 * @modified 04/15/2010
 	 */
 	public static Classe createClasse(ClassDoc classDoc) {
 
@@ -73,7 +75,7 @@ public class GetClasse {
 		} else if (classDoc.tags(Tag.TODO).length > 0) {
 
 			classe.setTask(Tag.TODO);
-			//classe.setPriority(classDoc.tags(Tag.TODO)[0]);
+			// classe.setPriority(classDoc.tags(Tag.TODO)[0]);
 		}
 
 		com.sun.javadoc.Tag[] tags = classDoc.tags(Tag.LINK);
