@@ -7,9 +7,9 @@ import com.agiledoc.client.view.scope.ScopeView;
 import com.agiledoc.client.view.todo.ToDoView;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.ToggleButton;
 
 /**
  * The system offers three different views for your code documentation.<br>
@@ -37,67 +37,93 @@ public class SystemViews {
 		HorizontalPanel hp = new HorizontalPanel();
 		hp.setSpacing(5);
 
-		Anchor todo = new Anchor("TO DO");
-		todo.addClickHandler(new ClickHandler() {
+		final ToggleButton todoButton = new ToggleButton("TO DO");
+		final ToggleButton scopeButton = new ToggleButton("SCOPE");
+		final ToggleButton productivityButton = new ToggleButton("PRODUCTIVITY");
+		final ToggleButton helpButton = new ToggleButton("HELP");
+		final ToggleButton javadocButton = new ToggleButton("JAVADOC");
+
+		todoButton.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
+				pushButtons(todoButton, scopeButton, productivityButton,
+						helpButton, javadocButton);
 				ToDoView.init();
 			}
 		});
-		hp.add(todo);
+		hp.add(todoButton);
 
 		Label lb1 = new Label(" ");
 		lb1.setWidth("30");
 		hp.add(lb1);
 
-		Anchor scope = new Anchor("SCOPE");
-		scope.addClickHandler(new ClickHandler() {
+		scopeButton.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
+				pushButtons(scopeButton, todoButton, productivityButton,
+						helpButton, javadocButton);
+
 				ScopeView.init();
+
 			}
 		});
-		hp.add(scope);
+		hp.add(scopeButton);
 
 		Label lb2 = new Label(" ");
 		lb2.setWidth("30");
 		hp.add(lb2);
 
-		Anchor measure = new Anchor("PERFORMANCE");
-		measure.addClickHandler(new ClickHandler() {
+		productivityButton.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
+				pushButtons(productivityButton, todoButton, scopeButton,
+						helpButton, javadocButton);
 				PerformanceView.init();
 			}
 		});
-		hp.add(measure);
+		hp.add(productivityButton);
 
 		Label lb4 = new Label(" ");
 		lb4.setWidth("30");
 		hp.add(lb4);
 
-		Anchor help = new Anchor("HELP");
-		help.addClickHandler(new ClickHandler() {
+		helpButton.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
+
+				pushButtons(helpButton, todoButton, scopeButton,
+						productivityButton, javadocButton);
 
 				HelpView.init();
 			}
 		});
-		hp.add(help);
+		hp.add(helpButton);
 
 		Label lb3 = new Label(" ");
 		lb3.setWidth("30");
 		hp.add(lb3);
 
-		Anchor javadoc = new Anchor("JAVADOC");
-		javadoc.addClickHandler(new ClickHandler() {
+		javadocButton.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
+				pushButtons(javadocButton, todoButton, scopeButton, helpButton,
+						productivityButton);
 				JavadocView.init();
 			}
 		});
-		hp.add(javadoc);
+		hp.add(javadocButton);
 
 		return hp;
 	}
+
+	private static void pushButtons(ToggleButton buttonDown,
+			ToggleButton... buttons) {
+
+		buttonDown.setDown(true);
+
+		for (ToggleButton button : buttons) {
+
+			button.setDown(false);
+		}
+	}
+
 }
