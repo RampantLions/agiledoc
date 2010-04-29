@@ -1,6 +1,8 @@
 package com.agiledoc.client.view.root;
 
 import com.agiledoc.client.GlobalVariables;
+import com.agiledoc.client.util.FormField;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
@@ -37,19 +39,19 @@ public class ChangeRootForm {
 		VerticalPanel vp = new VerticalPanel();
 		vp.setSpacing(50);
 
-		Label title = new Label(
-				"Enter the new Root and the new Domain bellow: ");
+		HTML title = new HTML(
+				"<B>Enter the new Root and the new Domain bellow: </B>");
 		vp.add(title);
 
 		TextBox root = new TextBox();
 		root.setWidth("500");
 		root.setValue(GlobalVariables.getROOT());
-		vp.add(root);
+		vp.add(new FormField("Root", root));
 
 		TextBox pack = new TextBox();
 		pack.setWidth("300");
 		pack.setValue(GlobalVariables.getPACK());
-		vp.add(pack);
+		vp.add(new FormField("Domain", pack));
 
 		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		vp.add(ButtonChangeRoot.getButton(root, pack));
