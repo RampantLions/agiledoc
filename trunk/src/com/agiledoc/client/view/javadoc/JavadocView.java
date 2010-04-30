@@ -1,26 +1,16 @@
 package com.agiledoc.client.view.javadoc;
 
 import com.agiledoc.client.GlobalVariables;
+import com.agiledoc.client.control.GetJavadocClass;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
- * @userTask
- * 
- * @author allineo
- * @modified 04/13/2010
- */
 public class JavadocView {
 
 	public static VerticalPanel vpClassesJavadoc = new VerticalPanel();
 	public static VerticalPanel vpBodyJavadoc = new VerticalPanel();
 
-	/**
-	 * 
-	 * @author allineo
-	 * @modified 04/19/2010
-	 */
 	public static void init() {
 
 		GlobalVariables.getVP_BODY().clear();
@@ -29,13 +19,9 @@ public class JavadocView {
 		vpClassesJavadoc.clear();
 		vpClassesJavadoc.add(ClassesList.getClassesPanel(null));
 
-		new ClassPage(GlobalVariables.getCLASSES_LIST()[0]);
+		new GetJavadocClass(GlobalVariables.getProject().getClasses()[0]);
 	}
 
-	/**
-	 * @author allineo
-	 * @modified 04/19/2010
-	 */
 	public static FlexTable preparePage() {
 
 		FlexTable table = new FlexTable();
