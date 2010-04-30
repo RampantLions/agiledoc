@@ -5,19 +5,8 @@ import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Tag;
 import com.google.gwt.user.client.ui.FlexTable;
 
-/**
- * 
- * @task
- * 
- * @author allineo
- * @modified 14/19/2010
- */
 public class ToDoList {
 
-	/**
-	 * @author allineo
-	 * @modified 14/19/2010
-	 */
 	public static FlexTable showGrid() {
 
 		FlexTable grid = new FlexTable();
@@ -27,10 +16,12 @@ public class ToDoList {
 
 		createHeader(grid);
 
-		int row = 0;
-		for (int r = 0; r < GlobalVariables.getCLASSES_LIST().length; r++) {
+		Classe[] classes = GlobalVariables.getProject().getClasses();
 
-			Classe classe = GlobalVariables.getCLASSES_LIST()[r];
+		int row = 0;
+		for (int r = 0; r < classes.length; r++) {
+
+			Classe classe = classes[r];
 
 			if (Tag.TODO.equals(classe.getTask())) {
 
