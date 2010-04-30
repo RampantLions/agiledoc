@@ -8,25 +8,15 @@ import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
- * @userTask
- * 
- * @author allineo
- * @modified 04/08/2010
- */
 public class PacksList {
 
-	/**
-	 * @author allineo
-	 * @modified 04/19/2010
-	 */
 	public static ScrollPanel getPacksPanel() {
 
 		VerticalPanel vp = new VerticalPanel();
 
 		String pacName = "";
 
-		for (Classe classe : GlobalVariables.getCLASSES_LIST()) {
+		for (Classe classe : GlobalVariables.getProject().getClasses()) {
 
 			final String fullName = classe.getPack().getFullName();
 
