@@ -4,10 +4,10 @@ import com.agiledoc.client.GreetingService;
 import com.agiledoc.server.sourceClasses.GetClasse;
 import com.agiledoc.server.sourceClasses.GetJavadocClass;
 import com.agiledoc.server.sourceClasses.ListSourceClasses;
-import com.agiledoc.server.sourceClasses.ListSourceClassesAndMethods;
 import com.agiledoc.server.sourceMethods.ListSourceMethods;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Method;
+import com.agiledoc.shared.model.Project;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
@@ -18,33 +18,27 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 		GreetingService {
 
 	@Override
-	public Classe[] listClasses(String root, String pack) {
+	public Classe[] listClasses(Project proj) {
 
-		return ListSourceClasses.ListClasses(root, pack);
+		return ListSourceClasses.ListClasses(proj);
 	}
 
 	@Override
-	public Method[] listMethods(String root, String pack, Classe classe) {
+	public Method[] listMethods(Project proj, Classe classe) {
 
-		return ListSourceMethods.listMethods(root, pack, classe);
+		return ListSourceMethods.listMethods(proj, classe);
 	}
 
 	@Override
-	public String showClass(String root, String pack, Classe classe) {
+	public String showClass(Project proj, Classe classe) {
 
-		return GetJavadocClass.showClass(root, pack, classe);
+		return GetJavadocClass.showClass(proj, classe);
 	}
 
 	@Override
-	public Classe getClasse(String root, String pack, String className) {
+	public Classe getClasse(Project proj, String className) {
 
-		return GetClasse.returnClasse(root, pack, className);
-	}
-
-	@Override
-	public Classe[] listClassesAndMethods(String root, String pack) {
-
-		return ListSourceClassesAndMethods.ListClasses(root, pack);
+		return GetClasse.returnClasse(proj, className);
 	}
 
 }
