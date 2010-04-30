@@ -2,6 +2,7 @@ package com.agiledoc.client;
 
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Method;
+import com.agiledoc.shared.model.Project;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
@@ -11,14 +12,12 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 @RemoteServiceRelativePath("greet")
 public interface GreetingService extends RemoteService {
 
-	String showClass(String root, String pack, Classe classe);
+	Classe[] listClasses(Project proj);
 
-	Classe[] listClasses(String root, String pack);
+	Method[] listMethods(Project proj, Classe classe);
 
-	Method[] listMethods(String root, String pack, Classe classe);
+	String showClass(Project proj, Classe classe);
 
-	Classe getClasse(String root, String pack, String className);
-
-	Classe[] listClassesAndMethods(String root, String pack);
+	Classe getClasse(Project proj, String className);
 
 }
