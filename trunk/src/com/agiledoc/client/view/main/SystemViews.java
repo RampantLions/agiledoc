@@ -1,9 +1,8 @@
 package com.agiledoc.client.view.main;
 
-import com.agiledoc.client.view.help.HelpView;
+import com.agiledoc.client.view.features.FeaturesView;
 import com.agiledoc.client.view.javadoc.JavadocView;
-import com.agiledoc.client.view.performance.PerformanceView;
-import com.agiledoc.client.view.scope.ScopeView;
+import com.agiledoc.client.view.productivity.ProductivityView;
 import com.agiledoc.client.view.todo.ToDoView;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -16,8 +15,6 @@ import com.google.gwt.user.client.ui.ToggleButton;
  * They are the Help pages for your system, the tasks definitions and the
  * javadoc generated for your source code. <br>
  * The user can switch between any of those three views.
- * 
- * @userTask
  * 
  * @link com.gwtjavadoc.client.view.help.HelpView
  * @link com.gwtjavadoc.client.view.tasks.TasksView
@@ -38,16 +35,15 @@ public class SystemViews {
 		hp.setSpacing(5);
 
 		final ToggleButton todoButton = new ToggleButton("TO DO");
-		final ToggleButton scopeButton = new ToggleButton("SCOPE");
+		final ToggleButton scopeButton = new ToggleButton("FEATURES");
 		final ToggleButton productivityButton = new ToggleButton("PRODUCTIVITY");
-		final ToggleButton helpButton = new ToggleButton("HELP");
 		final ToggleButton javadocButton = new ToggleButton("JAVADOC");
 
 		todoButton.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
 				pushButtons(todoButton, scopeButton, productivityButton,
-						helpButton, javadocButton);
+						javadocButton);
 				ToDoView.init();
 			}
 		});
@@ -61,9 +57,9 @@ public class SystemViews {
 			public void onClick(ClickEvent sender) {
 
 				pushButtons(scopeButton, todoButton, productivityButton,
-						helpButton, javadocButton);
+						javadocButton);
 
-				ScopeView.init();
+				FeaturesView.init();
 
 			}
 		});
@@ -77,26 +73,11 @@ public class SystemViews {
 			public void onClick(ClickEvent sender) {
 
 				pushButtons(productivityButton, todoButton, scopeButton,
-						helpButton, javadocButton);
-				PerformanceView.init();
+						javadocButton);
+				ProductivityView.init();
 			}
 		});
 		hp.add(productivityButton);
-
-		Label lb4 = new Label(" ");
-		lb4.setWidth("30");
-		hp.add(lb4);
-
-		helpButton.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent sender) {
-
-				pushButtons(helpButton, todoButton, scopeButton,
-						productivityButton, javadocButton);
-
-				HelpView.init();
-			}
-		});
-		hp.add(helpButton);
 
 		Label lb3 = new Label(" ");
 		lb3.setWidth("30");
@@ -105,7 +86,7 @@ public class SystemViews {
 		javadocButton.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
-				pushButtons(javadocButton, todoButton, scopeButton, helpButton,
+				pushButtons(javadocButton, todoButton, scopeButton,
 						productivityButton);
 				JavadocView.init();
 			}

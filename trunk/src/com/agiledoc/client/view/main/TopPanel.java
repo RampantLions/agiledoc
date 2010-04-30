@@ -1,22 +1,12 @@
 package com.agiledoc.client.view.main;
 
-import com.agiledoc.client.view.search.PanelOptions;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
- * @task
- * 
- * @author allineo
- * @modified 04/20/2010
- */
 public class TopPanel {
 
 	/**
 	 * Show the main options for the system.
-	 * 
-	 * @author allineo
-	 * @modified 04/20/2010
 	 * 
 	 * @link com.gwtjavadoc.client.view.components.ButtonChangeSystemRoot
 	 * @link com.gwtjavadoc.client.view.main.ViewOptions
