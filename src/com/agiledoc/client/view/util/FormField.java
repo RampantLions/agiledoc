@@ -1,4 +1,4 @@
-package com.agiledoc.client.util;
+package com.agiledoc.client.view.util;
 
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
