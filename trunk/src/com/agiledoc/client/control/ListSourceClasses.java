@@ -3,7 +3,8 @@ package com.agiledoc.client.control;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.GreetingService;
 import com.agiledoc.client.GreetingServiceAsync;
-import com.agiledoc.client.view.help.HelpView;
+import com.agiledoc.client.view.features.FeaturesView;
+import com.agiledoc.client.view.util.LoadingPanel;
 import com.agiledoc.shared.model.Classe;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -17,29 +18,18 @@ public class ListSourceClasses {
 	private final GreetingServiceAsync greetingService = GWT
 			.create(GreetingService.class);
 
-	public ListSourceClasses(String pack) {
+	public ListSourceClasses() {
 
-		readSourceClasses(pack);
-	}
+		GlobalVariables.setVP_BODY(LoadingPanel.show());
 
-	/**
-	 * Read the classes from the source code of the system root, and storage in
-	 * a global variable.
-	 * 
-	 * @author allineo
-	 * @modified
-	 * 
-	 */
-	public void readSourceClasses(String pack) {
-
-		greetingService.listClasses(GlobalVariables.getROOT(), pack,
+		greetingService.listClasses(GlobalVariables.getProject(),
 				new AsyncCallback<Classe[]>() {
 
 					public void onSuccess(Classe[] result) {
 
-						GlobalVariables.setCLASSES_LIST(result);
+						GlobalVariables.getProject().setClasses(result);
 
-						HelpView.init();
+						FeaturesView.init();
 					}
 
 					public void onFailure(Throwable caught) {
