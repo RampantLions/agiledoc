@@ -15,8 +15,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * <br>
  * The first view shown for a root is the Help view.
  * 
- * @userTask
- * 
  * @link com.gwtjavadoc.client.view.help.HelpView
  */
 public class InitSystem {
@@ -34,7 +32,7 @@ public class InitSystem {
 
 		RootPanel.get("mainFrame").add(prepareMainPage(), 0, 0);
 
-		new ListSourceClasses(GlobalVariables.getPACK());
+		new ListSourceClasses();
 	}
 
 	/**
