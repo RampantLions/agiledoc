@@ -1,7 +1,7 @@
 package com.agiledoc.client.view.todo;
 
 import com.agiledoc.client.GlobalVariables;
-import com.agiledoc.client.util.FormField;
+import com.agiledoc.client.view.util.FormField;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
