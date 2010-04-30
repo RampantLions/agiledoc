@@ -5,30 +5,21 @@ import com.agiledoc.server.sourceTags.SourceTags;
 import com.agiledoc.server.util.ChangeNames;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Method;
+import com.agiledoc.shared.model.Project;
 import com.agiledoc.shared.model.Tag;
 import com.sun.javadoc.ClassDoc;
 import com.sun.javadoc.MethodDoc;
 import com.sun.javadoc.Parameter;
 import com.sun.javadoc.Type;
 
-/**
- * @task
- * 
- * @author allineo
- * @modified 04/15/2010
- */
 public class ListSourceMethods {
 
 	/**
 	 * List all the methods of a class.
-	 * 
-	 * @author allineo
-	 * @modified 04/15/2010
 	 */
-	public static Method[] listMethods(String root, String pack, Classe classe) {
+	public static Method[] listMethods(Project proj, Classe classe) {
 
-		ClassDoc classDoc = GetClasse.getClasseDoc(root, pack, classe
-				.getFullName());
+		ClassDoc classDoc = GetClasse.getClasseDoc(proj, classe.getFullName());
 
 		MethodDoc[] methDoc = classDoc.methods();
 
@@ -55,9 +46,6 @@ public class ListSourceMethods {
 
 	/**
 	 * Convert the parameter list in a String.
-	 * 
-	 * @author allineo
-	 * @modified 04/13/2010
 	 */
 	private static String getParameterString(Parameter[] ps) {
 
