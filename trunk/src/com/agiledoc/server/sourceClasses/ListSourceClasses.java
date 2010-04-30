@@ -2,17 +2,15 @@ package com.agiledoc.server.sourceClasses;
 
 import com.agiledoc.server.systemRoot.GetSystemRoot;
 import com.agiledoc.shared.model.Classe;
+import com.agiledoc.shared.model.Project;
 import com.sun.javadoc.ClassDoc;
 import com.sun.javadoc.RootDoc;
 
-/**
- * @task
- */
 public class ListSourceClasses {
 
-	public static Classe[] ListClasses(String root, String pack) {
+	public static Classe[] ListClasses(Project proj) {
 
-		RootDoc rootDoc = GetSystemRoot.GetRootDoc(root, pack);
+		RootDoc rootDoc = GetSystemRoot.GetRootDoc(proj);
 
 		ClassDoc[] classesDoc = rootDoc.classes();
 
@@ -22,8 +20,8 @@ public class ListSourceClasses {
 
 			classes[i] = GetClasse.createClasse(classesDoc[i]);
 
-			classes[i].setDateModified(GetFileClasse.getLastModified(root,
-					classes[i]));
+			classes[i].setDateModified(GetFileClasse.getLastModified(proj
+					.getRoot(), classes[i]));
 
 			classes[i].setMethodsCount(classesDoc[i].methods().length);
 		}
