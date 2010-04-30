@@ -3,8 +3,8 @@ package com.agiledoc.client.control;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.GreetingService;
 import com.agiledoc.client.GreetingServiceAsync;
-import com.agiledoc.client.view.scope.ScopeView;
-import com.agiledoc.client.view.scope.ShowSteps;
+import com.agiledoc.client.view.features.FeaturesView;
+import com.agiledoc.client.view.features.ShowSteps;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Method;
 import com.google.gwt.core.client.GWT;
@@ -24,20 +24,21 @@ public class ListSourceMethods {
 	 */
 	public ListSourceMethods(final Classe classe) {
 
-		greetingService.listMethods(GlobalVariables.getROOT(), GlobalVariables
-				.getPACK(), classe, new AsyncCallback<Method[]>() {
+		greetingService.listMethods(GlobalVariables.getProject(), classe,
+				new AsyncCallback<Method[]>() {
 
-			public void onSuccess(Method[] result) {
+					public void onSuccess(Method[] result) {
 
-				ScopeView.vpBodyScope.add(ShowSteps.showMethods(result));
-			}
+						FeaturesView.vpBodyScope
+								.add(ShowSteps.showMethods(result));
+					}
 
-			public void onFailure(Throwable caught) {
-				// Show the RPC error message to the user
+					public void onFailure(Throwable caught) {
+						// Show the RPC error message to the user
 
-			}
+					}
 
-		});
+				});
 
 	}
 

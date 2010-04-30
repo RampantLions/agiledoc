@@ -3,12 +3,13 @@ package com.agiledoc.client.control;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.GreetingService;
 import com.agiledoc.client.GreetingServiceAsync;
-import com.agiledoc.client.view.performance.PerformanceView;
+import com.agiledoc.client.view.javadoc.JavadocView;
 import com.agiledoc.shared.model.Classe;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.HTML;
 
-public class ListSourceClassesMethods {
+public class GetJavadocClass {
 
 	/**
 	 * Create a remote service proxy to talk to the server-side Greeting
@@ -17,29 +18,21 @@ public class ListSourceClassesMethods {
 	private final GreetingServiceAsync greetingService = GWT
 			.create(GreetingService.class);
 
-	public ListSourceClassesMethods(String pack) {
+	public GetJavadocClass(Classe classe) {
 
-		readSourceClasses(pack);
+		JavadocView.vpBodyJavadoc.clear();
+
+		getJavadocClassPage(classe);
 	}
 
-	/**
-	 * Read the classes from the source code of the system root, and storage in
-	 * a global variable.
-	 * 
-	 * @author allineo
-	 * @modified
-	 * 
-	 */
-	public void readSourceClasses(String pack) {
+	public void getJavadocClassPage(final Classe classe) {
 
-		greetingService.listClasses(GlobalVariables.getROOT(), pack,
-				new AsyncCallback<Classe[]>() {
+		greetingService.showClass(GlobalVariables.getProject(), classe,
+				new AsyncCallback<String>() {
 
-					public void onSuccess(Classe[] result) {
+					public void onSuccess(String result) {
 
-						GlobalVariables.setCLASSES_LIST(result);
-
-						PerformanceView.init();
+						JavadocView.vpBodyJavadoc.add(new HTML(result));
 					}
 
 					public void onFailure(Throwable caught) {

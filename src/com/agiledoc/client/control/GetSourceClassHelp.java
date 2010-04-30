@@ -9,10 +9,6 @@ import com.agiledoc.shared.model.Classe;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-/**
- * @author allineo
- * @modified 04/15/2010
- */
 public class GetSourceClassHelp {
 
 	/**
@@ -26,20 +22,22 @@ public class GetSourceClassHelp {
 
 		HelpView.vpBodyHelp.clear();
 
-		greetingService.getClasse(GlobalVariables.getROOT(), GlobalVariables
-				.getPACK(), className, new AsyncCallback<Classe>() {
+		greetingService.getClasse(GlobalVariables.getProject(), className,
+				new AsyncCallback<Classe>() {
 
-			public void onSuccess(Classe result) {
+					public void onSuccess(Classe result) {
 
-				TopicPage.showHelpTopic(result);
-			}
+						if (result != null) {
+							TopicPage.showHelpTopic(result);
+						}
+					}
 
-			public void onFailure(Throwable caught) {
-				// Show the RPC error message to the user
+					public void onFailure(Throwable caught) {
+						// Show the RPC error message to the user
 
-			}
+					}
 
-		});
+				});
 
 	}
 
