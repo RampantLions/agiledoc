@@ -1,6 +1,7 @@
 package com.agiledoc.server.sourceClasses;
 
 import com.agiledoc.shared.model.Classe;
+import com.agiledoc.shared.model.Project;
 import com.sun.javadoc.ClassDoc;
 import com.sun.javadoc.ConstructorDoc;
 import com.sun.javadoc.FieldDoc;
@@ -8,22 +9,11 @@ import com.sun.javadoc.MethodDoc;
 import com.sun.javadoc.Parameter;
 import com.sun.javadoc.Type;
 
-/**
- * @task
- * 
- * @author allineo
- * @modified 04/15/2010
- */
 public class GetJavadocClass {
 
-	/**
-	 * @author allineo
-	 * @modified 04/15/2010
-	 */
-	public static String showClass(String root, String pack, Classe classe) {
+	public static String showClass(Project proj, Classe classe) {
 
-		ClassDoc classDoc = GetClasse.getClasseDoc(root, pack, classe
-				.getFullName());
+		ClassDoc classDoc = GetClasse.getClasseDoc(proj, classe.getFullName());
 
 		String html = classHeader(classDoc) + fieldSummary(classDoc)
 				+ constructorSummary(classDoc) + methodSummary(classDoc);
@@ -31,10 +21,6 @@ public class GetJavadocClass {
 		return html;
 	}
 
-	/**
-	 * @author allineo
-	 * @modified 04/15/2010
-	 */
 	public static String classHeader(ClassDoc classe) {
 
 		String html = "<HR>" + "<!-- ======== START OF CLASS DATA ======== -->"
@@ -42,8 +28,8 @@ public class GetJavadocClass {
 				+ classe.containingPackage().name() + "</FONT>" + "<BR>"
 				+ "Class " + classe.name() + "</H2>" + "<PRE>"
 				+ classe.superclass() + "<BR>"
-				+ "<IMG SRC=\"img/inherit.gif\" ALT=\"extended by \">"
-				+ "<B>" + classe.toString() + "</B></PRE>";
+				+ "<IMG SRC=\"img/inherit.gif\" ALT=\"extended by \">" + "<B>"
+				+ classe.toString() + "</B></PRE>";
 
 		html += "<HR><DL>" + "<DT><PRE>" + classe.modifiers() + " class <B>"
 				+ classe.name() + "</B><DT>" + classe.superclass() + "</DL>"
@@ -52,10 +38,6 @@ public class GetJavadocClass {
 		return html;
 	}
 
-	/**
-	 * @author allineo
-	 * @modified 04/06/2010
-	 */
 	public static String fieldSummary(ClassDoc classe) {
 
 		String html = "<!-- =========== FIELD SUMMARY =========== -->"
@@ -69,12 +51,9 @@ public class GetJavadocClass {
 
 			html += "<TR BGCOLOR=\"white\" CLASS=\"TableRowColor\">"
 					+ "<TD ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"><FONT SIZE=\"-1\">"
-					+ "<CODE>"
-					+ field.type()
-					+ "</CODE></FONT></TD>"
-					+ "<TD><CODE><B><A HREF=\" "
-					+ "#" + field.name() + "\">" + field.name() + "</A></B>"
-					+ "</CODE><BR></TD></TR>";
+					+ "<CODE>" + field.type() + "</CODE></FONT></TD>"
+					+ "<TD><CODE><B><A HREF=\" " + "#" + field.name() + "\">"
+					+ field.name() + "</A></B>" + "</CODE><BR></TD></TR>";
 
 		}
 
@@ -83,10 +62,6 @@ public class GetJavadocClass {
 		return html;
 	}
 
-	/**
-	 * @author allineo
-	 * @modified 04/06/2010
-	 */
 	public static String constructorSummary(ClassDoc classe) {
 
 		String html = "<!-- ======== CONSTRUCTOR SUMMARY ======== -->"
@@ -113,10 +88,6 @@ public class GetJavadocClass {
 		return html;
 	}
 
-	/**
-	 * @author allineo
-	 * @modified 04/07/2010
-	 */
 	private static String getParameterString(Parameter[] ps) {
 
 		String result = "";
@@ -140,10 +111,6 @@ public class GetJavadocClass {
 		return result;
 	}
 
-	/**
-	 * @author allineo
-	 * @modified 04/07/2010
-	 */
 	public static String methodSummary(ClassDoc classe) {
 
 		String html = "<!-- ========== METHOD SUMMARY =========== -->"

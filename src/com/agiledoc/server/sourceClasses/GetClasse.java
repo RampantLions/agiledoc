@@ -5,22 +5,19 @@ import com.agiledoc.server.systemRoot.GetSystemRoot;
 import com.agiledoc.server.util.ChangeNames;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Pack;
+import com.agiledoc.shared.model.Project;
 import com.agiledoc.shared.model.Tag;
 import com.sun.javadoc.ClassDoc;
 import com.sun.javadoc.RootDoc;
 
-/**
- * @task
- */
 public class GetClasse {
 
 	/**
 	 * Identify the source class document from the source code.
 	 */
-	public static ClassDoc getClasseDoc(String root, String pack,
-			String className) {
+	public static ClassDoc getClasseDoc(Project proj, String className) {
 
-		RootDoc rootDoc = GetSystemRoot.GetRootDoc(root, pack);
+		RootDoc rootDoc = GetSystemRoot.GetRootDoc(proj);
 
 		ClassDoc classDoc = rootDoc.classNamed(className);
 
@@ -30,9 +27,9 @@ public class GetClasse {
 	/**
 	 * Read the class attributes from the source class document.
 	 */
-	public static Classe returnClasse(String root, String pack, String className) {
+	public static Classe returnClasse(Project proj, String className) {
 
-		ClassDoc classDoc = getClasseDoc(root, pack, className);
+		ClassDoc classDoc = getClasseDoc(proj, className);
 
 		if (classDoc != null) {
 
