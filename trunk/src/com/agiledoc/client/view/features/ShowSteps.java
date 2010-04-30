@@ -1,4 +1,4 @@
-package com.agiledoc.client.view.scope;
+package com.agiledoc.client.view.features;
 
 import com.agiledoc.client.control.GetSourceClassTasks;
 import com.agiledoc.shared.model.Classe;
@@ -11,20 +11,8 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
- * @task
- * 
- * @author allineo
- * @modified 04/14/2010
- */
 public class ShowSteps {
 
-	/**
-	 * For each method, show its name and description.
-	 * 
-	 * @author allineo
-	 * @modified 04/14/2010
-	 */
 	public static VerticalPanel showMethods(final Method[] meths) {
 
 		VerticalPanel vp = new VerticalPanel();
@@ -49,12 +37,6 @@ public class ShowSteps {
 		return vp;
 	}
 
-	/**
-	 * List method links.
-	 * 
-	 * @author allineo
-	 * @modified 04/14/2010
-	 */
 	public static HorizontalPanel showLinks(final Method meth) {
 
 		HorizontalPanel links = new HorizontalPanel();
