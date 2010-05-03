@@ -3,7 +3,7 @@ package com.agiledoc.client.view.project;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.control.ListSourceClasses;
 import com.agiledoc.client.view.util.FormField;
-import com.agiledoc.shared.ProjectsData;
+import com.agiledoc.shared.data.ProjectsData;
 import com.agiledoc.shared.model.Project;
 import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
