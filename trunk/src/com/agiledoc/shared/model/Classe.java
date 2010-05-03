@@ -3,10 +3,6 @@ package com.agiledoc.shared.model;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @author allineo
- * @modified 04/19/2010
- */
 public class Classe implements Serializable {
 
 	private String fullName;
@@ -27,9 +23,9 @@ public class Classe implements Serializable {
 
 	private Date dateModified;
 
-	private int methodsCount;
+	private Method[] methods;
 
-	private Classe[] links;
+	private String[] imports;
 
 	public String getFullName() {
 		return fullName;
@@ -87,14 +83,6 @@ public class Classe implements Serializable {
 		this.description = description;
 	}
 
-	public Classe[] getLinks() {
-		return links;
-	}
-
-	public void setLinks(Classe[] links) {
-		this.links = links;
-	}
-
 	public int getPriority() {
 		return priority;
 	}
@@ -103,12 +91,12 @@ public class Classe implements Serializable {
 		this.priority = priority;
 	}
 
-	public int getMethodsCount() {
-		return methodsCount;
+	public Method[] getMethods() {
+		return methods;
 	}
 
-	public void setMethodsCount(int methodsCount) {
-		this.methodsCount = methodsCount;
+	public void setMethods(Method[] methods) {
+		this.methods = methods;
 	}
 
 	public Date getDateModified() {
@@ -117,6 +105,14 @@ public class Classe implements Serializable {
 
 	public void setDateModified(Date dateModified) {
 		this.dateModified = dateModified;
+	}
+
+	public String[] getImports() {
+		return imports;
+	}
+
+	public void setImports(String[] imports) {
+		this.imports = imports;
 	}
 
 }

@@ -18,8 +18,6 @@ public class Method implements Serializable {
 
 	private String description;
 
-	private Classe[] links;
-
 	public String getName() {
 		return name;
 	}
@@ -59,13 +57,4 @@ public class Method implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	public Classe[] getLinks() {
-		return links;
-	}
-
-	public void setLinks(Classe[] links) {
-		this.links = links;
-	}
-
 }

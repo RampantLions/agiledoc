@@ -9,9 +9,7 @@ public class Productivity implements Serializable {
 
 	private int toDoCounts;
 
-	private int userTaskCounts;
-
-	private int businessTaskCounts;
+	private int featureCounts;
 
 	private int classesCounts;
 
@@ -33,20 +31,12 @@ public class Productivity implements Serializable {
 		this.toDoCounts = toDoCounts;
 	}
 
-	public int getUserTaskCounts() {
-		return userTaskCounts;
+	public int getFeatureCounts() {
+		return featureCounts;
 	}
 
-	public void setUserTaskCounts(int userTaskCounts) {
-		this.userTaskCounts = userTaskCounts;
-	}
-
-	public int getBusinessTaskCounts() {
-		return businessTaskCounts;
-	}
-
-	public void setBusinessTaskCounts(int businessTaskCounts) {
-		this.businessTaskCounts = businessTaskCounts;
+	public void setFeatureCounts(int featureCounts) {
+		this.featureCounts = featureCounts;
 	}
 
 	public int getClassesCounts() {
