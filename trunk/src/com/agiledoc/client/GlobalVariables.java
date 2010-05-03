@@ -1,6 +1,6 @@
 package com.agiledoc.client;
 
-import com.agiledoc.shared.ProjectsData;
+import com.agiledoc.shared.data.ProjectsData;
 import com.agiledoc.shared.model.Project;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -28,6 +28,11 @@ public class GlobalVariables {
 	public static void setVP_BODY(Widget w) {
 		VP_BODY.clear();
 		VP_BODY.add(w);
+	}
+
+	public static String getViewPath() {
+
+		return getProject().getDomain() + "." + getProject().getViewPackage();
 	}
 
 }
