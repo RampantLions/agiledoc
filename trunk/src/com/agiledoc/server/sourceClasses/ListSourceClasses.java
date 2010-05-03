@@ -20,12 +20,32 @@ public class ListSourceClasses {
 
 			classes[i] = GetClasse.createClasse(classesDoc[i]);
 
+			try {
+				classes[i].setImports(listImports(classesDoc[i]
+						.importedClasses()));
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
 			classes[i].setDateModified(GetFileClasse.getLastModified(proj
 					.getRoot(), classes[i]));
 
-			classes[i].setMethodsCount(classesDoc[i].methods().length);
+			classes[i].setMethods(ListSourceMethods.listMethods(classesDoc[i]
+					.methods()));
 		}
 
 		return classes;
+	}
+
+	private static String[] listImports(ClassDoc[] imports) {
+
+		String[] importsString = new String[imports.length];
+
+		for (int t = 0; t < imports.length; t++) {
+
+			importsString[t] = imports[t].toString();
+		}
+
+		return importsString;
 	}
 }
