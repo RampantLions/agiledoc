@@ -1,12 +1,11 @@
 package com.agiledoc.server.sourceClasses;
 
-import com.agiledoc.server.sourceTags.SourceTags;
 import com.agiledoc.server.systemRoot.GetSystemRoot;
-import com.agiledoc.server.util.ChangeNames;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Pack;
 import com.agiledoc.shared.model.Project;
 import com.agiledoc.shared.model.Tag;
+import com.agiledoc.shared.util.ChangeNames;
 import com.sun.javadoc.ClassDoc;
 import com.sun.javadoc.RootDoc;
 
@@ -61,22 +60,11 @@ public class GetClasse {
 
 		classe.setModifiers(classDoc.modifiers());
 
-		if (classDoc.tags(Tag.USER_TASK).length > 0) {
-
-			classe.setTask(Tag.USER_TASK);
-
-		} else if (classDoc.tags(Tag.TASK).length > 0) {
-
-			classe.setTask(Tag.TASK);
-
-		} else if (classDoc.tags(Tag.TODO).length > 0) {
+		if (classDoc.tags(Tag.TODO).length > 0) {
 
 			classe.setTask(Tag.TODO);
 			// classe.setPriority(classDoc.tags(Tag.TODO)[0]);
 		}
-
-		com.sun.javadoc.Tag[] tags = classDoc.tags(Tag.LINK);
-		classe.setLinks(SourceTags.list(tags));
 
 		return classe;
 
