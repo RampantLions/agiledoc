@@ -1,6 +1,7 @@
 package com.agiledoc.server;
 
 import com.agiledoc.client.GreetingService;
+import com.agiledoc.server.sourceClasses.CreateClasse;
 import com.agiledoc.server.sourceClasses.GetClasse;
 import com.agiledoc.server.sourceClasses.GetJavadocClass;
 import com.agiledoc.server.sourceClasses.ListSourceClasses;
@@ -31,6 +32,12 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 	public Classe getClasse(Project proj, String className) {
 
 		return GetClasse.returnClasse(proj, className);
+	}
+
+	@Override
+	public void createClasse(Project proj, Classe classe) throws Exception {
+
+		new CreateClasse(proj, classe);
 	}
 
 }
