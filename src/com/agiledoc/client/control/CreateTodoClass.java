@@ -3,14 +3,11 @@ package com.agiledoc.client.control;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.GreetingService;
 import com.agiledoc.client.GreetingServiceAsync;
-import com.agiledoc.client.view.main.SystemViews;
-import com.agiledoc.client.view.todo.ToDoView;
-import com.agiledoc.client.view.util.LoadingPanel;
 import com.agiledoc.shared.model.Classe;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-public class ListSourceClasses {
+public class CreateTodoClass {
 
 	/**
 	 * Create a remote service proxy to talk to the server-side Greeting
@@ -19,19 +16,15 @@ public class ListSourceClasses {
 	private final GreetingServiceAsync greetingService = GWT
 			.create(GreetingService.class);
 
-	public ListSourceClasses() {
+	public CreateTodoClass(Classe classe) {
 
-		GlobalVariables.setVP_BODY(LoadingPanel.show());
+		greetingService.createClasse(GlobalVariables.getProject(), classe,
+				new AsyncCallback<Void>() {
 
-		greetingService.listClasses(GlobalVariables.getProject(),
-				new AsyncCallback<Classe[]>() {
+					@Override
+					public void onSuccess(Void result) {
 
-					public void onSuccess(Classe[] result) {
-
-						GlobalVariables.getProject().setClasses(result);
-
-						SystemViews.todoButton.setDown(true);
-						ToDoView.init();
+						new ListSourceClasses();
 					}
 
 					public void onFailure(Throwable caught) {
