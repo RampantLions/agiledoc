@@ -1,7 +1,10 @@
 package com.agiledoc.client.view.todo;
 
 import com.agiledoc.client.GlobalVariables;
+import com.agiledoc.client.control.CreateTodoClass;
 import com.agiledoc.client.view.util.FormField;
+import com.agiledoc.shared.model.Classe;
+import com.agiledoc.shared.model.Pack;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
@@ -48,15 +51,15 @@ public class NewTaskForm {
 		HTML title = new HTML("<B>Enter the new Task information bellow: </B>");
 		vp.add(title);
 
-		TextBox path = new TextBox();
+		final TextBox path = new TextBox();
 		path.setWidth("300");
 		vp.add(new FormField("Task Path", path));
 
-		TextBox name = new TextBox();
+		final TextBox name = new TextBox();
 		name.setWidth("300");
 		vp.add(new FormField("Task Name", name));
 
-		TextArea desc = new TextArea();
+		final TextArea desc = new TextArea();
 		desc.setSize("500", "40");
 		vp.add(new FormField("Description", desc));
 
@@ -69,7 +72,15 @@ public class NewTaskForm {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				// new ListSourceClasses(GlobalVariables.getPACK());
+				Pack pack = new Pack();
+				pack.setName(path.getValue());
+
+				Classe classe = new Classe();
+				classe.setPack(pack);
+				classe.setClassName(name.getValue());
+				classe.setDescription(desc.getValue());
+
+				new CreateTodoClass(classe);
 			}
 		});
 		vp.add(button);
