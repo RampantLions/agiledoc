@@ -17,4 +17,6 @@ public interface GreetingService extends RemoteService {
 
 	Classe getClasse(Project proj, String className);
 
+	void createClasse(Project proj, Classe classe) throws Exception;
+
 }
