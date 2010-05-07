@@ -22,6 +22,8 @@ import com.google.gwt.user.client.ui.ToggleButton;
  */
 public class SystemViews {
 
+	public static final ToggleButton todoButton = new ToggleButton("TO DO");
+
 	/**
 	 * Show a panel with the system view options to be selected by the user.
 	 * 
@@ -34,7 +36,6 @@ public class SystemViews {
 		HorizontalPanel hp = new HorizontalPanel();
 		hp.setSpacing(5);
 
-		final ToggleButton todoButton = new ToggleButton("TO DO");
 		final ToggleButton scopeButton = new ToggleButton("FEATURES");
 		final ToggleButton productivityButton = new ToggleButton("PRODUCTIVITY");
 		final ToggleButton javadocButton = new ToggleButton("JAVADOC");
@@ -96,7 +97,7 @@ public class SystemViews {
 		return hp;
 	}
 
-	private static void pushButtons(ToggleButton buttonDown,
+	public static void pushButtons(ToggleButton buttonDown,
 			ToggleButton... buttons) {
 
 		buttonDown.setDown(true);
