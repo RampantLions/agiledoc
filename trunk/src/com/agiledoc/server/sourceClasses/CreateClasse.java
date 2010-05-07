@@ -1,21 +1,33 @@
 package com.agiledoc.server.sourceClasses;
 
-import javassist.ClassPool;
-import javassist.CtClass;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
+import com.agiledoc.shared.model.Classe;
+import com.agiledoc.shared.model.Project;
 
 public class CreateClasse {
 
-	public CreateClasse(String root) throws Exception {
+	public CreateClasse(Project proj, Classe classe) throws Exception {
 
-		ClassPool pool = ClassPool.getDefault();
+		String pack = proj.getDomain() + "." + proj.getViewPackage() + "."
+				+ classe.getPack().getName().toLowerCase();
 
-		// ClassPath cp = new URLClassPath("www.javassist.org", 80, "/java/",
-		// "org.javassist.");
-		pool.insertClassPath(root);
+		String filePath = proj.getRoot() + "/" + pack.replace('.', '/') + "/"
+				+ classe.getClassName().trim() + ".java";
 
-		CtClass cc = pool.get("test.Rectangle");
-		cc.setSuperclass(pool.get("test.Point"));
-		cc.writeFile();
+		String javaClass = "package " + pack + ";\n" + "\n" + "/** \n" + "* "
+				+ classe.getDescription() + " \n" + "* @todo \n" + "*/\n"
+				+ "public class " + classe.getClassName().trim() + " {\n"
+				+ "\n" + "}\n";
+
+		File f = new File(filePath);
+		f.createNewFile();
+
+		FileWriter fw = new FileWriter(f);
+		PrintWriter outPrinter = new PrintWriter(fw);
+		outPrinter.println(javaClass);
+		outPrinter.close();
 	}
-
 }
