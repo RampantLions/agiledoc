@@ -16,4 +16,6 @@ public interface GreetingServiceAsync {
 	void getClasse(Project proj, String className,
 			AsyncCallback<Classe> callback);
 
+	void createClasse(Project proj, Classe classe, AsyncCallback<Void> callback);
+
 }
