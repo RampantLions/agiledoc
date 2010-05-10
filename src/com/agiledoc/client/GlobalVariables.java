@@ -7,8 +7,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 public class GlobalVariables {
 
-	public static final String INIT_CLASS = "com.agiledoc.client.view.main.InitSystem";
-
 	public static Project project = ProjectsData.load()[0];
 
 	private static VerticalPanel VP_BODY = new VerticalPanel();
