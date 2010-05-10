@@ -1,6 +1,7 @@
 package com.agiledoc.client.view.features;
 
 import com.agiledoc.client.GlobalVariables;
+import com.agiledoc.client.control.GetSourceClassTasks;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.util.ChangeNames;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -15,14 +16,63 @@ public class FeaturesList {
 
 		Tree tree = new Tree();
 
-		TreeItem packItem = new TreeItem();
+		String initialClass = addMainItems(tree);
+
+		new GetSourceClassTasks(initialClass);
+
+		addTreeItems(tree);
+
+		return tree;
+	}
+
+	public static String addMainItems(Tree tree) {
+
+		String initialClass = null;
+
+		for (final Classe classe : GlobalVariables.getProject().getClasses()) {
+
+			if (classe.getPack().getFullName().equals(
+					GlobalVariables.getViewPath())) {
+
+				Anchor classeAnchor = new Anchor(classe.getName());
+				classeAnchor.addClickHandler(new ClickHandler() {
+					public void onClick(ClickEvent sender) {
+
+						FeaturePage.show(classe);
+					}
+				});
+
+				tree.addItem(classeAnchor);
+
+				if (initialClass == null) {
+
+					initialClass = classe.getFullName();
+				}
+			}
+		}
+
+		return initialClass;
+	}
+
+	private static void addTreeItems(Tree tree) {
 
 		String packName = "";
+		TreeItem packItem = new TreeItem();
 
 		for (final Classe classe : GlobalVariables.getProject().getClasses()) {
 
 			if (classe.getPack().getFullName().contains(
-					GlobalVariables.getViewPath())) {
+					GlobalVariables.getViewPath())
+					&& !classe.getPack().getFullName().equals(
+							GlobalVariables.getViewPath())) {
+
+				Anchor classeAnchor = new Anchor(classe.getName());
+				classeAnchor.addClickHandler(new ClickHandler() {
+					public void onClick(ClickEvent sender) {
+
+						FeaturePage.show(classe);
+					}
+				});
 
 				if (!classe.getPack().getFullName().equals(packName)) {
 
@@ -36,14 +86,6 @@ public class FeaturesList {
 					packItem.setState(true);
 				}
 
-				Anchor classeAnchor = new Anchor(classe.getName());
-				classeAnchor.addClickHandler(new ClickHandler() {
-					public void onClick(ClickEvent sender) {
-
-						FeaturePage.show(classe);
-					}
-				});
-
 				packItem.addItem(classeAnchor);
 
 				if (!classe.getPack().getFullName().equals(packName)) {
@@ -54,7 +96,5 @@ public class FeaturesList {
 				}
 			}
 		}
-
-		return tree;
 	}
 }

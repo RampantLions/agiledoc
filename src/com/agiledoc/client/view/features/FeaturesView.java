@@ -1,7 +1,6 @@
 package com.agiledoc.client.view.features;
 
 import com.agiledoc.client.GlobalVariables;
-import com.agiledoc.client.control.GetSourceClassTasks;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
@@ -15,8 +14,6 @@ public class FeaturesView {
 
 		GlobalVariables.getVP_BODY().clear();
 		GlobalVariables.setVP_BODY(preparePage());
-
-		new GetSourceClassTasks(GlobalVariables.INIT_CLASS);
 	}
 
 	public static FlexTable preparePage() {
