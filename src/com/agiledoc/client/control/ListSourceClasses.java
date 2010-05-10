@@ -3,7 +3,7 @@ package com.agiledoc.client.control;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.GreetingService;
 import com.agiledoc.client.GreetingServiceAsync;
-import com.agiledoc.client.view.main.SystemViews;
+import com.agiledoc.client.view.SystemViews;
 import com.agiledoc.client.view.todo.ToDoView;
 import com.agiledoc.client.view.util.LoadingPanel;
 import com.agiledoc.shared.model.Classe;
