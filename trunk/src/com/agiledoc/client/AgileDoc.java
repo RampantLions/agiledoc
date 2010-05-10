@@ -1,6 +1,5 @@
 package com.agiledoc.client;
 
-import com.agiledoc.client.view.main.InitSystem;
 import com.google.gwt.core.client.EntryPoint;
 
 /**
