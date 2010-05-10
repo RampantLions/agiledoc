@@ -1,5 +1,6 @@
 package com.agiledoc.client.view.main;
 
+import com.agiledoc.client.view.SystemViews;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
