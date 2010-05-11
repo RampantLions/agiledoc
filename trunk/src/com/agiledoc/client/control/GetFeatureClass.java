@@ -8,7 +8,7 @@ import com.agiledoc.shared.model.Classe;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-public class GetSourceClassTasks {
+public class GetFeatureClass {
 
 	/**
 	 * Create a remote service proxy to talk to the server-side Greeting
@@ -17,14 +17,14 @@ public class GetSourceClassTasks {
 	private final GreetingServiceAsync greetingService = GWT
 			.create(GreetingService.class);
 
-	public GetSourceClassTasks(String className) {
+	public GetFeatureClass(String className) {
 
 		greetingService.getClasse(GlobalVariables.getProject(), className,
 				new AsyncCallback<Classe>() {
 
 					public void onSuccess(Classe result) {
 
-						FeaturePage.show(result);
+						new FeaturePage(result);
 					}
 
 					public void onFailure(Throwable caught) {

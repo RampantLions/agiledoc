@@ -3,7 +3,7 @@ package com.agiledoc.client.control;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.GreetingService;
 import com.agiledoc.client.GreetingServiceAsync;
-import com.agiledoc.client.view.SystemViews;
+import com.agiledoc.client.view.SystemMenu;
 import com.agiledoc.client.view.todo.ToDoView;
 import com.agiledoc.client.view.util.LoadingPanel;
 import com.agiledoc.shared.model.Classe;
@@ -30,7 +30,7 @@ public class ListSourceClasses {
 
 						GlobalVariables.getProject().setClasses(result);
 
-						SystemViews.todoButton.setDown(true);
+						SystemMenu.todoButton.setDown(true);
 						ToDoView.init();
 					}
 
