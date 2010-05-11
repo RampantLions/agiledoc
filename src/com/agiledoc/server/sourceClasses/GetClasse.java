@@ -32,7 +32,7 @@ public class GetClasse {
 
 		if (classDoc != null) {
 
-			return createClasse(classDoc);
+			return createClasse(proj, classDoc);
 
 		} else {
 
@@ -43,7 +43,7 @@ public class GetClasse {
 	/**
 	 * Convert the source class into classe attributes.
 	 */
-	public static Classe createClasse(ClassDoc classDoc) {
+	public static Classe createClasse(Project proj, ClassDoc classDoc) {
 
 		Classe classe = new Classe();
 
@@ -66,7 +66,30 @@ public class GetClasse {
 			// classe.setPriority(classDoc.tags(Tag.TODO)[0]);
 		}
 
+		try {
+			classe.setImports(listImports(classDoc.importedClasses()));
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		classe.setDateModified(GetFileClasse.getLastModified(proj.getRoot(),
+				classe));
+
+		classe.setMethods(ListSourceMethods.listMethods(classDoc.methods()));
+
 		return classe;
 
+	}
+
+	private static String[] listImports(ClassDoc[] imports) {
+
+		String[] importsString = new String[imports.length];
+
+		for (int t = 0; t < imports.length; t++) {
+
+			importsString[t] = imports[t].toString();
+		}
+
+		return importsString;
 	}
 }
