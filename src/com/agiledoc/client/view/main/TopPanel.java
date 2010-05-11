@@ -1,6 +1,6 @@
 package com.agiledoc.client.view.main;
 
-import com.agiledoc.client.view.SystemViews;
+import com.agiledoc.client.view.SystemMenu;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -8,9 +8,6 @@ public class TopPanel {
 
 	/**
 	 * Show the main options for the system.
-	 * 
-	 * @link com.gwtjavadoc.client.view.components.ButtonChangeSystemRoot
-	 * @link com.gwtjavadoc.client.view.main.ViewOptions
 	 */
 	public static HorizontalPanel show() {
 
@@ -20,7 +17,7 @@ public class TopPanel {
 		hp.setHorizontalAlignment(HorizontalPanel.ALIGN_CENTER);
 		hp.setVerticalAlignment(VerticalPanel.ALIGN_MIDDLE);
 
-		hp.add(SystemViews.getViewOptions());
+		hp.add(new SystemMenu());
 
 		hp.add(PanelOptions.show());
 
