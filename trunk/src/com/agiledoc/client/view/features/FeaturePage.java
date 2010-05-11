@@ -1,80 +1,112 @@
 package com.agiledoc.client.view.features;
 
 import com.agiledoc.client.GlobalVariables;
-import com.agiledoc.client.control.GetSourceClassTasks;
+import com.agiledoc.client.control.GetFeatureClass;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Method;
 import com.agiledoc.shared.util.ChangeNames;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+/**
+ * 
+ */
 public class FeaturePage {
 
-	/**
-	 * Show the class page for the task view of the system.
-	 */
-	public static void show(Classe classe) {
+	public FeaturePage(Classe classe) {
 
 		FeaturesView.vpBodyScope.clear();
-		FeaturesView.vpBodyScope.add(showClassHeader(classe));
+		FeaturesView.vpBodyScope.add(featureName(classe));
+		FeaturesView.vpBodyScope.add(featureDescription(classe));
 
 		if (classe.getMethods() != null) {
-			FeaturesView.vpBodyScope.add(showMethods(classe.getMethods()));
+			FeaturesView.vpBodyScope.add(featureSteps(classe.getMethods()));
 		}
 
 		if (classe.getImports() != null) {
-			FeaturesView.vpBodyScope.add(showReferences(classe.getImports()));
+			FeaturesView.vpBodyScope
+					.add(featureReferences(classe.getImports()));
 		}
 	}
 
 	/**
 	 * Show the name of the class with its package name and description.
 	 */
-	public static HTML showClassHeader(final Classe classe) {
+	public static HTML featureName(final Classe classe) {
 
-		String text = "<B>" + classe.getPack().getName() + "<BR><FONT SIZE=4>"
-				+ "&nbsp;&nbsp;" + classe.getName() + "</FONT></B>";
+		String pack = "";
 
+		String name = "<BR><BR><B><FONT SIZE=4>" + "&nbsp;&nbsp;"
+				+ classe.getName() + "</FONT></B>";
+
+		if (!classe.getPack().getFullName().equals(
+				GlobalVariables.getViewPath())) {
+
+			pack = "<B>" + classe.getPack().getName() + "</B>";
+		}
+
+		return new HTML(pack + name);
+	}
+
+	public static HorizontalPanel featureDescription(final Classe classe) {
+
+		HorizontalPanel hp = new HorizontalPanel();
+
+		String text = null;
 		if (classe.getDescription() != null
 				&& !classe.getDescription().equals("")) {
 
-			text += "<FONT SIZE=\"-1\"><BR><BR>"
-					+ "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-					+ classe.getDescription() + "</FONT>";
+			text = "<FONT SIZE=\"-1\">" + classe.getDescription() + "</FONT>";
+
+			hp.setSpacing(20);
+			hp.setWidth("600");
+			hp.add(new HTML(text));
 		}
 
-		return new HTML(text);
+		return hp;
 	}
 
-	public static VerticalPanel showMethods(final Method[] meths) {
+	public static Grid featureSteps(final Method[] meths) {
 
-		VerticalPanel vp = new VerticalPanel();
-		vp.setSpacing(10);
+		Grid table = new Grid(meths.length * 3, 2);
 
-		for (Method meth : meths) {
+		table.getColumnFormatter().setWidth(0, "20");
 
-			vp.add(new HTML("&nbsp;&nbsp;<B>" + meth.getSpacedName() + "</B>"));
+		for (int i = 0; i < meths.length; i++) {
+
+			Method meth = meths[i];
+
+			table.setWidget((i * 3), 1, new HTML("<B>" + meth.getSpacedName()
+					+ "</B>"));
 
 			if (meth.getDescription() != null
 					&& !meth.getDescription().equals("")) {
 
-				vp.add(new HTML("&nbsp;&nbsp;&nbsp;&nbsp;"
-						+ meth.getDescription()));
+				table
+						.setWidget((i * 3 + 1), 1, new HTML(meth
+								.getDescription()));
 			}
 
-			vp.add(new Label(" "));
+			table.setWidget((i * 3 + 2), 0, new Label(" "));
 		}
 
-		return vp;
+		return table;
 	}
 
-	public static VerticalPanel showReferences(final String[] imports) {
+	public static VerticalPanel featureReferences(final String[] imports) {
 
 		VerticalPanel links = new VerticalPanel();
+
+		if (imports.length > 0) {
+
+			links.add(new Label("See also:"));
+		}
 
 		for (final String link : imports) {
 
@@ -85,7 +117,7 @@ public class FeaturePage {
 				classeAnchor.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
 
-						new GetSourceClassTasks(link);
+						new GetFeatureClass(link);
 					}
 				});
 
