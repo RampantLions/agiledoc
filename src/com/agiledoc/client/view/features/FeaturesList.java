@@ -1,7 +1,7 @@
 package com.agiledoc.client.view.features;
 
+import com.agiledoc.client.view.features.FeaturePage;
 import com.agiledoc.client.GlobalVariables;
-import com.agiledoc.client.control.GetSourceClassTasks;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.util.ChangeNames;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -10,24 +10,24 @@ import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Tree;
 import com.google.gwt.user.client.ui.TreeItem;
 
-public class FeaturesList {
+/**
+ * A menu list with all the classes defined inside the features package of the
+ * project.
+ */
+public class FeaturesList extends Tree {
 
-	public static Tree createMenu() {
+	public FeaturesList() {
 
-		Tree tree = new Tree();
+		Classe initialClass = mainItems(this);
 
-		String initialClass = addMainItems(tree);
+		new FeaturePage(initialClass);
 
-		new GetSourceClassTasks(initialClass);
-
-		addTreeItems(tree);
-
-		return tree;
+		subItems(this);
 	}
 
-	public static String addMainItems(Tree tree) {
+	public static Classe mainItems(Tree tree) {
 
-		String initialClass = null;
+		Classe initialClass = null;
 
 		for (final Classe classe : GlobalVariables.getProject().getClasses()) {
 
@@ -38,7 +38,7 @@ public class FeaturesList {
 				classeAnchor.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
 
-						FeaturePage.show(classe);
+						new FeaturePage(classe);
 					}
 				});
 
@@ -46,7 +46,7 @@ public class FeaturesList {
 
 				if (initialClass == null) {
 
-					initialClass = classe.getFullName();
+					initialClass = classe;
 				}
 			}
 		}
@@ -54,7 +54,7 @@ public class FeaturesList {
 		return initialClass;
 	}
 
-	private static void addTreeItems(Tree tree) {
+	private static void subItems(Tree tree) {
 
 		String packName = "";
 		TreeItem packItem = new TreeItem();
@@ -70,7 +70,7 @@ public class FeaturesList {
 				classeAnchor.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
 
-						FeaturePage.show(classe);
+						new FeaturePage(classe);
 					}
 				});
 
