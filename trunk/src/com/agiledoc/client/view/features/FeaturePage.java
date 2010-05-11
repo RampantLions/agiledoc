@@ -101,12 +101,11 @@ public class FeaturePage {
 
 	public static VerticalPanel featureReferences(final String[] imports) {
 
+		VerticalPanel vp = new VerticalPanel();
+
 		VerticalPanel links = new VerticalPanel();
 
-		if (imports.length > 0) {
-
-			links.add(new Label("See also:"));
-		}
+		boolean hasReference = false;
 
 		for (final String link : imports) {
 
@@ -122,10 +121,19 @@ public class FeaturePage {
 				});
 
 				links.add(classeAnchor);
+
+				hasReference = true;
 			}
 		}
 
-		return links;
+		if (hasReference) {
+
+			vp.add(new Label("See also:"));
+		}
+
+		vp.add(links);
+
+		return vp;
 	}
 
 }
