@@ -63,7 +63,12 @@ public class GetClasse {
 		if (classDoc.tags(Tag.TODO).length > 0) {
 
 			classe.setTask(Tag.TODO);
-			// classe.setPriority(classDoc.tags(Tag.TODO)[0]);
+
+			String priority = classDoc.tags(Tag.TODO)[0].text();
+			if (priority != null && !priority.equals("")) {
+
+				classe.setPriority(Integer.parseInt(priority));
+			}
 		}
 
 		try {
