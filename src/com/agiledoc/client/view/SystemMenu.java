@@ -62,7 +62,7 @@ public class SystemMenu extends HorizontalPanel {
 
 				pushButtons(todoButton, featuresButton, productivityButton,
 						javadocButton);
-				ToDoView.init();
+				new ToDoView();
 			}
 		});
 
