@@ -23,6 +23,8 @@ public class FeaturePage {
 		HorizontalPanel hp = new HorizontalPanel();
 
 		VerticalPanel vp = new VerticalPanel();
+		vp.setWidth("700");
+
 		vp.add(featureName(classe));
 		vp.add(featureDescription(classe));
 

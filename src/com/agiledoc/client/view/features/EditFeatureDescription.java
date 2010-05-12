@@ -22,6 +22,8 @@ public class EditFeatureDescription {
 		HorizontalPanel hp = new HorizontalPanel();
 
 		VerticalPanel vp = new VerticalPanel();
+		vp.setWidth("700");
+		
 		vp.add(FeaturePage.featureName(classe));
 		vp.add(featureDescription(classe));
 
