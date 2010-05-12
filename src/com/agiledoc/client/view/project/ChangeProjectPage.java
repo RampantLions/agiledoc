@@ -84,7 +84,8 @@ public class ChangeProjectPage {
 
 		final TextBox viewPack = new TextBox();
 		viewPack.setWidth("300");
-		viewPack.setValue(GlobalVariables.getProject().getViewPackage());
+		viewPack.setValue(GlobalVariables.getProject()
+				.getFeatureRelativePackage());
 		vp.add(new FormField("View Package", viewPack));
 
 		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
@@ -100,7 +101,7 @@ public class ChangeProjectPage {
 				root.setValue(projs[list.getSelectedIndex()].getRoot());
 				domain.setValue(projs[list.getSelectedIndex()].getDomain());
 				viewPack.setValue(projs[list.getSelectedIndex()]
-						.getViewPackage());
+						.getFeatureRelativePackage());
 			}
 		});
 
@@ -122,7 +123,7 @@ public class ChangeProjectPage {
 				proj.setName(name.getValue());
 				proj.setRoot(root.getValue());
 				proj.setDomain(domain.getValue());
-				proj.setViewPackage(viewPack.getValue());
+				proj.setFeatureRelativePackage(viewPack.getValue());
 
 				GlobalVariables.setProject(proj);
 
