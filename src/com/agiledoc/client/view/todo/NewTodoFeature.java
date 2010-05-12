@@ -20,14 +20,14 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * the priority of the task in a web based form page.
  * 
  */
-public class NewTaskForm {
+public class NewTodoFeature {
 
 	private static TextBox path = new TextBox();
 	private static TextBox name = new TextBox();
 	private static TextArea description = new TextArea();
 	private static TextBox priority = new TextBox();
 
-	public NewTaskForm() {
+	public NewTodoFeature() {
 
 		GlobalVariables.getVP_BODY().clear();
 
@@ -75,7 +75,7 @@ public class NewTaskForm {
 
 	private static Button saveButton() {
 
-		Button button = new Button("Create New Task",
+		Button button = new Button("Create New Feature",
 
 		new ClickHandler() {
 
