@@ -2,6 +2,7 @@ package com.agiledoc.shared.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Project implements Serializable {
 
@@ -11,9 +12,15 @@ public class Project implements Serializable {
 
 	private String domain;
 
-	private String viewPackage;
+	private String featureFullPackage;
+
+	private String featureRelativePackage;
 
 	private Classe[] classes;
+
+	private Classe[] features;
+
+	private List<TodoClasse> todoList;
 
 	private ArrayList<Productivity> progressiveProductivity;
 
@@ -41,14 +48,20 @@ public class Project implements Serializable {
 
 	public void setDomain(String domain) {
 		this.domain = domain;
+		this.featureFullPackage = domain + "." + featureRelativePackage;
 	}
 
-	public String getViewPackage() {
-		return viewPackage;
+	public String getFeatureFullPackage() {
+		return featureFullPackage;
 	}
 
-	public void setViewPackage(String viewPackage) {
-		this.viewPackage = viewPackage;
+	public String getFeatureRelativePackage() {
+		return featureRelativePackage;
+	}
+
+	public void setFeatureRelativePackage(String featureRelativePackage) {
+		this.featureRelativePackage = featureRelativePackage;
+		this.featureFullPackage = domain + "." + featureRelativePackage;
 	}
 
 	public Classe[] getClasses() {
@@ -76,5 +89,20 @@ public class Project implements Serializable {
 		this.cumulativeProductivity = cumulativeProductivity;
 	}
 
+	public Classe[] getFeatures() {
+		return features;
+	}
+
+	public void setFeatures(Classe[] features) {
+		this.features = features;
+	}
+
+	public List<TodoClasse> getTodoList() {
+		return todoList;
+	}
+
+	public void setTodoList(List<TodoClasse> todoList) {
+		this.todoList = todoList;
+	}
+
 }
-	
