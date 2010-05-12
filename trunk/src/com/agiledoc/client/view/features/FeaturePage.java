@@ -46,7 +46,7 @@ public class FeaturePage {
 				+ classe.getName() + "</FONT></B>";
 
 		if (!classe.getPack().getFullName().equals(
-				GlobalVariables.getViewPath())) {
+				GlobalVariables.getProject().getFeatureFullPackage())) {
 
 			pack = "<B>" + classe.getPack().getName() + "</B>";
 		}
@@ -109,7 +109,8 @@ public class FeaturePage {
 
 		for (final String link : imports) {
 
-			if (link.contains(GlobalVariables.getViewPath())) {
+			if (link.contains(GlobalVariables.getProject()
+					.getFeatureFullPackage())) {
 
 				Anchor classeAnchor = new Anchor(ChangeNames
 						.getLastNameSpaced(link));
