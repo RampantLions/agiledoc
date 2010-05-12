@@ -1,6 +1,5 @@
 package com.agiledoc.client.view.features;
 
-import com.agiledoc.client.view.features.FeaturePage;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.util.ChangeNames;
@@ -32,7 +31,7 @@ public class FeaturesList extends Tree {
 		for (final Classe classe : GlobalVariables.getProject().getClasses()) {
 
 			if (classe.getPack().getFullName().equals(
-					GlobalVariables.getViewPath())) {
+					GlobalVariables.getProject().getFeatureFullPackage())) {
 
 				Anchor classeAnchor = new Anchor(classe.getName());
 				classeAnchor.addClickHandler(new ClickHandler() {
@@ -62,9 +61,10 @@ public class FeaturesList extends Tree {
 		for (final Classe classe : GlobalVariables.getProject().getClasses()) {
 
 			if (classe.getPack().getFullName().contains(
-					GlobalVariables.getViewPath())
+					GlobalVariables.getProject().getFeatureFullPackage())
 					&& !classe.getPack().getFullName().equals(
-							GlobalVariables.getViewPath())) {
+							GlobalVariables.getProject()
+									.getFeatureFullPackage())) {
 
 				Anchor classeAnchor = new Anchor(classe.getName());
 				classeAnchor.addClickHandler(new ClickHandler() {
@@ -79,7 +79,8 @@ public class FeaturesList extends Tree {
 					String itemName = ChangeNames
 							.spacedName(classe.getPack().getFullName()
 									.substring(
-											GlobalVariables.getViewPath()
+											GlobalVariables.getProject()
+													.getFeatureFullPackage()
 													.length() + 1));
 
 					packItem = new TreeItem(itemName);
