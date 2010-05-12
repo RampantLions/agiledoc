@@ -17,7 +17,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 		GreetingService {
 
 	@Override
-	public Classe[] listClasses(Project proj) {
+	public Project listClasses(Project proj) {
 
 		return ListSourceClasses.ListClasses(proj);
 	}
