@@ -6,7 +6,7 @@ import com.agiledoc.client.GreetingServiceAsync;
 import com.agiledoc.client.view.SystemMenu;
 import com.agiledoc.client.view.todo.ToDoView;
 import com.agiledoc.client.view.util.LoadingPanel;
-import com.agiledoc.shared.model.Classe;
+import com.agiledoc.shared.model.Project;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
@@ -24,14 +24,14 @@ public class ListSourceClasses {
 		GlobalVariables.setVP_BODY(LoadingPanel.show());
 
 		greetingService.listClasses(GlobalVariables.getProject(),
-				new AsyncCallback<Classe[]>() {
+				new AsyncCallback<Project>() {
 
-					public void onSuccess(Classe[] result) {
+					public void onSuccess(Project result) {
 
-						GlobalVariables.getProject().setClasses(result);
+						GlobalVariables.setProject(result);
 
 						SystemMenu.todoButton.setDown(true);
-						ToDoView.init();
+						new ToDoView();
 					}
 
 					public void onFailure(Throwable caught) {
