@@ -9,7 +9,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
  */
 public interface GreetingServiceAsync {
 
-	void listClasses(Project proj, AsyncCallback<Classe[]> callback);
+	void listClasses(Project proj, AsyncCallback<Project> callback);
 
 	void showClass(Project proj, Classe classe, AsyncCallback<String> callback);
 

@@ -11,7 +11,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 @RemoteServiceRelativePath("greet")
 public interface GreetingService extends RemoteService {
 
-	Classe[] listClasses(Project proj);
+	Project listClasses(Project proj);
 
 	String showClass(Project proj, Classe classe);
 
