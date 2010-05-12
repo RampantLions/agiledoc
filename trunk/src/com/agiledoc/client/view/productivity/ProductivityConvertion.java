@@ -12,9 +12,6 @@ public class ProductivityConvertion {
 
 	public static void count() {
 
-		String viewPath = GlobalVariables.getProject().getDomain() + "."
-				+ GlobalVariables.getProject().getViewPackage();
-
 		ArrayList<Productivity> dates = new ArrayList<Productivity>();
 
 		Productivity totals = new Productivity();
@@ -50,7 +47,8 @@ public class ProductivityConvertion {
 				totals.setToDoCounts(totals.getToDoCounts() + 1);
 			}
 
-			if (classe.getPack().getFullName().contains(viewPath)) {
+			if (classe.getPack().getFullName().contains(
+					GlobalVariables.getProject().getFeatureFullPackage())) {
 
 				classeMeasurement.setFeatureCounts(classeMeasurement
 						.getFeatureCounts() + 1);
