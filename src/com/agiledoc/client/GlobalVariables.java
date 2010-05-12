@@ -28,9 +28,4 @@ public class GlobalVariables {
 		VP_BODY.add(w);
 	}
 
-	public static String getViewPath() {
-
-		return getProject().getDomain() + "." + getProject().getViewPackage();
-	}
-
 }
