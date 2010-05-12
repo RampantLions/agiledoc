@@ -11,16 +11,16 @@ public class CreateClasse {
 
 	public CreateClasse(Project proj, Classe classe) throws Exception {
 
-		String pack = proj.getDomain() + "." + proj.getViewPackage() + "."
+		String pack = proj.getFeatureFullPackage() + "."
 				+ classe.getPack().getName().toLowerCase();
 
 		String filePath = proj.getRoot() + "/" + pack.replace('.', '/') + "/"
 				+ classe.getClassName().trim() + ".java";
 
 		String javaClass = "package " + pack + ";\n" + "\n" + "/** \n" + "* "
-				+ classe.getDescription() + " \n" + "* @todo \n" + "*/\n"
-				+ "public class " + classe.getClassName().trim() + " {\n"
-				+ "\n" + "}\n";
+				+ classe.getDescription() + " \n" + "* @todo "
+				+ classe.getPriority() + " \n" + "*/\n" + "public class "
+				+ classe.getClassName().trim() + " {\n" + "\n" + "}\n";
 
 		File f = new File(filePath);
 		f.createNewFile();
