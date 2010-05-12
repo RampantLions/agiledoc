@@ -1,5 +1,6 @@
 package com.agiledoc.client.view.features;
 
+import com.agiledoc.shared.model.Classe;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -7,18 +8,18 @@ import com.google.gwt.user.client.ui.Image;
 
 public class FeatureViewOptions extends HorizontalPanel {
 
-	public FeatureViewOptions() {
+	public FeatureViewOptions(Classe classe) {
 
 		setSpacing(10);
 
-		add(IconEditDescriptions());
+		add(IconEditDescriptions(classe));
 
-		add(IconJavadocView());
+		add(IconJavadocView(classe));
 
-		add(IconSourceView());
+		add(IconSourceView(classe));
 	}
 
-	private static Image IconEditDescriptions() {
+	private static Image IconEditDescriptions(final Classe classe) {
 
 		Image img = new Image("img/script_edit.gif");
 		img.addClickHandler(new ClickHandler() {
@@ -26,7 +27,7 @@ public class FeatureViewOptions extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				// ChangeProjectPage.init();
+				new EditFeatureDescription(classe);
 			}
 		});
 
@@ -35,7 +36,7 @@ public class FeatureViewOptions extends HorizontalPanel {
 		return img;
 	}
 
-	private static Image IconJavadocView() {
+	private static Image IconJavadocView(final Classe classe) {
 
 		Image img = new Image("img/javadoc.gif");
 		img.addClickHandler(new ClickHandler() {
@@ -52,7 +53,7 @@ public class FeatureViewOptions extends HorizontalPanel {
 		return img;
 	}
 
-	private static Image IconSourceView() {
+	private static Image IconSourceView(final Classe classe) {
 
 		Image img = new Image("img/script_gear.gif");
 		img.addClickHandler(new ClickHandler() {

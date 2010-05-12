@@ -35,7 +35,7 @@ public class FeaturePage {
 		}
 
 		hp.add(vp);
-		hp.add(new FeatureViewOptions());
+		hp.add(new FeatureViewOptions(classe));
 
 		FeaturesView.vpBodyScope.add(hp);
 	}
@@ -59,7 +59,7 @@ public class FeaturePage {
 		return new HTML(pack + name);
 	}
 
-	public static HorizontalPanel featureDescription(final Classe classe) {
+	private static HorizontalPanel featureDescription(final Classe classe) {
 
 		HorizontalPanel hp = new HorizontalPanel();
 
@@ -77,11 +77,11 @@ public class FeaturePage {
 		return hp;
 	}
 
-	public static Grid featureSteps(final Method[] meths) {
+	private static Grid featureSteps(final Method[] meths) {
 
 		Grid table = new Grid(meths.length * 3, 2);
 
-		table.getColumnFormatter().setWidth(0, "20");
+		table.getColumnFormatter().setWidth(0, "40");
 
 		for (int i = 0; i < meths.length; i++) {
 
@@ -104,7 +104,7 @@ public class FeaturePage {
 		return table;
 	}
 
-	public static VerticalPanel featureReferences(final String[] imports) {
+	private static VerticalPanel featureReferences(final String[] imports) {
 
 		VerticalPanel vp = new VerticalPanel();
 
