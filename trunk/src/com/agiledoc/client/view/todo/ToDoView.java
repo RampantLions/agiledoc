@@ -38,7 +38,7 @@ public class ToDoView {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new NewTaskForm();
+				new NewTodoFeature();
 			}
 		});
 
