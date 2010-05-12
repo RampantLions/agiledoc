@@ -1,45 +1,27 @@
 package com.agiledoc.client.view.todo;
 
+import java.util.List;
+
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Tag;
+import com.agiledoc.shared.model.TodoClasse;
 import com.google.gwt.user.client.ui.FlexTable;
 
-public class ToDoList {
+public class ToDoList extends FlexTable {
 
-	public static FlexTable showGrid() {
+	public ToDoList() {
 
-		FlexTable grid = new FlexTable();
-		grid.setBorderWidth(1);
-		grid.setCellPadding(5);
-		grid.setWidth("900");
+		setBorderWidth(1);
+		setCellPadding(4);
+		setWidth("900");
 
-		createHeader(grid);
+		gridColumns(this);
 
-		Classe[] classes = GlobalVariables.getProject().getClasses();
-
-		int row = 0;
-		for (int r = 0; r < classes.length; r++) {
-
-			Classe classe = classes[r];
-
-			if (Tag.TODO.equals(classe.getTask())) {
-
-				row++;
-
-				grid.setText(row, 0, "");
-				grid.setText(row, 1, classe.getName());
-				grid.setText(row, 2, classe.getDescription());
-				grid.setText(row, 3, "Author");
-				grid.setText(row, 4, "Date");
-			}
-		}
-
-		return grid;
-
+		gridRows(this);
 	}
 
-	public static void createHeader(FlexTable grid) {
+	public static void gridColumns(FlexTable grid) {
 
 		grid.setHTML(0, 0, "<B>Priority</B>");
 		grid.getColumnFormatter().setWidth(0, "50");
@@ -47,9 +29,31 @@ public class ToDoList {
 		grid.setHTML(0, 1, "<B>Task Name</B>");
 		grid.getColumnFormatter().setWidth(1, "200");
 
-		grid.setHTML(0, 2, "<B>Description</B>");
-		grid.setHTML(0, 3, "<B>Author</B>");
-		grid.setHTML(0, 4, "<B>Date</B>");
+		grid.setHTML(0, 2, "<B>Description</B>");		
+		
+		grid.setHTML(0, 3, "<B>Date</B>");
+		grid.getColumnFormatter().setWidth(3, "200");		
+	}
+
+	public static void gridRows(FlexTable grid) {
+
+		List<TodoClasse> classes = GlobalVariables.getProject().getTodoList();
+
+		int row = 0;
+		for (int r = 0; r < classes.size(); r++) {
+
+			Classe classe = classes.get(r).getClasse();
+
+			if (Tag.TODO.equals(classe.getTask())) {
+
+				row++;
+
+				grid.setText(row, 0, classe.getPriority() + "");
+				grid.setText(row, 1, classe.getName());
+				grid.setText(row, 2, classe.getDescription());
+				grid.setText(row, 3, classe.getDateModified().toString());
+			}
+		}
 	}
 
 }
