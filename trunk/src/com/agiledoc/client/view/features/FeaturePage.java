@@ -14,25 +14,30 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
- * 
- */
 public class FeaturePage {
 
 	public FeaturePage(Classe classe) {
 
 		FeaturesView.vpBodyScope.clear();
-		FeaturesView.vpBodyScope.add(featureName(classe));
-		FeaturesView.vpBodyScope.add(featureDescription(classe));
+
+		HorizontalPanel hp = new HorizontalPanel();
+
+		VerticalPanel vp = new VerticalPanel();
+		vp.add(featureName(classe));
+		vp.add(featureDescription(classe));
 
 		if (classe.getMethods() != null) {
-			FeaturesView.vpBodyScope.add(featureSteps(classe.getMethods()));
+			vp.add(featureSteps(classe.getMethods()));
 		}
 
 		if (classe.getImports() != null) {
-			FeaturesView.vpBodyScope
-					.add(featureReferences(classe.getImports()));
+			vp.add(featureReferences(classe.getImports()));
 		}
+
+		hp.add(vp);
+		hp.add(new FeatureViewOptions());
+
+		FeaturesView.vpBodyScope.add(hp);
 	}
 
 	/**
