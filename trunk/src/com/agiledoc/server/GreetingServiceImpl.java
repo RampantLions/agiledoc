@@ -3,7 +3,6 @@ package com.agiledoc.server;
 import com.agiledoc.client.GreetingService;
 import com.agiledoc.server.sourceClasses.CreateClasse;
 import com.agiledoc.server.sourceClasses.GetClasse;
-import com.agiledoc.server.sourceClasses.GetJavadocClass;
 import com.agiledoc.server.sourceClasses.ListSourceClasses;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Project;
@@ -20,12 +19,6 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 	public Project listClasses(Project proj) {
 
 		return ListSourceClasses.ListClasses(proj);
-	}
-
-	@Override
-	public String showClass(Project proj, Classe classe) {
-
-		return GetJavadocClass.showClass(proj, classe);
 	}
 
 	@Override
