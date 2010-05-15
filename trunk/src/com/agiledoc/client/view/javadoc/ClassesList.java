@@ -1,7 +1,6 @@
 package com.agiledoc.client.view.javadoc;
 
 import com.agiledoc.client.GlobalVariables;
-import com.agiledoc.client.control.GetJavadocClass;
 import com.agiledoc.shared.model.Classe;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -19,11 +18,13 @@ public class ClassesList {
 
 			if (pack == null || classe.getPack().getFullName().equals(pack)) {
 
-				Anchor classeAnchor = new Anchor(classe.getFullName());
+				Anchor classeAnchor = new Anchor(classe.getClasseDoc()
+						.getFullName());
 				classeAnchor.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
 
-						new GetJavadocClass(classe);
+						JavadocView.vpBodyJavadoc.add(new JavadocClassPage(
+								classe));
 					}
 				});
 

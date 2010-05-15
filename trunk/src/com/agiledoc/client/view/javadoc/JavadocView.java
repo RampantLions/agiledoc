@@ -1,7 +1,6 @@
 package com.agiledoc.client.view.javadoc;
 
 import com.agiledoc.client.GlobalVariables;
-import com.agiledoc.client.control.GetJavadocClass;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -19,7 +18,8 @@ public class JavadocView {
 		vpClassesJavadoc.clear();
 		vpClassesJavadoc.add(ClassesList.getClassesPanel(null));
 
-		new GetJavadocClass(GlobalVariables.getProject().getClasses()[0]);
+		JavadocView.vpBodyJavadoc.add(new JavadocClassPage(GlobalVariables
+				.getProject().getClasses()[0]));
 	}
 
 	public static FlexTable preparePage() {
