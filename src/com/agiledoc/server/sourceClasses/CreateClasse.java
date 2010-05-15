@@ -15,12 +15,13 @@ public class CreateClasse {
 				+ classe.getPack().getName().toLowerCase();
 
 		String filePath = proj.getRoot() + "/" + pack.replace('.', '/') + "/"
-				+ classe.getClassName().trim() + ".java";
+				+ classe.getClasseDoc().getClassName().trim() + ".java";
 
 		String javaClass = "package " + pack + ";\n" + "\n" + "/** \n" + "* "
-				+ classe.getDescription() + " \n" + "* @todo "
+				+ classe.getClasseDoc().getDescription() + " \n" + "* @todo "
 				+ classe.getPriority() + " \n" + "*/\n" + "public class "
-				+ classe.getClassName().trim() + " {\n" + "\n" + "}\n";
+				+ classe.getClasseDoc().getClassName().trim() + " {\n" + "\n"
+				+ "}\n";
 
 		File f = new File(filePath);
 		f.createNewFile();

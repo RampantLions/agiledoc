@@ -12,14 +12,16 @@ public class GetFileClasse {
 
 	public static File getFile(String root, Classe classe) {
 
-		String className = classe.getFullName();
+		String className = classe.getClasseDoc().getFullName();
 
-		if (classe.getClassName().indexOf('.') != -1) {
+		if (classe.getClasseDoc().getClassName().indexOf('.') != -1) {
 
-			className = classe.getFullName().substring(
-					0,
-					classe.getFullName().length()
-							- classe.getClassName().indexOf('.'));
+			className = classe.getClasseDoc().getFullName()
+					.substring(
+							0,
+							classe.getClasseDoc().getFullName().length()
+									- classe.getClasseDoc().getClassName()
+											.indexOf('.'));
 		}
 
 		String fileName = root + "/" + className.replace('.', '/') + ".java";
