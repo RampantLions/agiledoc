@@ -5,17 +5,11 @@ import java.util.Date;
 
 public class Classe implements Serializable {
 
-	private String fullName;
-
-	private String className;
-
-	private String name;
-
-	private String description;
-
 	private Pack pack;
 
-	private String modifiers;
+	private Classedoc classeDoc;
+
+	private String name;
 
 	private String task;
 
@@ -23,16 +17,20 @@ public class Classe implements Serializable {
 
 	private Date dateModified;
 
-	private Method[] methods;
-
-	private String[] imports;
-
-	public String getFullName() {
-		return fullName;
+	public Pack getPack() {
+		return pack;
 	}
 
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
+	public void setPack(Pack pack) {
+		this.pack = pack;
+	}
+
+	public Classedoc getClasseDoc() {
+		return classeDoc;
+	}
+
+	public void setClasseDoc(Classedoc classeDoc) {
+		this.classeDoc = classeDoc;
 	}
 
 	public String getName() {
@@ -43,44 +41,12 @@ public class Classe implements Serializable {
 		this.name = name;
 	}
 
-	public Pack getPack() {
-		return pack;
-	}
-
-	public void setPack(Pack pack) {
-		this.pack = pack;
-	}
-
 	public String getTask() {
 		return task;
 	}
 
 	public void setTask(String task) {
 		this.task = task;
-	}
-
-	public String getClassName() {
-		return className;
-	}
-
-	public void setClassName(String className) {
-		this.className = className;
-	}
-
-	public String getModifiers() {
-		return modifiers;
-	}
-
-	public void setModifiers(String modifiers) {
-		this.modifiers = modifiers;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	public int getPriority() {
@@ -91,28 +57,12 @@ public class Classe implements Serializable {
 		this.priority = priority;
 	}
 
-	public Method[] getMethods() {
-		return methods;
-	}
-
-	public void setMethods(Method[] methods) {
-		this.methods = methods;
-	}
-
 	public Date getDateModified() {
 		return dateModified;
 	}
 
 	public void setDateModified(Date dateModified) {
 		this.dateModified = dateModified;
-	}
-
-	public String[] getImports() {
-		return imports;
-	}
-
-	public void setImports(String[] imports) {
-		this.imports = imports;
 	}
 
 }
