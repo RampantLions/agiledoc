@@ -38,27 +38,24 @@ public class NewTodoFeature {
 		VerticalPanel vp = new VerticalPanel();
 		vp.setBorderWidth(1);
 
-		vp.add(taskFields());
+		vp.add(featureFields());
 
 		GlobalVariables.getVP_BODY().add(vp);
 	}
 
-	/**
-	 * Show a panel with the root and domain string to be changed by the user.
-	 */
-	public static VerticalPanel taskFields() {
+	public static VerticalPanel featureFields() {
 
 		VerticalPanel vp = new VerticalPanel();
 		vp.setSpacing(50);
 
-		HTML title = new HTML("<B>Enter the new Task information bellow: </B>");
+		HTML title = new HTML("<B>Enter the new feature bellow: </B>");
 		vp.add(title);
 
 		path.setWidth("300");
-		vp.add(new FormField("Task Path", path));
+		vp.add(new FormField("Path", path));
 
 		name.setWidth("300");
-		vp.add(new FormField("Task Name", name));
+		vp.add(new FormField("Name", name));
 
 		description.setSize("500", "40");
 		vp.add(new FormField("Description", description));
@@ -87,8 +84,8 @@ public class NewTodoFeature {
 
 				Classe classe = new Classe();
 				classe.setPack(pack);
-				classe.setClassName(name.getValue());
-				classe.setDescription(description.getValue());
+				classe.getClasseDoc().setClassName(name.getValue());
+				classe.getClasseDoc().setDescription(description.getValue());
 				classe.setPriority(Integer.parseInt(priority.getValue()));
 
 				new CreateTodoClass(classe);
