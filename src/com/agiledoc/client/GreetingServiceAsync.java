@@ -11,11 +11,9 @@ public interface GreetingServiceAsync {
 
 	void listClasses(Project proj, AsyncCallback<Project> callback);
 
-	void showClass(Project proj, Classe classe, AsyncCallback<String> callback);
+	void createClasse(Project proj, Classe classe, AsyncCallback<Void> callback);
 
 	void getClasse(Project proj, String className,
 			AsyncCallback<Classe> callback);
-
-	void createClasse(Project proj, Classe classe, AsyncCallback<Void> callback);
 
 }
