@@ -3,7 +3,6 @@ package com.agiledoc.client.view.todo;
 import java.util.List;
 
 import com.agiledoc.client.GlobalVariables;
-import com.agiledoc.client.view.features.EditFeatureDescription;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Tag;
 import com.agiledoc.shared.model.TodoClasse;
@@ -58,7 +57,7 @@ public class ToDoList extends FlexTable {
 
 				grid.setText(row, 0, classe.getPriority() + "");
 				grid.setText(row, 1, classe.getName());
-				grid.setText(row, 2, classe.getDescription());
+				grid.setText(row, 2, classe.getClasseDoc().getDescription());
 				grid.setText(row, 3, classe.getDateModified().toString());
 
 				HorizontalPanel hp = new HorizontalPanel();
@@ -79,7 +78,7 @@ public class ToDoList extends FlexTable {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new EditFeatureDescription(classe);
+				new EditTodoFeature(classe);
 			}
 		});
 
@@ -96,7 +95,7 @@ public class ToDoList extends FlexTable {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new EditFeatureDescription(classe);
+				// new EditFeatureDescription(classe);
 			}
 		});
 
