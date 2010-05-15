@@ -17,13 +17,13 @@ import com.google.gwt.user.client.ui.ToggleButton;
  */
 public class SystemMenu extends HorizontalPanel {
 
-	public static final ToggleButton todoButton = new ToggleButton("TO DO");
+	public static final ToggleButton todoButton = new ToggleButton("PLANNING");
 	private static final ToggleButton featuresButton = new ToggleButton(
-			"FEATURES");
+			"FEATURES LIST");
 	private static final ToggleButton productivityButton = new ToggleButton(
-			"PRODUCTIVITY");
+			"METRICS");
 	private static final ToggleButton javadocButton = new ToggleButton(
-			"JAVADOC");
+			"SOURCE CODE");
 
 	public SystemMenu() {
 
