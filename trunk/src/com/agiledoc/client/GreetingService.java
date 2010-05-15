@@ -13,10 +13,8 @@ public interface GreetingService extends RemoteService {
 
 	Project listClasses(Project proj);
 
-	String showClass(Project proj, Classe classe);
+	void createClasse(Project proj, Classe classe) throws Exception;
 
 	Classe getClasse(Project proj, String className);
-
-	void createClasse(Project proj, Classe classe) throws Exception;
 
 }
