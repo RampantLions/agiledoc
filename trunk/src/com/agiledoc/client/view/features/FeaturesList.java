@@ -19,7 +19,8 @@ public class FeaturesList extends Tree {
 
 		Classe initialClass = mainItems(this);
 
-		new FeaturePage(initialClass);
+		FeaturesView.vpBody.add(new FeaturePage(initialClass));
+		FeaturesView.hpViewOptions.add(new FeatureViewOptions(initialClass));
 
 		subItems(this);
 	}

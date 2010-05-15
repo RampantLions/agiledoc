@@ -13,31 +13,19 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class EditFeatureDescription {
+public class EditFeatureDescription extends VerticalPanel {
 
 	public EditFeatureDescription(Classe classe) {
 
-		FeaturesView.vpBodyScope.clear();
+		add(FeaturePage.featureName(classe));
+		add(featureDescription(classe));
 
-		HorizontalPanel hp = new HorizontalPanel();
-
-		VerticalPanel vp = new VerticalPanel();
-		vp.setWidth("700");
-		
-		vp.add(FeaturePage.featureName(classe));
-		vp.add(featureDescription(classe));
-
-		if (classe.getMethods() != null) {
-			vp.add(featureSteps(classe.getMethods()));
+		if (classe.getClasseDoc().getMethods() != null) {
+			add(featureSteps(classe.getClasseDoc().getMethods()));
 		}
 
-		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-		vp.add(saveButton());
-
-		hp.add(vp);
-		hp.add(new FeatureViewOptions(classe));
-
-		FeaturesView.vpBodyScope.add(hp);
+		setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+		add(saveButton());
 	}
 
 	private static HorizontalPanel featureDescription(final Classe classe) {
@@ -47,7 +35,7 @@ public class EditFeatureDescription {
 
 		TextArea textArea = new TextArea();
 		textArea.setSize("600", "40");
-		textArea.setText(classe.getDescription());
+		textArea.setText(classe.getClasseDoc().getDescription());
 
 		hp.add(textArea);
 		return hp;

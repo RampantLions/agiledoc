@@ -1,10 +1,10 @@
 package com.agiledoc.client.view.features;
 
-import com.agiledoc.client.view.features.FeaturesList;
 import com.agiledoc.client.GlobalVariables;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
@@ -13,7 +13,8 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 public class FeaturesView {
 
-	public static VerticalPanel vpBodyScope = new VerticalPanel();
+	public static VerticalPanel vpBody = new VerticalPanel();
+	public static HorizontalPanel hpViewOptions = new HorizontalPanel();
 
 	public FeaturesView() {
 
@@ -24,30 +25,30 @@ public class FeaturesView {
 		table.setBorderWidth(1);
 		table.setCellPadding(15);
 
-		featuresList(table);
-
-		featureShow(table);
-
-		GlobalVariables.setVP_BODY(table);
-	}
-
-	private static void featuresList(FlexTable table) {
-
 		table.getColumnFormatter().setWidth(0, "200");
 		table.getFlexCellFormatter().setHorizontalAlignment(0, 0,
 				HasHorizontalAlignment.ALIGN_LEFT);
 		table.getFlexCellFormatter().setVerticalAlignment(0, 0,
 				HasVerticalAlignment.ALIGN_TOP);
-		table.setWidget(0, 0, new FeaturesList());
-	}
 
-	private static void featureShow(FlexTable table) {
+		HorizontalPanel hpMain = new HorizontalPanel();
 
-		vpBodyScope.setSpacing(15);
+		vpBody.setWidth("700");
+		vpBody.setSpacing(15);
+		hpMain.add(vpBody);
+
+		HorizontalPanel hp = new HorizontalPanel();
+		hp.setSpacing(10);
+
+		hpMain.add(hp);
 
 		table.getFlexCellFormatter().setVerticalAlignment(0, 1,
 				HasVerticalAlignment.ALIGN_TOP);
-		table.setWidget(0, 1, vpBodyScope);
+		table.setWidget(0, 1, hpMain);
+
+		GlobalVariables.setVP_BODY(table);
+
+		table.setWidget(0, 0, new FeaturesList());
 	}
 
 }

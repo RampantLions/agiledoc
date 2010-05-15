@@ -1,5 +1,6 @@
 package com.agiledoc.client.view.features;
 
+import com.agiledoc.client.view.javadoc.JavadocClassPage;
 import com.agiledoc.shared.model.Classe;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -27,7 +28,8 @@ public class FeatureViewOptions extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new EditFeatureDescription(classe);
+				FeaturesView.vpBody.add(new EditFeatureDescription(classe));
+				FeaturesView.hpViewOptions.add(new FeatureViewOptions(classe));
 			}
 		});
 
@@ -44,7 +46,8 @@ public class FeatureViewOptions extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				// ChangeProjectPage.init();
+				FeaturesView.vpBody.add(new JavadocClassPage(classe));
+				FeaturesView.hpViewOptions.add(new FeatureViewOptions(classe));
 			}
 		});
 
@@ -61,7 +64,9 @@ public class FeatureViewOptions extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				// ChangeProjectPage.init();
+				// FeaturesView.vpBody.add(new JavadocClassPage(classe));
+				// FeaturesView.hpViewOptions.add(new
+				// FeatureViewOptions(classe));
 			}
 		});
 
