@@ -14,32 +14,21 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class FeaturePage {
+public class FeaturePage extends VerticalPanel {
 
 	public FeaturePage(Classe classe) {
 
-		FeaturesView.vpBodyScope.clear();
+		add(featureName(classe));
+		add(featureDescription(classe));
 
-		HorizontalPanel hp = new HorizontalPanel();
-
-		VerticalPanel vp = new VerticalPanel();
-		vp.setWidth("700");
-
-		vp.add(featureName(classe));
-		vp.add(featureDescription(classe));
-
-		if (classe.getMethods() != null) {
-			vp.add(featureSteps(classe.getMethods()));
+		if (classe.getClasseDoc().getMethods() != null) {
+			add(featureSteps(classe.getClasseDoc().getMethods()));
 		}
 
-		if (classe.getImports() != null) {
-			vp.add(featureReferences(classe.getImports()));
+		if (classe.getClasseDoc().getImports() != null) {
+			add(featureReferences(classe.getClasseDoc().getImports()));
 		}
 
-		hp.add(vp);
-		hp.add(new FeatureViewOptions(classe));
-
-		FeaturesView.vpBodyScope.add(hp);
 	}
 
 	/**
@@ -66,10 +55,11 @@ public class FeaturePage {
 		HorizontalPanel hp = new HorizontalPanel();
 
 		String text = null;
-		if (classe.getDescription() != null
-				&& !classe.getDescription().equals("")) {
+		if (classe.getClasseDoc().getDescription() != null
+				&& !classe.getClasseDoc().getDescription().equals("")) {
 
-			text = "<FONT SIZE=\"-1\">" + classe.getDescription() + "</FONT>";
+			text = "<FONT SIZE=\"-1\">"
+					+ classe.getClasseDoc().getDescription() + "</FONT>";
 
 			hp.setSpacing(20);
 			hp.setWidth("600");
