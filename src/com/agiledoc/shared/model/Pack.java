@@ -2,10 +2,8 @@ package com.agiledoc.shared.model;
 
 import java.io.Serializable;
 
-/**
- * @author allineo
- * @modified 04/15/2010
- */
+import com.agiledoc.shared.util.ChangeNames;
+
 public class Pack implements Serializable {
 
 	private String fullName;
@@ -18,6 +16,7 @@ public class Pack implements Serializable {
 
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
+		this.name = ChangeNames.getLastNameSpaced(fullName);
 	}
 
 	public String getName() {
