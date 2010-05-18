@@ -13,11 +13,31 @@ public class FeatureViewOptions extends HorizontalPanel {
 
 		setSpacing(10);
 
+		add(IconShowFeature(classe));
+
 		add(IconEditDescriptions(classe));
 
 		add(IconJavadocView(classe));
 
 		add(IconSourceView(classe));
+	}
+
+	private static Image IconShowFeature(final Classe classe) {
+
+		Image img = new Image("img/list.gif");
+		img.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				FeaturesView.showFeature(new FeaturePage(
+						FeaturesList.initialClass), FeaturesList.initialClass);
+			}
+		});
+
+		img.setTitle("Edit Descriptions");
+
+		return img;
 	}
 
 	private static Image IconEditDescriptions(final Classe classe) {
@@ -28,8 +48,8 @@ public class FeatureViewOptions extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				FeaturesView.vpBody.add(new EditFeatureDescription(classe));
-				FeaturesView.hpViewOptions.add(new FeatureViewOptions(classe));
+				FeaturesView.showFeature(new EditFeatureDescription(classe),
+						classe);
 			}
 		});
 
@@ -46,8 +66,7 @@ public class FeatureViewOptions extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				FeaturesView.vpBody.add(new JavadocClassPage(classe));
-				FeaturesView.hpViewOptions.add(new FeatureViewOptions(classe));
+				FeaturesView.showFeature(new JavadocClassPage(classe), classe);
 			}
 		});
 
@@ -64,9 +83,8 @@ public class FeatureViewOptions extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				// FeaturesView.vpBody.add(new JavadocClassPage(classe));
-				// FeaturesView.hpViewOptions.add(new
-				// FeatureViewOptions(classe));
+				// FeaturesView.showFeature(new
+				// JavadocClassPage(classe),classe);
 			}
 		});
 

@@ -1,11 +1,13 @@
 package com.agiledoc.client.view.features;
 
 import com.agiledoc.client.GlobalVariables;
+import com.agiledoc.shared.model.Classe;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.Widget;
 
 /**
  * In the features view, the system lists all the classes located inside the
@@ -13,8 +15,8 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 public class FeaturesView {
 
-	public static VerticalPanel vpBody = new VerticalPanel();
-	public static HorizontalPanel hpViewOptions = new HorizontalPanel();
+	private static VerticalPanel vpBody = new VerticalPanel();
+	private static HorizontalPanel hpViewOptions = new HorizontalPanel();
 
 	public FeaturesView() {
 
@@ -37,10 +39,8 @@ public class FeaturesView {
 		vpBody.setSpacing(15);
 		hpMain.add(vpBody);
 
-		HorizontalPanel hp = new HorizontalPanel();
-		hp.setSpacing(10);
-
-		hpMain.add(hp);
+		hpViewOptions.setSpacing(10);
+		hpMain.add(hpViewOptions);
 
 		table.getFlexCellFormatter().setVerticalAlignment(0, 1,
 				HasVerticalAlignment.ALIGN_TOP);
@@ -49,6 +49,18 @@ public class FeaturesView {
 		GlobalVariables.setVP_BODY(table);
 
 		table.setWidget(0, 0, new FeaturesList());
+
+		showFeature(new FeaturePage(FeaturesList.initialClass),
+				FeaturesList.initialClass);
+	}
+
+	public static void showFeature(Widget widget, Classe classe) {
+
+		vpBody.clear();
+		vpBody.add(widget);
+
+		hpViewOptions.clear();
+		hpViewOptions.add(new FeatureViewOptions(classe));
 	}
 
 }

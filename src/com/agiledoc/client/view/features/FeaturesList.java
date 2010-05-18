@@ -15,12 +15,11 @@ import com.google.gwt.user.client.ui.TreeItem;
  */
 public class FeaturesList extends Tree {
 
+	public static Classe initialClass = new Classe();
+
 	public FeaturesList() {
 
-		Classe initialClass = mainItems(this);
-
-		FeaturesView.vpBody.add(new FeaturePage(initialClass));
-		FeaturesView.hpViewOptions.add(new FeatureViewOptions(initialClass));
+		initialClass = mainItems(this);
 
 		subItems(this);
 	}

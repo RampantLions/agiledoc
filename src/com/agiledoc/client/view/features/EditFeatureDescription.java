@@ -17,6 +17,8 @@ public class EditFeatureDescription extends VerticalPanel {
 
 	public EditFeatureDescription(Classe classe) {
 
+		setWidth("700");
+		
 		add(FeaturePage.featureName(classe));
 		add(featureDescription(classe));
 

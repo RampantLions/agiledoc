@@ -18,6 +18,8 @@ public class FeaturePage extends VerticalPanel {
 
 	public FeaturePage(Classe classe) {
 
+		setWidth("700");
+		
 		add(featureName(classe));
 		add(featureDescription(classe));
 
