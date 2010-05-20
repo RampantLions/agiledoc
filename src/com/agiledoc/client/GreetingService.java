@@ -17,4 +17,6 @@ public interface GreetingService extends RemoteService {
 
 	Classe getClasse(Project proj, String className);
 
+	String getSourceCode(Project proj, Classe classe);
+
 }
