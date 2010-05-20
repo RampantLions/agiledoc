@@ -3,6 +3,7 @@ package com.agiledoc.server;
 import com.agiledoc.client.GreetingService;
 import com.agiledoc.server.sourceClasses.CreateClasse;
 import com.agiledoc.server.sourceClasses.GetClasse;
+import com.agiledoc.server.sourceClasses.GetFileClasse;
 import com.agiledoc.server.sourceClasses.ListSourceClasses;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Project;
@@ -33,4 +34,9 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 		new CreateClasse(proj, classe);
 	}
 
+	@Override
+	public String getSourceCode(Project proj, Classe classe) {
+
+		return GetFileClasse.getFileContent(proj.getRoot(), classe);
+	}
 }
