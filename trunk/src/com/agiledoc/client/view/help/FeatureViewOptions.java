@@ -1,5 +1,6 @@
 package com.agiledoc.client.view.help;
 
+import com.agiledoc.client.control.GetSourceCode;
 import com.agiledoc.client.view.javadoc.JavadocClassPage;
 import com.agiledoc.shared.model.Classe;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -17,7 +18,7 @@ public class FeatureViewOptions extends HorizontalPanel {
 
 		add(IconEditDescriptions(classe));
 
-		add(IconTestView(classe));	
+		add(IconTestView(classe));
 
 		add(IconJavadocView(classe));
 
@@ -104,8 +105,7 @@ public class FeatureViewOptions extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				// FeaturesView.showFeature(new
-				// JavadocClassPage(classe),classe);
+				new GetSourceCode(classe);
 			}
 		});
 
