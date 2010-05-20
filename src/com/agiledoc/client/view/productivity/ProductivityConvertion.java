@@ -60,7 +60,15 @@ public class ProductivityConvertion {
 			classeMeasurement.setClassesCounts(classeMeasurement
 					.getClassesCounts() + 1);
 
+			classeMeasurement.setStepsCounts(classeMeasurement.getStepsCounts()
+					+ classe.getClasseDoc().getConstructors().length
+					+ classe.getClasseDoc().getMethods().length);
+
 			totals.setClassesCounts(totals.getClassesCounts() + 1);
+
+			totals.setStepsCounts(totals.getStepsCounts()
+					+ classe.getClasseDoc().getConstructors().length
+					+ classe.getClasseDoc().getMethods().length);
 
 			if (dates.size() <= i) {
 
