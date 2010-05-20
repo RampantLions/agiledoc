@@ -13,7 +13,7 @@ public class TopPanel {
 
 		HorizontalPanel hp = new HorizontalPanel();
 
-		hp.setSize("100%", "20");
+		hp.setSize("100%", "40");
 		hp.setHorizontalAlignment(HorizontalPanel.ALIGN_CENTER);
 		hp.setVerticalAlignment(VerticalPanel.ALIGN_MIDDLE);
 
