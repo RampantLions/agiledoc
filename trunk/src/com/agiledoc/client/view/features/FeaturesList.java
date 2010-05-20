@@ -33,7 +33,13 @@ public class FeaturesList extends Tree {
 			if (classe.getPack().getFullName().equals(
 					GlobalVariables.getProject().getFeatureFullPackage())) {
 
-				Anchor classeAnchor = new Anchor(classe.getName());
+				String name = classe.getClasseDoc().getDescription();
+				if (name == null || name.equals("")) {
+					name = classe.getName();
+				}
+
+				Anchor classeAnchor = new Anchor("<B>* </B><small>" + name
+						+ "</small>", true);
 				classeAnchor.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
 
@@ -66,7 +72,13 @@ public class FeaturesList extends Tree {
 							GlobalVariables.getProject()
 									.getFeatureFullPackage())) {
 
-				Anchor classeAnchor = new Anchor(classe.getName());
+				String name = classe.getClasseDoc().getDescription();
+				if (name == null || name.equals("")) {
+					name = classe.getName();
+				}
+
+				Anchor classeAnchor = new Anchor("<B>* </B><small>" + name
+						+ "</small>", true);
 				classeAnchor.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
 
@@ -83,7 +95,7 @@ public class FeaturesList extends Tree {
 													.getFeatureFullPackage()
 													.length() + 1));
 
-					packItem = new TreeItem(itemName);
+					packItem = new TreeItem("<BR>" + itemName);
 					packItem.setState(true);
 				}
 
