@@ -4,6 +4,7 @@ import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.control.CreateTodoClass;
 import com.agiledoc.client.view.util.FormField;
 import com.agiledoc.shared.model.Classe;
+import com.agiledoc.shared.model.Classedoc;
 import com.agiledoc.shared.model.Pack;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -82,10 +83,14 @@ public class NewTodoFeature {
 				Pack pack = new Pack();
 				pack.setName(path.getValue());
 
+				Classedoc classeDoc = new Classedoc();
+				classeDoc.setClassName(name.getValue());
+				classeDoc.setDescription(description.getValue());
+
 				Classe classe = new Classe();
 				classe.setPack(pack);
-				classe.getClasseDoc().setClassName(name.getValue());
-				classe.getClasseDoc().setDescription(description.getValue());
+				classe.setClasseDoc(classeDoc);
+
 				classe.setPriority(Integer.parseInt(priority.getValue()));
 
 				new CreateTodoClass(classe);

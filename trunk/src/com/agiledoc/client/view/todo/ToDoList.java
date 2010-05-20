@@ -17,8 +17,7 @@ public class ToDoList extends FlexTable {
 	public ToDoList() {
 
 		setBorderWidth(1);
-		setCellPadding(4);
-		setWidth("900");
+		setWidth("1000");
 
 		gridColumns(this);
 
@@ -34,9 +33,10 @@ public class ToDoList extends FlexTable {
 		grid.getColumnFormatter().setWidth(1, "200");
 
 		grid.setHTML(0, 2, "<B>Description</B>");
+		grid.getColumnFormatter().setWidth(2, "700");
 
 		grid.setHTML(0, 3, "<B>Date</B>");
-		grid.getColumnFormatter().setWidth(3, "210");
+		grid.getColumnFormatter().setWidth(3, "260");
 
 		grid.setHTML(0, 4, " ");
 		grid.getColumnFormatter().setWidth(4, "50");
