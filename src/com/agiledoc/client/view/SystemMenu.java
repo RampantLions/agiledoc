@@ -1,6 +1,7 @@
 package com.agiledoc.client.view;
 
 import com.agiledoc.client.view.features.FeaturesView;
+import com.agiledoc.client.view.help.HelpView;
 import com.agiledoc.client.view.javadoc.JavadocView;
 import com.agiledoc.client.view.productivity.ProductivityView;
 import com.agiledoc.client.view.todo.ToDoView;
@@ -20,10 +21,12 @@ public class SystemMenu extends HorizontalPanel {
 	public static final ToggleButton todoButton = new ToggleButton("PLANNING");
 	private static final ToggleButton featuresButton = new ToggleButton(
 			"FEATURES LIST");
+	private static final ToggleButton helpButton = new ToggleButton(
+			"HELP PAGES");
 	private static final ToggleButton productivityButton = new ToggleButton(
 			"METRICS");
 	private static final ToggleButton javadocButton = new ToggleButton(
-			"SOURCE CODE");
+			"JAVADOC");
 
 	public SystemMenu() {
 
@@ -36,6 +39,12 @@ public class SystemMenu extends HorizontalPanel {
 		add(lb1);
 
 		add(featuresButton());
+
+		Label lb5 = new Label(" ");
+		lb5.setWidth("30");
+		add(lb5);
+
+		add(helpButton());
 
 		Label lb2 = new Label(" ");
 		lb2.setWidth("30");
@@ -60,8 +69,8 @@ public class SystemMenu extends HorizontalPanel {
 		todoButton.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
-				pushButtons(todoButton, featuresButton, productivityButton,
-						javadocButton);
+				pushButtons(todoButton, featuresButton, helpButton,
+						productivityButton, javadocButton);
 				new ToDoView();
 			}
 		});
@@ -77,8 +86,8 @@ public class SystemMenu extends HorizontalPanel {
 		featuresButton.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
-				pushButtons(featuresButton, todoButton, productivityButton,
-						javadocButton);
+				pushButtons(featuresButton, todoButton, helpButton,
+						productivityButton, javadocButton);
 
 				new FeaturesView();
 
@@ -89,6 +98,25 @@ public class SystemMenu extends HorizontalPanel {
 	}
 
 	/**
+	 * Help Button description
+	 */
+	private static ToggleButton helpButton() {
+
+		helpButton.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent sender) {
+
+				pushButtons(helpButton, todoButton, featuresButton,
+						productivityButton, javadocButton);
+
+				new HelpView();
+
+			}
+		});
+
+		return helpButton;
+	}
+
+	/**
 	 * Productivity Button description
 	 */
 	private static ToggleButton productivityButton() {
@@ -96,8 +124,8 @@ public class SystemMenu extends HorizontalPanel {
 		productivityButton.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
-				pushButtons(productivityButton, todoButton, featuresButton,
-						javadocButton);
+				pushButtons(productivityButton, todoButton, helpButton,
+						featuresButton, javadocButton);
 				ProductivityView.init();
 			}
 		});
@@ -114,7 +142,7 @@ public class SystemMenu extends HorizontalPanel {
 			public void onClick(ClickEvent sender) {
 
 				pushButtons(javadocButton, todoButton, featuresButton,
-						productivityButton);
+						helpButton, productivityButton);
 				JavadocView.init();
 			}
 		});
