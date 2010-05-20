@@ -4,6 +4,7 @@ import com.agiledoc.client.GlobalVariables;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
+import com.google.gwt.user.client.ui.Label;
 
 /**
  * In the features view, the system lists all the classes located inside the
@@ -14,9 +15,9 @@ public class FeaturesView {
 	public FeaturesView() {
 
 		GlobalVariables.getVP_BODY().clear();
+		GlobalVariables.getVP_BODY().add(new Label(" "));
 
 		FlexTable table = new FlexTable();
-		table.setSize("97%", "100%");
 		table.setBorderWidth(1);
 		table.setCellPadding(15);
 
@@ -25,7 +26,7 @@ public class FeaturesView {
 		table.getFlexCellFormatter().setVerticalAlignment(0, 0,
 				HasVerticalAlignment.ALIGN_TOP);
 
-		GlobalVariables.setVP_BODY(table);
+		GlobalVariables.getVP_BODY().add(table);
 
 		table.setWidget(0, 0, new FeaturesList());
 	}
