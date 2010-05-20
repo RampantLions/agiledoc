@@ -17,6 +17,8 @@ public class FeatureViewOptions extends HorizontalPanel {
 
 		add(IconEditDescriptions(classe));
 
+		add(IconTestView(classe));	
+
 		add(IconJavadocView(classe));
 
 		add(IconSourceView(classe));
@@ -30,12 +32,13 @@ public class FeatureViewOptions extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				HelpView.showFeature(new FeaturePage(
-						FeaturesList.initialClass), FeaturesList.initialClass);
+				HelpView.showFeature(
+						new FeaturePage(FeaturesList.initialClass),
+						FeaturesList.initialClass);
 			}
 		});
 
-		img.setTitle("Edit Descriptions");
+		img.setTitle("Show Feature");
 
 		return img;
 	}
@@ -48,12 +51,30 @@ public class FeatureViewOptions extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				HelpView.showFeature(new EditFeatureDescription(classe),
-						classe);
+				HelpView
+						.showFeature(new EditFeatureDescription(classe), classe);
 			}
 		});
 
 		img.setTitle("Edit Descriptions");
+
+		return img;
+	}
+
+	private static Image IconTestView(final Classe classe) {
+
+		Image img = new Image("img/unitTest.gif");
+		img.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				// FeaturesView.showFeature(new
+				// JavadocClassPage(classe),classe);
+			}
+		});
+
+		img.setTitle("Unit Test");
 
 		return img;
 	}
