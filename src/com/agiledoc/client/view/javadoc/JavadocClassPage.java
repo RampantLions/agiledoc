@@ -7,6 +7,11 @@ import com.agiledoc.shared.model.Method;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+/**
+ * 
+ * @todo 5
+ * 
+ */
 public class JavadocClassPage extends VerticalPanel {
 
 	public JavadocClassPage(Classe classe) {
