@@ -22,6 +22,7 @@ public class FeaturesList extends Tree {
 		initialClass = mainItems(this);
 
 		subItems(this);
+
 	}
 
 	public static Classe mainItems(Tree tree) {
@@ -37,7 +38,7 @@ public class FeaturesList extends Tree {
 				classeAnchor.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
 
-						new FeaturePage(classe);
+						HelpView.showFeature(new FeaturePage(classe), classe);
 					}
 				});
 
@@ -70,7 +71,7 @@ public class FeaturesList extends Tree {
 				classeAnchor.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
 
-						new FeaturePage(classe);
+						HelpView.showFeature(new FeaturePage(classe), classe);
 					}
 				});
 
@@ -95,6 +96,11 @@ public class FeaturesList extends Tree {
 					tree.addItem(packItem);
 					packItem.setState(true);
 				}
+			}
+
+			if (initialClass == null) {
+
+				initialClass = classe;
 			}
 		}
 	}
