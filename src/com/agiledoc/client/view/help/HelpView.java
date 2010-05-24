@@ -20,6 +20,11 @@ public class HelpView {
 
 	public HelpView() {
 
+		new HelpView(null);
+	}
+
+	public HelpView(Classe classe) {
+
 		GlobalVariables.getVP_BODY().clear();
 
 		FlexTable table = new FlexTable();
@@ -50,8 +55,14 @@ public class HelpView {
 
 		table.setWidget(0, 0, new FeaturesList());
 
-		showFeature(new FeaturePage(FeaturesList.initialClass),
-				FeaturesList.initialClass);
+		if (classe != null) {
+
+			showFeature(new FeaturePage(classe), classe);
+		} else {
+
+			showFeature(new FeaturePage(FeaturesList.initialClass),
+					FeaturesList.initialClass);
+		}
 	}
 
 	public static void showFeature(Widget widget, Classe classe) {
