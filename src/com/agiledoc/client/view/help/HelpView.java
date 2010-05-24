@@ -15,7 +15,7 @@ import com.google.gwt.user.client.ui.Widget;
  */
 public class HelpView {
 
-	private static VerticalPanel vpBody = new VerticalPanel();
+	public static VerticalPanel vpBody = new VerticalPanel();
 	private static HorizontalPanel hpViewOptions = new HorizontalPanel();
 
 	public HelpView() {

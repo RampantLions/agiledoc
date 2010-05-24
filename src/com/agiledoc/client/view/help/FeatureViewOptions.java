@@ -105,7 +105,7 @@ public class FeatureViewOptions extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new GetSourceCode(classe);
+				new GetSourceCode(classe, HelpView.vpBody);
 			}
 		});
 
