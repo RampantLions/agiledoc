@@ -3,15 +3,11 @@ package com.agiledoc.client.view.util;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class LoadingPanel {
+public class LoadingPanel extends VerticalPanel {
 
-	public static VerticalPanel show() {
+	public LoadingPanel() {
 
-		VerticalPanel vp = new VerticalPanel();
-
-		vp.add(new Image("img/large-loading.gif"));
-
-		return vp;
+		add(new Image("img/large-loading.gif"));
 	}
 
 }
