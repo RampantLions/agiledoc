@@ -1,5 +1,7 @@
 package com.agiledoc.client.view.todo;
 
+import java.util.ArrayList;
+
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.control.CreateTodoClass;
 import com.agiledoc.client.view.util.FormField;
@@ -11,7 +13,10 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.HasVerticalAlignment;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -23,7 +28,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 public class NewTodoFeature {
 
-	private static TextBox path = new TextBox();
+	private static ListBox path = new ListBox();
 	private static TextBox name = new TextBox();
 	private static TextArea description = new TextArea();
 	private static TextBox priority = new TextBox();
@@ -39,9 +44,66 @@ public class NewTodoFeature {
 		VerticalPanel vp = new VerticalPanel();
 		vp.setBorderWidth(1);
 
+		if (GlobalVariables.getProject().getFeaturesPacks() == null) {
+
+			getFeaturesPacks();
+		}
+
 		vp.add(featureFields());
 
 		GlobalVariables.getVP_BODY().add(vp);
+	}
+
+	private void getFeaturesPacks() {
+
+		ArrayList<Pack> packs = new ArrayList<Pack>();
+
+		String packName = "";
+
+		for (Classe feature : GlobalVariables.getProject().getFeatures()) {
+
+			if (!feature.getPack().getFullName().equals(packName)) {
+
+				packs.add(feature.getPack());
+
+				packName = feature.getPack().getFullName();
+			}
+		}
+
+		GlobalVariables.getProject().setFeaturesPacks(packs);
+	}
+
+	public static HorizontalPanel comboPackages() {
+
+		for (Pack pack : GlobalVariables.getProject().getFeaturesPacks()) {
+
+			path.addItem(pack.getName(), pack.getFullName());
+		}
+
+		HorizontalPanel hp = new HorizontalPanel();
+		hp.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
+
+		Label title = new Label("Package: ");
+		title.setWidth("100");
+		hp.add(title);
+
+		path.setWidth("300");
+		hp.add(path);
+
+		hp.add(new Label(" "));
+
+		Button button = new Button("New Package",
+
+		new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+			}
+		});
+		hp.add(button);
+
+		return hp;
 	}
 
 	public static VerticalPanel featureFields() {
@@ -52,8 +114,7 @@ public class NewTodoFeature {
 		HTML title = new HTML("<B>Enter the new feature bellow: </B>");
 		vp.add(title);
 
-		path.setWidth("300");
-		vp.add(new FormField("Path", path));
+		vp.add(comboPackages());
 
 		name.setWidth("300");
 		vp.add(new FormField("Name", name));
@@ -81,7 +142,7 @@ public class NewTodoFeature {
 			public void onClick(ClickEvent event) {
 
 				Pack pack = new Pack();
-				pack.setName(path.getValue());
+				pack.setName(path.getValue(path.getSelectedIndex()));
 
 				Classedoc classeDoc = new Classedoc();
 				classeDoc.setClassName(name.getValue());
