@@ -47,8 +47,11 @@ public class ListSourceClasses {
 
 		Collections.sort(todoList);
 
+		featuresMainItems.addAll(featuresSubItems);
+
 		proj.setClasses(classes);
 		proj.setTodoList(todoList);
+		proj.setFeatures(featuresMainItems);
 
 		return proj;
 	}
