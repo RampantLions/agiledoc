@@ -143,7 +143,7 @@ public class NewTodoFeature {
 			public void onClick(ClickEvent event) {
 
 				Pack pack = new Pack();
-				pack.setName(path.getValue(path.getSelectedIndex()));
+				pack.setFullName(path.getValue(path.getSelectedIndex()));
 
 				Classedoc classeDoc = new Classedoc();
 				classeDoc.setClassName(name.getValue());
