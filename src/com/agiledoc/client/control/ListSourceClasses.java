@@ -21,7 +21,7 @@ public class ListSourceClasses {
 
 	public ListSourceClasses() {
 
-		GlobalVariables.setVP_BODY(LoadingPanel.show());
+		GlobalVariables.setVP_BODY(new LoadingPanel());
 
 		greetingService.listClasses(GlobalVariables.getProject(),
 				new AsyncCallback<Project>() {
