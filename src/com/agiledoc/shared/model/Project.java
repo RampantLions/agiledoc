@@ -18,7 +18,9 @@ public class Project implements Serializable {
 
 	private Classe[] classes;
 
-	private Classe[] features;
+	private List<Pack> featuresPacks;
+
+	private List<Classe> features;
 
 	private List<TodoClasse> todoList;
 
@@ -89,11 +91,11 @@ public class Project implements Serializable {
 		this.cumulativeProductivity = cumulativeProductivity;
 	}
 
-	public Classe[] getFeatures() {
+	public List<Classe> getFeatures() {
 		return features;
 	}
 
-	public void setFeatures(Classe[] features) {
+	public void setFeatures(List<Classe> features) {
 		this.features = features;
 	}
 
@@ -103,6 +105,14 @@ public class Project implements Serializable {
 
 	public void setTodoList(List<TodoClasse> todoList) {
 		this.todoList = todoList;
+	}
+
+	public List<Pack> getFeaturesPacks() {
+		return featuresPacks;
+	}
+
+	public void setFeaturesPacks(List<Pack> featuresPacks) {
+		this.featuresPacks = featuresPacks;
 	}
 
 }
