@@ -3,11 +3,12 @@ package com.agiledoc.client.control;
 import com.agiledoc.client.GlobalVariables;
 import com.agiledoc.client.GreetingService;
 import com.agiledoc.client.GreetingServiceAsync;
-import com.agiledoc.client.view.features.SourceCodePage;
-import com.agiledoc.client.view.help.HelpView;
+import com.agiledoc.client.view.sourceCode.SourceCodePage;
+import com.agiledoc.client.view.util.LoadingPanel;
 import com.agiledoc.shared.model.Classe;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class GetSourceCode {
 
@@ -18,15 +19,18 @@ public class GetSourceCode {
 	private final GreetingServiceAsync greetingService = GWT
 			.create(GreetingService.class);
 
-	public GetSourceCode(final Classe classe) {
+	public GetSourceCode(final Classe classe, final VerticalPanel vpanel) {
+
+		vpanel.clear();
+	//	vpanel.add(new LoadingPanel());
 
 		greetingService.getSourceCode(GlobalVariables.getProject(), classe,
 				new AsyncCallback<String>() {
 
 					public void onSuccess(String result) {
 
-						HelpView.showFeature(
-								new SourceCodePage(classe, result), classe);
+						vpanel.clear();
+						vpanel.add(new SourceCodePage(classe, result));
 					}
 
 					public void onFailure(Throwable caught) {
