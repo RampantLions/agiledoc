@@ -1,6 +1,7 @@
 package com.agiledoc.client.view.features;
 
 import com.agiledoc.client.GlobalVariables;
+import com.agiledoc.client.view.help.HelpView;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.util.ChangeNames;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -43,7 +44,7 @@ public class FeaturesList extends Tree {
 				classeAnchor.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
 
-						new FeaturePage(classe);
+						new HelpView(classe);
 					}
 				});
 
@@ -82,7 +83,7 @@ public class FeaturesList extends Tree {
 				classeAnchor.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
 
-						new FeaturePage(classe);
+						new HelpView(classe);
 					}
 				});
 
