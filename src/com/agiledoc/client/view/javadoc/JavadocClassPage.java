@@ -29,8 +29,8 @@ public class JavadocClassPage extends VerticalPanel {
 		String html = "<HR>" + "<!-- ======== START OF CLASS DATA ======== -->"
 				+ "<H2>" + "<FONT SIZE=\"-1\">"
 				+ classe.getPack().getFullName() + "</FONT>" + "<BR>"
-				+ "Class " + classe.getName() + "</H2>" + "<PRE>"
-				+ classe.getClasseDoc().getSuperclass() + "<BR>"
+				+ "Class " + classe.getClasseDoc().getClassName() + "</H2>"
+				+ "<PRE>" + classe.getClasseDoc().getSuperclass() + "<BR>"
 				+ "<IMG SRC=\"img/inherit.gif\" ALT=\"extended by \">" + "<B>"
 				+ classe.toString() + "</B></PRE>";
 
