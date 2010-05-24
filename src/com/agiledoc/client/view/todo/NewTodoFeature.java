@@ -75,6 +75,7 @@ public class NewTodoFeature {
 
 	public static HorizontalPanel comboPackages() {
 
+		path.clear();
 		for (Pack pack : GlobalVariables.getProject().getFeaturesPacks()) {
 
 			path.addItem(pack.getName(), pack.getFullName());
