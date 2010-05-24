@@ -11,8 +11,7 @@ public class CreateClasse {
 
 	public CreateClasse(Project proj, Classe classe) throws Exception {
 
-		String pack = proj.getFeatureFullPackage() + "."
-				+ classe.getPack().getName().toLowerCase();
+		String pack = classe.getPack().getFullName();
 
 		String filePath = proj.getRoot() + "/" + pack.replace('.', '/') + "/"
 				+ classe.getClasseDoc().getClassName().trim() + ".java";
