@@ -29,7 +29,14 @@ public class JavadocView {
 		table.setSize("97%", "100%");
 
 		table.getColumnFormatter().setWidth(0, "300");
+
+		table.getFlexCellFormatter().setVerticalAlignment(0, 0,
+				HasVerticalAlignment.ALIGN_TOP);
 		table.setWidget(0, 0, PacksList.getPacksPanel());
+
+		table.getFlexCellFormatter().setVerticalAlignment(1, 0,
+				HasVerticalAlignment.ALIGN_TOP);
+		table.getFlexCellFormatter().setHeight(1, 0, "400");
 		table.setWidget(1, 0, vpClassesJavadoc);
 
 		vpBodyJavadoc.setSpacing(20);

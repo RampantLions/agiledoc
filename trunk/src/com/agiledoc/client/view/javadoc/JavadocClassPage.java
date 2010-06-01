@@ -26,13 +26,12 @@ public class JavadocClassPage extends VerticalPanel {
 
 	public static HTML classHeader(Classe classe) {
 
-		String html = "<HR>" + "<!-- ======== START OF CLASS DATA ======== -->"
-				+ "<H2>" + "<FONT SIZE=\"-1\">"
+		String html = "<HR>" + "<H2>" + "<FONT SIZE=\"-1\">"
 				+ classe.getPack().getFullName() + "</FONT>" + "<BR>"
 				+ "Class " + classe.getClasseDoc().getClassName() + "</H2>"
 				+ "<PRE>" + classe.getClasseDoc().getSuperclass() + "<BR>"
 				+ "<IMG SRC=\"img/inherit.gif\" ALT=\"extended by \">" + "<B>"
-				+ classe.toString() + "</B></PRE>";
+				+ classe.getClasseDoc().getFullName() + "</B></PRE>";
 
 		html += "<HR><DL>" + "<DT><PRE>" + classe.getClasseDoc().getModifiers()
 				+ " class <B>" + classe.getClasseDoc().getClassName()
@@ -45,9 +44,7 @@ public class JavadocClassPage extends VerticalPanel {
 
 	public static HTML fieldSummary(Classedoc classe) {
 
-		String html = "<!-- =========== FIELD SUMMARY =========== -->"
-				+ "<A NAME=\"field_summary\"><!-- --></A>"
-				+ "<TABLE BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">"
+		String html = "<TABLE BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\">"
 				+ "<TR BGCOLOR=\"#CCCCFF\" CLASS=\"TableHeadingColor\">"
 				+ "<TH ALIGN=\"left\" COLSPAN=\"2\"><FONT SIZE=\"+2\">"
 				+ "<B>Field Summary</B></FONT></TH></TR>";
@@ -57,9 +54,8 @@ public class JavadocClassPage extends VerticalPanel {
 			html += "<TR BGCOLOR=\"white\" CLASS=\"TableRowColor\">"
 					+ "<TD ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"><FONT SIZE=\"-1\">"
 					+ "<CODE>" + field.getType() + "</CODE></FONT></TD>"
-					+ "<TD><CODE><B><A HREF=\" " + "#" + field.getName()
-					+ "\">" + field.getName() + "</A></B>"
-					+ "</CODE><BR></TD></TR>";
+					+ "<TD><CODE><B><A HREF=\"\">" + field.getName()
+					+ "</A></B>" + "</CODE><BR></TD></TR>";
 
 		}
 
@@ -70,21 +66,17 @@ public class JavadocClassPage extends VerticalPanel {
 
 	public static HTML constructorSummary(Classedoc classe) {
 
-		String html = "<!-- ======== CONSTRUCTOR SUMMARY ======== -->"
-				+ "<A NAME=\"constructor_summary\"><!-- --></A>"
-				+ "<TABLE BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">"
+		String html = "<TABLE BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" >"
 				+ "<TR BGCOLOR=\"#CCCCFF\" CLASS=\"TableHeadingColor\">"
 				+ "<TH ALIGN=\"left\" COLSPAN=\"2\"><FONT SIZE=\"+2\">"
-				+ "<B>Constructor Summary</B></FONT></TH>" + "</TR>"
-				+ "<TR BGCOLOR=\"white\" CLASS=\"TableRowColor\">" + "<TD>";
+				+ "<B>Constructor Summary</B></FONT></TH>"
+				+ "</TR>"
+				+ "<TR BGCOLOR=\"white\" CLASS=\"TableRowColor\"><TD>";
 
 		for (Method cd : classe.getConstructors()) {
 
-			html += "<CODE><B><A HREF=\""
-					+ "../../../../../../../org/paceproject/palms/browser/client/control/calculation/AddCalculation.html"
-					+ "#" + cd.getName() + "(" + cd.getParameters() + ")\">"
-					+ cd.getName() + "</A></B>" + "(" + cd.getParameters()
-					+ ")</CODE><BR>";
+			html += "<CODE><B><A HREF=\"\">" + cd.getName() + "</A></B>" + "("
+					+ cd.getParameters() + ")</CODE><BR>";
 
 		}
 
@@ -95,9 +87,7 @@ public class JavadocClassPage extends VerticalPanel {
 
 	public static HTML methodSummary(Classedoc classe) {
 
-		String html = "<!-- ========== METHOD SUMMARY =========== -->"
-				+ "<A NAME=\"method_summary\"><!-- --></A>"
-				+ "<TABLE BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">"
+		String html = "<TABLE BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" >"
 				+ "<TR BGCOLOR=\"#CCCCFF\" CLASS=\"TableHeadingColor\">"
 				+ "<TH ALIGN=\"left\" COLSPAN=\"2\"><FONT SIZE=\"+2\">"
 				+ "<B>Method Summary</B></FONT></TH>" + "</TR>";
@@ -109,8 +99,7 @@ public class JavadocClassPage extends VerticalPanel {
 					+ "<CODE>"
 					+ met.getReturnType()
 					+ "</CODE></FONT></TD>"
-					+ "<TD><CODE><B><A HREF=\"../../../../../../org/paceproject/palms/browser/client/model/ObservationSetListUIEntity.html"
-					+ "#" + met.getName() + "(" + met.getParameters() + ")\">"
+					+ "<TD><CODE><B><A HREF=\"\">"
 					+ met.getName() + "</A></B>" + "(" + met.getParameters()
 					+ ")"
 					+ "<BR>&nbsp;&nbsp;&nbsp;&nbsp;<span class=jsdocComment>"
