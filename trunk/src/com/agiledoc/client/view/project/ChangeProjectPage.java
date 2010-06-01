@@ -1,7 +1,7 @@
 package com.agiledoc.client.view.project;
 
 import com.agiledoc.client.GlobalVariables;
-import com.agiledoc.client.control.ListSourceClasses;
+import com.agiledoc.client.logic.ListSourceClasses;
 import com.agiledoc.client.view.util.FormField;
 import com.agiledoc.shared.data.ProjectsData;
 import com.agiledoc.shared.model.Project;
