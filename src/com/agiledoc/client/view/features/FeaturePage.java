@@ -1,7 +1,7 @@
 package com.agiledoc.client.view.features;
 
 import com.agiledoc.client.GlobalVariables;
-import com.agiledoc.client.control.GetFeatureClass;
+import com.agiledoc.client.logic.GetFeatureClass;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Method;
 import com.agiledoc.shared.util.ChangeNames;
