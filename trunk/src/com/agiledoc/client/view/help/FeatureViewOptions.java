@@ -1,6 +1,6 @@
 package com.agiledoc.client.view.help;
 
-import com.agiledoc.client.control.GetSourceCode;
+import com.agiledoc.client.logic.GetSourceCode;
 import com.agiledoc.client.view.javadoc.JavadocClassPage;
 import com.agiledoc.shared.model.Classe;
 import com.google.gwt.event.dom.client.ClickEvent;
