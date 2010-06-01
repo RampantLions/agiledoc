@@ -1,7 +1,7 @@
 package com.agiledoc.client.view.sourceCode;
 
 import com.agiledoc.client.GlobalVariables;
-import com.agiledoc.client.control.GetSourceCode;
+import com.agiledoc.client.logic.GetSourceCode;
 import com.agiledoc.shared.model.Classe;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
