@@ -68,7 +68,7 @@ public class ListSourceMethods {
 			String ename = type.isPrimitive() ? type.typeName() : type
 					.asClassDoc().name();
 
-			result += ename + ps[i].name();
+			result += ename + " " + ps[i].name();
 
 			if (i < ps.length - 1) {
 				result += ", ";
