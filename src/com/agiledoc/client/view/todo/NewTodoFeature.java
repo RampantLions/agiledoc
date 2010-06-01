@@ -3,7 +3,7 @@ package com.agiledoc.client.view.todo;
 import java.util.ArrayList;
 
 import com.agiledoc.client.GlobalVariables;
-import com.agiledoc.client.control.CreateTodoClass;
+import com.agiledoc.client.logic.CreateTodoClass;
 import com.agiledoc.client.view.util.FormField;
 import com.agiledoc.shared.model.Classe;
 import com.agiledoc.shared.model.Classedoc;
