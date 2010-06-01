@@ -13,6 +13,8 @@ public class ClassesList {
 	public static ScrollPanel getClassesPanel(String pack) {
 
 		VerticalPanel vp = new VerticalPanel();
+		vp.setSize("100%", "100%");
+		vp.setSpacing(5);
 
 		for (final Classe classe : GlobalVariables.getProject().getClasses()) {
 
@@ -23,6 +25,7 @@ public class ClassesList {
 				classeAnchor.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
 
+						JavadocView.vpBodyJavadoc.clear();
 						JavadocView.vpBodyJavadoc.add(new JavadocClassPage(
 								classe));
 					}
@@ -33,7 +36,7 @@ public class ClassesList {
 		}
 
 		ScrollPanel spClasses = new ScrollPanel(vp);
-		spClasses.setHeight("400");
+		spClasses.setSize("100%", "440");
 		spClasses.setAlwaysShowScrollBars(true);
 
 		return spClasses;

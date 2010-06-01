@@ -13,7 +13,9 @@ public class PacksList {
 	public static ScrollPanel getPacksPanel() {
 
 		VerticalPanel vp = new VerticalPanel();
-
+		vp.setSize("100%", "100%");
+		vp.setSpacing(5);
+		
 		String pacName = "";
 
 		for (Classe classe : GlobalVariables.getProject().getClasses()) {
