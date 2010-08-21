@@ -1,19 +1,33 @@
 package agiledoc.client.features;
 
-import com.google.gwt.user.client.ui.Label;
+import java.util.List;
+
+import agiledoc.client.navigation.LoadingPanel;
+import agiledoc.client.serverConnection.ListRemoteClasses;
+import agiledoc.shared.Feature;
+
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class FeaturesPage extends VerticalPanel {
+public class FeaturesPage extends HorizontalPanel {
+
+	public static VerticalPanel featuresTreePanel = new VerticalPanel();
+	public static VerticalPanel featureContent = new VerticalPanel();
 
 	public FeaturesPage() {
 
-		setSpacing(20);
+		add(featuresTreePanel);
+		add(featureContent);
 
-		add(new Label("Features"));
+		featuresTreePanel.add(new LoadingPanel());
 
-		// Start Feature Tree Page
+		new ListRemoteClasses();
+	}
 
-		// Show Feature Tree
+	public static void ShowFeatureTree(List<Feature> features) {
+
+		featuresTreePanel.clear();
+		featuresTreePanel.add(new FeaturesTree(features));
 	}
 
 }
