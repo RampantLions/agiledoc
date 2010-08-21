@@ -16,8 +16,8 @@ public class ButtonFeatures extends Button {
 		addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
-				MainPage.panelSystemContent.clear();
-				MainPage.panelSystemContent.add(new FeaturesPage());
+				MainPage.panelContent.clear();
+				MainPage.panelContent.add(new FeaturesPage());
 			}
 		});
 	}
