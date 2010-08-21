@@ -6,16 +6,20 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class MainPage extends VerticalPanel {
 
-	public static VerticalPanel panelSystemContent = new VerticalPanel();
+	public static VerticalPanel panelContent = new VerticalPanel();
 
 	public MainPage() {
 
 		setSize("100%", "100%");
 
+		panelContent.setSize("100%", "100%");
+
+		panelContent.setSpacing(20);
+
 		ShowSystemMenu();
 
-		this.add(panelSystemContent);
-		
+		this.add(panelContent);
+
 		ShowWelcomePage();
 	}
 
@@ -23,9 +27,9 @@ public class MainPage extends VerticalPanel {
 
 		this.add(new SystemMenu());
 	}
-	
+
 	private void ShowWelcomePage() {
 
-		panelSystemContent.add(new WelcomePage());
+		panelContent.add(new WelcomePage());
 	}
 }
