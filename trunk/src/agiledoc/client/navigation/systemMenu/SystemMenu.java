@@ -6,7 +6,11 @@ public class SystemMenu extends HorizontalPanel {
 
 	public SystemMenu() {
 
+		setSpacing(10);
+		
 		add(new ButtonFeatures());
+
+		add(new ButtonActivity());
 	}
 
 }
