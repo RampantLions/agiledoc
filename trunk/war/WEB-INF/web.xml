@@ -5,6 +5,17 @@
 
 <web-app>
   
+    <!-- Servlets -->
+  <servlet>
+    <servlet-name>remoteClassLoad</servlet-name>
+    <servlet-class>agiledoc.server.remoteClassLoad.RemoteClassLoadImplementation</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>remoteClassLoad</servlet-name>
+    <url-pattern>/agiledoc/remoteClassLoad</url-pattern>
+  </servlet-mapping>
+  
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>AgileDoc.html</welcome-file>
