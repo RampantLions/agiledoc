@@ -17,7 +17,6 @@ public class FeaturesTree extends Tree {
 		ListFiles(entries);
 
 		ListSubFolders(entries);
-
 	}
 
 	private void ListFiles(List<Entry> entries) {
@@ -26,16 +25,21 @@ public class FeaturesTree extends Tree {
 
 			if (entry.isFile()) {
 
-				Anchor featureAnchor = new Anchor(entry.getEntryName());
-				featureAnchor.addClickHandler(new ClickHandler() {
-					public void onClick(ClickEvent sender) {
-
-					}
-				});
-
-				this.addItem(featureAnchor);
+				this.addItem(getFeatureAnchor(entry));
 			}
 		}
+	}
+
+	private Anchor getFeatureAnchor(Entry entry) {
+
+		Anchor featureAnchor = new Anchor(entry.getFeature().getFeatureName());
+		featureAnchor.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent sender) {
+
+			}
+		});
+
+		return featureAnchor;
 	}
 
 	private void ListSubFolders(List<Entry> entries) {
@@ -44,9 +48,10 @@ public class FeaturesTree extends Tree {
 
 			if (!entry.isFile()) {
 
-				TreeItem packItem = new TreeItem(entry.getEntryName());
+				TreeItem subItem = new TreeItem(entry.getFeature()
+						.getFeatureName());
 
-				this.addItem(packItem);
+				this.addItem(subItem);
 			}
 		}
 	}
