@@ -3,7 +3,7 @@ package agiledoc.client.serverConnection;
 import java.util.List;
 
 import agiledoc.client.features.FeaturesPage;
-import agiledoc.shared.Feature;
+import agiledoc.shared.Entry;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -15,11 +15,11 @@ public class ListRemoteClasses {
 
 	public ListRemoteClasses() {
 
-		remoteFunctions.ListFeatures(new AsyncCallback<List<Feature>>() {
+		remoteFunctions.ListFeatures(new AsyncCallback<List<Entry>>() {
 
-			public void onSuccess(List<Feature> features) {
+			public void onSuccess(List<Entry> entries) {
 
-				FeaturesPage.ShowFeatureTree(features);
+				FeaturesPage.ShowFeatureTree(entries);
 			}
 
 			public void onFailure(Throwable caught) {
