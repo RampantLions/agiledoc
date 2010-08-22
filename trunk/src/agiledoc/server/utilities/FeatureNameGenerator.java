@@ -24,6 +24,17 @@ public class FeatureNameGenerator {
 
 		return lastName;
 	}
+	
+	/**
+	 * Return the name of the file without its extension after the "."
+	 */
+	public static String removeFileExtension(String fileName) {
+		
+		String[] names = fileName.split("\\.");
+		String name = names[0];
+
+		return name;
+	}
 
 	/**
 	 * Fill with spaces a name that is truncated.
