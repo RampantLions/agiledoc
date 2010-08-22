@@ -7,13 +7,13 @@
   
     <!-- Servlets -->
   <servlet>
-    <servlet-name>remoteClassLoad</servlet-name>
-    <servlet-class>agiledoc.server.remoteClassLoad.RemoteClassLoadImplementation</servlet-class>
+    <servlet-name>remoteClassLoader</servlet-name>
+    <servlet-class>agiledoc.server.remoteClassLoader.RemoteClassLoaderImplementation</servlet-class>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>remoteClassLoad</servlet-name>
-    <url-pattern>/agiledoc/remoteClassLoad</url-pattern>
+    <servlet-name>remoteClassLoader</servlet-name>
+    <url-pattern>/agiledoc/remoteClassLoader</url-pattern>
   </servlet-mapping>
   
   <!-- Default page to serve -->
