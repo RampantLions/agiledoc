@@ -5,7 +5,7 @@ import agiledoc.client.navigation.MainPage;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.RootPanel;
 
-public class AgileDocInitialization implements EntryPoint {
+public class SystemInitialization implements EntryPoint {
 
 	MainPage mainPage = new MainPage();
 
