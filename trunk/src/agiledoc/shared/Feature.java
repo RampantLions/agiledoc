@@ -1,28 +1,23 @@
 package agiledoc.shared;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Feature implements Serializable {
 
-	// private Pack pack;
+	private static final long serialVersionUID = 1L;
 
-	// private Classedoc classeDoc;
-
-	private String name;
+	private String featureName;
 
 	private String task;
 
 	private int priority;
 
-	private Date dateModified;
-
-	public String getName() {
-		return name;
+	public String getFeatureName() {
+		return featureName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFeatureName(String featureName) {
+		this.featureName = featureName;
 	}
 
 	public String getTask() {
@@ -39,14 +34,6 @@ public class Feature implements Serializable {
 
 	public void setPriority(int priority) {
 		this.priority = priority;
-	}
-
-	public Date getDateModified() {
-		return dateModified;
-	}
-
-	public void setDateModified(Date dateModified) {
-		this.dateModified = dateModified;
 	}
 
 }
