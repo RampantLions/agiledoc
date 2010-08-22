@@ -25,7 +25,7 @@ public class RemoteClassLoaderImplementation extends RemoteServiceServlet
 			Collection remoteClasses = RemoteClassLoad.listRemoteClasses(
 					repository, "");
 
-			entries = RemoteClassLoad.getFeaturesList(remoteClasses);
+			entries = RemoteClassLoad.getEntryList(remoteClasses);
 
 		} catch (SVNException e) {
 			// handle exception
