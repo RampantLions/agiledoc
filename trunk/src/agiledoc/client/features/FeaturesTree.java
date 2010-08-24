@@ -14,20 +14,40 @@ public class FeaturesTree extends Tree {
 
 	public FeaturesTree(List<Entry> entries) {
 
-		ListFiles(entries);
+		TreeItem rootTree = new TreeItem("Agile Documentation");
 
-		ListSubFolders(entries);
-	}
+		rootTree.setState(true);
 
-	private void ListFiles(List<Entry> entries) {
+		String currentFolder = "";
+
+		TreeItem superiorItem = rootTree;
+
+		TreeItem currentItem = new TreeItem(entries.get(0).getFeature()
+				.getFeatureFolder());
 
 		for (Entry entry : entries) {
 
-			if (entry.isFile()) {
+			if (currentFolder.equals(entry.getClassPath())) {
 
-				this.addItem(getFeatureAnchor(entry));
+				ListFile(entry, currentItem);
+
+			} else {
+
+				currentFolder = entry.getClassPath();
+
+				superiorItem.addItem(currentItem);
+
+				currentItem = new TreeItem(entry.getFeature()
+						.getFeatureFolder());
 			}
 		}
+
+		this.addItem(rootTree);
+	}
+
+	private void ListFile(Entry entry, TreeItem treeItem) {
+
+		treeItem.addItem(getFeatureAnchor(entry));
 	}
 
 	private Anchor getFeatureAnchor(Entry entry) {
@@ -40,20 +60,6 @@ public class FeaturesTree extends Tree {
 		});
 
 		return featureAnchor;
-	}
-
-	private void ListSubFolders(List<Entry> entries) {
-
-		for (Entry entry : entries) {
-
-			if (!entry.isFile()) {
-
-				TreeItem subItem = new TreeItem(entry.getFeature()
-						.getFeatureName());
-
-				this.addItem(subItem);
-			}
-		}
 	}
 
 }

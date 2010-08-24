@@ -19,6 +19,7 @@ public class FeaturesPage extends HorizontalPanel {
 		add(featuresTreePanel);
 		add(featureContent);
 
+		featuresTreePanel.clear();
 		featuresTreePanel.add(new LoadingPanel());
 
 		new ListRemoteClasses();
