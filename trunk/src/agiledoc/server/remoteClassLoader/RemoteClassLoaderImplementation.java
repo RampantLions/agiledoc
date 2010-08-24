@@ -22,10 +22,7 @@ public class RemoteClassLoaderImplementation extends RemoteServiceServlet
 		try {
 			SVNRepository repository = RemoteSubversionConnection.connect();
 
-			Collection remoteClasses = RemoteClassLoad.listRemoteClasses(
-					repository, "");
-
-			entries = RemoteClassLoad.getEntryList(remoteClasses);
+			entries = RemoteClasses.getRemoteClasses(repository);
 
 		} catch (SVNException e) {
 			// handle exception
