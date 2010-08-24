@@ -21,29 +21,20 @@ public class RemoteClasses {
 
 		List<Entry> entries = new ArrayList<Entry>();
 
-		getFolderEntries(repository, "", entries);
+		getRepositoryClasses(repository, "", entries);
 
 		return entries;
 	}
 
-	public static void getFolderEntries(SVNRepository repository,
+	public static void getRepositoryClasses(SVNRepository repository,
 			String folderPath, List<Entry> entries) throws SVNException {
 
-		Collection subFolderEntries = getRepositoryEntry(repository, folderPath);
+		Collection subFolderEntries = repository.getDir(folderPath, -1, null, (Collection) null);
 
-		getClassesList(repository, folderPath, subFolderEntries, entries);
+		listClasses(repository, folderPath, subFolderEntries, entries);
 	}
 
-	public static Collection getRepositoryEntry(SVNRepository repository,
-			String path) throws SVNException {
-
-		Collection subversionEntries = repository.getDir(path, -1, null,
-				(Collection) null);
-
-		return subversionEntries;
-	}
-
-	public static void getClassesList(SVNRepository repository, String path,
+	public static void listClasses(SVNRepository repository, String path,
 			Collection subversionEntries, List<Entry> entries)
 			throws SVNException {
 
@@ -55,7 +46,7 @@ public class RemoteClasses {
 
 			if (!checkIfIsFile(subversionEntry)) {
 
-				getFolderEntries(repository,
+				getRepositoryClasses(repository,
 						getFolderPath(path, subversionEntry), entries);
 			} else {
 
