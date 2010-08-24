@@ -11,13 +11,29 @@ public class Entry implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String entryName;
+	private String classPath;
 
-	private boolean isFile;
+	private String className;
 
 	private Date dateModified;
 
 	private Feature feature;
+
+	public String getClassPath() {
+		return classPath;
+	}
+
+	public void setClassPath(String classPath) {
+		this.classPath = classPath;
+	}
+
+	public String getClassName() {
+		return className;
+	}
+
+	public void setClassName(String className) {
+		this.className = className;
+	}
 
 	public Date getDateModified() {
 		return dateModified;
@@ -25,22 +41,6 @@ public class Entry implements Serializable {
 
 	public void setDateModified(Date dateModified) {
 		this.dateModified = dateModified;
-	}
-
-	public boolean isFile() {
-		return isFile;
-	}
-
-	public void setFile(boolean isFile) {
-		this.isFile = isFile;
-	}
-
-	public String getEntryName() {
-		return entryName;
-	}
-
-	public void setEntryName(String entryName) {
-		this.entryName = entryName;
 	}
 
 	public Feature getFeature() {

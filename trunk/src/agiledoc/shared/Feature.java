@@ -6,11 +6,21 @@ public class Feature implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private String featureFolder;
+
 	private String featureName;
 
 	private String task;
 
 	private int priority;
+
+	public String getFeatureFolder() {
+		return featureFolder;
+	}
+
+	public void setFeatureFolder(String featureFolder) {
+		this.featureFolder = featureFolder;
+	}
 
 	public String getFeatureName() {
 		return featureName;
