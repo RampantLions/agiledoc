@@ -5,19 +5,19 @@ import java.util.Date;
 
 public class Entry implements Serializable {
 
-	// private Pack pack;
-
-	// private Classedoc classeDoc;
-
 	private static final long serialVersionUID = 1L;
 
 	private String classPath;
 
 	private String className;
 
+	private Feature feature;
+
+	private ClassDocumentation classeDoc;
+
 	private Date dateModified;
 
-	private Feature feature;
+	private String textContent;
 
 	public String getClassPath() {
 		return classPath;
@@ -49,6 +49,22 @@ public class Entry implements Serializable {
 
 	public void setFeature(Feature feature) {
 		this.feature = feature;
+	}
+
+	public String getTextContent() {
+		return textContent;
+	}
+
+	public void setTextContent(String textContent) {
+		this.textContent = textContent;
+	}
+
+	public ClassDocumentation getClasseDoc() {
+		return classeDoc;
+	}
+
+	public void setClasseDoc(ClassDocumentation classeDoc) {
+		this.classeDoc = classeDoc;
 	}
 
 }
