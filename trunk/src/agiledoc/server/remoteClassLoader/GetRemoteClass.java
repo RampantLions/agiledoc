@@ -9,7 +9,7 @@ import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.SVNProperties;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import agiledoc.server.localClassLoader.GetClassDoc;
+import agiledoc.server.doclet.GetClassDoc;
 import agiledoc.shared.Entry;
 
 public class GetRemoteClass {
@@ -21,7 +21,7 @@ public class GetRemoteClass {
 
 		entry.setTextContent(baos.toString());
 
-		File file = getRemoteFile(baos);
+		File file = getRemoteFile(baos, entry);
 
 		String className = entry.getClassPath() + "." + entry.getClassName();
 
@@ -42,13 +42,13 @@ public class GetRemoteClass {
 		return baos;
 	}
 
-	public static File getRemoteFile(ByteArrayOutputStream baos)
+	public static File getRemoteFile(ByteArrayOutputStream baos, Entry entry)
 			throws SVNException {
 
 		File tempFile = null;
 		try {
 
-			tempFile = File.createTempFile("MyFile.txt", ".tmp");
+			tempFile = File.createTempFile(entry.getClassName(), ".java");
 			System.out.print("Created temporary file with name ");
 			System.out.println(tempFile.getAbsolutePath());
 
