@@ -7,6 +7,8 @@ public class LoadingPanel extends VerticalPanel {
 
 	public LoadingPanel() {
 
+		setSpacing(30);
+		
 		add(new Image("images/loading.gif"));
 	}
 
