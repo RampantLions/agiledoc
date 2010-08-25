@@ -1,6 +1,5 @@
 package agiledoc.server.remoteClassLoader;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.tmatesoft.svn.core.SVNException;
@@ -20,15 +19,33 @@ public class RemoteClassLoaderImplementation extends RemoteServiceServlet
 		List<Entry> entries = null;
 
 		try {
+
 			SVNRepository repository = RemoteSubversionConnection.connect();
 
-			entries = RemoteClasses.getRemoteClasses(repository);
+			entries = ListRemoteClasses.getRemoteClasses(repository);
 
 		} catch (SVNException e) {
-			// handle exception
+
+			System.out.println(e.toString());
 		}
 
 		return entries;
+	}
+
+	public Entry getEntryFeature(Entry entry) {
+
+		try {
+
+			SVNRepository repository = RemoteSubversionConnection.connect();
+
+			entry = GetRemoteClass.getFeature(repository, entry);
+
+		} catch (SVNException e) {
+
+			System.out.println(e.toString());
+		}
+
+		return entry;
 	}
 
 }

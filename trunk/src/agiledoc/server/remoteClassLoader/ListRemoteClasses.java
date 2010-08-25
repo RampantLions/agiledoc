@@ -14,7 +14,7 @@ import agiledoc.server.utilities.FeatureNameGenerator;
 import agiledoc.shared.Entry;
 import agiledoc.shared.Feature;
 
-public class RemoteClasses {
+public class ListRemoteClasses {
 
 	public static List<Entry> getRemoteClasses(SVNRepository repository)
 			throws SVNException {
