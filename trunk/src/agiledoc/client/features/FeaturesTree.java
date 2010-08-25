@@ -2,6 +2,8 @@ package agiledoc.client.features;
 
 import java.util.List;
 
+import agiledoc.client.navigation.LoadingPanel;
+import agiledoc.client.serverConnection.GetRemoteClass;
 import agiledoc.shared.Entry;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -40,10 +42,11 @@ public class FeaturesTree extends Tree {
 
 				} else {
 
-					currentTreeNode.addItem(getFeatureAnchor(entry.getFeature()
-							.getFeatureFolder()
-							+ " / "
-							+ entry.getFeature().getFeatureName()));
+					String featureName = entry.getFeature().getFeatureFolder()
+							+ " / " + entry.getFeature().getFeatureName();
+
+					currentTreeNode
+							.addItem(getFeatureAnchor(entry, featureName));
 				}
 			}
 		}
@@ -58,24 +61,28 @@ public class FeaturesTree extends Tree {
 
 				if (currentFolder.equals("")) {
 
-					this.addItem(getFeatureAnchor(entry.getFeature()
+					this.addItem(getFeatureAnchor(entry, entry.getFeature()
 							.getFeatureName()));
 
 				} else {
 
-					currentTreeNode.addItem(getFeatureAnchor(entry.getFeature()
-							.getFeatureName()));
+					currentTreeNode.addItem(getFeatureAnchor(entry, entry
+							.getFeature().getFeatureName()));
 				}
 			}
 		}
 	}
 
-	private Anchor getFeatureAnchor(String anchorName) {
+	private Anchor getFeatureAnchor(final Entry entry, String anchorName) {
 
 		Anchor featureAnchor = new Anchor(anchorName);
 		featureAnchor.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
+				FeaturesPage.featureVisualizationPanel.clear();
+				FeaturesPage.featureVisualizationPanel.add(new LoadingPanel());
+
+				new GetRemoteClass(entry);
 			}
 		});
 

@@ -12,15 +12,24 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 public class FeaturesPage extends HorizontalPanel {
 
 	public static VerticalPanel featuresTreePanel = new VerticalPanel();
-	public static VerticalPanel featureContent = new VerticalPanel();
+	public static VerticalPanel featureVisualizationPanel = new VerticalPanel();
 
+	/*
+	 *  test
+	 */
 	public FeaturesPage() {
 
+		featuresTreePanel.setSize("400", "100%");
+
 		add(featuresTreePanel);
-		add(featureContent);
 
 		featuresTreePanel.clear();
 		featuresTreePanel.add(new LoadingPanel());
+
+		featureVisualizationPanel.clear();
+		featureVisualizationPanel.setSize("1200", "100%");
+		featureVisualizationPanel.setSpacing(30);
+		add(featureVisualizationPanel);
 
 		new ListRemoteClasses();
 	}
