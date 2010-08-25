@@ -15,7 +15,7 @@ public class ClassDocumentation implements Serializable {
 	private String modifiers;
 
 	private String superclass;
-
+ 
 	private String[] imports;
 
 	// private Field[] fields;
