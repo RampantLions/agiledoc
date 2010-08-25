@@ -10,4 +10,6 @@ public interface RemoteLoadFunctionsAsync {
 
 	void ListFeatures(AsyncCallback<List<Entry>> callback);
 
+	void getEntryFeature(Entry entry, AsyncCallback<Entry> callback);
+
 }
