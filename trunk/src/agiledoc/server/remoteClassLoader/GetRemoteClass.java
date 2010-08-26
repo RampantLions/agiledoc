@@ -2,8 +2,9 @@ package agiledoc.server.remoteClassLoader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.SVNProperties;
@@ -52,9 +53,9 @@ public class GetRemoteClass {
 			System.out.print("Created temporary file with name ");
 			System.out.println(tempFile.getAbsolutePath());
 
-			FileInputStream fileInputStream = new FileInputStream(tempFile);
-			fileInputStream.read(baos.toByteArray());
-			fileInputStream.close();
+			OutputStream out = new FileOutputStream(tempFile);
+			out.write(baos.toByteArray());
+			out.close();
 
 		} catch (IOException ex) {
 
