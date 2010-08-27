@@ -26,7 +26,7 @@ public class GetRemoteClass {
 
 		String className = entry.getClassPath() + "." + entry.getClassName();
 
-		entry.setClasseDoc(GetClassDoc.getClassDoc(file, className));
+		entry.setClassDoc(GetClassDoc.getClassDoc(file, className));
 
 		return entry;
 	}
