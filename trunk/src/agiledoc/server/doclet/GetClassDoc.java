@@ -29,6 +29,9 @@ public class GetClassDoc {
 
 		classDocumentation.setDescription(classDoc.commentText());
 
+		classDocumentation.setMethods(GetClassMethods.listMethods(classDoc
+				.methods()));
+
 		String[] imports = listImports(classDoc.importedClasses());
 
 		classDocumentation.setImports(imports);
