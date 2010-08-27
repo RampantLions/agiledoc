@@ -13,7 +13,7 @@ public class Entry implements Serializable {
 
 	private Feature feature;
 
-	private ClassDocumentation classeDoc;
+	private ClassDocumentation classDoc;
 
 	private Date dateModified;
 
@@ -59,12 +59,12 @@ public class Entry implements Serializable {
 		this.textContent = textContent;
 	}
 
-	public ClassDocumentation getClasseDoc() {
-		return classeDoc;
+	public ClassDocumentation getClassDoc() {
+		return classDoc;
 	}
 
-	public void setClasseDoc(ClassDocumentation classeDoc) {
-		this.classeDoc = classeDoc;
+	public void setClassDoc(ClassDocumentation classDoc) {
+		this.classDoc = classDoc;
 	}
 
 }

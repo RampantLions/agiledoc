@@ -6,16 +6,12 @@ public class ClassDocumentation implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String fullName;
-
-	private String className;
-
 	private String description;
 
 	private String modifiers;
 
 	private String superclass;
- 
+
 	private String[] imports;
 
 	// private Field[] fields;
@@ -23,22 +19,6 @@ public class ClassDocumentation implements Serializable {
 	// private Method[] constructors;
 
 	// private Method[] methods;
-
-	public String getFullName() {
-		return fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
-	public String getClassName() {
-		return className;
-	}
-
-	public void setClassName(String className) {
-		this.className = className;
-	}
 
 	public String getDescription() {
 		return description;
