@@ -18,7 +18,6 @@ public class FeaturesPage extends HorizontalPanel {
 	public static VerticalPanel featuresTreePanel = new VerticalPanel();
 	public static VerticalPanel featureVisualizationPanel = new VerticalPanel();
 
-
 	public FeaturesPage() {
 
 		featuresTreePanel.setSize("400", "100%");
@@ -28,7 +27,8 @@ public class FeaturesPage extends HorizontalPanel {
 		featuresTreePanel.clear();
 		featuresTreePanel.add(new LoadingPanel());
 
-		HTML space = new HTML(" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ");
+		HTML space = new HTML(
+				" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ");
 		space.setHeight("40");
 		add(space);
 

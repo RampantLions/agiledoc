@@ -3,9 +3,12 @@ package agiledoc.client.features;
 import agiledoc.shared.ClassDocumentation;
 import agiledoc.shared.Entry;
 import agiledoc.shared.Feature;
+import agiledoc.shared.Method;
 
+import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class FeatureDescription extends VerticalPanel {
@@ -19,6 +22,9 @@ public class FeatureDescription extends VerticalPanel {
 
 		FeatureVisualization.featureContent.add(featureDescription(entry
 				.getClassDoc()));
+
+		FeatureVisualization.featureContent.add(featureSteps(entry
+				.getClassDoc().getMethods()));
 	}
 
 	/**
@@ -54,5 +60,30 @@ public class FeatureDescription extends VerticalPanel {
 		}
 
 		return hp;
+	}
+
+	private static Grid featureSteps(final Method[] meths) {
+
+		Grid table = new Grid(meths.length * 3, 2);
+
+		table.getColumnFormatter().setWidth(0, "40");
+
+		for (int i = 0; i < meths.length; i++) {
+
+			Method meth = meths[i];
+
+			table.setWidget((i * 3), 1, new HTML("<B>" + meth.getSpacedName()
+					+ "</B>"));
+
+			if (meth.getDescription() != null
+					&& !meth.getDescription().equals("")) {
+
+				table.setWidget((i * 3 + 1), 1, new HTML(meth.getDescription()));
+			}
+
+			table.setWidget((i * 3 + 2), 0, new Label(" "));
+		}
+
+		return table;
 	}
 }
