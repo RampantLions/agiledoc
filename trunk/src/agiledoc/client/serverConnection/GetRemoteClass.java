@@ -1,7 +1,10 @@
 package agiledoc.client.serverConnection;
 
+import agiledoc.client.features.FeatureDescription;
+import agiledoc.client.features.FeatureOptions;
 import agiledoc.client.features.FeatureVisualization;
 import agiledoc.client.features.FeaturesPage;
+import agiledoc.client.navigation.LoadingPanel;
 import agiledoc.shared.Entry;
 
 import com.google.gwt.core.client.GWT;
@@ -12,7 +15,10 @@ public class GetRemoteClass {
 	private final RemoteLoadFunctionsAsync remoteFunctions = GWT
 			.create(RemoteLoadFunctions.class);
 
-	public GetRemoteClass(Entry entry) {
+	public GetRemoteClass(Entry entry, final int viewOption) {
+
+		FeaturesPage.featureVisualizationPanel.clear();
+		FeaturesPage.featureVisualizationPanel.add(new LoadingPanel());
 
 		remoteFunctions.getEntryFeature(entry, new AsyncCallback<Entry>() {
 
@@ -20,15 +26,13 @@ public class GetRemoteClass {
 
 				FeaturesPage.featureVisualizationPanel.clear();
 				FeaturesPage.featureVisualizationPanel
-						.add(new FeatureVisualization());
+						.add(new FeatureVisualization(entry));
 
-				String sourceCode = entry.getTextContent();
+				if (viewOption == FeatureOptions.optionDescription) {
 
-				sourceCode = sourceCode.replaceAll("\n", "<br>");
-				sourceCode = sourceCode.replaceAll("\t",
-						"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-
-				FeatureVisualization.featureContent.setHTML(sourceCode);
+					FeatureVisualization.featureContent
+							.add(new FeatureDescription(entry));
+				}
 			}
 
 			public void onFailure(Throwable caught) {
