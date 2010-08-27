@@ -21,10 +21,13 @@ public class GetClassDoc {
 		RootDoc rootDoc = getRootDoc(file);
 
 		ClassDoc[] classes = rootDoc.classes();
-		
-		ClassDoc classDoc = rootDoc.classNamed(className);
+
+		// ClassDoc classDoc = rootDoc.classNamed(className);
+		ClassDoc classDoc = classes[0];
 
 		ClassDocumentation classDocumentation = new ClassDocumentation();
+
+		classDocumentation.setDescription(classDoc.commentText());
 
 		String[] imports = listImports(classDoc.importedClasses());
 
