@@ -14,7 +14,7 @@ public class ClassDocumentation implements Serializable {
 
 	private String[] imports;
 
-	// private Field[] fields;
+	private Field[] fields;
 
 	private Method[] constructors;
 
@@ -66,6 +66,14 @@ public class ClassDocumentation implements Serializable {
 
 	public void setMethods(Method[] methods) {
 		this.methods = methods;
+	}
+
+	public Field[] getFields() {
+		return fields;
+	}
+
+	public void setFields(Field[] fields) {
+		this.fields = fields;
 	}
 
 }
