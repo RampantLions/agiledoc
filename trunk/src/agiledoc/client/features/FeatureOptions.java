@@ -10,24 +10,19 @@ import com.google.gwt.user.client.ui.Image;
 public class FeatureOptions extends HorizontalPanel {
 
 	public static final int optionDescription = 0;
-	// public static final int optionDescription = 1;
-	// public static final int optionDescription = 2;
-	// public static final int optionDescription = 3;
 	public static final int optionSource = 4;
 
 	public FeatureOptions(Entry entry) {
-
-		setSize("1200", "100%");
 
 		setSpacing(10);
 
 		add(ButtonFeatureDescription(entry));
 
-		// add(IconEditDescriptions(classe));
+		add(ButtonEditDescriptions(entry));
 
-		// add(IconTestView(classe));
+		add(ButtonTestView(entry));
 
-		// add(IconJavadocView(classe));
+		add(ButtonJavadoc(entry));
 
 		add(ButtonSourceView(entry));
 	}
@@ -44,7 +39,58 @@ public class FeatureOptions extends HorizontalPanel {
 			}
 		});
 
-		img.setTitle("Show Feature");
+		img.setTitle("Feature Description");
+
+		return img;
+	}
+
+	private static Image ButtonEditDescriptions(final Entry entry) {
+
+		Image img = new Image("images/edit.gif");
+		img.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				new FeatureEdit(entry);
+			}
+		});
+
+		img.setTitle("Edit Description");
+
+		return img;
+	}
+
+	private static Image ButtonTestView(final Entry entry) {
+
+		Image img = new Image("images/test.gif");
+		img.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				new FeatureSource(entry);
+			}
+		});
+
+		img.setTitle("Test View");
+
+		return img;
+	}
+
+	private static Image ButtonJavadoc(final Entry entry) {
+
+		Image img = new Image("images/javadoc.gif");
+		img.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				new FeatureJavadoc(entry);
+			}
+		});
+
+		img.setTitle("View Javadoc");
 
 		return img;
 	}
@@ -65,5 +111,4 @@ public class FeatureOptions extends HorizontalPanel {
 
 		return img;
 	}
-
 }

@@ -15,22 +15,23 @@ public class FeatureDescription extends VerticalPanel {
 
 	public FeatureDescription(Entry entry) {
 
+		setWidth("700");
+		
 		FeatureVisualization.featureContent.clear();
 
-		FeatureVisualization.featureContent
-				.add(featureName(entry.getFeature()));
+		add(featureName(entry.getFeature()));
 
-		FeatureVisualization.featureContent.add(featureDescription(entry
-				.getClassDoc()));
+		add(featureDescription(entry.getClassDoc()));
 
-		FeatureVisualization.featureContent.add(featureSteps(entry
-				.getClassDoc().getMethods()));
+		add(featureSteps(entry.getClassDoc().getMethods()));
+
+		FeatureVisualization.featureContent.add(this);
 	}
 
 	/**
 	 * Show the name of the class with its package name and description.
 	 */
-	private static HTML featureName(Feature feature) {
+	public static HTML featureName(Feature feature) {
 
 		String name = "<BR><BR><B><FONT SIZE=4>" + "&nbsp;&nbsp;"
 				+ feature.getFeatureName() + "</FONT></B>";
