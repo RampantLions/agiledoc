@@ -30,8 +30,8 @@ public class FeatureJavadoc extends VerticalPanel {
 				+ entry.getClassPath() + "</FONT>" + "<BR>" + "Class "
 				+ entry.getClassName() + "</H2>" + "<PRE>"
 				+ entry.getClassDoc().getSuperclass() + "<BR>"
-				+ "<IMG SRC=\"img/inherit.gif\" ALT=\"extended by \">" + "<B>"
-				+ entry.getClassPath() + "." + entry.getClassName()
+				+ "<IMG SRC=\"images/inherit.gif\" ALT=\"extended by \">"
+				+ "<B>" + entry.getClassPath() + "." + entry.getClassName()
 				+ "</B></PRE>";
 
 		html += "<HR><DL>" + "<DT><PRE>" + entry.getClassDoc().getModifiers()
