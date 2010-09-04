@@ -7,7 +7,7 @@ import agiledoc.shared.Entry;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
-@RemoteServiceRelativePath("remoteClassLoader")
+@RemoteServiceRelativePath("repositoryClassLoader")
 public interface RemoteLoadFunctions extends RemoteService {
 
 	public List<Entry> ListFeatures();
