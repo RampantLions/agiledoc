@@ -22,12 +22,12 @@ public class GetRepositoryClass {
 
 		entry.setTextContent(baos.toString());
 
-		File file = getRemoteFile(baos, entry);
+		String filePath = getRemoteFile(baos, entry);
 
 		String domain = RepositoryConnection.domain + "."
 				+ entry.getClassPath();
 
-		entry.setClassDoc(GetClassDoc.getClassDoc(file, domain));
+		entry.setClassDoc(GetClassDoc.getClassDoc(filePath, domain));
 
 		return entry;
 	}
@@ -44,21 +44,22 @@ public class GetRepositoryClass {
 		return baos;
 	}
 
-	public static File getRemoteFile(ByteArrayOutputStream baos, Entry entry)
+	public static String getRemoteFile(ByteArrayOutputStream baos, Entry entry)
 			throws SVNException {
 
-		File file = null;
+		File tempFile = null;
 		try {
+
+			tempFile = File.createTempFile(entry.getClassName(), ".java");
 
 			String domainTempFile = RepositoryConnection.domain.replaceAll(
 					"\\.", "/");
 
-			String domain = "/" + domainTempFile + "/" + entry.getClassPath()
-					+ "/";
+			String domain = "/" + domainTempFile + "/" + entry.getClassPath();
 
-			File tempFile = File.createTempFile(entry.getClassName(), ".java");
+			new File(tempFile.getParent() + domain).mkdirs();
 
-			file = new File(tempFile.getParent() + domain + "/"
+			File file = new File(tempFile.getParent() + domain + "/"
 					+ entry.getClassName());
 
 			OutputStream out = new FileOutputStream(file);
@@ -70,7 +71,7 @@ public class GetRepositoryClass {
 			System.err.println("Cannot create temp file: " + ex.getMessage());
 		}
 
-		return file;
+		return tempFile.getParent();
 	}
 
 }
