@@ -4,21 +4,21 @@
     "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
-  
-    <!-- Servlets -->
-  <servlet>
-    <servlet-name>remoteClassLoader</servlet-name>
-    <servlet-class>agiledoc.server.remoteClassLoader.RemoteClassLoaderImplementation</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>remoteClassLoader</servlet-name>
-    <url-pattern>/agiledoc/remoteClassLoader</url-pattern>
-  </servlet-mapping>
-  
-  <!-- Default page to serve -->
-  <welcome-file-list>
-    <welcome-file>AgileDoc.html</welcome-file>
-  </welcome-file-list>
+
+	<!-- Servlets -->
+	<servlet>
+		<servlet-name>repositoryClassLoader</servlet-name>
+		<servlet-class>agiledoc.server.repositoryClassLoader.RepositoryClassLoaderImplementation</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>repositoryClassLoader</servlet-name>
+		<url-pattern>/agiledoc/repositoryClassLoader</url-pattern>
+	</servlet-mapping>
+
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>AgileDoc.html</welcome-file>
+	</welcome-file-list>
 
 </web-app>
