@@ -20,8 +20,6 @@ public class FeatureOptions extends HorizontalPanel {
 
 		add(ButtonEditDescriptions(entry));
 
-		add(ButtonTestView(entry));
-
 		add(ButtonJavadoc(entry));
 
 		add(ButtonSourceView(entry));
@@ -57,23 +55,6 @@ public class FeatureOptions extends HorizontalPanel {
 		});
 
 		img.setTitle("Edit Description");
-
-		return img;
-	}
-
-	private static Image ButtonTestView(final Entry entry) {
-
-		Image img = new Image("images/test.gif");
-		img.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				new FeatureSource(entry);
-			}
-		});
-
-		img.setTitle("Test View");
 
 		return img;
 	}

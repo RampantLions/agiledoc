@@ -10,7 +10,7 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
- * Show all the options to manipulate the Features of the current project
+ * Show all the options to manipulate the Features of the current project.
  */
 public class FeaturesPage extends HorizontalPanel {
 

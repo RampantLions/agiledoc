@@ -16,7 +16,7 @@ public class FeatureDescription extends VerticalPanel {
 	public FeatureDescription(Entry entry) {
 
 		setWidth("700");
-		
+
 		FeatureVisualization.featureContent.clear();
 
 		add(featureName(entry.getFeature()));
@@ -49,16 +49,21 @@ public class FeatureDescription extends VerticalPanel {
 
 		HorizontalPanel hp = new HorizontalPanel();
 
+		hp.setSpacing(20);
+		hp.setWidth("600");
+
 		String text = null;
 		if (classDoc.getDescription() != null
 				&& !classDoc.getDescription().equals("")) {
 
 			text = "<FONT SIZE=\"-1\">" + classDoc.getDescription() + "</FONT>";
 
-			hp.setSpacing(20);
-			hp.setWidth("600");
-			hp.add(new HTML(text));
+		} else {
+
+			text = " ";
 		}
+
+		hp.add(new HTML(text));
 
 		return hp;
 	}
