@@ -12,7 +12,7 @@ public class RepositoryConnection {
 
 	private static String repositoryURL = "http://agiledoc.googlecode.com";
 	private static String repositoryPath = "/svn/trunk/src/";
-	public static String domain = "agiledoc.client";
+	public static String domain = "agiledoc/client";
 	private static String name = "Alline.Oliveira";
 	private static String password = "bD8Km8se2rV9";
 
@@ -25,7 +25,7 @@ public class RepositoryConnection {
 		try {
 
 			repository = SVNRepositoryFactory.create(SVNURL
-					.parseURIDecoded(getRepositoryURI()));
+					.parseURIDecoded(repositoryURL + repositoryPath + domain));
 			ISVNAuthenticationManager authManager = SVNWCUtil
 					.createDefaultAuthenticationManager(name, password);
 			repository.setAuthenticationManager(authManager);
@@ -35,15 +35,6 @@ public class RepositoryConnection {
 		}
 
 		return repository;
-	}
-
-	public static String getRepositoryURI() {
-
-		String domainURI = domain.replaceAll("\\.", "/");
-
-		String URI = repositoryURL + repositoryPath + domainURI;
-
-		return URI;
 	}
 
 }
