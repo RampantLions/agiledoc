@@ -9,7 +9,7 @@ import agiledoc.shared.Entry;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/*
+/**
  * Show all the options to manipulate the Features of the current project
  */
 public class FeaturesPage extends HorizontalPanel {
@@ -17,7 +17,7 @@ public class FeaturesPage extends HorizontalPanel {
 	public static VerticalPanel featuresTreePanel = new VerticalPanel();
 	public static VerticalPanel featureVisualizationPanel = new VerticalPanel();
 
-	/*
+	/**
 	 * Show all the options to manipulate the Features of the current project
 	 */
 	public FeaturesPage() {
@@ -36,7 +36,7 @@ public class FeaturesPage extends HorizontalPanel {
 		new ListRemoteClasses();
 	}
 
-	/*
+	/**
 	 * Show the tree list with all the features for the project specified.
 	 */
 	public static void ShowFeatureTree(List<Entry> features) {
