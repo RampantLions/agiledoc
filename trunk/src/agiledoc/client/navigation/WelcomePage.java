@@ -9,7 +9,9 @@ public class WelcomePage extends VerticalPanel {
 
 		setSpacing(20);
 		
-		add(new Label("Welcome"));
+		add(new Label(" "));
+		
+		add(new Label("Welcome to the Agile Documentation System"));
 	}
 
 }
