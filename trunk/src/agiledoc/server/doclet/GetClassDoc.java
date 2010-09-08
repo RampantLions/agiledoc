@@ -11,16 +11,16 @@ import com.sun.javadoc.RootDoc;
 
 public class GetClassDoc {
 
-	public static RootDoc getRootDoc(File file, String domain) {
+	public static RootDoc getRootDoc(File file) {
 
 		EasyDoclet doclet = new EasyDoclet(file, file);
 
 		return doclet.getRootDoc();
 	}
 
-	public static ClassDocumentation getClassDoc(File file, String domain) {
+	public static ClassDocumentation getClassDoc(File file) {
 
-		RootDoc rootDoc = getRootDoc(file, domain);
+		RootDoc rootDoc = getRootDoc(file);
 
 		ClassDoc[] classes = rootDoc.classes();
 
