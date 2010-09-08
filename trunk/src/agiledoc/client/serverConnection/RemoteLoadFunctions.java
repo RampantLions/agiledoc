@@ -3,6 +3,8 @@ package agiledoc.client.serverConnection;
 import java.util.List;
 
 import agiledoc.shared.Entry;
+import agiledoc.shared.Project;
+import agiledoc.shared.User;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
@@ -10,7 +12,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 @RemoteServiceRelativePath("repositoryClassLoader")
 public interface RemoteLoadFunctions extends RemoteService {
 
-	public List<Entry> ListFeatures();
+	Entry getEntryFeature(Project project, User user, Entry entry);
 
-	public Entry getEntryFeature(Entry entry);
+	List<Entry> ListFeatures(Project project, User user);
 }

@@ -2,6 +2,7 @@ package agiledoc.client.serverConnection;
 
 import java.util.List;
 
+import agiledoc.client.SystemInitialization;
 import agiledoc.client.features.FeaturesPage;
 import agiledoc.shared.Entry;
 
@@ -15,19 +16,21 @@ public class ListRemoteClasses {
 
 	public ListRemoteClasses() {
 
-		remoteFunctions.ListFeatures(new AsyncCallback<List<Entry>>() {
+		remoteFunctions.ListFeatures(SystemInitialization.currentProject,
+				SystemInitialization.currentUser,
+				new AsyncCallback<List<Entry>>() {
 
-			public void onSuccess(List<Entry> entries) {
+					public void onSuccess(List<Entry> entries) {
 
-				FeaturesPage.ShowFeatureTree(entries);
-			}
+						FeaturesPage.ShowFeatureTree(entries);
+					}
 
-			public void onFailure(Throwable caught) {
-				// Show the RPC error message to the user
+					public void onFailure(Throwable caught) {
+						// Show the RPC error message to the user
 
-			}
+					}
 
-		});
+				});
 
 	}
 

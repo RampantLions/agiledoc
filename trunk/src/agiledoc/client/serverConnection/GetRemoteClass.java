@@ -1,9 +1,10 @@
 package agiledoc.client.serverConnection;
 
-import agiledoc.client.features.FeatureDescription;
-import agiledoc.client.features.FeatureOptions;
-import agiledoc.client.features.FeatureVisualization;
+import agiledoc.client.SystemInitialization;
 import agiledoc.client.features.FeaturesPage;
+import agiledoc.client.features.featureOptions.FeatureContentPanel;
+import agiledoc.client.features.featureOptions.FeatureDescription;
+import agiledoc.client.features.featureOptions.OptionsIcons;
 import agiledoc.client.navigation.LoadingPanel;
 import agiledoc.shared.Entry;
 
@@ -20,27 +21,29 @@ public class GetRemoteClass {
 		FeaturesPage.featureVisualizationPanel.clear();
 		FeaturesPage.featureVisualizationPanel.add(new LoadingPanel());
 
-		remoteFunctions.getEntryFeature(entry, new AsyncCallback<Entry>() {
+		remoteFunctions.getEntryFeature(SystemInitialization.currentProject,
+				SystemInitialization.currentUser, entry,
+				new AsyncCallback<Entry>() {
 
-			public void onSuccess(Entry entry) {
+					public void onSuccess(Entry entry) {
 
-				FeaturesPage.featureVisualizationPanel.clear();
-				FeaturesPage.featureVisualizationPanel
-						.add(new FeatureVisualization(entry));
+						FeaturesPage.featureVisualizationPanel.clear();
+						FeaturesPage.featureVisualizationPanel
+								.add(new FeatureContentPanel(entry));
 
-				if (viewOption == FeatureOptions.optionDescription) {
+						if (viewOption == OptionsIcons.optionDescription) {
 
-					FeatureVisualization.featureContent
-							.add(new FeatureDescription(entry));
-				}
-			}
+							FeatureContentPanel.featureContent
+									.add(new FeatureDescription(entry));
+						}
+					}
 
-			public void onFailure(Throwable caught) {
-				// Show the RPC error message to the user
+					public void onFailure(Throwable caught) {
+						// Show the RPC error message to the user
 
-			}
+					}
 
-		});
+				});
 
 	}
 
