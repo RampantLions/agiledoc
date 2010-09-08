@@ -2,6 +2,7 @@ package agiledoc.client.features;
 
 import java.util.List;
 
+import agiledoc.client.features.featureOptions.OptionsIcons;
 import agiledoc.client.serverConnection.GetRemoteClass;
 import agiledoc.shared.Entry;
 
@@ -78,7 +79,7 @@ public class FeaturesTree extends Tree {
 		featureAnchor.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
-				new GetRemoteClass(entry, FeatureOptions.optionDescription);
+				new GetRemoteClass(entry, OptionsIcons.optionDescription);
 			}
 		});
 
