@@ -7,6 +7,8 @@ import org.tmatesoft.svn.core.io.SVNRepository;
 
 import agiledoc.client.serverConnection.RemoteLoadFunctions;
 import agiledoc.shared.Entry;
+import agiledoc.shared.Project;
+import agiledoc.shared.User;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
@@ -14,13 +16,15 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 public class RepositoryClassLoaderImplementation extends RemoteServiceServlet
 		implements RemoteLoadFunctions {
 
-	public List<Entry> ListFeatures() {
+	@Override
+	public List<Entry> ListFeatures(Project project, User user) {
 
 		List<Entry> entries = null;
 
 		try {
 
-			SVNRepository repository = RepositoryConnection.connect();
+			SVNRepository repository = RepositoryConnection.connect(project,
+					user);
 
 			entries = ListRepositoryClasses.getRemoteClasses(repository);
 
@@ -32,11 +36,13 @@ public class RepositoryClassLoaderImplementation extends RemoteServiceServlet
 		return entries;
 	}
 
-	public Entry getEntryFeature(Entry entry) {
+	@Override
+	public Entry getEntryFeature(Project project, User user, Entry entry) {
 
 		try {
 
-			SVNRepository repository = RepositoryConnection.connect();
+			SVNRepository repository = RepositoryConnection.connect(project,
+					user);
 
 			entry = GetRepositoryClass.getFeature(repository, entry);
 

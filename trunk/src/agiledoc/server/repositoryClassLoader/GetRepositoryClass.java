@@ -22,12 +22,9 @@ public class GetRepositoryClass {
 
 		entry.setTextContent(baos.toString());
 
-		File file = getRemoteFile(baos, entry);
+		File file = getTempFile(baos, entry);
 
-		String domain = RepositoryConnection.domain + "."
-				+ entry.getClassPath();
-
-		entry.setClassDoc(GetClassDoc.getClassDoc(file, domain));
+		entry.setClassDoc(GetClassDoc.getClassDoc(file));
 
 		return entry;
 	}
@@ -44,8 +41,7 @@ public class GetRepositoryClass {
 		return baos;
 	}
 
-	public static File getRemoteFile(ByteArrayOutputStream baos, Entry entry)
-			throws SVNException {
+	private static File getTempFile(ByteArrayOutputStream baos, Entry entry) {
 
 		File tempFile = null;
 		try {

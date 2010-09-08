@@ -8,15 +8,12 @@ import org.tmatesoft.svn.core.io.SVNRepository;
 import org.tmatesoft.svn.core.io.SVNRepositoryFactory;
 import org.tmatesoft.svn.core.wc.SVNWCUtil;
 
+import agiledoc.shared.Project;
+import agiledoc.shared.User;
+
 public class RepositoryConnection {
 
-	private static String repositoryURL = "http://agiledoc.googlecode.com";
-	private static String repositoryPath = "/svn/trunk/src/";
-	public static String domain = "agiledoc/client";
-	private static String name = "Alline.Oliveira";
-	private static String password = "bD8Km8se2rV9";
-
-	public static SVNRepository connect() {
+	public static SVNRepository connect(Project project, User user) {
 
 		// SVNRepositoryFactoryImpl.setup();
 		DAVRepositoryFactory.setup();
@@ -25,9 +22,11 @@ public class RepositoryConnection {
 		try {
 
 			repository = SVNRepositoryFactory.create(SVNURL
-					.parseURIDecoded(repositoryURL + repositoryPath + domain));
+					.parseURIDecoded(project.getRepositoryURL()
+							+ project.getRoot() + project.getDomain()));
 			ISVNAuthenticationManager authManager = SVNWCUtil
-					.createDefaultAuthenticationManager(name, password);
+					.createDefaultAuthenticationManager(user.getName(),
+							user.getPassword());
 			repository.setAuthenticationManager(authManager);
 
 		} catch (SVNException e) {
