@@ -6,12 +6,14 @@ public class SystemMenu extends HorizontalPanel {
 
 	public SystemMenu() {
 
-		setSpacing(20);
+		this.setHeight("70px");
 
-		add(new ButtonPlanning());
+		this.setSpacing(20);
 
-		add(new ButtonFeatures());
+		this.add(new ButtonPlanning());
 
-		add(new ButtonActivity());
+		this.add(new ButtonFeatures());
+
+		this.add(new ButtonActivity());
 	}
 }
