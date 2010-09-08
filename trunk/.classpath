@@ -6,5 +6,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/svnkit.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/tools.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/codemirror_V-0.4-gwt16.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
