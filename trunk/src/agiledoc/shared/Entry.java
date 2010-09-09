@@ -3,7 +3,7 @@ package agiledoc.shared;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Entry implements Serializable {
+public class Entry implements Serializable, Comparable<Entry> {
 
 	private static final long serialVersionUID = 1L;
 
@@ -65,6 +65,15 @@ public class Entry implements Serializable {
 
 	public void setClassDoc(ClassDocumentation classDoc) {
 		this.classDoc = classDoc;
+	}
+
+	@Override
+	public int compareTo(Entry entry) {
+
+		String thisClass = this.classPath + "/" + this.className;
+		String entryClass = entry.classPath + "/" + entry.className;
+
+		return thisClass.compareTo(entryClass);
 	}
 
 }
