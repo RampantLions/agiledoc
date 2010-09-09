@@ -1,7 +1,5 @@
 package agiledoc.client.serverConnection;
 
-import java.util.List;
-
 import agiledoc.client.SystemInitialization;
 import agiledoc.client.features.FeaturesPage;
 import agiledoc.shared.Entry;
@@ -17,10 +15,9 @@ public class ListRemoteClasses {
 	public ListRemoteClasses() {
 
 		remoteFunctions.ListFeatures(SystemInitialization.currentProject,
-				SystemInitialization.currentUser,
-				new AsyncCallback<List<Entry>>() {
+				SystemInitialization.currentUser, new AsyncCallback<Entry[]>() {
 
-					public void onSuccess(List<Entry> entries) {
+					public void onSuccess(Entry[] entries) {
 
 						FeaturesPage.ShowFeatureTree(entries);
 					}
