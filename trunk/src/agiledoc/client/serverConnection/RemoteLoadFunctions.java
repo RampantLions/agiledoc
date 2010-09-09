@@ -1,7 +1,5 @@
 package agiledoc.client.serverConnection;
 
-import java.util.List;
-
 import agiledoc.shared.Entry;
 import agiledoc.shared.Project;
 import agiledoc.shared.User;
@@ -14,5 +12,5 @@ public interface RemoteLoadFunctions extends RemoteService {
 
 	Entry getEntryFeature(Project project, User user, Entry entry);
 
-	List<Entry> ListFeatures(Project project, User user);
+	Entry[] ListFeatures(Project project, User user);
 }
