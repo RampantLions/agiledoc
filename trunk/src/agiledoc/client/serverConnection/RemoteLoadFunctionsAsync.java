@@ -1,7 +1,5 @@
 package agiledoc.client.serverConnection;
 
-import java.util.List;
-
 import agiledoc.shared.Entry;
 import agiledoc.shared.Project;
 import agiledoc.shared.User;
@@ -14,6 +12,6 @@ public interface RemoteLoadFunctionsAsync {
 			AsyncCallback<Entry> callback);
 
 	void ListFeatures(Project project, User user,
-			AsyncCallback<List<Entry>> callback);
+			AsyncCallback<Entry[]> callback);
 
 }
