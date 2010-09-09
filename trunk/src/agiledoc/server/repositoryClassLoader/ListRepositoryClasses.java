@@ -1,6 +1,7 @@
 package agiledoc.server.repositoryClassLoader;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -16,12 +17,14 @@ import agiledoc.shared.Feature;
 
 public class ListRepositoryClasses {
 
-	public static List<Entry> getRemoteClasses(SVNRepository repository)
+	public static Entry[] getRemoteClasses(SVNRepository repository)
 			throws SVNException {
 
-		List<Entry> entries = new ArrayList<Entry>();
+		List<Entry> entriesList = new ArrayList<Entry>();
 
-		getRepositoryClasses(repository, "", entries);
+		getRepositoryClasses(repository, "", entriesList);
+
+		Entry[] entries = sortedEntries(entriesList);
 
 		return entries;
 	}
@@ -29,7 +32,8 @@ public class ListRepositoryClasses {
 	public static void getRepositoryClasses(SVNRepository repository,
 			String folderPath, List<Entry> entries) throws SVNException {
 
-		Collection subFolderEntries = repository.getDir(folderPath, -1, null, (Collection) null);
+		Collection subFolderEntries = repository.getDir(folderPath, -1, null,
+				(Collection) null);
 
 		listClasses(repository, folderPath, subFolderEntries, entries);
 	}
@@ -101,6 +105,17 @@ public class ListRepositoryClasses {
 				.getClassName()));
 
 		entry.setFeature(feature);
+	}
+
+	private static Entry[] sortedEntries(List<Entry> entriesList) {
+
+		Entry[] entries = new Entry[entriesList.size()];
+
+		entriesList.toArray(entries);
+
+		Arrays.sort(entries);
+
+		return entries;
 	}
 
 }

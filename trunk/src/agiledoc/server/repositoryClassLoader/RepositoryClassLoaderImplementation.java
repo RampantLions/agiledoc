@@ -1,7 +1,5 @@
 package agiledoc.server.repositoryClassLoader;
 
-import java.util.List;
-
 import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
@@ -17,11 +15,11 @@ public class RepositoryClassLoaderImplementation extends RemoteServiceServlet
 		implements RemoteLoadFunctions {
 
 	@Override
-	public List<Entry> ListFeatures(Project project, User user) {
+	public Entry[] ListFeatures(Project project, User user) {
 
-		List<Entry> entries = null;
+		Entry[] entries = null;
 
-		try {
+		try { 
 
 			SVNRepository repository = RepositoryConnection.connect(project,
 					user);
