@@ -1,7 +1,5 @@
 package agiledoc.client.features;
 
-import java.util.List;
-
 import agiledoc.client.features.featureOptions.OptionsIcons;
 import agiledoc.client.serverConnection.GetRemoteClass;
 import agiledoc.shared.Entry;
@@ -14,7 +12,7 @@ import com.google.gwt.user.client.ui.TreeItem;
 
 public class FeaturesTree extends Tree {
 
-	public FeaturesTree(List<Entry> entries) {
+	public FeaturesTree(Entry[] entries) {
 
 		ListFilesFromFolder(entries, null, "");
 
@@ -52,8 +50,8 @@ public class FeaturesTree extends Tree {
 		}
 	}
 
-	private void ListFilesFromFolder(List<Entry> entries,
-			TreeItem currentTreeNode, String currentFolder) {
+	private void ListFilesFromFolder(Entry[] entries, TreeItem currentTreeNode,
+			String currentFolder) {
 
 		for (Entry entry : entries) {
 
