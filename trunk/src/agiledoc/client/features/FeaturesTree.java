@@ -14,60 +14,105 @@ public class FeaturesTree extends Tree {
 
 	public FeaturesTree(Entry[] entries) {
 
-		ListFilesFromFolder(entries, null, "");
+		TreeItem[] treeItemArray = new TreeItem[10];
 
-		TreeItem currentTreeNode = null;
+		String currentClassPath = null;
 
-		String currentFolder = "none";
+		for (int i = 0; i < entries.length; i++) {
 
-		for (Entry entry : entries) {
+			Entry entry = entries[i];
 
-			if (!entry.getClassPath().equals("")
-					&& !entry.getClassPath().equals(currentFolder)) {
+			if (!entry.getClassPath().equals(currentClassPath)) {
 
-				if (!entry.getClassPath().contains(currentFolder)) {
+				String[] level = entry.getClassPath().split("/");
 
-					currentFolder = entry.getClassPath();
+				if (!entry.getClassPath().equals("")) {
 
-					currentTreeNode = new TreeItem("<br>"
-							+ entry.getFeature().getFeatureFolder());
+					if (treeItemArray[level.length - 1] == null) {
 
-					ListFilesFromFolder(entries, currentTreeNode, currentFolder);
+						treeItemArray[level.length - 1] = new TreeItem(entry
+								.getFeature().getFeatureFolder());
 
-					currentTreeNode.setState(true);
+					} else {
 
-					this.addItem(currentTreeNode);
+						int j = level.length - 1;
+						while (treeItemArray[j] != null) {
+
+							if (j == 0) {
+
+								this.addItem(treeItemArray[j]);
+
+							} else {
+
+								treeItemArray[j - 1].addItem(treeItemArray[j]);
+							}
+							j++;
+						}
+
+						j = level.length - 1;
+						while (treeItemArray[j] != null) {
+
+							treeItemArray[j] = null;
+							j++;
+						}
+
+						treeItemArray[level.length - 1] = new TreeItem(entry
+								.getFeature().getFeatureFolder());
+					}
+				}
+
+				currentClassPath = entry.getClassPath();
+
+				ListFilesFromFolder(entries, i,
+						treeItemArray[level.length - 1], currentClassPath);
+
+				if (currentClassPath.equals("")) {
+
+					this.addItem("<br>");
 
 				} else {
 
-					String featureName = entry.getFeature().getFeatureFolder()
-							+ " / " + entry.getFeature().getFeatureName();
+					treeItemArray[level.length - 1].addItem("<br>");
 
-					currentTreeNode
-							.addItem(getFeatureAnchor(entry, featureName));
+					treeItemArray[level.length - 1].setState(true);
 				}
+
 			}
 		}
+
+		int i = 1;
+		while (treeItemArray[i] != null) {
+
+			treeItemArray[i - 1].addItem(treeItemArray[i]);
+			treeItemArray[i - 1].setState(true);
+
+			i++;
+		}
+		this.addItem(treeItemArray[0]);
 	}
 
-	private void ListFilesFromFolder(Entry[] entries, TreeItem currentTreeNode,
-			String currentFolder) {
+	private void ListFilesFromFolder(Entry[] entries, int folderIndex,
+			TreeItem currentTreeItem, String currentClassPath) {
 
-		for (Entry entry : entries) {
+		int i = folderIndex;
+		Entry entry = entries[i];
 
-			if (currentFolder.equals(entry.getClassPath())) {
+		while (currentClassPath.equals(entry.getClassPath())
+				&& i < entries.length - 1) {
 
-				if (currentFolder.equals("")) {
+			if (currentClassPath.equals("")) {
 
-					this.addItem(getFeatureAnchor(entry, entry.getFeature()
-							.getFeatureName()));
+				this.addItem(getFeatureAnchor(entry, entry.getFeature()
+						.getFeatureName()));
 
-				} else {
+			} else {
 
-					currentTreeNode.addItem(getFeatureAnchor(entry, entry
-							.getFeature().getFeatureName()));
-				}
+				currentTreeItem.addItem(getFeatureAnchor(entry, entry
+						.getFeature().getFeatureName()));
 			}
+
+			i++;
+			entry = entries[i];
 		}
 	}
 
