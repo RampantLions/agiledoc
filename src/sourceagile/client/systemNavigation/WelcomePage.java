@@ -11,7 +11,7 @@ public class WelcomePage extends VerticalPanel {
 		
 		add(new Label(" "));
 		
-		add(new Label("Welcome to the Agile Documentation System"));
+		add(new Label("Welcome to the Source Code Agile Experiment"));
 	}
 
 }
