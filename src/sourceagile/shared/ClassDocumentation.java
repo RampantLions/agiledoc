@@ -20,6 +20,8 @@ public class ClassDocumentation implements Serializable {
 
 	private Method[] methods;
 
+	private boolean todo;
+
 	public String getDescription() {
 		return description;
 	}
@@ -74,6 +76,14 @@ public class ClassDocumentation implements Serializable {
 
 	public void setFields(Field[] fields) {
 		this.fields = fields;
+	}
+
+	public boolean isTodo() {
+		return todo;
+	}
+
+	public void setTodo(boolean todo) {
+		this.todo = todo;
 	}
 
 }
