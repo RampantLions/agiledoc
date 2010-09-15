@@ -19,6 +19,8 @@ public class OptionsIcons extends HorizontalPanel {
 		add(ButtonFeatureDescription(entry));
 
 		add(ButtonEditDescriptions(entry));
+		
+		add(ButtonTest(entry));
 
 		add(ButtonJavadoc(entry));
 
@@ -54,11 +56,27 @@ public class OptionsIcons extends HorizontalPanel {
 			}
 		});
 
-		img.setTitle("Edit Description");
+		img.setTitle("Edit");
 
 		return img;
 	}
 
+	private static Image ButtonTest(final Entry entry) {
+
+		Image img = new Image("images/test.gif");
+		img.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+			}
+		});
+
+		img.setTitle("Test");
+
+		return img;
+	}
+	
 	private static Image ButtonJavadoc(final Entry entry) {
 
 		Image img = new Image("images/javadoc.gif");
@@ -71,7 +89,7 @@ public class OptionsIcons extends HorizontalPanel {
 			}
 		});
 
-		img.setTitle("View Javadoc");
+		img.setTitle("Javadoc");
 
 		return img;
 	}
@@ -88,7 +106,7 @@ public class OptionsIcons extends HorizontalPanel {
 			}
 		});
 
-		img.setTitle("View Source Code");
+		img.setTitle("Source Code");
 
 		return img;
 	}
