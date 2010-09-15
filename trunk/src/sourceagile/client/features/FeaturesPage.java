@@ -1,8 +1,6 @@
 package sourceagile.client.features;
 
-import sourceagile.client.serverConnection.ListRemoteClasses;
-import sourceagile.client.systemNavigation.LoadingPanel;
-import sourceagile.shared.Entry;
+import sourceagile.client.project.ProjectInitialization;
 
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -25,22 +23,11 @@ public class FeaturesPage extends HorizontalPanel {
 		add(featuresTreePanel);
 
 		featuresTreePanel.clear();
-		featuresTreePanel.add(new LoadingPanel());
+		featuresTreePanel.add(new FeaturesTree(
+				ProjectInitialization.projectEntries));
 
 		featureVisualizationPanel.clear();
 		featureVisualizationPanel.setSpacing(20);
 		add(featureVisualizationPanel);
-
-		new ListRemoteClasses();
 	}
-
-	/**
-	 * Show the tree list with all the features for the project specified.
-	 */
-	public static void ShowFeatureTree(Entry[] features) {
-
-		featuresTreePanel.clear();
-		featuresTreePanel.add(new FeaturesTree(features));
-	}
-
 }
