@@ -12,6 +12,8 @@ import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.server.doclet.GetClassDoc;
 import sourceagile.shared.Entry;
+import sourceagile.shared.Feature;
+import sourceagile.shared.utilities.FeatureNameGenerator;
 
 public class GetRepositoryClass {
 
@@ -26,13 +28,22 @@ public class GetRepositoryClass {
 
 		entry.setClassDoc(GetClassDoc.getClassDoc(file));
 
+		setEntryFeature(entry);
+
 		return entry;
 	}
 
 	public static ByteArrayOutputStream getRemoteClass(
 			SVNRepository repository, Entry entry) throws SVNException {
 
-		String className = entry.getClassPath() + "/" + entry.getClassName();
+		String className = null;
+		if (!entry.getClassPath().equals("")) {
+
+			className = entry.getClassPath() + "/" + entry.getClassName();
+		} else {
+
+			className = entry.getClassName();
+		}
 
 		SVNProperties fileProperties = new SVNProperties();
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -58,6 +69,19 @@ public class GetRepositoryClass {
 		}
 
 		return tempFile;
+	}
+
+	public static void setEntryFeature(Entry entry) {
+
+		Feature feature = new Feature();
+
+		feature.setFeatureFolder(FeatureNameGenerator.getLastNameSpaced(
+				entry.getClassPath(), "/"));
+
+		feature.setFeatureName(FeatureNameGenerator.getFileSpacedName(entry
+				.getClassName()));
+
+		entry.setFeature(feature);
 	}
 
 }
