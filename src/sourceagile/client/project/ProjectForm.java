@@ -1,6 +1,6 @@
 package sourceagile.client.project;
 
-import sourceagile.client.SystemInitialization;
+import sourceagile.client.systemNavigation.FormField;
 import sourceagile.shared.Project;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -28,19 +28,19 @@ public class ProjectForm extends VerticalPanel {
 		this.add(title);
 
 		name.setWidth("500px");
-		name.setValue(SystemInitialization.currentProject.getName());
+		name.setValue(ProjectInitialization.currentProject.getName());
 		this.add(new FormField("Project Name", name));
 
 		url.setWidth("500px");
-		url.setValue(SystemInitialization.currentProject.getRepositoryURL());
+		url.setValue(ProjectInitialization.currentProject.getRepositoryURL());
 		this.add(new FormField("Repository URL", url));
 
 		root.setWidth("500px");
-		root.setValue(SystemInitialization.currentProject.getRoot());
+		root.setValue(ProjectInitialization.currentProject.getRoot());
 		this.add(new FormField("Root", root));
 
 		domain.setWidth("300px");
-		domain.setValue(SystemInitialization.currentProject.getDomain());
+		domain.setValue(ProjectInitialization.currentProject.getDomain());
 		this.add(new FormField("Domain", domain));
 
 		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
@@ -66,7 +66,7 @@ public class ProjectForm extends VerticalPanel {
 				proj.setRoot(root.getValue());
 				proj.setDomain(domain.getValue());
 
-				SystemInitialization.currentProject = proj;
+				ProjectInitialization.currentProject = proj;
 
 				// new ListSourceClasses();
 			}
