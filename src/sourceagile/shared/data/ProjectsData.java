@@ -9,10 +9,10 @@ public class ProjectsData {
 		Project[] projs = new Project[1];
 
 		projs[0] = new Project();
-		projs[0].setName("AgileDoc");
+		projs[0].setName("Source Agile");
 		projs[0].setRepositoryURL("http://agiledoc.googlecode.com");
 		projs[0].setRoot("/svn/trunk/src/");
-		projs[0].setDomain("agiledoc/client");
+		projs[0].setDomain("sourceagile/client");
 
 		return projs;
 	}
