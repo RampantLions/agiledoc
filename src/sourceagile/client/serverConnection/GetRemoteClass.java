@@ -5,6 +5,7 @@ import sourceagile.client.features.FeaturesPage;
 import sourceagile.client.features.featureOptions.FeatureContentPanel;
 import sourceagile.client.features.featureOptions.FeatureDescription;
 import sourceagile.client.features.featureOptions.OptionsIcons;
+import sourceagile.client.project.ProjectInitialization;
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.shared.Entry;
 
@@ -21,7 +22,7 @@ public class GetRemoteClass {
 		FeaturesPage.featureVisualizationPanel.clear();
 		FeaturesPage.featureVisualizationPanel.add(new LoadingPanel());
 
-		remoteFunctions.getEntryFeature(SystemInitialization.currentProject,
+		remoteFunctions.getEntryFeature(ProjectInitialization.currentProject,
 				SystemInitialization.currentUser, entry,
 				new AsyncCallback<Entry>() {
 

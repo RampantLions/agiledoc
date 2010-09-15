@@ -1,7 +1,7 @@
 package sourceagile.client.serverConnection;
 
 import sourceagile.client.SystemInitialization;
-import sourceagile.client.features.FeaturesPage;
+import sourceagile.client.project.ProjectInitialization;
 import sourceagile.shared.Entry;
 
 import com.google.gwt.core.client.GWT;
@@ -14,12 +14,12 @@ public class ListRemoteClasses {
 
 	public ListRemoteClasses() {
 
-		remoteFunctions.ListFeatures(SystemInitialization.currentProject,
+		remoteFunctions.ListFeatures(ProjectInitialization.currentProject,
 				SystemInitialization.currentUser, new AsyncCallback<Entry[]>() {
 
 					public void onSuccess(Entry[] entries) {
 
-						FeaturesPage.ShowFeatureTree(entries);
+						ProjectInitialization.projectEntries = entries;
 					}
 
 					public void onFailure(Throwable caught) {
