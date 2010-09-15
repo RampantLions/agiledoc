@@ -3,6 +3,7 @@ package sourceagile.server.repositoryClassLoader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -74,7 +75,10 @@ public class ListRepositoryClasses {
 
 		entry.setClassName(subversionEntry.getName());
 
-		// entry.setDateModified(entry.getDate());
+		String date = subversionEntry.getDate().toString();
+	//	 entry.setDateModified(new TimeS(date));
+		
+	//	entry.setUser(subversionEntry.getAuthor());
 
 		GetRepositoryClass.setEntryFeature(entry);
 
