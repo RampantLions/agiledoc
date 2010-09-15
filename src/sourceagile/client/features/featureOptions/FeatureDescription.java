@@ -1,10 +1,16 @@
 package sourceagile.client.features.featureOptions;
 
+import sourceagile.client.SystemInitialization;
+import sourceagile.client.serverConnection.GetRemoteClass;
 import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.Entry;
 import sourceagile.shared.Feature;
 import sourceagile.shared.Method;
+import sourceagile.shared.utilities.FeatureNameGenerator;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -22,6 +28,8 @@ public class FeatureDescription extends VerticalPanel {
 		add(featureDescription(entry.getClassDoc()));
 
 		add(featureSteps(entry.getClassDoc().getMethods()));
+
+		add(featureReferences(entry.getClassDoc().getImports()));
 
 		FeatureContentPanel.featureContent.add(this);
 	}
@@ -87,5 +95,56 @@ public class FeatureDescription extends VerticalPanel {
 		}
 
 		return table;
+	}
+
+	private static VerticalPanel featureReferences(String[] imports) {
+
+		VerticalPanel vp = new VerticalPanel();
+
+		VerticalPanel links = new VerticalPanel();
+
+		boolean hasReference = false;
+
+		for (final String link : imports) {
+
+			final String domain = SystemInitialization.currentProject
+					.getDomain().replaceAll("/", ".");
+
+			if (link.contains(domain)) {
+
+				Anchor classeAnchor = new Anchor(
+						FeatureNameGenerator.getLastNameSpaced(link, "\\."));
+				classeAnchor.addClickHandler(new ClickHandler() {
+					public void onClick(ClickEvent sender) {
+
+						String className = FeatureNameGenerator.getLastName(
+								link, "\\.");
+
+						String classPath = link.substring(domain.length() + 1,
+								link.length() - className.length() - 1);
+
+						Entry entry = new Entry();
+						entry.setClassPath(classPath.replaceAll("\\.", "/"));
+						entry.setClassName(className + ".java");
+
+						new GetRemoteClass(entry,
+								OptionsIcons.optionDescription);
+					}
+				});
+
+				links.add(classeAnchor);
+
+				hasReference = true;
+			}
+		}
+
+		if (hasReference) {
+
+			vp.add(new Label("See also:"));
+		}
+
+		vp.add(links);
+
+		return vp;
 	}
 }
