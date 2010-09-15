@@ -1,6 +1,6 @@
 package sourceagile.client.features.featureOptions;
 
-import sourceagile.client.SystemInitialization;
+import sourceagile.client.project.ProjectInitialization;
 import sourceagile.client.serverConnection.GetRemoteClass;
 import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.Entry;
@@ -107,7 +107,7 @@ public class FeatureDescription extends VerticalPanel {
 
 		for (final String link : imports) {
 
-			final String domain = SystemInitialization.currentProject
+			final String domain = ProjectInitialization.currentProject
 					.getDomain().replaceAll("/", ".");
 
 			if (link.contains(domain)) {
