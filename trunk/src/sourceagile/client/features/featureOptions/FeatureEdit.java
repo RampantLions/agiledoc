@@ -21,8 +21,6 @@ public class FeatureEdit extends VerticalPanel {
 
 		FeatureContentPanel.featureContent.clear();
 
-		setWidth("700px");
-
 		add(FeatureDescription.featureName(entry.getFeature()));
 		add(featureDescription(entry.getClassDoc()));
 

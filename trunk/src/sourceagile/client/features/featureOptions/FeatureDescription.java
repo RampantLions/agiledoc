@@ -15,8 +15,6 @@ public class FeatureDescription extends VerticalPanel {
 
 	public FeatureDescription(Entry entry) {
 
-		setWidth("700");
-
 		FeatureContentPanel.featureContent.clear();
 
 		add(featureName(entry.getFeature()));
@@ -39,7 +37,6 @@ public class FeatureDescription extends VerticalPanel {
 		String pack = "<B>" + feature.getFeatureFolder() + "</B>";
 
 		HTML html = new HTML(pack + name);
-		html.setWidth("1000");
 
 		return html;
 	}
@@ -50,7 +47,6 @@ public class FeatureDescription extends VerticalPanel {
 		HorizontalPanel hp = new HorizontalPanel();
 
 		hp.setSpacing(20);
-		hp.setWidth("600");
 
 		String text = null;
 		if (classDoc.getDescription() != null
