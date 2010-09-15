@@ -17,6 +17,8 @@ public class Entry implements Serializable, Comparable<Entry> {
 
 	private Date dateModified;
 
+	private User user;
+
 	private String textContent;
 
 	public String getClassPath() {
@@ -65,6 +67,14 @@ public class Entry implements Serializable, Comparable<Entry> {
 
 	public void setClassDoc(ClassDocumentation classDoc) {
 		this.classDoc = classDoc;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Override
