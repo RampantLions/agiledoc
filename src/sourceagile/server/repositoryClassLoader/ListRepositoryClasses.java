@@ -11,9 +11,7 @@ import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.SVNNodeKind;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.server.utilities.FeatureNameGenerator;
 import sourceagile.shared.Entry;
-import sourceagile.shared.Feature;
 
 public class ListRepositoryClasses {
 
@@ -78,7 +76,7 @@ public class ListRepositoryClasses {
 
 		// entry.setDateModified(entry.getDate());
 
-		setEntryFeature(entry);
+		GetRepositoryClass.setEntryFeature(entry);
 
 		return entry;
 	}
@@ -92,19 +90,6 @@ public class ListRepositoryClasses {
 
 			return false;
 		}
-	}
-
-	private static void setEntryFeature(Entry entry) {
-
-		Feature feature = new Feature();
-
-		feature.setFeatureFolder(FeatureNameGenerator.getLastNameSpaced(
-				entry.getClassPath(), "/"));
-
-		feature.setFeatureName(FeatureNameGenerator.getFileSpacedName(entry
-				.getClassName()));
-
-		entry.setFeature(feature);
 	}
 
 	private static Entry[] sortedEntries(List<Entry> entriesList) {
