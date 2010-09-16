@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/tools.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/codemirror_V-0.4-gwt16.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/svnkit.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/gwt-visualization.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
