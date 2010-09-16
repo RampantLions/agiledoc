@@ -120,8 +120,15 @@ public class FeatureDescription extends VerticalPanel {
 						String className = FeatureNameGenerator.getLastName(
 								link, "\\.");
 
-						String classPath = link.substring(domain.length() + 1,
-								link.length() - className.length() - 1);
+						String classPath = "";
+						int classPathInit = domain.length() + 1;
+						int classPathEnd = link.length() - className.length()
+								- 1;
+						if (classPathInit < classPathEnd) {
+
+							classPath = link.substring(classPathInit,
+									classPathEnd);
+						}
 
 						Entry entry = new Entry();
 						entry.setClassPath(classPath.replaceAll("\\.", "/"));
