@@ -13,7 +13,7 @@ public class TodoList extends FlexTable {
 	public TodoList(Entry[] entries) {
 
 		setBorderWidth(1);
-		setWidth("1000");
+		setWidth("900px");
 
 		gridColumns();
 
@@ -22,17 +22,17 @@ public class TodoList extends FlexTable {
 
 	private void gridColumns() {
 
-		this.setHTML(0, 1, "<B>Task Name</B>");
-		this.getColumnFormatter().setWidth(1, "200");
+		this.setHTML(0, 0, "<B>Name</B>");
+		this.getColumnFormatter().setWidth(0, "200px");
 
-		this.setHTML(0, 2, "<B>Description</B>");
-		this.getColumnFormatter().setWidth(2, "700");
+		this.setHTML(0, 1, "<B>Description</B>");
+		this.getColumnFormatter().setWidth(1, "450px");
 
-		this.setHTML(0, 3, "<B>Date</B>");
-		this.getColumnFormatter().setWidth(3, "260");
+		this.setHTML(0, 2, "<B>Date</B>");
+		this.getColumnFormatter().setWidth(2, "100px");
 
-		this.setHTML(0, 4, " ");
-		this.getColumnFormatter().setWidth(4, "50");
+		this.setHTML(0, 3, " ");
+		this.getColumnFormatter().setWidth(3, "50px");
 	}
 
 	private void gridRows(Entry[] entries) {
@@ -40,7 +40,7 @@ public class TodoList extends FlexTable {
 		int row = 0;
 		for (Entry entry : entries) {
 
-			if (entry.getClassDoc().isTodo()) {
+		/*	if (entry.getClassDoc().isTodo()) {
 
 				row++;
 
@@ -54,7 +54,7 @@ public class TodoList extends FlexTable {
 				hp.add(iconDeleteTodoFeature(entry));
 
 				this.setWidget(row, 4, hp);
-			}
+			}*/
 		}
 	}
 

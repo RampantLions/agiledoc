@@ -27,7 +27,7 @@ public class NewFeature extends VerticalPanel {
 	public NewFeature() {
 
 		Label space = new Label(" ");
-		space.setHeight("50");
+		space.setHeight("50px");
 		this.add(space);
 
 		VerticalPanel vp = new VerticalPanel();
@@ -100,10 +100,10 @@ public class NewFeature extends VerticalPanel {
 
 		// vp.add(comboPackages());
 
-		name.setWidth("300");
+		name.setWidth("500px");
 		vp.add(new FormField("Name", name));
 
-		description.setSize("500", "40");
+		description.setSize("700px", "80px");
 		vp.add(new FormField("Description", description));
 
 		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);

@@ -1,5 +1,6 @@
 package sourceagile.client.planning;
 
+import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.shared.Entry;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -37,7 +38,9 @@ public class TodoPage extends VerticalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new NewFeature();
+				MainPage.panelContent.clear();
+				MainPage.panelContent.add(new NewFeature());
+
 			}
 		});
 
