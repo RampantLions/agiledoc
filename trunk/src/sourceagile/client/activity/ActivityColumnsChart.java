@@ -1,5 +1,8 @@
 package sourceagile.client.activity;
 
+import sourceagile.client.project.ProjectInitialization;
+import sourceagile.shared.Entry;
+
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.visualization.client.AbstractDataTable.ColumnType;
 import com.google.gwt.visualization.client.DataTable;
@@ -7,6 +10,14 @@ import com.google.gwt.visualization.client.visualizations.ColumnChart;
 import com.google.gwt.visualization.client.visualizations.ColumnChart.Options;
 
 public class ActivityColumnsChart extends VerticalPanel {
+
+	public static int toDoCounts = 0;
+
+	public static int featureCounts = 0;
+
+	public static int classesCounts = 0;
+
+	public static int stepsCounts = 0;
 
 	public ActivityColumnsChart() {
 
@@ -22,24 +33,37 @@ public class ActivityColumnsChart extends VerticalPanel {
 
 		setColumns(data);
 
-		// setRows(data,
-		// GlobalVariables.getProject().getCumulativeProductivity());
+		if (classesCounts == 0) {
+
+			countActivity();
+		}
+
+		setRows(data);
 
 		ColumnChart chart = new ColumnChart(data, options);
 
 		this.add(chart);
 	}
 
-	/*
-	 * private static void setRows(DataTable data, Productivity totals) {
-	 * 
-	 * data.addRows(1);
-	 * 
-	 * data.setValue(0, 0, totals.getToDoCounts()); data.setValue(0, 1,
-	 * totals.getFeatureCounts()); data.setValue(0, 2,
-	 * totals.getClassesCounts()); data.setValue(0, 3, totals.getStepsCounts());
-	 * }
-	 */
+	private void countActivity() {
+
+		for (Entry entry : ProjectInitialization.projectEntries) {
+
+			// stepsCounts =+ entry.getClassDoc().getMethods().length;
+		}
+
+		classesCounts = ProjectInitialization.projectEntries.length;
+	}
+
+	private static void setRows(DataTable data) {
+
+		data.addRows(1);
+
+		data.setValue(0, 0, toDoCounts);
+		data.setValue(0, 1, featureCounts);
+		data.setValue(0, 2, classesCounts);
+		data.setValue(0, 3, stepsCounts);
+	}
 
 	private static void setColumns(DataTable data) {
 
