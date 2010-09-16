@@ -13,6 +13,8 @@ public class ProjectListSelection extends ListBox {
 
 		this.setWidth("200");
 
+		this.addItem("");
+
 		for (Project proj : ProjectsData.load()) {
 
 			this.addItem(proj.getName());
@@ -23,14 +25,19 @@ public class ProjectListSelection extends ListBox {
 			@Override
 			public void onChange(ChangeEvent event) {
 
-				Project[] projs = ProjectsData.load();
+				if (getSelectedIndex() > 0) {
 
-				ProjectForm.name.setValue(projs[getSelectedIndex()].getName());
-				ProjectForm.url.setValue(projs[getSelectedIndex()]
-						.getRepositoryURL());
-				ProjectForm.root.setValue(projs[getSelectedIndex()].getRoot());
-				ProjectForm.domain.setValue(projs[getSelectedIndex()]
-						.getDomain());
+					Project[] projs = ProjectsData.load();
+
+					ProjectForm.name.setValue(projs[getSelectedIndex() - 1]
+							.getName());
+					ProjectForm.url.setValue(projs[getSelectedIndex() - 1]
+							.getRepositoryURL());
+					ProjectForm.root.setValue(projs[getSelectedIndex() - 1]
+							.getRoot());
+					ProjectForm.domain.setValue(projs[getSelectedIndex() - 1]
+							.getDomain());
+				}
 			}
 		});
 	}

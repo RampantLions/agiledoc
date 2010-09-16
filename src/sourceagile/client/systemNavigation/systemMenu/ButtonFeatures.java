@@ -1,9 +1,9 @@
 package sourceagile.client.systemNavigation.systemMenu;
 
+import sourceagile.client.SystemInitialization;
 import sourceagile.client.features.FeaturesPage;
 import sourceagile.client.features.FeaturesTree;
 import sourceagile.client.project.ProjectInitialization;
-import sourceagile.client.systemNavigation.MainPage;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -18,14 +18,14 @@ public class ButtonFeatures extends Button {
 		addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
-				MainPage.panelContent.clear();
+				SystemInitialization.mainPage.panelContent.clear();
 
 				FeaturesPage featuresPage = new FeaturesPage();
 
 				featuresPage.featuresTreePanel.add(new FeaturesTree(
 						ProjectInitialization.projectEntries));
 
-				MainPage.panelContent.add(featuresPage);
+				SystemInitialization.mainPage.panelContent.add(featuresPage);
 			}
 		});
 	}

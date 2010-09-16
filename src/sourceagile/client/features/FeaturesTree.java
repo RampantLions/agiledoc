@@ -88,7 +88,11 @@ public class FeaturesTree extends Tree {
 
 			i++;
 		}
-		this.addItem(treeItemArray[0]);
+
+		if (treeItemArray[0] != null) {
+			this.addItem(treeItemArray[0]);
+		}
+
 	}
 
 	private void ListFilesFromFolder(Entry[] entries, int folderIndex,
@@ -98,7 +102,7 @@ public class FeaturesTree extends Tree {
 		Entry entry = entries[i];
 
 		while (currentClassPath.equals(entry.getClassPath())
-				&& i < entries.length - 1) {
+				&& i < entries.length) {
 
 			if (currentClassPath.equals("")) {
 
@@ -112,7 +116,10 @@ public class FeaturesTree extends Tree {
 			}
 
 			i++;
-			entry = entries[i];
+
+			if (i < entries.length) {
+				entry = entries[i];
+			}
 		}
 	}
 

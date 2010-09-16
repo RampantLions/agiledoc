@@ -1,30 +1,27 @@
 package sourceagile.client.project;
 
-import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class ChangeProjectPanel extends DialogBox {
+public class ChangeProjectPanel extends VerticalPanel {
 
 	public ChangeProjectPanel() {
 
-		this.setText("Change Current Project");
-		
-		this.setAutoHideEnabled(true);
-		this.setGlassEnabled(true);
-		this.setAnimationEnabled(true);
+		this.setBorderWidth(1);
 
-		VerticalPanel dialogContents = new VerticalPanel();
-		dialogContents.setSpacing(10);
+		VerticalPanel vp = new VerticalPanel();
 
-		dialogContents.add(new HTML(
-				"<B>Select a Project on the list bellow: </B>"));
+		vp.setTitle("Change Current Project");
 
-		dialogContents.add(new ProjectListSelection());
+		vp.setSpacing(10);
 
-		dialogContents.add(new ProjectForm());
+		vp.add(new HTML("<B>Select a Project on the list bellow: </B>"));
 
-		this.setWidget(dialogContents);
+		vp.add(new ProjectListSelection());
+
+		vp.add(new ProjectForm());
+
+		this.add(vp);
 	}
 
 }
