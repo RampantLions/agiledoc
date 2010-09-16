@@ -2,6 +2,7 @@ package sourceagile.client.serverConnection;
 
 import sourceagile.client.SystemInitialization;
 import sourceagile.client.project.ProjectInitialization;
+import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.shared.Entry;
 
 import com.google.gwt.core.client.GWT;
@@ -22,6 +23,8 @@ public class ListRemoteClasses {
 
 						ProjectInitialization.projectEntries = entries;
 
+						SystemInitialization.mainPage = new MainPage();
+						
 						RootPanel.get().clear();
 						RootPanel.get().add(SystemInitialization.mainPage);
 					}

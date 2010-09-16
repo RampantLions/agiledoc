@@ -1,8 +1,8 @@
 package sourceagile.client.systemNavigation.systemMenu;
 
+import sourceagile.client.SystemInitialization;
 import sourceagile.client.planning.TodoPage;
 import sourceagile.client.project.ProjectInitialization;
-import sourceagile.client.systemNavigation.MainPage;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -17,8 +17,8 @@ public class ButtonPlanning extends Button {
 		addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
-				MainPage.panelContent.clear();
-				MainPage.panelContent.add(new TodoPage(
+				SystemInitialization.mainPage.panelContent.clear();
+				SystemInitialization.mainPage.panelContent.add(new TodoPage(
 						ProjectInitialization.projectEntries));
 			}
 		});

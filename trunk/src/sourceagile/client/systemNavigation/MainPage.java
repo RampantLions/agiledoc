@@ -8,9 +8,9 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class MainPage extends VerticalPanel {
 
-	public static HorizontalPanel panelMenus = new HorizontalPanel();
+	public HorizontalPanel panelMenus = new HorizontalPanel();
 
-	public static VerticalPanel panelContent = new VerticalPanel();
+	public VerticalPanel panelContent = new VerticalPanel();
 
 	public MainPage() {
 

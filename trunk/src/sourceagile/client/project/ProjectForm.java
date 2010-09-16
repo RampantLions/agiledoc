@@ -66,9 +66,7 @@ public class ProjectForm extends VerticalPanel {
 				proj.setRoot(root.getValue());
 				proj.setDomain(domain.getValue());
 
-				ProjectInitialization.currentProject = proj;
-
-				// new ListSourceClasses();
+				new ProjectInitialization(proj);
 			}
 		});
 

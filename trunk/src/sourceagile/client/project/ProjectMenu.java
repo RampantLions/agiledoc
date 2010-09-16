@@ -1,5 +1,7 @@
 package sourceagile.client.project;
 
+import sourceagile.client.SystemInitialization;
+
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
@@ -20,7 +22,7 @@ public class ProjectMenu extends HorizontalPanel {
 		this.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 
 		final TextBox text = new TextBox();
-		text.setWidth("130");
+		text.setWidth("130px");
 		this.add(text);
 
 		this.add(getSearchButton());
@@ -42,10 +44,9 @@ public class ProjectMenu extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				ChangeProjectPanel dialogBox = new ChangeProjectPanel();
-
-				dialogBox.center();
-				dialogBox.show();
+				SystemInitialization.mainPage.panelContent.clear();
+				SystemInitialization.mainPage.panelContent
+						.add(new ChangeProjectPanel());
 			}
 		});
 
