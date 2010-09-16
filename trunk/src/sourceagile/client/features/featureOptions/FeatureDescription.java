@@ -31,6 +31,8 @@ public class FeatureDescription extends VerticalPanel {
 
 		add(featureReferences(entry.getClassDoc().getImports()));
 
+		add(featureCreation(entry));
+
 		FeatureContentPanel.featureContent.add(this);
 	}
 
@@ -154,4 +156,18 @@ public class FeatureDescription extends VerticalPanel {
 
 		return vp;
 	}
+
+	private static VerticalPanel featureCreation(Entry entry) {
+
+		VerticalPanel vp = new VerticalPanel();
+
+		String creation = "<br><br><font size=1>Created: "
+				+ entry.getDateModified() + " &nbsp; by "
+				+ entry.getUser().getName() + "</font>";
+
+		vp.add(new HTML(creation));
+
+		return vp;
+	}
+
 }
