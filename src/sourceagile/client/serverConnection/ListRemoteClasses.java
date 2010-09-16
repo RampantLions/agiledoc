@@ -6,6 +6,7 @@ import sourceagile.shared.Entry;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.RootPanel;
 
 public class ListRemoteClasses {
 
@@ -20,6 +21,9 @@ public class ListRemoteClasses {
 					public void onSuccess(Entry[] entries) {
 
 						ProjectInitialization.projectEntries = entries;
+
+						RootPanel.get().clear();
+						RootPanel.get().add(SystemInitialization.mainPage);
 					}
 
 					public void onFailure(Throwable caught) {
