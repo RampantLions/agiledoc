@@ -1,6 +1,7 @@
 package sourceagile.client;
 
 import sourceagile.client.project.ProjectInitialization;
+import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.shared.User;
 import sourceagile.shared.data.ProjectsData;
@@ -17,7 +18,8 @@ public class SystemInitialization implements EntryPoint {
 
 	public void onModuleLoad() {
 
-		RootPanel.get().add(mainPage);
+		RootPanel.get().clear();
+		RootPanel.get().add(new LoadingPanel());
 
 		currentUser = UserData.load()[0];
 
