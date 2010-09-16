@@ -1,7 +1,5 @@
 package sourceagile.client.features;
 
-import sourceagile.client.project.ProjectInitialization;
-
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -10,7 +8,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 public class FeaturesPage extends HorizontalPanel {
 
-	public static VerticalPanel featuresTreePanel = new VerticalPanel();
+	public VerticalPanel featuresTreePanel = new VerticalPanel();
 	public static VerticalPanel featureVisualizationPanel = new VerticalPanel();
 
 	/**
@@ -23,8 +21,6 @@ public class FeaturesPage extends HorizontalPanel {
 		add(featuresTreePanel);
 
 		featuresTreePanel.clear();
-		featuresTreePanel.add(new FeaturesTree(
-				ProjectInitialization.projectEntries));
 
 		featureVisualizationPanel.clear();
 		featureVisualizationPanel.setSpacing(20);

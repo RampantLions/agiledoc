@@ -49,6 +49,8 @@ public class FeaturesTree extends Tree {
 							j++;
 						}
 
+						treeItemArray[j - 1].addItem("<br>");
+
 						j = level.length - 1;
 						while (treeItemArray[j] != null) {
 
@@ -71,8 +73,6 @@ public class FeaturesTree extends Tree {
 					this.addItem("<br>");
 
 				} else {
-
-					treeItemArray[level.length - 1].addItem("<br>");
 
 					treeItemArray[level.length - 1].setState(true);
 				}
