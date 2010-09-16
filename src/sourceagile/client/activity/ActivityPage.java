@@ -5,8 +5,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class ActivityPage extends VerticalPanel {
 
-	public static VerticalPanel vpChart = new VerticalPanel();
-
 	public ActivityPage() {
 
 		VerticalPanel vp = new VerticalPanel();
@@ -18,7 +16,6 @@ public class ActivityPage extends VerticalPanel {
 		vp1.setSpacing(30);
 
 		vp1.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-		// vp1.add(vpChart);
 		vp1.add(new ActivityTimelineChart());
 
 		vp1.add(new ActivityColumnsChart());
