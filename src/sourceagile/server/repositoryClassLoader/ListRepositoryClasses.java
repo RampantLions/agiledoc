@@ -13,6 +13,7 @@ import org.tmatesoft.svn.core.SVNNodeKind;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.shared.Entry;
+import sourceagile.shared.User;
 
 public class ListRepositoryClasses {
 
@@ -75,10 +76,12 @@ public class ListRepositoryClasses {
 
 		entry.setClassName(subversionEntry.getName());
 
-		String date = subversionEntry.getDate().toString();
-	//	 entry.setDateModified(new TimeS(date));
-		
-	//	entry.setUser(subversionEntry.getAuthor());
+		long date = subversionEntry.getDate().getTime();
+		entry.setDateModified(new Date(date));
+
+		User user = new User();
+		user.setName(subversionEntry.getAuthor());
+		entry.setUser(user);
 
 		GetRepositoryClass.setEntryFeature(entry);
 
