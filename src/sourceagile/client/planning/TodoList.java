@@ -40,7 +40,7 @@ public class TodoList extends FlexTable {
 		int row = 0;
 		for (Entry entry : entries) {
 
-		/*	if (entry.getClassDoc().isTodo()) {
+			if (entry.getClassDoc().isTodo()) {
 
 				row++;
 
@@ -54,7 +54,7 @@ public class TodoList extends FlexTable {
 				hp.add(iconDeleteTodoFeature(entry));
 
 				this.setWidget(row, 4, hp);
-			}*/
+			}
 		}
 	}
 
