@@ -19,12 +19,13 @@ public class OptionsIcons extends HorizontalPanel {
 		add(ButtonFeatureDescription(entry));
 
 		add(ButtonEditDescriptions(entry));
-		
+
 		add(ButtonTest(entry));
 
 		add(ButtonJavadoc(entry));
 
 		add(ButtonSourceView(entry));
+
 	}
 
 	private static Image ButtonFeatureDescription(final Entry entry) {
@@ -76,7 +77,7 @@ public class OptionsIcons extends HorizontalPanel {
 
 		return img;
 	}
-	
+
 	private static Image ButtonJavadoc(final Entry entry) {
 
 		Image img = new Image("images/javadoc.gif");
@@ -110,4 +111,5 @@ public class OptionsIcons extends HorizontalPanel {
 
 		return img;
 	}
+
 }
