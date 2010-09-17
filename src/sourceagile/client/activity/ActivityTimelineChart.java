@@ -91,14 +91,13 @@ public class ActivityTimelineChart extends VerticalPanel {
 				currentActivity.setDate(entry.getDateModified());
 			}
 
-			/*
-			 * if (Tag.TODO.equals(classe.getTask())) {
-			 * 
-			 * classeMeasurement.setToDoCounts(classeMeasurement
-			 * .getToDoCounts() + 1);
-			 * 
-			 * totals.setToDoCounts(totals.getToDoCounts() + 1); }
-			 */
+			if (entry.getClassDoc().isTodo()) {
+
+				currentActivity
+						.setToDoCounts(currentActivity.getToDoCounts() + 1);
+
+				totals.setToDoCounts(totals.getToDoCounts() + 1);
+			}
 
 			/*
 			 * if (entry.getPack().getFullName().contains(
@@ -115,19 +114,15 @@ public class ActivityTimelineChart extends VerticalPanel {
 			currentActivity
 					.setClassesCounts(currentActivity.getClassesCounts() + 1);
 
-			/*
-			 * currentActivity.setStepsCounts(currentActivity.getStepsCounts() +
-			 * entry.getClassDoc().getConstructors().length +
-			 * entry.getClassDoc().getMethods().length);
-			 */
+			currentActivity.setStepsCounts(currentActivity.getStepsCounts()
+					+ entry.getClassDoc().getConstructors().length
+					+ entry.getClassDoc().getMethods().length);
 
 			totals.setClassesCounts(totals.getClassesCounts() + 1);
 
-			/*
-			 * totals.setStepsCounts(totals.getStepsCounts() +
-			 * entry.getClassDoc().getConstructors().length +
-			 * entry.getClassDoc().getMethods().length);
-			 */
+			totals.setStepsCounts(totals.getStepsCounts()
+					+ entry.getClassDoc().getConstructors().length
+					+ entry.getClassDoc().getMethods().length);
 
 			if (datesActivity.size() <= i) {
 
