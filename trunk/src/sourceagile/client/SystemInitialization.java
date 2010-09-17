@@ -18,7 +18,7 @@ public class SystemInitialization implements EntryPoint {
 
 		currentUser = UserData.load()[0];
 
-		new ProjectInitialization(ProjectsData.load()[0]);
+		new ProjectInitialization(ProjectsData.load()[1]);
 	}
 
 }
