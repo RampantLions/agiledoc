@@ -54,7 +54,11 @@ public class ListRepositoryClasses {
 						getFolderPath(path, subversionEntry), entries);
 			} else {
 
-				entries.add(getEntryFromRepositoryEntry(subversionEntry, path));
+				Entry entry = getEntryFromRepositoryEntry(subversionEntry, path);
+
+				GetRepositoryClass.getFeature(repository, entry);
+
+				entries.add(entry);
 			}
 		}
 	}
