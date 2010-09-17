@@ -49,7 +49,7 @@ public class ActivityColumnsChart extends VerticalPanel {
 
 		for (Entry entry : ProjectInitialization.projectEntries) {
 
-			// stepsCounts =+ entry.getClassDoc().getMethods().length;
+			stepsCounts = +entry.getClassDoc().getMethods().length;
 		}
 
 		classesCounts = ProjectInitialization.projectEntries.length;
