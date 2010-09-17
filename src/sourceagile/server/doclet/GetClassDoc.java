@@ -30,7 +30,10 @@ public class GetClassDoc {
 
 		classDocumentation.setDescription(classDoc.commentText());
 
-		classDocumentation.setSuperclass(classDoc.superclass().toString());
+		if (classDoc.superclass() != null) {
+
+			classDocumentation.setSuperclass(classDoc.superclass().toString());
+		}
 
 		classDocumentation.setModifiers(classDoc.modifiers());
 
