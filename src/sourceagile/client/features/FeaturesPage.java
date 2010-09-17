@@ -49,7 +49,7 @@ public class FeaturesPage extends VerticalPanel {
 
 	private static Image ButtonFeaturesReport() {
 
-		Image img = new Image("images/report.gif");
+		Image img = new Image("images/printer.gif");
 		img.addClickHandler(new ClickHandler() {
 
 			@Override
