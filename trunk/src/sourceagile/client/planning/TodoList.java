@@ -30,7 +30,7 @@ public class TodoList extends FlexTable {
 		this.setHTML(0, 1, "<B>Description</B>");
 		this.getColumnFormatter().setWidth(1, "450px");
 
-		this.setHTML(0, 2, "<B>Date</B>");
+		this.setHTML(0, 2, "<B>Created</B>");
 		this.getColumnFormatter().setWidth(2, "150px");
 
 		this.setHTML(0, 3, " ");
