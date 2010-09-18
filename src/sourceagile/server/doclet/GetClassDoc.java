@@ -11,6 +11,8 @@ import com.sun.javadoc.RootDoc;
 
 public class GetClassDoc {
 
+	public static final String TODO_TAG = "todo";
+
 	public static RootDoc getRootDoc(File file) {
 
 		EasyDoclet doclet = new EasyDoclet(file, file);
@@ -46,6 +48,11 @@ public class GetClassDoc {
 		classDocumentation.setFields(listFields(classDoc.fields()));
 
 		String[] imports = listImports(classDoc.importedClasses());
+
+		if (classDoc.tags(TODO_TAG).length > 0) {
+
+			classDocumentation.setTodo(true);
+		}
 
 		classDocumentation.setImports(imports);
 
