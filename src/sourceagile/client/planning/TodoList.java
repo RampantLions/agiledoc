@@ -15,6 +15,8 @@ public class TodoList extends FlexTable {
 		setBorderWidth(1);
 		setWidth("900px");
 
+		setCellPadding(5);
+
 		gridColumns();
 
 		gridRows(entries);
@@ -29,7 +31,7 @@ public class TodoList extends FlexTable {
 		this.getColumnFormatter().setWidth(1, "450px");
 
 		this.setHTML(0, 2, "<B>Date</B>");
-		this.getColumnFormatter().setWidth(2, "100px");
+		this.getColumnFormatter().setWidth(2, "150px");
 
 		this.setHTML(0, 3, " ");
 		this.getColumnFormatter().setWidth(3, "50px");
@@ -53,7 +55,7 @@ public class TodoList extends FlexTable {
 				hp.add(iconEditTodoFeature(entry));
 				hp.add(iconDeleteTodoFeature(entry));
 
-				this.setWidget(row, 4, hp);
+				this.setWidget(row, 3, hp);
 			}
 		}
 	}
