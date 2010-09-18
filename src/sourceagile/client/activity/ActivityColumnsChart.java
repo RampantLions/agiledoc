@@ -11,14 +11,6 @@ import com.google.gwt.visualization.client.visualizations.ColumnChart.Options;
 
 public class ActivityColumnsChart extends VerticalPanel {
 
-	public static int toDoCounts = 0;
-
-	public static int featureCounts = 0;
-
-	public static int classesCounts = 0;
-
-	public static int stepsCounts = 0;
-
 	public ActivityColumnsChart() {
 
 		Options options = Options.create();
@@ -33,7 +25,7 @@ public class ActivityColumnsChart extends VerticalPanel {
 
 		setColumns(data);
 
-		if (classesCounts == 0) {
+		if (ProjectInitialization.projectTotals == null) {
 
 			countActivity();
 		}
@@ -47,27 +39,40 @@ public class ActivityColumnsChart extends VerticalPanel {
 
 	private void countActivity() {
 
+		ProjectInitialization.projectTotals = new Activity();
+
 		for (Entry entry : ProjectInitialization.projectEntries) {
 
-			stepsCounts = stepsCounts + entry.getClassDoc().getMethods().length;
+			ProjectInitialization.projectTotals
+					.setStepsCounts(ProjectInitialization.projectTotals
+							.getStepsCounts()
+							+ entry.getClassDoc().getMethods().length);
 
 			if (entry.getClassDoc().isTodo()) {
 
-				toDoCounts++;
+				ProjectInitialization.projectTotals
+						.setToDoCounts(ProjectInitialization.projectTotals
+								.getToDoCounts() + 1);
 			}
 		}
 
-		classesCounts = ProjectInitialization.projectEntries.length;
+		ProjectInitialization.projectTotals
+				.setClassesCounts(ProjectInitialization.projectTotals
+						.getClassesCounts()
+						+ ProjectInitialization.projectEntries.length);
 	}
 
 	private static void setRows(DataTable data) {
 
 		data.addRows(1);
 
-		data.setValue(0, 0, toDoCounts);
-		data.setValue(0, 1, featureCounts);
-		data.setValue(0, 2, classesCounts);
-		data.setValue(0, 3, stepsCounts);
+		data.setValue(0, 0, ProjectInitialization.projectTotals.getToDoCounts());
+		data.setValue(0, 1,
+				ProjectInitialization.projectTotals.getFeatureCounts());
+		data.setValue(0, 2,
+				ProjectInitialization.projectTotals.getClassesCounts());
+		data.setValue(0, 3,
+				ProjectInitialization.projectTotals.getStepsCounts());
 	}
 
 	private static void setColumns(DataTable data) {
