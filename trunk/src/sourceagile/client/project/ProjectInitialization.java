@@ -18,12 +18,18 @@ public class ProjectInitialization {
 
 	public static ArrayList<Activity> projectActivity;
 
+	public static Activity projectTotals;
+
 	public ProjectInitialization(Project project) {
 
 		RootPanel.get().clear();
 		RootPanel.get().add(new LoadingPanel());
 
 		currentProject = project;
+
+		projectActivity = null;
+
+		projectTotals = null;
 
 		new ListRemoteClasses();
 	}
