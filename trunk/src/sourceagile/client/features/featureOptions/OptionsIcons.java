@@ -1,6 +1,6 @@
 package sourceagile.client.features.featureOptions;
 
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -12,7 +12,7 @@ public class OptionsIcons extends HorizontalPanel {
 	public static final int optionDescription = 0;
 	public static final int optionSource = 4;
 
-	public OptionsIcons(Entry entry) {
+	public OptionsIcons(ClassFile entry) {
 
 		setSpacing(10);
 
@@ -28,7 +28,7 @@ public class OptionsIcons extends HorizontalPanel {
 
 	}
 
-	private static Image ButtonFeatureDescription(final Entry entry) {
+	private static Image ButtonFeatureDescription(final ClassFile entry) {
 
 		Image img = new Image("images/list.gif");
 		img.addClickHandler(new ClickHandler() {
@@ -45,7 +45,7 @@ public class OptionsIcons extends HorizontalPanel {
 		return img;
 	}
 
-	private static Image ButtonEditDescriptions(final Entry entry) {
+	private static Image ButtonEditDescriptions(final ClassFile entry) {
 
 		Image img = new Image("images/edit.gif");
 		img.addClickHandler(new ClickHandler() {
@@ -62,7 +62,7 @@ public class OptionsIcons extends HorizontalPanel {
 		return img;
 	}
 
-	private static Image ButtonTest(final Entry entry) {
+	private static Image ButtonTest(final ClassFile entry) {
 
 		Image img = new Image("images/test.gif");
 		img.addClickHandler(new ClickHandler() {
@@ -78,7 +78,7 @@ public class OptionsIcons extends HorizontalPanel {
 		return img;
 	}
 
-	private static Image ButtonJavadoc(final Entry entry) {
+	private static Image ButtonJavadoc(final ClassFile entry) {
 
 		Image img = new Image("images/javadoc.gif");
 		img.addClickHandler(new ClickHandler() {
@@ -95,7 +95,7 @@ public class OptionsIcons extends HorizontalPanel {
 		return img;
 	}
 
-	private static Image ButtonSourceView(final Entry entry) {
+	private static Image ButtonSourceView(final ClassFile entry) {
 
 		Image img = new Image("images/source.gif");
 		img.addClickHandler(new ClickHandler() {

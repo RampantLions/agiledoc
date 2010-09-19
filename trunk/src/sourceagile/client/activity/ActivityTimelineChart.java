@@ -3,7 +3,7 @@ package sourceagile.client.activity;
 import java.util.ArrayList;
 
 import sourceagile.client.project.ProjectInitialization;
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -61,13 +61,13 @@ public class ActivityTimelineChart extends VerticalPanel {
 		}
 	}
 
-	private ArrayList<Activity> countActivity(Entry[] entries) {
+	private ArrayList<Activity> countActivity(ClassFile[] entries) {
 
 		ArrayList<Activity> datesActivity = new ArrayList<Activity>();
 
 		Activity totals = new Activity();
 
-		for (Entry entry : entries) {
+		for (ClassFile entry : entries) {
 
 			Activity currentActivity = null;
 			int i;

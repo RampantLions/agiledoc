@@ -3,7 +3,7 @@ package sourceagile.shared;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Entry implements Serializable, Comparable<Entry> {
+public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 	private static final long serialVersionUID = 1L;
 
@@ -78,7 +78,7 @@ public class Entry implements Serializable, Comparable<Entry> {
 	}
 
 	@Override
-	public int compareTo(Entry that) {
+	public int compareTo(ClassFile that) {
 
 		String thisClass = this.classPath + "/" + this.className;
 		String thatClass = that.classPath + "/" + that.className;

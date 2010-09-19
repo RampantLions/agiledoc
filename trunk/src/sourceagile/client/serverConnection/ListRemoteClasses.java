@@ -3,7 +3,7 @@ package sourceagile.client.serverConnection;
 import sourceagile.client.SystemInitialization;
 import sourceagile.client.project.ProjectInitialization;
 import sourceagile.client.systemNavigation.MainPage;
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -17,9 +17,9 @@ public class ListRemoteClasses {
 	public ListRemoteClasses() {
 
 		remoteFunctions.ListFeatures(ProjectInitialization.currentProject,
-				SystemInitialization.currentUser, new AsyncCallback<Entry[]>() {
+				SystemInitialization.currentUser, new AsyncCallback<ClassFile[]>() {
 
-					public void onSuccess(Entry[] entries) {
+					public void onSuccess(ClassFile[] entries) {
 
 						ProjectInitialization.projectEntries = entries;
 

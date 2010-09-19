@@ -13,7 +13,7 @@ public class WelcomePage extends VerticalPanel {
 		add(new Label(" "));
 
 		add(new HTML(
-				"<center>Welcome to <br><br><b><font size=4>The Source Code Agile Experiment</font></b></center>"));
+				"<center><font size=4>METAPortal <br><br><b>The Source Code Agile Experiment</font></b></center>"));
 	}
 
 }

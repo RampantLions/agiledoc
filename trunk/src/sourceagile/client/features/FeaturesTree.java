@@ -2,7 +2,7 @@ package sourceagile.client.features;
 
 import sourceagile.client.features.featureOptions.OptionsIcons;
 import sourceagile.client.serverConnection.GetRemoteClass;
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -12,7 +12,7 @@ import com.google.gwt.user.client.ui.TreeItem;
 
 public class FeaturesTree extends Tree {
 
-	public FeaturesTree(Entry[] entries) {
+	public FeaturesTree(ClassFile[] entries) {
 
 		TreeItem[] treeItemArray = new TreeItem[10];
 
@@ -20,7 +20,7 @@ public class FeaturesTree extends Tree {
 
 		for (int i = 0; i < entries.length; i++) {
 
-			Entry entry = entries[i];
+			ClassFile entry = entries[i];
 
 			if (!entry.getClassPath().equals(currentClassPath)) {
 
@@ -95,11 +95,11 @@ public class FeaturesTree extends Tree {
 
 	}
 
-	private void ListFilesFromFolder(Entry[] entries, int folderIndex,
+	private void ListFilesFromFolder(ClassFile[] entries, int folderIndex,
 			TreeItem currentTreeItem, String currentClassPath) {
 
 		int i = folderIndex;
-		Entry entry = entries[i];
+		ClassFile entry = entries[i];
 
 		while (currentClassPath.equals(entry.getClassPath())
 				&& i < entries.length) {
@@ -123,7 +123,7 @@ public class FeaturesTree extends Tree {
 		}
 	}
 
-	private Anchor getFeatureAnchor(final Entry entry, String anchorName) {
+	private Anchor getFeatureAnchor(final ClassFile entry, String anchorName) {
 
 		Anchor featureAnchor = new Anchor(anchorName);
 		featureAnchor.addClickHandler(new ClickHandler() {

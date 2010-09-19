@@ -11,13 +11,13 @@ import org.tmatesoft.svn.core.SVNProperties;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.server.doclet.GetClassDoc;
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 import sourceagile.shared.Feature;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 
 public class GetRepositoryClass {
 
-	public static Entry getFeature(SVNRepository repository, Entry entry)
+	public static ClassFile getFeature(SVNRepository repository, ClassFile entry)
 			throws SVNException, IOException {
 
 		ByteArrayOutputStream baos = getRemoteClass(repository, entry);
@@ -30,7 +30,7 @@ public class GetRepositoryClass {
 	}
 
 	public static void loadClassDocumentation(ByteArrayOutputStream baos,
-			Entry entry) throws IOException {
+			ClassFile entry) throws IOException {
 
 		File file = getTempFile(baos, entry);
 
@@ -40,7 +40,7 @@ public class GetRepositoryClass {
 	}
 
 	public static ByteArrayOutputStream getRemoteClass(
-			SVNRepository repository, Entry entry) throws SVNException,
+			SVNRepository repository, ClassFile entry) throws SVNException,
 			IOException {
 
 		String className = entry.toString();
@@ -52,7 +52,7 @@ public class GetRepositoryClass {
 		return baos;
 	}
 
-	private static File getTempFile(ByteArrayOutputStream baos, Entry entry)
+	private static File getTempFile(ByteArrayOutputStream baos, ClassFile entry)
 			throws IOException {
 
 		File tempFile = null;
@@ -66,7 +66,7 @@ public class GetRepositoryClass {
 		return tempFile;
 	}
 
-	public static void setEntryFeature(Entry entry) {
+	public static void setEntryFeature(ClassFile entry) {
 
 		Feature feature = new Feature();
 
