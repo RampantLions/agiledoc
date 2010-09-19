@@ -13,12 +13,12 @@
 
 	<servlet-mapping>
 		<servlet-name>repositoryClassLoader</servlet-name>
-		<url-pattern>/sourceagile/repositoryClassLoader</url-pattern>
+		<url-pattern>/sourceagileappengine/repositoryClassLoader</url-pattern>
 	</servlet-mapping>
   
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>SourceAgile.html</welcome-file>
+    <welcome-file>SourceAgileAppEngine.html</welcome-file>
   </welcome-file-list>
 
 </web-app>

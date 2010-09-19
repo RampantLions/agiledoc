@@ -2,15 +2,13 @@ package sourceagile.server.repositoryClassLoader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 
 import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.SVNProperties;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.server.doclet.GetClassDoc;
+import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Feature;
 import sourceagile.shared.utilities.FeatureNameGenerator;
@@ -34,7 +32,8 @@ public class GetRepositoryClass {
 
 		File file = getTempFile(baos, entry);
 
-		entry.setClassDoc(GetClassDoc.getClassDoc(file));
+		// entry.setClassDoc(GetClassDoc.getClassDoc(file));
+		entry.setClassDoc(new ClassDocumentation());
 
 		setEntryFeature(entry);
 	}
@@ -59,9 +58,9 @@ public class GetRepositoryClass {
 
 		tempFile = File.createTempFile(entry.getClassName(), ".java");
 
-		OutputStream out = new FileOutputStream(tempFile);
-		out.write(baos.toByteArray());
-		out.close();
+		// OutputStream out = new FileOutputStream(tempFile);
+		// out.write(baos.toByteArray());
+		// out.close();
 
 		return tempFile;
 	}
