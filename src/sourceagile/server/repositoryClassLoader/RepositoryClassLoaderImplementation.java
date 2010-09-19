@@ -1,6 +1,5 @@
 package sourceagile.server.repositoryClassLoader;
 
-import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.client.serverConnection.RemoteLoadFunctions;
@@ -20,13 +19,12 @@ public class RepositoryClassLoaderImplementation extends RemoteServiceServlet
 		Entry[] entries = null;
 
 		try {
-
 			SVNRepository repository = RepositoryConnection.connect(project,
 					user);
 
 			entries = ListRepositoryClasses.getRemoteClasses(repository);
 
-		} catch (SVNException e) {
+		} catch (Exception e) {
 
 			System.out.println(e.toString());
 		}
@@ -44,7 +42,7 @@ public class RepositoryClassLoaderImplementation extends RemoteServiceServlet
 
 			entry = GetRepositoryClass.getFeature(repository, entry);
 
-		} catch (SVNException e) {
+		} catch (Exception e) {
 
 			System.out.println(e.toString());
 		}

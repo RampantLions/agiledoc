@@ -1,5 +1,6 @@
 package sourceagile.server.repositoryClassLoader;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -18,29 +19,31 @@ import sourceagile.shared.User;
 public class ListRepositoryClasses {
 
 	public static Entry[] getRemoteClasses(SVNRepository repository)
-			throws SVNException {
+			throws SVNException, IOException {
 
-		List<Entry> entriesList = new ArrayList<Entry>();
-
-		getRepositoryClasses(repository, "", entriesList);
+		List<Entry> entriesList = getRepositoryClasses(repository, "",
+				new ArrayList<Entry>());
 
 		Entry[] entries = sortedEntries(entriesList);
 
 		return entries;
 	}
 
-	public static void getRepositoryClasses(SVNRepository repository,
-			String folderPath, List<Entry> entries) throws SVNException {
+	public static List<Entry> getRepositoryClasses(SVNRepository repository,
+			String folderPath, List<Entry> entries) throws SVNException,
+			IOException {
 
 		Collection subFolderEntries = repository.getDir(folderPath, -1, null,
 				(Collection) null);
 
 		listClasses(repository, folderPath, subFolderEntries, entries);
+
+		return entries;
 	}
 
 	public static void listClasses(SVNRepository repository, String path,
 			Collection subversionEntries, List<Entry> entries)
-			throws SVNException {
+			throws SVNException, IOException {
 
 		Iterator iterator = subversionEntries.iterator();
 
@@ -55,7 +58,6 @@ public class ListRepositoryClasses {
 			} else {
 
 				Entry entry = getEntryFromRepositoryEntry(subversionEntry, path);
-
 				GetRepositoryClass.getFeature(repository, entry);
 
 				entries.add(entry);

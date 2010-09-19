@@ -13,25 +13,20 @@ import sourceagile.shared.User;
 
 public class RepositoryConnection {
 
-	public static SVNRepository connect(Project project, User user) {
+	public static SVNRepository connect(Project project, User user)
+			throws SVNException {
 
 		// SVNRepositoryFactoryImpl.setup();
 		DAVRepositoryFactory.setup();
 
 		SVNRepository repository = null;
-		try {
 
-			repository = SVNRepositoryFactory.create(SVNURL
-					.parseURIDecoded(project.getRepositoryURL()
-							+ project.getRoot() + project.getDomain()));
-			ISVNAuthenticationManager authManager = SVNWCUtil
-					.createDefaultAuthenticationManager(user.getName(),
-							user.getPassword());
-			repository.setAuthenticationManager(authManager);
-
-		} catch (SVNException e) {
-			// handle exception
-		}
+		repository = SVNRepositoryFactory.create(SVNURL.parseURIDecoded(project
+				.getRepositoryURL() + project.getRoot() + project.getDomain()));
+		ISVNAuthenticationManager authManager = SVNWCUtil
+				.createDefaultAuthenticationManager(user.getName(),
+						user.getPassword());
+		repository.setAuthenticationManager(authManager);
 
 		return repository;
 	}
