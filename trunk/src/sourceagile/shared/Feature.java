@@ -46,4 +46,10 @@ public class Feature implements Serializable {
 		this.priority = priority;
 	}
 
+	@Override
+	public String toString() {
+
+		return featureFolder + "." + featureName;
+	}
+
 }
