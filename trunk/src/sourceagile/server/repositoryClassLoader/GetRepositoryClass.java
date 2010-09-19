@@ -18,32 +18,32 @@ import sourceagile.shared.utilities.FeatureNameGenerator;
 public class GetRepositoryClass {
 
 	public static Entry getFeature(SVNRepository repository, Entry entry)
-			throws SVNException {
+			throws SVNException, IOException {
 
 		ByteArrayOutputStream baos = getRemoteClass(repository, entry);
 
 		entry.setTextContent(baos.toString());
+
+		loadClassDocumentation(baos, entry);
+
+		return entry;
+	}
+
+	public static void loadClassDocumentation(ByteArrayOutputStream baos,
+			Entry entry) throws IOException {
 
 		File file = getTempFile(baos, entry);
 
 		entry.setClassDoc(GetClassDoc.getClassDoc(file));
 
 		setEntryFeature(entry);
-
-		return entry;
 	}
 
 	public static ByteArrayOutputStream getRemoteClass(
-			SVNRepository repository, Entry entry) throws SVNException {
+			SVNRepository repository, Entry entry) throws SVNException,
+			IOException {
 
-		String className = null;
-		if (!entry.getClassPath().equals("")) {
-
-			className = entry.getClassPath() + "/" + entry.getClassName();
-		} else {
-
-			className = entry.getClassName();
-		}
+		String className = entry.toString();
 
 		SVNProperties fileProperties = new SVNProperties();
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -52,21 +52,16 @@ public class GetRepositoryClass {
 		return baos;
 	}
 
-	private static File getTempFile(ByteArrayOutputStream baos, Entry entry) {
+	private static File getTempFile(ByteArrayOutputStream baos, Entry entry)
+			throws IOException {
 
 		File tempFile = null;
-		try {
 
-			tempFile = File.createTempFile(entry.getClassName(), ".java");
+		tempFile = File.createTempFile(entry.getClassName(), ".java");
 
-			OutputStream out = new FileOutputStream(tempFile);
-			out.write(baos.toByteArray());
-			out.close();
-
-		} catch (IOException ex) {
-
-			System.err.println("Cannot create temp file: " + ex.getMessage());
-		}
+		OutputStream out = new FileOutputStream(tempFile);
+		out.write(baos.toByteArray());
+		out.close();
 
 		return tempFile;
 	}
