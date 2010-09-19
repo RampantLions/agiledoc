@@ -10,10 +10,6 @@ public class Feature implements Serializable {
 
 	private String featureName;
 
-	private String task;
-
-	private int priority;
-
 	public String getFeatureFolder() {
 		return featureFolder;
 	}
@@ -28,22 +24,6 @@ public class Feature implements Serializable {
 
 	public void setFeatureName(String featureName) {
 		this.featureName = featureName;
-	}
-
-	public String getTask() {
-		return task;
-	}
-
-	public void setTask(String task) {
-		this.task = task;
-	}
-
-	public int getPriority() {
-		return priority;
-	}
-
-	public void setPriority(int priority) {
-		this.priority = priority;
 	}
 
 	@Override
