@@ -2,9 +2,7 @@ package sourceagile.server.repositoryClassLoader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 
 import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.SVNProperties;
@@ -15,57 +13,60 @@ import sourceagile.shared.Entry;
 import sourceagile.shared.Feature;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 
+import com.spun.util.ObjectUtils;
+import com.spun.util.io.FileUtils;
+
 public class GetRepositoryClass {
 
 	public static Entry getFeature(SVNRepository repository, Entry entry)
 			throws SVNException {
-
-		ByteArrayOutputStream baos = getRemoteClass(repository, entry);
-
-		entry.setTextContent(baos.toString());
-
-		File file = getTempFile(baos, entry);
-
-		entry.setClassDoc(GetClassDoc.getClassDoc(file));
-
-		setEntryFeature(entry);
-
+		entry.setTextContent(getRemoteClass(repository, entry));
+		LoadFeatureFromRepository(entry);
 		return entry;
 	}
 
-	public static ByteArrayOutputStream getRemoteClass(
-			SVNRepository repository, Entry entry) throws SVNException {
+	public static void LoadFeatureFromRepository(Entry entry) {
+		File file = getTempFile(entry);
 
-		String className = null;
-		if (!entry.getClassPath().equals("")) {
+		loadClassDocumentation(entry, file);
 
-			className = entry.getClassPath() + "/" + entry.getClassName();
-		} else {
+		setEntryFeature(entry);
+	}
 
-			className = entry.getClassName();
-		}
+	public static void loadClassDocumentation(Entry entry, File file) {
+		entry.setClassDoc(GetClassDoc.getClassDoc(file));
+	}
+
+	public static String getRemoteClass(SVNRepository repository, Entry entry)
+			throws SVNException {
+
+		String className = entry.getFullName();
 
 		SVNProperties fileProperties = new SVNProperties();
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		repository.getFile(className, -1, fileProperties, baos);
 
-		return baos;
+		String context = baos.toString();
+		try {
+			baos.close();
+		} catch (IOException e) {
+			ObjectUtils.throwAsError(e);
+		}
+		return context;
 	}
 
-	private static File getTempFile(ByteArrayOutputStream baos, Entry entry) {
+	private static File getTempFile(Entry entry) {
 
 		File tempFile = null;
 		try {
 
 			tempFile = File.createTempFile(entry.getClassName(), ".java");
 
-			OutputStream out = new FileOutputStream(tempFile);
-			out.write(baos.toByteArray());
-			out.close();
+			FileUtils.writeFile(tempFile, entry.getTextContent());
 
 		} catch (IOException ex) {
 
-			System.err.println("Cannot create temp file: " + ex.getMessage());
+			throw ObjectUtils.throwAsError(ex);
 		}
 
 		return tempFile;

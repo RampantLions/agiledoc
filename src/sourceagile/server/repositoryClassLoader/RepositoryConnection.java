@@ -8,6 +8,8 @@ import org.tmatesoft.svn.core.io.SVNRepository;
 import org.tmatesoft.svn.core.io.SVNRepositoryFactory;
 import org.tmatesoft.svn.core.wc.SVNWCUtil;
 
+import com.spun.util.ObjectUtils;
+
 import sourceagile.shared.Project;
 import sourceagile.shared.User;
 
@@ -30,7 +32,8 @@ public class RepositoryConnection {
 			repository.setAuthenticationManager(authManager);
 
 		} catch (SVNException e) {
-			// handle exception
+			
+			throw ObjectUtils.throwAsError(e);
 		}
 
 		return repository;

@@ -78,12 +78,34 @@ public class Entry implements Serializable, Comparable<Entry> {
 	}
 
 	@Override
-	public int compareTo(Entry entry) {
+	public int compareTo(Entry that) {
 
 		String thisClass = this.classPath + "/" + this.className;
-		String entryClass = entry.classPath + "/" + entry.className;
+		String thatClass = that.classPath + "/" + that.className;
 
-		return thisClass.compareTo(entryClass);
+		return thisClass.compareTo(thatClass);
+	}
+
+	@Override
+	public String toString() {
+
+		return getFullName();
+
+	}
+
+	public String getFullName() {
+		if (isEmpty(this.classPath)) {
+
+			return this.className;
+		} else {
+
+			return this.classPath + "/" + this.className;
+		}
+	}
+
+	private static boolean isEmpty(String s) {
+
+		return s == null || s.length() == 0;
 	}
 
 }

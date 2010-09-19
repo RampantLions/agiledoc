@@ -9,6 +9,7 @@ import sourceagile.shared.Project;
 import sourceagile.shared.User;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import com.spun.util.MySystem;
 
 @SuppressWarnings("serial")
 public class RepositoryClassLoaderImplementation extends RemoteServiceServlet
@@ -20,7 +21,6 @@ public class RepositoryClassLoaderImplementation extends RemoteServiceServlet
 		Entry[] entries = null;
 
 		try {
-
 			SVNRepository repository = RepositoryConnection.connect(project,
 					user);
 

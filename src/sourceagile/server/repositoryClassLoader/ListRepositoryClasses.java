@@ -12,6 +12,8 @@ import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.SVNNodeKind;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
+import com.spun.util.MySystem;
+
 import sourceagile.shared.Entry;
 import sourceagile.shared.User;
 
@@ -20,22 +22,22 @@ public class ListRepositoryClasses {
 	public static Entry[] getRemoteClasses(SVNRepository repository)
 			throws SVNException {
 
-		List<Entry> entriesList = new ArrayList<Entry>();
-
-		getRepositoryClasses(repository, "", entriesList);
+		List<Entry> entriesList = getRepositoryClasses(repository, "", new ArrayList<Entry>());
 
 		Entry[] entries = sortedEntries(entriesList);
 
 		return entries;
 	}
 
-	public static void getRepositoryClasses(SVNRepository repository,
+	public static List<Entry> getRepositoryClasses(SVNRepository repository,
 			String folderPath, List<Entry> entries) throws SVNException {
 
 		Collection subFolderEntries = repository.getDir(folderPath, -1, null,
 				(Collection) null);
 
 		listClasses(repository, folderPath, subFolderEntries, entries);
+		
+		return entries;
 	}
 
 	public static void listClasses(SVNRepository repository, String path,
@@ -55,7 +57,6 @@ public class ListRepositoryClasses {
 			} else {
 
 				Entry entry = getEntryFromRepositoryEntry(subversionEntry, path);
-
 				GetRepositoryClass.getFeature(repository, entry);
 
 				entries.add(entry);
@@ -65,8 +66,7 @@ public class ListRepositoryClasses {
 
 	public static String getFolderPath(String path, SVNDirEntry subversionEntry) {
 
-		String folderPath = (path.equals("")) ? subversionEntry.getName()
-				: path + "/" + subversionEntry.getName();
+		String folderPath = (path.equals("")) ? subversionEntry.getName()	: path + "/" + subversionEntry.getName();
 
 		return folderPath;
 	}
