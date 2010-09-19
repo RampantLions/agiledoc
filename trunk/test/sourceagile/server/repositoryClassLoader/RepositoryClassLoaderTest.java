@@ -8,7 +8,7 @@ import org.approvaltests.Approvals;
 import org.approvaltests.UseReporter;
 
 import sourceagile.server.doclet.GetClassDoc;
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 import sourceagile.shared.Project;
 import sourceagile.shared.User;
 import sourceagile.shared.data.ProjectsData;
@@ -23,7 +23,7 @@ public class RepositoryClassLoaderTest extends TestCase {
 
 		User user = UserData.load()[0];
 		Project project = ProjectsData.load()[1];
-		Entry[] listFeatures = new RepositoryClassLoaderImplementation()
+		ClassFile[] listFeatures = new RepositoryClassLoaderImplementation()
 				.ListFeatures(project, user);
 		Approvals.approve("Entry", listFeatures);
 
@@ -31,7 +31,7 @@ public class RepositoryClassLoaderTest extends TestCase {
 
 	public void testGetEntryFeature() throws Exception {
 
-		Entry entryFeature = new Entry();
+		ClassFile entryFeature = new ClassFile();
 
 		File file = new File(
 				"test/sourceagile/server/repositoryClassLoader/RepositoryClassLoaderTest.java");
