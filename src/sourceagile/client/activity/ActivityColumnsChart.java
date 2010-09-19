@@ -1,7 +1,7 @@
 package sourceagile.client.activity;
 
 import sourceagile.client.project.ProjectInitialization;
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.visualization.client.AbstractDataTable.ColumnType;
@@ -41,7 +41,7 @@ public class ActivityColumnsChart extends VerticalPanel {
 
 		ProjectInitialization.projectTotals = new Activity();
 
-		for (Entry entry : ProjectInitialization.projectEntries) {
+		for (ClassFile entry : ProjectInitialization.projectEntries) {
 
 			ProjectInitialization.projectTotals
 					.setStepsCounts(ProjectInitialization.projectTotals

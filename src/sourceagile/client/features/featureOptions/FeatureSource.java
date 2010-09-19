@@ -1,12 +1,12 @@
 package sourceagile.client.features.featureOptions;
 
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class FeatureSource extends VerticalPanel {
 
-	public FeatureSource(Entry entry) {
+	public FeatureSource(ClassFile entry) {
 
 		FeatureContentPanel.featureContent.clear();
 

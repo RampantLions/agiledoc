@@ -1,7 +1,7 @@
 package sourceagile.client.planning;
 
 import sourceagile.client.SystemInitialization;
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -11,7 +11,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class TodoPage extends VerticalPanel {
 
-	public TodoPage(Entry[] entries) {
+	public TodoPage(ClassFile[] entries) {
 
 		VerticalPanel vp = new VerticalPanel();
 		vp.setBorderWidth(1);

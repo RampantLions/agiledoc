@@ -13,24 +13,24 @@ import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.SVNNodeKind;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 import sourceagile.shared.User;
 
 public class ListRepositoryClasses {
 
-	public static Entry[] getRemoteClasses(SVNRepository repository)
+	public static ClassFile[] getRemoteClasses(SVNRepository repository)
 			throws SVNException, IOException {
 
-		List<Entry> entriesList = getRepositoryClasses(repository, "",
-				new ArrayList<Entry>());
+		List<ClassFile> entriesList = getRepositoryClasses(repository, "",
+				new ArrayList<ClassFile>());
 
-		Entry[] entries = sortedEntries(entriesList);
+		ClassFile[] entries = sortedEntries(entriesList);
 
 		return entries;
 	}
 
-	public static List<Entry> getRepositoryClasses(SVNRepository repository,
-			String folderPath, List<Entry> entries) throws SVNException,
+	public static List<ClassFile> getRepositoryClasses(SVNRepository repository,
+			String folderPath, List<ClassFile> entries) throws SVNException,
 			IOException {
 
 		Collection subFolderEntries = repository.getDir(folderPath, -1, null,
@@ -42,7 +42,7 @@ public class ListRepositoryClasses {
 	}
 
 	public static void listClasses(SVNRepository repository, String path,
-			Collection subversionEntries, List<Entry> entries)
+			Collection subversionEntries, List<ClassFile> entries)
 			throws SVNException, IOException {
 
 		Iterator iterator = subversionEntries.iterator();
@@ -57,7 +57,7 @@ public class ListRepositoryClasses {
 						getFolderPath(path, subversionEntry), entries);
 			} else {
 
-				Entry entry = getEntryFromRepositoryEntry(subversionEntry, path);
+				ClassFile entry = getEntryFromRepositoryEntry(subversionEntry, path);
 				GetRepositoryClass.getFeature(repository, entry);
 
 				entries.add(entry);
@@ -73,10 +73,10 @@ public class ListRepositoryClasses {
 		return folderPath;
 	}
 
-	private static Entry getEntryFromRepositoryEntry(
+	private static ClassFile getEntryFromRepositoryEntry(
 			SVNDirEntry subversionEntry, String folderPath) {
 
-		Entry entry = new Entry();
+		ClassFile entry = new ClassFile();
 
 		entry.setClassPath(folderPath);
 
@@ -105,9 +105,9 @@ public class ListRepositoryClasses {
 		}
 	}
 
-	private static Entry[] sortedEntries(List<Entry> entriesList) {
+	private static ClassFile[] sortedEntries(List<ClassFile> entriesList) {
 
-		Entry[] entries = new Entry[entriesList.size()];
+		ClassFile[] entries = new ClassFile[entriesList.size()];
 
 		entriesList.toArray(entries);
 

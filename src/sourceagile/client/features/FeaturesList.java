@@ -1,6 +1,6 @@
 package sourceagile.client.features;
 
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -11,7 +11,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class FeaturesList extends HorizontalPanel {
 
-	public FeaturesList(Entry[] entries) {
+	public FeaturesList(ClassFile[] entries) {
 
 		this.setSpacing(20);
 
@@ -24,7 +24,7 @@ public class FeaturesList extends HorizontalPanel {
 		this.add(vp);
 	}
 
-	public Tree listTree(Entry[] entries) {
+	public Tree listTree(ClassFile[] entries) {
 
 		Tree tree = new Tree();
 
@@ -34,7 +34,7 @@ public class FeaturesList extends HorizontalPanel {
 
 		for (int i = 0; i < entries.length; i++) {
 
-			Entry entry = entries[i];
+			ClassFile entry = entries[i];
 
 			if (!entry.getClassPath().equals(currentClassPath)) {
 
@@ -111,11 +111,11 @@ public class FeaturesList extends HorizontalPanel {
 
 	}
 
-	private void ListFilesFromFolder(Entry[] entries, int folderIndex,
+	private void ListFilesFromFolder(ClassFile[] entries, int folderIndex,
 			TreeItem currentTreeItem, String currentClassPath, Tree tree) {
 
 		int i = folderIndex;
-		Entry entry = entries[i];
+		ClassFile entry = entries[i];
 
 		while (currentClassPath.equals(entry.getClassPath())
 				&& i < entries.length) {
@@ -139,7 +139,7 @@ public class FeaturesList extends HorizontalPanel {
 		}
 	}
 
-	private HTML getFeatureAnchor(final Entry entry, String anchorName) {
+	private HTML getFeatureAnchor(final ClassFile entry, String anchorName) {
 
 		String name = "<br><B>" + entry.getFeature().getFeatureName() + "</B> ";
 		// + entry.getFeature().getFeatureFolder();

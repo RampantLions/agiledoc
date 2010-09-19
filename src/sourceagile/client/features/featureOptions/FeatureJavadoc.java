@@ -1,7 +1,7 @@
 package sourceagile.client.features.featureOptions;
 
 import sourceagile.shared.ClassDocumentation;
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 import sourceagile.shared.Field;
 import sourceagile.shared.Method;
 
@@ -10,7 +10,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class FeatureJavadoc extends VerticalPanel {
 
-	public FeatureJavadoc(Entry entry) {
+	public FeatureJavadoc(ClassFile entry) {
 
 		setWidth("700px");
 
@@ -24,7 +24,7 @@ public class FeatureJavadoc extends VerticalPanel {
 		FeatureContentPanel.featureContent.add(this);
 	}
 
-	public static HTML classHeader(Entry entry) {
+	public static HTML classHeader(ClassFile entry) {
 
 		String html = "<HR>"
 				+ "<H2>"

@@ -3,7 +3,7 @@ package sourceagile.client.features.featureOptions;
 import sourceagile.client.project.ProjectInitialization;
 import sourceagile.client.serverConnection.GetRemoteClass;
 import sourceagile.shared.ClassDocumentation;
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 import sourceagile.shared.Feature;
 import sourceagile.shared.Method;
 import sourceagile.shared.utilities.FeatureNameGenerator;
@@ -19,7 +19,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class FeatureDescription extends VerticalPanel {
 
-	public FeatureDescription(Entry entry) {
+	public FeatureDescription(ClassFile entry) {
 
 		FeatureContentPanel.featureContent.clear();
 
@@ -132,7 +132,7 @@ public class FeatureDescription extends VerticalPanel {
 									classPathEnd);
 						}
 
-						Entry entry = new Entry();
+						ClassFile entry = new ClassFile();
 						entry.setClassPath(classPath.replaceAll("\\.", "/"));
 						entry.setClassName(className + ".java");
 
@@ -157,7 +157,7 @@ public class FeatureDescription extends VerticalPanel {
 		return vp;
 	}
 
-	private static VerticalPanel featureCreation(Entry entry) {
+	private static VerticalPanel featureCreation(ClassFile entry) {
 
 		VerticalPanel vp = new VerticalPanel();
 

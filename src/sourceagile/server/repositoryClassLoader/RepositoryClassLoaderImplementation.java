@@ -3,7 +3,7 @@ package sourceagile.server.repositoryClassLoader;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.client.serverConnection.RemoteLoadFunctions;
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 import sourceagile.shared.Project;
 import sourceagile.shared.User;
 
@@ -14,9 +14,9 @@ public class RepositoryClassLoaderImplementation extends RemoteServiceServlet
 		implements RemoteLoadFunctions {
 
 	@Override
-	public Entry[] ListFeatures(Project project, User user) {
+	public ClassFile[] ListFeatures(Project project, User user) {
 
-		Entry[] entries = null;
+		ClassFile[] entries = null;
 
 		try {
 			SVNRepository repository = RepositoryConnection.connect(project,
@@ -33,7 +33,7 @@ public class RepositoryClassLoaderImplementation extends RemoteServiceServlet
 	}
 
 	@Override
-	public Entry getEntryFeature(Project project, User user, Entry entry) {
+	public ClassFile getEntryFeature(Project project, User user, ClassFile entry) {
 
 		try {
 

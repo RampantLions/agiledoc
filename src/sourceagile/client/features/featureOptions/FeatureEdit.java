@@ -1,7 +1,7 @@
 package sourceagile.client.features.featureOptions;
 
 import sourceagile.shared.ClassDocumentation;
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 import sourceagile.shared.Method;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -17,7 +17,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class FeatureEdit extends VerticalPanel {
 
-	public FeatureEdit(Entry entry) {
+	public FeatureEdit(ClassFile entry) {
 
 		FeatureContentPanel.featureContent.clear();
 

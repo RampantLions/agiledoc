@@ -1,6 +1,6 @@
 package sourceagile.client.planning;
 
-import sourceagile.shared.Entry;
+import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -10,7 +10,7 @@ import com.google.gwt.user.client.ui.Image;
 
 public class TodoList extends FlexTable {
 
-	public TodoList(Entry[] entries) {
+	public TodoList(ClassFile[] entries) {
 
 		setBorderWidth(1);
 		setWidth("900px");
@@ -37,10 +37,10 @@ public class TodoList extends FlexTable {
 		this.getColumnFormatter().setWidth(3, "50px");
 	}
 
-	private void gridRows(Entry[] entries) {
+	private void gridRows(ClassFile[] entries) {
 
 		int row = 0;
-		for (Entry entry : entries) {
+		for (ClassFile entry : entries) {
 
 			if (entry.getClassDoc().isTodo()) {
 
@@ -60,7 +60,7 @@ public class TodoList extends FlexTable {
 		}
 	}
 
-	private static Image iconEditTodoFeature(final Entry entry) {
+	private static Image iconEditTodoFeature(final ClassFile entry) {
 
 		Image img = new Image("images/edit.gif");
 		img.addClickHandler(new ClickHandler() {
@@ -77,7 +77,7 @@ public class TodoList extends FlexTable {
 		return img;
 	}
 
-	private static Image iconDeleteTodoFeature(final Entry entry) {
+	private static Image iconDeleteTodoFeature(final ClassFile entry) {
 
 		Image img = new Image("images/delete.gif");
 		img.addClickHandler(new ClickHandler() {
