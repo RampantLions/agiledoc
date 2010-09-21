@@ -40,7 +40,7 @@ public class TodoPage extends VerticalPanel {
 
 				SystemInitialization.mainPage.panelContent.clear();
 				SystemInitialization.mainPage.panelContent
-						.add(new NewFeature());
+						.add(new NewTodoClass());
 
 			}
 		});
