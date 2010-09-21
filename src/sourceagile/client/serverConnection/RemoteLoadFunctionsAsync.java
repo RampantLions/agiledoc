@@ -14,4 +14,7 @@ public interface RemoteLoadFunctionsAsync {
 	void ListFeatures(Project project, User user,
 			AsyncCallback<ClassFile[]> callback);
 
+	void createClasse(Project proj, ClassFile classFile,
+			AsyncCallback<Void> callback);
+
 }
