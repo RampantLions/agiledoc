@@ -1,6 +1,7 @@
 package sourceagile.server.repositoryClassLoader;
 
 import junit.framework.TestCase;
+import sourceagile.server.RepositoryClassImplementation;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Project;
 import sourceagile.shared.User;
@@ -12,7 +13,7 @@ public class UpdateDocumentationTest extends TestCase {
 
 		User user = UserData.load()[0];
 		Project project = ProjectsData.load()[1];
-		ClassFile[] listFeatures = new RepositoryClassLoaderImplementation()
+		ClassFile[] listFeatures = new RepositoryClassImplementation()
 				.ListFeatures(project, user);
 		// new DocumentationUpdater().update(listFeatures[0], "doPlay",
 		// "New Documentation");
