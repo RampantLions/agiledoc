@@ -8,7 +8,7 @@
   <!-- Servlets -->
 <servlet>
 		<servlet-name>repositoryClassLoader</servlet-name>
-		<servlet-class>sourceagile.server.RepositoryClassImplementation</servlet-class>
+		<servlet-class>sourceagile.server.classRepository.RepositoryClassImplementation</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
