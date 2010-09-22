@@ -7,6 +7,8 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 	private static final long serialVersionUID = 1L;
 
+	private String classDomain;
+
 	private String classPath;
 
 	private String className;
@@ -77,11 +79,21 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 		this.user = user;
 	}
 
+	public String getClassDomain() {
+		return classDomain;
+	}
+
+	public void setClassDomain(String classDomain) {
+		this.classDomain = classDomain;
+	}
+
 	@Override
 	public int compareTo(ClassFile that) {
 
-		String thisClass = this.classPath + "/" + this.className;
-		String thatClass = that.classPath + "/" + that.className;
+		String thisClass = this.classDomain + this.classPath + "/"
+				+ this.className;
+		String thatClass = that.classDomain + that.classPath + "/"
+				+ that.className;
 
 		return thisClass.compareTo(thatClass);
 	}
@@ -89,13 +101,20 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 	@Override
 	public String toString() {
 
-		if (this.classPath == null || this.classPath.length() == 0) {
+		String filePath = this.className;
 
-			return this.className;
-		} else {
+		if (!(this.classPath == null || this.classPath.length() == 0)) {
 
-			return this.classPath + "/" + this.className;
+			filePath = this.classPath.replaceAll("\\.", "/") + "/" + filePath;
+
+			if (this.classDomain != null) {
+
+				filePath = this.classDomain.replaceAll("\\.", "/") + "/"
+						+ filePath;
+			}
 		}
+
+		return filePath;
 	}
 
 }
