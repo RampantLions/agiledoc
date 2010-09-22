@@ -1,6 +1,7 @@
 package sourceagile.client.planning;
 
 import sourceagile.client.SystemInitialization;
+import sourceagile.client.planning.newTask.NewTaskPage;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -33,14 +34,14 @@ public class TodoPage extends VerticalPanel {
 
 	public static Button buttonNewFeature() {
 
-		Button button = new Button("New Feature", new ClickHandler() {
+		Button button = new Button("Create a New Task", new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
 
 				SystemInitialization.mainPage.panelContent.clear();
 				SystemInitialization.mainPage.panelContent
-						.add(new NewTodoClass());
+						.add(new NewTaskPage());
 
 			}
 		});
