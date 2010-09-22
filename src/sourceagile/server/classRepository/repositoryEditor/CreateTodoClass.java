@@ -10,10 +10,10 @@ public class CreateTodoClass {
 	public CreateTodoClass(SVNRepository repository, ClassFile classFile)
 			throws SVNException {
 
-		String fileName = classFile.getClassPath() + "/"
-				+ classFile.getClassName() + ".java";
+		String fileName = classFile.getClassName() + ".java";
 
-		new AddFile(repository, fileName, classContent(classFile));
+		new AddFile(repository, classFile.getClassPath(), fileName,
+				classContent(classFile));
 	}
 
 	private String classContent(ClassFile classFile) {
