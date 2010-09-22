@@ -9,8 +9,8 @@ import org.tmatesoft.svn.core.io.diff.SVNDeltaGenerator;
 
 public class AddFile {
 
-	public AddFile(SVNRepository repository, String fileName, String fileContent)
-			throws SVNException {
+	public AddFile(SVNRepository repository, String folderName,
+			String fileName, String fileContent) throws SVNException {
 
 		String logMessage = "Creating file: " + fileName;
 
@@ -18,6 +18,8 @@ public class AddFile {
 				null);
 
 		repositoryEditor.openRoot(-1);
+
+		repositoryEditor.openDir(folderName, -1);
 
 		repositoryEditor.addFile(fileName, null, -1);
 
