@@ -39,10 +39,7 @@ public class NewTodoClass extends VerticalPanel {
 		VerticalPanel vp = new VerticalPanel();
 		vp.setBorderWidth(1);
 
-		// if (GlobalVariables.getProject().getFeaturesPacks() == null) {
-
 		getFeaturesPacks();
-		// }
 
 		vp.add(featureFields());
 
@@ -122,16 +119,14 @@ public class NewTodoClass extends VerticalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				String path = ProjectInitialization.currentProject.getDomain()
-						.replaceAll("/", "\\.")
-						+ "."
-						+ folders.getValue(folders.getSelectedIndex());
-
 				ClassDocumentation classeDoc = new ClassDocumentation();
 				classeDoc.setDescription(description.getValue());
 
 				ClassFile classFile = new ClassFile();
-				classFile.setClassPath(path);
+				classFile.setClassDomain(ProjectInitialization.currentProject
+						.getDomain());
+				classFile.setClassPath(folders.getValue(folders
+						.getSelectedIndex()));
 				classFile.setClassName(name.getValue());
 				classFile.setClassDoc(classeDoc);
 
