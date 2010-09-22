@@ -14,5 +14,5 @@ public interface RemoteLoadFunctions extends RemoteService {
 
 	ClassFile[] ListFeatures(Project project, User user);
 
-	void createClasse(Project proj, ClassFile classFile) throws Exception;
+	void createClasse(Project project, User user, ClassFile classFile);
 }
