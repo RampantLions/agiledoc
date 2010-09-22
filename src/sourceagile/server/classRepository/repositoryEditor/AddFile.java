@@ -9,8 +9,9 @@ import org.tmatesoft.svn.core.io.diff.SVNDeltaGenerator;
 
 public class AddFile {
 
-	public AddFile(SVNRepository repository, String folderName,
-			String fileName, String fileContent) throws SVNException {
+	public AddFile(SVNRepository repository, String parentFolderName,
+			String newSubFolderName, String fileName, String fileContent)
+			throws SVNException {
 
 		String logMessage = "Creating file: " + fileName;
 
@@ -19,7 +20,12 @@ public class AddFile {
 
 		repositoryEditor.openRoot(-1);
 
-		repositoryEditor.openDir(folderName, -1);
+		repositoryEditor.openDir(parentFolderName, -1);
+
+		if (newSubFolderName != null) {
+
+			repositoryEditor.addDir(newSubFolderName, null, -1);
+		}
 
 		repositoryEditor.addFile(fileName, null, -1);
 
@@ -31,6 +37,8 @@ public class AddFile {
 				repositoryEditor, true);
 
 		repositoryEditor.closeFile(fileName, checksum);
+
+		repositoryEditor.closeDir();
 
 		repositoryEditor.closeEdit();
 
