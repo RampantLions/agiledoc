@@ -4,11 +4,8 @@ import java.util.ArrayList;
 
 import sourceagile.client.activity.Activity;
 import sourceagile.client.serverConnection.ListRemoteClasses;
-import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Project;
-
-import com.google.gwt.user.client.ui.RootPanel;
 
 public class ProjectInitialization {
 
@@ -21,9 +18,6 @@ public class ProjectInitialization {
 	public static Activity projectTotals;
 
 	public ProjectInitialization(Project project) {
-
-		RootPanel.get().clear();
-		RootPanel.get().add(new LoadingPanel());
 
 		currentProject = project;
 
