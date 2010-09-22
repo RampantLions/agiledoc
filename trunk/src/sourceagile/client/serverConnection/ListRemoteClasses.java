@@ -2,6 +2,7 @@ package sourceagile.client.serverConnection;
 
 import sourceagile.client.SystemInitialization;
 import sourceagile.client.project.ProjectInitialization;
+import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.shared.ClassFile;
 
@@ -16,15 +17,19 @@ public class ListRemoteClasses {
 
 	public ListRemoteClasses() {
 
+		RootPanel.get().clear();
+		RootPanel.get().add(new LoadingPanel());
+
 		remoteFunctions.ListFeatures(ProjectInitialization.currentProject,
-				SystemInitialization.currentUser, new AsyncCallback<ClassFile[]>() {
+				SystemInitialization.currentUser,
+				new AsyncCallback<ClassFile[]>() {
 
 					public void onSuccess(ClassFile[] entries) {
 
 						ProjectInitialization.projectEntries = entries;
 
 						SystemInitialization.mainPage = new MainPage();
-						
+
 						RootPanel.get().clear();
 						RootPanel.get().add(SystemInitialization.mainPage);
 					}
