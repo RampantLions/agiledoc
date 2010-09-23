@@ -2,7 +2,7 @@ package sourceagile.client.project;
 
 import java.util.ArrayList;
 
-import sourceagile.client.activity.Activity;
+import sourceagile.client.productivity.Procuctivity;
 import sourceagile.client.serverConnection.ListRemoteClasses;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Project;
@@ -13,9 +13,9 @@ public class ProjectInitialization {
 
 	public static ClassFile[] projectEntries;
 
-	public static ArrayList<Activity> projectActivity;
+	public static ArrayList<Procuctivity> projectActivity;
 
-	public static Activity projectTotals;
+	public static Procuctivity projectTotals;
 
 	public ProjectInitialization(Project project) {
 
