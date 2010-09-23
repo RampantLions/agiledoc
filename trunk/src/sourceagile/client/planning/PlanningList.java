@@ -8,9 +8,9 @@ import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 
-public class TodoList extends FlexTable {
+public class PlanningList extends FlexTable {
 
-	public TodoList(ClassFile[] entries) {
+	public PlanningList(ClassFile[] entries) {
 
 		setBorderWidth(1);
 		setWidth("900px");

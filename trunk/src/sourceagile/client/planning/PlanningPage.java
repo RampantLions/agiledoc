@@ -1,6 +1,6 @@
 package sourceagile.client.planning;
 
-import sourceagile.client.SystemInitialization;
+import sourceagile.client.SystemStart;
 import sourceagile.client.planning.newTask.NewTaskPage;
 import sourceagile.shared.ClassFile;
 
@@ -10,9 +10,9 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class TodoPage extends VerticalPanel {
+public class PlanningPage extends VerticalPanel {
 
-	public TodoPage(ClassFile[] entries) {
+	public PlanningPage(ClassFile[] entries) {
 
 		VerticalPanel vp = new VerticalPanel();
 		vp.setBorderWidth(1);
@@ -25,7 +25,7 @@ public class TodoPage extends VerticalPanel {
 		vp1.add(buttonNewFeature());
 
 		vp1.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-		vp1.add(new TodoList(entries));
+		vp1.add(new PlanningList(entries));
 
 		vp.add(vp1);
 
@@ -39,8 +39,8 @@ public class TodoPage extends VerticalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				SystemInitialization.mainPage.panelContent.clear();
-				SystemInitialization.mainPage.panelContent
+				SystemStart.mainPage.panelContent.clear();
+				SystemStart.mainPage.panelContent
 						.add(new NewTaskPage());
 
 			}
