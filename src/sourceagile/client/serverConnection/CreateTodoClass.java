@@ -1,6 +1,6 @@
 package sourceagile.client.serverConnection;
 
-import sourceagile.client.SystemInitialization;
+import sourceagile.client.SystemStart;
 import sourceagile.client.project.ProjectInitialization;
 import sourceagile.shared.ClassFile;
 
@@ -15,7 +15,7 @@ public class CreateTodoClass {
 	public CreateTodoClass(ClassFile classFile) {
 
 		remoteFunctions.createClasse(ProjectInitialization.currentProject,
-				SystemInitialization.currentUser, classFile,
+				SystemStart.currentUser, classFile,
 				new AsyncCallback<Void>() {
 
 					@Override

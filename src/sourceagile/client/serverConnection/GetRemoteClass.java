@@ -1,11 +1,11 @@
 package sourceagile.client.serverConnection;
 
-import sourceagile.client.SystemInitialization;
-import sourceagile.client.features.FeaturesPage;
-import sourceagile.client.features.featureOptions.FeatureContentPanel;
-import sourceagile.client.features.featureOptions.FeatureDescription;
-import sourceagile.client.features.featureOptions.OptionsIcons;
+import sourceagile.client.SystemStart;
 import sourceagile.client.project.ProjectInitialization;
+import sourceagile.client.specification.SpecificationPage;
+import sourceagile.client.specification.classViewOptions.FeatureContentPanel;
+import sourceagile.client.specification.classViewOptions.FeatureDescription;
+import sourceagile.client.specification.classViewOptions.OptionsIcons;
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.shared.ClassFile;
 
@@ -19,17 +19,16 @@ public class GetRemoteClass {
 
 	public GetRemoteClass(ClassFile entry, final int viewOption) {
 
-		FeaturesPage.featureVisualizationPanel.clear();
-		FeaturesPage.featureVisualizationPanel.add(new LoadingPanel());
+		SpecificationPage.featureVisualizationPanel.clear();
+		SpecificationPage.featureVisualizationPanel.add(new LoadingPanel());
 
 		remoteFunctions.getEntryFeature(ProjectInitialization.currentProject,
-				SystemInitialization.currentUser, entry,
-				new AsyncCallback<ClassFile>() {
+				SystemStart.currentUser, entry, new AsyncCallback<ClassFile>() {
 
 					public void onSuccess(ClassFile entry) {
 
-						FeaturesPage.featureVisualizationPanel.clear();
-						FeaturesPage.featureVisualizationPanel
+						SpecificationPage.featureVisualizationPanel.clear();
+						SpecificationPage.featureVisualizationPanel
 								.add(new FeatureContentPanel(entry));
 
 						if (viewOption == OptionsIcons.optionDescription) {
