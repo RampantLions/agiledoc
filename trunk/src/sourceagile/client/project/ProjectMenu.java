@@ -1,6 +1,6 @@
 package sourceagile.client.project;
 
-import sourceagile.client.SystemInitialization;
+import sourceagile.client.SystemStart;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -44,8 +44,8 @@ public class ProjectMenu extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				SystemInitialization.mainPage.panelContent.clear();
-				SystemInitialization.mainPage.panelContent
+				SystemStart.mainPage.panelContent.clear();
+				SystemStart.mainPage.panelContent
 						.add(new ChangeProjectPanel());
 			}
 		});
