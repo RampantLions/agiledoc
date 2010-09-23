@@ -13,6 +13,8 @@ public class GetClassDoc {
 
 	public static final String TODO_TAG = "todo";
 
+	public static final String FEATURE_TAG = "feature";
+
 	public static RootDoc getRootDoc(File file) {
 
 		EasyDoclet doclet = new EasyDoclet(file, file);
@@ -52,6 +54,11 @@ public class GetClassDoc {
 		if (classDoc.tags(TODO_TAG).length > 0) {
 
 			classDocumentation.setTodo(true);
+		}
+
+		if (classDoc.tags(FEATURE_TAG).length > 0) {
+
+			classDocumentation.setFeature(true);
 		}
 
 		classDocumentation.setImports(imports);
