@@ -9,6 +9,9 @@ import com.google.gwt.user.client.ui.Tree;
 import com.google.gwt.user.client.ui.TreeItem;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+/**
+ * @feature
+ */
 public class FeaturesList extends HorizontalPanel {
 
 	public FeaturesList(ClassFile[] entries) {
@@ -16,7 +19,7 @@ public class FeaturesList extends HorizontalPanel {
 		this.setSpacing(20);
 
 		this.add(new Label(" "));
-		
+
 		VerticalPanel vp = new VerticalPanel();
 
 		vp.add(listTree(entries));
@@ -36,61 +39,66 @@ public class FeaturesList extends HorizontalPanel {
 
 			ClassFile entry = entries[i];
 
-			if (!entry.getClassPath().equals(currentClassPath)) {
+			if (entry.getClassDoc().isFeature()) {
 
-				String[] level = entry.getClassPath().split("/");
+				if (!entry.getClassPath().equals(currentClassPath)) {
 
-				if (!entry.getClassPath().equals("")) {
+					String[] level = entry.getClassPath().split("/");
 
-					if (treeItemArray[level.length - 1] == null) {
+					if (!entry.getClassPath().equals("")) {
 
-						treeItemArray[level.length - 1] = new TreeItem(entry
-								.getFeature().getFeatureFolder());
+						if (treeItemArray[level.length - 1] == null) {
+
+							treeItemArray[level.length - 1] = new TreeItem(
+									entry.getFeature().getFeatureFolder());
+
+						} else {
+
+							int j = level.length - 1;
+							while (treeItemArray[j] != null) {
+
+								if (j == 0) {
+
+									tree.addItem(treeItemArray[j]);
+
+								} else {
+
+									treeItemArray[j - 1]
+											.addItem(treeItemArray[j]);
+								}
+								j++;
+							}
+
+							treeItemArray[j - 1].addItem("<br>");
+
+							j = level.length - 1;
+							while (treeItemArray[j] != null) {
+
+								treeItemArray[j] = null;
+								j++;
+							}
+
+							treeItemArray[level.length - 1] = new TreeItem(
+									entry.getFeature().getFeatureFolder());
+						}
+					}
+
+					currentClassPath = entry.getClassPath();
+
+					ListFilesFromFolder(entries, i,
+							treeItemArray[level.length - 1], currentClassPath,
+							tree);
+
+					if (currentClassPath.equals("")) {
+
+						tree.addItem("<br>");
 
 					} else {
 
-						int j = level.length - 1;
-						while (treeItemArray[j] != null) {
-
-							if (j == 0) {
-
-								tree.addItem(treeItemArray[j]);
-
-							} else {
-
-								treeItemArray[j - 1].addItem(treeItemArray[j]);
-							}
-							j++;
-						}
-
-						treeItemArray[j - 1].addItem("<br>");
-
-						j = level.length - 1;
-						while (treeItemArray[j] != null) {
-
-							treeItemArray[j] = null;
-							j++;
-						}
-
-						treeItemArray[level.length - 1] = new TreeItem(entry
-								.getFeature().getFeatureFolder());
+						treeItemArray[level.length - 1].setState(true);
 					}
+
 				}
-
-				currentClassPath = entry.getClassPath();
-
-				ListFilesFromFolder(entries, i,
-						treeItemArray[level.length - 1], currentClassPath, tree);
-
-				if (currentClassPath.equals("")) {
-
-					tree.addItem("<br>");
-
-				} else {
-
-					treeItemArray[level.length - 1].setState(true);
-				}
-
 			}
 		}
 
@@ -120,15 +128,18 @@ public class FeaturesList extends HorizontalPanel {
 		while (currentClassPath.equals(entry.getClassPath())
 				&& i < entries.length) {
 
-			if (currentClassPath.equals("")) {
+			if (entry.getClassDoc().isFeature()) {
 
-				tree.addItem(getFeatureAnchor(entry, entry.getFeature()
-						.getFeatureName()));
+				if (currentClassPath.equals("")) {
 
-			} else {
+					tree.addItem(getFeatureAnchor(entry, entry.getFeature()
+							.getFeatureName()));
 
-				currentTreeItem.addItem(getFeatureAnchor(entry, entry
-						.getFeature().getFeatureName()));
+				} else {
+
+					currentTreeItem.addItem(getFeatureAnchor(entry, entry
+							.getFeature().getFeatureName()));
+				}
 			}
 
 			i++;
