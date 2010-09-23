@@ -22,6 +22,8 @@ public class ClassDocumentation implements Serializable {
 
 	private boolean todo;
 
+	private boolean feature;
+
 	public String getDescription() {
 		return description;
 	}
@@ -84,6 +86,14 @@ public class ClassDocumentation implements Serializable {
 
 	public void setTodo(boolean todo) {
 		this.todo = todo;
+	}
+
+	public boolean isFeature() {
+		return feature;
+	}
+
+	public void setFeature(boolean feature) {
+		this.feature = feature;
 	}
 
 }
