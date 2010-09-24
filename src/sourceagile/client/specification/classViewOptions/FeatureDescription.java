@@ -166,9 +166,15 @@ public class FeatureDescription extends VerticalPanel {
 
 		VerticalPanel vp = new VerticalPanel();
 
+		String userName = null;
+		if (entry.getUser() != null) {
+
+			userName = entry.getUser().getName();
+		}
+
 		String creation = "<br><br><font size=1>Created: "
-				+ entry.getDateModified() + " &nbsp; by "
-				+ entry.getUser().getName() + "</font>";
+				+ entry.getDateModified() + " &nbsp; by " + userName
+				+ "</font>";
 
 		vp.add(new HTML(creation));
 

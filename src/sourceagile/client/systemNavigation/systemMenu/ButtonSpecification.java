@@ -1,8 +1,5 @@
 package sourceagile.client.systemNavigation.systemMenu;
 
-import sourceagile.client.SystemStart;
-import sourceagile.client.project.ProjectInitialization;
-import sourceagile.client.specification.ClassesList;
 import sourceagile.client.specification.Specification;
 
 import com.gwtext.client.core.EventObject;
@@ -19,14 +16,7 @@ public class ButtonSpecification extends Button {
 			@Override
 			public void onClick(Button button, EventObject e) {
 
-				SystemStart.mainPage.panelContent.clear();
-
-				Specification specPage = new Specification();
-
-				specPage.featuresTreePanel.add(new ClassesList(
-						ProjectInitialization.projectEntries));
-
-				SystemStart.mainPage.panelContent.add(specPage);
+				new Specification();
 			}
 		});
 	}

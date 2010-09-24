@@ -1,7 +1,7 @@
 package sourceagile.client.planning;
 
 import sourceagile.client.SystemStart;
-import sourceagile.client.planning.newTask.AddPlanningTask;
+import sourceagile.client.planning.newTask.AddTask;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -41,7 +41,7 @@ public class PlanningPage extends VerticalPanel {
 
 				SystemStart.mainPage.panelContent.clear();
 				SystemStart.mainPage.panelContent
-						.add(new AddPlanningTask());
+						.add(new AddTask());
 
 			}
 		});

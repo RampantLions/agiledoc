@@ -14,9 +14,9 @@ import com.gwtext.client.widgets.SyntaxHighlightPanel;
  * 
  * @feature
  */
-public class ClassSource {
+public class SourceCodeView {
 
-	public ClassSource(ClassFile entry) {
+	public SourceCodeView(ClassFile entry) {
 
 		FeatureContentPanel.featureContent.clear();
 

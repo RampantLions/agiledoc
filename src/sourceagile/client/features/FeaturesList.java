@@ -1,16 +1,11 @@
 package sourceagile.client.features;
 
-import sourceagile.client.serverConnection.GetRemoteClass;
-import sourceagile.client.specification.classViewOptions.OptionsIcons;
+import sourceagile.client.specification.Specification;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.Tree;
-import com.google.gwt.user.client.ui.TreeItem;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
@@ -18,162 +13,33 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * @feature
  */
-public class FeaturesList extends HorizontalPanel {
+public class FeaturesList extends VerticalPanel {
 
 	public FeaturesList(ClassFile[] entries) {
 
 		this.setSpacing(20);
 
-		this.add(new Label(" "));
-
-		VerticalPanel vp = new VerticalPanel();
-
-		vp.add(listTree(entries));
-
-		this.add(vp);
-	}
-
-	public Tree listTree(ClassFile[] entries) {
-
-		Tree tree = new Tree();
-
-		TreeItem[] treeItemArray = new TreeItem[10];
-
-		String currentClassPath = null;
-
-		for (int i = 0; i < entries.length; i++) {
-
-			ClassFile entry = entries[i];
+		for (final ClassFile entry : entries) {
 
 			if (entry.getClassDoc().isFeature()) {
 
-				if (!entry.getClassPath().equals(currentClassPath)) {
+				String name = "<br><B>" + entry.getFeature().getFeatureName()
+						+ "</B> ";
 
-					String[] level = entry.getClassPath().split("/");
+				String description = "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=1>"
+						+ entry.getClassDoc().getDescription() + "</FONT>";
 
-					if (!entry.getClassPath().equals("")) {
+				HTML html = new HTML(name + description);
 
-						if (treeItemArray[level.length - 1] == null) {
+				html.addClickHandler(new ClickHandler() {
+					public void onClick(ClickEvent sender) {
 
-							treeItemArray[level.length - 1] = new TreeItem(
-									entry.getFeature().getFeatureFolder());
-
-						} else {
-
-							int j = level.length - 1;
-							while (treeItemArray[j] != null) {
-
-								if (j == 0) {
-
-									tree.addItem(treeItemArray[j]);
-
-								} else {
-
-									treeItemArray[j - 1]
-											.addItem(treeItemArray[j]);
-								}
-								j++;
-							}
-
-							treeItemArray[j - 1].addItem("<br>");
-
-							j = level.length - 1;
-							while (treeItemArray[j] != null) {
-
-								treeItemArray[j] = null;
-								j++;
-							}
-
-							treeItemArray[level.length - 1] = new TreeItem(
-									entry.getFeature().getFeatureFolder());
-						}
+						new Specification(entry);
 					}
+				});
 
-					currentClassPath = entry.getClassPath();
-
-					ListFilesFromFolder(entries, i,
-							treeItemArray[level.length - 1], currentClassPath,
-							tree);
-
-					if (currentClassPath.equals("")) {
-
-						tree.addItem("<br>");
-
-					} else {
-
-						treeItemArray[level.length - 1].setState(true);
-					}
-
-				}
-			}
-		}
-
-		int i = 1;
-		while (treeItemArray[i] != null) {
-
-			treeItemArray[i - 1].addItem(treeItemArray[i]);
-			treeItemArray[i - 1].setState(true);
-
-			i++;
-		}
-
-		if (treeItemArray[0] != null) {
-			tree.addItem(treeItemArray[0]);
-		}
-
-		return tree;
-
-	}
-
-	private void ListFilesFromFolder(ClassFile[] entries, int folderIndex,
-			TreeItem currentTreeItem, String currentClassPath, Tree tree) {
-
-		int i = folderIndex;
-		ClassFile entry = entries[i];
-
-		while (currentClassPath.equals(entry.getClassPath())
-				&& i < entries.length) {
-
-			if (entry.getClassDoc().isFeature()) {
-
-				if (currentClassPath.equals("")) {
-
-					tree.addItem(getFeatureAnchor(entry, entry.getFeature()
-							.getFeatureName()));
-
-				} else {
-
-					currentTreeItem.addItem(getFeatureAnchor(entry, entry
-							.getFeature().getFeatureName()));
-				}
-			}
-
-			i++;
-
-			if (i < entries.length) {
-				entry = entries[i];
+				this.add(html);
 			}
 		}
 	}
-
-	private HTML getFeatureAnchor(final ClassFile entry, String anchorName) {
-
-		String name = "<br><B>" + entry.getFeature().getFeatureName() + "</B> ";
-		// + entry.getFeature().getFeatureFolder();
-
-		String description = "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=1>"
-				+ entry.getClassDoc().getDescription() + "</FONT>";
-
-		HTML html = new HTML(name + description);
-
-		html.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent sender) {
-
-				new GetRemoteClass(entry, OptionsIcons.optionDescription);
-			}
-		});
-
-		return html;
-	}
-
 }

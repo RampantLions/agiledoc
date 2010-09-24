@@ -1,6 +1,5 @@
 package sourceagile.client.specification;
 
-import sourceagile.client.serverConnection.GetRemoteClass;
 import sourceagile.client.specification.classViewOptions.OptionsIcons;
 import sourceagile.shared.ClassFile;
 
@@ -129,7 +128,8 @@ public class ClassesList extends Tree {
 		featureAnchor.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent sender) {
 
-				new GetRemoteClass(entry, OptionsIcons.optionDescription);
+				// new GetRemoteClass(entry, OptionsIcons.optionDescription);
+				Specification.showClass(entry, OptionsIcons.optionDescription);
 			}
 		});
 

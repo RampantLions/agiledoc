@@ -1,5 +1,12 @@
 package sourceagile.client.specification;
 
+import sourceagile.client.SystemStart;
+import sourceagile.client.project.ProjectInitialization;
+import sourceagile.client.specification.classViewOptions.FeatureContentPanel;
+import sourceagile.client.specification.classViewOptions.FeatureDescription;
+import sourceagile.client.specification.classViewOptions.OptionsIcons;
+import sourceagile.shared.ClassFile;
+
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -8,26 +15,57 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * @feature
  */
-public class Specification extends VerticalPanel {
+public class Specification {
 
 	public VerticalPanel featuresTreePanel = new VerticalPanel();
 	public static VerticalPanel featureVisualizationPanel = new VerticalPanel();
 
 	public Specification() {
 
+		this(null);
+	}
+
+	public Specification(ClassFile entry) {
+
+		SystemStart.mainPage.panelContent.clear();
+
+		VerticalPanel vp = new VerticalPanel();
+
 		HorizontalPanel hp = new HorizontalPanel();
 
+		featuresTreePanel.clear();
 		featuresTreePanel.setSize("350px", "100%");
 
 		hp.add(featuresTreePanel);
 
-		featuresTreePanel.clear();
+		featuresTreePanel.add(new ClassesList(
+				ProjectInitialization.projectEntries));
 
 		featureVisualizationPanel.clear();
 		featureVisualizationPanel.setSpacing(20);
 		hp.add(featureVisualizationPanel);
 
-		this.add(hp);
+		if (entry != null) {
+
+			showClass(entry, OptionsIcons.optionDescription);
+		}
+
+		vp.add(hp);
+
+		SystemStart.mainPage.panelContent.add(vp);
+	}
+
+	public static void showClass(ClassFile entry, int viewOption) {
+
+		Specification.featureVisualizationPanel.clear();
+		Specification.featureVisualizationPanel.add(new FeatureContentPanel(
+				entry));
+
+		if (viewOption == OptionsIcons.optionDescription) {
+
+			FeatureContentPanel.featureContent
+					.add(new FeatureDescription(entry));
+		}
 	}
 
 }

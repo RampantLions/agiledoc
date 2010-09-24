@@ -27,14 +27,14 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * @feature
  */
-public class AddPlanningTask extends VerticalPanel {
+public class AddTask extends VerticalPanel {
 
 	private ListBox folders = new FoldersList();
 	private TextBox newFolderName = new TextBox();
 	private TextBox taskName = new TextBox();
 	private TextArea taskDescription = new TextArea();
 
-	public AddPlanningTask() {
+	public AddTask() {
 
 		Label space = new Label(" ");
 		space.setHeight("50px");
