@@ -12,6 +12,9 @@ import com.google.gwt.visualization.client.DataTable;
 import com.google.gwt.visualization.client.visualizations.AnnotatedTimeLine;
 import com.google.gwt.visualization.client.visualizations.AnnotatedTimeLine.Options;
 
+/**
+ * @feature
+ */
 public class ProductivityTimelineChart extends VerticalPanel {
 
 	public ProductivityTimelineChart() {
@@ -45,7 +48,8 @@ public class ProductivityTimelineChart extends VerticalPanel {
 		data.addColumn(ColumnType.NUMBER, "Steps");
 	}
 
-	private static void setRows(DataTable data, ArrayList<Procuctivity> arrayDates) {
+	private static void setRows(DataTable data,
+			ArrayList<Procuctivity> arrayDates) {
 
 		data.addRows(arrayDates.size());
 
