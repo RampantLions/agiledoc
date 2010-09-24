@@ -33,11 +33,6 @@ public class ListRepositoryHistory {
 
 		for (Iterator entries = logEntries.iterator(); entries.hasNext();) {
 			SVNLogEntry logEntry = (SVNLogEntry) entries.next();
-			System.out.println("---------------------------------------------");
-			System.out.println("revision: " + logEntry.getRevision());
-			System.out.println("author: " + logEntry.getAuthor());
-			System.out.println("date: " + logEntry.getDate());
-			System.out.println("log message: " + logEntry.getMessage());
 
 			Productivity productivity = new Productivity();
 
@@ -45,8 +40,7 @@ public class ListRepositoryHistory {
 			productivity.setDate(new Date(date));
 
 			if (logEntry.getChangedPaths().size() > 0) {
-				System.out.println();
-				System.out.println("changed paths:");
+
 				Set changedPathsSet = logEntry.getChangedPaths().keySet();
 
 				for (Iterator changedPaths = changedPathsSet.iterator(); changedPaths
@@ -59,38 +53,32 @@ public class ListRepositoryHistory {
 							&& entryPath.getPath().contains(
 									project.getRoot() + project.getDomain())) {
 
-						System.out
-								.println(" "
-										+ entryPath.getType()
-										+ " "
-										+ entryPath.getPath()
-										+ ((entryPath.getCopyPath() != null) ? " (from "
-												+ entryPath.getCopyPath()
-												+ " revision "
-												+ entryPath.getCopyRevision()
-												+ ")"
-												: ""));
-
 						if (entryPath.getType() == SVNLogEntryPath.TYPE_ADDED) {
 
 							// productivity.setClassesCount(productivity
 							// .getClassesCount() + 1);
 							totalClasses++;
-							productivity.setClassesCount(totalClasses);
+						}
+
+						if (entryPath.getType() == SVNLogEntryPath.TYPE_DELETED) {
+
+							totalClasses--;
 						}
 
 						// productivity.setClassActivityCount(productivity
 						// .getClassActivityCount() + 1);
-
 						totalActivity++;
-						productivity.setClassActivityCount(totalActivity + 1);
 					}
 				}
 			}
+
+			productivity.setClassesCount(totalClasses);
+			productivity.setClassActivityCount(totalActivity);
 
 			productivityArray.add(productivity);
 		}
 
 		return productivityArray;
 	}
+
 }
