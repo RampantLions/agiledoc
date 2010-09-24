@@ -5,12 +5,10 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
  * Change the current project of the system.
- * 
- * @feature
  */
-public class SelectProject extends VerticalPanel {
+public class ProjectSelection extends VerticalPanel {
 
-	public SelectProject() {
+	public ProjectSelection() {
 
 		this.setBorderWidth(1);
 

@@ -2,6 +2,7 @@ package sourceagile.client.productivity;
 
 import sourceagile.client.project.ProjectInitialization;
 import sourceagile.shared.ClassFile;
+import sourceagile.shared.Productivity;
 
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.visualization.client.AbstractDataTable.ColumnType;
@@ -42,26 +43,26 @@ public class CurrentProductivityColumnsChart extends VerticalPanel {
 
 	private void countActivity() {
 
-		ProjectInitialization.projectTotals = new Procuctivity();
+		ProjectInitialization.projectTotals = new Productivity();
 
 		for (ClassFile entry : ProjectInitialization.projectEntries) {
 
 			ProjectInitialization.projectTotals
-					.setStepsCounts(ProjectInitialization.projectTotals
-							.getStepsCounts()
+					.setStepsCount(ProjectInitialization.projectTotals
+							.getStepsCount()
 							+ entry.getClassDoc().getMethods().length);
 
 			if (entry.getClassDoc().isTodo()) {
 
 				ProjectInitialization.projectTotals
-						.setToDoCounts(ProjectInitialization.projectTotals
-								.getToDoCounts() + 1);
+						.setToDoCount(ProjectInitialization.projectTotals
+								.getToDoCount() + 1);
 			}
 		}
 
 		ProjectInitialization.projectTotals
-				.setClassesCounts(ProjectInitialization.projectTotals
-						.getClassesCounts()
+				.setClassesCount(ProjectInitialization.projectTotals
+						.getClassesCount()
 						+ ProjectInitialization.projectEntries.length);
 	}
 
@@ -69,13 +70,12 @@ public class CurrentProductivityColumnsChart extends VerticalPanel {
 
 		data.addRows(1);
 
-		data.setValue(0, 0, ProjectInitialization.projectTotals.getToDoCounts());
+		data.setValue(0, 0, ProjectInitialization.projectTotals.getToDoCount());
 		data.setValue(0, 1,
-				ProjectInitialization.projectTotals.getFeatureCounts());
+				ProjectInitialization.projectTotals.getFeatureCount());
 		data.setValue(0, 2,
-				ProjectInitialization.projectTotals.getClassesCounts());
-		data.setValue(0, 3,
-				ProjectInitialization.projectTotals.getStepsCounts());
+				ProjectInitialization.projectTotals.getClassesCount());
+		data.setValue(0, 3, ProjectInitialization.projectTotals.getStepsCount());
 	}
 
 	private static void setColumns(DataTable data) {

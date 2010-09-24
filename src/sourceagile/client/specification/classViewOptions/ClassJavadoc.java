@@ -8,6 +8,11 @@ import sourceagile.shared.Method;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+/**
+ * Show the Javadoc of the class dynamic generated.
+ * 
+ * @feature
+ */
 public class ClassJavadoc extends VerticalPanel {
 
 	public ClassJavadoc(ClassFile entry) {

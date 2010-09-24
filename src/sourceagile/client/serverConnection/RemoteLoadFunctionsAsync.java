@@ -1,6 +1,9 @@
 package sourceagile.client.serverConnection;
 
+import java.util.ArrayList;
+
 import sourceagile.shared.ClassFile;
+import sourceagile.shared.Productivity;
 import sourceagile.shared.Project;
 import sourceagile.shared.User;
 
@@ -8,13 +11,16 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public interface RemoteLoadFunctionsAsync {
 
-	void getEntryFeature(Project project, User user, ClassFile entry,
+	void getClass(Project project, User user, ClassFile entry,
 			AsyncCallback<ClassFile> callback);
 
-	void ListFeatures(Project project, User user,
+	void ListClasses(Project project, User user,
 			AsyncCallback<ClassFile[]> callback);
 
-	void createClasse(Project project, User user, ClassFile classFile,
+	void createClass(Project project, User user, ClassFile classFile,
 			AsyncCallback<Void> callback);
+
+	void ListHistory(Project project, User user,
+			AsyncCallback<ArrayList<Productivity>> callback);
 
 }

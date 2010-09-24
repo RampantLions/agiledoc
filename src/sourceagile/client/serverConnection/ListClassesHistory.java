@@ -1,26 +1,29 @@
 package sourceagile.client.serverConnection;
 
+import java.util.ArrayList;
+
 import sourceagile.client.SystemStart;
 import sourceagile.client.project.ProjectInitialization;
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.Productivity;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-public class CreateTodoClass {
+public class ListClassesHistory {
 
 	private final RemoteLoadFunctionsAsync remoteFunctions = GWT
 			.create(RemoteLoadFunctions.class);
 
-	public CreateTodoClass(ClassFile classFile) {
+	public ListClassesHistory() {
 
-		remoteFunctions.createClass(ProjectInitialization.currentProject,
-				SystemStart.currentUser, classFile, new AsyncCallback<Void>() {
+		remoteFunctions.ListHistory(ProjectInitialization.currentProject,
+				SystemStart.currentUser,
+				new AsyncCallback<ArrayList<Productivity>>() {
 
-					@Override
-					public void onSuccess(Void result) {
+					public void onSuccess(
+							ArrayList<Productivity> produtctivityArray) {
 
-						new ListRemoteClasses();
+						ProjectInitialization.projectActivity = produtctivityArray;
 					}
 
 					public void onFailure(Throwable caught) {
