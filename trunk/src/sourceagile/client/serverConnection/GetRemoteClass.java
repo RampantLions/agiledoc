@@ -3,8 +3,6 @@ package sourceagile.client.serverConnection;
 import sourceagile.client.SystemStart;
 import sourceagile.client.project.ProjectInitialization;
 import sourceagile.client.specification.Specification;
-import sourceagile.client.specification.classViewOptions.FeatureContentPanel;
-import sourceagile.client.specification.classViewOptions.FeatureDescription;
 import sourceagile.client.specification.classViewOptions.OptionsIcons;
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.shared.ClassFile;
@@ -27,15 +25,8 @@ public class GetRemoteClass {
 
 					public void onSuccess(ClassFile entry) {
 
-						Specification.featureVisualizationPanel.clear();
-						Specification.featureVisualizationPanel
-								.add(new FeatureContentPanel(entry));
-
-						if (viewOption == OptionsIcons.optionDescription) {
-
-							FeatureContentPanel.featureContent
-									.add(new FeatureDescription(entry));
-						}
+						Specification.showClass(entry,
+								OptionsIcons.optionDescription);
 					}
 
 					public void onFailure(Throwable caught) {

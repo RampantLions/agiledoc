@@ -1,5 +1,6 @@
 package sourceagile.client.planning;
 
+import sourceagile.client.specification.Specification;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -73,7 +74,7 @@ public class PlanningList extends FlexTable {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				// EditTodoFeature(classe);
+				new Specification(entry);
 			}
 		});
 

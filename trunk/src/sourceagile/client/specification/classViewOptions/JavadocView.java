@@ -13,9 +13,9 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * @feature
  */
-public class ClassJavadoc extends VerticalPanel {
+public class JavadocView extends VerticalPanel {
 
-	public ClassJavadoc(ClassFile entry) {
+	public JavadocView(ClassFile entry) {
 
 		setWidth("700px");
 

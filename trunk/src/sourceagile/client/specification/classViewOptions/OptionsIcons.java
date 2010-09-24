@@ -86,7 +86,7 @@ public class OptionsIcons extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new ClassJavadoc(entry);
+				new JavadocView(entry);
 			}
 		});
 
@@ -103,7 +103,7 @@ public class OptionsIcons extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new ClassSource(entry);
+				new SourceCodeView(entry);
 			}
 		});
 
