@@ -1,7 +1,11 @@
 package sourceagile.client.features;
 
+import sourceagile.client.serverConnection.GetRemoteClass;
+import sourceagile.client.specification.classViewOptions.OptionsIcons;
 import sourceagile.shared.ClassFile;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
@@ -10,6 +14,8 @@ import com.google.gwt.user.client.ui.TreeItem;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
+ * List all the features assigned for the current project.
+ * 
  * @feature
  */
 public class FeaturesList extends HorizontalPanel {
@@ -158,7 +164,16 @@ public class FeaturesList extends HorizontalPanel {
 		String description = "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=1>"
 				+ entry.getClassDoc().getDescription() + "</FONT>";
 
-		return new HTML(name + description);
+		HTML html = new HTML(name + description);
+
+		html.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent sender) {
+
+				new GetRemoteClass(entry, OptionsIcons.optionDescription);
+			}
+		});
+
+		return html;
 	}
 
 }
