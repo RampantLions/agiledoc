@@ -21,18 +21,20 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
- * The user can insert a new task in the system typing the name, description and
- * the priority of the task in a web based form page.
+ * The user can insert a new task in the source code typing the name and
+ * description of the task in a web based form page. The system create a new
+ * class tagged as "To Do".
  * 
+ * @feature
  */
-public class NewTaskPage extends VerticalPanel {
+public class AddPlanningTask extends VerticalPanel {
 
 	private ListBox folders = new FoldersList();
 	private TextBox newFolderName = new TextBox();
 	private TextBox taskName = new TextBox();
 	private TextArea taskDescription = new TextArea();
 
-	public NewTaskPage() {
+	public AddPlanningTask() {
 
 		Label space = new Label(" ");
 		space.setHeight("50px");
