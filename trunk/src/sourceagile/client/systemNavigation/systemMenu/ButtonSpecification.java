@@ -3,7 +3,7 @@ package sourceagile.client.systemNavigation.systemMenu;
 import sourceagile.client.SystemStart;
 import sourceagile.client.project.ProjectInitialization;
 import sourceagile.client.specification.ClassesList;
-import sourceagile.client.specification.SpecificationPage;
+import sourceagile.client.specification.Specification;
 
 import com.gwtext.client.core.EventObject;
 import com.gwtext.client.widgets.Button;
@@ -21,7 +21,7 @@ public class ButtonSpecification extends Button {
 
 				SystemStart.mainPage.panelContent.clear();
 
-				SpecificationPage specPage = new SpecificationPage();
+				Specification specPage = new Specification();
 
 				specPage.featuresTreePanel.add(new ClassesList(
 						ProjectInitialization.projectEntries));
