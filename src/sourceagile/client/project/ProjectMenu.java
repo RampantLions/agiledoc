@@ -46,7 +46,7 @@ public class ProjectMenu extends HorizontalPanel {
 
 				SystemStart.mainPage.panelContent.clear();
 				SystemStart.mainPage.panelContent
-						.add(new ChangeProjectPanel());
+						.add(new SelectProject());
 			}
 		});
 
