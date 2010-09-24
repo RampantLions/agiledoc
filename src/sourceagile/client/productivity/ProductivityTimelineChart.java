@@ -36,11 +36,11 @@ public class ProductivityTimelineChart extends VerticalPanel {
 	private static void setColumns(DataTable data) {
 
 		data.addColumn(ColumnType.DATE, "Date");
-		data.addColumn(ColumnType.NUMBER, "To Do");
-		data.addColumn(ColumnType.NUMBER, "Features");
-		data.addColumn(ColumnType.NUMBER, "Classes");
-		data.addColumn(ColumnType.NUMBER, "Steps");
-		data.addColumn(ColumnType.NUMBER, "Activity");
+		data.addColumn(ColumnType.NUMBER, "Total Classes");
+		data.addColumn(ColumnType.NUMBER, "Productivity");
+		// data.addColumn(ColumnType.NUMBER, "To Do");
+		// data.addColumn(ColumnType.NUMBER, "Features");
+		// data.addColumn(ColumnType.NUMBER, "Steps");
 	}
 
 	private static void setRows(DataTable data,
@@ -53,11 +53,11 @@ public class ProductivityTimelineChart extends VerticalPanel {
 			Productivity date = arrayDates.get(i);
 
 			data.setValue(i, 0, date.getDate());
-			data.setValue(i, 1, date.getToDoCount());
-			data.setValue(i, 2, date.getFeatureCount());
-			data.setValue(i, 3, date.getClassesCount());
-			data.setValue(i, 4, date.getStepsCount());
-			data.setValue(i, 5, date.getClassActivityCount());
+			data.setValue(i, 1, date.getClassesCount());
+			data.setValue(i, 2, date.getClassActivityCount());
+			// data.setValue(i, 3, date.getToDoCount());
+			// data.setValue(i, 4, date.getFeatureCount());
+			// data.setValue(i, 5, date.getStepsCount());
 		}
 	}
 
