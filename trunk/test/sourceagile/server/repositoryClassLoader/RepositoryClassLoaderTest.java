@@ -25,7 +25,7 @@ public class RepositoryClassLoaderTest extends TestCase {
 		User user = UserData.load()[0];
 		Project project = ProjectsData.load()[1];
 		ClassFile[] listFeatures = new RepositoryClassImplementation()
-				.ListFeatures(project, user);
+				.ListClasses(project, user);
 		Approvals.approve("Entry", listFeatures);
 
 	}
