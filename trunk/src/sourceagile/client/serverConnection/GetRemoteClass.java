@@ -2,7 +2,7 @@ package sourceagile.client.serverConnection;
 
 import sourceagile.client.SystemStart;
 import sourceagile.client.project.ProjectInitialization;
-import sourceagile.client.specification.SpecificationPage;
+import sourceagile.client.specification.Specification;
 import sourceagile.client.specification.classViewOptions.FeatureContentPanel;
 import sourceagile.client.specification.classViewOptions.FeatureDescription;
 import sourceagile.client.specification.classViewOptions.OptionsIcons;
@@ -19,16 +19,16 @@ public class GetRemoteClass {
 
 	public GetRemoteClass(ClassFile entry, final int viewOption) {
 
-		SpecificationPage.featureVisualizationPanel.clear();
-		SpecificationPage.featureVisualizationPanel.add(new LoadingPanel());
+		Specification.featureVisualizationPanel.clear();
+		Specification.featureVisualizationPanel.add(new LoadingPanel());
 
 		remoteFunctions.getEntryFeature(ProjectInitialization.currentProject,
 				SystemStart.currentUser, entry, new AsyncCallback<ClassFile>() {
 
 					public void onSuccess(ClassFile entry) {
 
-						SpecificationPage.featureVisualizationPanel.clear();
-						SpecificationPage.featureVisualizationPanel
+						Specification.featureVisualizationPanel.clear();
+						Specification.featureVisualizationPanel
 								.add(new FeatureContentPanel(entry));
 
 						if (viewOption == OptionsIcons.optionDescription) {
