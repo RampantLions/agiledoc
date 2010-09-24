@@ -22,7 +22,7 @@ public class GetRemoteClass {
 		Specification.featureVisualizationPanel.clear();
 		Specification.featureVisualizationPanel.add(new LoadingPanel());
 
-		remoteFunctions.getEntryFeature(ProjectInitialization.currentProject,
+		remoteFunctions.getClass(ProjectInitialization.currentProject,
 				SystemStart.currentUser, entry, new AsyncCallback<ClassFile>() {
 
 					public void onSuccess(ClassFile entry) {

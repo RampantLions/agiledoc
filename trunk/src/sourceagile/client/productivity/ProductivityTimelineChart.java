@@ -3,9 +3,8 @@ package sourceagile.client.productivity;
 import java.util.ArrayList;
 
 import sourceagile.client.project.ProjectInitialization;
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.Productivity;
 
-import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.visualization.client.AbstractDataTable.ColumnType;
 import com.google.gwt.visualization.client.DataTable;
@@ -18,11 +17,6 @@ import com.google.gwt.visualization.client.visualizations.AnnotatedTimeLine.Opti
 public class ProductivityTimelineChart extends VerticalPanel {
 
 	public ProductivityTimelineChart() {
-
-		if (ProjectInitialization.projectActivity == null) {
-
-			ProjectInitialization.projectActivity = countActivity(ProjectInitialization.projectEntries);
-		}
 
 		Options options = Options.create();
 		options.setDisplayAnnotations(true);
@@ -46,100 +40,25 @@ public class ProductivityTimelineChart extends VerticalPanel {
 		data.addColumn(ColumnType.NUMBER, "Features");
 		data.addColumn(ColumnType.NUMBER, "Classes");
 		data.addColumn(ColumnType.NUMBER, "Steps");
+		data.addColumn(ColumnType.NUMBER, "Activity");
 	}
 
 	private static void setRows(DataTable data,
-			ArrayList<Procuctivity> arrayDates) {
+			ArrayList<Productivity> arrayDates) {
 
 		data.addRows(arrayDates.size());
 
 		for (int i = 0; i < arrayDates.size(); i++) {
 
-			Procuctivity date = arrayDates.get(i);
+			Productivity date = arrayDates.get(i);
 
 			data.setValue(i, 0, date.getDate());
-			data.setValue(i, 1, date.getToDoCounts());
-			data.setValue(i, 2, date.getFeatureCounts());
-			data.setValue(i, 3, date.getClassesCounts());
-			data.setValue(i, 4, date.getStepsCounts());
+			data.setValue(i, 1, date.getToDoCount());
+			data.setValue(i, 2, date.getFeatureCount());
+			data.setValue(i, 3, date.getClassesCount());
+			data.setValue(i, 4, date.getStepsCount());
+			data.setValue(i, 5, date.getClassActivityCount());
 		}
 	}
 
-	private ArrayList<Procuctivity> countActivity(ClassFile[] entries) {
-
-		ArrayList<Procuctivity> datesActivity = new ArrayList<Procuctivity>();
-
-		Procuctivity totals = new Procuctivity();
-
-		for (ClassFile entry : entries) {
-
-			Procuctivity currentActivity = null;
-			int i;
-			for (i = 0; i < datesActivity.size(); i++) {
-
-				Procuctivity dateActivity = datesActivity.get(i);
-
-				if (DateTimeFormat
-						.getShortDateFormat()
-						.format(entry.getDateModified())
-						.equals(DateTimeFormat.getShortDateFormat().format(
-								dateActivity.getDate()))) {
-
-					currentActivity = dateActivity;
-					break;
-				}
-			}
-			if (currentActivity == null) {
-
-				currentActivity = new Procuctivity();
-				currentActivity.setDate(entry.getDateModified());
-			}
-
-			if (entry.getClassDoc().isTodo()) {
-
-				currentActivity
-						.setToDoCounts(currentActivity.getToDoCounts() + 1);
-
-				totals.setToDoCounts(totals.getToDoCounts() + 1);
-			}
-
-			/*
-			 * if (entry.getPack().getFullName().contains(
-			 * GlobalVariables.getProject().getFeatureFullPackage())) {
-			 * 
-			 * currentActivity.setFeatureCounts(currentActivity
-			 * .getFeatureCounts() + 1);
-			 * 
-			 * totals.setFeatureCounts(totals.getFeatureCounts() + 1);
-			 * 
-			 * }
-			 */
-
-			currentActivity
-					.setClassesCounts(currentActivity.getClassesCounts() + 1);
-
-			currentActivity.setStepsCounts(currentActivity.getStepsCounts()
-					+ entry.getClassDoc().getConstructors().length
-					+ entry.getClassDoc().getMethods().length);
-
-			totals.setClassesCounts(totals.getClassesCounts() + 1);
-
-			totals.setStepsCounts(totals.getStepsCounts()
-					+ entry.getClassDoc().getConstructors().length
-					+ entry.getClassDoc().getMethods().length);
-
-			if (datesActivity.size() <= i) {
-
-				datesActivity.add(currentActivity);
-
-			} else {
-
-				datesActivity.set(i, currentActivity);
-			}
-		}
-
-		// GlobalVariables.getProject().setCumulativeProductivity(totals);
-
-		return datesActivity;
-	}
 }

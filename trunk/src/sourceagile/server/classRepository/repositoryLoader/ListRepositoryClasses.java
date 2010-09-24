@@ -29,9 +29,9 @@ public class ListRepositoryClasses {
 		return entries;
 	}
 
-	public static List<ClassFile> getRepositoryClasses(SVNRepository repository,
-			String folderPath, List<ClassFile> entries) throws SVNException,
-			IOException {
+	public static List<ClassFile> getRepositoryClasses(
+			SVNRepository repository, String folderPath, List<ClassFile> entries)
+			throws SVNException, IOException {
 
 		Collection subFolderEntries = repository.getDir(folderPath, -1, null,
 				(Collection) null);
@@ -51,13 +51,14 @@ public class ListRepositoryClasses {
 
 			SVNDirEntry subversionEntry = (SVNDirEntry) iterator.next();
 
-			if (!checkIfIsFile(subversionEntry)) {
+			if (subversionEntry.getKind() != SVNNodeKind.FILE) {
 
 				getRepositoryClasses(repository,
 						getFolderPath(path, subversionEntry), entries);
 			} else {
 
-				ClassFile entry = getEntryFromRepositoryEntry(subversionEntry, path);
+				ClassFile entry = getEntryFromRepositoryEntry(subversionEntry,
+						path);
 				GetRepositoryClass.getFeature(repository, entry);
 
 				entries.add(entry);
@@ -92,17 +93,6 @@ public class ListRepositoryClasses {
 		GetRepositoryClass.setEntryFeature(entry);
 
 		return entry;
-	}
-
-	private static boolean checkIfIsFile(SVNDirEntry subversionEntry) {
-
-		if (subversionEntry.getKind() == SVNNodeKind.FILE) {
-
-			return true;
-		} else {
-
-			return false;
-		}
 	}
 
 	private static ClassFile[] sortedEntries(List<ClassFile> entriesList) {

@@ -1,12 +1,16 @@
 package sourceagile.server.classRepository;
 
+import java.util.ArrayList;
+
 import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.client.serverConnection.RemoteLoadFunctions;
 import sourceagile.server.classRepository.repositoryEditor.CreateTodoClass;
 import sourceagile.server.classRepository.repositoryLoader.GetRepositoryClass;
 import sourceagile.server.classRepository.repositoryLoader.ListRepositoryClasses;
+import sourceagile.server.classRepository.repositoryLoader.ListRepositoryHistory;
 import sourceagile.shared.ClassFile;
+import sourceagile.shared.Productivity;
 import sourceagile.shared.Project;
 import sourceagile.shared.User;
 
@@ -17,7 +21,7 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 		implements RemoteLoadFunctions {
 
 	@Override
-	public ClassFile[] ListFeatures(Project project, User user) {
+	public ClassFile[] ListClasses(Project project, User user) {
 
 		ClassFile[] entries = null;
 
@@ -36,7 +40,7 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 	}
 
 	@Override
-	public ClassFile getEntryFeature(Project project, User user, ClassFile entry) {
+	public ClassFile getClass(Project project, User user, ClassFile entry) {
 
 		try {
 
@@ -54,7 +58,7 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 	}
 
 	@Override
-	public void createClasse(Project project, User user, ClassFile classFile) {
+	public void createClass(Project project, User user, ClassFile classFile) {
 
 		try {
 
@@ -68,6 +72,26 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 			System.out.println(e.toString());
 		}
 
+	}
+
+	@Override
+	public ArrayList<Productivity> ListHistory(Project project, User user) {
+
+		ArrayList<Productivity> productivity = null;
+
+		try {
+			SVNRepository repository = RepositoryConnection.connect(project,
+					user);
+
+			productivity = ListRepositoryHistory.getRemoteClasses(project,
+					repository);
+
+		} catch (Exception e) {
+
+			System.out.println(e.toString());
+		}
+
+		return productivity;
 	}
 
 }

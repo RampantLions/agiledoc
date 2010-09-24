@@ -20,9 +20,8 @@ public class ListRemoteClasses {
 		RootPanel.get().clear();
 		RootPanel.get().add(new LoadingPanel());
 
-		remoteFunctions.ListFeatures(ProjectInitialization.currentProject,
-				SystemStart.currentUser,
-				new AsyncCallback<ClassFile[]>() {
+		remoteFunctions.ListClasses(ProjectInitialization.currentProject,
+				SystemStart.currentUser, new AsyncCallback<ClassFile[]>() {
 
 					public void onSuccess(ClassFile[] entries) {
 

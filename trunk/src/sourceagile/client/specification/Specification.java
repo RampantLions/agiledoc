@@ -4,7 +4,7 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
- * List all the classes of the current project.
+ * Show all the classes of the current project as a specification format.
  * 
  * @feature
  */
