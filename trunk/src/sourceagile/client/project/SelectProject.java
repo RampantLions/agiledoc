@@ -3,9 +3,14 @@ package sourceagile.client.project;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class ChangeProjectPanel extends VerticalPanel {
+/**
+ * Change the current project of the system.
+ * 
+ * @feature
+ */
+public class SelectProject extends VerticalPanel {
 
-	public ChangeProjectPanel() {
+	public SelectProject() {
 
 		this.setBorderWidth(1);
 
@@ -17,7 +22,7 @@ public class ChangeProjectPanel extends VerticalPanel {
 
 		vp.add(new HTML("<B>Select a Project on the list bellow: </B>"));
 
-		vp.add(new ProjectListSelection());
+		vp.add(new ProjectList());
 
 		vp.add(new ProjectForm());
 
