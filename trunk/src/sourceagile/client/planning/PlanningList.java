@@ -8,6 +8,11 @@ import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 
+/**
+ * List all the classes assigned as "To Do".
+ * 
+ * @feature
+ */
 public class PlanningList extends FlexTable {
 
 	public PlanningList(ClassFile[] entries) {
