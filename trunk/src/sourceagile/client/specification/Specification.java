@@ -4,14 +4,16 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
- * List all the features assigned for the current project.
+ * List all the classes of the current project.
+ * 
+ * @feature
  */
-public class SpecificationPage extends VerticalPanel {
+public class Specification extends VerticalPanel {
 
 	public VerticalPanel featuresTreePanel = new VerticalPanel();
 	public static VerticalPanel featureVisualizationPanel = new VerticalPanel();
 
-	public SpecificationPage() {
+	public Specification() {
 
 		HorizontalPanel hp = new HorizontalPanel();
 
