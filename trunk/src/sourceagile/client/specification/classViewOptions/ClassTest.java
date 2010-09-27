@@ -1,10 +1,10 @@
-package sourceagile.client.specification/classViewOptions;
+package sourceagile.client.specification.classViewOptions;
 
-/** 
-* Test definition for the specific class. 
-* 
-* @todo 
-*/
+/**
+ * Test definition for the specific class.
+ * 
+ * @todo
+ */
 public class ClassTest {
 
 }
