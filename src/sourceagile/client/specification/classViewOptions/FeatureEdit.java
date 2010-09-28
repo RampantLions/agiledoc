@@ -1,5 +1,6 @@
 package sourceagile.client.specification.classViewOptions;
 
+import sourceagile.client.serverConnection.EditClass;
 import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Method;
@@ -22,6 +23,8 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 public class FeatureEdit extends VerticalPanel {
 
+	private TextArea classDescription = new TextArea();
+
 	public FeatureEdit(ClassFile entry) {
 
 		FeatureContentPanel.featureContent.clear();
@@ -30,30 +33,28 @@ public class FeatureEdit extends VerticalPanel {
 		add(featureDescription(entry.getClassDoc()));
 
 		if (entry.getClassDoc().getMethods() != null) {
-			add(featureSteps(entry.getClassDoc().getMethods()));
+			add(featureMethods(entry.getClassDoc().getMethods()));
 		}
 
 		setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-		add(saveButton());
+		add(saveButton(entry));
 
 		FeatureContentPanel.featureContent.add(this);
 	}
 
-	private static HorizontalPanel featureDescription(
-			ClassDocumentation classDoc) {
+	private HorizontalPanel featureDescription(ClassDocumentation classDoc) {
 
 		HorizontalPanel hp = new HorizontalPanel();
 		hp.setSpacing(20);
 
-		TextArea textArea = new TextArea();
-		textArea.setSize("600px", "40px");
-		textArea.setText(classDoc.getDescription());
+		classDescription.setSize("600px", "40px");
+		classDescription.setText(classDoc.getDescription());
 
-		hp.add(textArea);
+		hp.add(classDescription);
 		return hp;
 	}
 
-	private static Grid featureSteps(final Method[] meths) {
+	private Grid featureMethods(final Method[] meths) {
 
 		Grid table = new Grid(meths.length * 3, 2);
 
@@ -78,7 +79,7 @@ public class FeatureEdit extends VerticalPanel {
 		return table;
 	}
 
-	private static Button saveButton() {
+	private Button saveButton(final ClassFile classFile) {
 
 		Button button = new Button("Save",
 
@@ -87,6 +88,7 @@ public class FeatureEdit extends VerticalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
+				new EditClass(classFile, classDescription.getValue());
 			}
 		});
 

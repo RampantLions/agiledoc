@@ -1,29 +1,27 @@
 package sourceagile.client.serverConnection;
 
-import java.util.ArrayList;
-
 import sourceagile.client.SystemStart;
 import sourceagile.client.project.ProjectInitialization;
-import sourceagile.shared.Productivity;
+import sourceagile.shared.ClassFile;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-public class ListClassesHistory {
+public class EditClass {
 
 	private final RemoteLoadFunctionsAsync remoteFunctions = GWT
 			.create(RemoteLoadFunctions.class);
 
-	public ListClassesHistory() {
+	public EditClass(ClassFile classFile, String classDescription) {
 
-		remoteFunctions.listHistory(ProjectInitialization.currentProject,
-				SystemStart.currentUser,
-				new AsyncCallback<ArrayList<Productivity>>() {
+		remoteFunctions.editClass(ProjectInitialization.currentProject,
+				SystemStart.currentUser, classFile, classDescription,
+				new AsyncCallback<Void>() {
 
-					public void onSuccess(
-							ArrayList<Productivity> produtctivityArray) {
+					@Override
+					public void onSuccess(Void result) {
 
-						ProjectInitialization.projectActivity = produtctivityArray;
+						new ListRemoteClasses();
 					}
 
 					public void onFailure(Throwable caught) {

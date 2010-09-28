@@ -6,6 +6,7 @@ import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.client.serverConnection.RemoteLoadFunctions;
 import sourceagile.server.classRepository.repositoryEditor.CreateTodoClass;
+import sourceagile.server.classRepository.repositoryEditor.UpdateClassDescription;
 import sourceagile.server.classRepository.repositoryLoader.GetRepositoryClass;
 import sourceagile.server.classRepository.repositoryLoader.ListRepositoryClasses;
 import sourceagile.server.classRepository.repositoryLoader.ListRepositoryHistory;
@@ -21,7 +22,7 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 		implements RemoteLoadFunctions {
 
 	@Override
-	public ClassFile[] ListClasses(Project project, User user) {
+	public ClassFile[] listClasses(Project project, User user) {
 
 		ClassFile[] entries = null;
 
@@ -75,7 +76,25 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 	}
 
 	@Override
-	public ArrayList<Productivity> ListHistory(Project project, User user) {
+	public void editClass(Project project, User user, ClassFile classFile,
+			String classDescription) {
+
+		try {
+
+			SVNRepository repository = RepositoryConnection.connect(project,
+					user);
+
+			new UpdateClassDescription(repository, classFile, classDescription);
+
+		} catch (Exception e) {
+
+			System.out.println(e.toString());
+		}
+
+	}
+
+	@Override
+	public ArrayList<Productivity> listHistory(Project project, User user) {
 
 		ArrayList<Productivity> productivity = null;
 
