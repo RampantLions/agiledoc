@@ -14,7 +14,7 @@ public class UpdateDocumentationTest extends TestCase {
 		User user = UserData.load()[0];
 		Project project = ProjectsData.load()[1];
 		ClassFile[] listFeatures = new RepositoryClassImplementation()
-				.ListClasses(project, user);
+				.listClasses(project, user);
 		// new DocumentationUpdater().update(listFeatures[0], "doPlay",
 		// "New Documentation");
 
