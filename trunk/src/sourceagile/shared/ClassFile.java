@@ -23,6 +23,8 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 	private String textContent;
 
+	private ClassTokens tokens;
+
 	public String getClassPath() {
 		return classPath;
 	}
@@ -85,6 +87,14 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 	public void setClassDomain(String classDomain) {
 		this.classDomain = classDomain;
+	}
+
+	public ClassTokens getTokens() {
+		return tokens;
+	}
+
+	public void setTokens(ClassTokens tokens) {
+		this.tokens = tokens;
 	}
 
 	@Override

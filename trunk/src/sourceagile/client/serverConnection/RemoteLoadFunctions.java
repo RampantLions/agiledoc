@@ -15,9 +15,12 @@ public interface RemoteLoadFunctions extends RemoteService {
 
 	ClassFile getClass(Project project, User user, ClassFile entry);
 
-	ClassFile[] ListClasses(Project project, User user);
+	ClassFile[] listClasses(Project project, User user);
 
 	void createClass(Project project, User user, ClassFile classFile);
 
-	ArrayList<Productivity> ListHistory(Project project, User user);
+	ArrayList<Productivity> listHistory(Project project, User user);
+
+	void editClass(Project project, User user, ClassFile classFile,
+			String classDescription);
 }

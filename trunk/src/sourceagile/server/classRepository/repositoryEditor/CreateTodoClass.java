@@ -29,7 +29,8 @@ public class CreateTodoClass {
 		if (classFile.getClassPath() != null
 				&& classFile.getClassPath().length() > 0) {
 
-			packName = packName + "." + classFile.getClassPath();
+			packName = packName + "."
+					+ classFile.getClassPath().replaceAll("/", "\\.");
 		}
 
 		if (classFile.getFeature() != null) {

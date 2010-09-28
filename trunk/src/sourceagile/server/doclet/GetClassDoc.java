@@ -1,6 +1,7 @@
 package sourceagile.server.doclet;
 
 import java.io.File;
+import java.util.logging.Logger;
 
 import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.Field;
@@ -14,6 +15,8 @@ public class GetClassDoc {
 	public static final String TODO_TAG = "todo";
 
 	public static final String FEATURE_TAG = "feature";
+
+	final private Logger log = Logger.getLogger(GetClassDoc.class.getName());
 
 	public static RootDoc getRootDoc(File file) {
 
