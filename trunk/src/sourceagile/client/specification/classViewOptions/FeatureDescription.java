@@ -52,6 +52,7 @@ public class FeatureDescription extends VerticalPanel {
 		String pack = "<B>" + feature.getFeatureFolder() + "</B>";
 
 		HTML html = new HTML(pack + name);
+		html.setWidth("450px");
 
 		return html;
 	}
