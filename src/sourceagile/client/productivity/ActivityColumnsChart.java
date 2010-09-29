@@ -1,4 +1,8 @@
-package sourceagile.client.activity;
+/** 
+ * TODO: Change the name Steps for Methods.
+ * 
+ * @todo 
+ */ package sourceagile.client.activity;
 
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.visualization.client.AbstractDataTable.ColumnType;
