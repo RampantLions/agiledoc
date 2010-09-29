@@ -20,13 +20,14 @@ import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
+/** 
  * The user can insert a new task in the source code typing the name and
- * description of the task in a web based form page. The system create a new
- * class tagged as "To Do".
+ description of the task in a web based form page. 
+TODO: need to change this class with Add To Do Class.
  * 
- * @feature
- */
+ * @todo
+ * @feature 
+ */ 
 public class AddTask extends VerticalPanel {
 
 	private ListBox folders = new FoldersList();
