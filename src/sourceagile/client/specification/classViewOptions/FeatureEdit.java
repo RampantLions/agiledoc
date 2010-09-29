@@ -8,6 +8,7 @@ import sourceagile.shared.Method;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
@@ -24,22 +25,47 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 public class FeatureEdit extends VerticalPanel {
 
 	private TextArea classDescription = new TextArea();
+	private CheckBox isTodo = new CheckBox(" To Do");
+	private CheckBox isFeature = new CheckBox(" Feature");
 
 	public FeatureEdit(ClassFile entry) {
 
 		FeatureContentPanel.featureContent.clear();
 
-		add(FeatureDescription.featureName(entry.getFeature()));
-		add(featureDescription(entry.getClassDoc()));
+		HorizontalPanel hp = new HorizontalPanel();
+
+		hp.add(FeatureDescription.featureName(entry.getFeature()));
+
+		hp.add(featureOptions(entry.getClassDoc()));
+
+		this.add(hp);
+
+		this.add(featureDescription(entry.getClassDoc()));
 
 		if (entry.getClassDoc().getMethods() != null) {
 			add(featureMethods(entry.getClassDoc().getMethods()));
 		}
 
-		setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-		add(saveButton(entry));
+		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+		this.add(saveButton(entry));
 
 		FeatureContentPanel.featureContent.add(this);
+	}
+
+	private HorizontalPanel featureOptions(ClassDocumentation classDoc) {
+
+		HorizontalPanel hp = new HorizontalPanel();
+
+		hp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
+		hp.setSpacing(20);
+
+		isTodo.setValue(classDoc.isTodo());
+		isFeature.setValue(classDoc.isFeature());
+
+		hp.add(isTodo);
+		hp.add(isFeature);
+
+		return hp;
 	}
 
 	private HorizontalPanel featureDescription(ClassDocumentation classDoc) {
@@ -87,6 +113,9 @@ public class FeatureEdit extends VerticalPanel {
 
 			@Override
 			public void onClick(ClickEvent event) {
+
+				classFile.getClassDoc().setTodo(isTodo.getValue());
+				classFile.getClassDoc().setFeature(isFeature.getValue());
 
 				new EditClass(classFile, classDescription.getValue());
 			}
