@@ -10,9 +10,12 @@ import com.google.gwt.visualization.client.DataTable;
 import com.google.gwt.visualization.client.visualizations.ColumnChart;
 import com.google.gwt.visualization.client.visualizations.ColumnChart.Options;
 
-/**
- * @feature
- */
+/** 
+* TODO: Change the label Steps to Methods.
+* 
+* @todo
+* @feature 
+*/ 
 public class CurrentProductivityColumnsChart extends VerticalPanel {
 
 	public CurrentProductivityColumnsChart() {
