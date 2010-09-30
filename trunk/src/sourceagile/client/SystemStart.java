@@ -7,7 +7,10 @@ import sourceagile.shared.data.ProjectsData;
 import sourceagile.shared.data.UserData;
 
 import com.google.gwt.core.client.EntryPoint;
-
+/** 
+* Show the first page of the system.
+*  
+*/ 
 public class SystemStart implements EntryPoint {
 
 	public static MainPage mainPage;
