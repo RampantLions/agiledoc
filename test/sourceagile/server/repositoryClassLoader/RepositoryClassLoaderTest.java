@@ -37,7 +37,7 @@ public class RepositoryClassLoaderTest extends TestCase {
 		File file = new File(
 				"test/sourceagile/server/repositoryClassLoader/RepositoryClassLoaderTest.java");
 
-		entryFeature.setTextContent(FileUtils.readFile(file));
+		entryFeature.setSourceCode(FileUtils.readFile(file));
 
 		entryFeature.setClassDoc(GetClassDoc.getClassDoc(file));
 
