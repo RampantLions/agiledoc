@@ -36,7 +36,7 @@ public class SourceCodeView {
 	public static SyntaxHighlightPanel getSyntaxPanel(ClassFile entry) {
 
 		SyntaxHighlightPanel syntaxPanel = new SyntaxHighlightPanel(
-				entry.getTextContent(), SyntaxHighlightPanel.SYNTAX_JAVA);
+				entry.getSourceCode(), SyntaxHighlightPanel.SYNTAX_JAVA);
 
 		syntaxPanel.setSize(700, 600);
 		syntaxPanel.setTitle(entry.getClassName());
@@ -52,7 +52,7 @@ public class SourceCodeView {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new SourceEditor(entry.getTextContent());
+				new SourceEditor(entry.getSourceCode());
 
 			}
 		});
