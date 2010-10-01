@@ -1,6 +1,3 @@
-/**
- * Test package Javadoc
- */
 package sourceagile.client;
 
 import sourceagile.client.project.ProjectInitialization;
