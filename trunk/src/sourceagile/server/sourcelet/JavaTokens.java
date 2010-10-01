@@ -5,6 +5,13 @@ public class JavaTokens {
 	public static final String PACKAGE = "package";
 
 	public static final String CLASS = "class";
+/** 
+ * Tokens to be used in the tokenizer engine.
+TODO: Use the Enum Tokens defined by JDK source.
+ * 
+ * @todo 
+ */ 
+
 
 	public static final String INTERFACE = "interface";
 
