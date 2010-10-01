@@ -1,6 +1,7 @@
 package sourceagile.shared;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class ClassFile implements Serializable, Comparable<ClassFile> {
@@ -21,9 +22,9 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 	private User user;
 
-	private String textContent;
+	private String sourceCode;
 
-	private ClassTokens tokens;
+	private ArrayList<String> sourceCodeTokenized;
 
 	public String getClassPath() {
 		return classPath;
@@ -57,14 +58,6 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 		this.feature = feature;
 	}
 
-	public String getTextContent() {
-		return textContent;
-	}
-
-	public void setTextContent(String textContent) {
-		this.textContent = textContent;
-	}
-
 	public ClassDocumentation getClassDoc() {
 		return classDoc;
 	}
@@ -89,12 +82,20 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 		this.classDomain = classDomain;
 	}
 
-	public ClassTokens getTokens() {
-		return tokens;
+	public String getSourceCode() {
+		return sourceCode;
 	}
 
-	public void setTokens(ClassTokens tokens) {
-		this.tokens = tokens;
+	public void setSourceCode(String sourceCode) {
+		this.sourceCode = sourceCode;
+	}
+
+	public ArrayList<String> getSourceCodeTokenized() {
+		return sourceCodeTokenized;
+	}
+
+	public void setSourceCodeTokenized(ArrayList<String> sourceCodeTokenized) {
+		this.sourceCodeTokenized = sourceCodeTokenized;
 	}
 
 	@Override
