@@ -6,6 +6,7 @@ import sourceagile.client.systemNavigation.FormField;
 import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Feature;
+import sourceagile.shared.utilities.FileNameGenerator;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -20,14 +21,14 @@ import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/** 
+/**
  * The user can insert a new task in the source code typing the name and
- description of the task in a web based form page. 
-TODO: need to change this class with Add To Do Class.
+ * description of the task in a web based form page. TODO: need to change this
+ * class with Add To Do Class.
  * 
  * @todo
- * @feature 
- */ 
+ * @feature
+ */
 public class AddTask extends VerticalPanel {
 
 	private ListBox folders = new FoldersList();
@@ -123,7 +124,8 @@ public class AddTask extends VerticalPanel {
 
 		ClassFile classFile = new ClassFile();
 
-		classFile.setClassName(taskName.getValue());
+		classFile.setClassName(FileNameGenerator.compactName(taskName
+				.getValue()));
 
 		classFile.setClassDomain(ProjectInitialization.currentProject
 				.getDomain());
@@ -133,7 +135,8 @@ public class AddTask extends VerticalPanel {
 				&& newFolderName.getValue().length() > 0) {
 
 			Feature feature = new Feature();
-			feature.setFeatureFolder(newFolderName.getValue().trim());
+			feature.setFeatureFolder(FileNameGenerator.compactName(
+					newFolderName.getValue(), true));
 
 			classFile.setFeature(feature);
 		}
