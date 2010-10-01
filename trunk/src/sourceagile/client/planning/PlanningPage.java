@@ -1,7 +1,7 @@
 package sourceagile.client.planning;
 
 import sourceagile.client.SystemStart;
-import sourceagile.client.planning.newTask.AddTask;
+import sourceagile.client.planning.Tasks.AddTask;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -9,13 +9,11 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;
-/** 
+
+/**
  * Show the list of planning tasks.
- *  
- */ 
- 
-
-
+ * 
+ */
 public class PlanningPage extends VerticalPanel {
 
 	public PlanningPage(ClassFile[] entries) {
@@ -46,8 +44,7 @@ public class PlanningPage extends VerticalPanel {
 			public void onClick(ClickEvent event) {
 
 				SystemStart.mainPage.panelContent.clear();
-				SystemStart.mainPage.panelContent
-						.add(new AddTask());
+				SystemStart.mainPage.panelContent.add(new AddTask());
 
 			}
 		});
