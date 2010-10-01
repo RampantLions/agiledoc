@@ -10,12 +10,12 @@ import com.google.gwt.visualization.client.DataTable;
 import com.google.gwt.visualization.client.visualizations.ColumnChart;
 import com.google.gwt.visualization.client.visualizations.ColumnChart.Options;
 
-/** 
- * Show a Columns Chart with the total amount of tasks, classes and methods in the current project.
+/**
+ * Show a Columns Chart with the total amount of tasks, classes and methods in
+ * the current project.
  * 
- * @feature 
- */ 
- 
+ * @feature
+ */
 public class CurrentProductivityColumnsChart extends VerticalPanel {
 
 	public CurrentProductivityColumnsChart() {
@@ -50,12 +50,12 @@ public class CurrentProductivityColumnsChart extends VerticalPanel {
 
 		for (ClassFile entry : ProjectInitialization.projectEntries) {
 
-			int steps = entry.getClassDoc().getConstructors().length
+			int methods = entry.getClassDoc().getConstructors().length
 					+ entry.getClassDoc().getMethods().length;
 
 			ProjectInitialization.projectTotals
-					.setStepsCount(ProjectInitialization.projectTotals
-							.getStepsCount() + steps);
+					.setMethodsCount(ProjectInitialization.projectTotals
+							.getMethodsCount() + methods);
 
 			if (entry.getClassDoc().isTodo()) {
 
@@ -87,7 +87,8 @@ public class CurrentProductivityColumnsChart extends VerticalPanel {
 				ProjectInitialization.projectTotals.getFeatureCount());
 		data.setValue(0, 2,
 				ProjectInitialization.projectTotals.getClassesCount());
-		data.setValue(0, 3, ProjectInitialization.projectTotals.getStepsCount());
+		data.setValue(0, 3,
+				ProjectInitialization.projectTotals.getMethodsCount());
 	}
 
 	private static void setColumns(DataTable data) {
@@ -95,7 +96,7 @@ public class CurrentProductivityColumnsChart extends VerticalPanel {
 		data.addColumn(ColumnType.NUMBER, "To Do");
 		data.addColumn(ColumnType.NUMBER, "Features");
 		data.addColumn(ColumnType.NUMBER, "Classes");
-		data.addColumn(ColumnType.NUMBER, "Steps");
+		data.addColumn(ColumnType.NUMBER, "Methods");
 	}
 
 }
