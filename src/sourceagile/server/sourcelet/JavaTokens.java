@@ -18,5 +18,7 @@ public class JavaTokens {
 
 	public static final String COMMAND_END = ";";
 
+	public static final String CAR_RETURN_CHAR = "\r";
+
 	public static final String LINE_END = "\n";
 }

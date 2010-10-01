@@ -1,7 +1,6 @@
 package sourceagile.server.doclet;
 
 import java.io.File;
-import java.util.logging.Logger;
 
 import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.Field;
@@ -16,8 +15,6 @@ public class GetClassDoc {
 
 	public static final String FEATURE_TAG = "feature";
 
-	final private Logger log = Logger.getLogger(GetClassDoc.class.getName());
-
 	public static RootDoc getRootDoc(File file) {
 
 		EasyDoclet doclet = new EasyDoclet(file, file);
@@ -29,42 +26,47 @@ public class GetClassDoc {
 
 		RootDoc rootDoc = getRootDoc(file);
 
-		ClassDoc[] classes = rootDoc.classes();
-
-		ClassDoc classDoc = classes[0];
-
 		ClassDocumentation classDocumentation = new ClassDocumentation();
 
-		classDocumentation.setDescription(classDoc.commentText());
+		if (rootDoc != null) {
+			ClassDoc[] classes = rootDoc.classes();
 
-		if (classDoc.superclass() != null) {
+			if (classes != null && classes.length > 0) {
+				ClassDoc classDoc = classes[0];
 
-			classDocumentation.setSuperclass(classDoc.superclass().toString());
+				classDocumentation.setDescription(classDoc.commentText());
+
+				if (classDoc.superclass() != null) {
+
+					classDocumentation.setSuperclass(classDoc.superclass()
+							.toString());
+				}
+
+				classDocumentation.setModifiers(classDoc.modifiers());
+
+				classDocumentation.setConstructors(GetClassMethods
+						.listConstructors(classDoc.constructors()));
+
+				classDocumentation.setMethods(GetClassMethods
+						.listMethods(classDoc.methods()));
+
+				classDocumentation.setFields(listFields(classDoc.fields()));
+
+				String[] imports = listImports(classDoc.importedClasses());
+
+				if (classDoc.tags(TODO_TAG).length > 0) {
+
+					classDocumentation.setTodo(true);
+				}
+
+				if (classDoc.tags(FEATURE_TAG).length > 0) {
+
+					classDocumentation.setFeature(true);
+				}
+
+				classDocumentation.setImports(imports);
+			}
 		}
-
-		classDocumentation.setModifiers(classDoc.modifiers());
-
-		classDocumentation.setConstructors(GetClassMethods
-				.listConstructors(classDoc.constructors()));
-
-		classDocumentation.setMethods(GetClassMethods.listMethods(classDoc
-				.methods()));
-
-		classDocumentation.setFields(listFields(classDoc.fields()));
-
-		String[] imports = listImports(classDoc.importedClasses());
-
-		if (classDoc.tags(TODO_TAG).length > 0) {
-
-			classDocumentation.setTodo(true);
-		}
-
-		if (classDoc.tags(FEATURE_TAG).length > 0) {
-
-			classDocumentation.setFeature(true);
-		}
-
-		classDocumentation.setImports(imports);
 
 		return classDocumentation;
 	}

@@ -1,37 +1,73 @@
 package sourceagile.server.classRepository.repositoryEditor;
 
+import java.util.ArrayList;
+
 import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.server.sourcelet.TokenizeClass;
+import sourceagile.server.sourcelet.JavaTokens;
+import sourceagile.server.sourcelet.Tokenize;
 import sourceagile.shared.ClassFile;
-import sourceagile.shared.ClassTokens;
 
 public class UpdateClassDescription {
 
 	public UpdateClassDescription(SVNRepository repository,
 			ClassFile classFile, String classDescription) throws SVNException {
 
-		new TokenizeClass(classFile);
+		int classArrayIndex = Tokenize.getClassArrayIndex(classFile);
 
-		String classSource = classFile.getTextContent();
+		ArrayList<String> classSourceTokenized = classFile
+				.getSourceCodeTokenized();
 
-		ClassTokens tokens = classFile.getTokens();
+		String classSourceUpdated = "";
 
-		String textBefore = classSource.substring(0,
-				tokens.getClassDescriptionPositionInit());
+		for (int i = 0; i < classSourceTokenized.size(); i++) {
 
-		String textAfter = classSource.substring(
-				tokens.getClassDescriptionPositionEnd(), classSource.length());
+			String token = classSourceTokenized.get(i);
 
-		String classSourceUpdated = textBefore
-				+ getComment(classFile, classDescription) + textAfter;
+			if (i == classArrayIndex - 1) {
+
+				if (token.startsWith(JavaTokens.JAVADOC_INIT)) {
+
+					token = getNewClassJavadoc(classFile, classDescription);
+
+				} else {
+
+					token += "\n"
+							+ getNewClassJavadoc(classFile, classDescription);
+
+					String classToken = classSourceTokenized
+							.get(classArrayIndex);
+
+					if (classToken.startsWith(JavaTokens.CAR_RETURN_CHAR)) {
+
+						classToken = classToken.substring(1);
+
+						classSourceTokenized.set(classArrayIndex, classToken);
+
+						token += JavaTokens.CAR_RETURN_CHAR;
+					}
+
+					if (classToken.startsWith(JavaTokens.LINE_END)) {
+
+						classToken = classToken.substring(1);
+
+						classSourceTokenized.set(classArrayIndex, classToken);
+
+						token += JavaTokens.LINE_END;
+					}
+				}
+			}
+
+			classSourceUpdated += token;
+		}
 
 		new EditFile(repository, classFile, classSourceUpdated);
 
 	}
 
-	private String getComment(ClassFile classFile, String classDescription) {
+	private String getNewClassJavadoc(ClassFile classFile,
+			String classDescription) {
 
 		String todo = "";
 		if (classFile.getClassDoc().isTodo()) {
@@ -46,7 +82,7 @@ public class UpdateClassDescription {
 		}
 
 		String comment = "/** \n * " + classDescription + "\n * " + todo
-				+ feature + " \n */ ";
+				+ feature + " \n */ \n";
 
 		return comment;
 	}

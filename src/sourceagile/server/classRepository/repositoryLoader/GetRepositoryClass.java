@@ -22,7 +22,7 @@ public class GetRepositoryClass {
 
 		ByteArrayOutputStream baos = getRemoteClass(repository, entry);
 
-		entry.setTextContent(baos.toString());
+		entry.setSourceCode(baos.toString());
 
 		loadClassDocumentation(baos, entry);
 
