@@ -9,11 +9,14 @@ import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 
-/**
- * List all the classes assigned as "To Do" in the current project.
- * 
- * @feature
- */
+;/** 
+* List all the classes assigned as "To Do" in the current project.
+TODO: Change the name of the class to ToDoClassList.
+* 
+* @todo
+* @feature 
+*/ 
+
 public class PlanningList extends FlexTable {
 
 	public PlanningList(ClassFile[] entries) {
