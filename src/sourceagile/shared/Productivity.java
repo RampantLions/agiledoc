@@ -17,7 +17,7 @@ public class Productivity implements Serializable {
 
 	private int classActivityCount;
 
-	private int stepsCount;
+	private int methodsCount;
 
 	public Date getDate() {
 		return date;
@@ -59,12 +59,12 @@ public class Productivity implements Serializable {
 		this.classActivityCount = classActivityCount;
 	}
 
-	public int getStepsCount() {
-		return stepsCount;
+	public int getMethodsCount() {
+		return methodsCount;
 	}
 
-	public void setStepsCount(int stepsCount) {
-		this.stepsCount = stepsCount;
+	public void setMethodsCount(int methodsCount) {
+		this.methodsCount = methodsCount;
 	}
 
 }
