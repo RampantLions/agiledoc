@@ -11,11 +11,11 @@ import com.google.gwt.visualization.client.visualizations.ColumnChart;
 import com.google.gwt.visualization.client.visualizations.ColumnChart.Options;
 
 /** 
-* TODO: Change the label Steps to Methods.
-* 
-* @todo
-* @feature 
-*/ 
+ * Show a Columns Chart with the total amount of tasks, classes and methods in the current project.
+ * 
+ * @feature 
+ */ 
+ 
 public class CurrentProductivityColumnsChart extends VerticalPanel {
 
 	public CurrentProductivityColumnsChart() {
