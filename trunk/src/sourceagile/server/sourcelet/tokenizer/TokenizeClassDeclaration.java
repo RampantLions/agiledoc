@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 import sourceagile.shared.ClassFile;
 
+
 /** 
- * Test
- *  
+ * TODO: Use the enum Tokens from JDK source code.
+ * 
+ * @todo 
  */
 
 public class TokenizeClassDeclaration {
