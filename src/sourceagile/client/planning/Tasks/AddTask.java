@@ -61,11 +61,11 @@ public class AddTask extends VerticalPanel {
 		vp.add(foldersPanel());
 
 		taskName.setWidth("500px");
-		taskName.setValue(null);
+		taskName.setValue("");
 		vp.add(new FormField("Name", taskName));
 
 		taskDescription.setSize("700px", "80px");
-		taskDescription.setValue(null);
+		taskDescription.setValue("");
 		vp.add(new FormField("Description", taskDescription));
 
 		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
@@ -97,7 +97,7 @@ public class AddTask extends VerticalPanel {
 		hp.add(title);
 
 		newFolderName.setWidth("150px");
-		newFolderName.setValue(null);
+		newFolderName.setValue("");
 		hp.add(newFolderName);
 
 		return hp;
