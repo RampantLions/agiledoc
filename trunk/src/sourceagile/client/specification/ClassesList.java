@@ -3,23 +3,23 @@ package sourceagile.client.specification;
 import sourceagile.client.specification.classViewOptions.OptionsIcons;
 import sourceagile.shared.ClassFile;
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.Anchor;
-import com.google.gwt.user.client.ui.Tree;
-import com.google.gwt.user.client.ui.TreeItem;
+import com.gwtext.client.core.EventObject;
+import com.gwtext.client.data.Node;
+import com.gwtext.client.widgets.tree.TreeNode;
+import com.gwtext.client.widgets.tree.TreePanel;
+import com.gwtext.client.widgets.tree.event.TreeNodeListenerAdapter;
 
-/** 
- * TODO: Change the Tree object for the GWT-Ext Tree.
- * 
- * @todo 
- */
+public class ClassesList extends TreePanel {
 
-public class ClassesList extends Tree {
+	TreeNode root = new TreeNode();
 
 	public ClassesList(ClassFile[] entries) {
 
-		TreeItem[] treeItemArray = new TreeItem[10];
+		this.setBorder(false);
+		this.setLines(false);
+		this.setRootVisible(false);
+
+		TreeNode[] treeItemArray = new TreeNode[10];
 
 		String currentClassPath = null;
 
@@ -35,7 +35,7 @@ public class ClassesList extends Tree {
 
 					if (treeItemArray[level.length - 1] == null) {
 
-						treeItemArray[level.length - 1] = new TreeItem(entry
+						treeItemArray[level.length - 1] = new TreeNode(entry
 								.getFeature().getFeatureFolder());
 
 					} else {
@@ -45,16 +45,15 @@ public class ClassesList extends Tree {
 
 							if (j == 0) {
 
-								this.addItem(treeItemArray[j]);
+								root.appendChild(treeItemArray[j]);
 
 							} else {
 
-								treeItemArray[j - 1].addItem(treeItemArray[j]);
+								treeItemArray[j - 1]
+										.appendChild(treeItemArray[j]);
 							}
 							j++;
 						}
-
-						treeItemArray[j - 1].addItem("<br>");
 
 						j = level.length - 1;
 						while (treeItemArray[j] != null) {
@@ -63,7 +62,7 @@ public class ClassesList extends Tree {
 							j++;
 						}
 
-						treeItemArray[level.length - 1] = new TreeItem(entry
+						treeItemArray[level.length - 1] = new TreeNode(entry
 								.getFeature().getFeatureFolder());
 					}
 				}
@@ -72,36 +71,28 @@ public class ClassesList extends Tree {
 
 				ListFilesFromFolder(entries, i,
 						treeItemArray[level.length - 1], currentClassPath);
-
-				if (currentClassPath.equals("")) {
-
-					this.addItem("<br>");
-
-				} else {
-
-					treeItemArray[level.length - 1].setState(true);
-				}
-
 			}
 		}
 
 		int i = 1;
 		while (treeItemArray[i] != null) {
 
-			treeItemArray[i - 1].addItem(treeItemArray[i]);
-			treeItemArray[i - 1].setState(true);
+			treeItemArray[i - 1].appendChild(treeItemArray[i]);
 
 			i++;
 		}
 
 		if (treeItemArray[0] != null) {
-			this.addItem(treeItemArray[0]);
+			root.appendChild(treeItemArray[0]);
 		}
+
+		this.setRootNode(root);
+		this.expandAll();
 
 	}
 
 	private void ListFilesFromFolder(ClassFile[] entries, int folderIndex,
-			TreeItem currentTreeItem, String currentClassPath) {
+			TreeNode currentTreeItem, String currentClassPath) {
 
 		int i = folderIndex;
 		ClassFile entry = entries[i];
@@ -109,15 +100,21 @@ public class ClassesList extends Tree {
 		while (currentClassPath.equals(entry.getClassPath())
 				&& i < entries.length) {
 
+			final ClassFile entryFinal = entry;
+
 			if (currentClassPath.equals("")) {
 
-				this.addItem(getFeatureAnchor(entry, entry.getFeature()
-						.getFeatureName()));
+				TreeNode treeNode = getFeatureLink(entryFinal, entry
+						.getFeature().getFeatureName());
+
+				root.appendChild(treeNode);
 
 			} else {
 
-				currentTreeItem.addItem(getFeatureAnchor(entry, entry
-						.getFeature().getFeatureName()));
+				TreeNode treeNode = getFeatureLink(entryFinal, entry
+						.getFeature().getFeatureName());
+
+				currentTreeItem.appendChild(treeNode);
 			}
 
 			i++;
@@ -128,18 +125,22 @@ public class ClassesList extends Tree {
 		}
 	}
 
-	private Anchor getFeatureAnchor(final ClassFile entry, String anchorName) {
+	private TreeNode getFeatureLink(final ClassFile entry, String nodeName) {
 
-		Anchor featureAnchor = new Anchor(anchorName);
-		featureAnchor.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent sender) {
+		TreeNode treeNode = new TreeNode(nodeName);
 
-				// new GetRemoteClass(entry, OptionsIcons.optionDescription);
+		treeNode.setIcon("js/ext/resources/images/default/tree/world.gif");
+
+		// treeNode.setIconCls("world-icon");
+
+		treeNode.addListener(new TreeNodeListenerAdapter() {
+			public void onClick(Node node, EventObject e) {
+
 				Specification.showClass(entry, OptionsIcons.optionDescription);
 			}
 		});
 
-		return featureAnchor;
+		return treeNode;
 	}
 
 }
