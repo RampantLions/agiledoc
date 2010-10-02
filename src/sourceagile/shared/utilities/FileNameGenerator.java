@@ -11,7 +11,7 @@ public class FileNameGenerator {
 
 		String[] words = (name.trim()).split(" ");
 
-		String compressedFileName = null;
+		String compressedFileName = "";
 
 		for (int i = 0; i < words.length; i++) {
 
