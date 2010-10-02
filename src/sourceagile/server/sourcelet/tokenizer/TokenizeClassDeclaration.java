@@ -4,13 +4,6 @@ import java.util.ArrayList;
 
 import sourceagile.shared.ClassFile;
 
-
-/** 
- * TODO: Use the enum Tokens from JDK source code.
- * 
- * @todo 
- */
-
 public class TokenizeClassDeclaration {
 
 	public static void getClassArrayIndex(ClassFile classFile,
