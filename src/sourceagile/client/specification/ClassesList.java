@@ -9,6 +9,12 @@ import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Tree;
 import com.google.gwt.user.client.ui.TreeItem;
 
+/** 
+ * TODO: Change the Tree object for the GWT-Ext Tree.
+ * 
+ * @todo 
+ */
+
 public class ClassesList extends Tree {
 
 	public ClassesList(ClassFile[] entries) {
