@@ -1,10 +1,12 @@
 package sourceagile.server.DataAccess;
 
+
+
 /** 
-* Test 
-* 
-* @todo 
-*/
+ * Delete the planning task from the database.
+ * 
+ * @todo 
+ */
 public class DeleteTask {
 
 }
