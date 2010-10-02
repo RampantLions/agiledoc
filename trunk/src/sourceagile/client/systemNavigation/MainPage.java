@@ -25,6 +25,8 @@ public class MainPage extends VerticalPanel {
 
 		panelMenus.setWidth("1200px");
 
+		panelMenus.add(new ProjectName());
+
 		panelMenus.add(new SystemMenu());
 
 		panelMenus.add(new ProjectMenu());
