@@ -11,11 +11,15 @@ public class FoldersList extends ListBox {
 
 		this.setWidth("250px");
 
-		String folderName = null;
+		String folderName = "";
+
+		this.addItem(folderName, folderName);
 
 		for (ClassFile classFile : ProjectInitialization.projectEntries) {
 
-			if (!classFile.getFeature().getFeatureFolder().equals(folderName)) {
+			String featureFolder = classFile.getFeature().getFeatureFolder();
+
+			if (!featureFolder.equals(folderName)) {
 
 				folderName = classFile.getFeature().getFeatureFolder();
 
