@@ -25,9 +25,6 @@ public class ListRepositoryHistory {
 		long startRevision = 0;
 		long endRevision = -1; // HEAD (the latest) revision
 
-		int totalClasses = 0;
-		int totalActivity = 0;
-
 		Collection logEntries = repository.log(new String[] { "" }, null,
 				startRevision, endRevision, true, true);
 
@@ -38,6 +35,9 @@ public class ListRepositoryHistory {
 
 			long date = logEntry.getDate().getTime();
 			productivity.setDate(new Date(date));
+
+			int totalClasses = 0;
+			int totalActivity = 0;
 
 			if (logEntry.getChangedPaths().size() > 0) {
 
