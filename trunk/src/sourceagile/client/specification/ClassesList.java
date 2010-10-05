@@ -3,91 +3,104 @@ package sourceagile.client.specification;
 import sourceagile.client.specification.classViewOptions.OptionsIcons;
 import sourceagile.shared.ClassFile;
 
+import com.google.gwt.user.client.ui.VerticalPanel;
 import com.gwtext.client.core.EventObject;
 import com.gwtext.client.data.Node;
 import com.gwtext.client.widgets.tree.TreeNode;
 import com.gwtext.client.widgets.tree.TreePanel;
 import com.gwtext.client.widgets.tree.event.TreeNodeListenerAdapter;
 
-public class ClassesList extends TreePanel {
+public class ClassesList extends VerticalPanel {
 
 	TreeNode root = new TreeNode();
 
 	public ClassesList(ClassFile[] entries) {
 
-		this.setBorder(false);
-		this.setLines(false);
-		this.setRootVisible(false);
+		this.setSpacing(20);
 
 		TreeNode[] treeItemArray = new TreeNode[10];
 
 		String currentClassPath = null;
 
-		for (int i = 0; i < entries.length; i++) {
+		int z = 0;
+		while (z < entries.length) {
 
-			ClassFile entry = entries[i];
+			TreePanel treePanel = new TreePanel();
 
-			if (!entry.getClassPath().equals(currentClassPath)) {
+			treePanel.setBorder(false);
+			treePanel.setLines(false);
+			treePanel.setRootVisible(false);
 
-				String[] level = entry.getClassPath().split("/");
+			for (int i = 0; i < entries.length; i++) {
 
-				if (!entry.getClassPath().equals("")) {
+				ClassFile entry = entries[i];
 
-					if (treeItemArray[level.length - 1] == null) {
+				if (!entry.getClassPath().equals(currentClassPath)) {
 
-						treeItemArray[level.length - 1] = new TreeNode(entry
-								.getFeature().getFeatureFolder());
+					String[] level = entry.getClassPath().split("/");
 
-					} else {
+					if (!entry.getClassPath().equals("")) {
 
-						int j = level.length - 1;
-						while (treeItemArray[j] != null) {
+						if (treeItemArray[level.length - 1] == null) {
 
-							if (j == 0) {
+							treeItemArray[level.length - 1] = new TreeNode(
+									entry.getFeature().getFeatureFolder());
 
-								root.appendChild(treeItemArray[j]);
+						} else {
 
-							} else {
+							int j = level.length - 1;
+							while (treeItemArray[j] != null) {
 
-								treeItemArray[j - 1]
-										.appendChild(treeItemArray[j]);
+								if (j == 0) {
+
+									root.appendChild(treeItemArray[j]);
+									break;
+
+								} else {
+
+									treeItemArray[j - 1]
+											.appendChild(treeItemArray[j]);
+								}
+								j++;
 							}
-							j++;
+
+							j = level.length - 1;
+							while (treeItemArray[j] != null) {
+
+								treeItemArray[j] = null;
+								j++;
+							}
+
+							treeItemArray[level.length - 1] = new TreeNode(
+									entry.getFeature().getFeatureFolder());
 						}
-
-						j = level.length - 1;
-						while (treeItemArray[j] != null) {
-
-							treeItemArray[j] = null;
-							j++;
-						}
-
-						treeItemArray[level.length - 1] = new TreeNode(entry
-								.getFeature().getFeatureFolder());
 					}
+
+					currentClassPath = entry.getClassPath();
+
+					ListFilesFromFolder(entries, i,
+							treeItemArray[level.length - 1], currentClassPath);
 				}
 
-				currentClassPath = entry.getClassPath();
-
-				ListFilesFromFolder(entries, i,
-						treeItemArray[level.length - 1], currentClassPath);
+				z++;
 			}
+
+			int i = 1;
+			while (treeItemArray[i] != null) {
+
+				treeItemArray[i - 1].appendChild(treeItemArray[i]);
+
+				i++;
+			}
+
+			if (treeItemArray[0] != null) {
+				root.appendChild(treeItemArray[0]);
+			}
+
+			treePanel.setRootNode(root);
+			treePanel.expandAll();
+			this.add(treePanel);
 		}
-
-		int i = 1;
-		while (treeItemArray[i] != null) {
-
-			treeItemArray[i - 1].appendChild(treeItemArray[i]);
-
-			i++;
-		}
-
-		if (treeItemArray[0] != null) {
-			root.appendChild(treeItemArray[0]);
-		}
-
-		this.setRootNode(root);
-		this.expandAll();
 
 	}
 
