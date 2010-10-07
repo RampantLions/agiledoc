@@ -1,7 +1,5 @@
 package sourceagile.client.project;
 
-import sourceagile.client.SystemStart;
-
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
@@ -26,33 +24,6 @@ public class ProjectMenu extends HorizontalPanel {
 		this.add(text);
 
 		this.add(getSearchButton());
-
-		this.add(getChangeProjectIcon());
-	}
-
-	/**
-	 * Return the button widget that implements the Change Root functionality on
-	 * the click event. After the click the system will start again with the new
-	 * root and domain selected.
-	 */
-	public static Image getChangeProjectIcon() {
-
-		Image img = new Image("images/changeProject.gif");
-
-		img.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				SystemStart.mainPage.panelContent.clear();
-				SystemStart.mainPage.panelContent
-						.add(new ProjectSelection());
-			}
-		});
-
-		img.setTitle("Change current Project");
-
-		return img;
 	}
 
 	public static Image getSearchButton() {
