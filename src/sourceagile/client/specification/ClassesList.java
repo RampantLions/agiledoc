@@ -3,109 +3,99 @@ package sourceagile.client.specification;
 import sourceagile.client.specification.classViewOptions.OptionsIcons;
 import sourceagile.shared.ClassFile;
 
-import com.google.gwt.user.client.ui.VerticalPanel;
-import com.gwtext.client.core.EventObject;
-import com.gwtext.client.data.Node;
-import com.gwtext.client.widgets.tree.TreeNode;
-import com.gwtext.client.widgets.tree.TreePanel;
-import com.gwtext.client.widgets.tree.event.TreeNodeListenerAdapter;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.user.client.ui.Tree;
+import com.google.gwt.user.client.ui.TreeItem;
 
-public class ClassesList extends VerticalPanel {
-
-	TreeNode root = new TreeNode();
+public class ClassesList extends Tree {
 
 	public ClassesList(ClassFile[] entries) {
 
-		this.setSpacing(20);
-
-		TreeNode[] treeItemArray = new TreeNode[10];
+		TreeItem[] treeItemArray = new TreeItem[10];
 
 		String currentClassPath = null;
 
-		int z = 0;
-		while (z < entries.length) {
+		for (int i = 0; i < entries.length; i++) {
 
-			TreePanel treePanel = new TreePanel();
+			ClassFile entry = entries[i];
 
-			treePanel.setBorder(false);
-			treePanel.setLines(false);
-			treePanel.setRootVisible(false);
+			if (!entry.getClassPath().equals(currentClassPath)) {
 
-			for (int i = 0; i < entries.length; i++) {
+				String[] level = entry.getClassPath().split("/");
 
-				ClassFile entry = entries[i];
+				if (!entry.getClassPath().equals("")) {
 
-				if (!entry.getClassPath().equals(currentClassPath)) {
+					if (treeItemArray[level.length - 1] == null) {
 
-					String[] level = entry.getClassPath().split("/");
+						treeItemArray[level.length - 1] = new TreeItem(entry
+								.getFeature().getFeatureFolder());
 
-					if (!entry.getClassPath().equals("")) {
+					} else {
 
-						if (treeItemArray[level.length - 1] == null) {
+						int j = level.length - 1;
+						while (treeItemArray[j] != null) {
 
-							treeItemArray[level.length - 1] = new TreeNode(
-									entry.getFeature().getFeatureFolder());
+							if (j == 0) {
 
-						} else {
+								this.addItem(treeItemArray[j]);
 
-							int j = level.length - 1;
-							while (treeItemArray[j] != null) {
+							} else {
 
-								if (j == 0) {
-
-									root.appendChild(treeItemArray[j]);
-									break;
-
-								} else {
-
-									treeItemArray[j - 1]
-											.appendChild(treeItemArray[j]);
-								}
-								j++;
+								treeItemArray[j - 1].addItem(treeItemArray[j]);
 							}
-
-							j = level.length - 1;
-							while (treeItemArray[j] != null) {
-
-								treeItemArray[j] = null;
-								j++;
-							}
-
-							treeItemArray[level.length - 1] = new TreeNode(
-									entry.getFeature().getFeatureFolder());
+							j++;
 						}
+
+						treeItemArray[j - 1].addItem("<br>");
+
+						j = level.length - 1;
+						while (treeItemArray[j] != null) {
+
+							treeItemArray[j] = null;
+							j++;
+						}
+
+						treeItemArray[level.length - 1] = new TreeItem(entry
+								.getFeature().getFeatureFolder());
 					}
-
-					currentClassPath = entry.getClassPath();
-
-					ListFilesFromFolder(entries, i,
-							treeItemArray[level.length - 1], currentClassPath);
 				}
 
-				z++;
+				currentClassPath = entry.getClassPath();
+
+				ListFilesFromFolder(entries, i,
+						treeItemArray[level.length - 1], currentClassPath);
+
+				if (currentClassPath.equals("")) {
+
+					this.addItem("<br>");
+
+				} else {
+
+					treeItemArray[level.length - 1].setState(true);
+				}
+
 			}
+		}
 
-			int i = 1;
-			while (treeItemArray[i] != null) {
+		int i = 1;
+		while (treeItemArray[i] != null) {
 
-				treeItemArray[i - 1].appendChild(treeItemArray[i]);
+			treeItemArray[i - 1].addItem(treeItemArray[i]);
+			treeItemArray[i - 1].setState(true);
 
-				i++;
-			}
+			i++;
+		}
 
-			if (treeItemArray[0] != null) {
-				root.appendChild(treeItemArray[0]);
-			}
-
-			treePanel.setRootNode(root);
-			treePanel.expandAll();
-			this.add(treePanel);
+		if (treeItemArray[0] != null) {
+			this.addItem(treeItemArray[0]);
 		}
 
 	}
 
 	private void ListFilesFromFolder(ClassFile[] entries, int folderIndex,
-			TreeNode currentTreeItem, String currentClassPath) {
+			TreeItem currentTreeItem, String currentClassPath) {
 
 		int i = folderIndex;
 		ClassFile entry = entries[i];
@@ -113,21 +103,15 @@ public class ClassesList extends VerticalPanel {
 		while (currentClassPath.equals(entry.getClassPath())
 				&& i < entries.length) {
 
-			final ClassFile entryFinal = entry;
-
 			if (currentClassPath.equals("")) {
 
-				TreeNode treeNode = getFeatureLink(entryFinal, entry
-						.getFeature().getFeatureName());
-
-				root.appendChild(treeNode);
+				this.addItem(getFeatureAnchor(entry, entry.getFeature()
+						.getFeatureName()));
 
 			} else {
 
-				TreeNode treeNode = getFeatureLink(entryFinal, entry
-						.getFeature().getFeatureName());
-
-				currentTreeItem.appendChild(treeNode);
+				currentTreeItem.addItem(getFeatureAnchor(entry, entry
+						.getFeature().getFeatureName()));
 			}
 
 			i++;
@@ -138,22 +122,18 @@ public class ClassesList extends VerticalPanel {
 		}
 	}
 
-	private TreeNode getFeatureLink(final ClassFile entry, String nodeName) {
+	private Anchor getFeatureAnchor(final ClassFile entry, String anchorName) {
 
-		TreeNode treeNode = new TreeNode(nodeName);
+		Anchor featureAnchor = new Anchor(anchorName);
+		featureAnchor.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent sender) {
 
-		treeNode.setIcon("js/ext/resources/images/default/tree/world.gif");
-
-		// treeNode.setIconCls("world-icon");
-
-		treeNode.addListener(new TreeNodeListenerAdapter() {
-			public void onClick(Node node, EventObject e) {
-
+				// new GetRemoteClass(entry, OptionsIcons.optionDescription);
 				Specification.showClass(entry, OptionsIcons.optionDescription);
 			}
 		});
 
-		return treeNode;
+		return featureAnchor;
 	}
 
 }
