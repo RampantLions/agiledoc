@@ -2,138 +2,105 @@ package sourceagile.client.specification;
 
 import sourceagile.client.specification.classViewOptions.OptionsIcons;
 import sourceagile.shared.ClassFile;
+import sourceagile.shared.utilities.FeatureNameGenerator;
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.Anchor;
-import com.google.gwt.user.client.ui.Tree;
-import com.google.gwt.user.client.ui.TreeItem;
+import com.google.gwt.user.client.ui.VerticalPanel;
+import com.gwtext.client.core.EventObject;
+import com.gwtext.client.data.Node;
+import com.gwtext.client.widgets.tree.TreeNode;
+import com.gwtext.client.widgets.tree.TreePanel;
+import com.gwtext.client.widgets.tree.event.TreeNodeListenerAdapter;
 
-public class ClassesList extends Tree {
+public class ClassesList extends VerticalPanel {
 
 	public ClassesList(ClassFile[] entries) {
 
-		TreeItem[] treeItemArray = new TreeItem[10];
+		this.setSpacing(20);
 
-		String currentClassPath = null;
+		TreePanel treePanel = new TreePanel();
+		treePanel.setBorder(false);
+		treePanel.setLines(false);
 
-		for (int i = 0; i < entries.length; i++) {
+		TreeNode root = new TreeNode("");
+		root.setId("root");
 
-			ClassFile entry = entries[i];
+		treePanel.setRootNode(root);
+		treePanel.setRootVisible(false);
+		treePanel.expandAll();
+		this.add(treePanel);
 
-			if (!entry.getClassPath().equals(currentClassPath)) {
+		String currentPath = "root";
 
-				String[] level = entry.getClassPath().split("/");
+		for (ClassFile entry : entries) {
 
-				if (!entry.getClassPath().equals("")) {
+			String[] entryPath = entry.getClassPath().split("/");
 
-					if (treeItemArray[level.length - 1] == null) {
+			for (int i = 0; i < entryPath.length; i++) {
 
-						treeItemArray[level.length - 1] = new TreeItem(entry
-								.getFeature().getFeatureFolder());
+				TreeNode parentNode = treePanel.getNodeById(currentPath);
 
-					} else {
+				if (!entryPath[i].equals("")) {
 
-						int j = level.length - 1;
-						while (treeItemArray[j] != null) {
+					currentPath += "/" + entryPath[i];
 
-							if (j == 0) {
+					if (treePanel.getNodeById(currentPath) == null) {
 
-								this.addItem(treeItemArray[j]);
+						if (i == 0) {
 
-							} else {
+							treePanel = new TreePanel();
+							treePanel.setBorder(false);
+							treePanel.setLines(false);
 
-								treeItemArray[j - 1].addItem(treeItemArray[j]);
-							}
-							j++;
+							root = new TreeNode(
+									FeatureNameGenerator
+											.spacedName(entryPath[i]));
+							root.setId(currentPath);
+
+							treePanel.setRootNode(root);
+							treePanel.expandAll();
+							this.add(treePanel);
+
+						} else {
+
+							TreeNode node = new TreeNode(
+									FeatureNameGenerator
+											.spacedName(entryPath[i]));
+							node.setId(currentPath);
+
+							parentNode.appendChild(node);
 						}
-
-						treeItemArray[j - 1].addItem("<br>");
-
-						j = level.length - 1;
-						while (treeItemArray[j] != null) {
-
-							treeItemArray[j] = null;
-							j++;
-						}
-
-						treeItemArray[level.length - 1] = new TreeItem(entry
-								.getFeature().getFeatureFolder());
 					}
 				}
-
-				currentClassPath = entry.getClassPath();
-
-				ListFilesFromFolder(entries, i,
-						treeItemArray[level.length - 1], currentClassPath);
-
-				if (currentClassPath.equals("")) {
-
-					this.addItem("<br>");
-
-				} else {
-
-					treeItemArray[level.length - 1].setState(true);
-				}
-
 			}
-		}
 
-		int i = 1;
-		while (treeItemArray[i] != null) {
+			TreeNode parentNode = treePanel.getNodeById(currentPath);
 
-			treeItemArray[i - 1].addItem(treeItemArray[i]);
-			treeItemArray[i - 1].setState(true);
+			TreeNode node = getFeatureLink(entry);
+			node.setId(entry.getClassPath() + "." + entry.getClassName());
 
-			i++;
-		}
+			parentNode.appendChild(node);
 
-		if (treeItemArray[0] != null) {
-			this.addItem(treeItemArray[0]);
+			currentPath = "root";
 		}
 
 	}
 
-	private void ListFilesFromFolder(ClassFile[] entries, int folderIndex,
-			TreeItem currentTreeItem, String currentClassPath) {
+	private TreeNode getFeatureLink(final ClassFile entry) {
 
-		int i = folderIndex;
-		ClassFile entry = entries[i];
+		TreeNode treeNode = new TreeNode(entry.getFeature().getFeatureName());
 
-		while (currentClassPath.equals(entry.getClassPath())
-				&& i < entries.length) {
+		treeNode.setIcon("js/ext/resources/images/default/tree/world.gif");
 
-			if (currentClassPath.equals("")) {
+		// treeNode.setIconCls("world-icon");
 
-				this.addItem(getFeatureAnchor(entry, entry.getFeature()
-						.getFeatureName()));
+		treeNode.addListener(new TreeNodeListenerAdapter() {
+			public void onClick(Node node, EventObject e) {
 
-			} else {
-
-				currentTreeItem.addItem(getFeatureAnchor(entry, entry
-						.getFeature().getFeatureName()));
-			}
-
-			i++;
-
-			if (i < entries.length) {
-				entry = entries[i];
-			}
-		}
-	}
-
-	private Anchor getFeatureAnchor(final ClassFile entry, String anchorName) {
-
-		Anchor featureAnchor = new Anchor(anchorName);
-		featureAnchor.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent sender) {
-
-				// new GetRemoteClass(entry, OptionsIcons.optionDescription);
 				Specification.showClass(entry, OptionsIcons.optionDescription);
 			}
 		});
 
-		return featureAnchor;
+		return treeNode;
 	}
 
 }
