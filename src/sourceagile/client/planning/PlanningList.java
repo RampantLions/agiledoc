@@ -1,6 +1,7 @@
 package sourceagile.client.planning;
 
 import sourceagile.client.specification.Specification;
+import sourceagile.client.specification.classViewOptions.OptionsIcons;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -76,7 +77,7 @@ public class PlanningList extends FlexTable {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new Specification(entry);
+				new Specification(entry, OptionsIcons.OPTION_DESCRIPTION);
 			}
 		});
 
