@@ -5,11 +5,11 @@ import sourceagile.shared.ClassFile;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class FeatureContentPanel extends VerticalPanel {
+public class ClassVizualizationPanel extends VerticalPanel {
 
 	public static VerticalPanel featureContent = new VerticalPanel();
 
-	public FeatureContentPanel(ClassFile entry) {
+	public ClassVizualizationPanel(ClassFile entry) {
 
 		setSize("700px", "100%");
 
