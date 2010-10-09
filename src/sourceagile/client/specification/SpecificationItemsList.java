@@ -11,9 +11,9 @@ import com.gwtext.client.widgets.tree.TreeNode;
 import com.gwtext.client.widgets.tree.TreePanel;
 import com.gwtext.client.widgets.tree.event.TreeNodeListenerAdapter;
 
-public class ClassesList extends VerticalPanel {
+public class SpecificationItemsList extends VerticalPanel {
 
-	public ClassesList(ClassFile[] entries) {
+	public SpecificationItemsList(ClassFile[] entries) {
 
 		this.setSpacing(20);
 
@@ -55,6 +55,7 @@ public class ClassesList extends VerticalPanel {
 									FeatureNameGenerator
 											.spacedName(entryPath[i]));
 							root.setId(currentPath);
+							root.setIcon("js/ext/resources/images/default/tree/empty.gif");
 
 							treePanel.setRootNode(root);
 							treePanel.expandAll();
@@ -66,6 +67,7 @@ public class ClassesList extends VerticalPanel {
 									FeatureNameGenerator
 											.spacedName(entryPath[i]));
 							node.setId(currentPath);
+							node.setIcon("js/ext/resources/images/default/tree/empty.gif");
 
 							parentNode.appendChild(node);
 						}
@@ -96,7 +98,7 @@ public class ClassesList extends VerticalPanel {
 		treeNode.addListener(new TreeNodeListenerAdapter() {
 			public void onClick(Node node, EventObject e) {
 
-				Specification.showClass(entry, OptionsIcons.optionDescription);
+				Specification.showClass(entry, OptionsIcons.OPTION_DESCRIPTION);
 			}
 		});
 

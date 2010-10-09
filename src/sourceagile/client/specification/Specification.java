@@ -1,9 +1,10 @@
 package sourceagile.client.specification;
 
 import sourceagile.client.SystemStart;
+import sourceagile.client.features.FeatureDescription;
 import sourceagile.client.project.ProjectInitialization;
-import sourceagile.client.specification.classViewOptions.FeatureContentPanel;
-import sourceagile.client.specification.classViewOptions.FeatureDescription;
+import sourceagile.client.source.ClassesList;
+import sourceagile.client.specification.classViewOptions.ClassVizualizationPanel;
 import sourceagile.client.specification.classViewOptions.OptionsIcons;
 import sourceagile.shared.ClassFile;
 
@@ -22,10 +23,10 @@ public class Specification {
 
 	public Specification() {
 
-		this(null);
+		this(null, OptionsIcons.OPTION_DESCRIPTION);
 	}
 
-	public Specification(ClassFile entry) {
+	public Specification(ClassFile entry, int viewOption) {
 
 		SystemStart.mainPage.panelContent.clear();
 
@@ -38,8 +39,16 @@ public class Specification {
 
 		hp.add(featuresTreePanel);
 
-		featuresTreePanel.add(new ClassesList(
-				ProjectInitialization.projectEntries));
+		if (viewOption == OptionsIcons.OPTION_SOURCE) {
+
+			featuresTreePanel.add(new ClassesList(
+					ProjectInitialization.projectEntries));
+
+		} else {
+
+			featuresTreePanel.add(new SpecificationItemsList(
+					ProjectInitialization.projectEntries));
+		}
 
 		featureVisualizationPanel.clear();
 		featureVisualizationPanel.setSpacing(20);
@@ -47,7 +56,7 @@ public class Specification {
 
 		if (entry != null) {
 
-			showClass(entry, OptionsIcons.optionDescription);
+			showClass(entry, viewOption);
 		}
 
 		vp.add(hp);
@@ -58,13 +67,13 @@ public class Specification {
 	public static void showClass(ClassFile entry, int viewOption) {
 
 		Specification.featureVisualizationPanel.clear();
-		Specification.featureVisualizationPanel.add(new FeatureContentPanel(
-				entry));
+		Specification.featureVisualizationPanel
+				.add(new ClassVizualizationPanel(entry));
 
-		if (viewOption == OptionsIcons.optionDescription) {
+		if (viewOption == OptionsIcons.OPTION_DESCRIPTION) {
 
-			FeatureContentPanel.featureContent
-					.add(new FeatureDescription(entry));
+			ClassVizualizationPanel.featureContent.add(new FeatureDescription(
+					entry));
 		}
 	}
 
