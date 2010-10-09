@@ -16,6 +16,10 @@ public class SystemMenu extends HorizontalPanel {
 
 		this.add(new ButtonSpecification());
 
+		this.add(new ButtonSource());
+
 		this.add(new ButtonProductivity());
+
+		this.add(new ButtonWiki());
 	}
 }
