@@ -1,6 +1,7 @@
 package sourceagile.client.features;
 
 import sourceagile.client.specification.Specification;
+import sourceagile.client.specification.classViewOptions.OptionsIcons;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -34,7 +35,8 @@ public class FeaturesList extends VerticalPanel {
 				html.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
 
-						new Specification(entry);
+						new Specification(entry,
+								OptionsIcons.OPTION_DESCRIPTION);
 					}
 				});
 
