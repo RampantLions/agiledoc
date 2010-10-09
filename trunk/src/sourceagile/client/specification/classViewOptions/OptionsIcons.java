@@ -1,5 +1,9 @@
 package sourceagile.client.specification.classViewOptions;
 
+import sourceagile.client.features.FeatureDescription;
+import sourceagile.client.features.FeatureEdit;
+import sourceagile.client.source.JavadocView;
+import sourceagile.client.source.SourceCodeView;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -9,8 +13,8 @@ import com.google.gwt.user.client.ui.Image;
 
 public class OptionsIcons extends HorizontalPanel {
 
-	public static final int optionDescription = 0;
-	public static final int optionSource = 4;
+	public static final int OPTION_DESCRIPTION = 0;
+	public static final int OPTION_SOURCE = 4;
 
 	public OptionsIcons(ClassFile entry) {
 
