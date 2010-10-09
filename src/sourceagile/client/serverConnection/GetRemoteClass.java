@@ -26,7 +26,7 @@ public class GetRemoteClass {
 					public void onSuccess(ClassFile entry) {
 
 						Specification.showClass(entry,
-								OptionsIcons.optionDescription);
+								OptionsIcons.OPTION_DESCRIPTION);
 					}
 
 					public void onFailure(Throwable caught) {
