@@ -2,7 +2,7 @@ package sourceagile.server.classRepository.repositoryTest;
 
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.client.serverConnection.test.LoadRemoteTestClasses;
+import sourceagile.client.serverCalls.test.LoadRemoteTestClasses;
 import sourceagile.server.classRepository.RepositoryConnection;
 import sourceagile.server.classRepository.repositoryLoader.GetRepositoryClass;
 import sourceagile.shared.ClassFile;
