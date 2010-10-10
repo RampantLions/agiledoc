@@ -10,9 +10,9 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 	private String classDomain;
 
-	private String classPath;
+	private String filePath;
 
-	private String className;
+	private String fileName;
 
 	private Feature feature;
 
@@ -26,20 +26,20 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 	private ArrayList<String> sourceCodeTokenized;
 
-	public String getClassPath() {
-		return classPath;
+	public String getFilePath() {
+		return filePath;
 	}
 
-	public void setClassPath(String classPath) {
-		this.classPath = classPath;
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
 	}
 
-	public String getClassName() {
-		return className;
+	public String getFileName() {
+		return fileName;
 	}
 
-	public void setClassName(String className) {
-		this.className = className;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 
 	public Date getDateModified() {
@@ -101,10 +101,10 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 	@Override
 	public int compareTo(ClassFile that) {
 
-		String thisClass = this.classDomain + this.classPath + "/"
-				+ this.className;
-		String thatClass = that.classDomain + that.classPath + "/"
-				+ that.className;
+		String thisClass = this.classDomain + this.filePath + "/"
+				+ this.fileName;
+		String thatClass = that.classDomain + that.filePath + "/"
+				+ that.fileName;
 
 		return thisClass.compareTo(thatClass);
 	}
@@ -112,11 +112,11 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 	@Override
 	public String toString() {
 
-		String filePath = this.className;
+		String filePath = this.fileName;
 
-		if (!(this.classPath == null || this.classPath.length() == 0)) {
+		if (!(this.filePath == null || this.filePath.length() == 0)) {
 
-			filePath = this.classPath.replaceAll("\\.", "/") + "/" + filePath;
+			filePath = this.filePath.replaceAll("\\.", "/") + "/" + filePath;
 
 			if (this.classDomain != null) {
 
