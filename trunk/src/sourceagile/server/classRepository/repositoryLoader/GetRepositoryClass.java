@@ -17,8 +17,8 @@ import sourceagile.shared.utilities.FeatureNameGenerator;
 
 public class GetRepositoryClass {
 
-	public static ClassFile getFeature(SVNRepository repository, ClassFile entry)
-			throws SVNException, IOException {
+	public static ClassFile getClassFile(SVNRepository repository,
+			ClassFile entry) throws SVNException, IOException {
 
 		ByteArrayOutputStream baos = getRemoteClass(repository, entry);
 
@@ -57,7 +57,7 @@ public class GetRepositoryClass {
 
 		File tempFile = null;
 
-		tempFile = File.createTempFile(entry.getClassName(), ".java");
+		tempFile = File.createTempFile(entry.getFileName(), ".java");
 
 		OutputStream out = new FileOutputStream(tempFile);
 		out.write(baos.toByteArray());
@@ -71,10 +71,10 @@ public class GetRepositoryClass {
 		Feature feature = new Feature();
 
 		feature.setFeatureFolder(FeatureNameGenerator.getLastNameSpaced(
-				entry.getClassPath(), "/"));
+				entry.getFilePath(), "/"));
 
 		feature.setFeatureName(FeatureNameGenerator.getFileSpacedName(entry
-				.getClassName()));
+				.getFileName()));
 
 		entry.setFeature(feature);
 	}

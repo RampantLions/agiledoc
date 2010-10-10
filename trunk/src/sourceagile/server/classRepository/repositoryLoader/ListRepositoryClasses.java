@@ -59,7 +59,7 @@ public class ListRepositoryClasses {
 
 				ClassFile entry = getEntryFromRepositoryEntry(subversionEntry,
 						path);
-				GetRepositoryClass.getFeature(repository, entry);
+				GetRepositoryClass.getClassFile(repository, entry);
 
 				entries.add(entry);
 			}
@@ -79,9 +79,9 @@ public class ListRepositoryClasses {
 
 		ClassFile entry = new ClassFile();
 
-		entry.setClassPath(folderPath);
+		entry.setFilePath(folderPath);
 
-		entry.setClassName(subversionEntry.getName());
+		entry.setFileName(subversionEntry.getName());
 
 		long date = subversionEntry.getDate().getTime();
 		entry.setDateModified(new Date(date));
