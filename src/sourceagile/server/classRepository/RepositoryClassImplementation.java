@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.client.serverConnection.LoadRemoteClasses;
+import sourceagile.client.serverCalls.LoadRemoteClasses;
 import sourceagile.server.classRepository.repositoryEditor.CreateTodoClass;
 import sourceagile.server.classRepository.repositoryEditor.UpdateClassDescription;
 import sourceagile.server.classRepository.repositoryLoader.GetRepositoryClass;
