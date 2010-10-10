@@ -35,8 +35,15 @@ public class ProjectList extends ListBox {
 							.getRepositoryURL());
 					ProjectForm.root.setValue(projs[getSelectedIndex() - 1]
 							.getRoot());
+					ProjectForm.testRoot.setValue(projs[getSelectedIndex() - 1]
+							.getTestRoot());
 					ProjectForm.domain.setValue(projs[getSelectedIndex() - 1]
 							.getDomain());
+					ProjectForm.specificationPath
+							.setValue(projs[getSelectedIndex() - 1]
+									.getSpecificationPath());
+					ProjectForm.wiki.setValue(projs[getSelectedIndex() - 1]
+							.getWiki());
 				}
 			}
 		});
