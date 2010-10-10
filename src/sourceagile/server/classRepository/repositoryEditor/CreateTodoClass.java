@@ -10,7 +10,7 @@ public class CreateTodoClass {
 	public CreateTodoClass(SVNRepository repository, ClassFile classFile)
 			throws SVNException {
 
-		String fileName = classFile.getClassName() + ".java";
+		String fileName = classFile.getFileName() + ".java";
 
 		String newSubFolderName = null;
 		if (classFile.getFeature() != null) {
@@ -18,7 +18,7 @@ public class CreateTodoClass {
 			newSubFolderName = classFile.getFeature().getFeatureFolder();
 		}
 
-		new AddFile(repository, classFile.getClassPath(), newSubFolderName,
+		new AddFile(repository, classFile.getFilePath(), newSubFolderName,
 				fileName, classContent(classFile));
 	}
 
@@ -26,11 +26,11 @@ public class CreateTodoClass {
 
 		String packName = classFile.getClassDomain().replaceAll("/", "\\.");
 
-		if (classFile.getClassPath() != null
-				&& classFile.getClassPath().length() > 0) {
+		if (classFile.getFilePath() != null
+				&& classFile.getFilePath().length() > 0) {
 
 			packName = packName + "."
-					+ classFile.getClassPath().replaceAll("/", "\\.");
+					+ classFile.getFilePath().replaceAll("/", "\\.");
 		}
 
 		if (classFile.getFeature() != null) {
@@ -45,7 +45,7 @@ public class CreateTodoClass {
 				+ classFile.getClassDoc().getDescription() + " \n" + "* \n"
 				+ "* @todo \n" + "*/\n";
 
-		String className = "public class " + classFile.getClassName() + " {\n"
+		String className = "public class " + classFile.getFileName() + " {\n"
 				+ "\n" + "}\n";
 
 		String classContent = classPackage + classDescription + className;
