@@ -1,7 +1,7 @@
 package sourceagile.client;
 
-import sourceagile.client.project.ProjectInitialization;
-import sourceagile.client.systemNavigation.MainPage;
+import sourceagile.client.userFeatures.project.ProjectInitialization;
+import sourceagile.client.userFeatures.systemNavigation.MainPage;
 import sourceagile.shared.User;
 import sourceagile.shared.data.ProjectsData;
 import sourceagile.shared.data.UserData;
