@@ -14,8 +14,8 @@ public class EditFile {
 	public EditFile(SVNRepository repository, ClassFile classFile,
 			String classSourceUpdated) throws SVNException {
 
-		String filePath = classFile.getClassPath() + "/"
-				+ classFile.getClassName();
+		String filePath = classFile.getFilePath() + "/"
+				+ classFile.getFileName();
 
 		String logMessage = "Editing file: " + filePath;
 
@@ -24,7 +24,7 @@ public class EditFile {
 
 		repositoryEditor.openRoot(-1);
 
-		repositoryEditor.openDir(classFile.getClassPath(), -1);
+		repositoryEditor.openDir(classFile.getFilePath(), -1);
 
 		repositoryEditor.openFile(filePath, -1);
 
