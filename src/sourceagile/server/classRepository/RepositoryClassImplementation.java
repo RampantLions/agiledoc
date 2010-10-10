@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.client.serverConnection.RemoteLoadFunctions;
+import sourceagile.client.serverConnection.LoadRemoteClasses;
 import sourceagile.server.classRepository.repositoryEditor.CreateTodoClass;
 import sourceagile.server.classRepository.repositoryEditor.UpdateClassDescription;
 import sourceagile.server.classRepository.repositoryLoader.GetRepositoryClass;
@@ -19,7 +19,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 @SuppressWarnings("serial")
 public class RepositoryClassImplementation extends RemoteServiceServlet
-		implements RemoteLoadFunctions {
+		implements LoadRemoteClasses {
 
 	@Override
 	public ClassFile[] listClasses(Project project, User user) {
@@ -27,8 +27,8 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 		ClassFile[] entries = null;
 
 		try {
-			SVNRepository repository = RepositoryConnection.connect(project,
-					user);
+			SVNRepository repository = RepositoryConnection
+					.connectClassRepository(project, user);
 
 			entries = ListRepositoryClasses.getRemoteClasses(repository);
 
@@ -45,10 +45,10 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 
 		try {
 
-			SVNRepository repository = RepositoryConnection.connect(project,
-					user);
+			SVNRepository repository = RepositoryConnection
+					.connectClassRepository(project, user);
 
-			entry = GetRepositoryClass.getFeature(repository, entry);
+			entry = GetRepositoryClass.getClassFile(repository, entry);
 
 		} catch (Exception e) {
 
@@ -63,8 +63,8 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 
 		try {
 
-			SVNRepository repository = RepositoryConnection.connect(project,
-					user);
+			SVNRepository repository = RepositoryConnection
+					.connectClassRepository(project, user);
 
 			new CreateTodoClass(repository, classFile);
 
@@ -81,8 +81,8 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 
 		try {
 
-			SVNRepository repository = RepositoryConnection.connect(project,
-					user);
+			SVNRepository repository = RepositoryConnection
+					.connectClassRepository(project, user);
 
 			new UpdateClassDescription(repository, classFile, classDescription);
 
@@ -99,8 +99,8 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 		ArrayList<Productivity> productivity = null;
 
 		try {
-			SVNRepository repository = RepositoryConnection.connect(project,
-					user);
+			SVNRepository repository = RepositoryConnection
+					.connectClassRepository(project, user);
 
 			productivity = ListRepositoryHistory.getRemoteClasses(project,
 					repository);
@@ -111,6 +111,24 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 		}
 
 		return productivity;
+	}
+
+	@Override
+	public ClassFile getTestClass(Project project, User user, ClassFile entry) {
+
+		try {
+
+			SVNRepository repository = RepositoryConnection
+					.connectTestRepository(project, user);
+
+			entry = GetRepositoryClass.getClassFile(repository, entry);
+
+		} catch (Exception e) {
+
+			entry = null;
+		}
+
+		return entry;
 	}
 
 }
