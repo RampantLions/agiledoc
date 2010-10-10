@@ -12,7 +12,13 @@ public class Project implements Serializable {
 
 	private String root;
 
+	private String testRoot;
+
 	private String domain;
+
+	private String specificationPath;
+
+	private String wiki;
 
 	public String getName() {
 		return name;
@@ -44,6 +50,30 @@ public class Project implements Serializable {
 
 	public void setDomain(String domain) {
 		this.domain = domain;
+	}
+
+	public String getTestRoot() {
+		return testRoot;
+	}
+
+	public void setTestRoot(String testRoot) {
+		this.testRoot = testRoot;
+	}
+
+	public String getSpecificationPath() {
+		return specificationPath;
+	}
+
+	public void setSpecificationPath(String specificationPath) {
+		this.specificationPath = specificationPath;
+	}
+
+	public String getWiki() {
+		return wiki;
+	}
+
+	public void setWiki(String wiki) {
+		this.wiki = wiki;
 	}
 
 }
