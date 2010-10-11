@@ -34,6 +34,11 @@ public class GetClassDoc {
 			if (classes != null && classes.length > 0) {
 				ClassDoc classDoc = classes[0];
 
+				classDocumentation.setClassName(classDoc.name());
+
+				classDocumentation.setClassPackage(classDoc.containingPackage()
+						.name());
+
 				classDocumentation.setDescription(classDoc.commentText());
 
 				if (classDoc.superclass() != null) {
