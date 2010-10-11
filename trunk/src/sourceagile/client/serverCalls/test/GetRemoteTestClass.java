@@ -1,8 +1,6 @@
 package sourceagile.client.serverCalls.test;
 
 import sourceagile.client.SystemStart;
-import sourceagile.client.serverCalls.LoadRemoteClasses;
-import sourceagile.client.serverCalls.LoadRemoteClassesAsync;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.client.userFeatures.specification.Specification;
 import sourceagile.client.userFeatures.specification.classViewOptions.ClassVizualizationPanel;
@@ -15,8 +13,8 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class GetRemoteTestClass {
 
-	private final LoadRemoteClassesAsync remoteFunctions = GWT
-			.create(LoadRemoteClasses.class);
+	private final LoadRemoteTestClassesAsync remoteFunctions = GWT
+			.create(LoadRemoteTestClasses.class);
 
 	public GetRemoteTestClass(final ClassFile entry, final int viewOption) {
 
@@ -33,7 +31,7 @@ public class GetRemoteTestClass {
 								.add(new ClassVizualizationPanel(entry));
 
 						ClassVizualizationPanel.featureContent
-								.add(new TestClassDescription(testEntry));
+								.add(new TestClassDescription(entry, testEntry));
 					}
 
 					public void onFailure(Throwable caught) {
