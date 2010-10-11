@@ -113,22 +113,4 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 		return productivity;
 	}
 
-	@Override
-	public ClassFile getTestClass(Project project, User user, ClassFile entry) {
-
-		try {
-
-			SVNRepository repository = RepositoryConnection
-					.connectTestRepository(project, user);
-
-			entry = GetRepositoryClass.getClassFile(repository, entry);
-
-		} catch (Exception e) {
-
-			entry = null;
-		}
-
-		return entry;
-	}
-
 }
