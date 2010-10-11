@@ -6,6 +6,10 @@ public class ClassDocumentation implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private String className;
+
+	private String classPackage;
+
 	private String description;
 
 	private String modifiers;
@@ -23,6 +27,22 @@ public class ClassDocumentation implements Serializable {
 	private boolean todo;
 
 	private boolean feature;
+
+	public String getClassName() {
+		return className;
+	}
+
+	public void setClassName(String className) {
+		this.className = className;
+	}
+
+	public String getClassPackage() {
+		return classPackage;
+	}
+
+	public void setClassPackage(String classPackage) {
+		this.classPackage = classPackage;
+	}
 
 	public String getDescription() {
 		return description;
