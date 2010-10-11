@@ -12,4 +12,6 @@ public interface LoadRemoteTestClasses extends RemoteService {
 
 	ClassFile getTestClass(Project project, User user, ClassFile entry);
 
+	void addTestClass(Project project, User user, ClassFile entry);
+
 }
