@@ -35,7 +35,11 @@ public class SpecificationItemsList extends VerticalPanel {
 		String specificationPath = ProjectInitialization.currentProject
 				.getSpecificationPath();
 
-		String[] specPathSplit = specificationPath.split("/");
+		int specPathSize = 0;
+		if (specificationPath != null && specificationPath.length() > 0) {
+
+			specPathSize = specificationPath.split("/").length;
+		}
 
 		for (ClassFile entry : entries) {
 
@@ -44,7 +48,7 @@ public class SpecificationItemsList extends VerticalPanel {
 
 				String[] entryPath = entry.getFilePath().split("/");
 
-				for (int i = specPathSplit.length; i < entryPath.length; i++) {
+				for (int i = specPathSize; i < entryPath.length; i++) {
 
 					TreeNode parentNode = treePanel.getNodeById(currentPath);
 
@@ -54,7 +58,7 @@ public class SpecificationItemsList extends VerticalPanel {
 
 						if (treePanel.getNodeById(currentPath) == null) {
 
-							if (i == specPathSplit.length) {
+							if (i == specPathSize) {
 
 								treePanel = new TreePanel();
 								treePanel.setBorder(false);
