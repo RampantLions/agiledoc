@@ -26,7 +26,4 @@ public interface LoadRemoteClassesAsync {
 	void editClass(Project project, User user, ClassFile classFile,
 			String classDescription, AsyncCallback<Void> callback);
 
-	void getTestClass(Project project, User user, ClassFile entry,
-			AsyncCallback<ClassFile> callback);
-
 }

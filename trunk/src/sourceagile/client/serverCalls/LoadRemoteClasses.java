@@ -23,6 +23,4 @@ public interface LoadRemoteClasses extends RemoteService {
 
 	void editClass(Project project, User user, ClassFile classFile,
 			String classDescription);
-
-	ClassFile getTestClass(Project project, User user, ClassFile entry);
 }
