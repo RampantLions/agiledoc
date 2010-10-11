@@ -20,7 +20,9 @@ public class GetRepositoryClass {
 	public static ClassFile getClassFile(SVNRepository repository,
 			ClassFile entry) throws SVNException, IOException {
 
-		ByteArrayOutputStream baos = getRemoteClass(repository, entry);
+		String className = entry.toString();
+
+		ByteArrayOutputStream baos = getRemoteClass(repository, className);
 
 		entry.setSourceCode(baos.toString());
 
@@ -40,10 +42,8 @@ public class GetRepositoryClass {
 	}
 
 	public static ByteArrayOutputStream getRemoteClass(
-			SVNRepository repository, ClassFile entry) throws SVNException,
+			SVNRepository repository, String className) throws SVNException,
 			IOException {
-
-		String className = entry.toString();
 
 		SVNProperties fileProperties = new SVNProperties();
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
