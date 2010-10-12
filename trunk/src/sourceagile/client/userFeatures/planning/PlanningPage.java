@@ -20,7 +20,6 @@ public class PlanningPage extends VerticalPanel {
 	public PlanningPage(ClassFile[] entries) {
 
 		VerticalPanel vp = new VerticalPanel();
-		vp.setBorderWidth(1);
 		vp.setSize("97%", "100%");
 
 		VerticalPanel vp1 = new VerticalPanel();
