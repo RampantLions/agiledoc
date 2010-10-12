@@ -1,7 +1,7 @@
 package sourceagile.client.userFeatures.planning;
 
 import sourceagile.client.SystemStart;
-import sourceagile.client.userFeatures.planning.Tasks.AddTask;
+import sourceagile.client.userFeatures.planning.Tasks.AddTodoClass;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -44,7 +44,7 @@ public class PlanningPage extends VerticalPanel {
 			public void onClick(ClickEvent event) {
 
 				SystemStart.mainPage.panelContent.clear();
-				SystemStart.mainPage.panelContent.add(new AddTask());
+				SystemStart.mainPage.panelContent.add(new AddTodoClass());
 
 			}
 		});
