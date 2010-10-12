@@ -20,6 +20,8 @@ public class SystemMenu extends HorizontalPanel {
 
 		this.add(new ButtonProductivity());
 
+		this.add(new ButtonDiagnosis());
+
 		this.add(new ButtonWiki());
 	}
 }
