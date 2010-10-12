@@ -13,8 +13,14 @@ public class CreateTestClass {
 
 		String fileName = classFile.getClassDoc().getClassName() + "Test.java";
 
-		new AddFile(repository, classFile.getFilePath(),
-				classFile.getFilePath(), fileName, classContent(classFile));
+		String newSubFolderName = null;
+		if (classFile.getFeature() != null) {
+
+			newSubFolderName = classFile.getFeature().getFeatureFolder();
+		}
+
+		new AddFile(repository, classFile.getFilePath(), newSubFolderName,
+				fileName, classContent(classFile));
 	}
 
 	private String classContent(ClassFile classFile) {
