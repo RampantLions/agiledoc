@@ -26,6 +26,8 @@ public class TestClassDescription extends VerticalPanel {
 
 			new FeatureDescription(testEntry);
 
+			ClassVizualizationPanel.featureContent.add(new Label(" "));
+
 			ClassVizualizationPanel.featureContent
 					.add(addSourceButton(testEntry));
 
