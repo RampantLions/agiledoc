@@ -1,7 +1,8 @@
 package sourceagile.client.userFeatures.planning;
 
 import sourceagile.client.SystemStart;
-import sourceagile.client.userFeatures.planning.Tasks.AddTodoClass;
+import sourceagile.client.userFeatures.planning.TodoClasses.AddTodoClass;
+import sourceagile.client.userFeatures.planning.TodoClasses.TodoClassesList;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -29,7 +30,7 @@ public class PlanningPage extends VerticalPanel {
 		vp1.add(buttonNewFeature());
 
 		vp1.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-		vp1.add(new PlanningList(entries));
+		vp1.add(new TodoClassesList(entries));
 
 		vp.add(vp1);
 
