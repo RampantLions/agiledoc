@@ -141,14 +141,6 @@ public class AddTodoClass extends VerticalPanel {
 
 		classFile.setFileName(className);
 
-		ClassDocumentation classDoc = new ClassDocumentation();
-
-		classDoc.setClassName(className);
-
-		classDoc.setClassPackage(filePath.replaceAll("\\.", "/"));
-
-		classFile.setClassDoc(classDoc);
-
 		classFile.setClassDomain(ProjectInitialization.currentProject
 				.getDomain());
 		classFile.setFilePath(filePath);
@@ -163,9 +155,15 @@ public class AddTodoClass extends VerticalPanel {
 			classFile.setFeature(feature);
 		}
 
-		ClassDocumentation classeDoc = new ClassDocumentation();
-		classeDoc.setDescription(taskDescription.getValue());
-		classFile.setClassDoc(classeDoc);
+		ClassDocumentation classDoc = new ClassDocumentation();
+
+		classDoc.setClassName(className);
+
+		classDoc.setClassPackage(filePath.replaceAll("/", "."));
+
+		classDoc.setDescription(taskDescription.getValue());
+
+		classFile.setClassDoc(classDoc);
 
 		return classFile;
 	}
