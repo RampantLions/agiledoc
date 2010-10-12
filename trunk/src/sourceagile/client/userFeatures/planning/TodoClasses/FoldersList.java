@@ -1,4 +1,4 @@
-package sourceagile.client.userFeatures.planning.Tasks;
+package sourceagile.client.userFeatures.planning.TodoClasses;
 
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.shared.ClassFile;
