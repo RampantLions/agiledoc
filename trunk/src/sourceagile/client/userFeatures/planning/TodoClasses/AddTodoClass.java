@@ -159,7 +159,10 @@ public class AddTodoClass extends VerticalPanel {
 
 		classDoc.setClassName(className);
 
-		classDoc.setClassPackage(filePath.replaceAll("/", "."));
+		String classPackage = (ProjectInitialization.currentProject.getDomain()
+				+ "." + filePath).replaceAll("/", ".");
+
+		classDoc.setClassPackage(classPackage);
 
 		classDoc.setDescription(taskDescription.getValue());
 
