@@ -2,6 +2,7 @@ package sourceagile.client.userFeatures.testing;
 
 import sourceagile.client.serverCalls.test.AddTestClass;
 import sourceagile.client.userFeatures.features.FeatureDescription;
+import sourceagile.client.userFeatures.source.SourceCodeView;
 import sourceagile.client.userFeatures.specification.classViewOptions.ClassVizualizationPanel;
 import sourceagile.shared.ClassFile;
 
@@ -24,6 +25,9 @@ public class TestClassDescription extends VerticalPanel {
 		if (testEntry != null) {
 
 			new FeatureDescription(testEntry);
+
+			ClassVizualizationPanel.featureContent
+					.add(addSourceButton(testEntry));
 
 		} else {
 
@@ -61,6 +65,22 @@ public class TestClassDescription extends VerticalPanel {
 		vp.add(button);
 
 		return vp;
+	}
+
+	private Button addSourceButton(final ClassFile entry) {
+
+		Button button = new Button("View Source");
+
+		button.addListener(new ButtonListenerAdapter() {
+
+			@Override
+			public void onClick(Button button, EventObject e) {
+
+				new SourceCodeView(entry);
+			}
+		});
+
+		return button;
 	}
 
 }
