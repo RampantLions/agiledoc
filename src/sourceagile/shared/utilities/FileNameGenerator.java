@@ -17,7 +17,11 @@ public class FileNameGenerator {
 
 			String word = words[i];
 
-			if (!isFolder || i > 0) {
+			if (isFolder && i > 0) {
+
+				word = (word.substring(0, 1)).toLowerCase() + word.substring(1);
+
+			} else {
 
 				word = (word.substring(0, 1)).toUpperCase() + word.substring(1);
 			}
