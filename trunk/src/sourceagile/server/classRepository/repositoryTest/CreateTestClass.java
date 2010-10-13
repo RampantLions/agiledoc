@@ -5,6 +5,7 @@ import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.server.classRepository.repositoryEditor.AddFile;
 import sourceagile.shared.ClassFile;
+import sourceagile.shared.utilities.FileNameGenerator;
 
 public class CreateTestClass {
 
@@ -16,7 +17,8 @@ public class CreateTestClass {
 		String newSubFolderName = null;
 		if (classFile.getFeature() != null) {
 
-			newSubFolderName = classFile.getFeature().getFeatureFolder();
+			newSubFolderName = FileNameGenerator.compactName(classFile
+					.getFeature().getFeatureFolder(), true);
 		}
 
 		new AddFile(repository, classFile.getFilePath(), newSubFolderName,
