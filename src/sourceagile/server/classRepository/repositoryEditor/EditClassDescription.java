@@ -8,11 +8,12 @@ import org.tmatesoft.svn.core.io.SVNRepository;
 import sourceagile.server.sourcelet.tokenizer.JavaTokens;
 import sourceagile.server.sourcelet.tokenizer.Tokenize;
 import sourceagile.server.sourcelet.tokenizer.TokenizeClassDeclaration;
+import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.ClassFile;
 
-public class UpdateClassDescription {
+public class EditClassDescription {
 
-	public UpdateClassDescription(SVNRepository repository,
+	public EditClassDescription(SVNRepository repository,
 			ClassFile classFile, String classDescription) throws SVNException {
 
 		Tokenize.getClassArrayIndex(classFile);
@@ -59,13 +60,13 @@ public class UpdateClassDescription {
 		String todo = "";
 		if (classFile.getClassDoc().isTodo()) {
 
-			todo = "\n * @todo";
+			todo = "\n * @" + ClassDocumentation.TODO_TAG;
 		}
 
 		String feature = "";
 		if (classFile.getClassDoc().isFeature()) {
 
-			feature = "\n * @feature";
+			feature = "\n * @" + ClassDocumentation.FEATURE_TAG;
 		}
 
 		String comment = "\n\n/** \n * " + classDescription + "\n * " + todo
