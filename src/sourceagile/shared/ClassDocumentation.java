@@ -6,6 +6,12 @@ public class ClassDocumentation implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	public static final String TODO_TAG = "TODO";
+
+	public static final String FEATURE_TAG = "feature";
+
+	public static final String ARCHITECTURE_TAG = "architecture";
+
 	private String className;
 
 	private String classPackage;
