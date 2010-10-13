@@ -11,10 +11,6 @@ import com.sun.javadoc.RootDoc;
 
 public class GetClassDoc {
 
-	public static final String TODO_TAG = "todo";
-
-	public static final String FEATURE_TAG = "feature";
-
 	public static RootDoc getRootDoc(File file) {
 
 		EasyDoclet doclet = new EasyDoclet(file, file);
@@ -59,12 +55,12 @@ public class GetClassDoc {
 
 				String[] imports = listImports(classDoc.importedClasses());
 
-				if (classDoc.tags(TODO_TAG).length > 0) {
+				if (classDoc.tags(ClassDocumentation.TODO_TAG).length > 0) {
 
 					classDocumentation.setTodo(true);
 				}
 
-				if (classDoc.tags(FEATURE_TAG).length > 0) {
+				if (classDoc.tags(ClassDocumentation.FEATURE_TAG).length > 0) {
 
 					classDocumentation.setFeature(true);
 				}
