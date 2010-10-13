@@ -3,11 +3,12 @@ package sourceagile.server.classRepository.repositoryEditor;
 import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
+import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.ClassFile;
 
-public class CreateTodoClass {
+public class AddTodoClass {
 
-	public CreateTodoClass(SVNRepository repository, ClassFile classFile)
+	public AddTodoClass(SVNRepository repository, ClassFile classFile)
 			throws SVNException {
 
 		String fileName = classFile.getFileName() + ".java";
@@ -43,7 +44,7 @@ public class CreateTodoClass {
 
 		String classDescription = "/** \n" + "* "
 				+ classFile.getClassDoc().getDescription() + " \n" + "* \n"
-				+ "* @todo \n" + "*/\n";
+				+ "* @" + ClassDocumentation.TODO_TAG + " \n" + "*/\n";
 
 		String className = "public class " + classFile.getFileName() + " {\n"
 				+ "\n" + "}\n";
