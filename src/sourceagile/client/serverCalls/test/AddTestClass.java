@@ -1,7 +1,9 @@
 package sourceagile.client.serverCalls.test;
 
 import sourceagile.client.SystemStart;
+import sourceagile.client.serverCalls.GetRemoteClass;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
+import sourceagile.client.userFeatures.specification.classViewOptions.OptionsIcons;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.core.client.GWT;
@@ -16,7 +18,7 @@ public class AddTestClass {
 	private final LoadRemoteTestClassesAsync remoteFunctions = GWT
 			.create(LoadRemoteTestClasses.class);
 
-	public AddTestClass(ClassFile classFile) {
+	public AddTestClass(final ClassFile classFile) {
 
 		remoteFunctions.addTestClass(ProjectInitialization.currentProject,
 				SystemStart.currentUser, classFile, new AsyncCallback<Void>() {
@@ -24,7 +26,8 @@ public class AddTestClass {
 					@Override
 					public void onSuccess(Void result) {
 
-						// new ListRemoteClasses();
+						new GetRemoteClass(classFile,
+								OptionsIcons.OPTION_DESCRIPTION);
 					}
 
 					public void onFailure(Throwable caught) {
