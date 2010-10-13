@@ -2,6 +2,9 @@ package sourceagile.client.serverCalls;
 
 import sourceagile.client.SystemStart;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
+import sourceagile.client.userFeatures.specification.Specification;
+import sourceagile.client.userFeatures.specification.classViewOptions.OptionsIcons;
+import sourceagile.client.userFeatures.systemNavigation.LoadingPanel;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.core.client.GWT;
@@ -12,7 +15,10 @@ public class EditClass {
 	private final LoadRemoteClassesAsync remoteFunctions = GWT
 			.create(LoadRemoteClasses.class);
 
-	public EditClass(ClassFile classFile, String classDescription) {
+	public EditClass(final ClassFile classFile, String classDescription) {
+
+		Specification.featureVisualizationPanel.clear();
+		Specification.featureVisualizationPanel.add(new LoadingPanel());
 
 		remoteFunctions.editClass(ProjectInitialization.currentProject,
 				SystemStart.currentUser, classFile, classDescription,
@@ -21,7 +27,8 @@ public class EditClass {
 					@Override
 					public void onSuccess(Void result) {
 
-						new ListRemoteClasses();
+						new GetRemoteClass(classFile,
+								OptionsIcons.OPTION_DESCRIPTION);
 					}
 
 					public void onFailure(Throwable caught) {
