@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.client.serverCalls.LoadRemoteClasses;
-import sourceagile.server.classRepository.repositoryEditor.CreateTodoClass;
-import sourceagile.server.classRepository.repositoryEditor.UpdateClassDescription;
+import sourceagile.server.classRepository.repositoryEditor.AddTodoClass;
+import sourceagile.server.classRepository.repositoryEditor.EditClassDescription;
 import sourceagile.server.classRepository.repositoryLoader.GetRepositoryClass;
 import sourceagile.server.classRepository.repositoryLoader.ListRepositoryClasses;
 import sourceagile.server.classRepository.repositoryLoader.ListRepositoryHistory;
@@ -66,7 +66,7 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 			SVNRepository repository = RepositoryConnection
 					.connectClassRepository(project, user);
 
-			new CreateTodoClass(repository, classFile);
+			new AddTodoClass(repository, classFile);
 
 		} catch (Exception e) {
 
@@ -84,7 +84,7 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 			SVNRepository repository = RepositoryConnection
 					.connectClassRepository(project, user);
 
-			new UpdateClassDescription(repository, classFile, classDescription);
+			new EditClassDescription(repository, classFile, classDescription);
 
 		} catch (Exception e) {
 
