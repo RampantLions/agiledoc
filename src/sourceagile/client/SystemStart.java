@@ -1,12 +1,11 @@
 package sourceagile.client;
 
-import sourceagile.client.userFeatures.project.ProjectInitialization;
+import sourceagile.client.authentication.Login;
 import sourceagile.client.userFeatures.systemNavigation.MainPage;
 import sourceagile.shared.User;
-import sourceagile.shared.data.ProjectsData;
-import sourceagile.shared.data.UserData;
 
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.user.client.ui.RootPanel;
 
 /**
  * Show the first page of the system.
@@ -20,9 +19,8 @@ public class SystemStart implements EntryPoint {
 
 	public void onModuleLoad() {
 
-		currentUser = UserData.load()[0];
-
-		new ProjectInitialization(ProjectsData.load()[2]);
+		RootPanel.get().clear();
+		RootPanel.get().add(new Login());
 	}
 
 }
