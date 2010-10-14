@@ -1,4 +1,4 @@
-package sourceagile.client.userFeatures.systemNavigation.systemMenu;
+package sourceagile.client.systemNavigation.systemMenu;
 
 import sourceagile.client.userFeatures.specification.Specification;
 import sourceagile.client.userFeatures.specification.classViewOptions.OptionsIcons;
