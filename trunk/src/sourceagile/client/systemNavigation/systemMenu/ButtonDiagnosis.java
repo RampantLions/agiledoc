@@ -1,4 +1,4 @@
-package sourceagile.client.userFeatures.systemNavigation.systemMenu;
+package sourceagile.client.systemNavigation.systemMenu;
 
 import com.gwtext.client.core.EventObject;
 import com.gwtext.client.widgets.Button;
