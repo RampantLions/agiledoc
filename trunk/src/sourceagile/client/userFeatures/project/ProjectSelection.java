@@ -20,7 +20,7 @@ public class ProjectSelection extends VerticalPanel {
 
 		vp.add(new HTML("<B>Select a Project on the list bellow: </B>"));
 
-		vp.add(new ProjectList());
+		vp.add(new ProjectChanger());
 
 		vp.add(new ProjectForm());
 

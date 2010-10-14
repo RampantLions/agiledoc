@@ -1,24 +1,15 @@
 package sourceagile.client.userFeatures.project;
 
+import sourceagile.client.authentication.ProjectList;
 import sourceagile.shared.Project;
 import sourceagile.shared.data.ProjectsData;
 
 import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
-import com.google.gwt.user.client.ui.ListBox;
 
-public class ProjectList extends ListBox {
+public class ProjectChanger extends ProjectList {
 
-	public ProjectList() {
-
-		this.setWidth("200");
-
-		this.addItem("");
-
-		for (Project proj : ProjectsData.load()) {
-
-			this.addItem(proj.getName());
-		}
+	public ProjectChanger() {
 
 		this.addChangeHandler(new ChangeHandler() {
 
