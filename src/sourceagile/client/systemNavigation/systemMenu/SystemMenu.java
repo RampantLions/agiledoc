@@ -1,4 +1,4 @@
-package sourceagile.client.userFeatures.systemNavigation.systemMenu;
+package sourceagile.client.systemNavigation.systemMenu;
 
 import com.google.gwt.user.client.ui.HorizontalPanel;
 
@@ -12,16 +12,12 @@ public class SystemMenu extends HorizontalPanel {
 
 		this.add(new ButtonPlanning());
 
-		this.add(new ButtonFeatures());
-
-		this.add(new ButtonSpecification());
+		this.add(new ButtonDocumentation());
 
 		this.add(new ButtonSource());
 
 		this.add(new ButtonProductivity());
 
 		this.add(new ButtonDiagnosis());
-
-		this.add(new ButtonWiki());
 	}
 }

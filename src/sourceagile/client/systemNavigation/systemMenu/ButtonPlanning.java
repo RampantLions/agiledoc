@@ -1,4 +1,4 @@
-package sourceagile.client.userFeatures.systemNavigation.systemMenu;
+package sourceagile.client.systemNavigation.systemMenu;
 
 import sourceagile.client.SystemStart;
 import sourceagile.client.userFeatures.planning.PlanningPage;
