@@ -1,9 +1,9 @@
 package sourceagile.client.serverCalls;
 
 import sourceagile.client.SystemStart;
+import sourceagile.client.systemNavigation.LoadingPanel;
+import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.client.userFeatures.systemNavigation.LoadingPanel;
-import sourceagile.client.userFeatures.systemNavigation.MainPage;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.core.client.GWT;
