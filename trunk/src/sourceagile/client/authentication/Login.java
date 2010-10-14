@@ -1,8 +1,8 @@
 package sourceagile.client.authentication;
 
 import sourceagile.client.SystemStart;
+import sourceagile.client.systemNavigation.FormField;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.client.userFeatures.systemNavigation.FormField;
 import sourceagile.shared.Project;
 import sourceagile.shared.User;
 import sourceagile.shared.data.ProjectsData;
@@ -48,10 +48,10 @@ public class Login extends VerticalPanel {
 		vp.setSpacing(20);
 
 		final ProjectList projectList = new ProjectList();
-		vp.add(new FormField("Select a project here", projectList));
+		vp.add(new FormField("Select a Project", projectList));
 
 		final UsersList usersList = new UsersList();
-		vp.add(new FormField("User", usersList));
+		vp.add(new FormField("and User", usersList));
 
 		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 
