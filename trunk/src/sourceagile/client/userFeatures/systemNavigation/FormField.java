@@ -13,7 +13,7 @@ public class FormField extends HorizontalPanel {
 		this.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 
 		Label title = new Label(label + ": ");
-		title.setWidth("100px");
+		title.setWidth("150px");
 		this.add(title);
 
 		this.add(field);
