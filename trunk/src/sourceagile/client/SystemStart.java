@@ -1,7 +1,7 @@
 package sourceagile.client;
 
 import sourceagile.client.authentication.Login;
-import sourceagile.client.userFeatures.systemNavigation.MainPage;
+import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.shared.User;
 
 import com.google.gwt.core.client.EntryPoint;
