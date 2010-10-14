@@ -6,7 +6,7 @@ public class ProjectsData {
 
 	public static Project[] load() {
 
-		Project[] projs = new Project[3];
+		Project[] projs = new Project[4];
 
 		projs[0] = new Project();
 		projs[0].setName("Source Agile Client Side");
@@ -31,6 +31,14 @@ public class ProjectsData {
 		projs[2].setDomain("tictactoe/client");
 		projs[2].setSpecificationPath("userFeatures");
 		// projs[2].setWiki("http://");
+
+		projs[3] = new Project();
+		projs[3].setName("JDK Tools.jar");
+		projs[3].setRepositoryURL("https://tictactoe4j.googlecode.com/svn");
+		projs[3].setRoot("/trunk/src/");
+		projs[3].setTestRoot("/trunk/test/");
+		projs[3].setDomain("tictactoe/client");
+		projs[3].setSpecificationPath("userFeatures");
 
 		return projs;
 	}
