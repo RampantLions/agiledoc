@@ -66,7 +66,7 @@ public class Login extends VerticalPanel {
 				SystemStart.currentUser = userSelected;
 
 				Project projectSelected = ProjectsData.load()[Integer
-						.parseInt(usersList.getValue(usersList
+						.parseInt(projectList.getValue(projectList
 								.getSelectedIndex()))];
 
 				new ProjectInitialization(projectSelected);
