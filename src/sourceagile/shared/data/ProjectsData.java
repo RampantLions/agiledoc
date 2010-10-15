@@ -34,11 +34,8 @@ public class ProjectsData {
 
 		projs[3] = new Project();
 		projs[3].setName("JDK Tools.jar");
-		projs[3].setRepositoryURL("https://tictactoe4j.googlecode.com/svn");
+		projs[3].setRepositoryURL("http://javatoolssource.googlecode.com/svn");
 		projs[3].setRoot("/trunk/src/");
-		projs[3].setTestRoot("/trunk/test/");
-		projs[3].setDomain("tictactoe/client");
-		projs[3].setSpecificationPath("userFeatures");
 
 		return projs;
 	}
