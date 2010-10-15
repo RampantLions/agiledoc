@@ -4,6 +4,7 @@ import sourceagile.client.SystemStart;
 import sourceagile.client.userFeatures.features.FeatureDescription;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.client.userFeatures.source.ClassesList;
+import sourceagile.client.userFeatures.source.SourceCodeView;
 import sourceagile.client.userFeatures.specification.classViewOptions.ClassVizualizationPanel;
 import sourceagile.client.userFeatures.specification.classViewOptions.OptionsIcons;
 import sourceagile.shared.ClassFile;
@@ -74,6 +75,10 @@ public class Specification {
 
 			ClassVizualizationPanel.featureContent.add(new FeatureDescription(
 					entry));
+
+		} else if (viewOption == OptionsIcons.OPTION_SOURCE) {
+
+			new SourceCodeView(entry);
 		}
 	}
 
