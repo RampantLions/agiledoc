@@ -13,9 +13,13 @@ public class ProjectList extends ListBox {
 
 		this.addItem("");
 
-		for (Project proj : ProjectsData.load()) {
+		Project[] projects = ProjectsData.load();
 
-			this.addItem(proj.getName());
+		for (int i = 0; i < projects.length; i++) {
+
+			Project project = projects[i];
+
+			this.addItem(project.getName(), String.valueOf(i));
 		}
 
 	}
