@@ -34,7 +34,7 @@ public class SourceCodeView {
 				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 	}
 
-	public static SyntaxHighlightPanel getSyntaxPanel(ClassFile entry) {
+	private SyntaxHighlightPanel getSyntaxPanel(ClassFile entry) {
 
 		SyntaxHighlightPanel syntaxPanel = new SyntaxHighlightPanel(
 				entry.getSourceCode(), SyntaxHighlightPanel.SYNTAX_JAVA);
@@ -46,7 +46,7 @@ public class SourceCodeView {
 		return syntaxPanel;
 	}
 
-	public static Button buttonEdit(final ClassFile entry) {
+	private Button buttonEdit(final ClassFile entry) {
 
 		Button button = new Button("Edit", new ClickHandler() {
 
