@@ -2,9 +2,9 @@ package sourceagile.client.serverCalls;
 
 import sourceagile.client.SystemStart;
 import sourceagile.client.systemNavigation.LoadingPanel;
+import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
+import sourceagile.client.userFeatures.documentation.specification.Specification;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.client.userFeatures.specification.Specification;
-import sourceagile.client.userFeatures.specification.classViewOptions.OptionsIcons;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.core.client.GWT;
