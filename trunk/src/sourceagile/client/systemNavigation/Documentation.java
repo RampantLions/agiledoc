@@ -2,6 +2,7 @@ package sourceagile.client.systemNavigation;
 
 import sourceagile.client.SystemStart;
 import sourceagile.client.userFeatures.features.FeaturesList;
+import sourceagile.client.userFeatures.features.UserManual;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.client.userFeatures.specification.Specification;
 
@@ -76,6 +77,9 @@ public class Documentation {
 			@Override
 			public void onClick(ClickEvent event) {
 
+				documentationPanel.clear();
+				documentationPanel.add(new UserManual(
+						ProjectInitialization.projectEntries));
 			}
 		});
 		vp.add(linkUserManual);
