@@ -1,7 +1,7 @@
 package sourceagile.client.userFeatures.planning.TodoClasses;
 
-import sourceagile.client.userFeatures.specification.Specification;
-import sourceagile.client.userFeatures.specification.classViewOptions.OptionsIcons;
+import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
+import sourceagile.client.userFeatures.documentation.specification.Specification;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -10,12 +10,10 @@ import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 
-
-
-/** 
+/**
  * List all the classes assigned as "To Do" in the current project.
  * 
- * @feature 
+ * @feature
  */
 public class TodoClassesList extends FlexTable {
 
