@@ -2,10 +2,10 @@ package sourceagile.client.userFeatures.testing;
 
 import sourceagile.client.serverCalls.test.AddTestClass;
 import sourceagile.client.systemNavigation.LoadingPanel;
-import sourceagile.client.userFeatures.features.FeatureDescription;
+import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizualizationPanel;
+import sourceagile.client.userFeatures.documentation.features.FeatureDescription;
+import sourceagile.client.userFeatures.documentation.specification.Specification;
 import sourceagile.client.userFeatures.source.SourceCodeView;
-import sourceagile.client.userFeatures.specification.Specification;
-import sourceagile.client.userFeatures.specification.classViewOptions.ClassVizualizationPanel;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
