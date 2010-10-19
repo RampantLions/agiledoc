@@ -1,6 +1,6 @@
 package sourceagile.client.userFeatures.source;
 
-import sourceagile.client.userFeatures.specification.classViewOptions.ClassVizualizationPanel;
+import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizualizationPanel;
 import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Field;
