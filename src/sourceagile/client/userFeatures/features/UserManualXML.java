@@ -1,19 +1,20 @@
 package sourceagile.client.userFeatures.features;
 
 import sourceagile.client.systemNavigation.Documentation;
+import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.xml.client.Document;
 import com.google.gwt.xml.client.Element;
 import com.google.gwt.xml.client.XMLParser;
 
-public class FeaturesListXML {
+public class UserManualXML {
 
-	public FeaturesListXML(ClassFile[] entries) {
+	public UserManualXML(ClassFile[] entries) {
 
 		Documentation.documentationPanel.clear();
 		Documentation.documentationPanel.add(ExportXML.getSyntaxPanel(
-				getFeaturesXML(entries), "Features List XML format"));
+				getFeaturesXML(entries), "User Manual XML format"));
 	}
 
 	public String getFeaturesXML(ClassFile[] entries) {
@@ -23,9 +24,13 @@ public class FeaturesListXML {
 		Element featuresElement = ExportXML.getFeaturesElement(xmlDocument);
 		xmlDocument.appendChild(featuresElement);
 
+		String specificationPath = ProjectInitialization.currentProject
+				.getSpecificationPath();
+
 		for (ClassFile entry : entries) {
 
-			if (entry.getClassDoc().isFeature()) {
+			if (specificationPath != null
+					&& entry.getFilePath().startsWith(specificationPath)) {
 
 				Element feature = xmlDocument.createElement(ExportXML.FEATURE);
 
