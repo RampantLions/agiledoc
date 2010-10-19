@@ -1,6 +1,6 @@
 package sourceagile.client.userFeatures.source;
 
-import sourceagile.client.userFeatures.specification.classViewOptions.ClassVizualizationPanel;
+import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizualizationPanel;
 
 import com.weborient.codemirror.client.CodeMirrorConfiguration;
 import com.weborient.codemirror.client.CodeMirrorEditorWidget;
