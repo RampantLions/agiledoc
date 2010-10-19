@@ -2,8 +2,8 @@ package sourceagile.client.serverCalls.test;
 
 import sourceagile.client.SystemStart;
 import sourceagile.client.serverCalls.GetRemoteClass;
+import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.client.userFeatures.specification.classViewOptions.OptionsIcons;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.core.client.GWT;
