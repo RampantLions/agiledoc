@@ -23,11 +23,15 @@ import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
+
+
+/** 
  * The user can insert a new task in the source code typing the name and
- * description of the task in a web based form page.
+ description of the task in a web based form page.
+TODO: correct spelling of "bellow".
  * 
- * @feature
+ * @TODO
+ * @feature 
  */
 public class AddTodoClass extends VerticalPanel {
 
