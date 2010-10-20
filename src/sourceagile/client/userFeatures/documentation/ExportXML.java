@@ -11,23 +11,23 @@ import com.gwtext.client.widgets.SyntaxHighlightPanel;
 
 public class ExportXML {
 
-	public static final String xmlHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+	private static final String xmlHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
 
-	public static final String ENTRIES = "entries";
-	public static final String PROJECT = "project";
+	private static final String ENTRIES = "entries";
+	private static final String PROJECT = "project";
 
-	public static final String ENTRY = "entry";
-	public static final String CLASS_NAME = "className";
-	public static final String CLASS_PATH = "classPath";
+	private static final String ENTRY = "entry";
+	private static final String CLASS_NAME = "className";
+	private static final String CLASS_PATH = "classPath";
 
-	public static final String FEATURE = "feature";
-	public static final String FEATURE_NAME = "featureName";
-	public static final String FEATURE_DESCRIPTION = "featureDescription";
+	private static final String FEATURE = "feature";
+	private static final String FEATURE_NAME = "featureName";
+	private static final String FEATURE_DESCRIPTION = "featureDescription";
 
-	public static final String METHODS = "methods";
-	public static final String METHOD = "method";
-	public static final String METHOD_NAME = "methodName";
-	public static final String METHOD_DESCRIPTION = "methodDescription";
+	private static final String METHODS = "methods";
+	private static final String METHOD = "method";
+	private static final String METHOD_NAME = "methodName";
+	private static final String METHOD_DESCRIPTION = "methodDescription";
 
 	public static String getEntriesXML() {
 
