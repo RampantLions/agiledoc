@@ -6,10 +6,7 @@ import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.HasHorizontalAlignment;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
@@ -46,28 +43,6 @@ public class FeaturesList extends VerticalPanel {
 				this.add(html);
 			}
 		}
-
-		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-
-		this.add(new Label(" "));
-
-		this.add(exportXMLButton(entries));
-	}
-
-	private Button exportXMLButton(final ClassFile[] entries) {
-
-		Button button = new Button("Export XML",
-
-		new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				new FeaturesListXML(entries);
-			}
-		});
-
-		return button;
 	}
 
 }
