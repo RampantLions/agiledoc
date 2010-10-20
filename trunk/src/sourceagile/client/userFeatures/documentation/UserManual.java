@@ -27,8 +27,8 @@ public class UserManual extends VerticalPanel {
 				String name = "<br><B>" + entry.getFeature().getFeatureName()
 						+ "</B> ";
 
-				String description = "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT SIZE=1>"
-						+ entry.getClassDoc().getDescription() + "</FONT>";
+				String description = "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+						+ entry.getClassDoc().getDescription();
 
 				HTML html = new HTML(name + description);
 
