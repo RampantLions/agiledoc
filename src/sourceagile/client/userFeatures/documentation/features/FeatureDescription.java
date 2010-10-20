@@ -70,7 +70,7 @@ public class FeatureDescription extends VerticalPanel {
 		if (classDoc.getDescription() != null
 				&& !classDoc.getDescription().equals("")) {
 
-			text = "<FONT SIZE=\"-1\">" + classDoc.getDescription() + "</FONT>";
+			text = classDoc.getDescription();
 
 		} else {
 
