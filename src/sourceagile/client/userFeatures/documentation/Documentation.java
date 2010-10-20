@@ -3,7 +3,6 @@ package sourceagile.client.userFeatures.documentation;
 import sourceagile.client.SystemStart;
 import sourceagile.client.userFeatures.documentation.features.FeaturesList;
 import sourceagile.client.userFeatures.documentation.specification.Specification;
-import sourceagile.client.userFeatures.documentation.userManual.UserManual;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -103,6 +102,21 @@ public class Documentation {
 			}
 		});
 		vp.add(linkWiki);
+
+		Anchor linkExportXML = new Anchor("Export XML");
+		linkExportXML.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				Documentation.documentationPanel.clear();
+				Documentation.documentationPanel.add(ExportXML.getSyntaxPanel(
+						ExportXML.getEntriesXML(), "Specification XML format"));
+
+				;
+			}
+		});
+		vp.add(linkExportXML);
 
 		return vp;
 	}
