@@ -2,6 +2,7 @@ package sourceagile.client.userFeatures.documentation;
 
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.shared.ClassFile;
+import sourceagile.shared.Method;
 
 import com.google.gwt.xml.client.Document;
 import com.google.gwt.xml.client.Element;
@@ -14,12 +15,19 @@ public class ExportXML {
 
 	public static final String ENTRIES = "entries";
 	public static final String PROJECT = "project";
+
 	public static final String ENTRY = "entry";
-	public static final String FEATURE = "feature";
 	public static final String CLASS_NAME = "className";
 	public static final String CLASS_PATH = "classPath";
+
+	public static final String FEATURE = "feature";
 	public static final String FEATURE_NAME = "featureName";
-	public static final String DESCRIPTION = "description";
+	public static final String FEATURE_DESCRIPTION = "featureDescription";
+
+	public static final String METHODS = "methods";
+	public static final String METHOD = "method";
+	public static final String METHOD_NAME = "methodName";
+	public static final String METHOD_DESCRIPTION = "methodDescription";
 
 	public static String getEntriesXML() {
 
@@ -49,8 +57,12 @@ public class ExportXML {
 				entryElement.appendChild(getElement(xmlDocument, FEATURE_NAME,
 						entry.getFeature().getFeatureName()));
 
-				entryElement.appendChild(getElement(xmlDocument, DESCRIPTION,
-						entry.getClassDoc().getDescription()));
+				entryElement.appendChild(getElement(xmlDocument,
+						FEATURE_DESCRIPTION, entry.getClassDoc()
+								.getDescription()));
+
+				entryElement.appendChild(getMethodsElement(entry.getClassDoc()
+						.getMethods(), xmlDocument));
 
 				entriesElement.appendChild(entryElement);
 			}
@@ -72,7 +84,7 @@ public class ExportXML {
 		return syntaxPanel;
 	}
 
-	public static Element getFeaturesElement(Document xmlDocument) {
+	private static Element getFeaturesElement(Document xmlDocument) {
 
 		Element featuresElement = xmlDocument.createElement(ENTRIES);
 		featuresElement.setAttribute(PROJECT,
@@ -81,7 +93,31 @@ public class ExportXML {
 		return featuresElement;
 	}
 
-	public static Element getElement(Document xmlDocument, String elementName,
+	private static Element getMethodsElement(Method[] methods,
+			Document xmlDocument) {
+
+		Element methodsElement = xmlDocument.createElement(METHODS);
+
+		for (Method method : methods) {
+
+			methodsElement.appendChild(getMethodElement(xmlDocument, method));
+		}
+
+		return methodsElement;
+	}
+
+	private static Element getMethodElement(Document xmlDocument, Method method) {
+
+		Element methodElement = xmlDocument.createElement(METHOD);
+		methodElement.appendChild(getElement(xmlDocument, METHOD_NAME,
+				method.getName()));
+		methodElement.appendChild(getElement(xmlDocument, METHOD_DESCRIPTION,
+				method.getDescription()));
+
+		return methodElement;
+	}
+
+	private static Element getElement(Document xmlDocument, String elementName,
 			String elementText) {
 
 		Element element = xmlDocument.createElement(elementName);
