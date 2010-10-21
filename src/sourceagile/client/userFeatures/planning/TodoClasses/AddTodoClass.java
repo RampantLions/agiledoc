@@ -23,15 +23,11 @@ import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-
-
-/** 
+/**
  * The user can insert a new task in the source code typing the name and
- description of the task in a web based form page.
-TODO: correct spelling of "bellow".
+ * description of the task in a web based form page.
  * 
- * @TODO
- * @feature 
+ * @feature
  */
 public class AddTodoClass extends VerticalPanel {
 
@@ -60,7 +56,7 @@ public class AddTodoClass extends VerticalPanel {
 		VerticalPanel vp = new VerticalPanel();
 		vp.setSpacing(50);
 
-		HTML title = new HTML("<B>Enter the new task bellow: </B>");
+		HTML title = new HTML("<B>Enter the new task below: </B>");
 		vp.add(title);
 
 		vp.add(foldersPanel());
