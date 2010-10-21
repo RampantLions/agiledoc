@@ -30,7 +30,7 @@ public class ProjectsData {
 		projs[2].setTestRoot("/trunk/test/");
 		projs[2].setDomain("com/codecamp/tictactoe/client");
 		projs[2].setSpecificationPath("userFeatures");
-		// projs[2].setWiki("http://");
+		projs[2].setWiki("http://en.wikipedia.org/wiki/Tic-tac-toe");
 
 		projs[3] = new Project();
 		projs[3].setName("JDK Tools.jar");
