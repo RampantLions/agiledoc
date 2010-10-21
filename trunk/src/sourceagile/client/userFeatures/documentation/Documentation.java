@@ -7,6 +7,7 @@ import sourceagile.client.userFeatures.project.ProjectInitialization;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -93,16 +94,6 @@ public class Documentation {
 		});
 		vp.add(linkArchitecture);
 
-		Anchor linkWiki = new Anchor("Wiki");
-		linkWiki.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-			}
-		});
-		vp.add(linkWiki);
-
 		Anchor linkExportXML = new Anchor("Export XML");
 		linkExportXML.addClickHandler(new ClickHandler() {
 
@@ -117,6 +108,22 @@ public class Documentation {
 			}
 		});
 		vp.add(linkExportXML);
+
+		Anchor linkWiki = new Anchor("Wiki");
+		linkWiki.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				if (ProjectInitialization.currentProject.getWiki() != null) {
+
+					Window.open(ProjectInitialization.currentProject.getWiki(),
+							"_blank", null);
+				}
+
+			}
+		});
+		vp.add(linkWiki);
 
 		return vp;
 	}
