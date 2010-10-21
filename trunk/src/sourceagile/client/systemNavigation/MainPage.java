@@ -1,7 +1,6 @@
 package sourceagile.client.systemNavigation;
 
-import sourceagile.client.systemNavigation.systemMenu.SystemMenu;
-import sourceagile.client.userFeatures.project.ProjectMenu;
+import sourceagile.client.systemNavigation.projectMenu.ProjectMenu;
 import sourceagile.client.userFeatures.project.ProjectName;
 
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -28,9 +27,9 @@ public class MainPage extends VerticalPanel {
 
 		panelMenus.add(new ProjectName());
 
-		panelMenus.add(new SystemMenu());
-
 		panelMenus.add(new ProjectMenu());
+
+		panelMenus.add(new SystemOptions());
 
 		this.add(panelMenus);
 	}
