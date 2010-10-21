@@ -1,6 +1,7 @@
 package sourceagile.client;
 
 import sourceagile.client.authentication.Login;
+import sourceagile.client.help.LoadSpecificationXML;
 import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.shared.User;
 
@@ -18,6 +19,8 @@ public class SystemStart implements EntryPoint {
 	public static User currentUser = new User();
 
 	public void onModuleLoad() {
+
+		LoadSpecificationXML.loadXMLFile();
 
 		RootPanel.get().clear();
 		RootPanel.get().add(new Login());
