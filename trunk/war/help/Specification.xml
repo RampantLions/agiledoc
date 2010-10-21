@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entries project="Source Agile Client Side">
+	<entry feature="false">
+		<className>Diagnosis</className>
+		<classPath>sourceagile.client.userFeatures.diagnosis</classPath>
+		<featureName>Diagnosis</featureName>
+		<featureDescription>Show a list of metrics that diagnosis the problems
+			and the situation of the
+			 current project.</featureDescription>
+		<methods />
+	</entry>
+	<entry feature="false">
+		<className>Documentation</className>
+		<classPath>sourceagile.client.userFeatures.documentation</classPath>
+		<featureName>Documentation</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>showDocumentationMenu</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false">
+		<className>ExportXML</className>
+		<classPath>sourceagile.client.userFeatures.documentation</classPath>
+		<featureName>Export</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>getEntriesXML</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>getSyntaxPanel</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>getFeaturesElement</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>getMethodsElement</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>getMethodElement</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>getElement</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false">
+		<className>UserManual</className>
+		<classPath>sourceagile.client.userFeatures.documentation</classPath>
+		<featureName>User Manual</featureName>
+		<featureDescription></featureDescription>
+		<methods />
+	</entry>
+	<entry feature="false">
+		<className>ClassVizualizationPanel</className>
+		<classPath>sourceagile.client.userFeatures.documentation.classViewOptions</classPath>
+		<featureName>Class Vizualization Panel</featureName>
+		<featureDescription></featureDescription>
+		<methods />
+	</entry>
+	<entry feature="false">
+		<className>OptionsIcons</className>
+		<classPath>sourceagile.client.userFeatures.documentation.classViewOptions</classPath>
+		<featureName>Options Icons</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>ButtonFeatureDescription</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>ButtonEditDescriptions</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>ButtonTest</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>ButtonJavadoc</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>ButtonSourceView</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="true">
+		<className>FeatureDescription</className>
+		<classPath>sourceagile.client.userFeatures.documentation.features</classPath>
+		<featureName>Feature Description</featureName>
+		<featureDescription>Show the documentation of the class in a
+			specification format.</featureDescription>
+		<methods>
+			<method>
+				<methodName>featureName</methodName>
+				<methodDescription>Show the name of the class with its package name
+					and description.</methodDescription>
+			</method>
+			<method>
+				<methodName>featureDescription</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>featureSteps</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>featureReferences</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>featureCreation</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="true">
+		<className>FeatureEdit</className>
+		<classPath>sourceagile.client.userFeatures.documentation.features</classPath>
+		<featureName>Feature Edit</featureName>
+		<featureDescription>Edit the documentation of the class in a web form.</featureDescription>
+		<methods>
+			<method>
+				<methodName>featureOptions</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>featureDescription</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>featureMethods</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>saveButton</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="true">
+		<className>FeaturesList</className>
+		<classPath>sourceagile.client.userFeatures.documentation.features</classPath>
+		<featureName>Features List</featureName>
+		<featureDescription>List all the features assigned for the current
+			project.</featureDescription>
+		<methods />
+	</entry>
+	<entry feature="true">
+		<className>Specification</className>
+		<classPath>sourceagile.client.userFeatures.documentation.specification</classPath>
+		<featureName>Specification</featureName>
+		<featureDescription>Show all the classes of the current project as a
+			specification format.</featureDescription>
+		<methods>
+			<method>
+				<methodName>showClass</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false">
+		<className>SpecificationItemsList</className>
+		<classPath>sourceagile.client.userFeatures.documentation.specification</classPath>
+		<featureName>Specification Items List</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>getFeatureLink</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false">
+		<className>PlanningPage</className>
+		<classPath>sourceagile.client.userFeatures.planning</classPath>
+		<featureName>Planning Page</featureName>
+		<featureDescription>Show the list of planning tasks.</featureDescription>
+		<methods>
+			<method>
+				<methodName>buttonNewFeature</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="true">
+		<className>AddTodoClass</className>
+		<classPath>sourceagile.client.userFeatures.planning.TodoClasses</classPath>
+		<featureName>Add Todo Class</featureName>
+		<featureDescription>The user can insert a new task in the source code
+			typing the name and
+			 description of the task in a web based form page.
+			 TODO: correct spelling of "bellow".</featureDescription>
+		<methods>
+			<method>
+				<methodName>taskForm</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>foldersPanel</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>newFolderPanel</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>saveTaskButton</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>getClassFile</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false">
+		<className>FoldersList</className>
+		<classPath>sourceagile.client.userFeatures.planning.TodoClasses</classPath>
+		<featureName>Folders List</featureName>
+		<featureDescription></featureDescription>
+		<methods />
+	</entry>
+	<entry feature="true">
+		<className>TodoClassesList</className>
+		<classPath>sourceagile.client.userFeatures.planning.TodoClasses</classPath>
+		<featureName>Todo Classes List</featureName>
+		<featureDescription>List all the classes assigned as "To Do" in the
+			current project.</featureDescription>
+		<methods>
+			<method>
+				<methodName>gridColumns</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>gridRows</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>iconEditTodoFeature</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>iconDeleteTodoFeature</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false">
+		<className>CreateTask</className>
+		<classPath>sourceagile.client.userFeatures.planning.projectBacklog</classPath>
+		<featureName>Create Task</featureName>
+		<featureDescription>The user can insert a new task in the project
+			backlog.</featureDescription>
+		<methods />
+	</entry>
+	<entry feature="false">
+		<className>DeleteTask</className>
+		<classPath>sourceagile.client.userFeatures.planning.projectBacklog</classPath>
+		<featureName>Delete Task</featureName>
+		<featureDescription>Delete the selected task from the project backlog.</featureDescription>
+		<methods />
+	</entry>
+	<entry feature="false">
+		<className>EditTask</className>
+		<classPath>sourceagile.client.userFeatures.planning.projectBacklog</classPath>
+		<featureName>Edit Task</featureName>
+		<featureDescription>Change the task name or description created for
+			the project backlog.</featureDescription>
+		<methods />
+	</entry>
+	<entry feature="false">
+		<className>ProjectBacklog</className>
+		<classPath>sourceagile.client.userFeatures.planning.projectBacklog</classPath>
+		<featureName>Project Backlog</featureName>
+		<featureDescription>List all the planning tasks created for the
+			current project.</featureDescription>
+		<methods />
+	</entry>
+	<entry feature="true">
+		<className>CurrentProductivityColumnsChart</className>
+		<classPath>sourceagile.client.userFeatures.productivity</classPath>
+		<featureName>Current Productivity Columns Chart</featureName>
+		<featureDescription>Show a Columns Chart with the total amount of
+			tasks, classes and methods in
+			 the current project.</featureDescription>
+		<methods>
+			<method>
+				<methodName>countActivity</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>setRows</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>setColumns</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false">
+		<className>ProductivityPage</className>
+		<classPath>sourceagile.client.userFeatures.productivity</classPath>
+		<featureName>Productivity Page</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>chartOptions</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="true">
+		<className>ProductivityTimelineChart</className>
+		<classPath>sourceagile.client.userFeatures.productivity</classPath>
+		<featureName>Productivity Timeline Chart</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>setColumns</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>setRows</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="true">
+		<className>VelocityTimelineChart</className>
+		<classPath>sourceagile.client.userFeatures.productivity</classPath>
+		<featureName>Velocity Timeline Chart</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>setColumns</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>setRows</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false">
+		<className>ProjectChanger</className>
+		<classPath>sourceagile.client.userFeatures.project</classPath>
+		<featureName>Project Changer</featureName>
+		<featureDescription></featureDescription>
+		<methods />
+	</entry>
+	<entry feature="false">
+		<className>ProjectForm</className>
+		<classPath>sourceagile.client.userFeatures.project</classPath>
+		<featureName>Project Form</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>buttonChangeProject</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false">
+		<className>ProjectInitialization</className>
+		<classPath>sourceagile.client.userFeatures.project</classPath>
+		<featureName>Project Initialization</featureName>
+		<featureDescription></featureDescription>
+		<methods />
+	</entry>
+	<entry feature="false">
+		<className>ProjectMenu</className>
+		<classPath>sourceagile.client.userFeatures.project</classPath>
+		<featureName>Project Menu</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>getSearchButton</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false">
+		<className>ProjectName</className>
+		<classPath>sourceagile.client.userFeatures.project</classPath>
+		<featureName>Project Name</featureName>
+		<featureDescription></featureDescription>
+		<methods />
+	</entry>
+	<entry feature="false">
+		<className>ProjectSelection</className>
+		<classPath>sourceagile.client.userFeatures.project</classPath>
+		<featureName>Project Selection</featureName>
+		<featureDescription>Change the current project of the system.</featureDescription>
+		<methods />
+	</entry>
+	<entry feature="false">
+		<className>ClassesList</className>
+		<classPath>sourceagile.client.userFeatures.source</classPath>
+		<featureName>Classes List</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>getFeatureLink</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="true">
+		<className>JavadocView</className>
+		<classPath>sourceagile.client.userFeatures.source</classPath>
+		<featureName>Javadoc View</featureName>
+		<featureDescription>Show the Javadoc of the class dynamic generated.</featureDescription>
+		<methods>
+			<method>
+				<methodName>classHeader</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>fieldSummary</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>constructorSummary</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>methodSummary</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="true">
+		<className>SourceCodeView</className>
+		<classPath>sourceagile.client.userFeatures.source</classPath>
+		<featureName>Source Code View</featureName>
+		<featureDescription>Show the source code of the class with the syntax
+			highlighted.</featureDescription>
+		<methods>
+			<method>
+				<methodName>getSyntaxPanel</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>buttonEdit</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false">
+		<className>SourceEditor</className>
+		<classPath>sourceagile.client.userFeatures.source</classPath>
+		<featureName>Source Editor</featureName>
+		<featureDescription></featureDescription>
+		<methods />
+	</entry>
+	<entry feature="true">
+		<className>TestClassDescription</className>
+		<classPath>sourceagile.client.userFeatures.testing</classPath>
+		<featureName>Test Class Description</featureName>
+		<featureDescription>Show the specification of the Test Class.</featureDescription>
+		<methods>
+			<method>
+				<methodName>getNoTestPanel</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>addSourceButton</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+</entries>
