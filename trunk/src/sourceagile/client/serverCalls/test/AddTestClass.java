@@ -20,14 +20,22 @@ public class AddTestClass {
 
 	public AddTestClass(final ClassFile classFile) {
 
+		this(classFile, false);
+	}
+
+	public AddTestClass(final ClassFile classFile, final boolean newTask) {
+
 		remoteFunctions.addTestClass(ProjectInitialization.currentProject,
 				SystemStart.currentUser, classFile, new AsyncCallback<Void>() {
 
 					@Override
 					public void onSuccess(Void result) {
 
-						new GetRemoteClass(classFile,
-								OptionsIcons.OPTION_DESCRIPTION);
+						if (!newTask) {
+
+							new GetRemoteClass(classFile,
+									OptionsIcons.OPTION_DESCRIPTION);
+						}
 					}
 
 					public void onFailure(Throwable caught) {
