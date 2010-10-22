@@ -20,6 +20,7 @@ public class ExportXML {
 	private static final String CLASS_NAME = "className";
 	private static final String CLASS_PATH = "classPath";
 
+	private static final String SPECIFICATION = "specification";
 	private static final String FEATURE = "feature";
 	private static final String FEATURE_NAME = "featureName";
 	private static final String FEATURE_DESCRIPTION = "featureDescription";
@@ -33,20 +34,14 @@ public class ExportXML {
 
 		Document xmlDocument = XMLParser.createDocument();
 
-		Element entriesElement = getFeaturesElement(xmlDocument);
+		Element entriesElement = getEntriesElement(xmlDocument);
 		xmlDocument.appendChild(entriesElement);
-
-		String specificationPath = ProjectInitialization.currentProject
-				.getSpecificationPath();
 
 		for (ClassFile entry : ProjectInitialization.projectEntries) {
 
-			if (specificationPath != null
-					&& entry.getFilePath().startsWith(specificationPath)) {
+			if (!entry.getClassDoc().isTodo()) {
 
-				Element entryElement = xmlDocument.createElement(ENTRY);
-				entryElement.setAttribute(FEATURE,
-						String.valueOf(entry.getClassDoc().isFeature()));
+				Element entryElement = getEntryNode(xmlDocument, entry);
 
 				entryElement.appendChild(getElement(xmlDocument, CLASS_NAME,
 						entry.getClassDoc().getClassName()));
@@ -84,13 +79,31 @@ public class ExportXML {
 		return syntaxPanel;
 	}
 
-	private static Element getFeaturesElement(Document xmlDocument) {
+	private static Element getEntriesElement(Document xmlDocument) {
 
-		Element featuresElement = xmlDocument.createElement(ENTRIES);
-		featuresElement.setAttribute(PROJECT,
+		Element entriesElement = xmlDocument.createElement(ENTRIES);
+		entriesElement.setAttribute(PROJECT,
 				ProjectInitialization.currentProject.getName());
 
-		return featuresElement;
+		return entriesElement;
+	}
+
+	private static Element getEntryNode(Document xmlDocument, ClassFile entry) {
+
+		String specificationPath = ProjectInitialization.currentProject
+				.getSpecificationPath();
+
+		Element entryElement = xmlDocument.createElement(ENTRY);
+
+		entryElement.setAttribute(FEATURE,
+				String.valueOf(entry.getClassDoc().isFeature()));
+
+		entryElement.setAttribute(
+				SPECIFICATION,
+				String.valueOf(specificationPath != null
+						&& entry.getFilePath().startsWith(specificationPath)));
+
+		return entryElement;
 	}
 
 	private static Element getMethodsElement(Method[] methods,
@@ -98,9 +111,13 @@ public class ExportXML {
 
 		Element methodsElement = xmlDocument.createElement(METHODS);
 
-		for (Method method : methods) {
+		if (methods != null) {
 
-			methodsElement.appendChild(getMethodElement(xmlDocument, method));
+			for (Method method : methods) {
+
+				methodsElement
+						.appendChild(getMethodElement(xmlDocument, method));
+			}
 		}
 
 		return methodsElement;
