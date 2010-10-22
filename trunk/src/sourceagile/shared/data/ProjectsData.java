@@ -28,8 +28,8 @@ public class ProjectsData {
 		projs[2].setRepositoryURL("https://tictactoe4j.googlecode.com/svn");
 		projs[2].setRoot("/trunk/src/");
 		projs[2].setTestRoot("/trunk/test/");
-		projs[2].setDomain("com/codecamp/tictactoe/client");
-		projs[2].setSpecificationPath("userFeatures");
+		projs[2].setDomain("com/codecamp/tictactoe");
+		projs[2].setSpecificationPath("client/userFeatures");
 		projs[2].setWiki("http://en.wikipedia.org/wiki/Tic-tac-toe");
 
 		projs[3] = new Project();
