@@ -20,7 +20,12 @@ public class GetRepositoryClass {
 	public static ClassFile getClassFile(SVNRepository repository,
 			ClassFile entry) throws SVNException, IOException {
 
-		String className = entry.toString();
+		String className = entry.getFileName();
+
+		if (!(entry.getFilePath() == null || entry.getFilePath().length() == 0)) {
+
+			className = entry.getFilePath() + "/" + entry.getFileName();
+		}
 
 		ByteArrayOutputStream baos = getRemoteClass(repository, className);
 
