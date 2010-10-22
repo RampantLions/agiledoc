@@ -46,8 +46,9 @@ public class AddTodoClass {
 				+ classFile.getClassDoc().getDescription() + " \n" + "* \n"
 				+ "* @" + ClassDocumentation.TODO_TAG + " \n" + "*/\n";
 
-		String className = "public class " + classFile.getFileName() + " {\n"
-				+ "\n" + "}\n";
+		String className = "public class "
+				+ classFile.getClassDoc().getClassName() + " {\n" + "\n"
+				+ "}\n";
 
 		String classContent = classPackage + classDescription + className;
 
