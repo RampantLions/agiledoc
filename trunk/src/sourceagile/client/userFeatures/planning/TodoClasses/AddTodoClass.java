@@ -122,7 +122,7 @@ public class AddTodoClass extends VerticalPanel {
 
 				if (createTest.getValue()) {
 
-					new AddTestClass(classFile);
+					new AddTestClass(classFile, true);
 				}
 
 			}
@@ -139,10 +139,11 @@ public class AddTodoClass extends VerticalPanel {
 
 		String filePath = folders.getValue(folders.getSelectedIndex());
 
-		classFile.setFileName(className);
+		classFile.setFileName(className + ".java");
 
 		classFile.setClassDomain(ProjectInitialization.currentProject
 				.getDomain());
+
 		classFile.setFilePath(filePath);
 
 		if (newFolderName.getValue() != null
