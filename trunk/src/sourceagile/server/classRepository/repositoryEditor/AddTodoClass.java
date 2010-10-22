@@ -11,7 +11,7 @@ public class AddTodoClass {
 	public AddTodoClass(SVNRepository repository, ClassFile classFile)
 			throws SVNException {
 
-		String fileName = classFile.getFileName() + ".java";
+		String fileName = classFile.getFileName();
 
 		String newSubFolderName = null;
 		if (classFile.getFeature() != null) {
