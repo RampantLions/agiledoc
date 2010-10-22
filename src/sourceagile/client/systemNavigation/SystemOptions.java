@@ -1,6 +1,6 @@
 package sourceagile.client.systemNavigation;
 
-import sourceagile.client.help.Help;
+import sourceagile.client.help.HelpIcon;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -24,7 +24,7 @@ public class SystemOptions extends HorizontalPanel {
 
 		this.add(getSearchIcon());
 
-		this.add(getHelpIcon());
+		this.add(new HelpIcon());
 	}
 
 	public static Image getSearchIcon() {
@@ -38,24 +38,6 @@ public class SystemOptions extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-			}
-		});
-
-		return img;
-	}
-
-	public static Image getHelpIcon() {
-
-		Image img = new Image("images/help.jpg");
-
-		img.setTitle("Help");
-
-		img.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				new Help();
 			}
 		});
 
