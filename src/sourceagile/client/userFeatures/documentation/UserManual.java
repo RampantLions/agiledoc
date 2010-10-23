@@ -1,5 +1,6 @@
 package sourceagile.client.userFeatures.documentation;
 
+import sourceagile.client.help.HelpMethod;
 import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
 import sourceagile.client.userFeatures.documentation.specification.Specification;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
@@ -34,7 +35,9 @@ public class UserManual extends VerticalPanel {
 				String description = "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 						+ entry.getClassDoc().getDescription();
 
-				HTML html = new HTML(name + description);
+				String methods = entryMethods(entry.getClassDoc().getMethods());
+				
+				HTML html = new HTML(name + description + methods);
 
 				html.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
@@ -45,31 +48,26 @@ public class UserManual extends VerticalPanel {
 				});
 
 				this.add(html);
-
-				this.add(featureMethods(entry.getClassDoc().getMethods()));
 			}
 		}
 	}
 
-	public static Grid featureMethods(final Method[] meths) {
+	private static String entryMethods(final Method[] methods) {
 
-		Grid table = new Grid(meths.length * 3, 2);
+		String methodsText = "";
 
-		table.getColumnFormatter().setWidth(0, "40");
+		for (int i = 0; i < methods.length; i++) {
 
-		for (int i = 0; i < meths.length; i++) {
+			Method method = methods[i];
 
-			Method meth = meths[i];
+			if (method.getDescription() != null
+					&& !method.getDescription().equals("")) {
 
-			if (meth.getDescription() != null
-					&& !meth.getDescription().equals("")) {
-
-				table.setWidget((i * 3 + 1), 1, new HTML(meth.getDescription()));
-
-				table.setWidget((i * 3 + 2), 0, new Label(" "));
+				methodsText += "<blockquote>" + method.getDescription()
+						+ "</blockquote>";
 			}
 		}
 
-		return table;
+		return methodsText;
 	}
 }
