@@ -64,6 +64,11 @@ public class GetClassDoc {
 
 					classDocumentation.setFeature(true);
 				}
+				
+				if (classDoc.tags(ClassDocumentation.ARCHITECTURE_TAG).length > 0) {
+
+					classDocumentation.setArchitecture(true);
+				}
 
 				classDocumentation.setImports(imports);
 			}
