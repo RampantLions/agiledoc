@@ -46,12 +46,11 @@ public class UserManual extends VerticalPanel {
 
 				this.add(html);
 
-				this.add(featureMethods(entry.getClassDoc()
-						.getMethods()));
+				this.add(featureMethods(entry.getClassDoc().getMethods()));
 			}
 		}
 	}
-	
+
 	public static Grid featureMethods(final Method[] meths) {
 
 		Grid table = new Grid(meths.length * 3, 2);
@@ -66,9 +65,9 @@ public class UserManual extends VerticalPanel {
 					&& !meth.getDescription().equals("")) {
 
 				table.setWidget((i * 3 + 1), 1, new HTML(meth.getDescription()));
-			}
 
-			table.setWidget((i * 3 + 2), 0, new Label(" "));
+				table.setWidget((i * 3 + 2), 0, new Label(" "));
+			}
 		}
 
 		return table;
