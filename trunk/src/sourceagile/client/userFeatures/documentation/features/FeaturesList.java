@@ -30,7 +30,13 @@ public class FeaturesList extends VerticalPanel {
 				String description = "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 						+ entry.getClassDoc().getDescription();
 
-				HTML html = new HTML(name + description);
+				String planning = "";
+				if (entry.getClassDoc().isTodo()) {
+					
+					planning = " <font color='blue'>(Planning)</blue> ";
+				}
+				
+				HTML html = new HTML(name + description + planning);
 
 				html.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {

@@ -28,6 +28,7 @@ public class FeatureEdit extends VerticalPanel {
 	private TextArea classDescription = new TextArea();
 	private CheckBox isTodo = new CheckBox(" To Do");
 	private CheckBox isFeature = new CheckBox(" Feature");
+	private CheckBox isArchitecture = new CheckBox(" Architecture");
 
 	public FeatureEdit(ClassFile entry) {
 
@@ -62,9 +63,11 @@ public class FeatureEdit extends VerticalPanel {
 
 		isTodo.setValue(classDoc.isTodo());
 		isFeature.setValue(classDoc.isFeature());
+		isArchitecture.setValue(classDoc.isArchitecture());
 
 		hp.add(isTodo);
 		hp.add(isFeature);
+		hp.add(isArchitecture);
 
 		return hp;
 	}
@@ -117,6 +120,7 @@ public class FeatureEdit extends VerticalPanel {
 
 				classFile.getClassDoc().setTodo(isTodo.getValue());
 				classFile.getClassDoc().setFeature(isFeature.getValue());
+				classFile.getClassDoc().setArchitecture(isArchitecture.getValue());
 
 				new EditClass(classFile, classDescription.getValue());
 			}

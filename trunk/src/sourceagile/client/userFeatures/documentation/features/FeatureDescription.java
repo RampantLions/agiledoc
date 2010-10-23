@@ -34,7 +34,7 @@ public class FeatureDescription extends VerticalPanel {
 
 		this.add(featureDescription(entry.getClassDoc()));
 
-		this.add(featureSteps(entry.getClassDoc().getMethods()));
+		this.add(featureMethods(entry.getClassDoc().getMethods()));
 
 		this.add(featureReferences(entry.getClassDoc().getImports()));
 
@@ -54,7 +54,7 @@ public class FeatureDescription extends VerticalPanel {
 		String pack = "<B>" + feature.getFeatureFolder() + "</B>";
 
 		HTML html = new HTML(pack + name);
-		html.setWidth("450px");
+		html.setWidth("400px");
 
 		return html;
 	}
@@ -82,7 +82,7 @@ public class FeatureDescription extends VerticalPanel {
 		return hp;
 	}
 
-	private static Grid featureSteps(final Method[] meths) {
+	public static Grid featureMethods(final Method[] meths) {
 
 		Grid table = new Grid(meths.length * 3, 2);
 
