@@ -26,6 +26,11 @@ public class Specification {
 
 		this(null, OptionsIcons.OPTION_DESCRIPTION);
 	}
+	
+	public Specification(int viewOption) {
+
+		this(null, viewOption);
+	}
 
 	public Specification(ClassFile entry, int viewOption) {
 
@@ -45,6 +50,10 @@ public class Specification {
 			featuresTreePanel.add(new ClassesList(
 					ProjectInitialization.projectEntries));
 
+		} else if (viewOption == OptionsIcons.OPTION_ALLCLASSES) {
+		
+			featuresTreePanel.add(new AllClassesSpecificationList(
+					ProjectInitialization.projectEntries));
 		} else {
 
 			featuresTreePanel.add(new SpecificationItemsList(
