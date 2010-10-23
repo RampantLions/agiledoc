@@ -16,7 +16,7 @@ public class UserData {
 		users[1] = new User();
 		users[1].setNickName("June Clarke");
 		users[1].setName("joonspoon");
-		users[1].setPassword("bD8Km8se2rV9");
+		users[1].setPassword("Vj6mz4MX9Wu7");
 
 		return users;
 	}
