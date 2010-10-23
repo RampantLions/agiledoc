@@ -1,7 +1,9 @@
 package sourceagile.client.userFeatures.documentation;
 
 import sourceagile.client.SystemStart;
+import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
 import sourceagile.client.userFeatures.documentation.features.FeaturesList;
+import sourceagile.client.userFeatures.documentation.specification.AllClassesSpecificationList;
 import sourceagile.client.userFeatures.documentation.specification.Specification;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 
@@ -47,6 +49,17 @@ public class Documentation {
 
 		vp.setSpacing(20);
 
+		Anchor linkAllClasses = new Anchor("All Classes");
+		linkAllClasses.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				new Specification(OptionsIcons.OPTION_ALLCLASSES);
+			}
+		});
+		vp.add(linkAllClasses);
+
 		Anchor linkFeaturesList = new Anchor("Features List");
 		linkFeaturesList.addClickHandler(new ClickHandler() {
 
@@ -90,6 +103,9 @@ public class Documentation {
 			@Override
 			public void onClick(ClickEvent event) {
 
+				documentationPanel.clear();
+				documentationPanel.add(new ArchitectureList(
+						ProjectInitialization.projectEntries));
 			}
 		});
 		vp.add(linkArchitecture);
