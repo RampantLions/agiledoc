@@ -33,6 +33,8 @@ public class ClassDocumentation implements Serializable {
 	private boolean todo;
 
 	private boolean feature;
+	
+	private boolean architecture;
 
 	public String getClassName() {
 		return className;
@@ -121,5 +123,15 @@ public class ClassDocumentation implements Serializable {
 	public void setFeature(boolean feature) {
 		this.feature = feature;
 	}
+
+	public boolean isArchitecture() {
+		return architecture;
+	}
+
+	public void setArchitecture(boolean architecture) {
+		this.architecture = architecture;
+	}
+	
+	
 
 }
