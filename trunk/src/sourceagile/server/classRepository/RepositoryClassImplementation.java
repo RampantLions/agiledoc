@@ -59,14 +59,15 @@ public class RepositoryClassImplementation extends RemoteServiceServlet
 	}
 
 	@Override
-	public void createClass(Project project, User user, ClassFile classFile) {
+	public void createClass(Project project, User user, ClassFile classFile,
+			String newSubfolderName) {
 
 		try {
 
 			SVNRepository repository = RepositoryConnection
 					.connectClassRepository(project, user);
 
-			new AddTodoClass(repository, classFile);
+			new AddTodoClass(repository, classFile, newSubfolderName);
 
 		} catch (Exception e) {
 
