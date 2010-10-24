@@ -8,22 +8,16 @@ import sourceagile.shared.ClassFile;
 
 public class AddTodoClass {
 
-	public AddTodoClass(SVNRepository repository, ClassFile classFile)
-			throws SVNException {
+	public AddTodoClass(SVNRepository repository, ClassFile classFile,
+			String newSubfolderName) throws SVNException {
 
 		String fileName = classFile.getFileName();
 
-		String newSubFolderName = null;
-		if (classFile.getFeature() != null) {
-
-			newSubFolderName = classFile.getFeature().getFeatureFolder();
-		}
-
-		new AddFile(repository, classFile.getFilePath(), newSubFolderName,
-				fileName, classContent(classFile));
+		new AddFile(repository, classFile.getFilePath(), newSubfolderName,
+				fileName, classContent(classFile, newSubfolderName));
 	}
 
-	private String classContent(ClassFile classFile) {
+	private String classContent(ClassFile classFile, String newSubfolderName) {
 
 		String packName = classFile.getClassDomain().replaceAll("/", "\\.");
 
@@ -34,10 +28,9 @@ public class AddTodoClass {
 					+ classFile.getFilePath().replaceAll("/", "\\.");
 		}
 
-		if (classFile.getFeature() != null) {
+		if (newSubfolderName != null && newSubfolderName.length() > 0) {
 
-			packName = packName + "."
-					+ classFile.getFeature().getFeatureFolder();
+			packName = packName + "." + newSubfolderName;
 		}
 
 		String classPackage = "package " + packName + ";\n" + "\n";
