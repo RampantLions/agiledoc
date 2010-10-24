@@ -20,13 +20,15 @@ public class AddTestClass {
 
 	public AddTestClass(final ClassFile classFile) {
 
-		this(classFile, false);
+		this(classFile, null, false);
 	}
 
-	public AddTestClass(final ClassFile classFile, final boolean newTask) {
+	public AddTestClass(final ClassFile classFile, String newSubfolderName,
+			final boolean newTask) {
 
 		remoteFunctions.addTestClass(ProjectInitialization.currentProject,
-				SystemStart.currentUser, classFile, new AsyncCallback<Void>() {
+				SystemStart.currentUser, classFile, newSubfolderName,
+				new AsyncCallback<Void>() {
 
 					@Override
 					public void onSuccess(Void result) {

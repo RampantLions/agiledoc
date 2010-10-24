@@ -12,6 +12,6 @@ public interface LoadRemoteTestClassesAsync {
 			AsyncCallback<ClassFile> callback);
 
 	void addTestClass(Project project, User user, ClassFile entry,
-			AsyncCallback<Void> callback);
+			String newSubfolderName, AsyncCallback<Void> callback);
 
 }
