@@ -17,10 +17,11 @@ public interface LoadRemoteClasses extends RemoteService {
 
 	ClassFile[] listClasses(Project project, User user);
 
-	void createClass(Project project, User user, ClassFile classFile);
-
 	ArrayList<Productivity> listHistory(Project project, User user);
 
 	void editClass(Project project, User user, ClassFile classFile,
 			String classDescription);
+
+	void createClass(Project project, User user, ClassFile classFile,
+			String newSubfolderName);
 }
