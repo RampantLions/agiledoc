@@ -6,7 +6,6 @@ import sourceagile.client.systemNavigation.FormField;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.ClassFile;
-import sourceagile.shared.Feature;
 import sourceagile.shared.utilities.FileNameGenerator;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -118,11 +117,19 @@ public class AddTodoClass extends VerticalPanel {
 
 				ClassFile classFile = getClassFile();
 
-				new CreateTodoClass(classFile);
+				String newSubfolderName = null;
+				if (newFolderName.getValue() != null
+						&& newFolderName.getValue().length() > 0) {
+
+					newSubfolderName = FileNameGenerator.compactName(
+							newFolderName.getValue(), true);
+				}
+
+				new CreateTodoClass(classFile, newSubfolderName);
 
 				if (createTest.getValue()) {
 
-					new AddTestClass(classFile, true);
+					new AddTestClass(classFile, newSubfolderName, true);
 				}
 
 			}
@@ -145,16 +152,6 @@ public class AddTodoClass extends VerticalPanel {
 				.getDomain());
 
 		classFile.setFilePath(filePath);
-
-		if (newFolderName.getValue() != null
-				&& newFolderName.getValue().length() > 0) {
-
-			Feature feature = new Feature();
-			feature.setFeatureFolder(FileNameGenerator.compactName(
-					newFolderName.getValue(), true));
-
-			classFile.setFeature(feature);
-		}
 
 		ClassDocumentation classDoc = new ClassDocumentation();
 
