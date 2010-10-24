@@ -5,30 +5,28 @@ import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.server.classRepository.repositoryEditor.AddFile;
 import sourceagile.shared.ClassFile;
-import sourceagile.shared.utilities.FileNameGenerator;
 
 public class CreateTestClass {
 
-	public CreateTestClass(SVNRepository repository, ClassFile classFile)
-			throws SVNException {
+	public CreateTestClass(SVNRepository repository, ClassFile classFile,
+			String newSubfolderName) throws SVNException {
 
 		String fileName = classFile.getClassDoc().getClassName() + "Test.java";
 
-		String newSubFolderName = null;
-		if (classFile.getFeature() != null) {
-
-			newSubFolderName = FileNameGenerator.compactName(classFile
-					.getFeature().getFeatureFolder(), true);
-		}
-
-		new AddFile(repository, classFile.getFilePath(), newSubFolderName,
-				fileName, classContent(classFile));
+		new AddFile(repository, classFile.getFilePath(), newSubfolderName,
+				fileName, classContent(classFile, newSubfolderName));
 	}
 
-	private String classContent(ClassFile classFile) {
+	private String classContent(ClassFile classFile, String newSubfolderName) {
 
-		String classPackage = "package "
-				+ classFile.getClassDoc().getClassPackage() + ";\n";
+		String packName = classFile.getClassDoc().getClassPackage();
+
+		if (newSubfolderName != null && newSubfolderName.length() > 0) {
+
+			packName = packName + "." + newSubfolderName;
+		}
+
+		String classPackage = "package " + packName + ";\n";
 
 		String imports = "\nimport junit.framework.TestCase;\n\n";
 

@@ -33,14 +33,14 @@ public class RepositoryClassTestImplementation extends RemoteServiceServlet
 	}
 
 	@Override
-	public void addTestClass(Project project, User user, ClassFile entry) {
+	public void addTestClass(Project project, User user, ClassFile entry, String newSubfolderName) {
 
 		try {
 
 			SVNRepository repository = RepositoryConnection
 					.connectTestRepository(project, user);
 
-			new CreateTestClass(repository, entry);
+			new CreateTestClass(repository, entry, newSubfolderName);
 
 		} catch (Exception e) {
 
