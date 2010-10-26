@@ -7,7 +7,7 @@ import junit.framework.TestCase;
 import org.approvaltests.Approvals;
 import org.approvaltests.UseReporter;
 
-import sourceagile.server.classRepository.RepositoryClassImplementation;
+import sourceagile.server.classRepositories.subversionClassRepository.RepositoryClassImplementation;
 import sourceagile.server.doclet.GetClassDoc;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Project;
