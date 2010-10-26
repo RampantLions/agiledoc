@@ -1,6 +1,6 @@
 package sourceagile.client.systemNavigation;
 
-import sourceagile.client.help.HelpIcon;
+import helpagile.client.visualizationWidgets.HelpIcon;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
