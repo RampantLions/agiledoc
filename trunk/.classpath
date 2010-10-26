@@ -11,5 +11,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
 	<classpathentry kind="lib" path="test/ApprovalTests.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/gwtext.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/javagit-0.1.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/helpAgile.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
