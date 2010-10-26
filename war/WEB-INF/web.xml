@@ -8,12 +8,12 @@
   <!-- Servlets -->
 	<servlet>
 		<servlet-name>repositoryClassLoader</servlet-name>
-		<servlet-class>sourceagile.server.classRepository.RepositoryClassImplementation</servlet-class>
+		<servlet-class>sourceagile.server.classRepositories.subversionClassRepository.RepositoryClassImplementation</servlet-class>
 	</servlet>
 
 	<servlet>
 		<servlet-name>repositoryTestClassLoader</servlet-name>
-		<servlet-class>sourceagile.server.classRepository.repositoryTest.RepositoryClassTestImplementation</servlet-class>
+		<servlet-class>sourceagile.server.classRepositories.subversionClassRepository.repositoryTest.RepositoryClassTestImplementation</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
