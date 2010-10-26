@@ -1,7 +1,7 @@
 package sourceagile.server.repositoryClassLoader;
 
 import junit.framework.TestCase;
-import sourceagile.server.classRepository.RepositoryClassImplementation;
+import sourceagile.server.classRepositories.subversionClassRepository.RepositoryClassImplementation;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Project;
 import sourceagile.shared.User;
