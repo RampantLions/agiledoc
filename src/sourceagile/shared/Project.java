@@ -6,7 +6,12 @@ public class Project implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	public static final String REPOSITORY_TYPE_SUBVERSION = "Subversion";
+	public static final String REPOSITORY_TYPE_GIT = "Git";
+
 	private String name;
+
+	private String repositoryType;
 
 	private String repositoryURL;
 
@@ -26,6 +31,14 @@ public class Project implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getRepositoryType() {
+		return repositoryType;
+	}
+
+	public void setRepositoryType(String repositoryType) {
+		this.repositoryType = repositoryType;
 	}
 
 	public String getRoot() {
