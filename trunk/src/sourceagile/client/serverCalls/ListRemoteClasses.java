@@ -1,10 +1,15 @@
 package sourceagile.client.serverCalls;
 
 import sourceagile.client.SystemStart;
+import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClasses;
+import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClassesAsync;
+import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClasses;
+import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClassesAsync;
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.shared.ClassFile;
+import sourceagile.shared.Project;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -12,33 +17,64 @@ import com.google.gwt.user.client.ui.RootPanel;
 
 public class ListRemoteClasses {
 
-	private final LoadRemoteClassesAsync remoteFunctions = GWT
-			.create(LoadRemoteClasses.class);
-
 	public ListRemoteClasses() {
 
 		RootPanel.get().clear();
 		RootPanel.get().add(new LoadingPanel());
 
-		remoteFunctions.listClasses(ProjectInitialization.currentProject,
-				SystemStart.currentUser, new AsyncCallback<ClassFile[]>() {
+		if (ProjectInitialization.currentProject.getRepositoryType().equals(
+				Project.REPOSITORY_TYPE_SUBVERSION)) {
 
-					public void onSuccess(ClassFile[] entries) {
+			final LoadSubversionRemoteClassesAsync subversionRemoteFunctions = GWT
+					.create(LoadSubversionRemoteClasses.class);
 
-						ProjectInitialization.projectEntries = entries;
+			subversionRemoteFunctions.listClasses(
+					ProjectInitialization.currentProject,
+					SystemStart.currentUser, new AsyncCallback<ClassFile[]>() {
 
-						SystemStart.mainPage = new MainPage();
+						public void onSuccess(ClassFile[] entries) {
 
-						RootPanel.get().clear();
-						RootPanel.get().add(SystemStart.mainPage);
-					}
+							ProjectInitialization.projectEntries = entries;
 
-					public void onFailure(Throwable caught) {
-						// Show the RPC error message to the user
+							SystemStart.mainPage = new MainPage();
 
-					}
+							RootPanel.get().clear();
+							RootPanel.get().add(SystemStart.mainPage);
+						}
 
-				});
+						public void onFailure(Throwable caught) {
+							// Show the RPC error message to the user
+
+						}
+
+					});
+
+		} else {
+
+			final LoadGitRemoteClassesAsync gitRemoteFunctions = GWT
+					.create(LoadGitRemoteClasses.class);
+
+			gitRemoteFunctions.listClasses(
+					ProjectInitialization.currentProject,
+					SystemStart.currentUser, new AsyncCallback<ClassFile[]>() {
+
+						public void onSuccess(ClassFile[] entries) {
+
+							ProjectInitialization.projectEntries = entries;
+
+							SystemStart.mainPage = new MainPage();
+
+							RootPanel.get().clear();
+							RootPanel.get().add(SystemStart.mainPage);
+						}
+
+						public void onFailure(Throwable caught) {
+							// Show the RPC error message to the user
+
+						}
+
+					});
+		}
 
 	}
 
