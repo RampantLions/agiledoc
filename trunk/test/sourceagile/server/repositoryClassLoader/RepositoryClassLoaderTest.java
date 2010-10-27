@@ -7,7 +7,7 @@ import junit.framework.TestCase;
 import org.approvaltests.Approvals;
 import org.approvaltests.UseReporter;
 
-import sourceagile.server.classRepositories.subversionClassRepository.RepositoryClassImplementation;
+import sourceagile.server.classRepositories.subversionClassRepository.SubversionRepositoryClassImplementation;
 import sourceagile.server.doclet.GetClassDoc;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Project;
@@ -24,7 +24,7 @@ public class RepositoryClassLoaderTest extends TestCase {
 
 		User user = UserData.load()[0];
 		Project project = ProjectsData.load()[1];
-		ClassFile[] listFeatures = new RepositoryClassImplementation()
+		ClassFile[] listFeatures = new SubversionRepositoryClassImplementation()
 				.listClasses(project, user);
 		Approvals.approve("Entry", listFeatures);
 
