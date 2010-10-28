@@ -15,7 +15,7 @@ public interface LoadSubversionRemoteClassesAsync {
 			AsyncCallback<ClassFile> callback);
 
 	void createClass(Project project, User user, ClassFile classFile,
-			AsyncCallback<Void> callback);
+			String newSubfolderName, AsyncCallback<Void> callback);
 
 	void listHistory(Project project, User user,
 			AsyncCallback<ArrayList<Productivity>> callback);
