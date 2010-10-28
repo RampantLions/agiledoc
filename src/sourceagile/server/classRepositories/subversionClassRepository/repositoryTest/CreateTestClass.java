@@ -5,6 +5,7 @@ import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor.AddFile;
 import sourceagile.shared.ClassFile;
+import sourceagile.shared.Method;
 
 public class CreateTestClass {
 
@@ -32,10 +33,32 @@ public class CreateTestClass {
 
 		String classDeclaration = "public class "
 				+ classFile.getClassDoc().getClassName()
-				+ "Test extends TestCase {\n" + "\n" + "}\n";
+				+ "Test extends TestCase {\n" + "\n";
 
-		String classContent = classPackage + imports + classDeclaration;
+		String classContent = classPackage + imports + classDeclaration
+				+ testMethods(classFile) + "}\n";
 
 		return classContent;
+	}
+
+	private String testMethods(ClassFile classFile) {
+
+		Method[] methods = classFile.getClassDoc().getMethods();
+
+		String methodsDeclarations = "";
+
+		for (Method method : methods) {
+
+			String nameTestMethod = "test"
+					+ (method.getName().substring(0, 1)).toUpperCase()
+					+ method.getName().substring(1);
+
+			String methodDeclaration = "\tpublic void " + nameTestMethod
+					+ "() { \n" + " \n\t}\n";
+
+			methodsDeclarations += methodDeclaration;
+		}
+
+		return methodsDeclarations;
 	}
 }
