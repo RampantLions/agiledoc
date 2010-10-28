@@ -1,6 +1,5 @@
 package sourceagile.client.userFeatures.documentation;
 
-import sourceagile.client.help.HelpMethod;
 import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
 import sourceagile.client.userFeatures.documentation.specification.Specification;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
@@ -9,9 +8,7 @@ import sourceagile.shared.Method;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class UserManual extends VerticalPanel {
@@ -36,7 +33,7 @@ public class UserManual extends VerticalPanel {
 						+ entry.getClassDoc().getDescription();
 
 				String methods = entryMethods(entry.getClassDoc().getMethods());
-				
+
 				HTML html = new HTML(name + description + methods);
 
 				html.addClickHandler(new ClickHandler() {
