@@ -1,7 +1,6 @@
 package sourceagile.client.serverCalls.test;
 
 import sourceagile.client.SystemStart;
-import sourceagile.client.serverCalls.GetRemoteClass;
 import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.shared.ClassFile;
@@ -35,8 +34,8 @@ public class AddTestClass {
 
 						if (!newTask) {
 
-							new GetRemoteClass(classFile,
-									OptionsIcons.OPTION_DESCRIPTION);
+							new GetRemoteTestClass(classFile,
+									OptionsIcons.OPTION_TEST);
 						}
 					}
 
