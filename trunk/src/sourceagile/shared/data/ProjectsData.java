@@ -43,9 +43,12 @@ public class ProjectsData {
 
 		projs[4] = new Project();
 		projs[4].setName("Agile Help");
-		projs[4].setRepositoryType(Project.REPOSITORY_TYPE_GIT);
-		projs[4].setRepositoryURL("https://allineo@github.com/allineo/AgileHelp.git");
-		// projs[4].setRoot("/trunk/src/");
+		projs[4].setRepositoryType(Project.REPOSITORY_TYPE_SUBVERSION);
+		projs[4].setRepositoryURL("https://agilehelp.googlecode.com/svn");
+		projs[4].setRoot("/trunk/src/");
+		projs[4].setTestRoot("/trunk/test/");
+		projs[4].setDomain("helpagile/client");
+		projs[4].setSpecificationPath("client");
 
 		return projs;
 	}
