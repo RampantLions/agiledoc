@@ -1,9 +1,9 @@
-package sourceagile.server.classRepository.repositoryTest;
+package sourceagile.server.classRepositories.subversionClassRepository.repositoryTest;
 
 import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.client.serverCalls.test.LoadRemoteTestClasses;
-import sourceagile.server.classRepository.RepositoryConnection;
+import sourceagile.server.classRepositories.subversionClassRepository.SubversionRepositoryConnection;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Project;
 import sourceagile.shared.User;
@@ -19,7 +19,7 @@ public class RepositoryClassTestImplementation extends RemoteServiceServlet
 
 		try {
 
-			SVNRepository repository = RepositoryConnection
+			SVNRepository repository = SubversionRepositoryConnection
 					.connectTestRepository(project, user);
 
 			entry = GetRepositoryTestClass.getTestClassFile(repository, entry);
@@ -33,14 +33,15 @@ public class RepositoryClassTestImplementation extends RemoteServiceServlet
 	}
 
 	@Override
-	public void addTestClass(Project project, User user, ClassFile entry) {
+	public void addTestClass(Project project, User user, ClassFile entry,
+			String newSubfolderName) {
 
 		try {
 
-			SVNRepository repository = RepositoryConnection
+			SVNRepository repository = SubversionRepositoryConnection
 					.connectTestRepository(project, user);
 
-			new CreateTestClass(repository, entry);
+			new CreateTestClass(repository, entry, newSubfolderName);
 
 		} catch (Exception e) {
 
