@@ -1,18 +1,19 @@
 package sourceagile.client.serverCalls;
 
 import sourceagile.client.SystemStart;
+import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClasses;
+import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClassesAsync;
 import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.shared.ClassFile;
-import sourceagile.shared.utilities.FileNameGenerator;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class CreateTodoClass {
 
-	private final LoadRemoteClassesAsync remoteFunctions = GWT
-			.create(LoadRemoteClasses.class);
+	private final LoadSubversionRemoteClassesAsync remoteFunctions = GWT
+			.create(LoadSubversionRemoteClasses.class);
 
 	public CreateTodoClass(final ClassFile classFile, final String newSubfolder) {
 
