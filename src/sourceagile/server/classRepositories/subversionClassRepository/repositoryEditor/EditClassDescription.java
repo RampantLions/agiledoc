@@ -13,8 +13,8 @@ import sourceagile.shared.ClassFile;
 
 public class EditClassDescription {
 
-	public EditClassDescription(SVNRepository repository,
-			ClassFile classFile, String classDescription) throws SVNException {
+	public EditClassDescription(SVNRepository repository, ClassFile classFile,
+			String classDescription) throws SVNException {
 
 		Tokenize.getClassArrayIndex(classFile);
 
@@ -69,8 +69,14 @@ public class EditClassDescription {
 			feature = "\n * @" + ClassDocumentation.FEATURE_TAG;
 		}
 
+		String architecture = "";
+		if (classFile.getClassDoc().isArchitecture()) {
+
+			feature = "\n * @" + ClassDocumentation.ARCHITECTURE_TAG;
+		}
+
 		String comment = "\n\n/** \n * " + classDescription + "\n * " + todo
-				+ feature + " \n */";
+				+ feature + architecture + " \n */";
 
 		return comment;
 	}
