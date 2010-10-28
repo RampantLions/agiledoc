@@ -16,12 +16,19 @@ public class GetRepositoryTestClass {
 
 		ClassFile entryTest = new ClassFile();
 
+		String className = entry.getClassDoc().getClassName() + "Test.java";
+
+		entryTest.setFileName(className);
+
 		entryTest.setFilePath(entry.getFilePath());
 
-		entryTest.setFileName(entry.getClassDoc().getClassName() + "Test.java");
+		String classPath = entryTest.getFileName();
 
-		String classPath = entryTest.getFilePath() + "/"
-				+ entryTest.getFileName();
+		if (!(entryTest.getFilePath() == null || entryTest.getFilePath()
+				.length() == 0)) {
+
+			classPath = entryTest.getFilePath() + "/" + entryTest.getFileName();
+		}
 
 		ByteArrayOutputStream baos = GetRepositoryClass.getRemoteClass(
 				repository, classPath);
