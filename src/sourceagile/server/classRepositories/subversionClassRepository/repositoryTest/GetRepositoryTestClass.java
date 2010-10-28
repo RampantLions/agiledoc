@@ -1,4 +1,4 @@
-package sourceagile.server.classRepository.repositoryTest;
+package sourceagile.server.classRepositories.subversionClassRepository.repositoryTest;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.server.classRepository.repositoryLoader.GetRepositoryClass;
+import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.GetRepositoryClass;
 import sourceagile.shared.ClassFile;
 
 public class GetRepositoryTestClass {
