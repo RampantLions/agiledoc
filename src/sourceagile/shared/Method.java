@@ -10,6 +10,8 @@ public class Method implements Serializable {
 
 	private String spacedName;
 
+	private String modifiers;
+
 	private String returnType;
 
 	private String parameters;
@@ -22,6 +24,14 @@ public class Method implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getModifiers() {
+		return modifiers;
+	}
+
+	public void setModifiers(String modifiers) {
+		this.modifiers = modifiers;
 	}
 
 	public String getReturnType() {
