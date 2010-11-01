@@ -47,6 +47,7 @@ public class GetClassMethods {
 
 			meths[i].setName(met.name());
 			meths[i].setSpacedName(FeatureNameGenerator.spacedName(met.name()));
+			meths[i].setModifiers(met.modifiers());
 			meths[i].setReturnType(met.returnType().toString());
 			meths[i].setParameters(getParameterString(met.parameters()));
 			meths[i].setDescription(met.commentText());
