@@ -8,6 +8,14 @@ import sourceagile.shared.ClassFile;
 
 public class AddTodoClass {
 
+	public static final String PACKAGE = "package";
+	public static final String PUBLIC = "public";
+	public static final String CLASS = "class";
+	public static final String EXTENDS = "extends";
+	public static final String STATIC = "static";
+	public static final String VOID = "void";
+	public static final String NEW = "new";
+
 	public AddTodoClass(SVNRepository repository, ClassFile classFile,
 			String newSubfolderName) throws SVNException {
 
@@ -33,13 +41,13 @@ public class AddTodoClass {
 			packName = packName + "." + newSubfolderName;
 		}
 
-		String classPackage = "package " + packName + ";\n" + "\n";
+		String classPackage = PACKAGE + " " + packName + ";\n" + "\n";
 
 		String classDescription = "/** \n" + "* "
 				+ classFile.getClassDoc().getDescription() + " \n" + "* \n"
 				+ "* @" + ClassDocumentation.TODO_TAG + " \n" + "*/\n";
 
-		String className = "public class "
+		String className = PUBLIC + " " + CLASS + " "
 				+ classFile.getClassDoc().getClassName() + " {\n" + "\n"
 				+ "}\n";
 
