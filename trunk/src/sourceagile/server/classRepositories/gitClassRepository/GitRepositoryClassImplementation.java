@@ -1,10 +1,5 @@
 package sourceagile.server.classRepositories.gitClassRepository;
 
-import java.io.File;
-import java.io.IOException;
-
-import org.eclipse.jgit.storage.file.FileRepository;
-
 import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClasses;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Project;
@@ -21,19 +16,20 @@ public class GitRepositoryClassImplementation extends RemoteServiceServlet
 
 		ClassFile[] entries = null;
 
-		try {
-
-			FileRepository repository = new FileRepository(
-					"git@github.com:allineo/AgileHelp.git");
-
-			String branch = repository.getBranch();
-			File repositoryRoot = repository.getWorkTree();
-			repository.getWorkTree();
-
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		/*
+		 * try {
+		 * 
+		 * 
+		 * FileRepository repository = new FileRepository(
+		 * "git@github.com:allineo/AgileHelp.git");
+		 * 
+		 * String branch = repository.getBranch(); File repositoryRoot =
+		 * repository.getWorkTree(); repository.getWorkTree();
+		 * 
+		 * 
+		 * } catch (IOException e) { // TODO Auto-generated catch block
+		 * e.printStackTrace(); }
+		 */
 
 		/*
 		 * 
