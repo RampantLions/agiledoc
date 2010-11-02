@@ -53,15 +53,21 @@ public class CreateTestClass {
 
 		for (Method method : methods) {
 
-			String nameTestMethod = "test"
-					+ (method.getName().substring(0, 1)).toUpperCase()
-					+ method.getName().substring(1);
+			if (method.getModifiers().contains(AddTodoClass.PUBLIC)) {
 
-			String methodDeclaration = "\t" + AddTodoClass.PUBLIC + " "
-					+ AddTodoClass.VOID + " " + nameTestMethod + "() { \n"
-					+ getClassDeclaration(classFile, method) + " \n\t}\n\n";
+				String nameTestMethod = "test"
+						+ (method.getName().substring(0, 1)).toUpperCase()
+						+ method.getName().substring(1);
 
-			methodsDeclarations += methodDeclaration;
+				String methodDeclaration = "\t" + AddTodoClass.PUBLIC + " "
+						+ AddTodoClass.VOID + " " + nameTestMethod + "() { \n"
+						+ getClassDeclaration(classFile, method);
+
+				String assertCommand = "\n\n\t\t" + "assertTrue(true)" + ";";
+
+				methodsDeclarations += methodDeclaration + assertCommand
+						+ "\n\t}\n\n";
+			}
 		}
 
 		return methodsDeclarations;
@@ -84,7 +90,7 @@ public class CreateTestClass {
 				String parameterName = splitedParameters[i + 1];
 
 				parametersComments += "\n\t\t// " + parameterType + " "
-						+ parameterName;
+						+ parameterName + ";\n";
 
 				parametersDeclaration += parameterName;
 			}
