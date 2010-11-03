@@ -26,5 +26,4 @@ Source Agile is a new technology for your software, clarifying the darkness of p
 
 = Requirements =
 
-[Ubiquitous Language]
-http://domaindrivendesign.org/node/132
+Ubiquitous Language - http://domaindrivendesign.org/node/132
