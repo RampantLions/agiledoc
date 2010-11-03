@@ -1,7 +1,7 @@
 package sourceagile.client.userFeatures.planning.TodoClasses;
 
 import sourceagile.client.serverCalls.CreateTodoClass;
-import sourceagile.client.serverCalls.test.AddTestClass;
+import sourceagile.client.serverCalls.testClasses.AddTestClass;
 import sourceagile.client.systemNavigation.FormField;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.shared.ClassDocumentation;
