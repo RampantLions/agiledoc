@@ -1,6 +1,6 @@
 package sourceagile.client.userFeatures.testing;
 
-import sourceagile.client.serverCalls.test.AddTestClass;
+import sourceagile.client.serverCalls.testClasses.AddTestClass;
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizualizationPanel;
 import sourceagile.client.userFeatures.documentation.features.FeatureDescription;
@@ -64,8 +64,6 @@ public class TestClassDescription extends VerticalPanel {
 
 				Specification.featureVisualizationPanel.clear();
 				Specification.featureVisualizationPanel.add(new LoadingPanel());
-
-				entry.setFeature(null);
 
 				new AddTestClass(entry);
 			}
