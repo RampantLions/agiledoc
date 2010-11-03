@@ -14,12 +14,12 @@ Does your source code lack knowledge? Is it a multiple lined mess that just does
 
 *The Advantages...*
 
-  *Less risk of miscommunication
-  *Faster Communication
-  *Knowledge of domain resides in codebase
-  *Overhearing (sit together)
-  *Code is easier to understand (maintainable, extensible)
-  *Healthier code allows team to respond to change
+  * Less risk of miscommunication
+  * Faster Communication
+  * Knowledge of domain resides in codebase
+  * Overhearing (sit together)
+  * Code is easier to understand (maintainable, extensible)
+  * Healthier code allows team to respond to change
 
 *Very Important*
 *Ubiquitous Language and Decoupling*
