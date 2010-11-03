@@ -1,6 +1,6 @@
 package sourceagile.client.userFeatures.documentation.classViewOptions;
 
-import sourceagile.client.serverCalls.test.GetRemoteTestClass;
+import sourceagile.client.serverCalls.testClasses.GetRemoteTestClass;
 import sourceagile.client.userFeatures.documentation.features.FeatureDescription;
 import sourceagile.client.userFeatures.documentation.features.FeatureEdit;
 import sourceagile.client.userFeatures.source.JavadocView;
