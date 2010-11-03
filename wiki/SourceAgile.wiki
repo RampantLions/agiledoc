@@ -3,6 +3,8 @@
  "Getting the most of your source code"
 
 
+
+
 = Introduction =
 
 We understand each other
@@ -10,6 +12,8 @@ We understand each other
 Software development is by its nature a series of translations and compromises. What the end user wants, what the customer is willing to pay for, and what is technically feasible rarely combine to form a unified set of features. 
 
 Source Agile software explore how an Agile team can work to understand each other better, in particular at the communication divide between stakeholders and developers. It will show you how to develop a domain-specific ubiquitous language, how to lessen the responsibility gap between managers and developers, and how to use your codebase as the central source for documentation.
+
+
 
 
 
