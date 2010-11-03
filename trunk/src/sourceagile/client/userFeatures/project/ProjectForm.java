@@ -77,6 +77,7 @@ public class ProjectForm extends VerticalPanel {
 
 				Project proj = new Project();
 
+				proj.setRepositoryType(Project.REPOSITORY_TYPE_SUBVERSION);
 				proj.setName(name.getValue());
 				proj.setRepositoryURL(url.getValue());
 				proj.setRoot(root.getValue());
