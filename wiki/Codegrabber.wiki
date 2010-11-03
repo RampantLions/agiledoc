@@ -8,9 +8,9 @@ Does your source code lack knowledge? Is it a multiple lined mess that just does
 
 *The Hypotheses*
 
-  *Source Code as Live Documentation
-  *Source Code as Communication Channel
-  *Source Code as Software Metrics
+  * Source Code as Live Documentation
+  * Source Code as Communication Channel
+  * Source Code as Software Metrics
 
 *The Advantages...*
 
@@ -25,15 +25,15 @@ Does your source code lack knowledge? Is it a multiple lined mess that just does
 *Ubiquitous Language and Decoupling*
 
 *u-biq-ui-tous*
-  *Adjective: Present, appearing, or found everywhere.
-  *Synonyms: omnipresent
-   *(dictionary.com)
+  * Adjective: Present, appearing, or found everywhere.
+  * Synonyms: omnipresent
+   * (dictionary.com)
 
 *UBIQUITOUS LANGUAGE*
-  *A language structured around the domain model and used by all team members to connect all the activities of the team with the software.
+  * A language structured around the domain model and used by all team members to connect all the activities of the team with the software.
     (Excerpted from Domain-Driven Design by Eric Evans)
 
-  *We understand each other.
+  * We understand each other.
      (Excerpted from The Agile Development by James Shore and Shane Warden, Published by O'Reilly. Copyright 2008 the authors. All rights reserved.)
 
 
