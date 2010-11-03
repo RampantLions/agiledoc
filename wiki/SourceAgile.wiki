@@ -22,3 +22,9 @@ Source Agile software explore how an Agile team can work to understand each othe
 Does your source code lack knowledge? Is it a multiple lined mess that just doesn't make any sense to anyone, even possibly you? If you or one of your employees left work now, would others be able to make sense of it? 
 
 Source Agile is a new technology for your software, clarifying the darkness of programming into an easy to use to read, step by step summary of the content. Just program well and let Source Agile do the rest.
+
+
+= Requirements =
+
+[Ubiquitous Language]
+http://domaindrivendesign.org/node/132
