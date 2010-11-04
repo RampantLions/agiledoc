@@ -16,6 +16,7 @@ public class ProjectsData {
 		projs[0].setTestRoot("/trunk/test/");
 		projs[0].setDomain("sourceagile/client");
 		projs[0].setSpecificationPath("userFeatures");
+		projs[0].setWiki("http://code.google.com/p/agiledoc/wiki/SourceAgile");
 
 		projs[1] = new Project();
 		projs[1].setName("Source Agile Server Side");
@@ -32,7 +33,7 @@ public class ProjectsData {
 		projs[2].setRoot("/trunk/src/");
 		projs[2].setTestRoot("/trunk/test/");
 		projs[2].setDomain("tictactoe");
-		projs[2].setSpecificationPath("client/userFeatures");
+		projs[2].setSpecificationPath("client/userInterface");
 		projs[2].setWiki("http://en.wikipedia.org/wiki/Tic-tac-toe");
 
 		projs[3] = new Project();
@@ -47,8 +48,8 @@ public class ProjectsData {
 		projs[4].setRepositoryURL("https://agilehelp.googlecode.com/svn");
 		projs[4].setRoot("/trunk/src/");
 		projs[4].setTestRoot("/trunk/test/");
-		projs[4].setDomain("helpagile/client");
-		projs[4].setSpecificationPath("client");
+		projs[4].setDomain("helpagile");
+		projs[4].setSpecificationPath("client/userInterface");
 
 		return projs;
 	}
