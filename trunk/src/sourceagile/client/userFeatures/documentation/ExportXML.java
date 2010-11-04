@@ -58,7 +58,12 @@ public class ExportXML {
 				if (entry.getFilePath().startsWith(specificationPath)) {
 
 					featurePath = entry.getFilePath().substring(
-							specificationPath.length() + 1);
+							specificationPath.length());
+
+					if (featurePath.length() > 0) {
+
+						featurePath = featurePath.substring(1);
+					}
 				}
 
 				entryElement.appendChild(getElement(xmlDocument, FEATURE_PATH,
