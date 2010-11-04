@@ -3,7 +3,6 @@ package sourceagile.client.serverCalls;
 import sourceagile.client.SystemStart;
 import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClasses;
 import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClassesAsync;
-import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.shared.ClassFile;
 
@@ -34,8 +33,11 @@ public class CreateTodoClass {
 											+ "." + newSubfolder);
 						}
 
-						new GetRemoteClass(classFile,
-								OptionsIcons.OPTION_DESCRIPTION);
+						// new GetRemoteClass(classFile,
+						// OptionsIcons.OPTION_DESCRIPTION);
+
+						new ProjectInitialization(
+								ProjectInitialization.currentProject);
 					}
 
 					public void onFailure(Throwable caught) {

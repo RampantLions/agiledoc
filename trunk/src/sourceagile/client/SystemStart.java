@@ -1,6 +1,6 @@
 package sourceagile.client;
 
-import helpagile.client.HelpAgile;
+import helpagile.client.HelpAgileExport;
 import sourceagile.client.authentication.Login;
 import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.shared.User;
@@ -20,7 +20,7 @@ public class SystemStart implements EntryPoint {
 
 	public void onModuleLoad() {
 
-		HelpAgile.initHelp("/help/SourceAgileSpecification.xml");
+		HelpAgileExport.initHelp("/help/SourceAgileSpecification.xml");
 
 		RootPanel.get().clear();
 		RootPanel.get().add(new Login());

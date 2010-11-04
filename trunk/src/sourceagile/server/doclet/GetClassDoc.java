@@ -62,12 +62,18 @@ public class GetClassDoc {
 
 				if (classDoc.tags(ClassDocumentation.FEATURE_TAG).length > 0) {
 
-					classDocumentation.setFeature(true);
-				}
-				
-				if (classDoc.tags(ClassDocumentation.ARCHITECTURE_TAG).length > 0) {
+					classDocumentation
+							.setTagType(ClassDocumentation.FEATURE_TAG);
 
-					classDocumentation.setArchitecture(true);
+				} else if (classDoc.tags(ClassDocumentation.ARCHITECTURE_TAG).length > 0) {
+
+					classDocumentation
+							.setTagType(ClassDocumentation.ARCHITECTURE_TAG);
+
+				} else if (classDoc.tags(ClassDocumentation.ENTITY_TAG).length > 0) {
+
+					classDocumentation
+							.setTagType(ClassDocumentation.ENTITY_TAG);
 				}
 
 				classDocumentation.setImports(imports);

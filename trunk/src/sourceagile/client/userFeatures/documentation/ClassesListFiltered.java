@@ -14,15 +14,16 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * @feature
  */
-public class ArchitectureList extends VerticalPanel {
+public class ClassesListFiltered extends VerticalPanel {
 
-	public ArchitectureList(ClassFile[] entries) {
+	public ClassesListFiltered(ClassFile[] entries, String tagType) {
 
 		this.setSpacing(20);
 
 		for (final ClassFile entry : entries) {
 
-			if (entry.getClassDoc().isArchitecture()) {
+			if (entry.getClassDoc().getTagType() != null
+					&& entry.getClassDoc().getTagType().equals(tagType)) {
 
 				String name = "<br><B>" + entry.getFeature().getFeatureName()
 						+ "</B> ";
