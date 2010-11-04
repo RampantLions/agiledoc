@@ -1,9 +1,10 @@
 package sourceagile.client.systemNavigation;
 
-import helpagile.client.visualizationWidgets.HelpIcon;
+import helpagile.client.visualizationWidgets.HelpHint;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
@@ -24,7 +25,7 @@ public class SystemOptions extends HorizontalPanel {
 
 		this.add(getSearchIcon());
 
-		this.add(new HelpIcon());
+		this.add(HelpIcon("SourceAgileSpecification.xml"));
 	}
 
 	public static Image getSearchIcon() {
@@ -42,6 +43,28 @@ public class SystemOptions extends HorizontalPanel {
 		});
 
 		return img;
+	}
+
+	public Image HelpIcon(final String helpFile) {
+
+		Image helpIcon = new Image();
+
+		helpIcon.setUrl("images/help.jpg");
+
+		helpIcon.setTitle(HelpHint.getHelpHint(this.getClass()));
+
+		helpIcon.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				Window.open(
+						"http://helpagile.appspot.com/?xmlFile=" + helpFile,
+						"_blank", "width=1000 height=600");
+			}
+		});
+
+		return helpIcon;
 	}
 
 }
