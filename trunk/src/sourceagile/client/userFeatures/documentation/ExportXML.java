@@ -22,6 +22,7 @@ public class ExportXML {
 
 	private static final String SPECIFICATION = "specification";
 	private static final String FEATURE = "feature";
+	private static final String FEATURE_PATH = "featurePath";
 	private static final String FEATURE_NAME = "featureName";
 	private static final String FEATURE_DESCRIPTION = "featureDescription";
 
@@ -37,6 +38,9 @@ public class ExportXML {
 		Element entriesElement = getEntriesElement(xmlDocument);
 		xmlDocument.appendChild(entriesElement);
 
+		String specificationPath = ProjectInitialization.currentProject
+				.getSpecificationPath();
+
 		for (ClassFile entry : ProjectInitialization.projectEntries) {
 
 			if (!entry.getClassDoc().isTodo()) {
@@ -48,6 +52,16 @@ public class ExportXML {
 
 				entryElement.appendChild(getElement(xmlDocument, CLASS_PATH,
 						entry.getClassDoc().getClassPackage()));
+
+				String featurePath = "";
+				if (entry.getFilePath().startsWith(specificationPath)) {
+
+					featurePath = entry.getFilePath().substring(
+							specificationPath.length());
+				}
+
+				entryElement.appendChild(getElement(xmlDocument, FEATURE_PATH,
+						featurePath));
 
 				entryElement.appendChild(getElement(xmlDocument, FEATURE_NAME,
 						entry.getFeature().getFeatureName()));
