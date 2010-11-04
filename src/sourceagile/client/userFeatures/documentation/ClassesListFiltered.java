@@ -2,6 +2,7 @@ package sourceagile.client.userFeatures.documentation;
 
 import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
 import sourceagile.client.userFeatures.documentation.specification.Specification;
+import sourceagile.client.userFeatures.documentation.specification.SpecificationList;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -18,7 +19,7 @@ public class ClassesListFiltered extends VerticalPanel {
 
 	public ClassesListFiltered(ClassFile[] entries, String tagType) {
 
-		this.setSpacing(20);
+		this.add(SpecificationList.typeHeader(tagType));
 
 		for (final ClassFile entry : entries) {
 
