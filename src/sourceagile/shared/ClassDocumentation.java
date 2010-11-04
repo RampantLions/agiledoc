@@ -12,6 +12,8 @@ public class ClassDocumentation implements Serializable {
 
 	public static final String ARCHITECTURE_TAG = "architecture";
 
+	public static final String ENTITY_TAG = "entity";
+
 	private String className;
 
 	private String classPackage;
@@ -32,9 +34,7 @@ public class ClassDocumentation implements Serializable {
 
 	private boolean todo;
 
-	private boolean feature;
-	
-	private boolean architecture;
+	private String tagType;
 
 	public String getClassName() {
 		return className;
@@ -116,22 +116,12 @@ public class ClassDocumentation implements Serializable {
 		this.todo = todo;
 	}
 
-	public boolean isFeature() {
-		return feature;
+	public String getTagType() {
+		return tagType;
 	}
 
-	public void setFeature(boolean feature) {
-		this.feature = feature;
+	public void setTagType(String tagType) {
+		this.tagType = tagType;
 	}
-
-	public boolean isArchitecture() {
-		return architecture;
-	}
-
-	public void setArchitecture(boolean architecture) {
-		this.architecture = architecture;
-	}
-	
-	
 
 }

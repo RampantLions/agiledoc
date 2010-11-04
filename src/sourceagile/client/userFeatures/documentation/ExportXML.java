@@ -1,6 +1,7 @@
 package sourceagile.client.userFeatures.documentation;
 
 import sourceagile.client.userFeatures.project.ProjectInitialization;
+import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Method;
 
@@ -57,7 +58,7 @@ public class ExportXML {
 				if (entry.getFilePath().startsWith(specificationPath)) {
 
 					featurePath = entry.getFilePath().substring(
-							specificationPath.length());
+							specificationPath.length() + 1);
 				}
 
 				entryElement.appendChild(getElement(xmlDocument, FEATURE_PATH,
@@ -109,8 +110,15 @@ public class ExportXML {
 
 		Element entryElement = xmlDocument.createElement(ENTRY);
 
-		entryElement.setAttribute(FEATURE,
-				String.valueOf(entry.getClassDoc().isFeature()));
+		boolean featureTag = false;
+		if (entry.getClassDoc().getTagType() != null
+				&& entry.getClassDoc().getTagType()
+						.equals(ClassDocumentation.FEATURE_TAG)) {
+
+			featureTag = true;
+		}
+
+		entryElement.setAttribute(FEATURE, String.valueOf(featureTag));
 
 		entryElement.setAttribute(
 				SPECIFICATION,

@@ -2,6 +2,7 @@ package sourceagile.client.userFeatures.documentation.features;
 
 import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
 import sourceagile.client.userFeatures.documentation.specification.Specification;
+import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -22,7 +23,9 @@ public class FeaturesList extends VerticalPanel {
 
 		for (final ClassFile entry : entries) {
 
-			if (entry.getClassDoc().isFeature()) {
+			if (entry.getClassDoc().getTagType() != null
+					&& entry.getClassDoc().getTagType()
+							.equals(ClassDocumentation.FEATURE_TAG)) {
 
 				String name = "<br><B>" + entry.getFeature().getFeatureName()
 						+ "</B> ";
@@ -32,10 +35,10 @@ public class FeaturesList extends VerticalPanel {
 
 				String planning = "";
 				if (entry.getClassDoc().isTodo()) {
-					
+
 					planning = " <font color='blue'>(Planning)</blue> ";
 				}
-				
+
 				HTML html = new HTML(name + description + planning);
 
 				html.addClickHandler(new ClickHandler() {

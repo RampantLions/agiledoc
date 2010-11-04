@@ -1,6 +1,7 @@
 package sourceagile.client.userFeatures.productivity;
 
 import sourceagile.client.userFeatures.project.ProjectInitialization;
+import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Productivity;
 
@@ -64,7 +65,9 @@ public class CurrentProductivityColumnsChart extends VerticalPanel {
 								.getToDoCount() + 1);
 			}
 
-			if (entry.getClassDoc().isFeature()) {
+			if (entry.getClassDoc().getTagType() != null
+					&& entry.getClassDoc().getTagType()
+							.equals(ClassDocumentation.FEATURE_TAG)) {
 
 				ProjectInitialization.projectTotals
 						.setFeatureCount(ProjectInitialization.projectTotals

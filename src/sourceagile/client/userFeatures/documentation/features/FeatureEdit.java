@@ -27,8 +27,7 @@ public class FeatureEdit extends VerticalPanel {
 
 	private TextArea classDescription = new TextArea();
 	private CheckBox isTodo = new CheckBox(" To Do");
-	private CheckBox isFeature = new CheckBox(" Feature");
-	private CheckBox isArchitecture = new CheckBox(" Architecture");
+	private ClassTypeList classTypeList;
 
 	public FeatureEdit(ClassFile entry) {
 
@@ -61,13 +60,14 @@ public class FeatureEdit extends VerticalPanel {
 		hp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
 		hp.setSpacing(20);
 
+		classTypeList = new ClassTypeList(classDoc.getTagType());
+
+		hp.add(new Label("Type:"));
+		hp.add(classTypeList);
+
 		isTodo.setValue(classDoc.isTodo());
-		isFeature.setValue(classDoc.isFeature());
-		isArchitecture.setValue(classDoc.isArchitecture());
 
 		hp.add(isTodo);
-		hp.add(isFeature);
-		hp.add(isArchitecture);
 
 		return hp;
 	}
@@ -119,8 +119,16 @@ public class FeatureEdit extends VerticalPanel {
 			public void onClick(ClickEvent event) {
 
 				classFile.getClassDoc().setTodo(isTodo.getValue());
-				classFile.getClassDoc().setFeature(isFeature.getValue());
-				classFile.getClassDoc().setArchitecture(isArchitecture.getValue());
+
+				String classType = classTypeList.getValue(classTypeList
+						.getSelectedIndex());
+
+				if (classType.length() == 0) {
+
+					classType = null;
+				}
+
+				classFile.getClassDoc().setTagType(classType);
 
 				new EditClass(classFile, classDescription.getValue());
 			}

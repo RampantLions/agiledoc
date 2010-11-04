@@ -63,20 +63,29 @@ public class EditClassDescription {
 			todo = "\n * @" + ClassDocumentation.TODO_TAG;
 		}
 
-		String feature = "";
-		if (classFile.getClassDoc().isFeature()) {
+		String tagType = "";
 
-			feature = "\n * @" + ClassDocumentation.FEATURE_TAG;
-		}
+		if (classFile.getClassDoc().getTagType() != null) {
 
-		String architecture = "";
-		if (classFile.getClassDoc().isArchitecture()) {
+			if (classFile.getClassDoc().getTagType()
+					.equals(ClassDocumentation.FEATURE_TAG)) {
 
-			feature = "\n * @" + ClassDocumentation.ARCHITECTURE_TAG;
+				tagType = "\n * @" + ClassDocumentation.FEATURE_TAG;
+
+			} else if (classFile.getClassDoc().getTagType()
+					.equals(ClassDocumentation.ARCHITECTURE_TAG)) {
+
+				tagType = "\n * @" + ClassDocumentation.ARCHITECTURE_TAG;
+
+			} else if (classFile.getClassDoc().getTagType()
+					.equals(ClassDocumentation.ENTITY_TAG)) {
+
+				tagType = "\n * @" + ClassDocumentation.ENTITY_TAG;
+			}
 		}
 
 		String comment = "\n\n/** \n * " + classDescription + "\n * " + todo
-				+ feature + architecture + " \n */";
+				+ tagType + " \n */";
 
 		return comment;
 	}

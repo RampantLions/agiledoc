@@ -3,9 +3,9 @@ package sourceagile.client.userFeatures.documentation;
 import sourceagile.client.SystemStart;
 import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
 import sourceagile.client.userFeatures.documentation.features.FeaturesList;
-import sourceagile.client.userFeatures.documentation.specification.AllClassesSpecificationList;
 import sourceagile.client.userFeatures.documentation.specification.Specification;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
+import sourceagile.shared.ClassDocumentation;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -104,11 +104,26 @@ public class Documentation {
 			public void onClick(ClickEvent event) {
 
 				documentationPanel.clear();
-				documentationPanel.add(new ArchitectureList(
-						ProjectInitialization.projectEntries));
+				documentationPanel.add(new ClassesListFiltered(
+						ProjectInitialization.projectEntries,
+						ClassDocumentation.ARCHITECTURE_TAG));
 			}
 		});
 		vp.add(linkArchitecture);
+
+		Anchor linkEntities = new Anchor("Entities");
+		linkEntities.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				documentationPanel.clear();
+				documentationPanel.add(new ClassesListFiltered(
+						ProjectInitialization.projectEntries,
+						ClassDocumentation.ENTITY_TAG));
+			}
+		});
+		vp.add(linkEntities);
 
 		Anchor linkExportXML = new Anchor("Export XML");
 		linkExportXML.addClickHandler(new ClickHandler() {
