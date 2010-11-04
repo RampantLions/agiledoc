@@ -4,6 +4,7 @@ import sourceagile.client.SystemStart;
 import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
 import sourceagile.client.userFeatures.documentation.features.FeaturesList;
 import sourceagile.client.userFeatures.documentation.specification.Specification;
+import sourceagile.client.userFeatures.documentation.specification.SpecificationList;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.shared.ClassDocumentation;
 
@@ -28,14 +29,13 @@ public class Documentation {
 		HorizontalPanel hp = new HorizontalPanel();
 
 		documentationMenu.clear();
-		documentationMenu.setSize("350px", "100%");
+		documentationMenu.setSize("300px", "100%");
 
 		hp.add(documentationMenu);
 
 		documentationMenu.add(showDocumentationMenu());
 
 		documentationPanel.clear();
-		documentationPanel.setSpacing(20);
 		hp.add(documentationPanel);
 
 		vp.add(hp);
@@ -79,7 +79,9 @@ public class Documentation {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new Specification();
+				documentationPanel.clear();
+				documentationPanel.add(new SpecificationList(
+						ProjectInitialization.projectEntries));
 			}
 		});
 		vp.add(linkSpecification);
