@@ -20,7 +20,7 @@ public class SystemStart implements EntryPoint {
 
 	public void onModuleLoad() {
 
-		HelpAgileExport.initHelp("/help/SourceAgileSpecification.xml");
+		HelpAgileExport.initHelp("SourceAgileSpecification.xml");
 
 		RootPanel.get().clear();
 		RootPanel.get().add(new Login());
