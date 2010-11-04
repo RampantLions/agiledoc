@@ -3,6 +3,7 @@
 	<entry feature="false" specification="false">
 		<className>SystemStart</className>
 		<classPath>sourceagile.client</classPath>
+		<featurePath></featurePath>
 		<featureName>System Start</featureName>
 		<featureDescription>Show the first page of the system.
 		</featureDescription>
@@ -16,6 +17,7 @@
 	<entry feature="false" specification="false">
 		<className>Login</className>
 		<classPath>sourceagile.client.authentication</classPath>
+		<featurePath></featurePath>
 		<featureName>Login</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -28,6 +30,7 @@
 	<entry feature="false" specification="false">
 		<className>ProjectList</className>
 		<classPath>sourceagile.client.authentication</classPath>
+		<featurePath></featurePath>
 		<featureName>Project List</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -35,212 +38,15 @@
 	<entry feature="false" specification="false">
 		<className>UsersList</className>
 		<classPath>sourceagile.client.authentication</classPath>
+		<featurePath></featurePath>
 		<featureName>Users List</featureName>
 		<featureDescription></featureDescription>
 		<methods />
 	</entry>
 	<entry feature="false" specification="false">
-		<className>Help</className>
-		<classPath>sourceagile.client.help</classPath>
-		<featureName>Help</featureName>
-		<featureDescription>Instructions for the application functions while
-			using the it, to try solve user problems.</featureDescription>
-		<methods>
-			<method>
-				<methodName>showDocumentationMenu</methodName>
-				<methodDescription></methodDescription>
-			</method>
-		</methods>
-	</entry>
-	<entry feature="false" specification="false">
-		<className>HelpEntry</className>
-		<classPath>sourceagile.client.help</classPath>
-		<featureName>Help Entry</featureName>
-		<featureDescription></featureDescription>
-		<methods>
-			<method>
-				<methodName>getFilePath</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>setFilePath</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>getFileName</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>setFileName</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>isFeature</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>setFeature</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>isSpecification</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>setSpecification</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>getFeatureName</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>setFeatureName</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>getFeatureDescription</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>setFeatureDescription</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>getMethods</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>setMethods</methodName>
-				<methodDescription></methodDescription>
-			</method>
-		</methods>
-	</entry>
-	<entry feature="false" specification="false">
-		<className>HelpHint</className>
-		<classPath>sourceagile.client.help</classPath>
-		<featureName>Help Hint</featureName>
-		<featureDescription></featureDescription>
-		<methods>
-			<method>
-				<methodName>getHelpHint</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>getHelpHint</methodName>
-				<methodDescription></methodDescription>
-			</method>
-		</methods>
-	</entry>
-	<entry feature="false" specification="false">
-		<className>HelpIcon</className>
-		<classPath>sourceagile.client.help</classPath>
-		<featureName>Help Icon</featureName>
-		<featureDescription>Open a window with the help instructions for this
-			application.</featureDescription>
-		<methods />
-	</entry>
-	<entry feature="false" specification="false">
-		<className>HelpMethod</className>
-		<classPath>sourceagile.client.help</classPath>
-		<featureName>Help Method</featureName>
-		<featureDescription></featureDescription>
-		<methods>
-			<method>
-				<methodName>getName</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>setName</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>getReturnType</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>setReturnType</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>getParameters</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>setParameters</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>getSpacedName</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>setSpacedName</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>getDescription</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>setDescription</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>toString</methodName>
-				<methodDescription></methodDescription>
-			</method>
-		</methods>
-	</entry>
-	<entry feature="false" specification="false">
-		<className>LoadSpecificationXML</className>
-		<classPath>sourceagile.client.help</classPath>
-		<featureName>Load Specification</featureName>
-		<featureDescription></featureDescription>
-		<methods>
-			<method>
-				<methodName>loadXMLFile</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>convertHelpHashMap</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
-				<methodName>entryMethods</methodName>
-				<methodDescription></methodDescription>
-			</method>
-		</methods>
-	</entry>
-	<entry feature="false" specification="false">
-		<className>ShowFeaturesList</className>
-		<classPath>sourceagile.client.help</classPath>
-		<featureName>Show Features List</featureName>
-		<featureDescription>List all the features available for the game.
-		</featureDescription>
-		<methods>
-			<method>
-				<methodName>getEntryHTML</methodName>
-				<methodDescription></methodDescription>
-			</method>
-		</methods>
-	</entry>
-	<entry feature="false" specification="false">
-		<className>ShowUserManual</className>
-		<classPath>sourceagile.client.help</classPath>
-		<featureName>Show User Manual</featureName>
-		<featureDescription>List all the help entries available for the game.
-		</featureDescription>
-		<methods>
-			<method>
-				<methodName>entryMethods</methodName>
-				<methodDescription></methodDescription>
-			</method>
-		</methods>
-	</entry>
-	<entry feature="false" specification="false">
 		<className>CreateTodoClass</className>
 		<classPath>sourceagile.client.serverCalls</classPath>
+		<featurePath></featurePath>
 		<featureName>Create Todo Class</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -248,6 +54,7 @@
 	<entry feature="false" specification="false">
 		<className>EditClass</className>
 		<classPath>sourceagile.client.serverCalls</classPath>
+		<featurePath></featurePath>
 		<featureName>Edit Class</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -255,6 +62,7 @@
 	<entry feature="false" specification="false">
 		<className>GetRemoteClass</className>
 		<classPath>sourceagile.client.serverCalls</classPath>
+		<featurePath></featurePath>
 		<featureName>Get Remote Class</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -267,6 +75,7 @@
 	<entry feature="false" specification="false">
 		<className>ListClassesHistory</className>
 		<classPath>sourceagile.client.serverCalls</classPath>
+		<featurePath></featurePath>
 		<featureName>List Classes History</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -274,6 +83,7 @@
 	<entry feature="false" specification="false">
 		<className>ListRemoteClasses</className>
 		<classPath>sourceagile.client.serverCalls</classPath>
+		<featurePath></featurePath>
 		<featureName>List Remote Classes</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -281,6 +91,7 @@
 	<entry feature="false" specification="false">
 		<className>LoadRemoteClasses</className>
 		<classPath>sourceagile.client.serverCalls</classPath>
+		<featurePath></featurePath>
 		<featureName>Load Remote Classes</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -293,10 +104,6 @@
 				<methodDescription></methodDescription>
 			</method>
 			<method>
-				<methodName>createClass</methodName>
-				<methodDescription></methodDescription>
-			</method>
-			<method>
 				<methodName>listHistory</methodName>
 				<methodDescription></methodDescription>
 			</method>
@@ -304,11 +111,16 @@
 				<methodName>editClass</methodName>
 				<methodDescription></methodDescription>
 			</method>
+			<method>
+				<methodName>createClass</methodName>
+				<methodDescription></methodDescription>
+			</method>
 		</methods>
 	</entry>
 	<entry feature="false" specification="false">
 		<className>LoadRemoteClassesAsync</className>
 		<classPath>sourceagile.client.serverCalls</classPath>
+		<featurePath></featurePath>
 		<featureName>Load Remote Classes Async</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -335,23 +147,113 @@
 		</methods>
 	</entry>
 	<entry feature="false" specification="false">
+		<className>LoadGitRemoteClasses</className>
+		<classPath>sourceagile.client.serverCalls.gitRepository</classPath>
+		<featurePath></featurePath>
+		<featureName>Load Git Remote Classes</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>listClasses</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false" specification="false">
+		<className>LoadGitRemoteClassesAsync</className>
+		<classPath>sourceagile.client.serverCalls.gitRepository</classPath>
+		<featurePath></featurePath>
+		<featureName>Load Git Remote Classes Async</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>listClasses</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false" specification="false">
+		<className>LoadSubversionRemoteClasses</className>
+		<classPath>sourceagile.client.serverCalls.subversionRepository
+		</classPath>
+		<featurePath></featurePath>
+		<featureName>Load Subversion Remote Classes</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>getClass</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>listClasses</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>listHistory</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>editClass</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>createClass</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false" specification="false">
+		<className>LoadSubversionRemoteClassesAsync</className>
+		<classPath>sourceagile.client.serverCalls.subversionRepository
+		</classPath>
+		<featurePath></featurePath>
+		<featureName>Load Subversion Remote Classes Async</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>getClass</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>createClass</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>listHistory</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>listClasses</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>editClass</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
+	<entry feature="false" specification="false">
 		<className>AddTestClass</className>
-		<classPath>sourceagile.client.serverCalls.test</classPath>
+		<classPath>sourceagile.client.serverCalls.testClasses</classPath>
+		<featurePath></featurePath>
 		<featureName>Add Test Class</featureName>
 		<featureDescription>Create a Test Class for the new To Do Class that
-			is being created by the user.</featureDescription>
+			is being created by the
+			user.</featureDescription>
 		<methods />
 	</entry>
 	<entry feature="false" specification="false">
 		<className>GetRemoteTestClass</className>
-		<classPath>sourceagile.client.serverCalls.test</classPath>
+		<classPath>sourceagile.client.serverCalls.testClasses</classPath>
+		<featurePath></featurePath>
 		<featureName>Get Remote Test Class</featureName>
 		<featureDescription></featureDescription>
 		<methods />
 	</entry>
 	<entry feature="false" specification="false">
 		<className>LoadRemoteTestClasses</className>
-		<classPath>sourceagile.client.serverCalls.test</classPath>
+		<classPath>sourceagile.client.serverCalls.testClasses</classPath>
+		<featurePath></featurePath>
 		<featureName>Load Remote Test Classes</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -367,7 +269,8 @@
 	</entry>
 	<entry feature="false" specification="false">
 		<className>LoadRemoteTestClassesAsync</className>
-		<classPath>sourceagile.client.serverCalls.test</classPath>
+		<classPath>sourceagile.client.serverCalls.testClasses</classPath>
+		<featurePath></featurePath>
 		<featureName>Load Remote Test Classes Async</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -384,6 +287,7 @@
 	<entry feature="false" specification="false">
 		<className>FormField</className>
 		<classPath>sourceagile.client.systemNavigation</classPath>
+		<featurePath></featurePath>
 		<featureName>Form Field</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -391,6 +295,7 @@
 	<entry feature="false" specification="false">
 		<className>LoadingPanel</className>
 		<classPath>sourceagile.client.systemNavigation</classPath>
+		<featurePath></featurePath>
 		<featureName>Loading Panel</featureName>
 		<featureDescription>Animated image to demonstrate that the system is
 			processing the user request.</featureDescription>
@@ -399,6 +304,7 @@
 	<entry feature="false" specification="false">
 		<className>MainPage</className>
 		<classPath>sourceagile.client.systemNavigation</classPath>
+		<featurePath></featurePath>
 		<featureName>Main Page</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -415,6 +321,7 @@
 	<entry feature="false" specification="false">
 		<className>SystemOptions</className>
 		<classPath>sourceagile.client.systemNavigation</classPath>
+		<featurePath></featurePath>
 		<featureName>System Options</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -423,7 +330,7 @@
 				<methodDescription></methodDescription>
 			</method>
 			<method>
-				<methodName>getHelpIcon</methodName>
+				<methodName>HelpIcon</methodName>
 				<methodDescription></methodDescription>
 			</method>
 		</methods>
@@ -431,6 +338,7 @@
 	<entry feature="false" specification="false">
 		<className>WelcomePage</className>
 		<classPath>sourceagile.client.systemNavigation</classPath>
+		<featurePath></featurePath>
 		<featureName>Welcome Page</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -438,6 +346,7 @@
 	<entry feature="false" specification="false">
 		<className>ButtonDiagnosis</className>
 		<classPath>sourceagile.client.systemNavigation.projectMenu</classPath>
+		<featurePath></featurePath>
 		<featureName>Button Diagnosis</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -445,6 +354,7 @@
 	<entry feature="false" specification="false">
 		<className>ButtonDocumentation</className>
 		<classPath>sourceagile.client.systemNavigation.projectMenu</classPath>
+		<featurePath></featurePath>
 		<featureName>Button Documentation</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -452,6 +362,7 @@
 	<entry feature="false" specification="false">
 		<className>ButtonPlanning</className>
 		<classPath>sourceagile.client.systemNavigation.projectMenu</classPath>
+		<featurePath></featurePath>
 		<featureName>Button Planning</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -459,6 +370,7 @@
 	<entry feature="false" specification="false">
 		<className>ButtonProductivity</className>
 		<classPath>sourceagile.client.systemNavigation.projectMenu</classPath>
+		<featurePath></featurePath>
 		<featureName>Button Productivity</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -466,6 +378,7 @@
 	<entry feature="false" specification="false">
 		<className>ButtonSource</className>
 		<classPath>sourceagile.client.systemNavigation.projectMenu</classPath>
+		<featurePath></featurePath>
 		<featureName>Button Source</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -473,13 +386,24 @@
 	<entry feature="false" specification="false">
 		<className>ProjectMenu</className>
 		<classPath>sourceagile.client.systemNavigation.projectMenu</classPath>
+		<featurePath></featurePath>
 		<featureName>Project Menu</featureName>
 		<featureDescription></featureDescription>
+		<methods />
+	</entry>
+	<entry feature="true" specification="true">
+		<className>ArchitectureList</className>
+		<classPath>sourceagile.client.userFeatures.documentation</classPath>
+		<featurePath>documentation</featurePath>
+		<featureName>Architecture List</featureName>
+		<featureDescription>List all the features assigned for the current
+			project.</featureDescription>
 		<methods />
 	</entry>
 	<entry feature="false" specification="true">
 		<className>Documentation</className>
 		<classPath>sourceagile.client.userFeatures.documentation</classPath>
+		<featurePath>documentation</featurePath>
 		<featureName>Documentation</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -492,6 +416,7 @@
 	<entry feature="false" specification="true">
 		<className>ExportXML</className>
 		<classPath>sourceagile.client.userFeatures.documentation</classPath>
+		<featurePath>documentation</featurePath>
 		<featureName>Export</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -504,7 +429,11 @@
 				<methodDescription></methodDescription>
 			</method>
 			<method>
-				<methodName>getFeaturesElement</methodName>
+				<methodName>getEntriesElement</methodName>
+				<methodDescription></methodDescription>
+			</method>
+			<method>
+				<methodName>getEntryNode</methodName>
 				<methodDescription></methodDescription>
 			</method>
 			<method>
@@ -524,14 +453,21 @@
 	<entry feature="false" specification="true">
 		<className>UserManual</className>
 		<classPath>sourceagile.client.userFeatures.documentation</classPath>
+		<featurePath>documentation</featurePath>
 		<featureName>User Manual</featureName>
 		<featureDescription></featureDescription>
-		<methods />
+		<methods>
+			<method>
+				<methodName>entryMethods</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
 	</entry>
 	<entry feature="false" specification="true">
 		<className>ClassVizualizationPanel</className>
 		<classPath>sourceagile.client.userFeatures.documentation.classViewOptions
 		</classPath>
+		<featurePath>documentation/classViewOptions</featurePath>
 		<featureName>Class Vizualization Panel</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -540,6 +476,7 @@
 		<className>OptionsIcons</className>
 		<classPath>sourceagile.client.userFeatures.documentation.classViewOptions
 		</classPath>
+		<featurePath>documentation/classViewOptions</featurePath>
 		<featureName>Options Icons</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -569,6 +506,7 @@
 		<className>FeatureDescription</className>
 		<classPath>sourceagile.client.userFeatures.documentation.features
 		</classPath>
+		<featurePath>documentation/features</featurePath>
 		<featureName>Feature Description</featureName>
 		<featureDescription>Show the documentation of the class in a
 			specification format.</featureDescription>
@@ -583,7 +521,7 @@
 				<methodDescription></methodDescription>
 			</method>
 			<method>
-				<methodName>featureSteps</methodName>
+				<methodName>featureMethods</methodName>
 				<methodDescription></methodDescription>
 			</method>
 			<method>
@@ -600,6 +538,7 @@
 		<className>FeatureEdit</className>
 		<classPath>sourceagile.client.userFeatures.documentation.features
 		</classPath>
+		<featurePath>documentation/features</featurePath>
 		<featureName>Feature Edit</featureName>
 		<featureDescription>Edit the documentation of the class in a web form.
 		</featureDescription>
@@ -626,15 +565,31 @@
 		<className>FeaturesList</className>
 		<classPath>sourceagile.client.userFeatures.documentation.features
 		</classPath>
+		<featurePath>documentation/features</featurePath>
 		<featureName>Features List</featureName>
 		<featureDescription>List all the features assigned for the current
 			project.</featureDescription>
 		<methods />
 	</entry>
+	<entry feature="false" specification="true">
+		<className>AllClassesSpecificationList</className>
+		<classPath>sourceagile.client.userFeatures.documentation.specification
+		</classPath>
+		<featurePath>documentation/specification</featurePath>
+		<featureName>All Classes Specification List</featureName>
+		<featureDescription></featureDescription>
+		<methods>
+			<method>
+				<methodName>getFeatureLink</methodName>
+				<methodDescription></methodDescription>
+			</method>
+		</methods>
+	</entry>
 	<entry feature="true" specification="true">
 		<className>Specification</className>
 		<classPath>sourceagile.client.userFeatures.documentation.specification
 		</classPath>
+		<featurePath>documentation/specification</featurePath>
 		<featureName>Specification</featureName>
 		<featureDescription>Show all the classes of the current project as a
 			specification format.</featureDescription>
@@ -649,6 +604,7 @@
 		<className>SpecificationItemsList</className>
 		<classPath>sourceagile.client.userFeatures.documentation.specification
 		</classPath>
+		<featurePath>documentation/specification</featurePath>
 		<featureName>Specification Items List</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -661,6 +617,7 @@
 	<entry feature="false" specification="true">
 		<className>PlanningPage</className>
 		<classPath>sourceagile.client.userFeatures.planning</classPath>
+		<featurePath>planning</featurePath>
 		<featureName>Planning Page</featureName>
 		<featureDescription>Show the list of planning tasks.
 		</featureDescription>
@@ -675,10 +632,11 @@
 		<className>AddTodoClass</className>
 		<classPath>sourceagile.client.userFeatures.planning.TodoClasses
 		</classPath>
+		<featurePath>planning/TodoClasses</featurePath>
 		<featureName>Add Todo Class</featureName>
 		<featureDescription>The user can insert a new task in the source code
-			typing the name and description of the task in a web based form page.
-		</featureDescription>
+			typing the name and
+			description of the task in a web based form page.</featureDescription>
 		<methods>
 			<method>
 				<methodName>taskForm</methodName>
@@ -706,6 +664,7 @@
 		<className>FoldersList</className>
 		<classPath>sourceagile.client.userFeatures.planning.TodoClasses
 		</classPath>
+		<featurePath>planning/TodoClasses</featurePath>
 		<featureName>Folders List</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -714,6 +673,7 @@
 		<className>TodoClassesList</className>
 		<classPath>sourceagile.client.userFeatures.planning.TodoClasses
 		</classPath>
+		<featurePath>planning/TodoClasses</featurePath>
 		<featureName>Todo Classes List</featureName>
 		<featureDescription>List all the classes assigned as "To Do" in the
 			current project.</featureDescription>
@@ -740,6 +700,7 @@
 		<className>DeleteTask</className>
 		<classPath>sourceagile.client.userFeatures.planning.projectBacklog
 		</classPath>
+		<featurePath>planning/projectBacklog</featurePath>
 		<featureName>Delete Task</featureName>
 		<featureDescription>Delete the selected task from the project backlog.
 		</featureDescription>
@@ -749,6 +710,7 @@
 		<className>EditTask</className>
 		<classPath>sourceagile.client.userFeatures.planning.projectBacklog
 		</classPath>
+		<featurePath>planning/projectBacklog</featurePath>
 		<featureName>Edit Task</featureName>
 		<featureDescription>Change the task name or description created for
 			the project backlog.</featureDescription>
@@ -758,6 +720,7 @@
 		<className>ProjectBacklog</className>
 		<classPath>sourceagile.client.userFeatures.planning.projectBacklog
 		</classPath>
+		<featurePath>planning/projectBacklog</featurePath>
 		<featureName>Project Backlog</featureName>
 		<featureDescription>List all the planning tasks created for the
 			current project.</featureDescription>
@@ -766,10 +729,11 @@
 	<entry feature="true" specification="true">
 		<className>CurrentProductivityColumnsChart</className>
 		<classPath>sourceagile.client.userFeatures.productivity</classPath>
+		<featurePath>productivity</featurePath>
 		<featureName>Current Productivity Columns Chart</featureName>
 		<featureDescription>Show a Columns Chart with the total amount of
-			tasks, classes and methods in the current project.
-		</featureDescription>
+			tasks, classes and methods in
+			the current project.</featureDescription>
 		<methods>
 			<method>
 				<methodName>countActivity</methodName>
@@ -788,6 +752,7 @@
 	<entry feature="false" specification="true">
 		<className>ProductivityPage</className>
 		<classPath>sourceagile.client.userFeatures.productivity</classPath>
+		<featurePath>productivity</featurePath>
 		<featureName>Productivity Page</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -800,6 +765,7 @@
 	<entry feature="true" specification="true">
 		<className>ProductivityTimelineChart</className>
 		<classPath>sourceagile.client.userFeatures.productivity</classPath>
+		<featurePath>productivity</featurePath>
 		<featureName>Productivity Timeline Chart</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -816,6 +782,7 @@
 	<entry feature="true" specification="true">
 		<className>VelocityTimelineChart</className>
 		<classPath>sourceagile.client.userFeatures.productivity</classPath>
+		<featurePath>productivity</featurePath>
 		<featureName>Velocity Timeline Chart</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -832,6 +799,7 @@
 	<entry feature="false" specification="true">
 		<className>ProjectChanger</className>
 		<classPath>sourceagile.client.userFeatures.project</classPath>
+		<featurePath>project</featurePath>
 		<featureName>Project Changer</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -839,6 +807,7 @@
 	<entry feature="false" specification="true">
 		<className>ProjectForm</className>
 		<classPath>sourceagile.client.userFeatures.project</classPath>
+		<featurePath>project</featurePath>
 		<featureName>Project Form</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -851,6 +820,7 @@
 	<entry feature="false" specification="true">
 		<className>ProjectInitialization</className>
 		<classPath>sourceagile.client.userFeatures.project</classPath>
+		<featurePath>project</featurePath>
 		<featureName>Project Initialization</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -858,6 +828,7 @@
 	<entry feature="false" specification="true">
 		<className>ProjectName</className>
 		<classPath>sourceagile.client.userFeatures.project</classPath>
+		<featurePath>project</featurePath>
 		<featureName>Project Name</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -865,6 +836,7 @@
 	<entry feature="false" specification="true">
 		<className>ProjectSelection</className>
 		<classPath>sourceagile.client.userFeatures.project</classPath>
+		<featurePath>project</featurePath>
 		<featureName>Project Selection</featureName>
 		<featureDescription>Change the current project of the system.
 		</featureDescription>
@@ -873,6 +845,7 @@
 	<entry feature="false" specification="true">
 		<className>ClassesList</className>
 		<classPath>sourceagile.client.userFeatures.source</classPath>
+		<featurePath>source</featurePath>
 		<featureName>Classes List</featureName>
 		<featureDescription></featureDescription>
 		<methods>
@@ -885,6 +858,7 @@
 	<entry feature="true" specification="true">
 		<className>JavadocView</className>
 		<classPath>sourceagile.client.userFeatures.source</classPath>
+		<featurePath>source</featurePath>
 		<featureName>Javadoc View</featureName>
 		<featureDescription>Show the Javadoc of the class dynamic generated.
 		</featureDescription>
@@ -910,6 +884,7 @@
 	<entry feature="true" specification="true">
 		<className>SourceCodeView</className>
 		<classPath>sourceagile.client.userFeatures.source</classPath>
+		<featurePath>source</featurePath>
 		<featureName>Source Code View</featureName>
 		<featureDescription>Show the source code of the class with the syntax
 			highlighted.</featureDescription>
@@ -927,6 +902,7 @@
 	<entry feature="false" specification="true">
 		<className>SourceEditor</className>
 		<classPath>sourceagile.client.userFeatures.source</classPath>
+		<featurePath>source</featurePath>
 		<featureName>Source Editor</featureName>
 		<featureDescription></featureDescription>
 		<methods />
@@ -934,6 +910,7 @@
 	<entry feature="true" specification="true">
 		<className>TestClassDescription</className>
 		<classPath>sourceagile.client.userFeatures.testing</classPath>
+		<featurePath>testing</featurePath>
 		<featureName>Test Class Description</featureName>
 		<featureDescription>Show the specification of the Test Class.
 		</featureDescription>
