@@ -2,11 +2,11 @@ package sourceagile.server.classRepositories.subversionClassRepository.repositor
 
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.client.serverCalls.testClasses.LoadRemoteTestClasses;
 import sourceagile.server.classRepositories.subversionClassRepository.SubversionRepositoryConnection;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Project;
 import sourceagile.shared.User;
+import sourceagile.testing.client.serverCalls.LoadRemoteTestClasses;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 

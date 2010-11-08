@@ -94,7 +94,7 @@ public class CreateTestClass {
 
 				} else {
 
-					assertCommand = "\n\n// \t\t" + "assertEquals("
+					assertCommand = "\n\n\t\t// " + "assertEquals("
 							+ method.getName() + "Tested, null);";
 				}
 
