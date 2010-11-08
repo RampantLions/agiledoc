@@ -1,11 +1,11 @@
 package sourceagile.client.userFeatures.documentation.classViewOptions;
 
-import sourceagile.client.serverCalls.testClasses.GetRemoteTestClass;
 import sourceagile.client.userFeatures.documentation.features.FeatureDescription;
 import sourceagile.client.userFeatures.documentation.features.FeatureEdit;
-import sourceagile.client.userFeatures.source.JavadocView;
-import sourceagile.client.userFeatures.source.SourceCodeView;
+import sourceagile.codeview.client.JavadocView;
+import sourceagile.codeview.client.SourceCodeView;
 import sourceagile.shared.ClassFile;
+import sourceagile.testing.client.serverCalls.GetRemoteTestClass;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
