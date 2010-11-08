@@ -1,12 +1,12 @@
 package sourceagile.client.userFeatures.planning.TodoClasses;
 
 import sourceagile.client.serverCalls.CreateTodoClass;
-import sourceagile.client.serverCalls.testClasses.AddTestClass;
 import sourceagile.client.systemNavigation.FormField;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.shared.ClassDocumentation;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.utilities.FileNameGenerator;
+import sourceagile.testing.client.serverCalls.AddTestClass;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
