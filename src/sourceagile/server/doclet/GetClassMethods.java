@@ -27,6 +27,7 @@ public class GetClassMethods {
 			// meths[i].setSpacedName(ChangeNames.spacedName(met.name()));
 			meths[i].setParameters(getParameterString(met.parameters()));
 			meths[i].setDescription(met.commentText());
+			meths[i].setModifiers(met.modifiers());
 		}
 
 		return meths;
