@@ -5,8 +5,8 @@ import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizua
 import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
 import sourceagile.client.userFeatures.documentation.features.FeatureDescription;
 import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.client.userFeatures.source.ClassesList;
-import sourceagile.client.userFeatures.source.SourceCodeView;
+import sourceagile.codeview.client.ClassesList;
+import sourceagile.codeview.client.SourceCodeView;
 import sourceagile.shared.ClassFile;
 
 import com.google.gwt.user.client.ui.HorizontalPanel;
