@@ -7,6 +7,7 @@ import sourceagile.server.classRepositories.subversionClassRepository.repository
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor.AddTodoClass;
 import sourceagile.shared.ClassFile;
 import sourceagile.shared.Method;
+import sourceagile.shared.utilities.FeatureNameGenerator;
 
 public class CreateTestClass {
 
@@ -34,26 +35,48 @@ public class CreateTestClass {
 		imports += "\nimport " + classFile.getClassDoc().getClassPackage()
 				+ "." + classFile.getClassDoc().getClassName() + ";\n\n";
 
+		String classComment = "";
+		if (classFile.getClassDoc().getDescription() != null
+				&& classFile.getClassDoc().getDescription().length() > 0) {
+
+			classComment = "/**\n * Test Class: "
+					+ classFile.getClassDoc().getClassName() + ".\n * "
+					+ classFile.getClassDoc().getDescription() + "\n *\n */\n";
+		}
+
 		String classDeclaration = AddTodoClass.PUBLIC + " "
 				+ AddTodoClass.CLASS + " "
 				+ classFile.getClassDoc().getClassName() + "Test "
 				+ AddTodoClass.EXTENDS + " TestCase {\n" + "\n";
 
-		String classContent = classPackage + imports + classDeclaration
-				+ testMethods(classFile) + "}\n";
+		String classContent = classPackage
+				+ imports
+				+ classComment
+				+ classDeclaration
+				+ testMethods(classFile, classFile.getClassDoc()
+						.getConstructors())
+				+ testMethods(classFile, classFile.getClassDoc().getMethods())
+				+ "}\n";
 
 		return classContent;
 	}
 
-	private String testMethods(ClassFile classFile) {
-
-		Method[] methods = classFile.getClassDoc().getMethods();
+	private String testMethods(ClassFile classFile, Method[] methods) {
 
 		String methodsDeclarations = "";
 
 		for (Method method : methods) {
 
 			if (method.getModifiers().contains(AddTodoClass.PUBLIC)) {
+
+				String methodComment = "";
+				if (method.getDescription() != null
+						&& method.getDescription().length() > 0) {
+
+					methodComment = "/**\n * Test Method: " + method.getName()
+							+ ".\n * " + method.getDescription()
+							+ "\n *\n */\n";
+				}
 
 				String nameTestMethod = "test"
 						+ (method.getName().substring(0, 1)).toUpperCase()
@@ -63,10 +86,20 @@ public class CreateTestClass {
 						+ AddTodoClass.VOID + " " + nameTestMethod + "() { \n"
 						+ getClassDeclaration(classFile, method);
 
-				String assertCommand = "\n\n\t\t" + "assertTrue(true)" + ";";
+				String assertCommand = "";
+				if (method.getReturnType() == null
+						|| method.getReturnType().equals("void")) {
 
-				methodsDeclarations += methodDeclaration + assertCommand
-						+ "\n\t}\n\n";
+					assertCommand = "\n\n\t\t" + "assertTrue(true);";
+
+				} else {
+
+					assertCommand = "\n\n// \t\t" + "assertEquals("
+							+ method.getName() + "Tested, null);";
+				}
+
+				methodsDeclarations += methodComment + methodDeclaration
+						+ assertCommand + "\n\t}\n\n";
 			}
 		}
 
@@ -82,22 +115,33 @@ public class CreateTestClass {
 		if (method.getParameters() != null
 				&& method.getParameters().length() > 0) {
 
-			String[] splitedParameters = method.getParameters().split(" ");
+			String[] splitedParameters = method.getParameters().split(",");
 
-			for (int i = 0; i < splitedParameters.length; i += 2) {
+			for (int i = 0; i < splitedParameters.length; i++) {
 
-				String parameterType = splitedParameters[i];
-				String parameterName = splitedParameters[i + 1];
+				String[] parameterStructure = splitedParameters[i].split(" ");
 
-				parametersComments += "\n\t\t// " + parameterType + " "
-						+ parameterName + ";\n";
+				parametersComments += "\n\t\t// " + splitedParameters[i]
+						+ ";\n";
 
-				parametersDeclaration += parameterName;
+				parametersDeclaration += parameterStructure[parameterStructure.length - 1];
+
+				if (i != splitedParameters.length - 1) {
+
+					parametersDeclaration += ",";
+				}
 			}
-
 		}
 
 		String classDeclaration = "\n\t\t// ";
+
+		if (method.getReturnType() != null
+				&& !method.getReturnType().equals("void")) {
+
+			classDeclaration += FeatureNameGenerator.getLastName(
+					method.getReturnType(), "\\.")
+					+ " " + method.getName() + "Tested = ";
+		}
 
 		if (method.getModifiers().contains(AddTodoClass.STATIC)) {
 
@@ -109,8 +153,13 @@ public class CreateTestClass {
 					+ "()";
 		}
 
-		classDeclaration += "." + method.getName() + "("
-				+ parametersDeclaration + ");";
+		if (method.getReturnType() != null) {
+
+			classDeclaration += "." + method.getName() + "("
+					+ parametersDeclaration + ")";
+		}
+
+		classDeclaration += ";";
 
 		return parametersComments + classDeclaration;
 	}
