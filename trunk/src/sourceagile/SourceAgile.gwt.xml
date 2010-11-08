@@ -12,11 +12,11 @@
 
 	<!-- Other module inherits -->
 	<inherits name='com.gwtext.GwtExt'/>
-	<inherits name="com.gwtext.SyntaxHighlighter"/>
-	
 	<inherits name="com.google.gwt.visualization.Visualization" />
-	<inherits name="com.weborient.codemirror.CodemirrorGwt" />
 	<inherits name="helpagile.HelpAgileExport" />
+	
+	<inherits name="sourceagile.testing.Testing" />
+	<inherits name="sourceagile.codeview.CodeView" />
 
 	<!-- Specify the app entry point class. -->
 	<entry-point class='sourceagile.client.SystemStart' />
