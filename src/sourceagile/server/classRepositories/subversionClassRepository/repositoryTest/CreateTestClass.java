@@ -65,44 +65,47 @@ public class CreateTestClass {
 
 		String methodsDeclarations = "";
 
-		for (Method method : methods) {
+		if (methods != null) {
 
-			if (method.getModifiers().contains(AddTodoClass.PUBLIC)) {
+			for (Method method : methods) {
 
-				String methodComment = "";
-				if (method.getDescription() != null
-						&& method.getDescription().length() > 0) {
+				if (method.getModifiers().contains(AddTodoClass.PUBLIC)) {
 
-					methodComment = "/**\n * Test Method: " + method.getName()
-							+ ".\n * " + method.getDescription()
-							+ "\n *\n */\n";
+					String methodComment = "";
+					if (method.getDescription() != null
+							&& method.getDescription().length() > 0) {
+
+						methodComment = "/**\n * Test Method: "
+								+ method.getName() + ".\n * "
+								+ method.getDescription() + "\n *\n */\n";
+					}
+
+					String nameTestMethod = "test"
+							+ (method.getName().substring(0, 1)).toUpperCase()
+							+ method.getName().substring(1);
+
+					String methodDeclaration = "\t" + AddTodoClass.PUBLIC + " "
+							+ AddTodoClass.VOID + " " + nameTestMethod
+							+ "() { \n"
+							+ getClassDeclaration(classFile, method);
+
+					String assertCommand = "";
+					if (method.getReturnType() == null
+							|| method.getReturnType().equals("void")) {
+
+						assertCommand = "\n\n\t\t" + "assertTrue(true);";
+
+					} else {
+
+						assertCommand = "\n\n\t\t// " + "assertEquals("
+								+ method.getName() + "Tested, null);";
+					}
+
+					methodsDeclarations += methodComment + methodDeclaration
+							+ assertCommand + "\n\t}\n\n";
 				}
-
-				String nameTestMethod = "test"
-						+ (method.getName().substring(0, 1)).toUpperCase()
-						+ method.getName().substring(1);
-
-				String methodDeclaration = "\t" + AddTodoClass.PUBLIC + " "
-						+ AddTodoClass.VOID + " " + nameTestMethod + "() { \n"
-						+ getClassDeclaration(classFile, method);
-
-				String assertCommand = "";
-				if (method.getReturnType() == null
-						|| method.getReturnType().equals("void")) {
-
-					assertCommand = "\n\n\t\t" + "assertTrue(true);";
-
-				} else {
-
-					assertCommand = "\n\n\t\t// " + "assertEquals("
-							+ method.getName() + "Tested, null);";
-				}
-
-				methodsDeclarations += methodComment + methodDeclaration
-						+ assertCommand + "\n\t}\n\n";
 			}
 		}
-
 		return methodsDeclarations;
 	}
 
