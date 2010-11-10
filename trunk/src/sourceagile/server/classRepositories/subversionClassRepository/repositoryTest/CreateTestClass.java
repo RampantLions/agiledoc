@@ -150,7 +150,14 @@ public class CreateTestClass {
 		} else {
 
 			classDeclaration += "new " + classFile.getClassDoc().getClassName()
-					+ "()";
+					+ "(";
+
+			if (method.getReturnType() == null) {
+
+				classDeclaration += parametersDeclaration;
+			}
+
+			classDeclaration += ")";
 		}
 
 		if (method.getReturnType() != null) {
