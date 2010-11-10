@@ -9,13 +9,13 @@ public class ProjectsData {
 		Project[] projs = new Project[5];
 
 		projs[0] = new Project();
-		projs[0].setName("Source Agile Client Side");
+		projs[0].setName("Source Agile");
 		projs[0].setRepositoryType(Project.REPOSITORY_TYPE_SUBVERSION);
 		projs[0].setRepositoryURL("https://agiledoc.googlecode.com/svn");
 		projs[0].setRoot("/trunk/src/");
 		projs[0].setTestRoot("/trunk/test/");
-		projs[0].setDomain("sourceagile/client");
-		projs[0].setSpecificationPath("userFeatures");
+		projs[0].setDomain("sourceagile");
+		projs[0].setSpecificationPath("client/userFeatures");
 		projs[0].setWiki("http://code.google.com/p/agiledoc/wiki/SourceAgile");
 
 		projs[1] = new Project();
