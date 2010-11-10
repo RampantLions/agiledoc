@@ -24,6 +24,7 @@ Option: EC2
 
 2. Generate User Manual for Source Agile Experiment Software
 
+make demo video.
 
 3. Set up Approval Tests for GUI (GWT)
 
@@ -43,5 +44,11 @@ Option: EC2
 10. Costumers Interviews
 
 11. User support center inside the help system
+
+internationalization
+
+other languanges (C#, ruby)
+
+other repositories (git, mercurial, VSS??)
 
 
