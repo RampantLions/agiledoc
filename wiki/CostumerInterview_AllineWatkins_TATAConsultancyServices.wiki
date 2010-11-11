@@ -19,18 +19,23 @@ Borland Together, Eclipse, Java
 
 - What are the most important problems you are dealing at your work at the moment?
 
-{{{ Short Schedule, Huge Scope, High Complexity }}}
+{{{ 
+Short Schedule, Huge Scope, High Complexity 
+}}}
 
 
 - How do you document your software? If you do. if no, how do your users learn to use your software?
 
-{{{ Use Cases come from the costumers already done and complex.
-User manuals being made by the programmers as a MS Word Document. }}}
+{{{ 
+Use Cases come from the costumers already done and complex.
+User manuals being made by the programmers as a MS Word Document. 
+}}}
 
 
 - Do you have current documentation requirements?
 
-{{{ CMMI requirements? Contract requirements? End users requirements (manuals/helps)? Managements requirements?
+{{{ 
+CMMI requirements? Contract requirements? End users requirements (manuals/helps)? Managements requirements?
 
 All the CMMI Requirements, Project Plan, Use Cases, UML Design, User Manuals, MS Project Schedules
 }}}
