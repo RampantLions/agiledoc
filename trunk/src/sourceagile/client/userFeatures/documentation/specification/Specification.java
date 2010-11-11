@@ -4,10 +4,10 @@ import sourceagile.client.SystemStart;
 import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizualizationPanel;
 import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
 import sourceagile.client.userFeatures.documentation.features.FeatureDescription;
-import sourceagile.client.userFeatures.project.ProjectInitialization;
 import sourceagile.codeview.client.ClassesList;
 import sourceagile.codeview.client.SourceCodeView;
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;

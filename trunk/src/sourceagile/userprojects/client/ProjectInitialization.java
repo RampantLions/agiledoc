@@ -1,12 +1,12 @@
-package sourceagile.client.userFeatures.project;
+package sourceagile.userprojects.client;
 
 import java.util.ArrayList;
 
 import sourceagile.client.serverCalls.ListClassesHistory;
 import sourceagile.client.serverCalls.ListRemoteClasses;
-import sourceagile.shared.ClassFile;
-import sourceagile.shared.Productivity;
-import sourceagile.shared.Project;
+import sourceagile.shared.entities.Productivity;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.project.Project;
 
 public class ProjectInitialization {
 

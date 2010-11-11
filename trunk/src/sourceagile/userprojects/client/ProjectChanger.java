@@ -1,8 +1,8 @@
-package sourceagile.client.userFeatures.project;
+package sourceagile.userprojects.client;
 
 import sourceagile.client.authentication.ProjectList;
-import sourceagile.shared.Project;
 import sourceagile.shared.data.ProjectsData;
+import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;

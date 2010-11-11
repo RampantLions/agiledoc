@@ -1,4 +1,4 @@
-package sourceagile.client.userFeatures.project;
+package sourceagile.userprojects.client;
 
 import sourceagile.client.SystemStart;
 

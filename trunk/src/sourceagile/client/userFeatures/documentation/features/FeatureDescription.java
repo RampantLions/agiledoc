@@ -3,12 +3,12 @@ package sourceagile.client.userFeatures.documentation.features;
 import sourceagile.client.serverCalls.GetRemoteClass;
 import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizualizationPanel;
 import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
-import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.shared.ClassDocumentation;
-import sourceagile.shared.ClassFile;
-import sourceagile.shared.Feature;
-import sourceagile.shared.Method;
+import sourceagile.shared.entities.entry.ClassDocumentation;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.entry.Feature;
+import sourceagile.shared.entities.entry.Method;
 import sourceagile.shared.utilities.FeatureNameGenerator;
+import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

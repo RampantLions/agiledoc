@@ -3,7 +3,7 @@ package sourceagile.client;
 import helpagile.client.HelpAgileExport;
 import sourceagile.client.authentication.Login;
 import sourceagile.client.systemNavigation.MainPage;
-import sourceagile.shared.User;
+import sourceagile.shared.entities.User;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.RootPanel;

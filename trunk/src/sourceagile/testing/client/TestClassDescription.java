@@ -5,7 +5,7 @@ import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizua
 import sourceagile.client.userFeatures.documentation.features.FeatureDescription;
 import sourceagile.client.userFeatures.documentation.specification.Specification;
 import sourceagile.codeview.client.SourceCodeView;
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.testing.client.serverCalls.AddTestClass;
 
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;

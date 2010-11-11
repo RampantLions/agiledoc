@@ -2,11 +2,11 @@ package sourceagile.client.authentication;
 
 import sourceagile.client.SystemStart;
 import sourceagile.client.systemNavigation.FormField;
-import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.shared.Project;
-import sourceagile.shared.User;
 import sourceagile.shared.data.ProjectsData;
 import sourceagile.shared.data.UserData;
+import sourceagile.shared.entities.User;
+import sourceagile.shared.entities.project.Project;
+import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

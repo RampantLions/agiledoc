@@ -1,6 +1,6 @@
 package sourceagile.client.userFeatures.documentation.features;
 
-import sourceagile.shared.ClassDocumentation;
+import sourceagile.shared.entities.entry.ClassDocumentation;
 
 import com.google.gwt.user.client.ui.ListBox;
 

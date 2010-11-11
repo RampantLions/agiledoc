@@ -1,7 +1,7 @@
 package sourceagile.client.authentication;
 
-import sourceagile.shared.Project;
 import sourceagile.shared.data.ProjectsData;
+import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.user.client.ui.ListBox;
 

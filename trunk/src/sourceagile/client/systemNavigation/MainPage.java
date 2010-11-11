@@ -1,7 +1,7 @@
 package sourceagile.client.systemNavigation;
 
 import sourceagile.client.systemNavigation.projectMenu.ProjectMenu;
-import sourceagile.client.userFeatures.project.ProjectName;
+import sourceagile.userprojects.client.ProjectName;
 
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;

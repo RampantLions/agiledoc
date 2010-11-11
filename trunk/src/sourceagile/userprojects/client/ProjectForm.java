@@ -1,7 +1,7 @@
-package sourceagile.client.userFeatures.project;
+package sourceagile.userprojects.client;
 
 import sourceagile.client.systemNavigation.FormField;
-import sourceagile.shared.Project;
+import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

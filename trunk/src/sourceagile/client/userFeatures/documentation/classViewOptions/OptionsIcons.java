@@ -4,7 +4,7 @@ import sourceagile.client.userFeatures.documentation.features.FeatureDescription
 import sourceagile.client.userFeatures.documentation.features.FeatureEdit;
 import sourceagile.codeview.client.JavadocView;
 import sourceagile.codeview.client.SourceCodeView;
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.testing.client.serverCalls.GetRemoteTestClass;
 
 import com.google.gwt.event.dom.client.ClickEvent;

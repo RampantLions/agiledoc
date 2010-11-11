@@ -1,4 +1,4 @@
-package sourceagile.client.userFeatures.project;
+package sourceagile.userprojects.client;
 
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.VerticalPanel;

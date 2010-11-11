@@ -1,9 +1,9 @@
 package sourceagile.client.userFeatures.documentation;
 
-import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.shared.ClassDocumentation;
-import sourceagile.shared.ClassFile;
-import sourceagile.shared.Method;
+import sourceagile.shared.entities.entry.ClassDocumentation;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.entry.Method;
+import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.xml.client.Document;
 import com.google.gwt.xml.client.Element;

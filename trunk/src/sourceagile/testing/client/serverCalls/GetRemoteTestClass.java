@@ -4,9 +4,9 @@ import sourceagile.client.SystemStart;
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizualizationPanel;
 import sourceagile.client.userFeatures.documentation.specification.Specification;
-import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.testing.client.TestClassDescription;
+import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;

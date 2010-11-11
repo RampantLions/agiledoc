@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import sourceagile.client.SystemStart;
 import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClasses;
 import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClassesAsync;
-import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.shared.Productivity;
+import sourceagile.shared.entities.Productivity;
+import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
