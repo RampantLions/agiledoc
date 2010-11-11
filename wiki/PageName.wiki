@@ -1,5 +1,5 @@
  = Costumer Interview - Alline Watkins - As working at UCSD 2009 = 
-
+CostumerInterview_AllineWatkins_TATAConsultancyServices
 
 
 - What are working with right now?
@@ -44,24 +44,23 @@ No.
 is it problematic? how do requirements are communicated? how the developer team reports work?
 
 {{{ 
-Weekly meeting the are very superficial on the technical situation of the software.
+Weekly meetings that are very superficial on the technical situation of the software.
+The developers report whatever they want at the meetings and the stakeholders just trust on the development team.
 
+(After two years of development, the stakeholders started to not trust anymore on the development team, because not enough running software was delivered satisfactory)
  }}}
 
 
 - What do you think about the source code being opened to stakeholders in a way they can understand and comment it?
 
 {{{
-It is going to take a while for them to get used of it. No time available to change behaviors.
+It will help the communication between the team .
 }}}
 
 - What do you think about specification/documentation being generated from inside the Source Code?
 
 {{{
-In this project at this moment it will be a very big change of behavior.
-Is going to be a lot of time to adapt to this new behavior and the project is already running out of time.
-(But the project totally fails anyway at the end)
-Self generated documentation will probably not solve the big scope problem.
+Not a bad idea if the tool is free and if the documentation generated are not bad.
 }}}
 
 
@@ -70,14 +69,17 @@ Self generated documentation will probably not solve the big scope problem.
 would it save you money? would it help your development process? would it make it worst? Hurt?
 
 {{{
-For the stakeholders to stop to analyse the source code it will take time they need to write the Use Cases.
+We have a very close connection with the stakeholders. The tool will not add better communication. But the tool will not hurt anybody also.
+
+The tool can help much more with the communication between the programmers.
+So one programmer can understand better the code of the others.
 }}}
 
 
 - Are you able to drive test our Software?
 
 {{{
-In a very small portion of the scope.
+No room to test drive products in this project.
 }}}
 
 - Do you think you could refactoring your Source Code to take advantages out of it?
