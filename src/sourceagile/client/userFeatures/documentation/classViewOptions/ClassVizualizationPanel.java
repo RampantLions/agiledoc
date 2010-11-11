@@ -1,6 +1,6 @@
 package sourceagile.client.userFeatures.documentation.classViewOptions;
 
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;

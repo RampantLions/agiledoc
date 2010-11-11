@@ -7,9 +7,9 @@ import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteC
 import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClassesAsync;
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.client.systemNavigation.MainPage;
-import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.shared.ClassFile;
-import sourceagile.shared.Project;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.project.Project;
+import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;

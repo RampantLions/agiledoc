@@ -1,9 +1,9 @@
 package sourceagile.client.userFeatures.productivity;
 
-import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.shared.ClassDocumentation;
-import sourceagile.shared.ClassFile;
-import sourceagile.shared.Productivity;
+import sourceagile.shared.entities.Productivity;
+import sourceagile.shared.entities.entry.ClassDocumentation;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.visualization.client.AbstractDataTable.ColumnType;

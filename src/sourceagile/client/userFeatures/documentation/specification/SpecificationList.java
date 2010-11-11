@@ -3,9 +3,9 @@ package sourceagile.client.userFeatures.documentation.specification;
 import helpagile.client.utilities.FeatureNameGenerator;
 import sourceagile.client.userFeatures.documentation.ClassesListFiltered;
 import sourceagile.client.userFeatures.documentation.Documentation;
-import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.shared.ClassDocumentation;
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.entities.entry.ClassDocumentation;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

@@ -2,9 +2,9 @@ package sourceagile.client.userFeatures.documentation.features;
 
 import sourceagile.client.serverCalls.EditClass;
 import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizualizationPanel;
-import sourceagile.shared.ClassDocumentation;
-import sourceagile.shared.ClassFile;
-import sourceagile.shared.Method;
+import sourceagile.shared.entities.entry.ClassDocumentation;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.entry.Method;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

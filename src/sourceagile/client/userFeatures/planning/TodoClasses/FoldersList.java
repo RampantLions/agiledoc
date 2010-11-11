@@ -1,7 +1,7 @@
 package sourceagile.client.userFeatures.planning.TodoClasses;
 
-import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.user.client.ui.ListBox;
 

@@ -2,8 +2,8 @@ package sourceagile.client.userFeatures.productivity;
 
 import java.util.ArrayList;
 
-import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.shared.Productivity;
+import sourceagile.shared.entities.Productivity;
+import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.visualization.client.AbstractDataTable.ColumnType;

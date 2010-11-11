@@ -1,10 +1,10 @@
 package sourceagile.codeview.client;
 
 import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizualizationPanel;
-import sourceagile.shared.ClassDocumentation;
-import sourceagile.shared.ClassFile;
-import sourceagile.shared.Field;
-import sourceagile.shared.Method;
+import sourceagile.shared.entities.entry.ClassDocumentation;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.entry.Field;
+import sourceagile.shared.entities.entry.Method;
 
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.VerticalPanel;

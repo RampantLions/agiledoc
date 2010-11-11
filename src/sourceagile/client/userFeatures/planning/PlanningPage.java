@@ -3,7 +3,7 @@ package sourceagile.client.userFeatures.planning;
 import sourceagile.client.SystemStart;
 import sourceagile.client.userFeatures.planning.TodoClasses.AddTodoClass;
 import sourceagile.client.userFeatures.planning.TodoClasses.TodoClassesList;
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

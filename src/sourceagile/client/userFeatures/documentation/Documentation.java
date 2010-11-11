@@ -5,8 +5,8 @@ import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIco
 import sourceagile.client.userFeatures.documentation.features.FeaturesList;
 import sourceagile.client.userFeatures.documentation.specification.Specification;
 import sourceagile.client.userFeatures.documentation.specification.SpecificationList;
-import sourceagile.client.userFeatures.project.ProjectInitialization;
-import sourceagile.shared.ClassDocumentation;
+import sourceagile.shared.entities.entry.ClassDocumentation;
+import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
