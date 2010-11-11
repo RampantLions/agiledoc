@@ -15,6 +15,7 @@
 	<inherits name="com.google.gwt.visualization.Visualization" />
 	<inherits name="helpagile.HelpAgileExport" />
 	
+	<inherits name="sourceagile.userprojects.UserProjects" />
 	<inherits name="sourceagile.testing.Testing" />
 	<inherits name="sourceagile.codeview.CodeView" />
 
