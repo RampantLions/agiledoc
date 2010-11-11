@@ -1,6 +1,6 @@
 package sourceagile.testing.client;
 
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
