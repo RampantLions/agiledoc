@@ -1,6 +1,6 @@
 package sourceagile.shared.data;
 
-import sourceagile.shared.User;
+import sourceagile.shared.entities.User;
 
 public class UserData {
 
