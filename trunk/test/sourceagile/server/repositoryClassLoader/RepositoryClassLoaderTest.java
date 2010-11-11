@@ -9,11 +9,11 @@ import org.approvaltests.UseReporter;
 
 import sourceagile.server.classRepositories.subversionClassRepository.SubversionRepositoryClassImplementation;
 import sourceagile.server.doclet.GetClassDoc;
-import sourceagile.shared.ClassFile;
-import sourceagile.shared.Project;
-import sourceagile.shared.User;
 import sourceagile.shared.data.ProjectsData;
 import sourceagile.shared.data.UserData;
+import sourceagile.shared.entities.User;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.project.Project;
 
 import com.spun.util.io.FileUtils;
 
