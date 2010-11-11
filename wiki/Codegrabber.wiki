@@ -1,4 +1,4 @@
-#labels Phase-Design,Featured,Phase-QA
+#labels Phase-Design,Phase-QA
 Code Sponge - "Getting the most of your source code"
 = Introduction =
 
