@@ -16,6 +16,7 @@ How many in your team?
 
 
 - *How do you document your software? If you do.*
+
 if no, how do your users learn to use your software?
 
 
@@ -29,12 +30,14 @@ Managements requirements?
 
 
 - *How does the interaction between Stakeholders and Developers on your team happen?*
+
    is it problematic?
    how do requirements are communicated?
    how the developer team reports work?
 
 
 - *How does the interaction between the Developers on your team happen?*
+
    is it problematic?
    how do knowledge are exchanged?
    how does one developer understand the code of the others?
@@ -52,6 +55,7 @@ would it make it worst? Hurt?
 
 
 -  *if developers can understand better the code from each other?*
+
 is it an issue for your software right now?
 would it save you money?
 would it help your development process?
@@ -66,5 +70,3 @@ would it help your development process?
 
 
 - *How much you think you could pay to use Code Sponge?*
-
-
