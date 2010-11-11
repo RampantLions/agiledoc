@@ -7,7 +7,7 @@ import org.tmatesoft.svn.core.io.ISVNEditor;
 import org.tmatesoft.svn.core.io.SVNRepository;
 import org.tmatesoft.svn.core.io.diff.SVNDeltaGenerator;
 
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.entities.entry.ClassFile;
 
 public class EditFile {
 

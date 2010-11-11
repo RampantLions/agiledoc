@@ -13,8 +13,8 @@ import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.SVNNodeKind;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.shared.ClassFile;
-import sourceagile.shared.User;
+import sourceagile.shared.entities.User;
+import sourceagile.shared.entities.entry.ClassFile;
 
 public class ListRepositoryClasses {
 

@@ -7,7 +7,7 @@ import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.GetRepositoryClass;
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.entities.entry.ClassFile;
 
 public class GetRepositoryTestClass {
 

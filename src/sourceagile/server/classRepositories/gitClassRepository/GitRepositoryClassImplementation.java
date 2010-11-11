@@ -1,9 +1,9 @@
 package sourceagile.server.classRepositories.gitClassRepository;
 
 import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClasses;
-import sourceagile.shared.ClassFile;
-import sourceagile.shared.Project;
-import sourceagile.shared.User;
+import sourceagile.shared.entities.User;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 

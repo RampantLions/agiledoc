@@ -5,8 +5,8 @@ import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor.AddFile;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor.AddTodoClass;
-import sourceagile.shared.ClassFile;
-import sourceagile.shared.Method;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.entry.Method;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 
 public class CreateTestClass {

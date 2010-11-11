@@ -2,8 +2,8 @@ package sourceagile.server.doclet;
 
 import java.io.File;
 
-import sourceagile.shared.ClassDocumentation;
-import sourceagile.shared.Field;
+import sourceagile.shared.entities.entry.ClassDocumentation;
+import sourceagile.shared.entities.entry.Field;
 
 import com.sun.javadoc.ClassDoc;
 import com.sun.javadoc.FieldDoc;
