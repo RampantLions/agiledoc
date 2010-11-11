@@ -1,6 +1,6 @@
- = Costumer Interview - Alline Watkins - As working at TATA Consultancy Services = 
+ = Costumer Interview - Alline Watkins - As working at TATA Consultancy Services 2005 = 
 
-2005
+
 
 - What are working with right now?
 
@@ -19,28 +19,28 @@ Borland Together, Eclipse, Java
 
 - What are the most important problems you are dealing at your work at the moment?
 
-Short Schedule, Huge Scope, High Complexity 
+{{{ Short Schedule, Huge Scope, High Complexity }}}
 
 
 - How do you document your software? If you do. if no, how do your users learn to use your software?
 
-Use Cases come from the costumers already done and complex.
-User manuals being made by the programmers as a MS Word Document.
+{{{ Use Cases come from the costumers already done and complex.
+User manuals being made by the programmers as a MS Word Document. }}}
 
 
 - Do you have current documentation requirements?
 
-CMMI requirements? Contract requirements? End users requirements (manuals/helps)? Managements requirements?
+{{{ CMMI requirements? Contract requirements? End users requirements (manuals/helps)? Managements requirements?
 
 All the CMMI Requirements, Project Plan, Use Cases, UML Design, User Manuals, MS Project Schedules
-
+}}}
 
 
 - How does the interaction between Stakeholders and Developers on your team happen?
 
 is it problematic? how do requirements are communicated? how the developer team reports work?
 
-The costumers are on site, they work together with the programmers. The communication is fast and efficient, but the software scope is way to big.
+{{{ The costumers are on site, they work together with the programmers. The communication is fast and efficient, but the software scope is way to big. }}}
 
 
 - What do you think about the source code being opened to stakeholders in a way they can understand and comment it?
