@@ -76,7 +76,7 @@ So one programmer can understand better the code of the others.
 }}}
 
 
-- Are you able to drive test our Software?
+- Are you able to test drive our Software?
 
 {{{
 No room to test drive products in this project.
@@ -85,7 +85,7 @@ No room to test drive products in this project.
 - Do you think you could refactoring your Source Code to take advantages out of it?
 
 {{{
-In a very very small portion of the scope.
+A little bit.
 }}}
 
 - How much an automatic generated User Manual is worth for you?
@@ -97,5 +97,5 @@ Depends on how good it is going to be at the end.
 
 - How much you think you could pay to use Code Sponge?
 {{{
-If it helps, a lot. 
+nothing. 
 }}}
