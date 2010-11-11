@@ -1,4 +1,4 @@
-- What are working with right now?
+- *What are working with right now?*
 
 What company?
 What job title?
@@ -8,15 +8,19 @@ What does your software do?
 How many in your team?
 
 
-- What are the most important problems you are dealing at your work at the moment?
+- *What are the most important problems you are dealing at your work at the moment?*
 
 
 
-- How do you document your software? If you do.
+- *What do you think about agile development?*
+
+
+- *How do you document your software? If you do.*
 if no, how do your users learn to use your software?
 
 
-- Do you have current documentation requirements?
+
+- *Do you have current documentation requirements?*
 
 CMMI requirements?
 Contract requirements?
@@ -24,29 +28,43 @@ End users requirements (manuals/helps)?
 Managements requirements?
 
 
-- How does the interaction between Stakeholders and Developers on your team happen?
+- *How does the interaction between Stakeholders and Developers on your team happen?*
    is it problematic?
    how do requirements are communicated?
    how the developer team reports work?
 
 
-- What do you think about documentation being generated from inside the Source Code?
+- *How does the interaction between the Developers on your team happen?*
+   is it problematic?
+   how do knowledge are exchanged?
+   how does one developer understand the code of the others?
+
+
+- *What do you think about documentation being generated from inside the Source Code?*
 
 
 
--  if stakeholders could send messages to the programmers inside the source code?
+-  *if stakeholders could send messages to the programmers inside the source code?*
 
 would it save you money?
 would it help your development process?
 would it make it worst? Hurt?
 
 
-- Are you able to drive test our Software?
+-  *if developers can understand better the code from each other?*
+is it an issue for your software right now?
+would it save you money?
+would it help your development process?
 
-- Do you think you could refactoring your Source Code to take advantages out of it?
+
+- *Are you able to drive test our Software?*
+
+- *Do you think you could refactoring your Source Code to take advantages out of it?*
 
 
-- How much a automatic generated User Manual is worth for you?
+- *How much an automatic generated User Manual is worth for you?*
 
-- How much you think you could pay to use Code Sponge?
+
+- *How much you think you could pay to use Code Sponge?*
+
 
