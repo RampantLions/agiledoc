@@ -2,7 +2,7 @@ package sourceagile.server.repositoryClassLoader;
 
 import java.util.Arrays;
 
-import sourceagile.shared.ClassDocumentation;
+import sourceagile.shared.entities.entry.ClassDocumentation;
 
 import com.spun.util.StringUtils;
 
