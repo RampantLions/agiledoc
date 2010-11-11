@@ -1,3 +1,4 @@
+#labels Featured
 = The Source Agile Experiment = 
 
  "Getting the most of your source code"
