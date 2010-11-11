@@ -4,7 +4,7 @@ What company?
 What job title?
 What Tools?
 What programming language?
-What your software does?
+What does your software do?
 How many in your team?
 
 
@@ -41,7 +41,12 @@ would it help your development process?
 would it make it worst? Hurt?
 
 
+- Are you able to drive test our Software?
+
+- Do you think you could refactoring your Source Code to take advantages out of it?
+
+
+- How much a automatic generated User Manual is worth for you?
+
 - How much you think you could pay to use Code Sponge?
-
-
 
