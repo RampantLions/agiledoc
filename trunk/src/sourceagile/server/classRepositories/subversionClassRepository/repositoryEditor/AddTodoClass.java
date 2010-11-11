@@ -3,8 +3,8 @@ package sourceagile.server.classRepositories.subversionClassRepository.repositor
 import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.shared.ClassDocumentation;
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.entities.entry.ClassDocumentation;
+import sourceagile.shared.entities.entry.ClassFile;
 
 public class AddTodoClass {
 

@@ -10,10 +10,10 @@ import sourceagile.server.classRepositories.subversionClassRepository.repository
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.GetRepositoryClass;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.ListRepositoryClasses;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.ListRepositoryHistory;
-import sourceagile.shared.ClassFile;
-import sourceagile.shared.Productivity;
-import sourceagile.shared.Project;
-import sourceagile.shared.User;
+import sourceagile.shared.entities.Productivity;
+import sourceagile.shared.entities.User;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 

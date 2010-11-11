@@ -2,7 +2,7 @@ package sourceagile.server.sourcelet.tokenizer;
 
 import java.util.ArrayList;
 
-import sourceagile.shared.ClassFile;
+import sourceagile.shared.entities.entry.ClassFile;
 
 public class Tokenize {
 

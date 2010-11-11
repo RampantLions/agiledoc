@@ -12,8 +12,8 @@ import org.tmatesoft.svn.core.SVNLogEntryPath;
 import org.tmatesoft.svn.core.SVNNodeKind;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.shared.Productivity;
-import sourceagile.shared.Project;
+import sourceagile.shared.entities.Productivity;
+import sourceagile.shared.entities.project.Project;
 
 public class ListRepositoryHistory {
 

@@ -1,6 +1,6 @@
 package sourceagile.server.doclet;
 
-import sourceagile.shared.Method;
+import sourceagile.shared.entities.entry.Method;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 
 import com.sun.javadoc.ConstructorDoc;

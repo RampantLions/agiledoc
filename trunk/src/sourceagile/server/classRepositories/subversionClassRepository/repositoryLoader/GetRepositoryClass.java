@@ -11,8 +11,8 @@ import org.tmatesoft.svn.core.SVNProperties;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.server.doclet.GetClassDoc;
-import sourceagile.shared.ClassFile;
-import sourceagile.shared.Feature;
+import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.entry.Feature;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 
 public class GetRepositoryClass {
