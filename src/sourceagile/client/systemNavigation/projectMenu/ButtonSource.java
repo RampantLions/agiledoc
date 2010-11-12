@@ -1,7 +1,7 @@
 package sourceagile.client.systemNavigation.projectMenu;
 
-import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
-import sourceagile.client.userFeatures.documentation.specification.Specification;
+import sourceagile.documentation.client.classViewOptions.OptionsIcons;
+import sourceagile.documentation.client.specification.Specification;
 
 import com.gwtext.client.core.EventObject;
 import com.gwtext.client.widgets.Button;

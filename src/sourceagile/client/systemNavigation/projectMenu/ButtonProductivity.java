@@ -1,7 +1,7 @@
 package sourceagile.client.systemNavigation.projectMenu;
 
 import sourceagile.client.SystemStart;
-import sourceagile.client.userFeatures.productivity.ProductivityPage;
+import sourceagile.metrics.client.ProductivityPage;
 
 import com.gwtext.client.core.EventObject;
 import com.gwtext.client.widgets.Button;
