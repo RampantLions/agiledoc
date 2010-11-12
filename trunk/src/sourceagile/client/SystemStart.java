@@ -1,7 +1,7 @@
 package sourceagile.client;
 
 import helpagile.client.HelpAgileExport;
-import sourceagile.client.authentication.Login;
+import sourceagile.authentication.client.Login;
 import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.shared.entities.User;
 
