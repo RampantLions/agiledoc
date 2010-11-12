@@ -1,10 +1,10 @@
 package sourceagile.testing.client;
 
 import sourceagile.client.systemNavigation.LoadingPanel;
-import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizualizationPanel;
-import sourceagile.client.userFeatures.documentation.features.FeatureDescription;
-import sourceagile.client.userFeatures.documentation.specification.Specification;
 import sourceagile.codeview.client.SourceCodeView;
+import sourceagile.documentation.client.classViewOptions.ClassVizualizationPanel;
+import sourceagile.documentation.client.features.FeatureDescription;
+import sourceagile.documentation.client.specification.Specification;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.testing.client.serverCalls.AddTestClass;
 
