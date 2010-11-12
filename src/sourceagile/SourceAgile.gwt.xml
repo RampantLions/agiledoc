@@ -15,9 +15,13 @@
 	<inherits name="com.google.gwt.visualization.Visualization" />
 	<inherits name="helpagile.HelpAgileExport" />
 	
+	<inherits name="sourceagile.authentication.Authentication" />	
 	<inherits name="sourceagile.userprojects.UserProjects" />
+	<inherits name="sourceagile.planning.Planning" />
+	<inherits name="sourceagile.documentation.Documentation" />
 	<inherits name="sourceagile.testing.Testing" />
 	<inherits name="sourceagile.codeview.CodeView" />
+	<inherits name="sourceagile.metrics.Metrics" />
 
 	<!-- Specify the app entry point class. -->
 	<entry-point class='sourceagile.client.SystemStart' />
