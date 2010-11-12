@@ -29,22 +29,27 @@ public class ProjectsData {
 		projs[0].setSpecificationPath("client/userFeatures");
 		projs[0].setWiki("http://code.google.com/p/agiledoc/wiki/SourceAgile");
 
-		ProjectComponents[] projectComponents = new ProjectComponents[9];
+		ProjectComponents[] projectComponents = new ProjectComponents[10];
 
 		projectComponents[0] = new ProjectComponents("Authentication",
-				"authentication");
+				"authentication.client");
 		projectComponents[1] = new ProjectComponents("User Projects",
-				"userProjects");
-		projectComponents[2] = new ProjectComponents("Planning", "planning");
-		projectComponents[3] = new ProjectComponents("Documentation",
-				"client.userFeatures.documentation");
+				"userProjects.client");
+		projectComponents[2] = new ProjectComponents("System Navigation",
+				"client.systemNavigation");
+		projectComponents[3] = new ProjectComponents("Planning",
+				"planning.client");
+		projectComponents[4] = new ProjectComponents("Documentation",
+				"documentation.client");
 
-		projectComponents[4] = new ProjectComponents("Testing", "testing");
-		projectComponents[5] = new ProjectComponents("Code Visualization",
-				"codeview");
-		projectComponents[6] = new ProjectComponents("Metrics", "metrics");
-		projectComponents[7] = new ProjectComponents("Server Side", "server");
-		projectComponents[8] = new ProjectComponents("Entities",
+		projectComponents[5] = new ProjectComponents("Testing",
+				"testing.client");
+		projectComponents[6] = new ProjectComponents("Code Visualization",
+				"codeview.client");
+		projectComponents[7] = new ProjectComponents("Metrics",
+				"metrics.client");
+		projectComponents[8] = new ProjectComponents("Server Side", "server");
+		projectComponents[9] = new ProjectComponents("Entities",
 				"shared.entities");
 
 		projs[0].setProjectComponents(projectComponents);
@@ -61,6 +66,14 @@ public class ProjectsData {
 		projs[1].setDomain("tictactoe");
 		projs[1].setSpecificationPath("client/userInterface");
 		projs[1].setWiki("http://en.wikipedia.org/wiki/Tic-tac-toe");
+
+		ProjectComponents[] projectComponents = new ProjectComponents[2];
+
+		projectComponents[0] = new ProjectComponents("Authentication",
+				"authentication.client");
+		projectComponents[1] = new ProjectComponents("Game", "client");
+
+		projs[1].setProjectComponents(projectComponents);
 
 	}
 
