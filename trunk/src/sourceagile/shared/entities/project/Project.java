@@ -25,6 +25,8 @@ public class Project implements Serializable {
 
 	private String wiki;
 
+	private ProjectComponents[] projectComponents;
+
 	public String getName() {
 		return name;
 	}
@@ -87,6 +89,14 @@ public class Project implements Serializable {
 
 	public void setWiki(String wiki) {
 		this.wiki = wiki;
+	}
+
+	public ProjectComponents[] getProjectComponents() {
+		return projectComponents;
+	}
+
+	public void setProjectComponents(ProjectComponents[] projectComponents) {
+		this.projectComponents = projectComponents;
 	}
 
 }

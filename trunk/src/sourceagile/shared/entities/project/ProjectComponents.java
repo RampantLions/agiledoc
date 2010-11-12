@@ -10,6 +10,16 @@ public class ProjectComponents implements Serializable {
 
 	private String componentPath;
 
+	public ProjectComponents() {
+
+	}
+
+	public ProjectComponents(String componentName, String componentPath) {
+
+		this.componentName = componentName;
+		this.componentPath = componentPath;
+	}
+
 	public String getComponentName() {
 		return componentName;
 	}
@@ -23,12 +33,6 @@ public class ProjectComponents implements Serializable {
 	}
 
 	public void setComponentPath(String componentPath) {
-		this.componentPath = componentPath;
-	}
-
-	public ProjectComponents(String componentName, String componentPath) {
-
-		this.componentName = componentName;
 		this.componentPath = componentPath;
 	}
 
