@@ -1,6 +1,6 @@
 package sourceagile.codeview.client;
 
-import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizualizationPanel;
+import sourceagile.documentation.client.classViewOptions.ClassVizualizationPanel;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;

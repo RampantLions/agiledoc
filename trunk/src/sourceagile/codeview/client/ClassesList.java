@@ -1,7 +1,7 @@
 package sourceagile.codeview.client;
 
-import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
-import sourceagile.client.userFeatures.documentation.specification.Specification;
+import sourceagile.documentation.client.classViewOptions.OptionsIcons;
+import sourceagile.documentation.client.specification.Specification;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.user.client.ui.VerticalPanel;

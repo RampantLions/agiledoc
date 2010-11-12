@@ -1,6 +1,6 @@
 package sourceagile.codeview.client;
 
-import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizualizationPanel;
+import sourceagile.documentation.client.classViewOptions.ClassVizualizationPanel;
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Field;
