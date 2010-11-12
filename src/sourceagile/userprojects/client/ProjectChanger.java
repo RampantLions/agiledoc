@@ -1,6 +1,6 @@
 package sourceagile.userprojects.client;
 
-import sourceagile.client.authentication.ProjectList;
+import sourceagile.authentication.client.ProjectList;
 import sourceagile.shared.data.ProjectsData;
 import sourceagile.shared.entities.project.Project;
 
@@ -35,9 +35,11 @@ public class ProjectChanger extends ProjectList {
 									.getSpecificationPath());
 					ProjectForm.wiki.setValue(projs[getSelectedIndex() - 1]
 							.getWiki());
+
+					ProjectForm.projectComponents = projs[getSelectedIndex() - 1]
+							.getProjectComponents();
 				}
 			}
 		});
 	}
-
 }
