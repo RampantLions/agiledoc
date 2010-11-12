@@ -2,6 +2,7 @@ package sourceagile.userprojects.client;
 
 import sourceagile.client.systemNavigation.FormField;
 import sourceagile.shared.entities.project.Project;
+import sourceagile.shared.entities.project.ProjectComponents;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -21,6 +22,8 @@ public class ProjectForm extends VerticalPanel {
 	public static final TextBox domain = new TextBox();
 	public static final TextBox specificationPath = new TextBox();
 	public static final TextBox wiki = new TextBox();
+
+	public static ProjectComponents[] projectComponents = null;
 
 	public ProjectForm() {
 
@@ -85,6 +88,8 @@ public class ProjectForm extends VerticalPanel {
 				proj.setDomain(domain.getValue());
 				proj.setSpecificationPath(specificationPath.getValue());
 				proj.setWiki(wiki.getValue());
+
+				proj.setProjectComponents(ProjectForm.projectComponents);
 
 				new ProjectInitialization(proj);
 			}
