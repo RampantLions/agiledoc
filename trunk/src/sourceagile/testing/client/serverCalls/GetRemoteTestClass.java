@@ -2,8 +2,8 @@ package sourceagile.testing.client.serverCalls;
 
 import sourceagile.client.SystemStart;
 import sourceagile.client.systemNavigation.LoadingPanel;
-import sourceagile.client.userFeatures.documentation.classViewOptions.ClassVizualizationPanel;
-import sourceagile.client.userFeatures.documentation.specification.Specification;
+import sourceagile.documentation.client.classViewOptions.ClassVizualizationPanel;
+import sourceagile.documentation.client.specification.Specification;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.testing.client.TestClassDescription;
 import sourceagile.userprojects.client.ProjectInitialization;

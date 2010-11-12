@@ -1,7 +1,7 @@
 package sourceagile.testing.client.serverCalls;
 
 import sourceagile.client.SystemStart;
-import sourceagile.client.userFeatures.documentation.classViewOptions.OptionsIcons;
+import sourceagile.documentation.client.classViewOptions.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.userprojects.client.ProjectInitialization;
 
