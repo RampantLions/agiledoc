@@ -1,6 +1,6 @@
 package sourceagile.client.systemNavigation.projectMenu;
 
-import sourceagile.client.userFeatures.documentation.Documentation;
+import sourceagile.documentation.client.Documentation;
 
 import com.gwtext.client.core.EventObject;
 import com.gwtext.client.widgets.Button;

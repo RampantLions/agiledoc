@@ -1,7 +1,7 @@
 package sourceagile.client.systemNavigation.projectMenu;
 
 import sourceagile.client.SystemStart;
-import sourceagile.client.userFeatures.planning.PlanningPage;
+import sourceagile.planning.client.PlanningPage;
 import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.gwtext.client.core.EventObject;
