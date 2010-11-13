@@ -26,7 +26,7 @@ public class ComponentsList extends VerticalPanel {
 
 		treePanel.setRootNode(componentRoot);
 		treePanel.setRootVisible(false);
-		treePanel.expandAll();
+		// treePanel.expandAll();
 		this.add(treePanel);
 
 		String currentComponentPath = "componentRoot";
