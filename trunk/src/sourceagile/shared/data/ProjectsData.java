@@ -29,28 +29,36 @@ public class ProjectsData {
 		projs[0].setSpecificationPath("client/userFeatures");
 		projs[0].setWiki("http://code.google.com/p/agiledoc/wiki/SourceAgile");
 
-		ProjectComponents[] projectComponents = new ProjectComponents[10];
+		ProjectComponents[] projectComponents = new ProjectComponents[12];
 
 		projectComponents[0] = new ProjectComponents("Authentication",
-				"authentication.client");
+				"authentication/client");
 		projectComponents[1] = new ProjectComponents("User Projects",
-				"userProjects.client");
+				"userprojects/client");
 		projectComponents[2] = new ProjectComponents("System Navigation",
-				"client.systemNavigation");
+				"client/systemNavigation");
 		projectComponents[3] = new ProjectComponents("Planning",
-				"planning.client");
+				"planning/client");
 		projectComponents[4] = new ProjectComponents("Documentation",
-				"documentation.client");
+				"documentation/client");
 
 		projectComponents[5] = new ProjectComponents("Testing",
-				"testing.client");
+				"testing/client");
 		projectComponents[6] = new ProjectComponents("Code Visualization",
-				"codeview.client");
+				"codeview/client");
 		projectComponents[7] = new ProjectComponents("Metrics",
-				"metrics.client");
-		projectComponents[8] = new ProjectComponents("Server Side", "server");
-		projectComponents[9] = new ProjectComponents("Entities",
-				"shared.entities");
+				"metrics/client");
+		// projectComponents[8] = new ProjectComponents("Server Side",
+		// "server");
+		projectComponents[8] = new ProjectComponents(
+				"Server Side/Class Repositories", "server.classRepositories");
+		projectComponents[9] = new ProjectComponents(
+				"Server Side/Database Access", "server.databaseAccess");
+		projectComponents[10] = new ProjectComponents("Server Side/Doclet",
+				"server.doclet");
+
+		projectComponents[11] = new ProjectComponents("Entities",
+				"shared/entities");
 
 		projs[0].setProjectComponents(projectComponents);
 	}
@@ -67,11 +75,12 @@ public class ProjectsData {
 		projs[1].setSpecificationPath("client/userInterface");
 		projs[1].setWiki("http://en.wikipedia.org/wiki/Tic-tac-toe");
 
-		ProjectComponents[] projectComponents = new ProjectComponents[2];
+		ProjectComponents[] projectComponents = new ProjectComponents[3];
 
 		projectComponents[0] = new ProjectComponents("Authentication",
-				"authentication.client");
-		projectComponents[1] = new ProjectComponents("Game", "client");
+				"authentication/client");
+		projectComponents[1] = new ProjectComponents("Game Client", "client");
+		projectComponents[2] = new ProjectComponents("Server Side", "server");
 
 		projs[1].setProjectComponents(projectComponents);
 
@@ -85,6 +94,12 @@ public class ProjectsData {
 		projs[2].setRepositoryURL("http://javatoolssource.googlecode.com/svn");
 		projs[2].setRoot("/trunk/src/");
 
+		ProjectComponents[] projectComponents = new ProjectComponents[1];
+
+		projectComponents[0] = new ProjectComponents("", "");
+
+		projs[2].setProjectComponents(projectComponents);
+
 	}
 
 	private static void loadProject3(Project[] projs) {
@@ -97,6 +112,12 @@ public class ProjectsData {
 		projs[3].setTestRoot("/trunk/test/");
 		projs[3].setDomain("helpagile");
 		projs[3].setSpecificationPath("client/userInterface");
+
+		ProjectComponents[] projectComponents = new ProjectComponents[1];
+
+		projectComponents[0] = new ProjectComponents("Help Agile", "client");
+
+		projs[3].setProjectComponents(projectComponents);
 
 	}
 
