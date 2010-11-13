@@ -44,6 +44,7 @@ public class ComponentClassesList {
 							TreeNode node = new TreeNode(
 									FeatureNameGenerator
 											.spacedName(entryPath[i]));
+							node.setExpanded(true);
 							node.setId(currentPath);
 							node.setIcon("js/ext/resources/images/default/tree/empty.gif");
 
@@ -56,6 +57,7 @@ public class ComponentClassesList {
 
 				TreeNode node = getFeatureLink(entry);
 				node.setId(entry.getFilePath() + "." + entry.getFileName());
+				node.setExpanded(true);
 
 				parentNode.appendChild(node);
 
