@@ -1,16 +1,12 @@
 package sourceagile.documentation.client.classesList;
 
-import sourceagile.documentation.client.specification.Specification;
 import sourceagile.shared.entities.project.ProjectComponents;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.user.client.ui.VerticalPanel;
-import com.gwtext.client.core.EventObject;
-import com.gwtext.client.data.Node;
 import com.gwtext.client.widgets.tree.TreeNode;
 import com.gwtext.client.widgets.tree.TreePanel;
-import com.gwtext.client.widgets.tree.event.TreeNodeListenerAdapter;
 
 public class ComponentsList extends VerticalPanel {
 
@@ -19,104 +15,58 @@ public class ComponentsList extends VerticalPanel {
 		ProjectComponents[] projectComponents = ProjectInitialization.currentProject
 				.getProjectComponents();
 
-		if (projectComponents == null) {
+		this.setSpacing(20);
 
-			Specification.featuresTreePanel.add(new AllClassesList(
-					ProjectInitialization.projectEntries));
+		TreePanel treePanel = new TreePanel();
+		treePanel.setBorder(false);
+		treePanel.setLines(false);
 
-		} else {
+		TreeNode componentRoot = new TreeNode("");
+		componentRoot.setId("componentRoot");
 
-			this.setSpacing(20);
+		treePanel.setRootNode(componentRoot);
+		treePanel.setRootVisible(false);
+		treePanel.expandAll();
+		this.add(treePanel);
 
-			TreePanel treePanel = new TreePanel();
-			treePanel.setBorder(false);
-			treePanel.setLines(false);
+		String currentComponentPath = "componentRoot";
 
-			TreeNode root = new TreeNode("");
-			root.setId("root");
+		for (ProjectComponents projectComponent : projectComponents) {
 
-			treePanel.setRootNode(root);
-			treePanel.setRootVisible(false);
-			treePanel.expandAll();
-			this.add(treePanel);
+			String[] componentPath = projectComponent.getComponentName().split(
+					"/");
 
-			String currentPath = "root";
+			for (int i = 0; i < componentPath.length; i++) {
 
-			for (ProjectComponents projectComponent : projectComponents) {
+				TreeNode componentParentNode = treePanel
+						.getNodeById(currentComponentPath);
 
-				String[] componentPath = projectComponent.getComponentPath()
-						.split("/");
+				currentComponentPath += "/" + componentPath[i];
 
-				for (int i = 0; i < componentPath.length; i++) {
+				if (treePanel.getNodeById(currentComponentPath) == null) {
 
-					TreeNode parentNode = treePanel.getNodeById(currentPath);
+					TreeNode emptyNode = new TreeNode("");
+					emptyNode
+							.setIcon("js/ext/resources/images/default/tree/empty.gif");
+					componentParentNode.appendChild(emptyNode);
 
-					if (!componentPath[i].equals("")) {
+					TreeNode node = new TreeNode(
+							FeatureNameGenerator.spacedName(componentPath[i]));
+					node.setId(currentComponentPath);
 
-						currentPath += "/" + componentPath[i];
-
-						if (treePanel.getNodeById(currentPath) == null) {
-
-							if (i == 0) {
-
-								treePanel = new TreePanel();
-								treePanel.setBorder(false);
-								treePanel.setLines(false);
-
-								root = new TreeNode(
-										FeatureNameGenerator
-												.spacedName(componentPath[i]));
-								root.setId(currentPath);
-								root.setIcon("js/ext/resources/images/default/tree/empty.gif");
-
-								treePanel.setRootNode(root);
-								treePanel.expandAll();
-								this.add(treePanel);
-
-							} else {
-
-								TreeNode node = new TreeNode(
-										FeatureNameGenerator
-												.spacedName(componentPath[i]));
-								node.setId(currentPath);
-								node.setIcon("js/ext/resources/images/default/tree/empty.gif");
-
-								parentNode.appendChild(node);
-							}
-						}
-					}
+					componentParentNode.appendChild(node);
 				}
-
-				TreeNode parentNode = treePanel.getNodeById(currentPath);
-
-				TreeNode node = getFeatureLink(projectComponent);
-				node.setId(projectComponent.getComponentPath() + "."
-						+ projectComponent.getComponentPath());
-
-				parentNode.appendChild(node);
-
-				currentPath = "root";
 			}
+
+			TreeNode componentParentNode = treePanel
+					.getNodeById(currentComponentPath);
+
+			new ComponentClassesList(treePanel, componentParentNode,
+					ProjectInitialization.projectEntries,
+					projectComponent.getComponentPath());
+
+			currentComponentPath = "componentRoot";
 		}
-	}
-
-	private TreeNode getFeatureLink(final ProjectComponents projectComponent) {
-
-		TreeNode treeNode = new TreeNode(projectComponent.getComponentName());
-
-		treeNode.setIcon("js/ext/resources/images/default/tree/world.gif");
-
-		// treeNode.setIconCls("world-icon");
-
-		treeNode.addListener(new TreeNodeListenerAdapter() {
-			public void onClick(Node node, EventObject e) {
-
-				// Specification.showClass(entry,
-				// OptionsIcons.OPTION_DESCRIPTION);
-			}
-		});
-
-		return treeNode;
 	}
 
 }
