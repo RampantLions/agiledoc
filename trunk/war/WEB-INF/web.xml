@@ -6,6 +6,12 @@
 <web-app>
   
   <!-- Servlets -->
+  
+  	<servlet>
+		<servlet-name>databaseAccess</servlet-name>
+		<servlet-class>sourceagile.server.databaseAccess.DatabaseAccessImplementation</servlet-class>
+	</servlet>
+  
 	<servlet>
 		<servlet-name>subversionRepositoryClassLoader</servlet-name>
 		<servlet-class>sourceagile.server.classRepositories.subversionClassRepository.SubversionRepositoryClassImplementation</servlet-class>
@@ -20,6 +26,11 @@
 		<servlet-name>repositoryTestClassLoader</servlet-name>
 		<servlet-class>sourceagile.server.classRepositories.subversionClassRepository.repositoryTest.RepositoryClassTestImplementation</servlet-class>
 	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>databaseAccess</servlet-name>
+		<url-pattern>/sourceagile/databaseAccess</url-pattern>
+	</servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>subversionRepositoryClassLoader</servlet-name>
