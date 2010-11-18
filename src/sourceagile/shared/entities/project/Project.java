@@ -1,7 +1,15 @@
 package sourceagile.shared.entities.project;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable
 public class Project implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -9,23 +17,47 @@ public class Project implements Serializable {
 	public static final String REPOSITORY_TYPE_SUBVERSION = "Subversion";
 	public static final String REPOSITORY_TYPE_GIT = "Git";
 
+	@PrimaryKey
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	private Long projectID;
+
+	@Persistent
 	private String name;
 
+	@Persistent
+	private String description;
+
+	@Persistent
 	private String repositoryType;
 
+	@Persistent
 	private String repositoryURL;
 
+	@Persistent
 	private String root;
 
+	@Persistent
 	private String testRoot;
 
+	@Persistent
 	private String domain;
 
+	@Persistent
 	private String specificationPath;
 
+	@Persistent
 	private String wiki;
 
-	private ProjectComponents[] projectComponents;
+	@Persistent(defaultFetchGroup = "true")
+	private List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
+
+	public Long getProjectID() {
+		return projectID;
+	}
+
+	public void setProjectID(Long projectID) {
+		this.projectID = projectID;
+	}
 
 	public String getName() {
 		return name;
@@ -33,6 +65,14 @@ public class Project implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getRepositoryType() {
@@ -91,11 +131,11 @@ public class Project implements Serializable {
 		this.wiki = wiki;
 	}
 
-	public ProjectComponents[] getProjectComponents() {
+	public List<ProjectComponents> getProjectComponents() {
 		return projectComponents;
 	}
 
-	public void setProjectComponents(ProjectComponents[] projectComponents) {
+	public void setProjectComponents(List<ProjectComponents> projectComponents) {
 		this.projectComponents = projectComponents;
 	}
 
