@@ -22,8 +22,9 @@ public class ListRemoteClasses {
 		RootPanel.get().clear();
 		RootPanel.get().add(new LoadingPanel());
 
-		if (ProjectInitialization.currentProject.getRepositoryType().equals(
-				Project.REPOSITORY_TYPE_SUBVERSION)) {
+		if (Project.REPOSITORY_TYPE_SUBVERSION
+				.equals(ProjectInitialization.currentProject
+						.getRepositoryType())) {
 
 			final LoadSubversionRemoteClassesAsync subversionRemoteFunctions = GWT
 					.create(LoadSubversionRemoteClasses.class);
