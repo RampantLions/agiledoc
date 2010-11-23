@@ -1,5 +1,7 @@
 package sourceagile.documentation.client.classesList;
 
+import java.util.List;
+
 import sourceagile.shared.entities.project.ProjectComponents;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 import sourceagile.userprojects.client.ProjectInitialization;
@@ -12,7 +14,7 @@ public class ComponentsList extends VerticalPanel {
 
 	public ComponentsList() {
 
-		ProjectComponents[] projectComponents = ProjectInitialization.currentProject
+		List<ProjectComponents> projectComponents = ProjectInitialization.currentProject
 				.getProjectComponents();
 
 		this.setSpacing(20);
