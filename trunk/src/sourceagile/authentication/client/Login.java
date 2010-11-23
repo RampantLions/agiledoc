@@ -3,6 +3,7 @@ package sourceagile.authentication.client;
 import java.util.List;
 
 import sourceagile.authentication.client.serverCalls.GetLoginProject;
+import sourceagile.client.InternationalizationConstants;
 import sourceagile.client.SystemStart;
 import sourceagile.client.systemNavigation.FormField;
 import sourceagile.shared.data.UserData;
@@ -10,6 +11,7 @@ import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.userprojects.client.ProjectList;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
@@ -20,6 +22,9 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class Login extends VerticalPanel {
+
+	private InternationalizationConstants internationalizationConstants = GWT
+			.create(InternationalizationConstants.class);
 
 	public Login(List<Project> projects) {
 
@@ -50,29 +55,32 @@ public class Login extends VerticalPanel {
 		vp.setSpacing(20);
 
 		final ProjectList projectList = new ProjectList(projects);
-		vp.add(new FormField("Select a Project", projectList));
+		vp.add(new FormField(internationalizationConstants.selectAProject(),
+				projectList));
 
 		final UsersList usersList = new UsersList();
-		vp.add(new FormField("and User", usersList));
+		vp.add(new FormField(internationalizationConstants.user(), usersList));
 
 		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 
-		Button button = new Button("Log in", new ClickHandler() {
+		Button button = new Button(internationalizationConstants.logIn(),
+				new ClickHandler() {
 
-			@Override
-			public void onClick(ClickEvent event) {
+					@Override
+					public void onClick(ClickEvent event) {
 
-				User userSelected = UserData.load()[Integer.parseInt(usersList
-						.getValue(usersList.getSelectedIndex()))];
+						User userSelected = UserData.load()[Integer
+								.parseInt(usersList.getValue(usersList
+										.getSelectedIndex()))];
 
-				SystemStart.currentUser = userSelected;
+						SystemStart.currentUser = userSelected;
 
-				Long projectSelected = new Long(
-						projectList.getValue(projectList.getSelectedIndex()));
+						Long projectSelected = new Long(projectList
+								.getValue(projectList.getSelectedIndex()));
 
-				new GetLoginProject(projectSelected);
-			}
-		});
+						new GetLoginProject(projectSelected);
+					}
+				});
 
 		vp.add(button);
 
