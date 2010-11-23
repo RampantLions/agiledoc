@@ -1,5 +1,7 @@
 package sourceagile.userprojects.client;
 
+import java.util.List;
+
 import sourceagile.client.systemNavigation.FormField;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.entities.project.ProjectComponents;
@@ -23,7 +25,7 @@ public class ProjectForm extends VerticalPanel {
 	public static final TextBox specificationPath = new TextBox();
 	public static final TextBox wiki = new TextBox();
 
-	public static ProjectComponents[] projectComponents = null;
+	public static List<ProjectComponents> projectComponents = null;
 
 	public ProjectForm() {
 
@@ -98,4 +100,16 @@ public class ProjectForm extends VerticalPanel {
 		return button;
 	}
 
+	public static void setProjectForm(Project project) {
+
+		name.setValue(project.getName());
+		url.setValue(project.getRepositoryURL());
+		root.setValue(project.getRoot());
+		testRoot.setValue(project.getTestRoot());
+		domain.setValue(project.getDomain());
+		specificationPath.setValue(project.getSpecificationPath());
+		wiki.setValue(project.getWiki());
+
+		projectComponents = project.getProjectComponents();
+	}
 }
