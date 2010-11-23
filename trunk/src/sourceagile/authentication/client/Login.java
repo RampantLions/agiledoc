@@ -1,12 +1,14 @@
 package sourceagile.authentication.client;
 
+import java.util.List;
+
+import sourceagile.authentication.client.serverCalls.GetLoginProject;
 import sourceagile.client.SystemStart;
 import sourceagile.client.systemNavigation.FormField;
-import sourceagile.shared.data.ProjectsData;
 import sourceagile.shared.data.UserData;
 import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.project.Project;
-import sourceagile.userprojects.client.ProjectInitialization;
+import sourceagile.userprojects.client.ProjectList;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -19,7 +21,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class Login extends VerticalPanel {
 
-	public Login() {
+	public Login(List<Project> projects) {
 
 		this.setSize("100%", "100%");
 
@@ -37,17 +39,17 @@ public class Login extends VerticalPanel {
 						+ "<br><br><b>an Agile Toolkit</font></b> "
 						+ "<br><br><br><font size=4>Prototype Version</font></center>"));
 
-		this.add(panelLogin());
+		this.add(panelLogin(projects));
 
 	}
 
-	private VerticalPanel panelLogin() {
+	private VerticalPanel panelLogin(List<Project> projects) {
 
 		VerticalPanel vp = new VerticalPanel();
 
 		vp.setSpacing(20);
 
-		final ProjectList projectList = new ProjectList();
+		final ProjectList projectList = new ProjectList(projects);
 		vp.add(new FormField("Select a Project", projectList));
 
 		final UsersList usersList = new UsersList();
@@ -65,11 +67,10 @@ public class Login extends VerticalPanel {
 
 				SystemStart.currentUser = userSelected;
 
-				Project projectSelected = ProjectsData.load()[Integer
-						.parseInt(projectList.getValue(projectList
-								.getSelectedIndex()))];
+				Long projectSelected = new Long(
+						projectList.getValue(projectList.getSelectedIndex()));
 
-				new ProjectInitialization(projectSelected);
+				new GetLoginProject(projectSelected);
 			}
 		});
 
