@@ -10,4 +10,6 @@ public interface DatabaseAccessServerCallsAsync {
 
 	void listProjects(AsyncCallback<List<Project>> callback);
 
+	void getProject(Long projectID, AsyncCallback<Project> callback);
+
 }

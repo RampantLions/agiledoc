@@ -12,4 +12,6 @@ public interface DatabaseAccessServerCalls extends RemoteService {
 
 	List<Project> listProjects();
 
+	Project getProject(Long projectID);
+
 }
