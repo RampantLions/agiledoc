@@ -1,5 +1,9 @@
 package sourceagile.userprojects.client;
 
+import java.util.List;
+
+import sourceagile.shared.entities.project.Project;
+
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -8,7 +12,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 public class ProjectSelection extends VerticalPanel {
 
-	public ProjectSelection() {
+	public ProjectSelection(List<Project> projects) {
 
 		this.setBorderWidth(1);
 
@@ -20,7 +24,7 @@ public class ProjectSelection extends VerticalPanel {
 
 		vp.add(new HTML("<B>Select a Project on the list bellow: </B>"));
 
-		vp.add(new ProjectChanger());
+		vp.add(ProjectChanger.getList(projects));
 
 		vp.add(new ProjectForm());
 

@@ -1,45 +1,34 @@
 package sourceagile.userprojects.client;
 
-import sourceagile.authentication.client.ProjectList;
-import sourceagile.shared.data.ProjectsData;
+import java.util.List;
+
 import sourceagile.shared.entities.project.Project;
+import sourceagile.userprojects.client.serverCalls.GetProject;
 
 import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
 
-public class ProjectChanger extends ProjectList {
+public class ProjectChanger {
 
-	public ProjectChanger() {
+	public static ProjectList getList(List<Project> projects) {
 
-		this.addChangeHandler(new ChangeHandler() {
+		final ProjectList projectList = new ProjectList(projects);
+
+		projectList.addChangeHandler(new ChangeHandler() {
 
 			@Override
 			public void onChange(ChangeEvent event) {
 
-				if (getSelectedIndex() > 0) {
+				if (projectList.getSelectedIndex() > 0) {
 
-					Project[] projs = ProjectsData.load();
+					Long projectSelected = new Long(projectList
+							.getValue(projectList.getSelectedIndex()));
 
-					ProjectForm.name.setValue(projs[getSelectedIndex() - 1]
-							.getName());
-					ProjectForm.url.setValue(projs[getSelectedIndex() - 1]
-							.getRepositoryURL());
-					ProjectForm.root.setValue(projs[getSelectedIndex() - 1]
-							.getRoot());
-					ProjectForm.testRoot.setValue(projs[getSelectedIndex() - 1]
-							.getTestRoot());
-					ProjectForm.domain.setValue(projs[getSelectedIndex() - 1]
-							.getDomain());
-					ProjectForm.specificationPath
-							.setValue(projs[getSelectedIndex() - 1]
-									.getSpecificationPath());
-					ProjectForm.wiki.setValue(projs[getSelectedIndex() - 1]
-							.getWiki());
-
-					ProjectForm.projectComponents = projs[getSelectedIndex() - 1]
-							.getProjectComponents();
+					new GetProject(projectSelected);
 				}
 			}
 		});
+
+		return projectList;
 	}
 }
