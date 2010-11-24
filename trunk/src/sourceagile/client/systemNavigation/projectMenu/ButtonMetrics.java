@@ -1,17 +1,22 @@
 package sourceagile.client.systemNavigation.projectMenu;
 
+import sourceagile.client.InternationalizationConstants;
 import sourceagile.client.SystemStart;
 import sourceagile.metrics.client.ProductivityPage;
 
+import com.google.gwt.core.client.GWT;
 import com.gwtext.client.core.EventObject;
 import com.gwtext.client.widgets.Button;
 import com.gwtext.client.widgets.event.ButtonListenerAdapter;
 
-public class ButtonProductivity extends Button {
+public class ButtonMetrics extends Button {
 
-	public ButtonProductivity() {
+	private static InternationalizationConstants internationalizationConstants = GWT
+			.create(InternationalizationConstants.class);
 
-		this.setText("Metrics");
+	public ButtonMetrics() {
+
+		this.setText(internationalizationConstants.metrics());
 
 		this.addListener(new ButtonListenerAdapter() {
 			@Override
