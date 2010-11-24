@@ -1,7 +1,9 @@
 package sourceagile.client.systemNavigation;
 
 import helpagile.client.exportation.HelpIcon;
+import sourceagile.client.InternationalizationConstants;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
@@ -10,6 +12,9 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.TextBox;
 
 public class SystemOptions extends HorizontalPanel {
+
+	private static InternationalizationConstants internationalizationConstants = GWT
+			.create(InternationalizationConstants.class);
 
 	public SystemOptions() {
 
@@ -31,7 +36,7 @@ public class SystemOptions extends HorizontalPanel {
 
 		Image img = new Image("images/search.gif");
 
-		img.setTitle("Search");
+		img.setTitle(internationalizationConstants.search());
 
 		img.addClickHandler(new ClickHandler() {
 
