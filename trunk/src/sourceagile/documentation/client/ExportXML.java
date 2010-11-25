@@ -1,8 +1,11 @@
 package sourceagile.documentation.client;
 
+import java.util.List;
+
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Method;
+import sourceagile.shared.entities.project.ProjectComponents;
 import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.xml.client.Document;
@@ -14,9 +17,15 @@ public class ExportXML {
 
 	private static final String xmlHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
 
-	private static final String ENTRIES = "entries";
 	private static final String PROJECT = "project";
+	private static final String PROJECT_NAME = "projectName";
+	private static final String PROJECT_DESCRIPTION = "projectDescription";
 
+	private static final String PROJECT_COMPONENTS = "projectComponents";
+	private static final String PROJECT_COMPONENT = "projectComponent";
+	private static final String COMPONENT_NAME = "componentName";
+
+	private static final String ENTRIES = "entries";
 	private static final String ENTRY = "entry";
 	private static final String CLASS_NAME = "className";
 	private static final String CLASS_PATH = "classPath";
@@ -36,52 +45,76 @@ public class ExportXML {
 
 		Document xmlDocument = XMLParser.createDocument();
 
-		Element entriesElement = getEntriesElement(xmlDocument);
-		xmlDocument.appendChild(entriesElement);
+		Element projectElement = getProjectElement(xmlDocument);
 
-		String specificationPath = ProjectInitialization.currentProject
-				.getSpecificationPath();
+		Element componentsElement = xmlDocument
+				.createElement(PROJECT_COMPONENTS);
 
-		for (ClassFile entry : ProjectInitialization.projectEntries) {
+		List<ProjectComponents> projectComponents = ProjectInitialization.currentProject
+				.getProjectComponents();
 
-			if (!entry.getClassDoc().isTodo()) {
+		for (ProjectComponents projectComponent : projectComponents) {
 
-				Element entryElement = getEntryNode(xmlDocument, entry);
+			Element componentElement = xmlDocument
+					.createElement(PROJECT_COMPONENT);
 
-				entryElement.appendChild(getElement(xmlDocument, CLASS_NAME,
-						entry.getClassDoc().getClassName()));
+			componentElement.setAttribute(COMPONENT_NAME,
+					projectComponent.getComponentName());
 
-				entryElement.appendChild(getElement(xmlDocument, CLASS_PATH,
-						entry.getClassDoc().getClassPackage()));
+			componentsElement.appendChild(componentElement);
 
-				String featurePath = "";
-				if (entry.getFilePath().startsWith(specificationPath)) {
+			Element entriesElement = xmlDocument.createElement(ENTRIES);
 
-					featurePath = entry.getFilePath().substring(
-							specificationPath.length());
+			componentElement.appendChild(entriesElement);
 
-					if (featurePath.length() > 0) {
+			for (ClassFile entry : ProjectInitialization.projectEntries) {
 
-						featurePath = featurePath.substring(1);
+				if (!entry.getClassDoc().isTodo()) {
+
+					Element entryElement = getEntryNode(xmlDocument, entry,
+							projectComponent.getComponentPath());
+
+					entryElement.appendChild(getElement(xmlDocument,
+							CLASS_NAME, entry.getClassDoc().getClassName()));
+
+					entryElement.appendChild(getElement(xmlDocument,
+							CLASS_PATH, entry.getClassDoc().getClassPackage()));
+
+					String featurePath = "";
+					if (entry.getFilePath() != null
+							&& entry.getFilePath().startsWith(
+									projectComponent.getComponentPath())) {
+
+						featurePath = entry.getFilePath().substring(
+								projectComponent.getComponentPath().length());
+
+						if (featurePath.length() > 0) {
+
+							featurePath = featurePath.substring(1);
+						}
 					}
+
+					entryElement.appendChild(getElement(xmlDocument,
+							FEATURE_PATH, featurePath));
+
+					entryElement.appendChild(getElement(xmlDocument,
+							FEATURE_NAME, entry.getFeature().getFeatureName()));
+
+					entryElement.appendChild(getElement(xmlDocument,
+							FEATURE_DESCRIPTION, entry.getClassDoc()
+									.getDescription()));
+
+					entryElement.appendChild(getMethodsElement(entry
+							.getClassDoc().getMethods(), xmlDocument));
+
+					entriesElement.appendChild(entryElement);
 				}
-
-				entryElement.appendChild(getElement(xmlDocument, FEATURE_PATH,
-						featurePath));
-
-				entryElement.appendChild(getElement(xmlDocument, FEATURE_NAME,
-						entry.getFeature().getFeatureName()));
-
-				entryElement.appendChild(getElement(xmlDocument,
-						FEATURE_DESCRIPTION, entry.getClassDoc()
-								.getDescription()));
-
-				entryElement.appendChild(getMethodsElement(entry.getClassDoc()
-						.getMethods(), xmlDocument));
-
-				entriesElement.appendChild(entryElement);
 			}
 		}
+
+		projectElement.appendChild(componentsElement);
+
+		xmlDocument.appendChild(projectElement);
 
 		return xmlHeader + xmlDocument.toString();
 	}
@@ -99,19 +132,21 @@ public class ExportXML {
 		return syntaxPanel;
 	}
 
-	private static Element getEntriesElement(Document xmlDocument) {
+	private static Element getProjectElement(Document xmlDocument) {
 
-		Element entriesElement = xmlDocument.createElement(ENTRIES);
-		entriesElement.setAttribute(PROJECT,
-				ProjectInitialization.currentProject.getName());
+		Element projectElement = xmlDocument.createElement(PROJECT);
 
-		return entriesElement;
+		projectElement.appendChild(getElement(xmlDocument, PROJECT_NAME,
+				ProjectInitialization.currentProject.getName()));
+
+		projectElement.appendChild(getElement(xmlDocument, PROJECT_DESCRIPTION,
+				ProjectInitialization.currentProject.getDescription()));
+
+		return projectElement;
 	}
 
-	private static Element getEntryNode(Document xmlDocument, ClassFile entry) {
-
-		String specificationPath = ProjectInitialization.currentProject
-				.getSpecificationPath();
+	private static Element getEntryNode(Document xmlDocument, ClassFile entry,
+			String specificationPath) {
 
 		Element entryElement = xmlDocument.createElement(ENTRY);
 
