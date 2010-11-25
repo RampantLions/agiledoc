@@ -2,11 +2,11 @@ package sourceagile.server.repositoryClassLoader;
 
 import junit.framework.TestCase;
 import sourceagile.server.classRepositories.subversionClassRepository.SubversionRepositoryClassImplementation;
-import sourceagile.shared.data.ProjectsData;
 import sourceagile.shared.data.UserData;
 import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.Project;
+import sourceagile.userprojects.client.ProjectsData;
 
 public class UpdateDocumentationTest extends TestCase {
 	public void testUpdate() throws Exception {
