@@ -4,9 +4,11 @@ import sourceagile.client.SystemStart;
 import sourceagile.documentation.client.classViewOptions.OptionsIcons;
 import sourceagile.documentation.client.classesList.ClassesListFiltered;
 import sourceagile.documentation.client.features.FeaturesList;
+import sourceagile.documentation.client.serverCalls.fileExporter.FileExporter;
 import sourceagile.documentation.client.specification.Specification;
 import sourceagile.documentation.client.specification.SpecificationList;
 import sourceagile.shared.entities.entry.ClassDocumentation;
+import sourceagile.shared.utilities.FileNameGenerator;
 import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -135,10 +137,16 @@ public class Documentation {
 			public void onClick(ClickEvent event) {
 
 				Documentation.documentationPanel.clear();
+
 				Documentation.documentationPanel.add(ExportXML.getSyntaxPanel(
 						ExportXML.getEntriesXML(), "Specification XML format"));
 
-				;
+				String fileName = FileNameGenerator
+						.compactName(ProjectInitialization.currentProject
+								.getName())
+						+ "_Specification";
+
+				new FileExporter(fileName, ExportXML.getEntriesXML());
 			}
 		});
 		vp.add(linkExportXML);
