@@ -26,6 +26,11 @@
 		<servlet-name>repositoryTestClassLoader</servlet-name>
 		<servlet-class>sourceagile.server.classRepositories.subversionClassRepository.repositoryTest.RepositoryClassTestImplementation</servlet-class>
 	</servlet>
+	
+	<servlet>
+		<servlet-name>fileExporter</servlet-name>
+		<servlet-class>sourceagile.server.fileExporter.FileExporterImplementation</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>databaseAccess</servlet-name>
@@ -45,6 +50,11 @@
 	<servlet-mapping>
 		<servlet-name>repositoryTestClassLoader</servlet-name>
 		<url-pattern>/sourceagile/repositoryTestClassLoader</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>fileExporter</servlet-name>
+		<url-pattern>/sourceagile/fileExporter</url-pattern>
 	</servlet-mapping>
   
   <!-- Default page to serve -->
