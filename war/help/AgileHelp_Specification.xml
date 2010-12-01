@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectName>Agile Help</projectName>
+	<projectDescription></projectDescription>
+	<projectComponents>
+		<projectComponent componentName="Help Agile">
+			<entries>
+				<entry feature="false" specification="false">
+					<className></className>
+					<classPath></classPath>
+					<featurePath></featurePath>
+					<featureName>Help Agile</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+				</entry>
+				<entry feature="false" specification="true">
+					<className>HelpAgile</className>
+					<classPath>helpagile.client</classPath>
+					<featurePath></featurePath>
+					<featureName>Help Agile</featureName>
+					<featureDescription>Entry point classes define
+						&lt;code&gt;onModuleLoad()&lt;/code&gt;.</featureDescription>
+					<methods>
+						<method>
+							<methodName>onModuleLoad</methodName>
+							<methodDescription>This is the entry point method.
+							</methodDescription>
+						</method>
+						<method>
+							<methodName>initHelp</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+				</entry>
+				<entry feature="false" specification="true">
+					<className>HelpHint</className>
+					<classPath>helpagile.client.exportation</classPath>
+					<featurePath>exportation</featurePath>
+					<featureName>Help Hint</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getHelpHint</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getHelpHint</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+				</entry>
+				<entry feature="false" specification="true">
+					<className>HelpIcon</className>
+					<classPath>helpagile.client.exportation</classPath>
+					<featurePath>exportation</featurePath>
+					<featureName>Help Icon</featureName>
+					<featureDescription>Open a window with the help instructions for
+						this application.</featureDescription>
+					<methods />
+				</entry>
+				<entry feature="false" specification="true">
+					<className>HelpEntry</className>
+					<classPath>helpagile.client.modelEntities</classPath>
+					<featurePath>modelEntities</featurePath>
+					<featureName>Help Entry</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getFilePath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFilePath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFileName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFileName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>isFeature</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFeature</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>isSpecification</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setSpecification</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFeaturePath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFeaturePath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFeatureName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFeatureName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFeatureDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFeatureDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+				</entry>
+				<entry feature="false" specification="true">
+					<className>HelpMethod</className>
+					<classPath>helpagile.client.modelEntities</classPath>
+					<featurePath>modelEntities</featurePath>
+					<featureName>Help Method</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getReturnType</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setReturnType</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getParameters</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setParameters</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getSpacedName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setSpacedName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>toString</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+				</entry>
+				<entry feature="false" specification="true">
+					<className>HelpItemDescription</className>
+					<classPath>helpagile.client.userInterface</classPath>
+					<featurePath>userInterface</featurePath>
+					<featureName>Help Item Description</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>entryMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+				</entry>
+				<entry feature="false" specification="true">
+					<className>HelpItemsList</className>
+					<classPath>helpagile.client.userInterface</classPath>
+					<featurePath>userInterface</featurePath>
+					<featureName>Help Items List</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getFeatureLink</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+				</entry>
+				<entry feature="false" specification="true">
+					<className>HelpWindow</className>
+					<classPath>helpagile.client.userInterface</classPath>
+					<featurePath>userInterface</featurePath>
+					<featureName>Help Window</featureName>
+					<featureDescription>Instructions for the application functions
+						while using the it, to try solve
+						user problems.</featureDescription>
+					<methods>
+						<method>
+							<methodName>setHelpPage</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>showDocumentationMenu</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+				</entry>
+				<entry feature="false" specification="true">
+					<className>ShowFeaturesList</className>
+					<classPath>helpagile.client.userInterface</classPath>
+					<featurePath>userInterface</featurePath>
+					<featureName>Show Features List</featureName>
+					<featureDescription>List all the features available for the game.
+					</featureDescription>
+					<methods>
+						<method>
+							<methodName>getEntryHTML</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+				</entry>
+				<entry feature="false" specification="true">
+					<className>ShowUserManual</className>
+					<classPath>helpagile.client.userInterface</classPath>
+					<featurePath>userInterface</featurePath>
+					<featureName>Show User Manual</featureName>
+					<featureDescription>List all the help entries available for the
+						game.</featureDescription>
+					<methods>
+						<method>
+							<methodName>entryMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+				</entry>
+				<entry feature="false" specification="true">
+					<className>HelpHeader</className>
+					<classPath>helpagile.client.userInterface.header</classPath>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Help Header</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+				</entry>
+				<entry feature="false" specification="true">
+					<className>HelpTitle</className>
+					<classPath>helpagile.client.userInterface.header</classPath>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Help Title</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+				</entry>
+				<entry feature="false" specification="true">
+					<className>ProjectInfo</className>
+					<classPath>helpagile.client.userInterface.header</classPath>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Project Info</featureName>
+					<featureDescription>Name and information about the current project
+						being showed in the user
+						manual.</featureDescription>
+					<methods />
+				</entry>
+				<entry feature="false" specification="true">
+					<className>Search</className>
+					<classPath>helpagile.client.userInterface.header</classPath>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Search</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getSearchIcon</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+				</entry>
+				<entry feature="false" specification="true">
+					<className>FeatureNameGenerator</className>
+					<classPath>helpagile.client.utilities</classPath>
+					<featurePath>utilities</featurePath>
+					<featureName>Feature Name Generator</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>spacedName</methodName>
+							<methodDescription>Fill with spaces a name that is truncated.
+							</methodDescription>
+						</method>
+					</methods>
+				</entry>
+				<entry feature="false" specification="true">
+					<className>LoadSpecificationXML</className>
+					<classPath>helpagile.client.utilities</classPath>
+					<featurePath>utilities</featurePath>
+					<featureName>Load Specification</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>loadXMLFile</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>convertHelpEntries</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getHelpEntryFromElement</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>entryMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+				</entry>
+			</entries>
+		</projectComponent>
+	</projectComponents>
+</project>
