@@ -10,12 +10,11 @@ public class ProjectsData {
 
 	public static Project[] load() {
 
-		Project[] projs = new Project[4];
+		Project[] projs = new Project[3];
 
 		loadProject0(projs);
 		loadProject1(projs);
 		loadProject2(projs);
-		loadProject3(projs);
 
 		return projs;
 	}
@@ -52,8 +51,7 @@ public class ProjectsData {
 				"codeview/client"));
 		projectComponents
 				.add(new ProjectComponents("Metrics", "metrics/client"));
-		// projectComponents[8] = new ProjectComponents("Server Side",
-		// "server");
+
 		projectComponents.add(new ProjectComponents(
 				"Server Side/Class Repositories", "server/classRepositories"));
 		projectComponents.add(new ProjectComponents(
@@ -80,12 +78,17 @@ public class ProjectsData {
 		projs[1].setSpecificationPath("client/userInterface");
 		projs[1].setWiki("http://en.wikipedia.org/wiki/Tic-tac-toe");
 
+		projs[1].setDescription("Tic-tac-toe, also spelled tick tack toe, or noughts and crosses as it is known in the UK, Ireland, "
+				+ "Australia, New Zealand, is a pencil-and-paper game for two players, O and X, who take turns marking the spaces in a 3x3 grid,"
+				+ " usually X going first. The player who succeeds in placing three respective marks in a horizontal, vertical, or diagonal row wins the game.");
+
 		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 
 		projectComponents.add(new ProjectComponents("Authentication",
 				"authentication/client"));
-		projectComponents.add(new ProjectComponents("Game Client", "client"));
-		projectComponents.add(new ProjectComponents("Server Side", "server"));
+		projectComponents.add(new ProjectComponents("Gaming", "client"));
+		projectComponents
+				.add(new ProjectComponents("Infra Structure", "server"));
 
 		projs[1].setProjectComponents(projectComponents);
 
@@ -95,36 +98,22 @@ public class ProjectsData {
 
 		projs[2] = new Project();
 		projs[2].setProjectID(new Long(3));
-		projs[2].setName("JDK Tools.jar");
+		projs[2].setName("Help Agile");
 		projs[2].setRepositoryType(Project.REPOSITORY_TYPE_SUBVERSION);
-		projs[2].setRepositoryURL("http://javatoolssource.googlecode.com/svn");
+		projs[2].setRepositoryURL("https://agilehelp.googlecode.com/svn");
 		projs[2].setRoot("/trunk/src/");
+		projs[2].setTestRoot("/trunk/test/");
+		projs[2].setDomain("helpagile");
+		projs[2].setSpecificationPath("client/userInterface");
 
-		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
-
-		projectComponents.add(new ProjectComponents("", ""));
-
-		projs[2].setProjectComponents(projectComponents);
-
-	}
-
-	private static void loadProject3(Project[] projs) {
-
-		projs[3] = new Project();
-		projs[3].setProjectID(new Long(4));
-		projs[3].setName("Agile Help");
-		projs[3].setRepositoryType(Project.REPOSITORY_TYPE_SUBVERSION);
-		projs[3].setRepositoryURL("https://agilehelp.googlecode.com/svn");
-		projs[3].setRoot("/trunk/src/");
-		projs[3].setTestRoot("/trunk/test/");
-		projs[3].setDomain("helpagile");
-		projs[3].setSpecificationPath("client/userInterface");
+		projs[2].setDescription("Help Agile is an automatic generated specification "
+				+ "and user documentation for your software.");
 
 		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 
 		projectComponents.add(new ProjectComponents("Help Agile", "client"));
 
-		projs[3].setProjectComponents(projectComponents);
+		projs[2].setProjectComponents(projectComponents);
 
 	}
 
