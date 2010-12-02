@@ -28,3 +28,5 @@ Source Agile is a new tool for your software project, shedding light on the dark
 = Requirements =
 
 Ubiquitous Language - http://domaindrivendesign.org/node/132
+
+Decoupling Development
