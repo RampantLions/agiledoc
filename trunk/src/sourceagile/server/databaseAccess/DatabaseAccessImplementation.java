@@ -4,6 +4,7 @@ import java.util.List;
 
 import sourceagile.server.databaseAccess.Project.GetProject;
 import sourceagile.server.databaseAccess.Project.ListProjects;
+import sourceagile.server.databaseAccess.Project.SaveProject;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.userprojects.client.serverCalls.DatabaseAccessServerCalls;
 
@@ -29,6 +30,12 @@ public class DatabaseAccessImplementation extends RemoteServiceServlet
 		Project project = GetProject.get(projectID);
 
 		return project;
+	}
+
+	@Override
+	public void saveProject(Project project) {
+
+		SaveProject.save(project);
 	}
 
 }
