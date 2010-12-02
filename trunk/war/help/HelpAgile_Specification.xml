@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-	<projectName>Agile Help</projectName>
-	<projectDescription></projectDescription>
+	<projectName>Help Agile</projectName>
+	<projectDescription>Help Agile is an automatic generated specification
+		and user documentation for your software.</projectDescription>
 	<projectComponents>
 		<projectComponent componentName="Help Agile">
 			<entries>

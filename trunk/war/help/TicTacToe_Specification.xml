@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
 	<projectName>Tic Tac Toe</projectName>
-	<projectDescription></projectDescription>
+	<projectDescription>Tic-tac-toe, also spelled tick tack toe, or noughts
+		and crosses as it is known in the UK, Ireland, Australia, New Zealand,
+		is a pencil-and-paper game for two players, O and X, who take turns
+		marking the spaces in a 3?3 grid, usually X going first. The player
+		who succeeds in placing three respective marks in a horizontal,
+		vertical, or diagonal row wins the game.</projectDescription>
 	<projectComponents>
 		<projectComponent componentName="Authentication">
 			<entries>
