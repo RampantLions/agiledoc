@@ -138,15 +138,21 @@ public class Documentation {
 
 				Documentation.documentationPanel.clear();
 
-				Documentation.documentationPanel.add(ExportXML.getSyntaxPanel(
-						ExportXML.getEntriesXML(), "Specification XML format"));
+				String fileContent = ExportXML.getEntriesXML();
+
+				if (fileContent.length() < 100000) {
+
+					Documentation.documentationPanel.add(ExportXML
+							.getSyntaxPanel(fileContent,
+									"Specification XML format"));
+				}
 
 				String fileName = FileNameGenerator
 						.compactName(ProjectInitialization.currentProject
 								.getName())
-						+ "_Specification";
+						+ "_Specification.xml";
 
-				new FileExporter(fileName, ExportXML.getEntriesXML());
+				new FileExporter(fileName, fileContent);
 			}
 		});
 		vp.add(linkExportXML);
