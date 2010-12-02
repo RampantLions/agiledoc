@@ -5,13 +5,15 @@ import java.util.List;
 import sourceagile.client.systemNavigation.FormField;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.entities.project.ProjectComponents;
+import sourceagile.userprojects.client.serverCalls.SaveProject;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
-import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -24,6 +26,7 @@ public class ProjectForm extends VerticalPanel {
 	public static final TextBox domain = new TextBox();
 	public static final TextBox specificationPath = new TextBox();
 	public static final TextBox wiki = new TextBox();
+	public static final TextArea description = new TextArea();
 
 	public static List<ProjectComponents> projectComponents = null;
 
@@ -64,36 +67,65 @@ public class ProjectForm extends VerticalPanel {
 		wiki.setValue(ProjectInitialization.currentProject.getWiki());
 		this.add(new FormField("Wiki", wiki));
 
+		description.setSize("500px", "150px");
+		description.setValue(ProjectInitialization.currentProject
+				.getDescription());
+		this.add(new FormField("Description", description));
+
 		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 
-		Label space = new Label(" ");
-		space.setHeight("20px");
-		this.add(space);
+		HorizontalPanel hp = new HorizontalPanel();
 
-		this.add(buttonChangeProject());
+		hp.setSpacing(50);
+
+		hp.add(buttonSaveProject());
+
+		hp.add(buttonChangeProject());
+
+		this.add(hp);
 	}
 
-	private Button buttonChangeProject() {
+	private Project loadProjectInfo() {
 
-		Button button = new Button("Change Project", new ClickHandler() {
+		Project proj = new Project();
+
+		proj.setRepositoryType(Project.REPOSITORY_TYPE_SUBVERSION);
+		proj.setName(name.getValue());
+		proj.setRepositoryURL(url.getValue());
+		proj.setRoot(root.getValue());
+		proj.setTestRoot(testRoot.getValue());
+		proj.setDomain(domain.getValue());
+		proj.setSpecificationPath(specificationPath.getValue());
+		proj.setWiki(wiki.getValue());
+		proj.setDescription(description.getValue());
+
+		proj.setProjectComponents(ProjectForm.projectComponents);
+
+		return proj;
+	}
+
+	private Button buttonSaveProject() {
+
+		Button button = new Button("Save", new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
 
-				Project proj = new Project();
+				new SaveProject(loadProjectInfo());
+			}
+		});
 
-				proj.setRepositoryType(Project.REPOSITORY_TYPE_SUBVERSION);
-				proj.setName(name.getValue());
-				proj.setRepositoryURL(url.getValue());
-				proj.setRoot(root.getValue());
-				proj.setTestRoot(testRoot.getValue());
-				proj.setDomain(domain.getValue());
-				proj.setSpecificationPath(specificationPath.getValue());
-				proj.setWiki(wiki.getValue());
+		return button;
+	}
 
-				proj.setProjectComponents(ProjectForm.projectComponents);
+	private Button buttonChangeProject() {
 
-				new ProjectInitialization(proj);
+		Button button = new Button("Open this Project", new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				new ProjectInitialization(loadProjectInfo());
 			}
 		});
 
