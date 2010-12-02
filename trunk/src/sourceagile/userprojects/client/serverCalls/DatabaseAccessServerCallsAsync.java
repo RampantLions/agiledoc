@@ -12,4 +12,6 @@ public interface DatabaseAccessServerCallsAsync {
 
 	void getProject(Long projectID, AsyncCallback<Project> callback);
 
+	void saveProject(Project project, AsyncCallback<Void> callback);
+
 }
