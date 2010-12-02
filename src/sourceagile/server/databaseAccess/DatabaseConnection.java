@@ -17,8 +17,10 @@ public class DatabaseConnection {
 		properties.setProperty("javax.jdo.option.ConnectionDriverName",
 				"org.apache.derby.jdbc.EmbeddedDriver");
 		properties.setProperty("javax.jdo.option.ConnectionURL",
-				"jdbc:derby:data;create=true");
+				"jdbc:derby:data");
 
+		// properties.setProperty("javax.jdo.option.ConnectionURL",
+		// "jdbc:derby:data;create=true");
 		// properties.setProperty("datanucleus.autoCreateSchema", "true");
 		// properties.setProperty("datanucleus.autoCreateColumns", "true");
 		// properties.setProperty("datanucleus.storeManagerType", "rdbms");

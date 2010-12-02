@@ -19,6 +19,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class ProjectForm extends VerticalPanel {
 
+	public static long projectID = 0;
 	public static final TextBox name = new TextBox();
 	public static final TextBox url = new TextBox();
 	public static final TextBox root = new TextBox();
@@ -37,6 +38,8 @@ public class ProjectForm extends VerticalPanel {
 		HTML title = new HTML(
 				"<B>OR <BR><BR>Enter the information required for a new Project: </B>");
 		this.add(title);
+
+		projectID = ProjectInitialization.currentProject.getProjectID();
 
 		name.setWidth("500px");
 		name.setValue(ProjectInitialization.currentProject.getName());
@@ -89,6 +92,7 @@ public class ProjectForm extends VerticalPanel {
 
 		Project proj = new Project();
 
+		proj.setProjectID(projectID);
 		proj.setRepositoryType(Project.REPOSITORY_TYPE_SUBVERSION);
 		proj.setName(name.getValue());
 		proj.setRepositoryURL(url.getValue());
@@ -134,6 +138,7 @@ public class ProjectForm extends VerticalPanel {
 
 	public static void setProjectForm(Project project) {
 
+		projectID = project.getProjectID();
 		name.setValue(project.getName());
 		url.setValue(project.getRepositoryURL());
 		root.setValue(project.getRoot());
@@ -141,6 +146,7 @@ public class ProjectForm extends VerticalPanel {
 		domain.setValue(project.getDomain());
 		specificationPath.setValue(project.getSpecificationPath());
 		wiki.setValue(project.getWiki());
+		description.setValue(project.getDescription());
 
 		projectComponents = project.getProjectComponents();
 	}
