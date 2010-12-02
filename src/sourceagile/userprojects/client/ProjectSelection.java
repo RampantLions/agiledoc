@@ -18,8 +18,6 @@ public class ProjectSelection extends VerticalPanel {
 
 		VerticalPanel vp = new VerticalPanel();
 
-		vp.setTitle("Change Current Project");
-
 		vp.setSpacing(10);
 
 		vp.add(new HTML("<B>Select a Project on the list bellow: </B>"));
