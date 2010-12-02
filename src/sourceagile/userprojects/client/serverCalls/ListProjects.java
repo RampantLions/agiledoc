@@ -8,6 +8,7 @@ import sourceagile.userprojects.client.ProjectSelection;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 
 public class ListProjects {
 
@@ -21,8 +22,12 @@ public class ListProjects {
 			public void onSuccess(List<Project> projects) {
 
 				SystemStart.mainPage.panelContent.clear();
+				SystemStart.mainPage.panelContent
+						.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 				SystemStart.mainPage.panelContent.add(new ProjectSelection(
 						projects));
+				SystemStart.mainPage.panelContent
+						.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 			}
 
 			public void onFailure(Throwable caught) {
