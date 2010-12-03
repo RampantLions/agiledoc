@@ -13,7 +13,8 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.TextArea;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.RichTextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -27,7 +28,7 @@ public class ProjectForm extends VerticalPanel {
 	public static final TextBox domain = new TextBox();
 	public static final TextBox specificationPath = new TextBox();
 	public static final TextBox wiki = new TextBox();
-	public static final TextArea description = new TextArea();
+	public static final RichTextArea description = new RichTextArea();
 
 	public static List<ProjectComponents> projectComponents = null;
 
@@ -70,10 +71,18 @@ public class ProjectForm extends VerticalPanel {
 		wiki.setValue(ProjectInitialization.currentProject.getWiki());
 		this.add(new FormField("Wiki", wiki));
 
-		description.setSize("500px", "150px");
-		description.setValue(ProjectInitialization.currentProject
+		this.add(new Label("Description:"));
+		VerticalPanel vp = new VerticalPanel();
+		vp.setBorderWidth(1);
+		description.setSize("100%", "150px");
+		description.setHTML(ProjectInitialization.currentProject
 				.getDescription());
-		this.add(new FormField("Description", description));
+		RichTextToolbar toolbar = new RichTextToolbar(description);
+		toolbar.setWidth("100%");
+
+		vp.add(toolbar);
+		vp.add(description);
+		this.add(vp);
 
 		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 
@@ -101,7 +110,7 @@ public class ProjectForm extends VerticalPanel {
 		proj.setDomain(domain.getValue());
 		proj.setSpecificationPath(specificationPath.getValue());
 		proj.setWiki(wiki.getValue());
-		proj.setDescription(description.getValue());
+		proj.setDescription(description.getHTML());
 
 		proj.setProjectComponents(ProjectForm.projectComponents);
 
@@ -146,7 +155,7 @@ public class ProjectForm extends VerticalPanel {
 		domain.setValue(project.getDomain());
 		specificationPath.setValue(project.getSpecificationPath());
 		wiki.setValue(project.getWiki());
-		description.setValue(project.getDescription());
+		description.setHTML(project.getDescription());
 
 		projectComponents = project.getProjectComponents();
 	}
