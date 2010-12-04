@@ -22,6 +22,7 @@
 	<inherits name="sourceagile.userprojects.UserProjects" />	
 	<inherits name="sourceagile.authentication.Authentication" />	
 	<inherits name="sourceagile.planning.Planning" />
+	<inherits name="sourceagile.development.Development" />
 	<inherits name="sourceagile.documentation.Documentation" />
 	<inherits name="sourceagile.testing.Testing" />
 	<inherits name="sourceagile.codeview.CodeView" />
