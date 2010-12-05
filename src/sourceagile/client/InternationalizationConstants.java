@@ -16,6 +16,9 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Search")
 	String search();
 
+	@DefaultStringValue("Development")
+	String development();
+
 	@DefaultStringValue("Diagnosis")
 	String diagnosis();
 
@@ -30,4 +33,16 @@ public interface InternationalizationConstants extends Constants {
 
 	@DefaultStringValue("Source")
 	String source();
+
+	@DefaultStringValue("Project Description")
+	String projectDescription();
+
+	@DefaultStringValue("Specification")
+	String specification();
+
+	@DefaultStringValue("User Manual")
+	String userManual();
+
+	@DefaultStringValue("Export")
+	String export();
 }

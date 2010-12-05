@@ -5,7 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import sourceagile.documentation.client.serverCalls.fileExporter.FileExporterRemoteClasses;
+import sourceagile.documentation.client.serverCalls.FileExporterRemoteClasses;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 

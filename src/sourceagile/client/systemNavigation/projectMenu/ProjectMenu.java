@@ -12,12 +12,12 @@ public class ProjectMenu extends HorizontalPanel {
 
 		this.add(new ButtonPlanning());
 
+		this.add(new ButtonDevelopment());
+
 		this.add(new ButtonDocumentation());
 
 		this.add(new ButtonSource());
 
 		this.add(new ButtonMetrics());
-
-		this.add(new ButtonDiagnosis());
 	}
 }

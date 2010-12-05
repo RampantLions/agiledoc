@@ -1,4 +1,4 @@
-package sourceagile.documentation.client.serverCalls.fileExporter;
+package sourceagile.documentation.client.serverCalls;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Window;

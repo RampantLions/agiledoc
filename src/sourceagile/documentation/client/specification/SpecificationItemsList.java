@@ -1,6 +1,7 @@
 package sourceagile.documentation.client.specification;
 
-import sourceagile.documentation.client.classViewOptions.OptionsIcons;
+import sourceagile.development.client.Development;
+import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 import sourceagile.userprojects.client.ProjectInitialization;
@@ -113,7 +114,7 @@ public class SpecificationItemsList extends VerticalPanel {
 		treeNode.addListener(new TreeNodeListenerAdapter() {
 			public void onClick(Node node, EventObject e) {
 
-				Specification.showClass(entry, OptionsIcons.OPTION_DESCRIPTION);
+				Development.showClass(entry, OptionsIcons.OPTION_DESCRIPTION);
 			}
 		});
 

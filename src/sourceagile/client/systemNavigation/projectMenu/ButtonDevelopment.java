@@ -9,20 +9,20 @@ import com.gwtext.client.core.EventObject;
 import com.gwtext.client.widgets.Button;
 import com.gwtext.client.widgets.event.ButtonListenerAdapter;
 
-public class ButtonSource extends Button {
+public class ButtonDevelopment extends Button {
 
 	private static InternationalizationConstants internationalizationConstants = GWT
 			.create(InternationalizationConstants.class);
 
-	public ButtonSource() {
+	public ButtonDevelopment() {
 
-		this.setText(internationalizationConstants.source());
+		this.setText(internationalizationConstants.development());
 
 		this.addListener(new ButtonListenerAdapter() {
 			@Override
 			public void onClick(Button button, EventObject e) {
 
-				new Development(null, OptionsIcons.OPTION_SOURCE);
+				new Development(OptionsIcons.OPTION_ALLCLASSES);
 			}
 		});
 	}

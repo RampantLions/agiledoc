@@ -8,7 +8,8 @@ import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
-public class ProjectComponents implements Serializable {
+public class ProjectComponents implements Serializable,
+		Comparable<ProjectComponents> {
 
 	private static final long serialVersionUID = 1L;
 
@@ -54,6 +55,12 @@ public class ProjectComponents implements Serializable {
 
 	public void setComponentPath(String componentPath) {
 		this.componentPath = componentPath;
+	}
+
+	@Override
+	public int compareTo(ProjectComponents that) {
+
+		return this.componentName.compareTo(that.componentName);
 	}
 
 }

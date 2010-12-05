@@ -1,11 +1,11 @@
 package sourceagile.server.databaseAccess.Project;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
 
-import sourceagile.server.databaseAccess.DatabaseConnection;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.entities.project.ProjectComponents;
 
@@ -14,9 +14,8 @@ import sourceagile.shared.entities.project.ProjectComponents;
  */
 public class GetProject {
 
-	public static Project get(Long projectID) {
-
-		PersistenceManager persistenceManager = DatabaseConnection.connect();
+	public static Project get(PersistenceManager persistenceManager,
+			Long projectID) {
 
 		Project projectDatabase = persistenceManager.getObjectById(
 				Project.class, projectID);
@@ -25,26 +24,28 @@ public class GetProject {
 
 		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 
-		for (ProjectComponents projectComponentsDatabase : project
-				.getProjectComponents()) {
+		List<ProjectComponents> projectComponentsDatabase = project
+				.getProjectComponents();
+
+		Collections.sort(projectComponentsDatabase);
+
+		for (ProjectComponents projectComponentDatabase : projectComponentsDatabase) {
 
 			ProjectComponents projectComponent = new ProjectComponents();
 
-			projectComponent.setComponentID(projectComponentsDatabase
+			projectComponent.setComponentID(projectComponentDatabase
 					.getComponentID());
 
-			projectComponent.setComponentName(projectComponentsDatabase
+			projectComponent.setComponentName(projectComponentDatabase
 					.getComponentName());
 
-			projectComponent.setComponentPath(projectComponentsDatabase
+			projectComponent.setComponentPath(projectComponentDatabase
 					.getComponentPath());
 
 			projectComponents.add(projectComponent);
 		}
 
 		project.setProjectComponents(projectComponents);
-
-		persistenceManager.close();
 
 		return project;
 	}

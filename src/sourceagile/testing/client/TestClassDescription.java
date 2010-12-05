@@ -2,9 +2,9 @@ package sourceagile.testing.client;
 
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.codeview.client.SourceCodeView;
-import sourceagile.documentation.client.classViewOptions.ClassVizualizationPanel;
-import sourceagile.documentation.client.features.FeatureDescription;
-import sourceagile.documentation.client.specification.Specification;
+import sourceagile.development.client.Development;
+import sourceagile.development.client.features.FeatureDescription;
+import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.testing.client.serverCalls.AddTestClass;
 
@@ -28,16 +28,16 @@ public class TestClassDescription extends VerticalPanel {
 
 			new FeatureDescription(testEntry);
 
-			ClassVizualizationPanel.featureContent.add(new Label(" "));
+			FeatureVizualizationPanel.featureContent.add(new Label(" "));
 
-			ClassVizualizationPanel.featureContent
+			FeatureVizualizationPanel.featureContent
 					.add(addSourceButton(testEntry));
 
 		} else {
 
-			ClassVizualizationPanel.featureContent.clear();
+			FeatureVizualizationPanel.featureContent.clear();
 
-			ClassVizualizationPanel.featureContent
+			FeatureVizualizationPanel.featureContent
 					.add(getNoTestPanel(classEntry));
 
 		}
@@ -62,8 +62,8 @@ public class TestClassDescription extends VerticalPanel {
 			@Override
 			public void onClick(Button button, EventObject e) {
 
-				Specification.featureVisualizationPanel.clear();
-				Specification.featureVisualizationPanel.add(new LoadingPanel());
+				Development.featureVisualizationPanel.clear();
+				Development.featureVisualizationPanel.add(new LoadingPanel());
 
 				new AddTestClass(entry);
 			}

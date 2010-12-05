@@ -1,7 +1,7 @@
-package sourceagile.documentation.client.classesList;
+package sourceagile.documentation.client;
 
-import sourceagile.documentation.client.classViewOptions.OptionsIcons;
-import sourceagile.documentation.client.specification.Specification;
+import sourceagile.development.client.Development;
+import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.documentation.client.specification.SpecificationList;
 import sourceagile.shared.entities.entry.ClassFile;
 
@@ -37,8 +37,7 @@ public class ClassesListFiltered extends VerticalPanel {
 				html.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent sender) {
 
-						new Specification(entry,
-								OptionsIcons.OPTION_DESCRIPTION);
+						new Development(entry, OptionsIcons.OPTION_DESCRIPTION);
 					}
 				});
 

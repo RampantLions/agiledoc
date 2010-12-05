@@ -1,6 +1,6 @@
 package sourceagile.codeview.client;
 
-import sourceagile.documentation.client.classViewOptions.ClassVizualizationPanel;
+import sourceagile.development.client.features.FeatureVizualizationPanel;
 
 import com.weborient.codemirror.client.CodeMirrorConfiguration;
 import com.weborient.codemirror.client.CodeMirrorEditorWidget;
@@ -9,7 +9,7 @@ public class SourceEditor {
 
 	public SourceEditor(String classSource) {
 
-		ClassVizualizationPanel.featureContent.clear();
+		FeatureVizualizationPanel.featureContent.clear();
 
 		// use the configuration class in order
 		// to override the default widget configuraions
@@ -26,7 +26,7 @@ public class SourceEditor {
 		CodeMirrorEditorWidget widget = new CodeMirrorEditorWidget(
 				configuration);
 
-		ClassVizualizationPanel.featureContent.add(widget);
+		FeatureVizualizationPanel.featureContent.add(widget);
 
 		// these two methods should be called after the widget has been added
 		// other wise you'll get an error

@@ -2,19 +2,18 @@ package sourceagile.server.databaseAccess.Project;
 
 import javax.jdo.PersistenceManager;
 
-import sourceagile.server.databaseAccess.DatabaseConnection;
 import sourceagile.shared.entities.project.Project;
 
 public class SaveProject {
 
-	public static void save(Project project) {
+	public static void save(PersistenceManager persistenceManager,
+			Project project) {
 
-		PersistenceManager persistenceManager = DatabaseConnection.connect();
+		Project projectDatabase = GetProject.get(persistenceManager,
+				project.getProjectID());
 
-		persistenceManager.makePersistent(project);
+		projectDatabase.setDescription(project.getDescription());
 
-		persistenceManager.close();
-
+		persistenceManager.makePersistent(projectDatabase);
 	}
-
 }

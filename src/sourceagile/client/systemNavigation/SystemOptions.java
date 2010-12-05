@@ -29,7 +29,7 @@ public class SystemOptions extends HorizontalPanel {
 
 		this.add(getSearchIcon());
 
-		this.add(new HelpIcon("SourceAgileSpecification.xml"));
+		this.add(new HelpIcon("SourceAgile_Specification.xml"));
 	}
 
 	public static Image getSearchIcon() {

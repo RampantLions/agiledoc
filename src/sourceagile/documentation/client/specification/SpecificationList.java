@@ -1,8 +1,8 @@
 package sourceagile.documentation.client.specification;
 
 import helpagile.client.utilities.FeatureNameGenerator;
+import sourceagile.documentation.client.ClassesListFiltered;
 import sourceagile.documentation.client.Documentation;
-import sourceagile.documentation.client.classesList.ClassesListFiltered;
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.userprojects.client.ProjectInitialization;

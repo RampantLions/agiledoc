@@ -2,7 +2,6 @@ package sourceagile.documentation.client;
 
 import java.util.List;
 
-import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Method;
 import sourceagile.shared.entities.project.ProjectComponents;
@@ -24,14 +23,14 @@ public class ExportXML {
 	private static final String PROJECT_COMPONENTS = "projectComponents";
 	private static final String PROJECT_COMPONENT = "projectComponent";
 	private static final String COMPONENT_NAME = "componentName";
+	private static final String COMPONENT_PATH = "componentPath";
 
 	private static final String ENTRIES = "entries";
 	private static final String ENTRY = "entry";
 	private static final String CLASS_NAME = "className";
 	private static final String CLASS_PATH = "classPath";
 
-	private static final String SPECIFICATION = "specification";
-	private static final String FEATURE = "feature";
+	private static final String FEATURE_TYPE = "featureType";
 	private static final String FEATURE_PATH = "featurePath";
 	private static final String FEATURE_NAME = "featureName";
 	private static final String FEATURE_DESCRIPTION = "featureDescription";
@@ -61,6 +60,9 @@ public class ExportXML {
 			componentElement.setAttribute(COMPONENT_NAME,
 					projectComponent.getComponentName());
 
+			componentElement.setAttribute(COMPONENT_PATH,
+					projectComponent.getComponentPath());
+
 			componentsElement.appendChild(componentElement);
 
 			Element entriesElement = xmlDocument.createElement(ENTRIES);
@@ -69,7 +71,11 @@ public class ExportXML {
 
 			for (ClassFile entry : ProjectInitialization.projectEntries) {
 
-				if (!entry.getClassDoc().isTodo()) {
+				if (entry.getFilePath() != null
+						&& entry.getFilePath().startsWith(
+								projectComponent.getComponentPath())) {
+
+					// if (!entry.getClassDoc().isTodo()) {
 
 					Element entryElement = getEntryNode(xmlDocument, entry,
 							projectComponent.getComponentPath());
@@ -78,20 +84,14 @@ public class ExportXML {
 							CLASS_NAME, entry.getClassDoc().getClassName()));
 
 					entryElement.appendChild(getElement(xmlDocument,
-							CLASS_PATH, entry.getClassDoc().getClassPackage()));
+							CLASS_PATH, entry.getFilePath()));
 
-					String featurePath = "";
-					if (entry.getFilePath() != null
-							&& entry.getFilePath().startsWith(
-									projectComponent.getComponentPath())) {
+					String featurePath = entry.getFilePath().substring(
+							projectComponent.getComponentPath().length());
 
-						featurePath = entry.getFilePath().substring(
-								projectComponent.getComponentPath().length());
+					if (featurePath.length() > 0) {
 
-						if (featurePath.length() > 0) {
-
-							featurePath = featurePath.substring(1);
-						}
+						featurePath = featurePath.substring(1);
 					}
 
 					entryElement.appendChild(getElement(xmlDocument,
@@ -150,20 +150,8 @@ public class ExportXML {
 
 		Element entryElement = xmlDocument.createElement(ENTRY);
 
-		boolean featureTag = false;
-		if (entry.getClassDoc().getTagType() != null
-				&& entry.getClassDoc().getTagType()
-						.equals(ClassDocumentation.FEATURE_TAG)) {
-
-			featureTag = true;
-		}
-
-		entryElement.setAttribute(FEATURE, String.valueOf(featureTag));
-
-		entryElement.setAttribute(
-				SPECIFICATION,
-				String.valueOf(specificationPath != null
-						&& entry.getFilePath().startsWith(specificationPath)));
+		entryElement.setAttribute(FEATURE_TYPE, entry.getClassDoc()
+				.getTagType());
 
 		return entryElement;
 	}

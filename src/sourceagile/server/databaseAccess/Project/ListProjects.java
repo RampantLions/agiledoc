@@ -6,7 +6,6 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
-import sourceagile.server.databaseAccess.DatabaseConnection;
 import sourceagile.shared.entities.project.Project;
 
 /**
@@ -14,9 +13,7 @@ import sourceagile.shared.entities.project.Project;
  */
 public class ListProjects {
 
-	public static List<Project> list() {
-
-		PersistenceManager persistenceManager = DatabaseConnection.connect();
+	public static List<Project> list(PersistenceManager persistenceManager) {
 
 		Query q = persistenceManager.newQuery(Project.class);
 		q.setOrdering("name");
@@ -29,8 +26,6 @@ public class ListProjects {
 
 			projects.add(project);
 		}
-
-		persistenceManager.close();
 
 		return projects;
 	}
