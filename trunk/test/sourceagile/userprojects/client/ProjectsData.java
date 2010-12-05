@@ -42,6 +42,8 @@ public class ProjectsData {
 				"client/systemNavigation"));
 		projectComponents.add(new ProjectComponents("Planning",
 				"planning/client"));
+		projectComponents.add(new ProjectComponents("Development",
+				"development/client"));
 		projectComponents.add(new ProjectComponents("Documentation",
 				"documentation/client"));
 
@@ -53,10 +55,11 @@ public class ProjectsData {
 				.add(new ProjectComponents("Metrics", "metrics/client"));
 
 		projectComponents.add(new ProjectComponents(
-				"Server Side/Class Repositories", "server/classRepositories"));
+				"Infra Structure/Class Repositories",
+				"server/classRepositories"));
 		projectComponents.add(new ProjectComponents(
-				"Server Side/Database Access", "server/databaseAccess"));
-		projectComponents.add(new ProjectComponents("Server Side/Doclet",
+				"Infra Structure/Database Access", "server/databaseAccess"));
+		projectComponents.add(new ProjectComponents("Infra Structure/Doclet",
 				"server/doclet"));
 
 		projectComponents.add(new ProjectComponents("Entities",
