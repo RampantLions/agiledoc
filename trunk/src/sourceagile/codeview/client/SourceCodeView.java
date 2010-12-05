@@ -1,6 +1,6 @@
 package sourceagile.codeview.client;
 
-import sourceagile.documentation.client.classViewOptions.ClassVizualizationPanel;
+import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -19,18 +19,18 @@ public class SourceCodeView {
 
 	public SourceCodeView(ClassFile entry) {
 
-		ClassVizualizationPanel.featureContent.clear();
+		FeatureVizualizationPanel.featureContent.clear();
 
-		ClassVizualizationPanel.featureContent.add(getSyntaxPanel(entry));
+		FeatureVizualizationPanel.featureContent.add(getSyntaxPanel(entry));
 
-		ClassVizualizationPanel.featureContent
+		FeatureVizualizationPanel.featureContent
 				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 
-		ClassVizualizationPanel.featureContent.add(new Label(" "));
+		FeatureVizualizationPanel.featureContent.add(new Label(" "));
 
-		ClassVizualizationPanel.featureContent.add(buttonEdit(entry));
+		FeatureVizualizationPanel.featureContent.add(buttonEdit(entry));
 
-		ClassVizualizationPanel.featureContent
+		FeatureVizualizationPanel.featureContent
 				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 	}
 

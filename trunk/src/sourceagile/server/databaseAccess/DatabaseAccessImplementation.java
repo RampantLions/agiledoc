@@ -2,6 +2,8 @@ package sourceagile.server.databaseAccess;
 
 import java.util.List;
 
+import javax.jdo.PersistenceManager;
+
 import sourceagile.server.databaseAccess.Project.GetProject;
 import sourceagile.server.databaseAccess.Project.ListProjects;
 import sourceagile.server.databaseAccess.Project.SaveProject;
@@ -17,9 +19,13 @@ public class DatabaseAccessImplementation extends RemoteServiceServlet
 	@Override
 	public List<Project> listProjects() {
 
+		PersistenceManager persistenceManager = DatabaseConnection.connect();
+
 		List<Project> projects = null;
 
-		projects = ListProjects.list();
+		projects = ListProjects.list(persistenceManager);
+
+		persistenceManager.close();
 
 		return projects;
 	}
@@ -27,7 +33,11 @@ public class DatabaseAccessImplementation extends RemoteServiceServlet
 	@Override
 	public Project getProject(Long projectID) {
 
-		Project project = GetProject.get(projectID);
+		PersistenceManager persistenceManager = DatabaseConnection.connect();
+
+		Project project = GetProject.get(persistenceManager, projectID);
+
+		persistenceManager.close();
 
 		return project;
 	}
@@ -35,7 +45,11 @@ public class DatabaseAccessImplementation extends RemoteServiceServlet
 	@Override
 	public void saveProject(Project project) {
 
-		SaveProject.save(project);
+		PersistenceManager persistenceManager = DatabaseConnection.connect();
+
+		SaveProject.save(persistenceManager, project);
+
+		persistenceManager.close();
 	}
 
 }

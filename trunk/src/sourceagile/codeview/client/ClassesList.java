@@ -1,7 +1,7 @@
 package sourceagile.codeview.client;
 
-import sourceagile.documentation.client.classViewOptions.OptionsIcons;
-import sourceagile.documentation.client.specification.Specification;
+import sourceagile.development.client.Development;
+import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -73,7 +73,7 @@ public class ClassesList extends VerticalPanel {
 		treeNode.addListener(new TreeNodeListenerAdapter() {
 			public void onClick(Node node, EventObject e) {
 
-				Specification.showClass(entry, OptionsIcons.OPTION_SOURCE);
+				Development.showClass(entry, OptionsIcons.OPTION_SOURCE);
 			}
 		});
 

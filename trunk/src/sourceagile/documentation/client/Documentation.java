@@ -1,16 +1,15 @@
 package sourceagile.documentation.client;
 
+import helpagile.client.exportation.HelpWindow;
+import sourceagile.client.InternationalizationConstants;
 import sourceagile.client.SystemStart;
-import sourceagile.documentation.client.classViewOptions.OptionsIcons;
-import sourceagile.documentation.client.classesList.ClassesListFiltered;
-import sourceagile.documentation.client.features.FeaturesList;
-import sourceagile.documentation.client.serverCalls.fileExporter.FileExporter;
-import sourceagile.documentation.client.specification.Specification;
+import sourceagile.documentation.client.projectDescription.ProjectDescription;
+import sourceagile.documentation.client.serverCalls.FileExporter;
 import sourceagile.documentation.client.specification.SpecificationList;
-import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.utilities.FileNameGenerator;
 import sourceagile.userprojects.client.ProjectInitialization;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
@@ -22,6 +21,9 @@ public class Documentation {
 
 	public VerticalPanel documentationMenu = new VerticalPanel();
 	public static VerticalPanel documentationPanel = new VerticalPanel();
+
+	private static InternationalizationConstants internationalizationConstants = GWT
+			.create(InternationalizationConstants.class);
 
 	public Documentation() {
 
@@ -48,35 +50,29 @@ public class Documentation {
 
 	private VerticalPanel showDocumentationMenu() {
 
+		final String XMLFileName = FileNameGenerator
+				.compactName(ProjectInitialization.currentProject.getName())
+				+ "_Specification.xml";
+
 		VerticalPanel vp = new VerticalPanel();
 
 		vp.setSpacing(20);
 
-		Anchor linkAllClasses = new Anchor("All Classes");
-		linkAllClasses.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				new Specification(OptionsIcons.OPTION_ALLCLASSES);
-			}
-		});
-		vp.add(linkAllClasses);
-
-		Anchor linkFeaturesList = new Anchor("Features List");
-		linkFeaturesList.addClickHandler(new ClickHandler() {
+		Anchor linkProjectDescription = new Anchor(
+				internationalizationConstants.projectDescription());
+		linkProjectDescription.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
 
 				documentationPanel.clear();
-				documentationPanel.add(new FeaturesList(
-						ProjectInitialization.projectEntries));
+				documentationPanel.add(new ProjectDescription());
 			}
 		});
-		vp.add(linkFeaturesList);
+		vp.add(linkProjectDescription);
 
-		Anchor linkSpecification = new Anchor("Specification");
+		Anchor linkSpecification = new Anchor(
+				internationalizationConstants.specification());
 		linkSpecification.addClickHandler(new ClickHandler() {
 
 			@Override
@@ -85,11 +81,14 @@ public class Documentation {
 				documentationPanel.clear();
 				documentationPanel.add(new SpecificationList(
 						ProjectInitialization.projectEntries));
+
+				HelpWindow.open(XMLFileName);
 			}
 		});
 		vp.add(linkSpecification);
 
-		Anchor linkUserManual = new Anchor("User Manual");
+		Anchor linkUserManual = new Anchor(
+				internationalizationConstants.userManual());
 		linkUserManual.addClickHandler(new ClickHandler() {
 
 			@Override
@@ -98,39 +97,14 @@ public class Documentation {
 				documentationPanel.clear();
 				documentationPanel.add(new UserManual(
 						ProjectInitialization.projectEntries));
+
+				HelpWindow.open(XMLFileName);
 			}
 		});
 		vp.add(linkUserManual);
 
-		Anchor linkArchitecture = new Anchor("Architecture");
-		linkArchitecture.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				documentationPanel.clear();
-				documentationPanel.add(new ClassesListFiltered(
-						ProjectInitialization.projectEntries,
-						ClassDocumentation.ARCHITECTURE_TAG));
-			}
-		});
-		vp.add(linkArchitecture);
-
-		Anchor linkEntities = new Anchor("Entities");
-		linkEntities.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				documentationPanel.clear();
-				documentationPanel.add(new ClassesListFiltered(
-						ProjectInitialization.projectEntries,
-						ClassDocumentation.ENTITY_TAG));
-			}
-		});
-		vp.add(linkEntities);
-
-		Anchor linkExportXML = new Anchor("Export XML");
+		Anchor linkExportXML = new Anchor(
+				internationalizationConstants.export() + " XML");
 		linkExportXML.addClickHandler(new ClickHandler() {
 
 			@Override
@@ -147,15 +121,21 @@ public class Documentation {
 									"Specification XML format"));
 				}
 
-				String fileName = FileNameGenerator
-						.compactName(ProjectInitialization.currentProject
-								.getName())
-						+ "_Specification.xml";
-
-				new FileExporter(fileName, fileContent);
+				new FileExporter(XMLFileName, fileContent);
 			}
 		});
 		vp.add(linkExportXML);
+
+		Anchor linkExportPDF = new Anchor(
+				internationalizationConstants.export() + " PDF");
+		linkExportPDF.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+			}
+		});
+		vp.add(linkExportPDF);
 
 		Anchor linkWiki = new Anchor("Wiki");
 		linkWiki.addClickHandler(new ClickHandler() {

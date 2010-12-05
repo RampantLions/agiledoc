@@ -1,7 +1,7 @@
 package sourceagile.planning.client.TodoClasses;
 
-import sourceagile.documentation.client.classViewOptions.OptionsIcons;
-import sourceagile.documentation.client.specification.Specification;
+import sourceagile.development.client.Development;
+import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -75,7 +75,7 @@ public class TodoClassesList extends FlexTable {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new Specification(entry, OptionsIcons.OPTION_DESCRIPTION);
+				new Development(entry, OptionsIcons.OPTION_DESCRIPTION);
 			}
 		});
 
