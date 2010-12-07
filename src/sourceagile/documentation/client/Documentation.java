@@ -51,8 +51,7 @@ public class Documentation {
 	private VerticalPanel showDocumentationMenu() {
 
 		final String XMLFileName = FileNameGenerator
-				.compactName(ProjectInitialization.currentProject.getName())
-				+ "_Specification.xml";
+				.compactName(ProjectInitialization.currentProject.getName());
 
 		VerticalPanel vp = new VerticalPanel();
 
@@ -82,7 +81,7 @@ public class Documentation {
 				documentationPanel.add(new SpecificationList(
 						ProjectInitialization.projectEntries));
 
-				HelpWindow.open(XMLFileName);
+				HelpWindow.open(XMLFileName, "true");
 			}
 		});
 		vp.add(linkSpecification);
@@ -98,7 +97,7 @@ public class Documentation {
 				documentationPanel.add(new UserManual(
 						ProjectInitialization.projectEntries));
 
-				HelpWindow.open(XMLFileName);
+				HelpWindow.open(XMLFileName, "false");
 			}
 		});
 		vp.add(linkUserManual);
