@@ -3,13 +3,16 @@ package sourceagile.development.client;
 import sourceagile.client.SystemStart;
 import sourceagile.codeview.client.ClassesList;
 import sourceagile.codeview.client.SourceCodeView;
-import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.development.client.features.FeatureDescription;
+import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.documentation.client.specification.SpecificationItemsList;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.userprojects.client.ProjectInitialization;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -41,24 +44,17 @@ public class Development {
 
 		HorizontalPanel hp = new HorizontalPanel();
 
-		featuresTreePanel.clear();
+		VerticalPanel vpTree = new VerticalPanel();
+
+		vpTree.add(showViewOptions());
+
 		featuresTreePanel.setSize("350px", "100%");
 
-		hp.add(featuresTreePanel);
+		vpTree.add(featuresTreePanel);
 
-		if (viewOption == OptionsIcons.OPTION_SOURCE) {
+		hp.add(vpTree);
 
-			featuresTreePanel.add(new ClassesList(
-					ProjectInitialization.projectEntries));
-
-		} else if (viewOption == OptionsIcons.OPTION_ALLCLASSES) {
-
-			featuresTreePanel.add(new ComponentsList());
-		} else {
-
-			featuresTreePanel.add(new SpecificationItemsList(
-					ProjectInitialization.projectEntries));
-		}
+		showTree(viewOption);
 
 		featureVisualizationPanel.clear();
 		featureVisualizationPanel.setSpacing(20);
@@ -74,16 +70,64 @@ public class Development {
 		SystemStart.mainPage.panelContent.add(vp);
 	}
 
+	private static HorizontalPanel showViewOptions() {
+
+		HorizontalPanel optionsPanel = new HorizontalPanel();
+
+		HTML htmlFeatures = new HTML("<font size=1>Features</font>");
+		htmlFeatures.setWidth("60px");
+
+		htmlFeatures.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				showTree(OptionsIcons.OPTION_ALLCLASSES);
+			}
+		});
+
+		optionsPanel.add(htmlFeatures);
+
+		HTML htmlSource = new HTML("<font size=1>Source</font>");
+
+		htmlSource.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				showTree(OptionsIcons.OPTION_SOURCE);
+			}
+		});
+
+		optionsPanel.add(htmlSource);
+
+		return optionsPanel;
+	}
+
+	private static void showTree(int viewOption) {
+
+		featuresTreePanel.clear();
+
+		if (viewOption == OptionsIcons.OPTION_SOURCE) {
+
+			featuresTreePanel.add(new ClassesList(
+					ProjectInitialization.projectEntries));
+		} else {
+
+			featuresTreePanel.add(new ComponentsList());
+		}
+	}
+
 	public static void showClass(ClassFile entry, int viewOption) {
 
 		Development.featureVisualizationPanel.clear();
-		Development.featureVisualizationPanel.add(new FeatureVizualizationPanel(
-				entry));
+		Development.featureVisualizationPanel
+				.add(new FeatureVizualizationPanel(entry));
 
 		if (viewOption == OptionsIcons.OPTION_DESCRIPTION) {
 
-			FeatureVizualizationPanel.featureContent.add(new FeatureDescription(
-					entry));
+			FeatureVizualizationPanel.featureContent
+					.add(new FeatureDescription(entry));
 
 		} else if (viewOption == OptionsIcons.OPTION_SOURCE) {
 
