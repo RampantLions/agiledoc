@@ -16,8 +16,6 @@ public class ProjectMenu extends HorizontalPanel {
 
 		this.add(new ButtonDocumentation());
 
-		this.add(new ButtonSource());
-
 		this.add(new ButtonMetrics());
 	}
 }
