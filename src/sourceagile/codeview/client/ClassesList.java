@@ -4,6 +4,7 @@ import sourceagile.development.client.Development;
 import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.gwtext.client.core.EventObject;
 import com.gwtext.client.data.Node;
@@ -15,6 +16,9 @@ public class ClassesList extends VerticalPanel {
 
 	public ClassesList(ClassFile[] entries) {
 
+		Label space = new Label(" ");
+		this.add(space);
+		
 		TreePanel treePanel = new TreePanel();
 		treePanel.setBorder(false);
 		treePanel.setLines(false);
