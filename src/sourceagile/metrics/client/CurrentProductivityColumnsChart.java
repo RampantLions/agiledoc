@@ -51,12 +51,22 @@ public class CurrentProductivityColumnsChart extends VerticalPanel {
 
 		for (ClassFile entry : ProjectInitialization.projectEntries) {
 
-			int methods = entry.getClassDoc().getConstructors().length
-					+ entry.getClassDoc().getMethods().length;
+			int constructorsCount = 0;
+			if (entry.getClassDoc().getConstructors() != null) {
+
+				constructorsCount = entry.getClassDoc().getConstructors().length;
+			}
+
+			int methodsCount = 0;
+			if (entry.getClassDoc().getMethods() != null) {
+
+				methodsCount = entry.getClassDoc().getMethods().length;
+			}
 
 			ProjectInitialization.projectTotals
 					.setMethodsCount(ProjectInitialization.projectTotals
-							.getMethodsCount() + methods);
+							.getMethodsCount()
+							+ (constructorsCount + methodsCount));
 
 			if (entry.getClassDoc().isTodo()) {
 

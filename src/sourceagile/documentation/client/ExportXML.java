@@ -150,8 +150,14 @@ public class ExportXML {
 
 		Element entryElement = xmlDocument.createElement(ENTRY);
 
-		entryElement.setAttribute(FEATURE_TYPE, entry.getClassDoc()
-				.getTagType());
+		String tagType = entry.getClassDoc().getTagType();
+
+		if (tagType == null) {
+
+			tagType = "";
+		}
+
+		entryElement.setAttribute(FEATURE_TYPE, tagType);
 
 		return entryElement;
 	}
