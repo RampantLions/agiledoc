@@ -13,6 +13,9 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Log In")
 	String logIn();
 
+	@DefaultStringValue("Project")
+	String project();
+	
 	@DefaultStringValue("Search")
 	String search();
 

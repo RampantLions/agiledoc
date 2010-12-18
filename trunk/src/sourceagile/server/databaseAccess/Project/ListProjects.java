@@ -7,6 +7,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import sourceagile.shared.entities.project.Project;
+import sourceagile.shared.entities.project.ProjectComponents;
 
 /**
  * List all the projects added in the system.
@@ -29,5 +30,4 @@ public class ListProjects {
 
 		return projects;
 	}
-
 }

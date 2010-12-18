@@ -17,7 +17,7 @@ public class FileExporter {
 					@Override
 					public void onSuccess(String result) {
 
-						Window.alert(result);
+						//Window.alert(result);
 					}
 
 					public void onFailure(Throwable caught) {
