@@ -10,6 +10,12 @@ import com.gwtext.client.widgets.tree.TreeNode;
 import com.gwtext.client.widgets.tree.TreePanel;
 import com.gwtext.client.widgets.tree.event.TreeNodeListenerAdapter;
 
+/** 
+ * 
+ * 
+ * @feature 
+ */
+
 public class ComponentClassesList {
 
 	public ComponentClassesList(TreePanel tree, TreeNode componentNode,
