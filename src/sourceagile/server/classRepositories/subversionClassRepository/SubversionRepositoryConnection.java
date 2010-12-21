@@ -11,9 +11,12 @@ import org.tmatesoft.svn.core.wc.SVNWCUtil;
 import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.project.Project;
 
-/**
+
+
+/** 
  * Open a connection with the repository that was entered in the project data.
  * 
+ * @architecture 
  */
 
 public class SubversionRepositoryConnection {
