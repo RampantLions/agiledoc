@@ -12,6 +12,12 @@ import sourceagile.userprojects.client.serverCalls.DatabaseAccessServerCalls;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
+/** 
+ * 
+ * 
+ * @architecture 
+ */
+
 @SuppressWarnings("serial")
 public class DatabaseAccessImplementation extends RemoteServiceServlet
 		implements DatabaseAccessServerCalls {
