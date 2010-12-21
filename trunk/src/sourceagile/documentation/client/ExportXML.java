@@ -18,6 +18,7 @@ public class ExportXML {
 
 	private static final String PROJECT = "project";
 	private static final String PROJECT_NAME = "projectName";
+	private static final String PROJECT_DOMAIN = "projectDomain";
 	private static final String PROJECT_DESCRIPTION = "projectDescription";
 
 	private static final String PROJECT_COMPONENTS = "projectComponents";
@@ -139,8 +140,11 @@ public class ExportXML {
 		projectElement.appendChild(getElement(xmlDocument, PROJECT_NAME,
 				ProjectInitialization.currentProject.getName()));
 
+		projectElement.appendChild(getElement(xmlDocument, PROJECT_DOMAIN,
+				ProjectInitialization.currentProject.getDomain()));
+
 		projectElement.appendChild(getElement(xmlDocument, PROJECT_DESCRIPTION,
-				ProjectInitialization.currentProject.getDescription()));
+				ProjectInitialization.currentProject.getDescription()));   
 
 		return projectElement;
 	}
