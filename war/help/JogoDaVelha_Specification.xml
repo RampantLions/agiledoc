@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
 	<projectName>Jogo Da Velha</projectName>
-	<projectDescription>O Jogo da Velha (portugu�s brasileiro) ou jogo do
-		galo (portugu�s europeu) � um jogo e passatempo popular. Um jogo de
-		l�pis e papel para dois jogadores, O e X, que se revezam marcando os
-		espa�os em uma grade 3x3. O jogador que conseguir colocar tr�s
+	<projectDomain>jogoDaVelha</projectDomain>
+	<projectDescription>O Jogo da Velha (portugues brasileiro) ou jogo do
+		galo (portugues europeu) e um jogo e passatempo popular. Um jogo de
+		lapis e papel para dois jogadores, O e X, que se revezam marcando os
+		espacos em uma grade 3x3. O jogador que conseguir colocar tres
 		respectivas marcas em uma linha horizontal, vertical ou diagonal,
 		ganha o jogo.</projectDescription>
 	<projectComponents>
-		<projectComponent componentName="Identifica��o do Jogador"
+		<projectComponent componentName="Identificacao do Jogador"
 			componentPath="identificacaoDoJogador/client">
 			<entries>
 				<entry featureType="">
@@ -16,7 +17,7 @@
 					<classPath>identificacaoDoJogador/client</classPath>
 					<featurePath></featurePath>
 					<featureName>Entrada No Jogo</featureName>
-					<featureDescription>Formul�rio para identifica��o do nome e da
+					<featureDescription>Formulario para identificacao do nome e da
 						senha do jogador.</featureDescription>
 					<methods />
 				</entry>
@@ -25,7 +26,7 @@
 					<classPath>identificacaoDoJogador/client</classPath>
 					<featurePath></featurePath>
 					<featureName>Saida Do Jogo</featureName>
-					<featureDescription>Link para sa�da segura do jogo.
+					<featureDescription>Link para saida segura do jogo.
 					</featureDescription>
 					<methods />
 				</entry>
@@ -55,7 +56,7 @@
 					<featurePath></featurePath>
 					<featureName>Julgamento Do Movimento</featureName>
 					<featureDescription>Verifica se o movimento do jogador executou uma
-						seq��ncia ganhadora ou n�o.</featureDescription>
+						sequencia ganhadora ou nao.</featureDescription>
 					<methods>
 						<method>
 							<methodName>checkForWinner</methodName>
@@ -88,7 +89,7 @@
 					<classPath>client</classPath>
 					<featurePath></featurePath>
 					<featureName>Jogo Da Velha</featureName>
-					<featureDescription>Classe �ncora para inicializa��o do sistema
+					<featureDescription>Classe ancora para inicializacao do sistema
 						pelo Google Web Toolkit
 						(EntryPoint).</featureDescription>
 					<methods>
@@ -117,7 +118,7 @@
 					<classPath>client/arquitetura</classPath>
 					<featurePath>arquitetura</featurePath>
 					<featureName>Inicializacao Da Ajuda</featureName>
-					<featureDescription>Carregamento do conte�do da ajuda do sistema.
+					<featureDescription>Carregamento do conteudo da ajuda do sistema.
 					</featureDescription>
 					<methods />
 				</entry>
@@ -126,7 +127,7 @@
 					<classPath>client/arquitetura</classPath>
 					<featurePath>arquitetura</featurePath>
 					<featureName>Inicializacao Do Jogo</featureName>
-					<featureDescription>Prepara��o do sistema para a inicia��o de um
+					<featureDescription>Preparacao do sistema para a inicia��o de um
 						jogo.</featureDescription>
 					<methods />
 				</entry>
@@ -184,14 +185,13 @@
 					<classPath>client/interfaceComOUsuario</classPath>
 					<featurePath>interfaceComOUsuario</featurePath>
 					<featureName>Movimento Do Jogador</featureName>
-					<featureDescription>Performs a move in the game.
-					</featureDescription>
+					<featureDescription>Quando o jogador clica numa celula na grade do
+						tabuleiro o jogo desenha um 0 ou X
+						dependendo de qual e o jogador atual.</featureDescription>
 					<methods>
 						<method>
 							<methodName>makeMove</methodName>
-							<methodDescription>When the player clicks in a cell, the game
-								draws an O or a X on the game
-								grid depending on which player's turn it is.</methodDescription>
+							<methodDescription></methodDescription>
 						</method>
 						<method>
 							<methodName>cellIsEmpty</methodName>
@@ -209,11 +209,10 @@
 					<classPath>client/interfaceComOUsuario</classPath>
 					<featurePath>interfaceComOUsuario</featurePath>
 					<featureName>Sequencia Ganhadora</featureName>
-					<featureDescription>If there is three consecutive marks in a
-						horizontal, vertical, or diagonal
-						series, the current Player wins the game, the system highlights the
-						winning
-						sequence and the game is over.</featureDescription>
+					<featureDescription>No aparecimento de 3 simbolos iguais
+						consecutivos no tabuleiro (horizontal,
+						vertical ou diagonal), o jogador corrente vence o jogo e o sistema exibe a
+						sequencia ganhadora em vermelho.</featureDescription>
 					<methods>
 						<method>
 							<methodName>showWinner</methodName>
