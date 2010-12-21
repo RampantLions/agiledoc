@@ -17,6 +17,12 @@ import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
+/** 
+ * 
+ * 
+ * @architecture 
+ */
+
 @SuppressWarnings("serial")
 public class SubversionRepositoryClassImplementation extends
 		RemoteServiceServlet implements LoadSubversionRemoteClasses {
