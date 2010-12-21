@@ -6,6 +6,9 @@ import java.util.Date;
 
 import sourceagile.shared.entities.User;
 
+/** 
+ * @entity 
+ */
 public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 	private static final long serialVersionUID = 1L;

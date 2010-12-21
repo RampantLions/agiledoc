@@ -2,6 +2,9 @@ package sourceagile.shared.entities.entry;
 
 import java.io.Serializable;
 
+/** 
+ * @entity 
+ */
 public class Method implements Serializable {
 
 	private static final long serialVersionUID = 1L;
