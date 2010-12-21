@@ -6,6 +6,12 @@ import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
+/** 
+ * 
+ * 
+ * @architecture 
+ */
+
 public interface DatabaseAccessServerCallsAsync {
 
 	void listProjects(AsyncCallback<List<Project>> callback);
