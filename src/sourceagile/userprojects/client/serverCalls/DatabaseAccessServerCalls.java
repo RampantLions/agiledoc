@@ -7,6 +7,12 @@ import sourceagile.shared.entities.project.Project;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
+/** 
+ * 
+ * 
+ * @architecture 
+ */
+
 @RemoteServiceRelativePath("databaseAccess")
 public interface DatabaseAccessServerCalls extends RemoteService {
 
