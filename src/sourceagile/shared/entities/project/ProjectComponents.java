@@ -7,6 +7,9 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
+/** 
+ * @entity 
+ */
 @PersistenceCapable
 public class ProjectComponents implements Serializable,
 		Comparable<ProjectComponents> {
