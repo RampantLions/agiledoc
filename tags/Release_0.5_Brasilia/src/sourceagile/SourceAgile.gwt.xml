@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='sourceagile'>
+	<!-- Inherit the core Web Toolkit stuff. -->
+	<inherits name='com.google.gwt.user.User' />
+
+	<!-- Inherit the default GWT style sheet. You can change -->
+	<!-- the theme of your GWT application by uncommenting -->
+	<!-- any one of the following lines. -->
+	<inherits name='com.google.gwt.user.theme.standard.Standard' />
+	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+
+	<inherits name="com.google.gwt.i18n.I18N"/>
+	<extend-property name="locale" values="en,pt_BR,es"/>
+	
+
+	<!-- Other module inherits -->
+	<inherits name='com.gwtext.GwtExt'/>
+	<inherits name="com.google.gwt.visualization.Visualization" />
+	<inherits name="helpagile.HelpAgileExport" />
+
+	<inherits name="sourceagile.userprojects.UserProjects" />	
+	<inherits name="sourceagile.authentication.Authentication" />	
+	<inherits name="sourceagile.planning.Planning" />
+	<inherits name="sourceagile.development.Development" />
+	<inherits name="sourceagile.documentation.Documentation" />
+	<inherits name="sourceagile.testing.Testing" />
+	<inherits name="sourceagile.codeview.CodeView" />
+	<inherits name="sourceagile.metrics.Metrics" />
+
+	<!-- Specify the app entry point class. -->
+	<entry-point class='sourceagile.client.SystemStart' />
+
+	<!-- Specify the paths for translatable code -->
+	<source path='client' />
+	<source path='shared' />
+
+</module>
