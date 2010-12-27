@@ -9,8 +9,8 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class Metrics extends VerticalPanel {
 
-	RadioButton radioProductivity = new RadioButton("Productivity",
-			" Productivity");
+	RadioButton radioProductivity = new RadioButton("Effort",
+			" Effort");
 
 	RadioButton radioVelocity = new RadioButton("Velocity", " Velocity");
 	
