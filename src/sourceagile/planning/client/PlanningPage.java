@@ -1,13 +1,18 @@
 package sourceagile.planning.client;
 
+import java.util.Date;
+
 import sourceagile.client.SystemStart;
 import sourceagile.planning.client.TodoClasses.AddTodoClass;
 import sourceagile.planning.client.TodoClasses.TodoClassesList;
+import sourceagile.planning.client.projectBacklog.ProjectBacklogList;
 import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.project.ProjectBacklog;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -33,6 +38,20 @@ public class PlanningPage extends VerticalPanel {
 
 		vp.add(vp1);
 
+
+
+		VerticalPanel vp2 = new VerticalPanel();
+		vp2.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+		vp2.setSize("100%", "100%");
+		vp2.setSpacing(10);
+		
+		HTML html = new HTML("<br><b><font color='blue' size='3'>Project Backlog</font></b> ");
+		vp2.add(html);
+		
+		vp2.add(new ProjectBacklogList(test()));
+
+		vp.add(vp2);
+
 		this.add(vp);
 	}
 
@@ -50,5 +69,31 @@ public class PlanningPage extends VerticalPanel {
 		});
 
 		return button;
+	}
+
+	private static ProjectBacklog[] test() {
+
+		ProjectBacklog[] pbs = new ProjectBacklog[2];
+
+		pbs[0] = new ProjectBacklog();
+
+		pbs[0].setBacklogDate(new Date());
+		pbs[0].setBacklogName("Login Page");
+		pbs[0].setBacklogDescription("");
+		pbs[0].setBacklogEstimative(10);
+		pbs[0].setBacklogPriority(1);
+		pbs[0].setBacklogStatus("");
+		
+		pbs[1] = new ProjectBacklog();
+
+		pbs[1].setBacklogDate(new Date());
+		pbs[1].setBacklogName("Score Database");
+		pbs[1].setBacklogDescription("");
+		pbs[1].setBacklogEstimative(20);
+		pbs[1].setBacklogPriority(3);
+		pbs[1].setBacklogStatus("");
+
+		return pbs;
+
 	}
 }
