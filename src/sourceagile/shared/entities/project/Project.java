@@ -10,8 +10,8 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
-/** 
- * @entity 
+/**
+ * @entity
  */
 @PersistenceCapable
 public class Project implements Serializable {
@@ -55,6 +55,9 @@ public class Project implements Serializable {
 
 	@Persistent(defaultFetchGroup = "true")
 	private List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
+
+	@Persistent(defaultFetchGroup = "true")
+	private List<ProjectBacklog> projectBacklog = new ArrayList<ProjectBacklog>();
 
 	public Long getProjectID() {
 		return projectID;
@@ -142,6 +145,14 @@ public class Project implements Serializable {
 
 	public void setProjectComponents(List<ProjectComponents> projectComponents) {
 		this.projectComponents = projectComponents;
+	}
+
+	public List<ProjectBacklog> getProjectBacklog() {
+		return projectBacklog;
+	}
+
+	public void setProjectBacklog(List<ProjectBacklog> projectBacklog) {
+		this.projectBacklog = projectBacklog;
 	}
 
 }

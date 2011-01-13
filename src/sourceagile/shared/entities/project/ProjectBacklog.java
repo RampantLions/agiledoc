@@ -3,35 +3,41 @@ package sourceagile.shared.entities.project;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.jdo.annotations.Column;
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
+
 /**
  * @entity
  */
-// @PersistenceCapable
+@PersistenceCapable
 public class ProjectBacklog implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	// @PrimaryKey
-	// @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	@PrimaryKey
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private Long projectBacklogID;
 
-	// @Persistent
+	@Persistent
 	private String backlogName;
 
-	// @Persistent
-	// @Column(jdbcType = "LONGVARCHAR")
+	@Persistent
+	@Column(jdbcType = "LONGVARCHAR")
 	private String backlogDescription;
 
-	// @Persistent
+	@Persistent
 	private Date backlogDate;
 
-	// @Persistent
+	@Persistent
 	private Integer backlogPriority;
 
-	// @Persistent
+	@Persistent
 	private Integer backlogEstimative;
 
-	// @Persistent
+	@Persistent
 	private String backlogStatus;
 
 	public Long getProjectBacklogID() {
