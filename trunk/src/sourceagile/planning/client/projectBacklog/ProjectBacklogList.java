@@ -1,5 +1,6 @@
 package sourceagile.planning.client.projectBacklog;
 
+import sourceagile.client.SystemStart;
 import sourceagile.shared.entities.project.ProjectBacklog;
 import sourceagile.userprojects.client.ProjectInitialization;
 
@@ -87,7 +88,7 @@ public class ProjectBacklogList extends FlexTable {
 		}
 	}
 
-	private static Image iconEdit(final ProjectBacklog backlogEntry) {
+	private static Image iconEdit(final ProjectBacklog projectBacklog) {
 
 		Image img = new Image("images/edit.gif");
 		img.addClickHandler(new ClickHandler() {
@@ -95,6 +96,9 @@ public class ProjectBacklogList extends FlexTable {
 			@Override
 			public void onClick(ClickEvent event) {
 
+				SystemStart.mainPage.panelContent.clear();
+				SystemStart.mainPage.panelContent
+						.add(new Story(projectBacklog));
 			}
 		});
 
