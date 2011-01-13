@@ -25,11 +25,11 @@ public class DatabaseConnection {
 		properties.setProperty("javax.jdo.option.ConnectionURL",
 				"jdbc:derby:data");
 
-		// properties.setProperty("javax.jdo.option.ConnectionURL",
-		// "jdbc:derby:data;create=true");
-		// properties.setProperty("datanucleus.autoCreateSchema", "true");
-		// properties.setProperty("datanucleus.autoCreateColumns", "true");
-		// properties.setProperty("datanucleus.storeManagerType", "rdbms");
+	//	 properties.setProperty("javax.jdo.option.ConnectionURL",
+	//	 "jdbc:derby:data;create=true");
+	//	 properties.setProperty("datanucleus.autoCreateSchema", "true");
+	//	 properties.setProperty("datanucleus.autoCreateColumns", "true");
+	//	 properties.setProperty("datanucleus.storeManagerType", "rdbms");
 
 		PersistenceManagerFactory PMF = JDOHelper
 				.getPersistenceManagerFactory(properties);

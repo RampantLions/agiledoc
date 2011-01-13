@@ -1,6 +1,7 @@
 package sourceagile.planning.client.projectBacklog;
 
 import sourceagile.shared.entities.project.ProjectBacklog;
+import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -14,7 +15,7 @@ import com.google.gwt.user.client.ui.Image;
  */
 public class ProjectBacklogList extends FlexTable {
 
-	public ProjectBacklogList(ProjectBacklog[] backlogEntries) {
+	public ProjectBacklogList() {
 
 		setBorderWidth(1);
 		setWidth("900px");
@@ -23,7 +24,7 @@ public class ProjectBacklogList extends FlexTable {
 
 		gridColumns();
 
-		gridRows(backlogEntries);
+		gridRows();
 	}
 
 	private void gridColumns() {
@@ -50,18 +51,30 @@ public class ProjectBacklogList extends FlexTable {
 		this.getColumnFormatter().setWidth(6, "50px");
 	}
 
-	private void gridRows(ProjectBacklog[] backlogEntries) {
+	private void gridRows() {
 
 		int row = 0;
-		for (ProjectBacklog backlogEntry : backlogEntries) {
+		for (ProjectBacklog backlogEntry : ProjectInitialization.currentProject
+				.getProjectBacklog()) {
 
 			row++;
 
 			this.setText(row, 0, backlogEntry.getBacklogName());
 			this.setText(row, 1, backlogEntry.getBacklogDescription());
 			this.setText(row, 2, backlogEntry.getBacklogDate().toString());
-			this.setText(row, 3, backlogEntry.getBacklogPriority().toString());
-			this.setText(row, 4, backlogEntry.getBacklogEstimative().toString());
+
+			String priority = "";
+			if (backlogEntry.getBacklogPriority() != null) {
+				priority = backlogEntry.getBacklogPriority().toString();
+			}
+			this.setText(row, 3, priority);
+
+			String estimative = "";
+			if (backlogEntry.getBacklogEstimative() != null) {
+				estimative = backlogEntry.getBacklogEstimative().toString();
+			}
+			this.setText(row, 4, estimative);
+
 			this.setText(row, 5, backlogEntry.getBacklogStatus());
 
 			HorizontalPanel hp = new HorizontalPanel();
