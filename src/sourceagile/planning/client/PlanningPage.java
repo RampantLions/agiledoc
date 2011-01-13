@@ -5,8 +5,8 @@ import java.util.Date;
 import sourceagile.client.SystemStart;
 import sourceagile.planning.client.TodoClasses.AddTodoClass;
 import sourceagile.planning.client.TodoClasses.TodoClassesList;
-import sourceagile.planning.client.projectBacklog.CreateStory;
 import sourceagile.planning.client.projectBacklog.ProjectBacklogList;
+import sourceagile.planning.client.projectBacklog.Story;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.ProjectBacklog;
 
@@ -85,7 +85,8 @@ public class PlanningPage extends VerticalPanel {
 			public void onClick(ClickEvent event) {
 
 				SystemStart.mainPage.panelContent.clear();
-				SystemStart.mainPage.panelContent.add(new CreateStory());
+				SystemStart.mainPage.panelContent.add(new Story(
+						new ProjectBacklog()));
 			}
 		});
 

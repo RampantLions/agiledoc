@@ -20,12 +20,12 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * @feature
  */
-public class CreateStory extends VerticalPanel {
+public class Story extends VerticalPanel {
 
 	private TextBox storyName = new TextBox();
 	private TextArea storyDescription = new TextArea();
 
-	public CreateStory() {
+	public Story(ProjectBacklog projectBacklog) {
 
 		Label space = new Label(" ");
 		space.setHeight("50px");
@@ -34,12 +34,12 @@ public class CreateStory extends VerticalPanel {
 		VerticalPanel vp = new VerticalPanel();
 		vp.setBorderWidth(1);
 
-		vp.add(storyForm());
+		vp.add(storyForm(projectBacklog));
 
 		this.add(vp);
 	}
 
-	public VerticalPanel storyForm() {
+	public VerticalPanel storyForm(ProjectBacklog projectBacklog) {
 
 		VerticalPanel vp = new VerticalPanel();
 		vp.setSpacing(50);
@@ -48,11 +48,11 @@ public class CreateStory extends VerticalPanel {
 		vp.add(title);
 
 		storyName.setWidth("500px");
-		storyName.setValue("");
+		storyName.setValue(projectBacklog.getBacklogName());
 		vp.add(new FormField("Story Name", storyName));
 
 		storyDescription.setSize("700px", "80px");
-		storyDescription.setValue("");
+		storyDescription.setValue(projectBacklog.getBacklogDescription());
 		vp.add(new FormField("Description", storyDescription));
 
 		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
