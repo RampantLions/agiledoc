@@ -30,5 +30,4 @@ public class ProjectInitialization {
 
 		new ListClassesHistory();
 	}
-
 }

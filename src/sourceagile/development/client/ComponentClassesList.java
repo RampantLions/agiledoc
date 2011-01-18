@@ -10,12 +10,11 @@ import com.gwtext.client.widgets.tree.TreeNode;
 import com.gwtext.client.widgets.tree.TreePanel;
 import com.gwtext.client.widgets.tree.event.TreeNodeListenerAdapter;
 
-/** 
+/**
  * 
  * 
- * @feature 
+ * @feature
  */
-
 public class ComponentClassesList {
 
 	public ComponentClassesList(TreePanel tree, TreeNode componentNode,
@@ -73,7 +72,12 @@ public class ComponentClassesList {
 
 	private TreeNode getFeatureLink(final ClassFile entry) {
 
-		TreeNode treeNode = new TreeNode(entry.getFeature().getFeatureName());
+		String className = entry.getFileName();
+		if (entry.getFeature() != null) {
+			className = entry.getFeature().getFeatureName();
+		}
+
+		TreeNode treeNode = new TreeNode(className);
 
 		treeNode.setIcon("js/ext/resources/images/default/tree/world.gif");
 
@@ -86,5 +90,4 @@ public class ComponentClassesList {
 
 		return treeNode;
 	}
-
 }

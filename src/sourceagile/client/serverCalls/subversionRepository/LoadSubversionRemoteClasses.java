@@ -1,6 +1,7 @@
 package sourceagile.client.serverCalls.subversionRepository;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import sourceagile.shared.entities.Productivity;
 import sourceagile.shared.entities.User;
@@ -24,4 +25,7 @@ public interface LoadSubversionRemoteClasses extends RemoteService {
 
 	void createClass(Project project, User user, ClassFile classFile,
 			String newSubfolderName);
+
+	HashMap<String, ClassFile> listComponentClasses(Project project, User user,
+			String componentPath);
 }

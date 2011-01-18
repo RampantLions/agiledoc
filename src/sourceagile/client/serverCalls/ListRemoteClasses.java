@@ -41,6 +41,8 @@ public class ListRemoteClasses {
 
 							RootPanel.get().clear();
 							RootPanel.get().add(SystemStart.mainPage);
+							
+							new ListComponentClasses();
 						}
 
 						public void onFailure(Throwable caught) {

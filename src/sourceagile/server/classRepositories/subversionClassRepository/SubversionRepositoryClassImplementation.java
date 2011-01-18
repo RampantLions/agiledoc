@@ -1,6 +1,7 @@
 package sourceagile.server.classRepositories.subversionClassRepository;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.tmatesoft.svn.core.io.SVNRepository;
 
@@ -9,6 +10,7 @@ import sourceagile.server.classRepositories.subversionClassRepository.repository
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor.EditClassDescription;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.GetRepositoryClass;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.ListRepositoryClasses;
+import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.ListRepositoryComponentClasses;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.ListRepositoryHistory;
 import sourceagile.shared.entities.Productivity;
 import sourceagile.shared.entities.User;
@@ -17,15 +19,36 @@ import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-/** 
+/**
  * 
  * 
- * @architecture 
+ * @architecture
  */
 
 @SuppressWarnings("serial")
 public class SubversionRepositoryClassImplementation extends
 		RemoteServiceServlet implements LoadSubversionRemoteClasses {
+
+	@Override
+	public HashMap<String, ClassFile> listComponentClasses(Project project,
+			User user, String componentPath) {
+
+		HashMap<String, ClassFile> entries = null;
+
+		try {
+			SVNRepository repository = SubversionRepositoryConnection
+					.connectClassRepository(project, user);
+
+			entries = ListRepositoryComponentClasses
+					.listRepositoryComponentFiles(repository, componentPath);
+
+		} catch (Exception e) {
+
+			System.out.println(e.toString());
+		}
+
+		return entries;
+	}
 
 	@Override
 	public ClassFile[] listClasses(Project project, User user) {
@@ -36,7 +59,7 @@ public class SubversionRepositoryClassImplementation extends
 			SVNRepository repository = SubversionRepositoryConnection
 					.connectClassRepository(project, user);
 
-			entries = ListRepositoryClasses.getRemoteClasses(repository);
+			entries = ListRepositoryClasses.listAllRepositoryFiles(repository);
 
 		} catch (Exception e) {
 
