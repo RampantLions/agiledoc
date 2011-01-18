@@ -1,6 +1,7 @@
 package sourceagile.client.serverCalls.subversionRepository;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import sourceagile.shared.entities.Productivity;
 import sourceagile.shared.entities.User;
@@ -26,4 +27,6 @@ public interface LoadSubversionRemoteClassesAsync {
 	void editClass(Project project, User user, ClassFile classFile,
 			String classDescription, AsyncCallback<Void> callback);
 
+	void listComponentClasses(Project project, User user, String componentPath,
+			AsyncCallback<HashMap<String, ClassFile>> callback);
 }

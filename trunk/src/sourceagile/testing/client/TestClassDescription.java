@@ -24,7 +24,7 @@ public class TestClassDescription extends VerticalPanel {
 
 	public TestClassDescription(ClassFile classEntry, ClassFile testEntry) {
 
-		if (testEntry != null) {
+		if (testEntry != null) { 
 
 			new FeatureDescription(testEntry);
 

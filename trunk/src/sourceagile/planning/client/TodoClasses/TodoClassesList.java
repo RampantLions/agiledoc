@@ -49,7 +49,7 @@ public class TodoClassesList extends FlexTable {
 		int row = 0;
 		for (ClassFile entry : entries) {
 
-			if (entry.getClassDoc().isTodo()) {
+			if (entry.getClassDoc() != null && entry.getClassDoc().isTodo()) {
 
 				row++;
 
