@@ -4,6 +4,7 @@ import java.util.List;
 
 import sourceagile.client.systemNavigation.FormField;
 import sourceagile.shared.entities.project.Project;
+import sourceagile.shared.entities.project.ProjectBacklog;
 import sourceagile.shared.entities.project.ProjectComponents;
 import sourceagile.userprojects.client.serverCalls.SaveProject;
 
@@ -29,6 +30,7 @@ public class ProjectForm extends VerticalPanel {
 	public static String description = null;
 
 	public static List<ProjectComponents> projectComponents = null;
+	public static List<ProjectBacklog> projectBacklog = null;
 
 	public ProjectForm() {
 
@@ -100,6 +102,7 @@ public class ProjectForm extends VerticalPanel {
 		proj.setDescription(description);
 
 		proj.setProjectComponents(ProjectForm.projectComponents);
+		proj.setProjectBacklog(ProjectForm.projectBacklog);
 
 		return proj;
 	}
@@ -145,5 +148,6 @@ public class ProjectForm extends VerticalPanel {
 		description = project.getDescription();
 
 		projectComponents = project.getProjectComponents();
+		projectBacklog = project.getProjectBacklog();
 	}
 }
