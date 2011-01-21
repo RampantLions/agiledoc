@@ -1,6 +1,5 @@
 package sourceagile.documentation.client;
 
-import helpagile.client.exportation.HelpWindow;
 import sourceagile.client.InternationalizationConstants;
 import sourceagile.client.SystemStart;
 import sourceagile.documentation.client.projectDescription.ProjectDescription;
@@ -81,7 +80,7 @@ public class Documentation {
 				documentationPanel.add(new SpecificationList(
 						ProjectInitialization.projectEntries));
 
-				HelpWindow.open(XMLFileName, "true");
+				// HelpWindow.open(XMLFileName, "true");
 			}
 		});
 		vp.add(linkSpecification);
@@ -97,7 +96,7 @@ public class Documentation {
 				documentationPanel.add(new UserManual(
 						ProjectInitialization.projectEntries));
 
-				HelpWindow.open(XMLFileName, "false");
+				// HelpWindow.open(XMLFileName, "false");
 			}
 		});
 		vp.add(linkUserManual);
