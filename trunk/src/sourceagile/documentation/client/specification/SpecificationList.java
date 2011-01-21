@@ -1,10 +1,10 @@
 package sourceagile.documentation.client.specification;
 
-import helpagile.client.utilities.FeatureNameGenerator;
 import sourceagile.documentation.client.ClassesListFiltered;
 import sourceagile.documentation.client.Documentation;
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.utilities.FeatureNameGenerator;
 import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.event.dom.client.ClickEvent;
