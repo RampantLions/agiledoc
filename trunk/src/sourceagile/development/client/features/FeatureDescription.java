@@ -1,6 +1,7 @@
 package sourceagile.development.client.features;
 
 import sourceagile.development.client.serverCalls.GetRemoteClass;
+import sourceagile.development.client.serverCalls.ListClassComments;
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Feature;
@@ -24,21 +25,32 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 public class FeatureDescription extends VerticalPanel {
 
+	public static VerticalPanel vpComments = new VerticalPanel();
+
 	public FeatureDescription(ClassFile entry) {
 
-		FeatureVizualizationPanel.featureContent.clear();
+		if (entry.getFeature() != null) {
 
-		this.add(featureName(entry.getFeature()));
+			FeatureVizualizationPanel.featureContent.clear();
 
-		this.add(featureDescription(entry.getClassDoc()));
+			this.add(featureName(entry.getFeature()));
 
-		this.add(featureMethods(entry.getClassDoc().getMethods()));
+			this.add(featureDescription(entry.getClassDoc()));
 
-		this.add(featureReferences(entry.getClassDoc().getImports()));
+			this.add(featureMethods(entry.getClassDoc().getMethods()));
 
-		this.add(featureCreation(entry));
+			this.add(featureReferences(entry.getClassDoc().getImports()));
 
-		FeatureVizualizationPanel.featureContent.add(this);
+			this.add(featureCreation(entry));
+
+			vpComments.setSpacing(20);
+			
+			this.add(vpComments);
+
+			FeatureVizualizationPanel.featureContent.add(this);
+
+			new ListClassComments(entry.toString());
+		}
 	}
 
 	/**
