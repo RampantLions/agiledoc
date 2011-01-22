@@ -9,6 +9,7 @@ import sourceagile.shared.entities.Comments;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.gwtext.client.widgets.form.TextArea;
@@ -19,12 +20,20 @@ public class NewCommentForm extends VerticalPanel {
 
 	public NewCommentForm(Long projectID, String classPath) {
 
+		this.setSpacing(5);
+
+		Label labelSpace = new Label(" ");
+		labelSpace.setHeight("70px");
+
+		this.add(labelSpace);
+
 		this.add(new Label("Comments: "));
 
 		textAreaComment.setSize("400px", "60px");
 
 		this.add(textAreaComment);
 
+		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		this.add(buttonSaveComment(projectID, classPath));
 	}
 
