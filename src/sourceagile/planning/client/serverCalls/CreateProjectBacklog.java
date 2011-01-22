@@ -4,16 +4,14 @@ import sourceagile.client.SystemStart;
 import sourceagile.planning.client.PlanningPage;
 import sourceagile.shared.entities.project.ProjectBacklog;
 import sourceagile.userprojects.client.ProjectInitialization;
-import sourceagile.userprojects.client.serverCalls.DatabaseAccessServerCalls;
-import sourceagile.userprojects.client.serverCalls.DatabaseAccessServerCallsAsync;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class CreateProjectBacklog {
 
-	final DatabaseAccessServerCallsAsync databaseServerCalls = GWT
-			.create(DatabaseAccessServerCalls.class);
+	final ProjectDatabaseServerCallsAsync databaseServerCalls = GWT
+			.create(ProjectDatabaseServerCalls.class);
 
 	public CreateProjectBacklog(ProjectBacklog projectBacklog) {
 
