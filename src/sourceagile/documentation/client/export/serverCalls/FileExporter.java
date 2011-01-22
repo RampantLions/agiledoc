@@ -1,4 +1,4 @@
-package sourceagile.documentation.client.serverCalls;
+package sourceagile.documentation.client.export.serverCalls;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Window;
@@ -6,8 +6,8 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class FileExporter {
 
-	private final FileExporterRemoteClassesAsync fileExporterRemoteFunctions = GWT
-			.create(FileExporterRemoteClasses.class);
+	private final ExportFileServerCallsAsync fileExporterRemoteFunctions = GWT
+			.create(ExportFileServerCalls.class);
 
 	public FileExporter(String fileName, String fileContent) {
 
