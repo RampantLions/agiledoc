@@ -1,10 +1,10 @@
 package sourceagile.documentation.client;
 
+import helpagile.client.exportation.HelpWindow;
 import sourceagile.client.InternationalizationConstants;
 import sourceagile.client.SystemStart;
 import sourceagile.documentation.client.projectDescription.ProjectDescription;
 import sourceagile.documentation.client.serverCalls.FileExporter;
-import sourceagile.documentation.client.specification.SpecificationList;
 import sourceagile.shared.utilities.FileNameGenerator;
 import sourceagile.userprojects.client.ProjectInitialization;
 
@@ -76,11 +76,7 @@ public class Documentation {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				documentationPanel.clear();
-				documentationPanel.add(new SpecificationList(
-						ProjectInitialization.projectEntries));
-
-				// HelpWindow.open(XMLFileName, "true");
+				HelpWindow.open(XMLFileName, "true");
 			}
 		});
 		vp.add(linkSpecification);
@@ -96,7 +92,7 @@ public class Documentation {
 				documentationPanel.add(new UserManual(
 						ProjectInitialization.projectEntries));
 
-				// HelpWindow.open(XMLFileName, "false");
+				HelpWindow.open(XMLFileName, "false");
 			}
 		});
 		vp.add(linkUserManual);
