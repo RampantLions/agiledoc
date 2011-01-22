@@ -14,8 +14,8 @@ public class ListProjects {
 
 	public ListProjects() {
 
-		final DatabaseAccessServerCallsAsync databaseServerCalls = GWT
-				.create(DatabaseAccessServerCalls.class);
+		final ProjectDatabaseServerCallsAsync databaseServerCalls = GWT
+				.create(ProjectDatabaseServerCalls.class);
 
 		databaseServerCalls.listProjects(new AsyncCallback<List<Project>>() {
 

@@ -12,7 +12,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
  * 
  * @architecture
  */
-public interface DatabaseAccessServerCallsAsync {
+public interface ProjectDatabaseServerCallsAsync {
 
 	void listProjects(AsyncCallback<List<Project>> callback);
 
@@ -22,10 +22,5 @@ public interface DatabaseAccessServerCallsAsync {
 
 	void saveProjectBacklog(Long projectID, ProjectBacklog projectBacklog,
 			AsyncCallback<Void> callback);
-
-	void listComments(Long projectID, String classPath,
-			AsyncCallback<List<Comments>> callback);
-
-	void saveComment(Comments comment, AsyncCallback<Void> callback);
 
 }

@@ -114,7 +114,7 @@ public class ProjectForm extends VerticalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new SaveProject(loadProjectInfo());
+				//new SaveProject(loadProjectInfo());
 			}
 		});
 

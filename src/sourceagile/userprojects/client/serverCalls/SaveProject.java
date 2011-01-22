@@ -9,8 +9,8 @@ public class SaveProject {
 
 	public SaveProject(Project project) {
 
-		final DatabaseAccessServerCallsAsync databaseServerCalls = GWT
-				.create(DatabaseAccessServerCalls.class);
+		final ProjectDatabaseServerCallsAsync databaseServerCalls = GWT
+				.create(ProjectDatabaseServerCalls.class);
 
 		databaseServerCalls.saveProject(project, new AsyncCallback<Void>() {
 
