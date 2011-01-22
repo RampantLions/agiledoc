@@ -8,8 +8,13 @@
   <!-- Servlets -->
   
   	<servlet>
-		<servlet-name>databaseAccess</servlet-name>
-		<servlet-class>sourceagile.server.databaseAccess.DatabaseAccessImplementation</servlet-class>
+		<servlet-name>projectDatabaseAccess</servlet-name>
+		<servlet-class>sourceagile.server.databaseAccess.Project.ProjectDatabaseAccessImplementation</servlet-class>
+	</servlet>
+
+  	<servlet>
+		<servlet-name>commentsDatabaseAccess</servlet-name>
+		<servlet-class>sourceagile.server.databaseAccess.Comments.CommentsDatabaseImplementation</servlet-class>
 	</servlet>
   
 	<servlet>
@@ -33,8 +38,13 @@
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>databaseAccess</servlet-name>
-		<url-pattern>/sourceagile/databaseAccess</url-pattern>
+		<servlet-name>projectDatabaseAccess</servlet-name>
+		<url-pattern>/sourceagile/projectDatabaseAccess</url-pattern>
+	</servlet-mapping>
+	
+		<servlet-mapping>
+		<servlet-name>commentsDatabaseAccess</servlet-name>
+		<url-pattern>/sourceagile/commentsDatabaseAccess</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
