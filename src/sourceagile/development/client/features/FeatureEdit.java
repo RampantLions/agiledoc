@@ -76,7 +76,7 @@ public class FeatureEdit extends VerticalPanel {
 		HorizontalPanel hp = new HorizontalPanel();
 		hp.setSpacing(20);
 
-		classDescription.setSize("600px", "40px");
+		classDescription.setSize("600px", "60px");
 		classDescription.setText(classDoc.getDescription());
 
 		hp.add(classDescription);
@@ -97,7 +97,7 @@ public class FeatureEdit extends VerticalPanel {
 					+ "</B>"));
 
 			TextArea textArea = new TextArea();
-			textArea.setSize("550px", "40px");
+			textArea.setSize("550px", "50px");
 			textArea.setText(meth.getDescription());
 
 			table.setWidget((i * 3 + 1), 1, textArea);
