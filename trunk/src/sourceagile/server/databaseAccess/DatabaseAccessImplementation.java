@@ -4,10 +4,13 @@ import java.util.List;
 
 import javax.jdo.PersistenceManager;
 
+import sourceagile.server.databaseAccess.Comments.ListClassComments;
+import sourceagile.server.databaseAccess.Comments.SaveComment;
 import sourceagile.server.databaseAccess.Project.GetProject;
 import sourceagile.server.databaseAccess.Project.ListProjects;
 import sourceagile.server.databaseAccess.Project.SaveProject;
 import sourceagile.server.databaseAccess.ProjectBacklog.SaveProjectBacklog;
+import sourceagile.shared.entities.Comments;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.entities.project.ProjectBacklog;
 import sourceagile.userprojects.client.serverCalls.DatabaseAccessServerCalls;
@@ -70,4 +73,26 @@ public class DatabaseAccessImplementation extends RemoteServiceServlet
 		persistenceManager.close();
 	}
 
+	@Override
+	public List<Comments> listComments(Long projectID, String classPath) {
+
+		PersistenceManager persistenceManager = DatabaseConnection.connect();
+
+		List<Comments> comments = ListClassComments.list(persistenceManager,
+				projectID, classPath);
+
+		persistenceManager.close();
+
+		return comments;
+	}
+
+	@Override
+	public void saveComment(Comments comment) {
+
+		PersistenceManager persistenceManager = DatabaseConnection.connect();
+
+		SaveComment.save(persistenceManager, comment);
+
+		persistenceManager.close();
+	}
 }
