@@ -5,13 +5,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import sourceagile.documentation.client.serverCalls.FileExporterRemoteClasses;
+import sourceagile.documentation.client.export.serverCalls.ExportFileServerCalls;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 @SuppressWarnings("serial")
 public class FileExporterImplementation extends RemoteServiceServlet implements
-		FileExporterRemoteClasses {
+		ExportFileServerCalls {
 
 	@Override
 	public String createFile(String fileName, String fileContent) {

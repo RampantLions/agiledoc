@@ -10,8 +10,8 @@ public class GetProject {
 
 	public GetProject(Long projectID) {
 
-		final DatabaseAccessServerCallsAsync databaseServerCalls = GWT
-				.create(DatabaseAccessServerCalls.class);
+		final ProjectDatabaseServerCallsAsync databaseServerCalls = GWT
+				.create(ProjectDatabaseServerCalls.class);
 
 		databaseServerCalls.getProject(projectID, new AsyncCallback<Project>() {
 
