@@ -1,10 +1,10 @@
-package sourceagile.documentation.client.serverCalls;
+package sourceagile.documentation.client.export.serverCalls;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
 @RemoteServiceRelativePath("fileExporter")
-public interface FileExporterRemoteClasses extends RemoteService {
+public interface ExportFileServerCalls extends RemoteService {
 
 	String createFile(String fileName, String fileContent);
 }
