@@ -2,6 +2,7 @@ package sourceagile.userprojects.client.serverCalls;
 
 import java.util.List;
 
+import sourceagile.shared.entities.Comments;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.entities.project.ProjectBacklog;
 
@@ -24,5 +25,9 @@ public interface DatabaseAccessServerCalls extends RemoteService {
 	void saveProject(Project project);
 
 	void saveProjectBacklog(Long projectID, ProjectBacklog projectBacklog);
+
+	List<Comments> listComments(Long projectID, String classPath);
+
+	void saveComment(Comments comment);
 
 }
