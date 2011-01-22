@@ -3,8 +3,9 @@ package sourceagile.documentation.client;
 import helpagile.client.exportation.HelpWindow;
 import sourceagile.client.InternationalizationConstants;
 import sourceagile.client.SystemStart;
+import sourceagile.documentation.client.export.ExportXML;
+import sourceagile.documentation.client.export.serverCalls.FileExporter;
 import sourceagile.documentation.client.projectDescription.ProjectDescription;
-import sourceagile.documentation.client.serverCalls.FileExporter;
 import sourceagile.shared.utilities.FileNameGenerator;
 import sourceagile.userprojects.client.ProjectInitialization;
 

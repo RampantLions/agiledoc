@@ -3,20 +3,18 @@ package sourceagile.development.client.serverCalls;
 import sourceagile.shared.entities.Comments;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.userprojects.client.ProjectInitialization;
-import sourceagile.userprojects.client.serverCalls.DatabaseAccessServerCalls;
-import sourceagile.userprojects.client.serverCalls.DatabaseAccessServerCallsAsync;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class SaveComment {
 
-	final DatabaseAccessServerCallsAsync databaseServerCalls = GWT
-			.create(DatabaseAccessServerCalls.class);
+	final CommentsServerCallsAsync commentsServerCalls = GWT
+			.create(CommentsServerCalls.class);
 
 	public SaveComment(Comments comment) {
 
-		databaseServerCalls.saveComment(comment, new AsyncCallback<Void>() {
+		commentsServerCalls.saveComment(comment, new AsyncCallback<Void>() {
 
 			public void onSuccess(Void result) {
 
