@@ -21,12 +21,15 @@ import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class Login extends VerticalPanel {
+/**
+ * First page of the system where the user can insert credentials.
+ */
+public class LoginPage extends VerticalPanel {
 
 	private InternationalizationConstants internationalizationConstants = GWT
 			.create(InternationalizationConstants.class);
 
-	public Login(List<Project> projects) {
+	public LoginPage(List<Project> projects) {
 
 		this.setSize("100%", "100%");
 
@@ -38,14 +41,12 @@ public class Login extends VerticalPanel {
 
 		this.add(new Label(" "));
 
-		this.add(new HTML(
-				"<center><font size=5>Welcome to </font>"
-						+ "<br><br><b><font size=6>The Source Code Agile Experiment</b> "
-						+ "<br><br><b>an Agile Toolkit</font></b> "
-						+ "<br><br><br><font size=4>Prototype Version</font></center>"));
+		this.add(new HTML("<center><font size=5>Welcome to </font>"
+				+ "<br><br><b><font size=6>The Source Agile Toolkit</b> "
+				+ "<br><br><font size=4>" + SystemStart.systemVersion
+				+ "</font></center>"));
 
 		this.add(panelLogin(projects));
-
 	}
 
 	private VerticalPanel panelLogin(List<Project> projects) {

@@ -36,7 +36,7 @@ public class FeatureEdit extends VerticalPanel {
 
 		hp.add(FeatureDescription.featureName(entry.getFeature()));
 
-		hp.add(featureOptions(entry.getClassDoc()));
+		hp.add(featureTypes(entry.getClassDoc()));
 
 		this.add(hp);
 
@@ -52,7 +52,7 @@ public class FeatureEdit extends VerticalPanel {
 		FeatureVizualizationPanel.featureContent.add(this);
 	}
 
-	private HorizontalPanel featureOptions(ClassDocumentation classDoc) {
+	private HorizontalPanel featureTypes(ClassDocumentation classDoc) {
 
 		HorizontalPanel hp = new HorizontalPanel();
 

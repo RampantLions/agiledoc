@@ -1,5 +1,7 @@
 package sourceagile.client.systemNavigation;
 
+import sourceagile.client.SystemStart;
+
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.Label;
@@ -18,8 +20,8 @@ public class WelcomePage extends VerticalPanel {
 		this.add(new Label(" "));
 
 		this.add(new HTML("<center><font size=4>Welcome to "
-				+ "<br><br><b>The Source Code Agile Experiment</font></b> "
-				+ "<br><br>Prototype Version</center>"));
+				+ "<br><br><b>The Source Agile Toolkit</font></b> "
+				+ "<br><br>" + SystemStart.systemVersion + "</center>"));
 	}
 
 }
