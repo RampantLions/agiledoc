@@ -10,6 +10,14 @@ import com.gwtext.client.core.EventObject;
 import com.gwtext.client.widgets.Button;
 import com.gwtext.client.widgets.event.ButtonListenerAdapter;
 
+/** 
+ * Open the Planning page for the end user. 
+
+TODO: Reload the project backlog list when open the page.
+ * 
+ * @TODO 
+ */
+
 public class ButtonPlanning extends Button {
 
 	private static InternationalizationConstants internationalizationConstants = GWT
