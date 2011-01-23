@@ -2,12 +2,13 @@ package sourceagile.shared.entities.entry;
 
 import java.io.Serializable;
 
-
 public class ClassDocumentation implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	public static final String TODO_TAG = "TODO";
+
+	public static final String USER_FEATURE_TAG = "userFeature";
 
 	public static final String FEATURE_TAG = "feature";
 

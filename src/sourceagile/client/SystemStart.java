@@ -15,6 +15,8 @@ public class SystemStart implements EntryPoint {
 
 	public static MainPage mainPage;
 
+	public static String systemVersion = "Prototype Version 0.6";
+
 	public static User currentUser = new User();
 
 	public void onModuleLoad() {

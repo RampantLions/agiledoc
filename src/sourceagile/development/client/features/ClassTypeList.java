@@ -14,6 +14,7 @@ public class ClassTypeList extends ListBox {
 		this.addItem(ClassDocumentation.ARCHITECTURE_TAG);
 		this.addItem(ClassDocumentation.ENTITY_TAG);
 		this.addItem(ClassDocumentation.FEATURE_TAG);
+		this.addItem(ClassDocumentation.USER_FEATURE_TAG);
 
 		if (ClassDocumentation.ARCHITECTURE_TAG.equals(classType)) {
 
@@ -26,8 +27,10 @@ public class ClassTypeList extends ListBox {
 		} else if (ClassDocumentation.FEATURE_TAG.equals(classType)) {
 
 			this.setSelectedIndex(3);
+
+		} else if (ClassDocumentation.USER_FEATURE_TAG.equals(classType)) {
+
+			this.setSelectedIndex(4);
 		}
-
 	}
-
 }

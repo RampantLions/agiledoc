@@ -2,7 +2,7 @@ package sourceagile.authentication.client.serverCalls;
 
 import java.util.List;
 
-import sourceagile.authentication.client.Login;
+import sourceagile.authentication.client.LoginPage;
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.userprojects.client.serverCalls.ProjectDatabaseServerCalls;
@@ -27,7 +27,7 @@ public class ListLoginProjects {
 			public void onSuccess(List<Project> projects) {
 
 				RootPanel.get().clear();
-				RootPanel.get().add(new Login(projects));
+				RootPanel.get().add(new LoginPage(projects));
 			}
 
 			public void onFailure(Throwable caught) {

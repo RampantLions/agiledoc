@@ -1,8 +1,12 @@
 package sourceagile.client.systemNavigation;
 
+import sourceagile.client.SystemStart;
 import sourceagile.client.systemNavigation.projectMenu.ProjectMenu;
 
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class MainPage extends VerticalPanel {
@@ -15,9 +19,25 @@ public class MainPage extends VerticalPanel {
 
 		setSize("100%", "100%");
 
+		addUserName();
+
 		addTopMenus();
 
 		addContentsPanel();
+	}
+
+	private void addUserName() {
+
+		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
+
+		HTML userName = new HTML("<font size=1 color=blue>"
+				+ SystemStart.currentUser.getName() + "</font>");
+
+		this.add(userName);
+
+		this.add(new Label(" "));
+
+		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 	}
 
 	private void addTopMenus() {
