@@ -18,10 +18,15 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
+
+
+/** 
  * Show the documentation of the class in a specification format.
+
+TODO: Show the component and the path at the top of the description.
  * 
- * @feature
+ * @TODO
+ * @feature 
  */
 public class FeatureDescription extends VerticalPanel {
 
