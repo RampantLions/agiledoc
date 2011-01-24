@@ -23,6 +23,7 @@
 					<featureDescription>Form to identify the name and the password of
 						the player.</featureDescription>
 					<methods />
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>Logout</className>
@@ -32,13 +33,14 @@
 					<featureDescription>Link to a safe exit from the game.
 					</featureDescription>
 					<methods />
+					<comments />
 				</entry>
 			</entries>
 		</projectComponent>
 		<projectComponent componentName="Gaming"
 			componentPath="client">
 			<entries>
-				<entry featureType="entity">
+				<entry featureType="">
 					<className>Player</className>
 					<classPath>client</classPath>
 					<featurePath></featurePath>
@@ -46,8 +48,9 @@
 					<featureDescription>Information about each player of the game.
 					</featureDescription>
 					<methods />
+					<comments />
 				</entry>
-				<entry featureType="architecture">
+				<entry featureType="">
 					<className>TicTacToe</className>
 					<classPath>client</classPath>
 					<featurePath></featurePath>
@@ -60,8 +63,15 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments>
+						<comment>
+							<commentName>Fri Jan 21 17:30:01 PST 2011</commentName>
+							<commentDescription>This is the first class that GWT loads when
+								the system starts.</commentDescription>
+						</comment>
+					</comments>
 				</entry>
-				<entry featureType="">
+				<entry featureType="Architecture">
 					<className>CallToMovimentJudgment</className>
 					<classPath>client/architecture</classPath>
 					<featurePath>architecture</featurePath>
@@ -73,8 +83,9 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="architecture">
+				<entry featureType="">
 					<className>GameInitialization</className>
 					<classPath>client/architecture</classPath>
 					<featurePath>architecture</featurePath>
@@ -82,8 +93,9 @@
 					<featureDescription>System preparation for the game initialization.
 					</featureDescription>
 					<methods />
+					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Architecture">
 					<className>GreetingService</className>
 					<classPath>client/architecture</classPath>
 					<featurePath>architecture</featurePath>
@@ -96,8 +108,9 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="architecture">
+				<entry featureType="">
 					<className>GreetingServiceAsync</className>
 					<classPath>client/architecture</classPath>
 					<featurePath>architecture</featurePath>
@@ -110,8 +123,9 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="architecture">
+				<entry featureType="">
 					<className>HelpInitialization</className>
 					<classPath>client/architecture</classPath>
 					<featurePath>architecture</featurePath>
@@ -119,8 +133,15 @@
 					<featureDescription>Loading the contents of the help system.
 					</featureDescription>
 					<methods />
+					<comments>
+						<comment>
+							<commentName>Fri Jan 21 17:18:09 PST 2011</commentName>
+							<commentDescription>The system loads all the help content before
+								any other thing.</commentDescription>
+						</comment>
+					</comments>
 				</entry>
-				<entry featureType="">
+				<entry featureType="UserManual">
 					<className>GameBoard</className>
 					<classPath>client/userInterface</classPath>
 					<featurePath>userInterface</featurePath>
@@ -130,8 +151,9 @@
 						some options such as a restart button, help, game score, game status,
 						...</featureDescription>
 					<methods />
+					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Feature">
 					<className>GameGrid</className>
 					<classPath>client/userInterface</classPath>
 					<featurePath>userInterface</featurePath>
@@ -149,8 +171,9 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="feature">
+				<entry featureType="Feature">
 					<className>PlayerMove</className>
 					<classPath>client/userInterface</classPath>
 					<featurePath>userInterface</featurePath>
@@ -174,6 +197,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>Timer</className>
@@ -183,8 +207,9 @@
 					<featureDescription>Counts the time passed since the current game
 						started.</featureDescription>
 					<methods />
+					<comments />
 				</entry>
-				<entry featureType="feature">
+				<entry featureType="Feature">
 					<className>WinningSequence</className>
 					<classPath>client/userInterface</classPath>
 					<featurePath>userInterface</featurePath>
@@ -204,13 +229,14 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
 			</entries>
 		</projectComponent>
 		<projectComponent componentName="Infra Structure"
 			componentPath="server">
 			<entries>
-				<entry featureType="architecture">
+				<entry featureType="">
 					<className>GreetingServiceImpl</className>
 					<classPath>server</classPath>
 					<featurePath></featurePath>
@@ -223,8 +249,9 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="entity">
+				<entry featureType="">
 					<className>MovimentJudgment</className>
 					<classPath>server</classPath>
 					<featurePath></featurePath>
@@ -253,6 +280,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
 			</entries>
 		</projectComponent>
