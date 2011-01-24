@@ -9,6 +9,10 @@ import com.gwtext.client.core.EventObject;
 import com.gwtext.client.widgets.Button;
 import com.gwtext.client.widgets.event.ButtonListenerAdapter;
 
+/**
+ * 
+ * @UserManual
+ */
 public class ButtonMetrics extends Button {
 
 	private static InternationalizationConstants internationalizationConstants = GWT

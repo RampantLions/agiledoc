@@ -11,12 +11,10 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-
-
-/** 
+/**
  * 
  * 
- * @UserFeature 
+ * @UserManual
  */
 public class LoginForm extends VerticalPanel {
 
