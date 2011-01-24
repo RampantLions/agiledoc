@@ -11,12 +11,12 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
- * First page of the system where the user can insert credentials.
+
+
+/** 
  * 
- * TODO: Fix the error on the page entrance
  * 
- * @TODO
+ * @UserFeature 
  */
 public class LoginForm extends VerticalPanel {
 
