@@ -10,10 +10,12 @@ import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.Label;
 import com.gwtext.client.widgets.SyntaxHighlightPanel;
 
-/**
+
+
+/** 
  * Show the source code of the class with the syntax highlighted.
  * 
- * @feature
+ * @Feature 
  */
 public class SourceCodeView {
 
