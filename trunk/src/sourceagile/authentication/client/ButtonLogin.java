@@ -11,12 +11,13 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 
-/**
- * First page of the system where the user can insert credentials.
+
+
+/** 
  * 
- * TODO: Fix the error on the page entrance
  * 
  * @TODO
+ * @userFeature 
  */
 public class ButtonLogin extends Button {
 
