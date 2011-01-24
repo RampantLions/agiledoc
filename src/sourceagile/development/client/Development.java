@@ -16,10 +16,12 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
+
+
+/** 
  * Show all the classes of the current project as a specification format.
  * 
- * @feature
+ * @MainFeature 
  */
 public class Development {
 
