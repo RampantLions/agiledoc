@@ -18,6 +18,12 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+/** 
+ * 
+ * 
+ * @Feature 
+ */
+
 public class Documentation {
 
 	public VerticalPanel documentationMenu = new VerticalPanel();
