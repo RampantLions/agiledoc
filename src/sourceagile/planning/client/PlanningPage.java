@@ -15,9 +15,12 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
+
+
+/** 
  * Show the list of planning tasks.
  * 
+ * @Feature 
  */
 public class PlanningPage extends VerticalPanel {
 
