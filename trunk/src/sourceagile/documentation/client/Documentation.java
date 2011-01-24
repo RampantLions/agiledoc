@@ -14,6 +14,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -50,7 +51,7 @@ public class Documentation {
 
 	private VerticalPanel showDocumentationMenu() {
 
-		final String XMLFileName = FileNameGenerator
+		final String projectName = FileNameGenerator
 				.compactName(ProjectInitialization.currentProject.getName());
 
 		VerticalPanel vp = new VerticalPanel();
@@ -77,10 +78,15 @@ public class Documentation {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				HelpWindow.open(XMLFileName, "true");
+				HelpWindow.open(projectName, "true");
 			}
 		});
 		vp.add(linkSpecification);
+
+		HTML htmlUserManual = new HTML(
+				"<a href='http://helpagile.appspot.com/?project=" + projectName
+						+ "&isSpecification="
+						+ "false' target='_blank'>User Manual</a>");
 
 		Anchor linkUserManual = new Anchor(
 				internationalizationConstants.userManual());
@@ -93,7 +99,10 @@ public class Documentation {
 				documentationPanel.add(new UserManual(
 						ProjectInitialization.projectEntries));
 
-				HelpWindow.open(XMLFileName, "false");
+				Window.Location.assign("http://helpagile.appspot.com/?project="
+						+ projectName + "&isSpecification=" + "false");
+
+				// HelpWindow.open(XMLFileName, "false");
 			}
 		});
 		vp.add(linkUserManual);
@@ -116,7 +125,7 @@ public class Documentation {
 									"Specification XML format"));
 				}
 
-				new FileExporter(XMLFileName, fileContent);
+				new FileExporter(projectName, fileContent);
 			}
 		});
 		vp.add(linkExportXML);

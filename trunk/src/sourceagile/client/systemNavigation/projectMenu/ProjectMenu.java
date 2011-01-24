@@ -1,14 +1,15 @@
 package sourceagile.client.systemNavigation.projectMenu;
 
+import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 
 public class ProjectMenu extends HorizontalPanel {
 
 	public ProjectMenu() {
 
-		this.setHeight("70px");
+		this.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 
-		this.setSpacing(20);
+		this.setWidth("430px");
 
 		this.add(new ButtonPlanning());
 

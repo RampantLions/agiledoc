@@ -6,7 +6,6 @@ import sourceagile.client.systemNavigation.projectMenu.ProjectMenu;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class MainPage extends VerticalPanel {
@@ -32,10 +31,10 @@ public class MainPage extends VerticalPanel {
 
 		HTML userName = new HTML("<font size=1 color=blue>"
 				+ SystemStart.currentUser.getName() + "</font>");
+		userName.setAutoHorizontalAlignment(ALIGN_LEFT);
+		userName.setWidth("200px");
 
 		this.add(userName);
-
-		this.add(new Label(" "));
 
 		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 	}
