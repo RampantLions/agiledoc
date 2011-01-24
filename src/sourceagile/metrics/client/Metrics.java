@@ -7,6 +7,12 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+/** 
+ * 
+ * 
+ * @Feature 
+ */
+
 public class Metrics extends VerticalPanel {
 
 	RadioButton radioProductivity = new RadioButton("Effort",
