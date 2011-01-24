@@ -17,10 +17,12 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
+
+
+/** 
  * Edit the documentation of the class in a web form.
  * 
- * @feature
+ * @Feature 
  */
 public class FeatureEdit extends VerticalPanel {
 
