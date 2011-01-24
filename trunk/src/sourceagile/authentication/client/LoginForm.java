@@ -1,5 +1,7 @@
 package sourceagile.authentication.client;
 
+import helpagile.client.exportation.HelpWindow;
+
 import java.util.List;
 
 import sourceagile.client.InternationalizationConstants;
@@ -9,6 +11,7 @@ import sourceagile.userprojects.client.ProjectList;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
@@ -34,8 +37,18 @@ public class LoginForm extends VerticalPanel {
 
 		this.add(new FormField(internationalizationConstants.user(), usersList));
 
-		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
 
-		this.add(new ButtonLogin());
+		HorizontalPanel hp = new HorizontalPanel();
+
+		hp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
+
+		hp.setWidth("350px");
+
+		hp.add(new ButtonLogin());
+
+		hp.add(HelpWindow.linkHelp("SourceAgile", "false", "Read more"));
+
+		this.add(hp);
 	}
 }
