@@ -3,8 +3,8 @@ package sourceagile.documentation.client;
 import helpagile.client.exportation.HelpWindow;
 import sourceagile.client.InternationalizationConstants;
 import sourceagile.client.SystemStart;
+import sourceagile.documentation.client.export.serverCalls.ListAllComments;
 import sourceagile.documentation.client.projectDescription.ProjectDescription;
-import sourceagile.server.databaseAccess.Comments.ListAllComments;
 import sourceagile.shared.utilities.FileNameGenerator;
 import sourceagile.userprojects.client.ProjectInitialization;
 
@@ -13,16 +13,13 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Anchor;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/** 
+/**
  * 
- * 
- * @Feature 
+ * @Feature
  */
-
 public class Documentation {
 
 	public VerticalPanel documentationMenu = new VerticalPanel();
@@ -76,41 +73,11 @@ public class Documentation {
 		});
 		vp.add(linkProjectDescription);
 
-		Anchor linkSpecification = new Anchor(
-				internationalizationConstants.specification());
-		linkSpecification.addClickHandler(new ClickHandler() {
+		vp.add(HelpWindow.linkHelp(projectName, "true",
+				internationalizationConstants.specification()));
 
-			@Override
-			public void onClick(ClickEvent event) {
-
-				HelpWindow.open(projectName, "true");
-			}
-		});
-		vp.add(linkSpecification);
-
-		HTML htmlUserManual = new HTML(
-				"<a href='http://helpagile.appspot.com/?project=" + projectName
-						+ "&isSpecification="
-						+ "false' target='_blank'>User Manual</a>");
-
-		Anchor linkUserManual = new Anchor(
-				internationalizationConstants.userManual());
-		linkUserManual.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				documentationPanel.clear();
-				documentationPanel.add(new UserManual(
-						ProjectInitialization.projectEntries));
-
-				Window.Location.assign("http://helpagile.appspot.com/?project="
-						+ projectName + "&isSpecification=" + "false");
-
-				// HelpWindow.open(XMLFileName, "false");
-			}
-		});
-		vp.add(linkUserManual);
+		vp.add(HelpWindow.linkHelp(projectName, "false",
+				internationalizationConstants.userManual()));
 
 		Anchor linkExportXML = new Anchor(
 				internationalizationConstants.export() + " XML");

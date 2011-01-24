@@ -37,5 +37,4 @@ public class ButtonPlanning extends Button {
 			}
 		});
 	}
-
 }

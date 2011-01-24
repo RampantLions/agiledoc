@@ -29,7 +29,7 @@ public class GetRemoteClass {
 
 						updateProjectEntries(entry);
 
-						new Development(entry, viewOption);
+						Development.showClass(entry, viewOption);
 					}
 
 					public void onFailure(Throwable caught) {

@@ -60,7 +60,12 @@ public class GetClassDoc {
 					classDocumentation.setTodo(true);
 				}
 
-				if (classDoc.tags(ClassDocumentation.FEATURE_TAG).length > 0) {
+				if (classDoc.tags(ClassDocumentation.USER_FEATURE_TAG).length > 0) {
+
+					classDocumentation
+							.setTagType(ClassDocumentation.USER_FEATURE_TAG);
+
+				} else if (classDoc.tags(ClassDocumentation.FEATURE_TAG).length > 0) {
 
 					classDocumentation
 							.setTagType(ClassDocumentation.FEATURE_TAG);
