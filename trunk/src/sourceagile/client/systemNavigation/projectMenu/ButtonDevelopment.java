@@ -9,6 +9,12 @@ import com.gwtext.client.core.EventObject;
 import com.gwtext.client.widgets.Button;
 import com.gwtext.client.widgets.event.ButtonListenerAdapter;
 
+/** 
+ * 
+ * 
+ * @UserFeature 
+ */
+
 public class ButtonDevelopment extends Button {
 
 	private static InternationalizationConstants internationalizationConstants = GWT
