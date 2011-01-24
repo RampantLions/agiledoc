@@ -68,6 +68,11 @@ public class EditClassDescription {
 		if (classFile.getClassDoc().getTagType() != null) {
 
 			if (classFile.getClassDoc().getTagType()
+					.equals(ClassDocumentation.USER_FEATURE_TAG)) {
+
+				tagType = "\n * @" + ClassDocumentation.USER_FEATURE_TAG;
+
+			} else if (classFile.getClassDoc().getTagType()
 					.equals(ClassDocumentation.FEATURE_TAG)) {
 
 				tagType = "\n * @" + ClassDocumentation.FEATURE_TAG;

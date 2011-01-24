@@ -1,7 +1,5 @@
 package sourceagile.planning.client;
 
-import java.util.Date;
-
 import sourceagile.client.SystemStart;
 import sourceagile.planning.client.TodoClasses.AddTodoClass;
 import sourceagile.planning.client.TodoClasses.TodoClassesList;
@@ -91,31 +89,5 @@ public class PlanningPage extends VerticalPanel {
 		});
 
 		return button;
-	}
-
-	private static ProjectBacklog[] test() {
-
-		ProjectBacklog[] pbs = new ProjectBacklog[2];
-
-		pbs[0] = new ProjectBacklog();
-
-		pbs[0].setBacklogDate(new Date());
-		pbs[0].setBacklogName("Login Page");
-		pbs[0].setBacklogDescription("");
-		pbs[0].setBacklogEstimative(10);
-		pbs[0].setBacklogPriority(1);
-		pbs[0].setBacklogStatus("");
-
-		pbs[1] = new ProjectBacklog();
-
-		pbs[1].setBacklogDate(new Date());
-		pbs[1].setBacklogName("Score Database");
-		pbs[1].setBacklogDescription("");
-		pbs[1].setBacklogEstimative(20);
-		pbs[1].setBacklogPriority(3);
-		pbs[1].setBacklogStatus("");
-
-		return pbs;
-
 	}
 }

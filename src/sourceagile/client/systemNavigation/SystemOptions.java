@@ -18,9 +18,6 @@ public class SystemOptions extends HorizontalPanel {
 
 	public SystemOptions() {
 
-		this.setHeight("70px");
-
-		this.setSpacing(5);
 		this.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 
 		final TextBox text = new TextBox();

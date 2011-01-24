@@ -19,7 +19,7 @@ public class ProjectName extends VerticalPanel {
 
 	public ProjectName() {
 
-		setSize("150px", "70px");
+		setWidth("150px");
 		setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 
