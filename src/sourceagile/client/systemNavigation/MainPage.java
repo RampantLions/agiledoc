@@ -31,7 +31,7 @@ public class MainPage extends VerticalPanel {
 
 		HTML userName = new HTML("<font size=1 color=blue>"
 				+ SystemStart.currentUser.getName() + "</font>");
-		userName.setAutoHorizontalAlignment(ALIGN_LEFT);
+		userName.setAutoHorizontalAlignment(ALIGN_CENTER);
 		userName.setWidth("200px");
 
 		this.add(userName);

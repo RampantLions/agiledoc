@@ -6,7 +6,6 @@ import sourceagile.codeview.client.SourceCodeView;
 import sourceagile.development.client.features.FeatureDescription;
 import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.development.client.features.OptionsIcons;
-import sourceagile.documentation.client.specification.SpecificationItemsList;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.userprojects.client.ProjectInitialization;
 
@@ -16,12 +15,10 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-
-
-/** 
+/**
  * Show all the classes of the current project as a specification format.
  * 
- * @MainFeature 
+ * @Feature
  */
 public class Development {
 

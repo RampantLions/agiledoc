@@ -8,13 +8,13 @@ public class ClassDocumentation implements Serializable {
 
 	public static final String TODO_TAG = "TODO";
 
-	public static final String USER_FEATURE_TAG = "userFeature";
+	public static final String USER_FEATURE_TAG = "UserManual";
 
-	public static final String FEATURE_TAG = "feature";
+	public static final String FEATURE_TAG = "Feature";
 
-	public static final String ARCHITECTURE_TAG = "architecture";
+	public static final String ARCHITECTURE_TAG = "Architecture";
 
-	public static final String ENTITY_TAG = "entity";
+	public static final String ENTITY_TAG = "Entity";
 
 	private String className;
 
