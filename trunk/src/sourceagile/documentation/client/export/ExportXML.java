@@ -1,7 +1,9 @@
 package sourceagile.documentation.client.export;
 
+import java.util.HashMap;
 import java.util.List;
 
+import sourceagile.shared.entities.Comments;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Method;
 import sourceagile.shared.entities.project.ProjectComponents;
@@ -41,7 +43,12 @@ public class ExportXML {
 	private static final String METHOD_NAME = "methodName";
 	private static final String METHOD_DESCRIPTION = "methodDescription";
 
-	public static String getEntriesXML() {
+	private static final String COMMENTS = "comments";
+	private static final String COMMENT = "comment";
+	private static final String COMMENT_DATE = "commentName";
+	private static final String COMMENT_DESCRIPTION = "commentDescription";
+
+	public static String getEntriesXML(HashMap<String, Comments> comments) {
 
 		Document xmlDocument = XMLParser.createDocument();
 
@@ -108,6 +115,9 @@ public class ExportXML {
 					entryElement.appendChild(getMethodsElement(entry
 							.getClassDoc().getMethods(), xmlDocument));
 
+					entryElement.appendChild(getClassComments(xmlDocument,
+							entry, comments));
+
 					entriesElement.appendChild(entryElement);
 				}
 			}
@@ -144,7 +154,7 @@ public class ExportXML {
 				ProjectInitialization.currentProject.getDomain()));
 
 		projectElement.appendChild(getElement(xmlDocument, PROJECT_DESCRIPTION,
-				ProjectInitialization.currentProject.getDescription()));   
+				ProjectInitialization.currentProject.getDescription()));
 
 		return projectElement;
 	}
@@ -203,4 +213,24 @@ public class ExportXML {
 		return element;
 	}
 
+	private static Element getClassComments(Document xmlDocument,
+			ClassFile entry, HashMap<String, Comments> comments) {
+
+		Element commentsElement = xmlDocument.createElement(COMMENTS);
+
+		Comments comment = comments.get(entry.toString());
+
+		if (comment != null) {
+
+			Element commentElement = xmlDocument.createElement(COMMENT);
+			commentElement.appendChild(getElement(xmlDocument, COMMENT_DATE,
+					comment.getCommentDate().toString()));
+			commentElement.appendChild(getElement(xmlDocument,
+					COMMENT_DESCRIPTION, comment.getCommentDescription()));
+
+			commentsElement.appendChild(commentElement);
+		}
+
+		return commentsElement;
+	}
 }

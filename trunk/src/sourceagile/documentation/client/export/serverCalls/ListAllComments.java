@@ -4,7 +4,10 @@ import java.util.HashMap;
 
 import sourceagile.development.client.serverCalls.CommentsServerCalls;
 import sourceagile.development.client.serverCalls.CommentsServerCallsAsync;
+import sourceagile.documentation.client.Documentation;
+import sourceagile.documentation.client.export.ExportXML;
 import sourceagile.shared.entities.Comments;
+import sourceagile.shared.utilities.FileNameGenerator;
 import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.core.client.GWT;
@@ -23,6 +26,22 @@ public class ListAllComments {
 
 					public void onSuccess(HashMap<String, Comments> comments) {
 
+						Documentation.documentationPanel.clear();
+
+						String fileContent = ExportXML.getEntriesXML(comments);
+
+						if (fileContent.length() < 100000) {
+
+							Documentation.documentationPanel.add(ExportXML
+									.getSyntaxPanel(fileContent,
+											"Specification XML format"));
+						}
+
+						String projectName = FileNameGenerator
+								.compactName(ProjectInitialization.currentProject
+										.getName());
+
+						new FileExporter(projectName, fileContent);
 					}
 
 					public void onFailure(Throwable caught) {

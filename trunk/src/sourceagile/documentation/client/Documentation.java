@@ -3,9 +3,8 @@ package sourceagile.documentation.client;
 import helpagile.client.exportation.HelpWindow;
 import sourceagile.client.InternationalizationConstants;
 import sourceagile.client.SystemStart;
-import sourceagile.documentation.client.export.ExportXML;
-import sourceagile.documentation.client.export.serverCalls.FileExporter;
 import sourceagile.documentation.client.projectDescription.ProjectDescription;
+import sourceagile.server.databaseAccess.Comments.ListAllComments;
 import sourceagile.shared.utilities.FileNameGenerator;
 import sourceagile.userprojects.client.ProjectInitialization;
 
@@ -120,18 +119,7 @@ public class Documentation {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				Documentation.documentationPanel.clear();
-
-				String fileContent = ExportXML.getEntriesXML();
-
-				if (fileContent.length() < 100000) {
-
-					Documentation.documentationPanel.add(ExportXML
-							.getSyntaxPanel(fileContent,
-									"Specification XML format"));
-				}
-
-				new FileExporter(projectName, fileContent);
+				new ListAllComments();
 			}
 		});
 		vp.add(linkExportXML);
