@@ -1,6 +1,7 @@
 package sourceagile.development.client.features;
 
 import sourceagile.shared.entities.entry.ClassDocumentation;
+import sourceagile.shared.utilities.FeatureNameGenerator;
 
 import com.google.gwt.user.client.ui.ListBox;
 
@@ -11,10 +12,18 @@ public class ClassTypeList extends ListBox {
 		this.setWidth("100px");
 
 		this.addItem("");
-		this.addItem(ClassDocumentation.ARCHITECTURE_TAG);
-		this.addItem(ClassDocumentation.ENTITY_TAG);
-		this.addItem(ClassDocumentation.FEATURE_TAG);
-		this.addItem(ClassDocumentation.USER_FEATURE_TAG);
+		this.addItem(FeatureNameGenerator
+				.spacedName(ClassDocumentation.ARCHITECTURE_TAG),
+				ClassDocumentation.ARCHITECTURE_TAG);
+		this.addItem(
+				FeatureNameGenerator.spacedName(ClassDocumentation.ENTITY_TAG),
+				ClassDocumentation.ENTITY_TAG);
+		this.addItem(
+				FeatureNameGenerator.spacedName(ClassDocumentation.FEATURE_TAG),
+				ClassDocumentation.FEATURE_TAG);
+		this.addItem(FeatureNameGenerator
+				.spacedName(ClassDocumentation.USER_FEATURE_TAG),
+				ClassDocumentation.USER_FEATURE_TAG);
 
 		if (ClassDocumentation.ARCHITECTURE_TAG.equals(classType)) {
 

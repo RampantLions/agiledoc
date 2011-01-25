@@ -22,6 +22,12 @@ public class WelcomePage extends VerticalPanel {
 		this.add(new HTML("<center><font size=4>Welcome to "
 				+ "<br><br><b>The Source Agile Toolkit</font></b> "
 				+ "<br><br>" + SystemStart.systemVersion + "</center>"));
+
+		this.add(new Label(" "));
+
+		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
+
+		this.add(new ProjectSummary());
 	}
 
 }

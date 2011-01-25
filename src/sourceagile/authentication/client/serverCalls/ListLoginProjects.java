@@ -16,8 +16,8 @@ public class ListLoginProjects {
 
 	public ListLoginProjects() {
 
-		RootPanel.get().clear();
-		RootPanel.get().add(new LoadingPanel());
+		RootPanel.get("htmlID").clear();
+		RootPanel.get("htmlID").add(new LoadingPanel());
 
 		final ProjectDatabaseServerCallsAsync databaseServerCalls = GWT
 				.create(ProjectDatabaseServerCalls.class);
@@ -26,8 +26,8 @@ public class ListLoginProjects {
 
 			public void onSuccess(List<Project> projects) {
 
-				RootPanel.get().clear();
-				RootPanel.get().add(new LoginPage(projects));
+				RootPanel.get("htmlID").clear();
+				RootPanel.get("htmlID").add(new LoginPage(projects));
 			}
 
 			public void onFailure(Throwable caught) {

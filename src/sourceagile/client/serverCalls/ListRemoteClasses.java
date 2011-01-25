@@ -19,8 +19,8 @@ public class ListRemoteClasses {
 
 	public ListRemoteClasses() {
 
-		RootPanel.get().clear();
-		RootPanel.get().add(new LoadingPanel());
+		RootPanel.get("htmlID").clear();
+		RootPanel.get("htmlID").add(new LoadingPanel());
 
 		if (Project.REPOSITORY_TYPE_SUBVERSION
 				.equals(ProjectInitialization.currentProject
@@ -39,9 +39,9 @@ public class ListRemoteClasses {
 
 							SystemStart.mainPage = new MainPage();
 
-							RootPanel.get().clear();
-							RootPanel.get().add(SystemStart.mainPage);
-							
+							RootPanel.get("htmlID").clear();
+							RootPanel.get("htmlID").add(SystemStart.mainPage);
+
 							new ListComponentClasses();
 						}
 
@@ -67,8 +67,8 @@ public class ListRemoteClasses {
 
 							SystemStart.mainPage = new MainPage();
 
-							RootPanel.get().clear();
-							RootPanel.get().add(SystemStart.mainPage);
+							RootPanel.get("htmlID").clear();
+							RootPanel.get("htmlID").add(SystemStart.mainPage);
 						}
 
 						public void onFailure(Throwable caught) {

@@ -47,7 +47,7 @@ public class LoginForm extends VerticalPanel {
 
 		hp.add(new ButtonLogin());
 
-		hp.add(HelpWindow.linkHelp("SourceAgile", "false", "Read more"));
+		hp.add(HelpWindow.helpLink("SourceAgile", "false", "Read more"));
 
 		this.add(hp);
 	}
