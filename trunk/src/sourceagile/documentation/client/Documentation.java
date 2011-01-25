@@ -73,10 +73,10 @@ public class Documentation {
 		});
 		vp.add(linkProjectDescription);
 
-		vp.add(HelpWindow.linkHelp(projectName, "true",
+		vp.add(HelpWindow.helpLink(projectName, "true",
 				internationalizationConstants.specification()));
 
-		vp.add(HelpWindow.linkHelp(projectName, "false",
+		vp.add(HelpWindow.helpLink(projectName, "false",
 				internationalizationConstants.userManual()));
 
 		Anchor linkExportXML = new Anchor(

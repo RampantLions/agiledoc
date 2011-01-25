@@ -81,7 +81,9 @@ public class ExportXML {
 
 				if (entry.getFilePath() != null
 						&& entry.getFilePath().startsWith(
-								projectComponent.getComponentPath())) {
+								projectComponent.getComponentPath())
+						&& entry.getClassDoc() != null
+						&& entry.getClassDoc().getClassName() != null) {
 
 					// if (!entry.getClassDoc().isTodo()) {
 
@@ -164,11 +166,12 @@ public class ExportXML {
 
 		Element entryElement = xmlDocument.createElement(ENTRY);
 
-		String tagType = entry.getClassDoc().getTagType();
+		String tagType = "";
 
-		if (tagType == null) {
+		if (entry.getClassDoc() != null
+				&& entry.getClassDoc().getTagType() != null) {
 
-			tagType = "";
+			tagType = entry.getClassDoc().getTagType();
 		}
 
 		entryElement.setAttribute(FEATURE_TYPE, tagType);
