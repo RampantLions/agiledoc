@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
 	<projectName>Help Agile</projectName>
+	<projectDomain>helpagile</projectDomain>
 	<projectDescription>Help Agile is an automatic generated specification
 		and user documentation for your software.</projectDescription>
 	<projectComponents>
@@ -29,6 +30,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>InternationalizationConstants</className>
@@ -66,24 +68,9 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="">
-					<className></className>
-					<classPath>client</classPath>
-					<featurePath></featurePath>
-					<featureName>Internationalization Constants_es</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-				</entry>
-				<entry featureType="">
-					<className></className>
-					<classPath>client</classPath>
-					<featurePath></featurePath>
-					<featureName>Internationalization Constants_pt_</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-				</entry>
-				<entry featureType="">
+				<entry featureType="Entity">
 					<className>HelpEntry</className>
 					<classPath>client/entities</classPath>
 					<featurePath>entities</featurePath>
@@ -107,19 +94,11 @@
 							<methodDescription></methodDescription>
 						</method>
 						<method>
-							<methodName>isFeature</methodName>
+							<methodName>getFeatureType</methodName>
 							<methodDescription></methodDescription>
 						</method>
 						<method>
-							<methodName>setFeature</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>isSpecification</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>setSpecification</methodName>
+							<methodName>setFeatureType</methodName>
 							<methodDescription></methodDescription>
 						</method>
 						<method>
@@ -155,8 +134,9 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Entity">
 					<className>HelpMethod</className>
 					<classPath>client/entities</classPath>
 					<featurePath>entities</featurePath>
@@ -208,8 +188,9 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Entity">
 					<className>Project</className>
 					<classPath>client/entities/project</classPath>
 					<featurePath>entities/project</featurePath>
@@ -222,6 +203,14 @@
 						</method>
 						<method>
 							<methodName>setName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDomain</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDomain</methodName>
 							<methodDescription></methodDescription>
 						</method>
 						<method>
@@ -241,8 +230,9 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Entity">
 					<className>ProjectComponents</className>
 					<classPath>client/entities/project</classPath>
 					<featurePath>entities/project</featurePath>
@@ -266,6 +256,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>HelpHint</className>
@@ -283,17 +274,9 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="">
-					<className>HelpIcon</className>
-					<classPath>client/exportation</classPath>
-					<featurePath>exportation</featurePath>
-					<featureName>Help Icon</featureName>
-					<featureDescription>Open a window with the help instructions for
-						this application.</featureDescription>
-					<methods />
-				</entry>
-				<entry featureType="">
+				<entry featureType="UserManual">
 					<className>HelpWindow</className>
 					<classPath>client/exportation</classPath>
 					<featurePath>exportation</featurePath>
@@ -305,7 +288,16 @@
 							<methodName>open</methodName>
 							<methodDescription></methodDescription>
 						</method>
+						<method>
+							<methodName>helpLink</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>helpIcon</methodName>
+							<methodDescription></methodDescription>
+						</method>
 					</methods>
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>Help</className>
@@ -321,8 +313,9 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Feature">
 					<className>HelpItemDescription</className>
 					<classPath>client/userInterface</classPath>
 					<featurePath>userInterface</featurePath>
@@ -334,42 +327,25 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Feature">
+					<className>ListEntriesFiltered</className>
+					<classPath>client/userInterface</classPath>
+					<featurePath>userInterface</featurePath>
+					<featureName>List Entries Filtered</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual">
 					<className>ProjectDescription</className>
 					<classPath>client/userInterface</classPath>
 					<featurePath>userInterface</featurePath>
 					<featureName>Project Description</featureName>
 					<featureDescription></featureDescription>
 					<methods />
-				</entry>
-				<entry featureType="">
-					<className>ShowFeaturesList</className>
-					<classPath>client/userInterface</classPath>
-					<featurePath>userInterface</featurePath>
-					<featureName>Show Features List</featureName>
-					<featureDescription>List all the features available for the game.
-					</featureDescription>
-					<methods>
-						<method>
-							<methodName>getEntryHTML</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-				</entry>
-				<entry featureType="">
-					<className>ShowUserManual</className>
-					<classPath>client/userInterface</classPath>
-					<featurePath>userInterface</featurePath>
-					<featureName>Show User Manual</featureName>
-					<featureDescription>List all the help entries available for the
-						game.</featureDescription>
-					<methods>
-						<method>
-							<methodName>entryMethods</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>HelpHeader</className>
@@ -378,6 +354,7 @@
 					<featureName>Help Header</featureName>
 					<featureDescription></featureDescription>
 					<methods />
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>HelpTitle</className>
@@ -386,6 +363,7 @@
 					<featureName>Help Title</featureName>
 					<featureDescription></featureDescription>
 					<methods />
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>ProjectInfo</className>
@@ -396,8 +374,9 @@
 						being showed in the user
 						manual.</featureDescription>
 					<methods />
+					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Feature">
 					<className>Search</className>
 					<classPath>client/userInterface/header</classPath>
 					<featurePath>userInterface/header</featurePath>
@@ -409,6 +388,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>ComponentClassesList</className>
@@ -422,27 +402,16 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="UserManual">
 					<className>ComponentsList</className>
 					<classPath>client/userInterface/menu</classPath>
 					<featurePath>userInterface/menu</featurePath>
 					<featureName>Components List</featureName>
 					<featureDescription></featureDescription>
 					<methods />
-				</entry>
-				<entry featureType="">
-					<className>HelpItemsList</className>
-					<classPath>client/userInterface/menu</classPath>
-					<featurePath>userInterface/menu</featurePath>
-					<featureName>Help Items List</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>getFeatureLink</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>HelpMenu</className>
@@ -451,6 +420,7 @@
 					<featureName>Help Menu</featureName>
 					<featureDescription></featureDescription>
 					<methods />
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>ConvertSpecificationXML</className>
@@ -484,6 +454,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>FeatureNameGenerator</className>
@@ -498,8 +469,9 @@
 							</methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Architecture">
 					<className>LoadSpecificationXML</className>
 					<classPath>client/utilities</classPath>
 					<featurePath>utilities</featurePath>
@@ -511,6 +483,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>SearchEngine</className>
@@ -520,6 +493,7 @@
 					<featureDescription>Realizes the search of the system.
 					</featureDescription>
 					<methods />
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>StringUtilsServerCalls</className>
@@ -534,6 +508,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>StringUtilsServerCallsAsync</className>
@@ -547,6 +522,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
 				<entry featureType="">
 					<className>StringUtilsService</className>
@@ -560,6 +536,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<comments />
 				</entry>
 			</entries>
 		</projectComponent>
