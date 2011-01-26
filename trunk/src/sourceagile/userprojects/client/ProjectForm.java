@@ -25,8 +25,7 @@ public class ProjectForm extends VerticalPanel {
 	public static final TextBox root = new TextBox();
 	public static final TextBox testRoot = new TextBox();
 	public static final TextBox domain = new TextBox();
-	public static final TextBox specificationPath = new TextBox();
-	public static final TextBox wiki = new TextBox();
+	public static String relatedLinks = null;
 	public static String description = null;
 
 	public static List<ProjectComponents> projectComponents = null;
@@ -62,14 +61,7 @@ public class ProjectForm extends VerticalPanel {
 		domain.setValue(ProjectInitialization.currentProject.getDomain());
 		this.add(new FormField("Domain", domain));
 
-		specificationPath.setWidth("300px");
-		specificationPath.setValue(ProjectInitialization.currentProject
-				.getSpecificationPath());
-		this.add(new FormField("Specification Path", specificationPath));
-
-		wiki.setWidth("300px");
-		wiki.setValue(ProjectInitialization.currentProject.getWiki());
-		this.add(new FormField("Wiki", wiki));
+		relatedLinks = ProjectInitialization.currentProject.getRelatedLinks();
 
 		description = ProjectInitialization.currentProject.getDescription();
 
@@ -97,8 +89,8 @@ public class ProjectForm extends VerticalPanel {
 		proj.setRoot(root.getValue());
 		proj.setTestRoot(testRoot.getValue());
 		proj.setDomain(domain.getValue());
-		proj.setSpecificationPath(specificationPath.getValue());
-		proj.setWiki(wiki.getValue());
+
+		proj.setRelatedLinks(relatedLinks);
 		proj.setDescription(description);
 
 		proj.setProjectComponents(ProjectForm.projectComponents);
@@ -143,8 +135,8 @@ public class ProjectForm extends VerticalPanel {
 		root.setValue(project.getRoot());
 		testRoot.setValue(project.getTestRoot());
 		domain.setValue(project.getDomain());
-		specificationPath.setValue(project.getSpecificationPath());
-		wiki.setValue(project.getWiki());
+
+		relatedLinks = project.getRelatedLinks();
 		description = project.getDescription();
 
 		projectComponents = project.getProjectComponents();
