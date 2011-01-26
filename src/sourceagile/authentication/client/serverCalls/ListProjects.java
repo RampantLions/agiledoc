@@ -10,9 +10,9 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.RootPanel;
 
-public class ListLoginProjects {
+public class ListProjects {
 
-	public ListLoginProjects() {
+	public ListProjects() {
 
 		RootPanel.get("htmlID").clear();
 		RootPanel.get("htmlID").add(new LoadingPanel());

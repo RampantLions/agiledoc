@@ -6,9 +6,9 @@ import sourceagile.shared.entities.project.Project;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-public class GetLoginProject {
+public class Login {
 
-	public GetLoginProject(Long projectID) {
+	public Login(Long projectID) {
 
 		final AuthenticationServerCallsAsync databaseServerCalls = GWT
 				.create(AuthenticationServerCalls.class);
