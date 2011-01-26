@@ -5,8 +5,11 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 
 import sourceagile.authentication.client.serverCalls.AuthenticationServerCalls;
+import sourceagile.planning.client.serverCalls.ProjectDatabaseServerCalls;
 import sourceagile.server.databaseAccess.DatabaseConnection;
+import sourceagile.server.databaseAccess.ProjectBacklog.SaveProjectBacklog;
 import sourceagile.shared.entities.project.Project;
+import sourceagile.shared.entities.project.ProjectBacklog;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
@@ -16,7 +19,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
  */
 @SuppressWarnings("serial")
 public class ProjectDatabaseAccessImplementation extends RemoteServiceServlet
-		implements AuthenticationServerCalls {
+		implements ProjectDatabaseServerCalls, AuthenticationServerCalls {
 
 	@Override
 	public List<Project> listProjects() {
@@ -44,11 +47,22 @@ public class ProjectDatabaseAccessImplementation extends RemoteServiceServlet
 		return project;
 	}
 
+	@Override
 	public void saveProject(Project project) {
 
 		PersistenceManager persistenceManager = DatabaseConnection.connect();
 
 		SaveProject.addNew(persistenceManager, project);
+
+		persistenceManager.close();
+	}
+
+	@Override
+	public void saveProjectBacklog(Long projectID, ProjectBacklog projectBacklog) {
+
+		PersistenceManager persistenceManager = DatabaseConnection.connect();
+
+		SaveProjectBacklog.save(persistenceManager, projectID, projectBacklog);
 
 		persistenceManager.close();
 	}

@@ -26,6 +26,6 @@ public class ProjectList extends ListBox {
 
 		this.addItem("");
 
-		this.addItem("Tic Tac Toe DEMO", "2001");
+		this.addItem("Tic Tac Toe DEMO", "1001");
 	}
 }
