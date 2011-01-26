@@ -1,6 +1,6 @@
 package sourceagile.testing.client.serverCalls;
 
-import sourceagile.client.GWTStart;
+import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
 import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
@@ -26,7 +26,7 @@ public class AddTestClass {
 			final boolean newTask) {
 
 		remoteFunctions.addTestClass(ProjectInitialization.currentProject,
-				GWTStart.currentUser, classFile, newSubfolderName,
+				GlobalVariables.currentUser, classFile, newSubfolderName,
 				new AsyncCallback<Void>() {
 
 					@Override

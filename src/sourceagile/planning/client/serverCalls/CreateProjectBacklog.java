@@ -1,6 +1,6 @@
 package sourceagile.planning.client.serverCalls;
 
-import sourceagile.client.GWTStart;
+import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
 import sourceagile.planning.client.PlanningPage;
 import sourceagile.shared.entities.project.ProjectBacklog;
@@ -22,9 +22,10 @@ public class CreateProjectBacklog {
 					@Override
 					public void onSuccess(Void result) {
 
-						GWTStart.mainPage.panelContent.clear();
-						GWTStart.mainPage.panelContent.add(new PlanningPage(
-								ProjectInitialization.projectEntries));
+						GlobalVariables.mainPage.panelContent.clear();
+						GlobalVariables.mainPage.panelContent
+								.add(new PlanningPage(
+										ProjectInitialization.projectEntries));
 					}
 
 					public void onFailure(Throwable caught) {

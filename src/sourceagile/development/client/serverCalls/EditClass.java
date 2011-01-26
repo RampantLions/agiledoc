@@ -1,9 +1,9 @@
 package sourceagile.development.client.serverCalls;
 
-import sourceagile.client.GWTStart;
+import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
-import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClasses;
-import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClassesAsync;
+import sourceagile.client.serverCalls.LoadRemoteClasses;
+import sourceagile.client.serverCalls.LoadRemoteClassesAsync;
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.development.client.Development;
 import sourceagile.development.client.features.OptionsIcons;
@@ -14,8 +14,8 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class EditClass {
 
-	private final LoadSubversionRemoteClassesAsync remoteFunctions = GWT
-			.create(LoadSubversionRemoteClasses.class);
+	private final LoadRemoteClassesAsync remoteFunctions = GWT
+			.create(LoadRemoteClasses.class);
 
 	public EditClass(final ClassFile classFile, String classDescription) {
 
@@ -23,7 +23,7 @@ public class EditClass {
 		Development.featureVisualizationPanel.add(new LoadingPanel());
 
 		remoteFunctions.editClass(ProjectInitialization.currentProject,
-				GWTStart.currentUser, classFile, classDescription,
+				GlobalVariables.currentUser, classFile, classDescription,
 				new AsyncCallback<Void>() {
 
 					@Override

@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClasses;
+import sourceagile.client.serverCalls.LoadRemoteClasses;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor.AddTodoClass;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor.EditClassDescription;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.GetRepositoryClass;
@@ -27,7 +27,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 @SuppressWarnings("serial")
 public class SubversionRepositoryClassImplementation extends
-		RemoteServiceServlet implements LoadSubversionRemoteClasses {
+		RemoteServiceServlet implements LoadRemoteClasses {
 
 	@Override
 	public HashMap<String, ClassFile> listComponentClasses(Project project,

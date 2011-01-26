@@ -2,9 +2,9 @@ package sourceagile.planning.client.projectBacklog;
 
 import java.util.Date;
 
-import sourceagile.client.systemNavigation.FormField;
 import sourceagile.planning.client.serverCalls.CreateProjectBacklog;
 import sourceagile.shared.entities.project.ProjectBacklog;
+import sourceagile.shared.utilities.FormField;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

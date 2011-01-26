@@ -1,9 +1,9 @@
 package sourceagile.development.client.serverCalls;
 
-import sourceagile.client.GWTStart;
+import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
-import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClasses;
-import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClassesAsync;
+import sourceagile.client.serverCalls.LoadRemoteClasses;
+import sourceagile.client.serverCalls.LoadRemoteClassesAsync;
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.development.client.Development;
 import sourceagile.shared.entities.entry.ClassFile;
@@ -13,8 +13,8 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class GetRemoteClass {
 
-	private final LoadSubversionRemoteClassesAsync remoteFunctions = GWT
-			.create(LoadSubversionRemoteClasses.class);
+	private final LoadRemoteClassesAsync remoteFunctions = GWT
+			.create(LoadRemoteClasses.class);
 
 	public GetRemoteClass(ClassFile classfile, final int viewOption) {
 
@@ -22,7 +22,7 @@ public class GetRemoteClass {
 		Development.featureVisualizationPanel.add(new LoadingPanel());
 
 		remoteFunctions.getClass(ProjectInitialization.currentProject,
-				GWTStart.currentUser, classfile,
+				GlobalVariables.currentUser, classfile,
 				new AsyncCallback<ClassFile>() {
 
 					public void onSuccess(ClassFile entry) {
