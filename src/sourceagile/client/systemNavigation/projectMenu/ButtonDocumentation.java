@@ -25,6 +25,9 @@ public class ButtonDocumentation extends Button {
 			@Override
 			public void onClick(Button button, EventObject e) {
 
+				ProjectMenu.untoggleButtons();
+				ProjectMenu.buttonDocumentation.toggle(true);
+
 				new Documentation();
 			}
 		});

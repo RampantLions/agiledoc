@@ -23,8 +23,12 @@ public class ButtonMetrics extends Button {
 		this.setText(internationalizationConstants.metrics());
 
 		this.addListener(new ButtonListenerAdapter() {
+
 			@Override
 			public void onClick(Button button, EventObject e) {
+
+				ProjectMenu.untoggleButtons();
+				ProjectMenu.buttonMetrics.toggle(true);
 
 				GlobalVariables.mainPage.panelContent.clear();
 				GlobalVariables.mainPage.panelContent.add(new Metrics());

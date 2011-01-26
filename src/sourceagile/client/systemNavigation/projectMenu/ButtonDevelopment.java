@@ -23,8 +23,12 @@ public class ButtonDevelopment extends Button {
 		this.setText(internationalizationConstants.development());
 
 		this.addListener(new ButtonListenerAdapter() {
+
 			@Override
 			public void onClick(Button button, EventObject e) {
+
+				ProjectMenu.untoggleButtons();
+				ProjectMenu.buttonDevelopment.toggle(true);
 
 				new Development(OptionsIcons.OPTION_ALLCLASSES);
 			}
