@@ -31,7 +31,7 @@ public class TestClassDescription extends VerticalPanel {
 			FeatureVizualizationPanel.featureContent.add(new Label(" "));
 
 			FeatureVizualizationPanel.featureContent
-					.add(addSourceButton(testEntry));
+					.add(addSourceButton(testEntry)); 
 
 		} else {
 

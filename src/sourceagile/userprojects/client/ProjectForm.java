@@ -2,6 +2,7 @@ package sourceagile.userprojects.client;
 
 import java.util.List;
 
+import sourceagile.client.ProjectInitialization;
 import sourceagile.client.systemNavigation.FormField;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.entities.project.ProjectBacklog;

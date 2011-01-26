@@ -1,12 +1,12 @@
 package sourceagile.testing.client.serverCalls;
 
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
+import sourceagile.client.ProjectInitialization;
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.development.client.Development;
 import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.testing.client.TestClassDescription;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -22,7 +22,7 @@ public class GetRemoteTestClass {
 		Development.featureVisualizationPanel.add(new LoadingPanel());
 
 		remoteFunctions.getTestClass(ProjectInitialization.currentProject,
-				SystemStart.currentUser, entry, new AsyncCallback<ClassFile>() {
+				GWTStart.currentUser, entry, new AsyncCallback<ClassFile>() {
 
 					public void onSuccess(ClassFile testEntry) {
 

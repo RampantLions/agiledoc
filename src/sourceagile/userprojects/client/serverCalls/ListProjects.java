@@ -2,7 +2,7 @@ package sourceagile.userprojects.client.serverCalls;
 
 import java.util.List;
 
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.userprojects.client.ProjectSelection;
 
@@ -21,12 +21,12 @@ public class ListProjects {
 
 			public void onSuccess(List<Project> projects) {
 
-				SystemStart.mainPage.panelContent.clear();
-				SystemStart.mainPage.panelContent
+				GWTStart.mainPage.panelContent.clear();
+				GWTStart.mainPage.panelContent
 						.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-				SystemStart.mainPage.panelContent.add(new ProjectSelection(
+				GWTStart.mainPage.panelContent.add(new ProjectSelection(
 						projects));
-				SystemStart.mainPage.panelContent
+				GWTStart.mainPage.panelContent
 						.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 			}
 
