@@ -1,6 +1,7 @@
 package sourceagile.client.serverCalls;
 
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
+import sourceagile.client.ProjectInitialization;
 import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClasses;
 import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClassesAsync;
 import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClasses;
@@ -9,7 +10,6 @@ import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.Project;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -31,16 +31,16 @@ public class ListRemoteClasses {
 
 			subversionRemoteFunctions.listClasses(
 					ProjectInitialization.currentProject,
-					SystemStart.currentUser, new AsyncCallback<ClassFile[]>() {
+					GWTStart.currentUser, new AsyncCallback<ClassFile[]>() {
 
 						public void onSuccess(ClassFile[] entries) {
 
 							ProjectInitialization.projectEntries = entries;
 
-							SystemStart.mainPage = new MainPage();
+							GWTStart.mainPage = new MainPage();
 
 							RootPanel.get("htmlID").clear();
-							RootPanel.get("htmlID").add(SystemStart.mainPage);
+							RootPanel.get("htmlID").add(GWTStart.mainPage);
 
 							new ListComponentClasses();
 						}
@@ -59,16 +59,16 @@ public class ListRemoteClasses {
 
 			gitRemoteFunctions.listClasses(
 					ProjectInitialization.currentProject,
-					SystemStart.currentUser, new AsyncCallback<ClassFile[]>() {
+					GWTStart.currentUser, new AsyncCallback<ClassFile[]>() {
 
 						public void onSuccess(ClassFile[] entries) {
 
 							ProjectInitialization.projectEntries = entries;
 
-							SystemStart.mainPage = new MainPage();
+							GWTStart.mainPage = new MainPage();
 
 							RootPanel.get("htmlID").clear();
-							RootPanel.get("htmlID").add(SystemStart.mainPage);
+							RootPanel.get("htmlID").add(GWTStart.mainPage);
 						}
 
 						public void onFailure(Throwable caught) {

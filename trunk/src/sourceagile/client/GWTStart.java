@@ -8,10 +8,11 @@ import sourceagile.shared.entities.User;
 import com.google.gwt.core.client.EntryPoint;
 
 /**
- * Show the first page of the system.
+ * GWT Entrance (EntryPoint)
  * 
+ * @Architecture
  */
-public class SystemStart implements EntryPoint {
+public class GWTStart implements EntryPoint {
 
 	public static MainPage mainPage;
 

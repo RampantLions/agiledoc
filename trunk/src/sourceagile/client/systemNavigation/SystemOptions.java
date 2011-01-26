@@ -2,7 +2,7 @@ package sourceagile.client.systemNavigation;
 
 import helpagile.client.exportation.HelpWindow;
 import sourceagile.client.InternationalizationConstants;
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -67,10 +67,10 @@ public class SystemOptions extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				SystemStart.mainPage = new MainPage();
+				GWTStart.mainPage = new MainPage();
 
 				RootPanel.get("htmlID").clear();
-				RootPanel.get("htmlID").add(SystemStart.mainPage);
+				RootPanel.get("htmlID").add(GWTStart.mainPage);
 			}
 		});
 
