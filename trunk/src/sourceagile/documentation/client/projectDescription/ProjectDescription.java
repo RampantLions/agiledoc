@@ -1,7 +1,7 @@
 package sourceagile.documentation.client.projectDescription;
 
 import sourceagile.client.ProjectInitialization;
-import sourceagile.userprojects.client.serverCalls.SaveProject;
+import sourceagile.client.project.SaveProject;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

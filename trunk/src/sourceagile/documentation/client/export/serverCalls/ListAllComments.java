@@ -3,8 +3,6 @@ package sourceagile.documentation.client.export.serverCalls;
 import java.util.HashMap;
 
 import sourceagile.client.ProjectInitialization;
-import sourceagile.development.client.serverCalls.CommentsServerCalls;
-import sourceagile.development.client.serverCalls.CommentsServerCallsAsync;
 import sourceagile.documentation.client.Documentation;
 import sourceagile.documentation.client.export.ExportXML;
 import sourceagile.shared.entities.Comments;
@@ -15,8 +13,8 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class ListAllComments {
 
-	final CommentsServerCallsAsync commentsServerCalls = GWT
-			.create(CommentsServerCalls.class);
+	final AllCommentsServerCallsAsync commentsServerCalls = GWT
+			.create(AllCommentsServerCalls.class);
 
 	public ListAllComments() {
 
