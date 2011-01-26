@@ -1,4 +1,4 @@
-package sourceagile.server.sourcelet.tokenizer;
+package sourceagile.server.doclet.tokenizer;
 
 public class JavaTokens {
 
