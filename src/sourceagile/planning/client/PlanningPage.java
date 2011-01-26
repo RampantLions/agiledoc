@@ -1,6 +1,6 @@
 package sourceagile.planning.client;
 
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
 import sourceagile.planning.client.TodoClasses.AddTodoClass;
 import sourceagile.planning.client.TodoClasses.TodoClassesList;
 import sourceagile.planning.client.projectBacklog.ProjectBacklogList;
@@ -69,8 +69,8 @@ public class PlanningPage extends VerticalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				SystemStart.mainPage.panelContent.clear();
-				SystemStart.mainPage.panelContent.add(new AddTodoClass());
+				GWTStart.mainPage.panelContent.clear();
+				GWTStart.mainPage.panelContent.add(new AddTodoClass());
 
 			}
 		});
@@ -85,8 +85,8 @@ public class PlanningPage extends VerticalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				SystemStart.mainPage.panelContent.clear();
-				SystemStart.mainPage.panelContent.add(new Story(
+				GWTStart.mainPage.panelContent.clear();
+				GWTStart.mainPage.panelContent.add(new Story(
 						new ProjectBacklog()));
 			}
 		});

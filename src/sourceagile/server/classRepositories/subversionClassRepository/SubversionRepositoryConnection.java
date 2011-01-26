@@ -2,21 +2,18 @@ package sourceagile.server.classRepositories.subversionClassRepository;
 
 import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.SVNURL;
-import org.tmatesoft.svn.core.auth.ISVNAuthenticationManager;
+import org.tmatesoft.svn.core.auth.BasicAuthenticationManager;
 import org.tmatesoft.svn.core.internal.io.dav.DAVRepositoryFactory;
 import org.tmatesoft.svn.core.io.SVNRepository;
 import org.tmatesoft.svn.core.io.SVNRepositoryFactory;
-import org.tmatesoft.svn.core.wc.SVNWCUtil;
 
 import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.project.Project;
 
-
-
-/** 
+/**
  * Open a connection with the repository that was entered in the project data.
  * 
- * @architecture 
+ * @architecture
  */
 
 public class SubversionRepositoryConnection {
@@ -46,10 +43,9 @@ public class SubversionRepositoryConnection {
 
 		SVNRepository repository = SVNRepositoryFactory.create(SVNURL
 				.parseURIDecoded(URI));
-		ISVNAuthenticationManager authManager = SVNWCUtil
-				.createDefaultAuthenticationManager(user.getName(),
-						user.getPassword());
-		repository.setAuthenticationManager(authManager);
+
+		repository.setAuthenticationManager(new BasicAuthenticationManager(user
+				.getName(), user.getPassword()));
 
 		return repository;
 	}

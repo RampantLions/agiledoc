@@ -1,9 +1,9 @@
 package sourceagile.planning.client.serverCalls;
 
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
+import sourceagile.client.ProjectInitialization;
 import sourceagile.planning.client.PlanningPage;
 import sourceagile.shared.entities.project.ProjectBacklog;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -22,8 +22,8 @@ public class CreateProjectBacklog {
 					@Override
 					public void onSuccess(Void result) {
 
-						SystemStart.mainPage.panelContent.clear();
-						SystemStart.mainPage.panelContent.add(new PlanningPage(
+						GWTStart.mainPage.panelContent.clear();
+						GWTStart.mainPage.panelContent.add(new PlanningPage(
 								ProjectInitialization.projectEntries));
 					}
 

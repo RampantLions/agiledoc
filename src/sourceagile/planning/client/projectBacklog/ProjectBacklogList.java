@@ -1,8 +1,8 @@
 package sourceagile.planning.client.projectBacklog;
 
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
+import sourceagile.client.ProjectInitialization;
 import sourceagile.shared.entities.project.ProjectBacklog;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -96,8 +96,8 @@ public class ProjectBacklogList extends FlexTable {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				SystemStart.mainPage.panelContent.clear();
-				SystemStart.mainPage.panelContent
+				GWTStart.mainPage.panelContent.clear();
+				GWTStart.mainPage.panelContent
 						.add(new Story(projectBacklog));
 			}
 		});

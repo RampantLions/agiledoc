@@ -13,6 +13,8 @@
 	<inherits name="com.google.gwt.i18n.I18N"/>
 	<extend-property name="locale" values="en,pt_BR,es"/>
 	
+	 <inherits name='com.google.gwt.xml.XML'/>
+	
 
 	<!-- Other module inherits -->
 	<inherits name='com.gwtext.GwtExt'/>
@@ -29,7 +31,7 @@
 	<inherits name="sourceagile.metrics.Metrics" />
 
 	<!-- Specify the app entry point class. -->
-	<entry-point class='sourceagile.client.SystemStart' />
+	<entry-point class='sourceagile.client.GWTStart' />
 
 	<!-- Specify the paths for translatable code -->
 	<source path='client' />

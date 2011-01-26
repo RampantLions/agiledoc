@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.server.sourcelet.tokenizer.JavaTokens;
-import sourceagile.server.sourcelet.tokenizer.Tokenize;
-import sourceagile.server.sourcelet.tokenizer.TokenizeClassDeclaration;
+import sourceagile.server.doclet.tokenizer.JavaTokens;
+import sourceagile.server.doclet.tokenizer.Tokenize;
+import sourceagile.server.doclet.tokenizer.TokenizeClassDeclaration;
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
 
