@@ -9,6 +9,7 @@ public class SaveComment {
 	public static void save(PersistenceManager persistenceManager,
 			Comments comment) {
 
-		persistenceManager.makePersistent(comment);
+		persistenceManager.makePersistent(ConvertComments
+				.getDatabaseComment(comment));
 	}
 }
