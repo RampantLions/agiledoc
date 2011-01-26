@@ -21,8 +21,8 @@
 	<inherits name="com.google.gwt.visualization.Visualization" />
 	<inherits name="helpagile.HelpAgileExport" />
 
-	<inherits name="sourceagile.userprojects.UserProjects" />	
 	<inherits name="sourceagile.authentication.Authentication" />	
+	<inherits name="sourceagile.userprojects.UserProjects" />	
 	<inherits name="sourceagile.planning.Planning" />
 	<inherits name="sourceagile.development.Development" />
 	<inherits name="sourceagile.documentation.Documentation" />
@@ -31,7 +31,7 @@
 	<inherits name="sourceagile.metrics.Metrics" />
 
 	<!-- Specify the app entry point class. -->
-	<entry-point class='sourceagile.client.GWTStart' />
+	<entry-point class='sourceagile.client.GwtStart' />
 
 	<!-- Specify the paths for translatable code -->
 	<source path='client' />
