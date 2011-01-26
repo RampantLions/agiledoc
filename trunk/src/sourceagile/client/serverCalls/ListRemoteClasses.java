@@ -4,10 +4,10 @@ import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
 import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClasses;
 import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClassesAsync;
-import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.Project;
+import sourceagile.shared.utilities.LoadingPanel;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
