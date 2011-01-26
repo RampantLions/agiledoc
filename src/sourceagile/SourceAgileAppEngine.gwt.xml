@@ -11,9 +11,21 @@
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
   <!-- Other module inherits                                      -->
+  
+  	<inherits name="com.google.gwt.i18n.I18N"/>
+	<extend-property name="locale" values="en,pt_BR,es"/>
+	
+	<inherits name='com.google.gwt.xml.XML'/>
+	
+	<inherits name='com.gwtext.GwtExt'/>
+	
+	<inherits name="helpagile.HelpAgileExport" />
+	 
+	<inherits name="sourceagile.authentication.Authentication" />	
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='sourceagile.client.SourceAgileAppEngine'/>
+  <entry-point class='sourceagile.client.GwtStart'/>
+  
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
