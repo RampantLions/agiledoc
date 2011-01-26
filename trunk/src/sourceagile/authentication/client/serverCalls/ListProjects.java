@@ -3,8 +3,8 @@ package sourceagile.authentication.client.serverCalls;
 import java.util.List;
 
 import sourceagile.authentication.client.LoginPage;
-import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.shared.entities.project.Project;
+import sourceagile.shared.utilities.LoadingPanel;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
