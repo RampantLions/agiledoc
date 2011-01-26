@@ -13,11 +13,11 @@ import com.google.gwt.user.client.ui.Image;
 /**
  * List all the classes assigned as "To Do" in the current project.
  * 
- * @feature
+ * @Feature
  */
-public class TodoClassesList extends FlexTable {
+public class PlanningClassesList extends FlexTable {
 
-	public TodoClassesList(ClassFile[] entries) {
+	public PlanningClassesList(ClassFile[] entries) {
 
 		setBorderWidth(1);
 		setWidth("900px");
@@ -46,23 +46,26 @@ public class TodoClassesList extends FlexTable {
 
 	private void gridRows(ClassFile[] entries) {
 
-		int row = 0;
-		for (ClassFile entry : entries) {
+		if (entries != null) {
 
-			if (entry.getClassDoc() != null && entry.getClassDoc().isTodo()) {
+			int row = 0;
+			for (ClassFile entry : entries) {
 
-				row++;
+				if (entry.getClassDoc() != null && entry.getClassDoc().isTodo()) {
 
-				this.setText(row, 0, entry.getFeature().getFeatureName());
-				this.setText(row, 1, entry.getClassDoc().getDescription());
-				this.setText(row, 2, entry.getDateModified().toString());
+					row++;
 
-				HorizontalPanel hp = new HorizontalPanel();
-				hp.setSpacing(10);
-				hp.add(iconEditTodoFeature(entry));
-				hp.add(iconDeleteTodoFeature(entry));
+					this.setText(row, 0, entry.getFeature().getFeatureName());
+					this.setText(row, 1, entry.getClassDoc().getDescription());
+					this.setText(row, 2, entry.getDateModified().toString());
 
-				this.setWidget(row, 3, hp);
+					HorizontalPanel hp = new HorizontalPanel();
+					hp.setSpacing(10);
+					hp.add(iconEditTodoFeature(entry));
+					hp.add(iconDeleteTodoFeature(entry));
+
+					this.setWidget(row, 3, hp);
+				}
 			}
 		}
 	}

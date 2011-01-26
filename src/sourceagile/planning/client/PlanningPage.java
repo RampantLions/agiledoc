@@ -2,7 +2,7 @@ package sourceagile.planning.client;
 
 import sourceagile.client.GlobalVariables;
 import sourceagile.planning.client.TodoClasses.AddTodoClass;
-import sourceagile.planning.client.TodoClasses.TodoClassesList;
+import sourceagile.planning.client.TodoClasses.PlanningClassesList;
 import sourceagile.planning.client.projectBacklog.ProjectBacklogList;
 import sourceagile.planning.client.projectBacklog.Story;
 import sourceagile.shared.entities.entry.ClassFile;
@@ -36,7 +36,7 @@ public class PlanningPage extends VerticalPanel {
 		vp1.add(buttonNewTask());
 
 		vp1.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-		vp1.add(new TodoClassesList(entries));
+		vp1.add(new PlanningClassesList(entries));
 
 		vp.add(vp1);
 
