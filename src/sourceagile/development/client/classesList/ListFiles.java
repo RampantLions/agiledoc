@@ -1,4 +1,4 @@
-package sourceagile.codeview.client;
+package sourceagile.development.client.classesList;
 
 import sourceagile.development.client.Development;
 import sourceagile.development.client.features.OptionsIcons;
@@ -12,9 +12,9 @@ import com.gwtext.client.widgets.tree.TreeNode;
 import com.gwtext.client.widgets.tree.TreePanel;
 import com.gwtext.client.widgets.tree.event.TreeNodeListenerAdapter;
 
-public class ClassesList extends VerticalPanel {
+public class ListFiles extends VerticalPanel {
 
-	public ClassesList(ClassFile[] entries) {
+	public ListFiles(ClassFile[] entries) {
 
 		Label space = new Label(" ");
 		this.add(space);

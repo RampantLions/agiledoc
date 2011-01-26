@@ -1,4 +1,4 @@
-package sourceagile.development.client;
+package sourceagile.development.client.classesList;
 
 import java.util.List;
 

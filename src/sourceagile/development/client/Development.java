@@ -2,8 +2,9 @@ package sourceagile.development.client;
 
 import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
-import sourceagile.codeview.client.ClassesList;
 import sourceagile.codeview.client.SourceCodeView;
+import sourceagile.development.client.classesList.ListFiles;
+import sourceagile.development.client.classesList.ComponentsList;
 import sourceagile.development.client.features.FeatureDescription;
 import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.development.client.features.OptionsIcons;
@@ -109,7 +110,7 @@ public class Development {
 
 		if (viewOption == OptionsIcons.OPTION_SOURCE) {
 
-			featuresTreePanel.add(new ClassesList(
+			featuresTreePanel.add(new ListFiles(
 					ProjectInitialization.projectEntries));
 		} else {
 
