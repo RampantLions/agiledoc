@@ -9,12 +9,31 @@ import javax.jdo.PersistenceManagerFactory;
 /**
  * 
  * 
- * @architecture
+ * @Architecture
  */
-
 public class DatabaseConnection {
 
-	public static PersistenceManager connect() {
+	public static Properties getAppengineDatabaseProperties() {
+
+		Properties properties = new Properties();
+
+		properties
+				.setProperty("javax.jdo.PersistenceManagerFactoryClass",
+						"org.datanucleus.store.appengine.jdo.DatastoreJDOPersistenceManagerFactory");
+
+		properties.setProperty("javax.jdo.option.ConnectionURL", "appengine");
+
+		properties.setProperty("javax.jdo.option.NontransactionalRead", "true");
+		properties
+				.setProperty("javax.jdo.option.NontransactionalWrite", "true");
+		properties.setProperty("javax.jdo.option.RetainValues", "true");
+		properties.setProperty("datanucleus.appengine.autoCreateDatastoreTxns",
+				"true");
+
+		return properties;
+	}
+
+	public static Properties getLocalDatabaseProperties() {
 
 		// String databasePath =
 		// "C:\\alline\\eclipse\\workspace\\SourceAgile\\war\\data";
@@ -35,8 +54,13 @@ public class DatabaseConnection {
 		// properties.setProperty("datanucleus.autoCreateColumns", "true");
 		// properties.setProperty("datanucleus.storeManagerType", "rdbms");
 
+		return properties;
+	}
+
+	public static PersistenceManager connect() {
+
 		PersistenceManagerFactory PMF = JDOHelper
-				.getPersistenceManagerFactory(properties);
+				.getPersistenceManagerFactory(getLocalDatabaseProperties());
 
 		PersistenceManager persistenceManager = PMF.getPersistenceManager();
 
