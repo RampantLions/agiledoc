@@ -1,11 +1,9 @@
 package sourceagile.client.serverCalls;
 
-import sourceagile.client.GWTStart;
+import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
 import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClasses;
 import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClassesAsync;
-import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClasses;
-import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClassesAsync;
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.shared.entities.entry.ClassFile;
@@ -26,59 +24,68 @@ public class ListRemoteClasses {
 				.equals(ProjectInitialization.currentProject
 						.getRepositoryType())) {
 
-			final LoadSubversionRemoteClassesAsync subversionRemoteFunctions = GWT
-					.create(LoadSubversionRemoteClasses.class);
-
-			subversionRemoteFunctions.listClasses(
-					ProjectInitialization.currentProject,
-					GWTStart.currentUser, new AsyncCallback<ClassFile[]>() {
-
-						public void onSuccess(ClassFile[] entries) {
-
-							ProjectInitialization.projectEntries = entries;
-
-							GWTStart.mainPage = new MainPage();
-
-							RootPanel.get("htmlID").clear();
-							RootPanel.get("htmlID").add(GWTStart.mainPage);
-
-							new ListComponentClasses();
-						}
-
-						public void onFailure(Throwable caught) {
-							// Show the RPC error message to the user
-
-						}
-
-					});
+			listRemoteClassesFromSubversion();
 
 		} else {
 
-			final LoadGitRemoteClassesAsync gitRemoteFunctions = GWT
-					.create(LoadGitRemoteClasses.class);
-
-			gitRemoteFunctions.listClasses(
-					ProjectInitialization.currentProject,
-					GWTStart.currentUser, new AsyncCallback<ClassFile[]>() {
-
-						public void onSuccess(ClassFile[] entries) {
-
-							ProjectInitialization.projectEntries = entries;
-
-							GWTStart.mainPage = new MainPage();
-
-							RootPanel.get("htmlID").clear();
-							RootPanel.get("htmlID").add(GWTStart.mainPage);
-						}
-
-						public void onFailure(Throwable caught) {
-							// Show the RPC error message to the user
-
-						}
-
-					});
+			listRemoteClassesFromGit();
 		}
 
+	}
+
+	private void listRemoteClassesFromSubversion() {
+
+		final LoadRemoteClassesAsync subversionRemoteFunctions = GWT
+				.create(LoadRemoteClasses.class);
+
+		subversionRemoteFunctions.listClasses(
+				ProjectInitialization.currentProject,
+				GlobalVariables.currentUser, new AsyncCallback<ClassFile[]>() {
+
+					public void onSuccess(ClassFile[] entries) {
+
+						ProjectInitialization.projectEntries = entries;
+
+						GlobalVariables.mainPage = new MainPage();
+
+						RootPanel.get("htmlID").clear();
+						RootPanel.get("htmlID").add(GlobalVariables.mainPage);
+
+						// new ListComponentClasses();
+					}
+
+					public void onFailure(Throwable caught) {
+						// Show the RPC error message to the user
+
+					}
+
+				});
+	}
+
+	private void listRemoteClassesFromGit() {
+
+		final LoadGitRemoteClassesAsync gitRemoteFunctions = GWT
+				.create(LoadGitRemoteClasses.class);
+
+		gitRemoteFunctions.listClasses(ProjectInitialization.currentProject,
+				GlobalVariables.currentUser, new AsyncCallback<ClassFile[]>() {
+
+					public void onSuccess(ClassFile[] entries) {
+
+						ProjectInitialization.projectEntries = entries;
+
+						GlobalVariables.mainPage = new MainPage();
+
+						RootPanel.get("htmlID").clear();
+						RootPanel.get("htmlID").add(GlobalVariables.mainPage);
+					}
+
+					public void onFailure(Throwable caught) {
+						// Show the RPC error message to the user
+
+					}
+
+				});
 	}
 
 }
