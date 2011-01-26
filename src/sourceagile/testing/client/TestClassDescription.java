@@ -1,11 +1,11 @@
 package sourceagile.testing.client;
 
-import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.codeview.client.SourceCodeView;
 import sourceagile.development.client.Development;
 import sourceagile.development.client.features.FeatureDescription;
 import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.utilities.LoadingPanel;
 import sourceagile.testing.client.serverCalls.AddTestClass;
 
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
