@@ -1,9 +1,7 @@
 package sourceagile.authentication.client.serverCalls;
 
+import sourceagile.client.ProjectInitialization;
 import sourceagile.shared.entities.project.Project;
-import sourceagile.userprojects.client.ProjectInitialization;
-import sourceagile.userprojects.client.serverCalls.ProjectDatabaseServerCalls;
-import sourceagile.userprojects.client.serverCalls.ProjectDatabaseServerCallsAsync;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -12,8 +10,8 @@ public class GetLoginProject {
 
 	public GetLoginProject(Long projectID) {
 
-		final ProjectDatabaseServerCallsAsync databaseServerCalls = GWT
-				.create(ProjectDatabaseServerCalls.class);
+		final AuthenticationServerCallsAsync databaseServerCalls = GWT
+				.create(AuthenticationServerCalls.class);
 
 		databaseServerCalls.getProject(projectID, new AsyncCallback<Project>() {
 

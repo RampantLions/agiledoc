@@ -2,7 +2,7 @@ package sourceagile.authentication.client;
 
 import java.util.List;
 
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
 import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.user.client.ui.HTML;
@@ -39,7 +39,7 @@ public class LoginPage extends HorizontalPanel {
 
 		vp.add(new HTML("<center><font size=5>Welcome to </font>"
 				+ "<br><br><b><font size=6>The Source Agile Toolkit</b> "
-				+ "<br><br><font size=4>" + SystemStart.systemVersion
+				+ "<br><br><font size=4>" + GWTStart.systemVersion
 				+ "</font></center>"));
 
 		vp.add(new LoginForm(projects));

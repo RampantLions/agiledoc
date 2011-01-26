@@ -2,7 +2,7 @@ package sourceagile.authentication.client;
 
 import sourceagile.authentication.client.serverCalls.GetLoginProject;
 import sourceagile.client.InternationalizationConstants;
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
 import sourceagile.shared.data.UserData;
 import sourceagile.shared.entities.User;
 
@@ -35,7 +35,7 @@ public class ButtonLogin extends Button {
 								.getValue(LoginForm.usersList
 										.getSelectedIndex()))];
 
-				SystemStart.currentUser = userSelected;
+				GWTStart.currentUser = userSelected;
 
 				Long projectSelected = new Long(LoginForm.projectList
 						.getValue(LoginForm.projectList.getSelectedIndex()));

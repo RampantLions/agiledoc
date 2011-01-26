@@ -5,8 +5,6 @@ import java.util.List;
 import sourceagile.authentication.client.LoginPage;
 import sourceagile.client.systemNavigation.LoadingPanel;
 import sourceagile.shared.entities.project.Project;
-import sourceagile.userprojects.client.serverCalls.ProjectDatabaseServerCalls;
-import sourceagile.userprojects.client.serverCalls.ProjectDatabaseServerCallsAsync;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -19,8 +17,8 @@ public class ListLoginProjects {
 		RootPanel.get("htmlID").clear();
 		RootPanel.get("htmlID").add(new LoadingPanel());
 
-		final ProjectDatabaseServerCallsAsync databaseServerCalls = GWT
-				.create(ProjectDatabaseServerCalls.class);
+		final AuthenticationServerCallsAsync databaseServerCalls = GWT
+				.create(AuthenticationServerCalls.class);
 
 		databaseServerCalls.listProjects(new AsyncCallback<List<Project>>() {
 
