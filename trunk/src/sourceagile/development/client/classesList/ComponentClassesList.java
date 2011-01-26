@@ -1,5 +1,6 @@
-package sourceagile.development.client;
+package sourceagile.development.client.classesList;
 
+import sourceagile.development.client.Development;
 import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.utilities.FeatureNameGenerator;
