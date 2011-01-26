@@ -1,4 +1,4 @@
-package sourceagile.server.repositoryClassLoader;
+package sourceagile.server.classRepositories;
 
 import java.io.File;
 
