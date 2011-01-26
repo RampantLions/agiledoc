@@ -1,9 +1,9 @@
 package sourceagile.planning.client.serverCalls;
 
-import sourceagile.client.GWTStart;
+import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
-import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClasses;
-import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClassesAsync;
+import sourceagile.client.serverCalls.LoadRemoteClasses;
+import sourceagile.client.serverCalls.LoadRemoteClassesAsync;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.core.client.GWT;
@@ -11,13 +11,13 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class CreateTodoClass {
 
-	private final LoadSubversionRemoteClassesAsync remoteFunctions = GWT
-			.create(LoadSubversionRemoteClasses.class);
+	private final LoadRemoteClassesAsync remoteFunctions = GWT
+			.create(LoadRemoteClasses.class);
 
 	public CreateTodoClass(final ClassFile classFile, final String newSubfolder) {
 
 		remoteFunctions.createClass(ProjectInitialization.currentProject,
-				GWTStart.currentUser, classFile, newSubfolder,
+				GlobalVariables.currentUser, classFile, newSubfolder,
 				new AsyncCallback<Void>() {
 
 					@Override

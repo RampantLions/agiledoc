@@ -1,6 +1,6 @@
 package sourceagile.planning.client.projectBacklog;
 
-import sourceagile.client.GWTStart;
+import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
 import sourceagile.shared.entities.project.ProjectBacklog;
 
@@ -96,9 +96,9 @@ public class ProjectBacklogList extends FlexTable {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				GWTStart.mainPage.panelContent.clear();
-				GWTStart.mainPage.panelContent
-						.add(new Story(projectBacklog));
+				GlobalVariables.mainPage.panelContent.clear();
+				GlobalVariables.mainPage.panelContent.add(new Story(
+						projectBacklog));
 			}
 		});
 

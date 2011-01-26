@@ -1,6 +1,6 @@
 package sourceagile.planning.client;
 
-import sourceagile.client.GWTStart;
+import sourceagile.client.GlobalVariables;
 import sourceagile.planning.client.TodoClasses.AddTodoClass;
 import sourceagile.planning.client.TodoClasses.TodoClassesList;
 import sourceagile.planning.client.projectBacklog.ProjectBacklogList;
@@ -15,12 +15,10 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-
-
-/** 
+/**
  * Show the list of planning tasks.
  * 
- * @Feature 
+ * @Feature
  */
 public class PlanningPage extends VerticalPanel {
 
@@ -69,8 +67,8 @@ public class PlanningPage extends VerticalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				GWTStart.mainPage.panelContent.clear();
-				GWTStart.mainPage.panelContent.add(new AddTodoClass());
+				GlobalVariables.mainPage.panelContent.clear();
+				GlobalVariables.mainPage.panelContent.add(new AddTodoClass());
 
 			}
 		});
@@ -85,8 +83,8 @@ public class PlanningPage extends VerticalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				GWTStart.mainPage.panelContent.clear();
-				GWTStart.mainPage.panelContent.add(new Story(
+				GlobalVariables.mainPage.panelContent.clear();
+				GlobalVariables.mainPage.panelContent.add(new Story(
 						new ProjectBacklog()));
 			}
 		});
