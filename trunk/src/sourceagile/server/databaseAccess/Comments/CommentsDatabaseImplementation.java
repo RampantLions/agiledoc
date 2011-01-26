@@ -6,6 +6,7 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 
 import sourceagile.development.client.serverCalls.CommentsServerCalls;
+import sourceagile.documentation.client.export.serverCalls.AllCommentsServerCalls;
 import sourceagile.server.databaseAccess.DatabaseConnection;
 import sourceagile.shared.entities.Comments;
 
@@ -13,11 +14,11 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
  * 
- * @architecture
+ * @Architecture
  */
 @SuppressWarnings("serial")
 public class CommentsDatabaseImplementation extends RemoteServiceServlet
-		implements CommentsServerCalls {
+		implements CommentsServerCalls, AllCommentsServerCalls {
 
 	@Override
 	public List<Comments> listClassComments(Long projectID, String classPath) {
