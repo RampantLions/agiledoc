@@ -29,14 +29,12 @@ public class ProjectsData {
 		project.setRoot("/trunk/src/");
 		project.setTestRoot("/trunk/test/");
 		project.setDomain("sourceagile");
-		// project.setRelatedLinks("http://code.google.com/p/agiledoc/wiki/SourceAgile");
+		project.setRelatedLinks("http://code.google.com/p/agiledoc/wiki/SourceAgile");
 
 		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 
 		projectComponents.add(new ProjectComponents("Authentication",
 				"authentication/client"));
-		projectComponents.add(new ProjectComponents("User Projects",
-				"userprojects/client"));
 		projectComponents.add(new ProjectComponents("System Navigation",
 				"client/systemNavigation"));
 		projectComponents.add(new ProjectComponents("Planning",
@@ -79,7 +77,7 @@ public class ProjectsData {
 		project.setRoot("/trunk/src/");
 		project.setTestRoot("/trunk/test/");
 		project.setDomain("tictactoe");
-		// project.setRelatedLinks("http://en.wikipedia.org/wiki/Tic-tac-toe");
+		project.setRelatedLinks("http://en.wikipedia.org/wiki/Tic-tac-toe");
 		project.setDescription("Tic-tac-toe, also spelled tick tack toe, or noughts and crosses as it is known in the UK, Ireland, "
 				+ "Australia, New Zealand, is a pencil-and-paper game for two players, O and X, who take turns marking the spaces in a 3x3 grid,"
 				+ " usually X going first. The player who succeeds in placing three respective marks in a horizontal, vertical, or diagonal row wins the game.");

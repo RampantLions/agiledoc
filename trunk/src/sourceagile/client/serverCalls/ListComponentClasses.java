@@ -27,15 +27,18 @@ public class ListComponentClasses {
 
 						public void onSuccess(HashMap<String, ClassFile> entries) {
 
-							for (int i = 0; i < ProjectInitialization.projectEntries.length; i++) {
+							if (ProjectInitialization.projectEntries != null) {
 
-								ClassFile projectClass = ProjectInitialization.projectEntries[i];
+								for (int i = 0; i < ProjectInitialization.projectEntries.length; i++) {
 
-								if (projectClass.getFilePath().startsWith(
-										component.getComponentPath())) {
+									ClassFile projectClass = ProjectInitialization.projectEntries[i];
 
-									ProjectInitialization.projectEntries[i] = entries
-											.get(projectClass.toString());
+									if (projectClass.getFilePath().startsWith(
+											component.getComponentPath())) {
+
+										ProjectInitialization.projectEntries[i] = entries
+												.get(projectClass.toString());
+									}
 								}
 							}
 						}
