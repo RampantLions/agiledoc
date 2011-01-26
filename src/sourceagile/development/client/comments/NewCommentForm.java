@@ -2,7 +2,7 @@ package sourceagile.development.client.comments;
 
 import java.util.Date;
 
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
 import sourceagile.development.client.serverCalls.SaveComment;
 import sourceagile.shared.entities.Comments;
 
@@ -56,7 +56,7 @@ public class NewCommentForm extends VerticalPanel {
 
 		Comments comment = new Comments();
 
-		comment.setCommentAuthor(SystemStart.currentUser.getName());
+		comment.setCommentAuthor(GWTStart.currentUser.getName());
 		comment.setCommentDate(new Date());
 		comment.setCommentProject(projectID);
 		comment.setCommentClass(classPath);

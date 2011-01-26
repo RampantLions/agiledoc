@@ -2,9 +2,9 @@ package sourceagile.development.client;
 
 import java.util.List;
 
+import sourceagile.client.ProjectInitialization;
 import sourceagile.shared.entities.project.ProjectComponents;
 import sourceagile.shared.utilities.FeatureNameGenerator;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.gwtext.client.widgets.tree.TreeNode;

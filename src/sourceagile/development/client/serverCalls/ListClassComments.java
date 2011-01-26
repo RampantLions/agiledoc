@@ -2,11 +2,11 @@ package sourceagile.development.client.serverCalls;
 
 import java.util.List;
 
+import sourceagile.client.ProjectInitialization;
 import sourceagile.development.client.comments.CommentsList;
 import sourceagile.development.client.comments.NewCommentForm;
 import sourceagile.development.client.features.FeatureDescription;
 import sourceagile.shared.entities.Comments;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;

@@ -1,7 +1,7 @@
 package sourceagile.client.systemNavigation.projectMenu;
 
 import sourceagile.client.InternationalizationConstants;
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
 import sourceagile.metrics.client.Metrics;
 
 import com.google.gwt.core.client.GWT;
@@ -26,8 +26,8 @@ public class ButtonMetrics extends Button {
 			@Override
 			public void onClick(Button button, EventObject e) {
 
-				SystemStart.mainPage.panelContent.clear();
-				SystemStart.mainPage.panelContent.add(new Metrics());
+				GWTStart.mainPage.panelContent.clear();
+				GWTStart.mainPage.panelContent.add(new Metrics());
 			}
 		});
 	}
