@@ -4,8 +4,6 @@
 
 	<inherits name="com.google.gwt.user.User" />
 	
-	<inherits name="sourceagile.userprojects.UserProjects" />
-	
 	<source path="client"/> 
 	
 </module>
