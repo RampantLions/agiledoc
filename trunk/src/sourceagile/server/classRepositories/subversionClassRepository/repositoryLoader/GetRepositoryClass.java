@@ -33,6 +33,8 @@ public class GetRepositoryClass {
 
 		loadClassDocumentation(baos, entry);
 
+		// GetJavaTokens.loadClassDocumentationANTLR(baos, entry);
+
 		return entry;
 	}
 
