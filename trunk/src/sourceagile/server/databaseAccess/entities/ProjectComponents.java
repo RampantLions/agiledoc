@@ -1,20 +1,26 @@
-package sourceagile.shared.entities.project;
+package sourceagile.server.databaseAccess.entities;
 
 import java.io.Serializable;
 
-/**
- * 
- * @Entity
- */
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable
 public class ProjectComponents implements Serializable,
 		Comparable<ProjectComponents> {
 
 	private static final long serialVersionUID = 1L;
 
+	@PrimaryKey
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private Long componentID;
 
+	@Persistent
 	private String componentName;
 
+	@Persistent
 	private String componentPath;
 
 	public ProjectComponents() {
@@ -29,10 +35,6 @@ public class ProjectComponents implements Serializable,
 
 	public Long getComponentID() {
 		return componentID;
-	}
-
-	public void setComponentID(Long componentID) {
-		this.componentID = componentID;
 	}
 
 	public String getComponentName() {

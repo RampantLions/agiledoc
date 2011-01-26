@@ -52,7 +52,7 @@ public class ProjectDatabaseAccessImplementation extends RemoteServiceServlet
 
 		PersistenceManager persistenceManager = DatabaseConnection.connect();
 
-		SaveProject.save(persistenceManager, project);
+		SaveProject.addNew(persistenceManager, project);
 
 		persistenceManager.close();
 	}

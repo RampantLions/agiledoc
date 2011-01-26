@@ -1,34 +1,41 @@
-package sourceagile.shared.entities;
+package sourceagile.server.databaseAccess.entities;
 
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * 
- * @Entity
- */
+import javax.jdo.annotations.Column;
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable
 public class Comments implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	@PrimaryKey
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private Long commmentID;
 
+	@Persistent
 	private String commentAuthor;
 
+	@Persistent
 	private Date commentDate;
 
+	@Persistent
+	@Column(jdbcType = "LONGVARCHAR")
 	private String commentDescription;
 
+	@Persistent
 	private Long commentProject;
 
+	@Persistent
 	private String commentClass;
 
 	public Long getCommmentID() {
 		return commmentID;
-	}
-
-	public void setCommmentID(Long commmentID) {
-		this.commmentID = commmentID;
 	}
 
 	public String getCommentAuthor() {
