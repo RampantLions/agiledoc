@@ -8,7 +8,7 @@
  * at <http://wwws.sun.com/software/communitysource/jrl.html>.
  */
 
-package sourceagile.server.sourcelet.tokenizer;
+package sourceagile.server.doclet.tokenizer;
 
 /**
  * An interface that defines codes for Java source tokens returned from lexical
