@@ -2,6 +2,7 @@ package sourceagile.server.doclet;
 
 import java.io.File;
 
+import sourceagile.server.doclet.easyDoclet.EasyDoclet;
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.Field;
 
