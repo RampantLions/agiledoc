@@ -11,19 +11,39 @@
 		<servlet-class>sourceagile.server.databaseAccess.Project.ProjectDatabaseAccessImplementation</servlet-class>
 	</servlet>
 	
-		<servlet>
+	<servlet>
+		<servlet-name>commentsDatabaseAccess</servlet-name>
+		<servlet-class>sourceagile.server.databaseAccess.Comments.CommentsDatabaseImplementation</servlet-class>
+	</servlet>
+	
+	<servlet>
 		<servlet-name>subversionRepositoryClassLoader</servlet-name>
 		<servlet-class>sourceagile.server.classRepositories.subversionClassRepository.SubversionRepositoryClassImplementation</servlet-class>
 	</servlet>
 	
-		<servlet-mapping>
+	<servlet>
+		<servlet-name>fileExporter</servlet-name>
+		<servlet-class>sourceagile.server.fileExporter.FileExporterImplementation</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
 		<servlet-name>projectDatabaseAccess</servlet-name>
 		<url-pattern>/sourceagileappengine/projectDatabaseAccess</url-pattern>
 	</servlet-mapping>
 	
-		<servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>commentsDatabaseAccess</servlet-name>
+		<url-pattern>/sourceagileappengine/commentsDatabaseAccess</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
 		<servlet-name>subversionRepositoryClassLoader</servlet-name>
 		<url-pattern>/sourceagileappengine/subversionRepositoryClassLoader</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>fileExporter</servlet-name>
+		<url-pattern>/sourceagileappengine/fileExporter</url-pattern>
 	</servlet-mapping>
   
   <!-- Default page to serve -->
