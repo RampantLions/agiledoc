@@ -1,6 +1,6 @@
 package sourceagile.development.client;
 
-import sourceagile.client.GWTStart;
+import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
 import sourceagile.codeview.client.ClassesList;
 import sourceagile.codeview.client.SourceCodeView;
@@ -37,7 +37,7 @@ public class Development {
 
 	public Development(ClassFile entry, int viewOption) {
 
-		GWTStart.mainPage.panelContent.clear();
+		GlobalVariables.mainPage.panelContent.clear();
 
 		VerticalPanel vp = new VerticalPanel();
 
@@ -66,7 +66,7 @@ public class Development {
 
 		vp.add(hp);
 
-		GWTStart.mainPage.panelContent.add(vp);
+		GlobalVariables.mainPage.panelContent.add(vp);
 	}
 
 	private static HorizontalPanel showViewOptions() {

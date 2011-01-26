@@ -1,7 +1,7 @@
 package sourceagile.client.systemNavigation.projectMenu;
 
+import sourceagile.client.GlobalVariables;
 import sourceagile.client.InternationalizationConstants;
-import sourceagile.client.GWTStart;
 import sourceagile.client.ProjectInitialization;
 import sourceagile.planning.client.PlanningPage;
 
@@ -31,8 +31,8 @@ public class ButtonPlanning extends Button {
 			@Override
 			public void onClick(Button button, EventObject e) {
 
-				GWTStart.mainPage.panelContent.clear();
-				GWTStart.mainPage.panelContent.add(new PlanningPage(
+				GlobalVariables.mainPage.panelContent.clear();
+				GlobalVariables.mainPage.panelContent.add(new PlanningPage(
 						ProjectInitialization.projectEntries));
 			}
 		});
