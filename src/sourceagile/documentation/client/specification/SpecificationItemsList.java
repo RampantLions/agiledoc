@@ -1,10 +1,10 @@
 package sourceagile.documentation.client.specification;
 
+import sourceagile.client.ProjectInitialization;
 import sourceagile.development.client.Development;
 import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.utilities.FeatureNameGenerator;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.gwtext.client.core.EventObject;
