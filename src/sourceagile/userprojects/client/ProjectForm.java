@@ -3,11 +3,10 @@ package sourceagile.userprojects.client;
 import java.util.List;
 
 import sourceagile.client.ProjectInitialization;
-import sourceagile.client.systemNavigation.FormField;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.entities.project.ProjectBacklog;
 import sourceagile.shared.entities.project.ProjectComponents;
-import sourceagile.userprojects.client.serverCalls.SaveProject;
+import sourceagile.shared.utilities.FormField;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -115,7 +114,7 @@ public class ProjectForm extends VerticalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				//new SaveProject(loadProjectInfo());
+				// new SaveProject(loadProjectInfo());
 			}
 		});
 
