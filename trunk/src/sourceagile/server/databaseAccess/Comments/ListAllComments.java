@@ -1,6 +1,5 @@
 package sourceagile.server.databaseAccess.Comments;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -15,8 +14,10 @@ public class ListAllComments {
 	public static HashMap<String, Comments> list(
 			PersistenceManager persistenceManager, Long projectID) {
 
-		Extent commentsExtent = persistenceManager.getExtent(Comments.class,
-				true);
+		Extent commentsExtent = persistenceManager
+				.getExtent(
+						sourceagile.server.databaseAccess.entities.Comments.class,
+						true);
 
 		String filter = "commentProject == projectID";
 
@@ -24,30 +25,15 @@ public class ListAllComments {
 
 		query.declareParameters("Long projectID");
 
-		List<Comments> commentsDatabase = (List<Comments>) query
+		List<sourceagile.server.databaseAccess.entities.Comments> commentsDatabase = (List<sourceagile.server.databaseAccess.entities.Comments>) query
 				.execute(projectID);
 
 		HashMap<String, Comments> comments = new HashMap<String, Comments>();
 
-		for (Comments commentDatabase : commentsDatabase) {
+		for (sourceagile.server.databaseAccess.entities.Comments commentDatabase : commentsDatabase) {
 
-			Comments comment = new Comments();
-
-			comment.setCommmentID(commentDatabase.getCommmentID());
-
-			comment.setCommentAuthor(commentDatabase.getCommentAuthor());
-
-			comment.setCommentDate(new Date(commentDatabase.getCommentDate()
-					.getTime()));
-
-			comment.setCommentDescription(commentDatabase
-					.getCommentDescription());
-
-			comment.setCommentProject(commentDatabase.getCommentProject());
-
-			comment.setCommentClass(commentDatabase.getCommentClass());
-
-			comments.put(commentDatabase.getCommentClass(), comment);
+			comments.put(commentDatabase.getCommentClass(),
+					ConvertComments.getComment(commentDatabase));
 		}
 
 		return comments;
