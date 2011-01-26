@@ -2,12 +2,12 @@ package sourceagile.client.serverCalls;
 
 import java.util.HashMap;
 
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
+import sourceagile.client.ProjectInitialization;
 import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClasses;
 import sourceagile.client.serverCalls.subversionRepository.LoadSubversionRemoteClassesAsync;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.ProjectComponents;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -24,7 +24,7 @@ public class ListComponentClasses {
 
 			subversionRemoteFunctions.listComponentClasses(
 					ProjectInitialization.currentProject,
-					SystemStart.currentUser, component.getComponentPath(),
+					GWTStart.currentUser, component.getComponentPath(),
 					new AsyncCallback<HashMap<String, ClassFile>>() {
 
 						public void onSuccess(HashMap<String, ClassFile> entries) {

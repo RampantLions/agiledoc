@@ -1,7 +1,7 @@
 package sourceagile.client.systemNavigation;
 
 import sourceagile.client.InternationalizationConstants;
-import sourceagile.userprojects.client.ProjectInitialization;
+import sourceagile.client.ProjectInitialization;
 import sourceagile.userprojects.client.serverCalls.ListProjects;
 
 import com.google.gwt.core.client.GWT;

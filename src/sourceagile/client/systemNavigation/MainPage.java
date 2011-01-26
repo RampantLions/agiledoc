@@ -1,6 +1,6 @@
 package sourceagile.client.systemNavigation;
 
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
 import sourceagile.client.systemNavigation.projectMenu.ProjectMenu;
 
 import com.google.gwt.core.client.GWT;
@@ -33,7 +33,7 @@ public class MainPage extends VerticalPanel {
 		String logout = "<a href='" + GWT.getHostPageBaseURL() + "'>Logout</a>";
 
 		HTML userName = new HTML("<font size=1 color=blue>"
-				+ SystemStart.currentUser.getName() + " | " + logout
+				+ GWTStart.currentUser.getName() + " | " + logout
 				+ "</font>");
 
 		userName.setAutoHorizontalAlignment(ALIGN_CENTER);
