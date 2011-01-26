@@ -1,6 +1,7 @@
 package sourceagile.server.databaseAccess.Project;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -35,8 +36,12 @@ public class ConvertProject {
 
 		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 
-		for (sourceagile.server.databaseAccess.entities.ProjectComponents projectComponentDatabase : databaseProject
-				.getProjectComponents()) {
+		List<sourceagile.server.databaseAccess.entities.ProjectComponents> projectComponentsDatabase = databaseProject
+				.getProjectComponents();
+
+		Collections.sort(projectComponentsDatabase);
+
+		for (sourceagile.server.databaseAccess.entities.ProjectComponents projectComponentDatabase : projectComponentsDatabase) {
 
 			projectComponents
 					.add(getProjectComponent(projectComponentDatabase));
