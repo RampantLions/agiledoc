@@ -1,6 +1,7 @@
 package sourceagile.client.systemNavigation.projectMenu;
 
 import sourceagile.client.InternationalizationConstants;
+import sourceagile.documentation.client.Documentation;
 
 import com.google.gwt.core.client.GWT;
 import com.gwtext.client.core.EventObject;
@@ -27,7 +28,7 @@ public class ButtonDocumentation extends Button {
 				ProjectMenu.untoggleButtons();
 				ProjectMenu.buttonDocumentation.toggle(true);
 
-				// new Documentation();
+				new Documentation();
 			}
 		});
 	}

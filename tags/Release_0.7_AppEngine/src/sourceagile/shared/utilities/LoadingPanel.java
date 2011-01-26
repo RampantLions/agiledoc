@@ -1,4 +1,4 @@
-package sourceagile.client.systemNavigation;
+package sourceagile.shared.utilities;
 
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.VerticalPanel;

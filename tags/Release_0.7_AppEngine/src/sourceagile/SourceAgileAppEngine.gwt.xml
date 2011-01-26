@@ -22,6 +22,8 @@
 	<inherits name="helpagile.HelpAgileExport" />
 	 
 	<inherits name="sourceagile.authentication.Authentication" />	
+	<inherits name="sourceagile.planning.Planning" />
+	<inherits name="sourceagile.documentation.Documentation" />	
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='sourceagile.client.GwtStart'/>

@@ -1,6 +1,9 @@
 package sourceagile.client.systemNavigation.projectMenu;
 
+import sourceagile.client.GlobalVariables;
 import sourceagile.client.InternationalizationConstants;
+import sourceagile.client.ProjectInitialization;
+import sourceagile.planning.client.PlanningPage;
 
 import com.google.gwt.core.client.GWT;
 import com.gwtext.client.core.EventObject;
@@ -31,9 +34,9 @@ public class ButtonPlanning extends Button {
 				ProjectMenu.untoggleButtons();
 				ProjectMenu.buttonPlanning.toggle(true);
 
-				// GlobalVariables.mainPage.panelContent.clear();
-				// GlobalVariables.mainPage.panelContent.add(new PlanningPage(
-				// ProjectInitialization.projectEntries));
+				GlobalVariables.mainPage.panelContent.clear();
+				GlobalVariables.mainPage.panelContent.add(new PlanningPage(
+						ProjectInitialization.projectEntries));
 			}
 		});
 	}

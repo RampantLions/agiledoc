@@ -4,6 +4,7 @@ import java.util.List;
 
 import sourceagile.authentication.client.LoginPage;
 import sourceagile.shared.entities.project.Project;
+import sourceagile.shared.utilities.LoadingPanel;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -14,7 +15,7 @@ public class ListProjects {
 	public ListProjects() {
 
 		RootPanel.get("htmlID").clear();
-		// RootPanel.get("htmlID").add(new LoadingPanel());
+		RootPanel.get("htmlID").add(new LoadingPanel());
 
 		final AuthenticationServerCallsAsync databaseServerCalls = GWT
 				.create(AuthenticationServerCalls.class);
