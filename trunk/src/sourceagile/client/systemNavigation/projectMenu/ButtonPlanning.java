@@ -1,9 +1,9 @@
 package sourceagile.client.systemNavigation.projectMenu;
 
 import sourceagile.client.InternationalizationConstants;
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
+import sourceagile.client.ProjectInitialization;
 import sourceagile.planning.client.PlanningPage;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.core.client.GWT;
 import com.gwtext.client.core.EventObject;
@@ -31,8 +31,8 @@ public class ButtonPlanning extends Button {
 			@Override
 			public void onClick(Button button, EventObject e) {
 
-				SystemStart.mainPage.panelContent.clear();
-				SystemStart.mainPage.panelContent.add(new PlanningPage(
+				GWTStart.mainPage.panelContent.clear();
+				GWTStart.mainPage.panelContent.add(new PlanningPage(
 						ProjectInitialization.projectEntries));
 			}
 		});

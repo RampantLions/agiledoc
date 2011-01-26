@@ -1,5 +1,6 @@
 package sourceagile.development.client.features;
 
+import sourceagile.client.ProjectInitialization;
 import sourceagile.development.client.serverCalls.GetRemoteClass;
 import sourceagile.development.client.serverCalls.ListClassComments;
 import sourceagile.shared.entities.entry.ClassDocumentation;
@@ -7,7 +8,6 @@ import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Feature;
 import sourceagile.shared.entities.entry.Method;
 import sourceagile.shared.utilities.FeatureNameGenerator;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

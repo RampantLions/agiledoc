@@ -1,8 +1,8 @@
 package sourceagile.development.client.serverCalls;
 
+import sourceagile.client.ProjectInitialization;
 import sourceagile.shared.entities.Comments;
 import sourceagile.shared.entities.entry.ClassFile;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;

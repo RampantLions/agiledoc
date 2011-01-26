@@ -1,13 +1,13 @@
 package sourceagile.development.client;
 
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
+import sourceagile.client.ProjectInitialization;
 import sourceagile.codeview.client.ClassesList;
 import sourceagile.codeview.client.SourceCodeView;
 import sourceagile.development.client.features.FeatureDescription;
 import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -37,7 +37,7 @@ public class Development {
 
 	public Development(ClassFile entry, int viewOption) {
 
-		SystemStart.mainPage.panelContent.clear();
+		GWTStart.mainPage.panelContent.clear();
 
 		VerticalPanel vp = new VerticalPanel();
 
@@ -66,7 +66,7 @@ public class Development {
 
 		vp.add(hp);
 
-		SystemStart.mainPage.panelContent.add(vp);
+		GWTStart.mainPage.panelContent.add(vp);
 	}
 
 	private static HorizontalPanel showViewOptions() {
