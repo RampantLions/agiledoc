@@ -2,11 +2,11 @@ package sourceagile.documentation.client;
 
 import helpagile.client.exportation.HelpWindow;
 import sourceagile.client.InternationalizationConstants;
-import sourceagile.client.SystemStart;
+import sourceagile.client.GWTStart;
+import sourceagile.client.ProjectInitialization;
 import sourceagile.documentation.client.export.serverCalls.ListAllComments;
 import sourceagile.documentation.client.projectDescription.ProjectDescription;
 import sourceagile.shared.utilities.FileNameGenerator;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -30,7 +30,7 @@ public class Documentation {
 
 	public Documentation() {
 
-		SystemStart.mainPage.panelContent.clear();
+		GWTStart.mainPage.panelContent.clear();
 
 		VerticalPanel vp = new VerticalPanel();
 
@@ -48,7 +48,7 @@ public class Documentation {
 
 		vp.add(hp);
 
-		SystemStart.mainPage.panelContent.add(vp);
+		GWTStart.mainPage.panelContent.add(vp);
 	}
 
 	private VerticalPanel showDocumentationMenu() {

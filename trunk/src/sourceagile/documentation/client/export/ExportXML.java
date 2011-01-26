@@ -3,11 +3,11 @@ package sourceagile.documentation.client.export;
 import java.util.HashMap;
 import java.util.List;
 
+import sourceagile.client.ProjectInitialization;
 import sourceagile.shared.entities.Comments;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Method;
 import sourceagile.shared.entities.project.ProjectComponents;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.xml.client.Document;
 import com.google.gwt.xml.client.Element;

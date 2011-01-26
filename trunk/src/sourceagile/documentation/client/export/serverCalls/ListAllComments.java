@@ -2,13 +2,13 @@ package sourceagile.documentation.client.export.serverCalls;
 
 import java.util.HashMap;
 
+import sourceagile.client.ProjectInitialization;
 import sourceagile.development.client.serverCalls.CommentsServerCalls;
 import sourceagile.development.client.serverCalls.CommentsServerCallsAsync;
 import sourceagile.documentation.client.Documentation;
 import sourceagile.documentation.client.export.ExportXML;
 import sourceagile.shared.entities.Comments;
 import sourceagile.shared.utilities.FileNameGenerator;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;

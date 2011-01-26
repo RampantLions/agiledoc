@@ -1,10 +1,10 @@
 package sourceagile.documentation.client;
 
+import sourceagile.client.ProjectInitialization;
 import sourceagile.development.client.Development;
 import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Method;
-import sourceagile.userprojects.client.ProjectInitialization;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
