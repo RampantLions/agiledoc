@@ -1,48 +1,58 @@
-package sourceagile.shared.entities.project;
+package sourceagile.server.databaseAccess.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 
- * @Entity
- */
+import javax.jdo.annotations.Column;
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable
 public class Project implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public static final String REPOSITORY_TYPE_SUBVERSION = "Subversion";
-	public static final String REPOSITORY_TYPE_GIT = "Git";
-
+	@PrimaryKey
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private Long projectID;
 
+	@Persistent
 	private String name;
 
+	@Persistent
+	@Column(jdbcType = "LONGVARCHAR")
 	private String description;
 
+	@Persistent
 	private String repositoryType;
 
+	@Persistent
 	private String repositoryURL;
 
+	@Persistent
 	private String root;
 
+	@Persistent
 	private String testRoot;
 
+	@Persistent
 	private String domain;
 
+	@Persistent
+	@Column(jdbcType = "LONGVARCHAR")
 	private String relatedLinks;
 
+	@Persistent(defaultFetchGroup = "true")
 	private List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 
+	@Persistent(defaultFetchGroup = "true")
 	private List<ProjectBacklog> projectBacklog = new ArrayList<ProjectBacklog>();
 
 	public Long getProjectID() {
 		return projectID;
-	}
-
-	public void setProjectID(Long projectID) {
-		this.projectID = projectID;
 	}
 
 	public String getName() {
