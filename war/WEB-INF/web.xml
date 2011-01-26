@@ -6,15 +6,25 @@
 <web-app>
   
   <!-- Servlets -->
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>sourceagile.server.GreetingServiceImpl</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/sourceagileappengine/greet</url-pattern>
-  </servlet-mapping>
+  	<servlet>
+		<servlet-name>projectDatabaseAccess</servlet-name>
+		<servlet-class>sourceagile.server.databaseAccess.Project.ProjectDatabaseAccessImplementation</servlet-class>
+	</servlet>
+	
+		<servlet>
+		<servlet-name>subversionRepositoryClassLoader</servlet-name>
+		<servlet-class>sourceagile.server.classRepositories.subversionClassRepository.SubversionRepositoryClassImplementation</servlet-class>
+	</servlet>
+	
+		<servlet-mapping>
+		<servlet-name>projectDatabaseAccess</servlet-name>
+		<url-pattern>/sourceagileappengine/projectDatabaseAccess</url-pattern>
+	</servlet-mapping>
+	
+		<servlet-mapping>
+		<servlet-name>subversionRepositoryClassLoader</servlet-name>
+		<url-pattern>/sourceagileappengine/subversionRepositoryClassLoader</url-pattern>
+	</servlet-mapping>
   
   <!-- Default page to serve -->
   <welcome-file-list>
