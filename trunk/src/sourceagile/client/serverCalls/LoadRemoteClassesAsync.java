@@ -1,6 +1,7 @@
 package sourceagile.client.serverCalls;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import sourceagile.shared.entities.Productivity;
 import sourceagile.shared.entities.User;
@@ -25,5 +26,8 @@ public interface LoadRemoteClassesAsync {
 
 	void editClass(Project project, User user, ClassFile classFile,
 			String classDescription, AsyncCallback<Void> callback);
+
+	void listComponentClasses(Project project, User user, String componentPath,
+			AsyncCallback<HashMap<String, ClassFile>> callback);
 
 }
