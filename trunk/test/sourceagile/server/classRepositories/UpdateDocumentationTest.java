@@ -1,4 +1,4 @@
-package sourceagile.server.repositoryClassLoader;
+package sourceagile.server.classRepositories;
 
 import junit.framework.TestCase;
 import sourceagile.server.classRepositories.subversionClassRepository.SubversionRepositoryClassImplementation;
