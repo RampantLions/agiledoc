@@ -5,17 +5,17 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 
 import sourceagile.authentication.client.serverCalls.AuthenticationServerCalls;
+import sourceagile.client.project.ProjectDatabaseServerCalls;
 import sourceagile.server.databaseAccess.DatabaseConnection;
 import sourceagile.server.databaseAccess.ProjectBacklog.SaveProjectBacklog;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.entities.project.ProjectBacklog;
-import sourceagile.userprojects.client.serverCalls.ProjectDatabaseServerCalls;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
  * 
- * @architecture
+ * @Architecture
  */
 @SuppressWarnings("serial")
 public class ProjectDatabaseAccessImplementation extends RemoteServiceServlet
