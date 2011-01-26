@@ -31,6 +31,9 @@ public class ButtonPlanning extends Button {
 			@Override
 			public void onClick(Button button, EventObject e) {
 
+				ProjectMenu.untoggleButtons();
+				ProjectMenu.buttonPlanning.toggle(true);
+
 				GlobalVariables.mainPage.panelContent.clear();
 				GlobalVariables.mainPage.panelContent.add(new PlanningPage(
 						ProjectInitialization.projectEntries));
