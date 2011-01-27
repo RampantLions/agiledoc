@@ -4,14 +4,16 @@ import helpagile.client.exportation.HelpWindow;
 import sourceagile.client.GlobalVariables;
 import sourceagile.client.InternationalizationConstants;
 import sourceagile.client.ProjectInitialization;
-import sourceagile.documentation.client.export.serverCalls.ListAllComments;
-import sourceagile.documentation.client.projectDescription.ProjectDescription;
+import sourceagile.documentation.client.documentationMenu.ArchitectureLink;
+import sourceagile.documentation.client.documentationMenu.EntitiesLink;
+import sourceagile.documentation.client.documentationMenu.ExportPdfLink;
+import sourceagile.documentation.client.documentationMenu.ExportXmlLink;
+import sourceagile.documentation.client.documentationMenu.FeaturesListLink;
+import sourceagile.documentation.client.documentationMenu.ProjectDescriptionLink;
+import sourceagile.documentation.client.documentationMenu.RelatedLinksLink;
 import sourceagile.shared.utilities.FileNameGenerator;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -59,18 +61,13 @@ public class Documentation {
 
 		vp.setSpacing(20);
 
-		Anchor linkProjectDescription = new Anchor(
-				internationalizationConstants.projectDescription());
-		linkProjectDescription.addClickHandler(new ClickHandler() {
+		vp.add(new ProjectDescriptionLink());
 
-			@Override
-			public void onClick(ClickEvent event) {
+		vp.add(new FeaturesListLink());
 
-				documentationPanel.clear();
-				documentationPanel.add(new ProjectDescription());
-			}
-		});
-		vp.add(linkProjectDescription);
+		vp.add(new ArchitectureLink());
+
+		vp.add(new EntitiesLink());
 
 		vp.add(HelpWindow.helpLink(projectName, "true",
 				internationalizationConstants.specification()));
@@ -78,44 +75,11 @@ public class Documentation {
 		vp.add(HelpWindow.helpLink(projectName, "false",
 				internationalizationConstants.userManual()));
 
-		Anchor linkExportXML = new Anchor(
-				internationalizationConstants.export() + " XML");
-		linkExportXML.addClickHandler(new ClickHandler() {
+		vp.add(new ExportXmlLink());
 
-			@Override
-			public void onClick(ClickEvent event) {
+		vp.add(new ExportPdfLink());
 
-				new ListAllComments();
-			}
-		});
-		vp.add(linkExportXML);
-
-		Anchor linkExportPDF = new Anchor(
-				internationalizationConstants.export() + " PDF");
-		linkExportPDF.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-			}
-		});
-		vp.add(linkExportPDF);
-
-		Anchor linkWiki = new Anchor("Wiki");
-		linkWiki.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				if (ProjectInitialization.currentProject.getRelatedLinks() != null) {
-
-					// Window.open(ProjectInitialization.currentProject.getWiki(),
-					// "_blank", null);
-				}
-
-			}
-		});
-		vp.add(linkWiki);
+		vp.add(new RelatedLinksLink());
 
 		return vp;
 	}

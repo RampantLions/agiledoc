@@ -39,7 +39,7 @@ public class CreateTestClass {
 		if (classFile.getClassDoc().getDescription() != null
 				&& classFile.getClassDoc().getDescription().length() > 0) {
 
-			classComment = "/**\n * Test Class: "
+			classComment = "/**\n * Test Class for: "
 					+ classFile.getClassDoc().getClassName() + ".\n * "
 					+ classFile.getClassDoc().getDescription() + "\n *\n */\n";
 		}
