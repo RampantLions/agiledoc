@@ -16,7 +16,10 @@ public class ConvertProject {
 
 		Project project = new Project();
 
-		project.setProjectID(databaseProject.getProjectID().getId());
+		if (databaseProject.getProjectID() != null) {
+
+			project.setProjectID(databaseProject.getProjectID().getId());
+		}
 
 		project.setRepositoryType(databaseProject.getRepositoryType());
 
@@ -67,8 +70,11 @@ public class ConvertProject {
 
 		ProjectComponents projectComponent = new ProjectComponents();
 
-		projectComponent.setComponentID(projectComponentDatabase
-				.getComponentID().getId());
+		if (projectComponentDatabase.getComponentID() != null) {
+
+			projectComponent.setComponentID(projectComponentDatabase
+					.getComponentID().getId());
+		}
 
 		projectComponent.setComponentName(projectComponentDatabase
 				.getComponentName());
@@ -84,8 +90,11 @@ public class ConvertProject {
 
 		ProjectBacklog projectBacklog = new ProjectBacklog();
 
-		projectBacklog.setProjectBacklogID(projectBacklogDatabase
-				.getProjectBacklogID().getId());
+		if (projectBacklogDatabase.getProjectBacklogID() != null) {
+
+			projectBacklog.setProjectBacklogID(projectBacklogDatabase
+					.getProjectBacklogID().getId());
+		}
 
 		projectBacklog.setBacklogDate(new Date(projectBacklogDatabase
 				.getBacklogDate().getTime()));
