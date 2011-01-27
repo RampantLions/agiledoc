@@ -7,13 +7,13 @@ import junit.framework.TestCase;
 import org.approvaltests.Approvals;
 import org.approvaltests.UseReporter;
 
+import sourceagile.ProjectsData;
 import sourceagile.server.classRepositories.subversionClassRepository.SubversionRepositoryClassImplementation;
 import sourceagile.server.doclet.GetClassDoc;
 import sourceagile.shared.data.UserData;
 import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.Project;
-import sourceagile.userprojects.client.ProjectsData;
 
 import com.spun.util.io.FileUtils;
 
