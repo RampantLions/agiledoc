@@ -1,34 +1,31 @@
 package sourceagile.server.databaseAccess.Project;
 
+import java.util.List;
+
 import junit.framework.TestCase;
-import sourceagile.server.databaseAccess.Project.ProjectDatabaseAccessImplementation;
+import sourceagile.shared.entities.project.Project;
 
 public class ProjectDatabaseAccessImplementationTest extends TestCase {
 
-	public void testProjectDatabaseAccessImplementation() { 
+	public void testListProjects() {
 
-		// new ProjectDatabaseAccessImplementation();
+		List<Project> listProjectsTested = new ProjectDatabaseAccessImplementation()
+				.listProjects();
 
-		assertTrue(true);
+		assertNotNull(listProjectsTested);
 	}
 
-	public void testListProjects() { 
+	public void testGetProject() {
 
-		// Project> listProjectsTested = new ProjectDatabaseAccessImplementation().listProjects();
+		Long projectID = 1l;
 
-		// assertEquals(listProjectsTested, null);
+		Project getProjectTested = new ProjectDatabaseAccessImplementation()
+				.getProject(projectID);
+
+		assertNotNull(getProjectTested);
 	}
 
-	public void testGetProject() { 
-
-		// Long projectID;
-
-		// Project getProjectTested = new ProjectDatabaseAccessImplementation().getProject(projectID);
-
-		// assertEquals(getProjectTested, null);
-	}
-
-	public void testSaveProject() { 
+	public void testSaveProject() {
 
 		// Project project;
 
@@ -37,13 +34,14 @@ public class ProjectDatabaseAccessImplementationTest extends TestCase {
 		assertTrue(true);
 	}
 
-	public void testSaveProjectBacklog() { 
+	public void testSaveProjectBacklog() {
 
 		// Long projectID;
 
-		//  ProjectBacklog projectBacklog;
+		// ProjectBacklog projectBacklog;
 
-		// new ProjectDatabaseAccessImplementation().saveProjectBacklog(projectID,projectBacklog);
+		// new
+		// ProjectDatabaseAccessImplementation().saveProjectBacklog(projectID,projectBacklog);
 
 		assertTrue(true);
 	}

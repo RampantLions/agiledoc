@@ -1,33 +1,34 @@
 package sourceagile.server.databaseAccess.Project;
 
 import junit.framework.TestCase;
-import sourceagile.server.databaseAccess.Project.ConvertProject;
+import sourceagile.ProjectsData;
+import sourceagile.shared.entities.project.Project;
 
 public class ConvertProjectTest extends TestCase {
 
-	public void testConvertProject() { 
-
-		// new ConvertProject();
-
-		assertTrue(true);
-	}
-
-	public void testGetProject() { 
+	public void testGetProject() {
 
 		// Project databaseProject;
 
-		// Project getProjectTested = ConvertProject.getProject(databaseProject);
+		// Project getProjectTested =
+		// ConvertProject.getProject(databaseProject);
 
 		// assertEquals(getProjectTested, null);
 	}
 
-	public void testGetDatabaseProject() { 
+	public void testGetDatabaseProject() {
 
-		// Project project;
+		Project project = ProjectsData.loadProject0();
 
-		// Project getDatabaseProjectTested = ConvertProject.getDatabaseProject(project);
+		sourceagile.server.databaseAccess.entities.Project getDatabaseProjectTested = ConvertProject
+				.getDatabaseProject(project);
 
-		// assertEquals(getDatabaseProjectTested, null);
+		assertNotNull(getDatabaseProjectTested);
+
+		Project getProjectTested = ConvertProject
+				.getProject(getDatabaseProjectTested);
+
+		assertNotNull(getProjectTested);
 	}
 
 }
