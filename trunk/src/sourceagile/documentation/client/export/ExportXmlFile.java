@@ -14,7 +14,7 @@ import com.google.gwt.xml.client.Element;
 import com.google.gwt.xml.client.XMLParser;
 import com.gwtext.client.widgets.SyntaxHighlightPanel;
 
-public class ExportXML {
+public class ExportXmlFile {
 
 	private static final String xmlHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
 
