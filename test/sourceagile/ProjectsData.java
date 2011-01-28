@@ -87,8 +87,10 @@ public class ProjectsData {
 		projectComponents.add(new ProjectComponents("Authentication",
 				"authentication/client"));
 		projectComponents.add(new ProjectComponents("Gaming", "client"));
-		projectComponents
-				.add(new ProjectComponents("Infra Structure", "server"));
+		projectComponents.add(new ProjectComponents("Infra Structure/Server",
+				"server"));
+		projectComponents.add(new ProjectComponents("Infra Structure/Entities",
+				"shared"));
 
 		project.setProjectComponents(projectComponents);
 

@@ -5,7 +5,6 @@ import sourceagile.development.client.serverCalls.GetRemoteClass;
 import sourceagile.development.client.serverCalls.ListClassComments;
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
-import sourceagile.shared.entities.entry.Feature;
 import sourceagile.shared.entities.entry.Method;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 
@@ -18,20 +17,14 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-
-
-
-
-
-
-/** 
+/**
  * Show the documentation of the class in a specification format.
-
-TODO: Show the component and the path at the top of the description.
-TODO: Show the Taggings for the feature that is being displayed.
+ * 
+ * TODO: Show the component and the path at the top of the description. TODO:
+ * Show the Taggings for the feature that is being displayed.
  * 
  * @TODO
- * @Feature 
+ * @Feature
  */
 public class FeatureDescription extends VerticalPanel {
 
@@ -43,7 +36,7 @@ public class FeatureDescription extends VerticalPanel {
 
 			FeatureVizualizationPanel.featureContent.clear();
 
-			this.add(featureName(entry.getFeature()));
+			this.add(featureName(entry, true));
 
 			this.add(featureDescription(entry.getClassDoc()));
 
@@ -54,7 +47,7 @@ public class FeatureDescription extends VerticalPanel {
 			this.add(featureCreation(entry));
 
 			vpComments.setSpacing(20);
-			
+
 			this.add(vpComments);
 
 			FeatureVizualizationPanel.featureContent.add(this);
@@ -66,12 +59,17 @@ public class FeatureDescription extends VerticalPanel {
 	/**
 	 * Show the name of the class with its package name and description.
 	 */
-	public static HTML featureName(Feature feature) {
+	public static HTML featureName(ClassFile entry, boolean withPlanningTag) {
 
 		String name = "<BR><BR><B><FONT SIZE=4>" + "&nbsp;&nbsp;"
-				+ feature.getFeatureName() + "</FONT></B>";
+				+ entry.getFeature().getFeatureName() + "</FONT></B>";
 
-		String pack = "<B>" + feature.getFeatureFolder() + "</B>";
+		if (withPlanningTag && entry.getClassDoc().isTodo()) {
+
+			name += "&nbsp;&nbsp;&nbsp;<font color=blue>(Planning)</font>";
+		}
+
+		String pack = "<B>" + entry.getFeature().getFeatureFolder() + "</B>";
 
 		HTML html = new HTML(pack + name);
 		html.setWidth("400px");

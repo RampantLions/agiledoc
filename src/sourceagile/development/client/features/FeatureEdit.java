@@ -17,12 +17,10 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-
-
-/** 
+/**
  * Edit the documentation of the class in a web form.
  * 
- * @Feature 
+ * @Feature
  */
 public class FeatureEdit extends VerticalPanel {
 
@@ -36,7 +34,7 @@ public class FeatureEdit extends VerticalPanel {
 
 		HorizontalPanel hp = new HorizontalPanel();
 
-		hp.add(FeatureDescription.featureName(entry.getFeature()));
+		hp.add(FeatureDescription.featureName(entry, false));
 
 		hp.add(featureTypes(entry.getClassDoc()));
 
