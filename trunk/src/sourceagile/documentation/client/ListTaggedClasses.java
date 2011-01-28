@@ -45,6 +45,11 @@ public class ListTaggedClasses extends VerticalPanel {
 						String name = "<br><B>"
 								+ entry.getFeature().getFeatureName() + "</B> ";
 
+						if (entry.getClassDoc().isTodo()) {
+
+							name += "&nbsp;&nbsp;&nbsp;<font color=blue>(Planning)</font>";
+						}
+
 						String description = "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 								+ entry.getClassDoc().getDescription();
 

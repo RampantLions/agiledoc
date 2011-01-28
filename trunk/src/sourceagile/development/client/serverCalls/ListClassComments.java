@@ -4,7 +4,7 @@ import java.util.List;
 
 import sourceagile.client.ProjectInitialization;
 import sourceagile.development.client.comments.CommentsList;
-import sourceagile.development.client.comments.NewCommentForm;
+import sourceagile.development.client.comments.CommentsForm;
 import sourceagile.development.client.features.FeatureDescription;
 import sourceagile.shared.entities.Comments;
 
@@ -26,7 +26,7 @@ public class ListClassComments {
 
 						FeatureDescription.vpComments.clear();
 
-						FeatureDescription.vpComments.add(new NewCommentForm(
+						FeatureDescription.vpComments.add(new CommentsForm(
 								ProjectInitialization.currentProject
 										.getProjectID(), classPath));
 

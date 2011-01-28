@@ -7,6 +7,10 @@ import sourceagile.shared.entities.Comments;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+/**
+ * 
+ * @Feature
+ */
 public class CommentsList extends VerticalPanel {
 
 	public CommentsList(List<Comments> comments) {
