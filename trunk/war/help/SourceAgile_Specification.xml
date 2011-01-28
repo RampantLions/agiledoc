@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
+	<projectID>1</projectID>
 	<projectName>Source Agile</projectName>
 	<projectDomain>sourceagile</projectDomain>
 	<projectDescription>&lt;div style="text-align: center;"&gt;&lt;span
@@ -63,7 +64,7 @@
 		<projectComponent componentName="Authentication"
 			componentPath="authentication/client">
 			<entries>
-				<entry featureType="UserManual">
+				<entry featureType="UserManual" isTodo="false">
 					<className>ButtonLogin</className>
 					<classPath>authentication/client</classPath>
 					<featurePath></featurePath>
@@ -72,7 +73,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="UserManual">
+				<entry featureType="UserManual" isTodo="false">
 					<className>LoginForm</className>
 					<classPath>authentication/client</classPath>
 					<featurePath></featurePath>
@@ -81,19 +82,49 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="UserManual">
+				<entry featureType="UserManual" isTodo="false">
 					<className>LoginPage</className>
 					<classPath>authentication/client</classPath>
 					<featurePath></featurePath>
 					<featureName>Login Page</featureName>
 					<featureDescription>First page of the system where the user can
-						insert credentials.
-
-						TODO: Fix the error on the page entrance</featureDescription>
+						insert credentials.</featureDescription>
+					<methods>
+						<method>
+							<methodName>welcomePanel</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>NewsPanel</className>
+					<classPath>authentication/client</classPath>
+					<featurePath></featurePath>
+					<featureName>News Panel</featureName>
+					<featureDescription></featureDescription>
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
+					<className>ProjectList</className>
+					<classPath>authentication/client</classPath>
+					<featurePath></featurePath>
+					<featureName>Project List</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>ProjectSelectionPanel</className>
+					<classPath>authentication/client</classPath>
+					<featurePath></featurePath>
+					<featureName>Project Selection Panel</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
 					<className>UsersList</className>
 					<classPath>authentication/client</classPath>
 					<featurePath></featurePath>
@@ -102,20 +133,56 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>GetLoginProject</className>
+				<entry featureType="Architecture" isTodo="false">
+					<className>AuthenticationServerCalls</className>
 					<classPath>authentication/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
-					<featureName>Get Login Project</featureName>
+					<featureName>Authentication Server Calls</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>listProjects</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProject</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>AuthenticationServerCallsAsync</className>
+					<classPath>authentication/client/serverCalls</classPath>
+					<featurePath>serverCalls</featurePath>
+					<featureName>Authentication Server Calls Async</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>listProjects</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProject</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>ListProjects</className>
+					<classPath>authentication/client/serverCalls</classPath>
+					<featurePath>serverCalls</featurePath>
+					<featureName>List Projects</featureName>
 					<featureDescription></featureDescription>
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>ListLoginProjects</className>
+				<entry featureType="" isTodo="false">
+					<className>Login</className>
 					<classPath>authentication/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
-					<featureName>List Login Projects</featureName>
+					<featureName>Login</featureName>
 					<featureDescription></featureDescription>
 					<methods />
 					<comments />
@@ -125,21 +192,7 @@
 		<projectComponent componentName="Code Visualization"
 			componentPath="codeview/client">
 			<entries>
-				<entry featureType="">
-					<className>ClassesList</className>
-					<classPath>codeview/client</classPath>
-					<featurePath></featurePath>
-					<featureName>Classes List</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>getFeatureLink</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
-				<entry featureType="Feature">
+				<entry featureType="Feature" isTodo="false">
 					<className>SourceCodeView</className>
 					<classPath>codeview/client</classPath>
 					<featurePath></featurePath>
@@ -158,7 +211,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>SourceEditor</className>
 					<classPath>codeview/client</classPath>
 					<featurePath></featurePath>
@@ -172,30 +225,7 @@
 		<projectComponent componentName="Development"
 			componentPath="development/client">
 			<entries>
-				<entry featureType="">
-					<className>ComponentClassesList</className>
-					<classPath>development/client</classPath>
-					<featurePath></featurePath>
-					<featureName>Component Classes List</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>getFeatureLink</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>ComponentsList</className>
-					<classPath>development/client</classPath>
-					<featurePath></featurePath>
-					<featureName>Components List</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="Feature">
+				<entry featureType="Feature" isTodo="false">
 					<className>Development</className>
 					<classPath>development/client</classPath>
 					<featurePath></featurePath>
@@ -218,11 +248,11 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>AllClassesList</className>
+				<entry featureType="" isTodo="false">
+					<className>ComponentClassesList</className>
 					<classPath>development/client/classesList</classPath>
 					<featurePath>classesList</featurePath>
-					<featureName>All Classes List</featureName>
+					<featureName>Component Classes List</featureName>
 					<featureDescription></featureDescription>
 					<methods>
 						<method>
@@ -232,11 +262,20 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>ClassesTreeList</className>
+				<entry featureType="" isTodo="false">
+					<className>ComponentsList</className>
 					<classPath>development/client/classesList</classPath>
 					<featurePath>classesList</featurePath>
-					<featureName>Classes Tree List</featureName>
+					<featureName>Components List</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>ListFiles</className>
+					<classPath>development/client/classesList</classPath>
+					<featurePath>classesList</featurePath>
+					<featureName>List Files</featureName>
 					<featureDescription></featureDescription>
 					<methods>
 						<method>
@@ -246,7 +285,30 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="UserManual" isTodo="false">
+					<className>ButtonSaveComment</className>
+					<classPath>development/client/comments</classPath>
+					<featurePath>comments</featurePath>
+					<featureName>Button Save Comment</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>setComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>CommentsForm</className>
+					<classPath>development/client/comments</classPath>
+					<featurePath>comments</featurePath>
+					<featureName>Comments Form</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="Feature" isTodo="false">
 					<className>CommentsList</className>
 					<classPath>development/client/comments</classPath>
 					<featurePath>comments</featurePath>
@@ -260,25 +322,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>NewCommentForm</className>
-					<classPath>development/client/comments</classPath>
-					<featurePath>comments</featurePath>
-					<featureName>New Comment Form</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>buttonSaveComment</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>setComment</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ClassTypeList</className>
 					<classPath>development/client/features</classPath>
 					<featurePath>features</featurePath>
@@ -287,7 +331,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="Feature">
+				<entry featureType="Feature" isTodo="true">
 					<className>FeatureDescription</className>
 					<classPath>development/client/features</classPath>
 					<featurePath>features</featurePath>
@@ -296,7 +340,8 @@
 						specification format.
 
 						TODO: Show the component and the path at the top of the description.
-						TODO: Show the Taggings for the feature that is being displayed.
+						TODO:
+						Show the Taggings for the feature that is being displayed.
 					</featureDescription>
 					<methods>
 						<method>
@@ -323,7 +368,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="Feature">
+				<entry featureType="Feature" isTodo="false">
 					<className>FeatureEdit</className>
 					<classPath>development/client/features</classPath>
 					<featurePath>features</featurePath>
@@ -350,7 +395,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>FeatureVizualizationPanel</className>
 					<classPath>development/client/features</classPath>
 					<featurePath>features</featurePath>
@@ -359,7 +404,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>JavadocView</className>
 					<classPath>development/client/features</classPath>
 					<featurePath>features</featurePath>
@@ -386,7 +431,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>OptionsIcons</className>
 					<classPath>development/client/features</classPath>
 					<featurePath>features</featurePath>
@@ -416,7 +461,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>CommentsServerCalls</className>
 					<classPath>development/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -438,7 +483,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>CommentsServerCallsAsync</className>
 					<classPath>development/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -460,7 +505,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>EditClass</className>
 					<classPath>development/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -469,7 +514,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>GetRemoteClass</className>
 					<classPath>development/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -483,7 +528,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ListClassComments</className>
 					<classPath>development/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -492,7 +537,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>SaveComment</className>
 					<classPath>development/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -511,17 +556,7 @@
 		<projectComponent componentName="Documentation"
 			componentPath="documentation/client">
 			<entries>
-				<entry featureType="">
-					<className>ClassesListFiltered</className>
-					<classPath>documentation/client</classPath>
-					<featurePath></featurePath>
-					<featureName>Classes List Filtered</featureName>
-					<featureDescription>List all the features assigned for the current
-						project.</featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="Feature">
+				<entry featureType="Feature" isTodo="false">
 					<className>Documentation</className>
 					<classPath>documentation/client</classPath>
 					<featurePath></featurePath>
@@ -535,35 +570,83 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>FeaturesList</className>
+				<entry featureType="Feature" isTodo="false">
+					<className>ListTaggedClasses</className>
 					<classPath>documentation/client</classPath>
 					<featurePath></featurePath>
-					<featureName>Features List</featureName>
-					<featureDescription>List all the features assigned for the current
-						project.</featureDescription>
+					<featureName>List Tagged Classes</featureName>
+					<featureDescription></featureDescription>
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>UserManual</className>
-					<classPath>documentation/client</classPath>
-					<featurePath></featurePath>
-					<featureName>User Manual</featureName>
+				<entry featureType="UserManual" isTodo="false">
+					<className>ArchitectureLink</className>
+					<classPath>documentation/client/documentationMenu</classPath>
+					<featurePath>documentationMenu</featurePath>
+					<featureName>Architecture Link</featureName>
 					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>entryMethods</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
+					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>ExportXML</className>
+				<entry featureType="UserManual" isTodo="false">
+					<className>EntitiesLink</className>
+					<classPath>documentation/client/documentationMenu</classPath>
+					<featurePath>documentationMenu</featurePath>
+					<featureName>Entities Link</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="true">
+					<className>ExportPdfLink</className>
+					<classPath>documentation/client/documentationMenu</classPath>
+					<featurePath>documentationMenu</featurePath>
+					<featureName>Export Pdf Link</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>ExportXmlLink</className>
+					<classPath>documentation/client/documentationMenu</classPath>
+					<featurePath>documentationMenu</featurePath>
+					<featureName>Export Xml Link</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>FeaturesListLink</className>
+					<classPath>documentation/client/documentationMenu</classPath>
+					<featurePath>documentationMenu</featurePath>
+					<featureName>Features List Link</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>ProjectDescriptionLink</className>
+					<classPath>documentation/client/documentationMenu</classPath>
+					<featurePath>documentationMenu</featurePath>
+					<featureName>Project Description Link</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="true">
+					<className>RelatedLinksLink</className>
+					<classPath>documentation/client/documentationMenu</classPath>
+					<featurePath>documentationMenu</featurePath>
+					<featureName>Related Links Link</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>ExportXmlFile</className>
 					<classPath>documentation/client/export</classPath>
 					<featurePath>export</featurePath>
-					<featureName>Export</featureName>
+					<featureName>Export Xml File</featureName>
 					<featureDescription></featureDescription>
 					<methods>
 						<method>
@@ -601,21 +684,13 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>CommentsServerCalls</className>
+				<entry featureType="Architecture" isTodo="false">
+					<className>AllCommentsServerCalls</className>
 					<classPath>documentation/client/export/serverCalls</classPath>
 					<featurePath>export/serverCalls</featurePath>
-					<featureName>Comments Server Calls</featureName>
+					<featureName>All Comments Server Calls</featureName>
 					<featureDescription></featureDescription>
 					<methods>
-						<method>
-							<methodName>saveComment</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>listClassComments</methodName>
-							<methodDescription></methodDescription>
-						</method>
 						<method>
 							<methodName>listAllComments</methodName>
 							<methodDescription></methodDescription>
@@ -623,21 +698,13 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>CommentsServerCallsAsync</className>
+				<entry featureType="Architecture" isTodo="false">
+					<className>AllCommentsServerCallsAsync</className>
 					<classPath>documentation/client/export/serverCalls</classPath>
 					<featurePath>export/serverCalls</featurePath>
-					<featureName>Comments Server Calls Async</featureName>
+					<featureName>All Comments Server Calls Async</featureName>
 					<featureDescription></featureDescription>
 					<methods>
-						<method>
-							<methodName>saveComment</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>listClassComments</methodName>
-							<methodDescription></methodDescription>
-						</method>
 						<method>
 							<methodName>listAllComments</methodName>
 							<methodDescription></methodDescription>
@@ -645,7 +712,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ExportFileServerCalls</className>
 					<classPath>documentation/client/export/serverCalls</classPath>
 					<featurePath>export/serverCalls</featurePath>
@@ -659,7 +726,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ExportFileServerCallsAsync</className>
 					<classPath>documentation/client/export/serverCalls</classPath>
 					<featurePath>export/serverCalls</featurePath>
@@ -673,7 +740,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>FileExporter</className>
 					<classPath>documentation/client/export/serverCalls</classPath>
 					<featurePath>export/serverCalls</featurePath>
@@ -682,7 +749,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ListAllComments</className>
 					<classPath>documentation/client/export/serverCalls</classPath>
 					<featurePath>export/serverCalls</featurePath>
@@ -691,7 +758,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ProjectDescription</className>
 					<classPath>documentation/client/projectDescription</classPath>
 					<featurePath>projectDescription</featurePath>
@@ -706,7 +773,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>RichTextToolbar</className>
 					<classPath>documentation/client/projectDescription</classPath>
 					<featurePath>projectDescription</featurePath>
@@ -764,41 +831,12 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>SpecificationItemsList</className>
-					<classPath>documentation/client/specification</classPath>
-					<featurePath>specification</featurePath>
-					<featureName>Specification Items List</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>getFeatureLink</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>SpecificationList</className>
-					<classPath>documentation/client/specification</classPath>
-					<featurePath>specification</featurePath>
-					<featureName>Specification List</featureName>
-					<featureDescription>List all the classes tagged in the current
-						project.</featureDescription>
-					<methods>
-						<method>
-							<methodName>typeHeader</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
 			</entries>
 		</projectComponent>
 		<projectComponent componentName="Entities"
 			componentPath="shared/entities">
 			<entries>
-				<entry featureType="">
+				<entry featureType="Entity" isTodo="false">
 					<className>Comments</className>
 					<classPath>shared/entities</classPath>
 					<featurePath></featurePath>
@@ -856,7 +894,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>Productivity</className>
 					<classPath>shared/entities</classPath>
 					<featurePath></featurePath>
@@ -914,7 +952,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>User</className>
 					<classPath>shared/entities</classPath>
 					<featurePath></featurePath>
@@ -948,7 +986,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ClassDocumentation</className>
 					<classPath>shared/entities/entry</classPath>
 					<featurePath>entry</featurePath>
@@ -1046,7 +1084,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ClassFile</className>
 					<classPath>shared/entities/entry</classPath>
 					<featurePath>entry</featurePath>
@@ -1136,7 +1174,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>Feature</className>
 					<classPath>shared/entities/entry</classPath>
 					<featurePath>entry</featurePath>
@@ -1166,7 +1204,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>Field</className>
 					<classPath>shared/entities/entry</classPath>
 					<featurePath>entry</featurePath>
@@ -1192,7 +1230,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>Method</className>
 					<classPath>shared/entities/entry</classPath>
 					<featurePath>entry</featurePath>
@@ -1254,7 +1292,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Entity" isTodo="false">
 					<className>Project</className>
 					<classPath>shared/entities/project</classPath>
 					<featurePath>project</featurePath>
@@ -1326,19 +1364,11 @@
 							<methodDescription></methodDescription>
 						</method>
 						<method>
-							<methodName>getSpecificationPath</methodName>
+							<methodName>getRelatedLinks</methodName>
 							<methodDescription></methodDescription>
 						</method>
 						<method>
-							<methodName>setSpecificationPath</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>getWiki</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>setWiki</methodName>
+							<methodName>setRelatedLinks</methodName>
 							<methodDescription></methodDescription>
 						</method>
 						<method>
@@ -1360,7 +1390,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Entity" isTodo="false">
 					<className>ProjectBacklog</className>
 					<classPath>shared/entities/project</classPath>
 					<featurePath>project</featurePath>
@@ -1426,7 +1456,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Entity" isTodo="false">
 					<className>ProjectComponents</className>
 					<classPath>shared/entities/project</classPath>
 					<featurePath>project</featurePath>
@@ -1468,12 +1498,314 @@
 		</projectComponent>
 		<projectComponent componentName="Infra Structure/Class Repositories"
 			componentPath="server/classRepositories">
-			<entries />
+			<entries>
+				<entry featureType="" isTodo="false">
+					<className>GitRepositoryClassImplementation</className>
+					<classPath>server/classRepositories/gitClassRepository</classPath>
+					<featurePath>gitClassRepository</featurePath>
+					<featureName>Git Repository Class Implementation</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>listClasses</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>GitRepositoryConnection</className>
+					<classPath>server/classRepositories/gitClassRepository</classPath>
+					<featurePath>gitClassRepository</featurePath>
+					<featureName>Git Repository Connection</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>connect</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>SubversionRepositoryClassImplementation</className>
+					<classPath>server/classRepositories/subversionClassRepository
+					</classPath>
+					<featurePath>subversionClassRepository</featurePath>
+					<featureName>Subversion Repository Class Implementation
+					</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>listComponentClasses</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>listClasses</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getClass</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>createClass</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>editClass</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>listHistory</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>SubversionRepositoryConnection</className>
+					<classPath>server/classRepositories/subversionClassRepository
+					</classPath>
+					<featurePath>subversionClassRepository</featurePath>
+					<featureName>Subversion Repository Connection</featureName>
+					<featureDescription>Open a connection with the repository that was
+						entered in the project data.</featureDescription>
+					<methods>
+						<method>
+							<methodName>connectClassRepository</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>connectTestRepository</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>connect</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>AddFile</className>
+					<classPath>server/classRepositories/subversionClassRepository/repositoryEditor
+					</classPath>
+					<featurePath>subversionClassRepository/repositoryEditor
+					</featurePath>
+					<featureName>Add File</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>AddTodoClass</className>
+					<classPath>server/classRepositories/subversionClassRepository/repositoryEditor
+					</classPath>
+					<featurePath>subversionClassRepository/repositoryEditor
+					</featurePath>
+					<featureName>Add Todo Class</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>classContent</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>EditClassDescription</className>
+					<classPath>server/classRepositories/subversionClassRepository/repositoryEditor
+					</classPath>
+					<featurePath>subversionClassRepository/repositoryEditor
+					</featurePath>
+					<featureName>Edit Class Description</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getNewClassJavadoc</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>EditFile</className>
+					<classPath>server/classRepositories/subversionClassRepository/repositoryEditor
+					</classPath>
+					<featurePath>subversionClassRepository/repositoryEditor
+					</featurePath>
+					<featureName>Edit File</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>GetRepositoryClass</className>
+					<classPath>server/classRepositories/subversionClassRepository/repositoryLoader
+					</classPath>
+					<featurePath>subversionClassRepository/repositoryLoader
+					</featurePath>
+					<featureName>Get Repository Class</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getClassFile</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>loadClassDocumentation</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getRemoteClass</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getTempFile</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setEntryFeature</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>ListRepositoryClasses</className>
+					<classPath>server/classRepositories/subversionClassRepository/repositoryLoader
+					</classPath>
+					<featurePath>subversionClassRepository/repositoryLoader
+					</featurePath>
+					<featureName>List Repository Classes</featureName>
+					<featureDescription>List all the files from the Subversion
+						Repository</featureDescription>
+					<methods>
+						<method>
+							<methodName>listAllRepositoryFiles</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>listRepositoryFolder</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>listFilesFromFolder</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFolderPath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getClassFromRepositoryFile</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>sortClassesList</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>ListRepositoryComponentClasses</className>
+					<classPath>server/classRepositories/subversionClassRepository/repositoryLoader
+					</classPath>
+					<featurePath>subversionClassRepository/repositoryLoader
+					</featurePath>
+					<featureName>List Repository Component Classes</featureName>
+					<featureDescription>List all the files from the Subversion
+						Repository</featureDescription>
+					<methods>
+						<method>
+							<methodName>listRepositoryComponentFiles</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>ListRepositoryHistory</className>
+					<classPath>server/classRepositories/subversionClassRepository/repositoryLoader
+					</classPath>
+					<featurePath>subversionClassRepository/repositoryLoader
+					</featurePath>
+					<featureName>List Repository History</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getRemoteClasses</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>CreateTestClass</className>
+					<classPath>server/classRepositories/subversionClassRepository/repositoryTest
+					</classPath>
+					<featurePath>subversionClassRepository/repositoryTest</featurePath>
+					<featureName>Create Test Class</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>classContent</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>testMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getClassDeclaration</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>GetRepositoryTestClass</className>
+					<classPath>server/classRepositories/subversionClassRepository/repositoryTest
+					</classPath>
+					<featurePath>subversionClassRepository/repositoryTest</featurePath>
+					<featureName>Get Repository Test Class</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getTestClassFile</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>RepositoryClassTestImplementation</className>
+					<classPath>server/classRepositories/subversionClassRepository/repositoryTest
+					</classPath>
+					<featurePath>subversionClassRepository/repositoryTest</featurePath>
+					<featureName>Repository Class Test Implementation</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getTestClass</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>addTestClass</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+			</entries>
 		</projectComponent>
 		<projectComponent componentName="Infra Structure/Database Access"
 			componentPath="server/databaseAccess">
 			<entries>
-				<entry featureType="">
+				<entry featureType="Architecture" isTodo="false">
 					<className>CommentsDatabaseImplementation</className>
 					<classPath>server/databaseAccess/Comments</classPath>
 					<featurePath>Comments</featurePath>
@@ -1495,7 +1827,25 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
+					<className>ConvertComments</className>
+					<classPath>server/databaseAccess/Comments</classPath>
+					<featurePath>Comments</featurePath>
+					<featureName>Convert Comments</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDatabaseComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
 					<className>ListAllComments</className>
 					<classPath>server/databaseAccess/Comments</classPath>
 					<featurePath>Comments</featurePath>
@@ -1509,13 +1859,12 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ListClassComments</className>
 					<classPath>server/databaseAccess/Comments</classPath>
 					<featurePath>Comments</featurePath>
 					<featureName>List Class Comments</featureName>
-					<featureDescription>List all the projects added in the system.
-					</featureDescription>
+					<featureDescription></featureDescription>
 					<methods>
 						<method>
 							<methodName>list</methodName>
@@ -1524,7 +1873,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>SaveComment</className>
 					<classPath>server/databaseAccess/Comments</classPath>
 					<featurePath>Comments</featurePath>
@@ -1538,7 +1887,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Architecture" isTodo="false">
 					<className>DatabaseConnection</className>
 					<classPath>server/databaseAccess</classPath>
 					<featurePath></featurePath>
@@ -1546,19 +1895,60 @@
 					<featureDescription></featureDescription>
 					<methods>
 						<method>
+							<methodName>getAppengineDatabaseProperties</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getLocalDatabaseProperties</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
 							<methodName>connect</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
+					<className>ConvertProject</className>
+					<classPath>server/databaseAccess/Project</classPath>
+					<featurePath>Project</featurePath>
+					<featureName>Convert Project</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getProject</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectComponent</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectBacklog</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDatabaseProject</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDatabaseProjectComponent</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDatabaseProjectBacklog</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
 					<className>GetProject</className>
 					<classPath>server/databaseAccess/Project</classPath>
 					<featurePath>Project</featurePath>
 					<featureName>Get Project</featureName>
-					<featureDescription>List all the projects added in the system.
-					</featureDescription>
+					<featureDescription></featureDescription>
 					<methods>
 						<method>
 							<methodName>get</methodName>
@@ -1567,7 +1957,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ListProjects</className>
 					<classPath>server/databaseAccess/Project</classPath>
 					<featurePath>Project</featurePath>
@@ -1582,7 +1972,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Architecture" isTodo="false">
 					<className>ProjectDatabaseAccessImplementation</className>
 					<classPath>server/databaseAccess/Project</classPath>
 					<featurePath>Project</featurePath>
@@ -1608,7 +1998,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>SaveProject</className>
 					<classPath>server/databaseAccess/Project</classPath>
 					<featurePath>Project</featurePath>
@@ -1616,13 +2006,17 @@
 					<featureDescription></featureDescription>
 					<methods>
 						<method>
-							<methodName>save</methodName>
+							<methodName>addNew</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>update</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ListProjectBacklog</className>
 					<classPath>server/databaseAccess/ProjectBacklog</classPath>
 					<featurePath>ProjectBacklog</featurePath>
@@ -1636,7 +2030,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>SaveProjectBacklog</className>
 					<classPath>server/databaseAccess/ProjectBacklog</classPath>
 					<featurePath>ProjectBacklog</featurePath>
@@ -1650,108 +2044,260 @@
 					</methods>
 					<comments />
 				</entry>
+				<entry featureType="" isTodo="false">
+					<className>Comments</className>
+					<classPath>server/databaseAccess/entities</classPath>
+					<featurePath>entities</featurePath>
+					<featureName>Comments</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getCommmentID</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getCommentAuthor</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setCommentAuthor</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getCommentDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setCommentDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getCommentDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setCommentDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getCommentProject</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setCommentProject</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getCommentClass</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setCommentClass</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>Project</className>
+					<classPath>server/databaseAccess/entities</classPath>
+					<featurePath>entities</featurePath>
+					<featureName>Project</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getProjectID</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getRepositoryType</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setRepositoryType</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getRoot</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setRoot</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDomain</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getRepositoryURL</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setRepositoryURL</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDomain</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getTestRoot</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setTestRoot</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getRelatedLinks</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setRelatedLinks</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectComponents</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setProjectComponents</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectBacklog</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setProjectBacklog</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>ProjectBacklog</className>
+					<classPath>server/databaseAccess/entities</classPath>
+					<featurePath>entities</featurePath>
+					<featureName>Project Backlog</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getProjectBacklogID</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getBacklogName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setBacklogName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getBacklogDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setBacklogDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getBacklogDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setBacklogDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getBacklogPriority</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setBacklogPriority</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getBacklogEstimative</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setBacklogEstimative</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getBacklogStatus</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setBacklogStatus</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>ProjectComponents</className>
+					<classPath>server/databaseAccess/entities</classPath>
+					<featurePath>entities</featurePath>
+					<featureName>Project Components</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getComponentID</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getComponentName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setComponentName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getComponentPath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setComponentPath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>compareTo</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
 			</entries>
 		</projectComponent>
 		<projectComponent componentName="Infra Structure/Doclet"
 			componentPath="server/doclet">
-			<entries>
-				<entry featureType="">
-					<className>EasyDoclet</className>
-					<classPath>server/doclet</classPath>
-					<featurePath></featurePath>
-					<featureName>Easy Doclet</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>getSourceDirectory</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>getPackageNames</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>getFileNames</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>getRootDoc</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>getApplicationName</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>GetClassDoc</className>
-					<classPath>server/doclet</classPath>
-					<featurePath></featurePath>
-					<featureName>Get Class Doc</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>getRootDoc</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>getClassDoc</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>listImports</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>listFields</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>GetClassMethods</className>
-					<classPath>server/doclet</classPath>
-					<featurePath></featurePath>
-					<featureName>Get Class Methods</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>listConstructors</methodName>
-							<methodDescription>List all the constructor methods of a class.
-							</methodDescription>
-						</method>
-						<method>
-							<methodName>listMethods</methodName>
-							<methodDescription>List all the methods of a class.
-							</methodDescription>
-						</method>
-						<method>
-							<methodName>getParameterString</methodName>
-							<methodDescription>Convert the parameter list in a String.
-							</methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>PublicMessager</className>
-					<classPath>server/doclet</classPath>
-					<featurePath></featurePath>
-					<featureName>Public Messager</featureName>
-					<featureDescription>Protected constructors prevent the world from
-						exploding!</featureDescription>
-					<methods />
-					<comments />
-				</entry>
-			</entries>
+			<entries />
 		</projectComponent>
 		<projectComponent componentName="Metrics"
 			componentPath="metrics/client">
 			<entries>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>CurrentProductivityColumnsChart</className>
 					<classPath>metrics/client</classPath>
 					<featurePath></featurePath>
@@ -1775,7 +2321,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="Feature">
+				<entry featureType="Feature" isTodo="false">
 					<className>Metrics</className>
 					<classPath>metrics/client</classPath>
 					<featurePath></featurePath>
@@ -1789,7 +2335,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ProductivityTimelineChart</className>
 					<classPath>metrics/client</classPath>
 					<featurePath></featurePath>
@@ -1807,7 +2353,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>VelocityTimelineChart</className>
 					<classPath>metrics/client</classPath>
 					<featurePath></featurePath>
@@ -1830,7 +2376,7 @@
 		<projectComponent componentName="Planning"
 			componentPath="planning/client">
 			<entries>
-				<entry featureType="Feature">
+				<entry featureType="Feature" isTodo="false">
 					<className>PlanningPage</className>
 					<classPath>planning/client</classPath>
 					<featurePath></featurePath>
@@ -1849,7 +2395,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>AddTodoClass</className>
 					<classPath>planning/client/TodoClasses</classPath>
 					<featurePath>TodoClasses</featurePath>
@@ -1881,7 +2427,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>FoldersList</className>
 					<classPath>planning/client/TodoClasses</classPath>
 					<featurePath>TodoClasses</featurePath>
@@ -1890,11 +2436,11 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>TodoClassesList</className>
+				<entry featureType="Feature" isTodo="false">
+					<className>PlanningClassesList</className>
 					<classPath>planning/client/TodoClasses</classPath>
 					<featurePath>TodoClasses</featurePath>
-					<featureName>Todo Classes List</featureName>
+					<featureName>Planning Classes List</featureName>
 					<featureDescription>List all the classes assigned as "To Do" in the
 						current project.</featureDescription>
 					<methods>
@@ -1917,7 +2463,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ProjectBacklogList</className>
 					<classPath>planning/client/projectBacklog</classPath>
 					<featurePath>projectBacklog</featurePath>
@@ -1943,7 +2489,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>Story</className>
 					<classPath>planning/client/projectBacklog</classPath>
 					<featurePath>projectBacklog</featurePath>
@@ -1965,7 +2511,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>CreateProjectBacklog</className>
 					<classPath>planning/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -1974,7 +2520,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>CreateTodoClass</className>
 					<classPath>planning/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -1983,7 +2529,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ProjectDatabaseServerCalls</className>
 					<classPath>planning/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -2009,7 +2555,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>ProjectDatabaseServerCallsAsync</className>
 					<classPath>planning/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -2039,134 +2585,12 @@
 		</projectComponent>
 		<projectComponent componentName="System Navigation"
 			componentPath="client/systemNavigation">
-			<entries>
-				<entry featureType="">
-					<className>FormField</className>
-					<classPath>client/systemNavigation</classPath>
-					<featurePath></featurePath>
-					<featureName>Form Field</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>LoadingPanel</className>
-					<classPath>client/systemNavigation</classPath>
-					<featurePath></featurePath>
-					<featureName>Loading Panel</featureName>
-					<featureDescription>Animated image to demonstrate that the system
-						is processing the user request.</featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>MainPage</className>
-					<classPath>client/systemNavigation</classPath>
-					<featurePath></featurePath>
-					<featureName>Main Page</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>addUserName</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>addTopMenus</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>addContentsPanel</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>ProjectName</className>
-					<classPath>client/systemNavigation</classPath>
-					<featurePath></featurePath>
-					<featureName>Project Name</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>SystemOptions</className>
-					<classPath>client/systemNavigation</classPath>
-					<featurePath></featurePath>
-					<featureName>System Options</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>getSearchIcon</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>WelcomePage</className>
-					<classPath>client/systemNavigation</classPath>
-					<featurePath></featurePath>
-					<featureName>Welcome Page</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="UserManual">
-					<className>ButtonDevelopment</className>
-					<classPath>client/systemNavigation/projectMenu</classPath>
-					<featurePath>projectMenu</featurePath>
-					<featureName>Button Development</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="UserManual">
-					<className>ButtonDocumentation</className>
-					<classPath>client/systemNavigation/projectMenu</classPath>
-					<featurePath>projectMenu</featurePath>
-					<featureName>Button Documentation</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="UserManual">
-					<className>ButtonMetrics</className>
-					<classPath>client/systemNavigation/projectMenu</classPath>
-					<featurePath>projectMenu</featurePath>
-					<featureName>Button Metrics</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="UserManual">
-					<className>ButtonPlanning</className>
-					<classPath>client/systemNavigation/projectMenu</classPath>
-					<featurePath>projectMenu</featurePath>
-					<featureName>Button Planning</featureName>
-					<featureDescription>Open the Planning page for the end user.
-
-						TODO: Reload the project backlog list when open the page.
-					</featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>ProjectMenu</className>
-					<classPath>client/systemNavigation/projectMenu</classPath>
-					<featurePath>projectMenu</featurePath>
-					<featureName>Project Menu</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-					<comments />
-				</entry>
-			</entries>
+			<entries />
 		</projectComponent>
 		<projectComponent componentName="Testing"
 			componentPath="testing/client">
 			<entries>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>TestClassDescription</className>
 					<classPath>testing/client</classPath>
 					<featurePath></featurePath>
@@ -2185,7 +2609,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>AddTestClass</className>
 					<classPath>testing/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -2196,7 +2620,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>GetRemoteTestClass</className>
 					<classPath>testing/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -2205,7 +2629,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>LoadRemoteTestClasses</className>
 					<classPath>testing/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -2223,7 +2647,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>LoadRemoteTestClassesAsync</className>
 					<classPath>testing/client/serverCalls</classPath>
 					<featurePath>serverCalls</featurePath>
@@ -2239,158 +2663,6 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
-					<comments />
-				</entry>
-			</entries>
-		</projectComponent>
-		<projectComponent componentName="User Projects"
-			componentPath="userprojects/client">
-			<entries>
-				<entry featureType="">
-					<className>ProjectChanger</className>
-					<classPath>userprojects/client</classPath>
-					<featurePath></featurePath>
-					<featureName>Project Changer</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>getList</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>ProjectForm</className>
-					<classPath>userprojects/client</classPath>
-					<featurePath></featurePath>
-					<featureName>Project Form</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>loadProjectInfo</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>buttonSaveProject</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>buttonChangeProject</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>setProjectForm</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>ProjectInitialization</className>
-					<classPath>userprojects/client</classPath>
-					<featurePath></featurePath>
-					<featureName>Project Initialization</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>ProjectList</className>
-					<classPath>userprojects/client</classPath>
-					<featurePath></featurePath>
-					<featureName>Project List</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>ProjectSelection</className>
-					<classPath>userprojects/client</classPath>
-					<featurePath></featurePath>
-					<featureName>Project Selection</featureName>
-					<featureDescription>Change the current project of the system.
-					</featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>GetProject</className>
-					<classPath>userprojects/client/serverCalls</classPath>
-					<featurePath>serverCalls</featurePath>
-					<featureName>Get Project</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>ListProjects</className>
-					<classPath>userprojects/client/serverCalls</classPath>
-					<featurePath>serverCalls</featurePath>
-					<featureName>List Projects</featureName>
-					<featureDescription></featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>ProjectDatabaseServerCalls</className>
-					<classPath>userprojects/client/serverCalls</classPath>
-					<featurePath>serverCalls</featurePath>
-					<featureName>Project Database Server Calls</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>listProjects</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>getProject</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>saveProject</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>saveProjectBacklog</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>ProjectDatabaseServerCallsAsync</className>
-					<classPath>userprojects/client/serverCalls</classPath>
-					<featurePath>serverCalls</featurePath>
-					<featureName>Project Database Server Calls Async</featureName>
-					<featureDescription></featureDescription>
-					<methods>
-						<method>
-							<methodName>listProjects</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>getProject</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>saveProject</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>saveProjectBacklog</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<comments />
-				</entry>
-				<entry featureType="">
-					<className>SaveProject</className>
-					<classPath>userprojects/client/serverCalls</classPath>
-					<featurePath>serverCalls</featurePath>
-					<featureName>Save Project</featureName>
-					<featureDescription></featureDescription>
-					<methods />
 					<comments />
 				</entry>
 			</entries>

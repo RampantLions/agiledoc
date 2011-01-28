@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
+	<projectID>2</projectID>
 	<projectName>Tic Tac Toe</projectName>
 	<projectDomain>tictactoe</projectDomain>
 	<projectDescription>&lt;b&gt;Tic-tac-toe&lt;/b&gt;, also spelled
@@ -7,7 +8,7 @@
 		crosses&lt;/b&gt; as it is known in the UK, Ireland, Australia, New
 		Zealand, is a pencil-and-paper game for two players,
 		&lt;b&gt;O&lt;/b&gt; and &lt;b&gt;X&lt;/b&gt;, who take turns marking
-		the spaces in a 3�3 grid, usually &lt;b&gt;X&lt;/b&gt; going first.
+		the spaces in a 3 x 3 grid, usually &lt;b&gt;X&lt;/b&gt; going first.
 		The player who succeeds in placing three respective marks in a
 		horizontal, vertical, or diagonal row wins the game.
 	</projectDescription>
@@ -15,7 +16,7 @@
 		<projectComponent componentName="Authentication"
 			componentPath="authentication/client">
 			<entries>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>Login</className>
 					<classPath>authentication/client</classPath>
 					<featurePath></featurePath>
@@ -25,7 +26,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>Logout</className>
 					<classPath>authentication/client</classPath>
 					<featurePath></featurePath>
@@ -40,17 +41,31 @@
 		<projectComponent componentName="Gaming"
 			componentPath="client">
 			<entries>
-				<entry featureType="">
-					<className>Player</className>
+				<entry featureType="Architecture" isTodo="false">
+					<className>HelpInitialization</className>
 					<classPath>client</classPath>
 					<featurePath></featurePath>
-					<featureName>Player</featureName>
-					<featureDescription>Information about each player of the game.
+					<featureName>Help Initialization</featureName>
+					<featureDescription>Loading the contents of the help system.
 					</featureDescription>
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
+					<className>Initialization</className>
+					<classPath>client</classPath>
+					<featurePath></featurePath>
+					<featureName>Initialization</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>initializeUsers</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="Architecture" isTodo="false">
 					<className>TicTacToe</className>
 					<classPath>client</classPath>
 					<featurePath></featurePath>
@@ -71,11 +86,11 @@
 						</comment>
 					</comments>
 				</entry>
-				<entry featureType="Architecture">
-					<className>CallToMovimentJudgment</className>
-					<classPath>client/architecture</classPath>
-					<featurePath>architecture</featurePath>
-					<featureName>Call To Moviment Judgment</featureName>
+				<entry featureType="" isTodo="false">
+					<className>CheckWinner</className>
+					<classPath>client/serverCalls</classPath>
+					<featurePath>serverCalls</featurePath>
+					<featureName>Check Winner</featureName>
 					<featureDescription></featureDescription>
 					<methods>
 						<method>
@@ -85,20 +100,10 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>GameInitialization</className>
-					<classPath>client/architecture</classPath>
-					<featurePath>architecture</featurePath>
-					<featureName>Game Initialization</featureName>
-					<featureDescription>System preparation for the game initialization.
-					</featureDescription>
-					<methods />
-					<comments />
-				</entry>
-				<entry featureType="Architecture">
+				<entry featureType="Architecture" isTodo="false">
 					<className>GreetingService</className>
-					<classPath>client/architecture</classPath>
-					<featurePath>architecture</featurePath>
+					<classPath>client/serverCalls</classPath>
+					<featurePath>serverCalls</featurePath>
 					<featureName>Greeting Service</featureName>
 					<featureDescription>The client side stub for the RPC service.
 					</featureDescription>
@@ -110,10 +115,10 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="Architecture" isTodo="false">
 					<className>GreetingServiceAsync</className>
-					<classPath>client/architecture</classPath>
-					<featurePath>architecture</featurePath>
+					<classPath>client/serverCalls</classPath>
+					<featurePath>serverCalls</featurePath>
 					<featureName>Greeting Service Async</featureName>
 					<featureDescription>The async counterpart of
 						&lt;code&gt;GreetingService&lt;/code&gt;.</featureDescription>
@@ -125,23 +130,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
-					<className>HelpInitialization</className>
-					<classPath>client/architecture</classPath>
-					<featurePath>architecture</featurePath>
-					<featureName>Help Initialization</featureName>
-					<featureDescription>Loading the contents of the help system.
-					</featureDescription>
-					<methods />
-					<comments>
-						<comment>
-							<commentName>Fri Jan 21 17:18:09 PST 2011</commentName>
-							<commentDescription>The system loads all the help content before
-								any other thing.</commentDescription>
-						</comment>
-					</comments>
-				</entry>
-				<entry featureType="UserManual">
+				<entry featureType="UserManual" isTodo="false">
 					<className>GameBoard</className>
 					<classPath>client/userInterface</classPath>
 					<featurePath>userInterface</featurePath>
@@ -153,7 +142,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="Feature">
+				<entry featureType="Feature" isTodo="false">
 					<className>GameGrid</className>
 					<classPath>client/userInterface</classPath>
 					<featurePath>userInterface</featurePath>
@@ -173,12 +162,12 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="Feature">
+				<entry featureType="Feature" isTodo="false">
 					<className>PlayerMove</className>
 					<classPath>client/userInterface</classPath>
 					<featurePath>userInterface</featurePath>
 					<featureName>Player Move</featureName>
-					<featureDescription>Performs a move in the game.
+					<featureDescription>Performs a move in the game. any more....
 					</featureDescription>
 					<methods>
 						<method>
@@ -197,9 +186,14 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
-					<comments />
+					<comments>
+						<comment>
+							<commentName>Thu Jan 27 17:59:31 PST 2011</commentName>
+							<commentDescription>uhnuhnu</commentDescription>
+						</comment>
+					</comments>
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="true">
 					<className>Timer</className>
 					<classPath>client/userInterface</classPath>
 					<featurePath>userInterface</featurePath>
@@ -209,7 +203,7 @@
 					<methods />
 					<comments />
 				</entry>
-				<entry featureType="Feature">
+				<entry featureType="Feature" isTodo="false">
 					<className>WinningSequence</className>
 					<classPath>client/userInterface</classPath>
 					<featurePath>userInterface</featurePath>
@@ -233,10 +227,92 @@
 				</entry>
 			</entries>
 		</projectComponent>
-		<projectComponent componentName="Infra Structure"
+		<projectComponent componentName="Infra Structure/Entities"
+			componentPath="shared">
+			<entries>
+				<entry featureType="Entity" isTodo="false">
+					<className>GameEntity</className>
+					<classPath>shared</classPath>
+					<featurePath></featurePath>
+					<featureName>Game Entity</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getGameMoves</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setGameMoves</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getCurrentPlayer</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setCurrentPlayer</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getSequenceWinner</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setSequenceWinner</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="Entity" isTodo="false">
+					<className>Player</className>
+					<classPath>shared</classPath>
+					<featurePath></featurePath>
+					<featureName>Player</featureName>
+					<featureDescription>Information about each player of the game.
+					</featureDescription>
+					<methods>
+						<method>
+							<methodName>getName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getEmail</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setEmail</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getPlayerIcon</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setPlayerIcon</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Infra Structure/Server"
 			componentPath="server">
 			<entries>
-				<entry featureType="">
+				<entry featureType="Architecture" isTodo="false">
 					<className>GreetingServiceImpl</className>
 					<classPath>server</classPath>
 					<featurePath></featurePath>
@@ -251,7 +327,7 @@
 					</methods>
 					<comments />
 				</entry>
-				<entry featureType="">
+				<entry featureType="" isTodo="false">
 					<className>MovimentJudgment</className>
 					<classPath>server</classPath>
 					<featurePath></featurePath>
