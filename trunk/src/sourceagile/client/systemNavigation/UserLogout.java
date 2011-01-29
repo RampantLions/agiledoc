@@ -15,13 +15,28 @@ public class UserLogout extends HorizontalPanel {
 
 		String logout = "<a href='" + GWT.getHostPageBaseURL() + "'>Logout</a>";
 
-		HTML userName = new HTML("<font size=1 color=blue>"
-				+ GlobalVariables.currentUser.getName() + " | " + logout
-				+ "</font>");
+		HTML userLogoutHTML = new HTML("<font size=1 color=blue>"
+				+ getUserName() + " | " + logout + "</font>");
 
-		userName.setAutoHorizontalAlignment(ALIGN_CENTER);
-		userName.setWidth("200px");
+		userLogoutHTML.setAutoHorizontalAlignment(ALIGN_CENTER);
+		userLogoutHTML.setWidth("200px");
 
-		this.add(userName);
+		this.add(userLogoutHTML);
+	}
+
+	private String getUserName() {
+
+		String userName = GlobalVariables.userLoggedIn.getName();
+		if (userName == null) {
+
+			userName = GlobalVariables.userLoggedIn.getEmail();
+		}
+
+		if (userName == null) {
+
+			userName = "Public";
+		}
+
+		return userName;
 	}
 }
