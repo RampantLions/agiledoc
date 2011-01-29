@@ -15,7 +15,7 @@ public interface InternationalizationConstants extends Constants {
 
 	@DefaultStringValue("Project")
 	String project();
-	
+
 	@DefaultStringValue("Search")
 	String search();
 
@@ -40,7 +40,7 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Project Description")
 	String projectDescription();
 
-	@DefaultStringValue("Specification")
+	@DefaultStringValue("Specification Portal")
 	String specification();
 
 	@DefaultStringValue("User Manual")
