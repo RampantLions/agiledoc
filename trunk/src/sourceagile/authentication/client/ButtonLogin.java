@@ -1,9 +1,7 @@
 package sourceagile.authentication.client;
 
 import sourceagile.authentication.client.serverCalls.Login;
-import sourceagile.client.GlobalVariables;
 import sourceagile.client.InternationalizationConstants;
-import sourceagile.shared.data.UserData;
 import sourceagile.shared.entities.User;
 
 import com.google.gwt.core.client.GWT;
@@ -30,21 +28,17 @@ public class ButtonLogin extends Button {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				// User userSelected = UserData.load()[Integer
-				// .parseInt(LoginForm.usersList
-				// .getValue(LoginForm.usersList
-				// .getSelectedIndex()))];
+				User userLog = new User();
 
-				User userSelected = UserData.load()[0];
-
-				GlobalVariables.currentUser = userSelected;
+				userLog.setEmail(LoginForm.fieldEmail.getValue());
+				userLog.setPassword(LoginForm.fieldPassword.getValue());
 
 				Long projectSelected = new Long(
 						ProjectSelectionPanel.projectList
 								.getValue(ProjectSelectionPanel.projectList
 										.getSelectedIndex()));
 
-				new Login(projectSelected);
+				new Login(userLog, projectSelected);
 			}
 		});
 	}

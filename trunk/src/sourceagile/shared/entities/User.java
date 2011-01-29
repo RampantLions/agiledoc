@@ -2,6 +2,10 @@ package sourceagile.shared.entities;
 
 import java.io.Serializable;
 
+/**
+ * 
+ * @Entity
+ */
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -9,6 +13,8 @@ public class User implements Serializable {
 	private String nickName;
 
 	private String name;
+
+	private String email;
 
 	private String password;
 
@@ -34,6 +40,14 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

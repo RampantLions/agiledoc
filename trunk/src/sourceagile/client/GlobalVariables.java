@@ -11,4 +11,6 @@ public class GlobalVariables {
 
 	public static User currentUser = new User();
 
+	public static User userLoggedIn = new User();
+
 }

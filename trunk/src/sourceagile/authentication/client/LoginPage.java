@@ -83,8 +83,9 @@ public class LoginPage extends HorizontalPanel {
 	private HTML welcomePanel() {
 
 		return new HTML("<center><font size=5>Welcome to </font>"
-				+ "<br><br><b><font size=6>The Source Agile Toolkit</b> "
-				+ "<br><font size=4>" + GlobalVariables.systemVersion
+				+ "<br><br><b><font size=6 color=orange>LIVE SOURCE</font>"
+				+ "<font size=5><br>an Agile Toolkit</font></b> "
+				+ "<br><br><font size=4>" + GlobalVariables.systemVersion
 				+ "</font></center>");
 	}
 }
