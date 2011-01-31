@@ -15,7 +15,7 @@ import com.google.gwt.visualization.client.visualizations.ColumnChart.Options;
  * Show a Columns Chart with the total amount of tasks, classes and methods in
  * the current project.
  * 
- * @feature
+ * @Feature
  */
 public class CurrentProductivityColumnsChart extends VerticalPanel {
 
@@ -52,36 +52,39 @@ public class CurrentProductivityColumnsChart extends VerticalPanel {
 		for (ClassFile entry : ProjectInitialization.projectEntries) {
 
 			int constructorsCount = 0;
-			if (entry.getClassDoc().getConstructors() != null) {
+			if (entry.getClassDoc() != null) {
 
-				constructorsCount = entry.getClassDoc().getConstructors().length;
-			}
+				if (entry.getClassDoc().getConstructors() != null) {
 
-			int methodsCount = 0;
-			if (entry.getClassDoc().getMethods() != null) {
+					constructorsCount = entry.getClassDoc().getConstructors().length;
+				}
 
-				methodsCount = entry.getClassDoc().getMethods().length;
-			}
+				int methodsCount = 0;
+				if (entry.getClassDoc().getMethods() != null) {
 
-			ProjectInitialization.projectTotals
-					.setMethodsCount(ProjectInitialization.projectTotals
-							.getMethodsCount()
-							+ (constructorsCount + methodsCount));
-
-			if (entry.getClassDoc().isTodo()) {
+					methodsCount = entry.getClassDoc().getMethods().length;
+				}
 
 				ProjectInitialization.projectTotals
-						.setToDoCount(ProjectInitialization.projectTotals
-								.getToDoCount() + 1);
-			}
+						.setMethodsCount(ProjectInitialization.projectTotals
+								.getMethodsCount()
+								+ (constructorsCount + methodsCount));
 
-			if (entry.getClassDoc().getTagType() != null
-					&& entry.getClassDoc().getTagType()
-							.equals(ClassDocumentation.FEATURE_TAG)) {
+				if (entry.getClassDoc().isTodo()) {
 
-				ProjectInitialization.projectTotals
-						.setFeatureCount(ProjectInitialization.projectTotals
-								.getFeatureCount() + 1);
+					ProjectInitialization.projectTotals
+							.setToDoCount(ProjectInitialization.projectTotals
+									.getToDoCount() + 1);
+				}
+
+				if (entry.getClassDoc().getTagType() != null
+						&& entry.getClassDoc().getTagType()
+								.equals(ClassDocumentation.FEATURE_TAG)) {
+
+					ProjectInitialization.projectTotals
+							.setFeatureCount(ProjectInitialization.projectTotals
+									.getFeatureCount() + 1);
+				}
 			}
 		}
 
