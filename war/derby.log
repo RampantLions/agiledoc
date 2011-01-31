@@ -1,0 +1,6 @@
+----------------------------------------------------------------
+2011-01-30 17:52:54.384 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.6.1.0 - (938214): instance a816c00e-012d-d80e-43b9-0000049ea558 
+on database directory C:\eclipse\workspace\SourceAgile\war\data   with class loader ContextLoader@null
+
+Database Class Loader started - derby.database.classpath=''

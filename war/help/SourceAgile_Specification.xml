@@ -2585,7 +2585,152 @@
 		</projectComponent>
 		<projectComponent componentName="System Navigation"
 			componentPath="client/systemNavigation">
-			<entries />
+			<entries>
+				<entry featureType="UserManual" isTodo="false">
+					<className>HomeIcon</className>
+					<classPath>client/systemNavigation</classPath>
+					<featurePath></featurePath>
+					<featureName>Home Icon</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getImage</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>MainPage</className>
+					<classPath>client/systemNavigation</classPath>
+					<featurePath></featurePath>
+					<featureName>Main Page</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>addTopMenus</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>addContentsPanel</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>ProjectName</className>
+					<classPath>client/systemNavigation</classPath>
+					<featurePath></featurePath>
+					<featureName>Project Name</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="true">
+					<className>ProjectSummary</className>
+					<classPath>client/systemNavigation</classPath>
+					<featurePath></featurePath>
+					<featureName>Project Summary</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="Feature" isTodo="false">
+					<className>SearchBox</className>
+					<classPath>client/systemNavigation</classPath>
+					<featurePath></featurePath>
+					<featureName>Search Box</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getSearchIcon</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>SystemTopOptions</className>
+					<classPath>client/systemNavigation</classPath>
+					<featurePath></featurePath>
+					<featureName>System Top Options</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>UserLogout</className>
+					<classPath>client/systemNavigation</classPath>
+					<featurePath></featurePath>
+					<featureName>User Logout</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>WelcomePage</className>
+					<classPath>client/systemNavigation</classPath>
+					<featurePath></featurePath>
+					<featureName>Welcome Page</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>ButtonDevelopment</className>
+					<classPath>client/systemNavigation/projectMenu</classPath>
+					<featurePath>projectMenu</featurePath>
+					<featureName>Button Development</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>ButtonDocumentation</className>
+					<classPath>client/systemNavigation/projectMenu</classPath>
+					<featurePath>projectMenu</featurePath>
+					<featureName>Button Documentation</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>ButtonMetrics</className>
+					<classPath>client/systemNavigation/projectMenu</classPath>
+					<featurePath>projectMenu</featurePath>
+					<featureName>Button Metrics</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="true">
+					<className>ButtonPlanning</className>
+					<classPath>client/systemNavigation/projectMenu</classPath>
+					<featurePath>projectMenu</featurePath>
+					<featureName>Button Planning</featureName>
+					<featureDescription>Open the Planning page for the end user.
+
+						TODO: Reload the project backlog list when open the page.
+					</featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>ProjectMenu</className>
+					<classPath>client/systemNavigation/projectMenu</classPath>
+					<featurePath>projectMenu</featurePath>
+					<featureName>Project Menu</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>untoggleButtons</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+			</entries>
 		</projectComponent>
 		<projectComponent componentName="Testing"
 			componentPath="testing/client">
