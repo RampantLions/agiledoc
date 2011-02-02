@@ -1,6 +1,7 @@
 package sourceagile.client;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import sourceagile.client.serverCalls.ListClassesHistory;
 import sourceagile.client.serverCalls.ListRemoteClasses;
@@ -12,7 +13,7 @@ public class ProjectInitialization {
 
 	public static Project currentProject = new Project();
 
-	public static ClassFile[] projectEntries;
+	public static HashMap<String, ClassFile> projectEntries;
 
 	public static ArrayList<Productivity> projectActivity;
 
