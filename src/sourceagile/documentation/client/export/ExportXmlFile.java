@@ -31,12 +31,16 @@ public class ExportXmlFile {
 
 	private static final String ENTRIES = "entries";
 	private static final String ENTRY = "entry";
+	private static final String FILE_NAME = "fileName";
+	private static final String FILE_PATH = "filePath";
+	private static final String FILE_AUTHOR = "fileAuthor";
+	private static final String FILE_DATE = "fileDate";
 	private static final String CLASS_NAME = "className";
-	private static final String CLASS_PATH = "classPath";
 
 	private static final String FEATURE_TYPE = "featureType";
 	private static final String FEATURE_PATH = "featurePath";
 	private static final String FEATURE_NAME = "featureName";
+	private static final String FEATURE_FOLDER = "featureFolder";
 	private static final String FEATURE_DESCRIPTION = "featureDescription";
 	private static final String IS_TODO = "isTodo";
 
@@ -90,11 +94,20 @@ public class ExportXmlFile {
 					Element entryElement = getEntryNode(xmlDocument, entry,
 							projectComponent.getComponentPath());
 
-					entryElement.appendChild(getElement(xmlDocument,
-							CLASS_NAME, entry.getClassDoc().getClassName()));
+					entryElement.appendChild(getElement(xmlDocument, FILE_NAME,
+							entry.getFileName()));
+
+					entryElement.appendChild(getElement(xmlDocument, FILE_PATH,
+							entry.getFilePath()));
 
 					entryElement.appendChild(getElement(xmlDocument,
-							CLASS_PATH, entry.getFilePath()));
+							FILE_AUTHOR, entry.getUser().getNickName()));
+
+					entryElement.appendChild(getElement(xmlDocument, FILE_DATE,
+							entry.getDateModified().getTime() + ""));
+
+					entryElement.appendChild(getElement(xmlDocument,
+							CLASS_NAME, entry.getClassDoc().getClassName()));
 
 					String featurePath = entry.getFilePath().substring(
 							projectComponent.getComponentPath().length());
@@ -109,6 +122,10 @@ public class ExportXmlFile {
 
 					entryElement.appendChild(getElement(xmlDocument,
 							FEATURE_NAME, entry.getFeature().getFeatureName()));
+
+					entryElement.appendChild(getElement(xmlDocument,
+							FEATURE_FOLDER, entry.getFeature()
+									.getFeatureFolder()));
 
 					entryElement.appendChild(getElement(xmlDocument,
 							FEATURE_DESCRIPTION, entry.getClassDoc()
