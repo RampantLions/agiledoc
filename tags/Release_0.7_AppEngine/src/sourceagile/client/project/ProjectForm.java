@@ -8,14 +8,17 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+/**
+ * 
+ * @UserManual
+ */
 public class ProjectForm extends VerticalPanel {
 
 	public static final TextBox name = new TextBox();
-	public static final ListBox repositoryType = new ListBox();
+	public static RepositoryTypeList repositoryType;
 	public static final TextBox url = new TextBox();
 	public static final TextBox root = new TextBox();
 	public static final TextBox testRoot = new TextBox();
@@ -28,6 +31,9 @@ public class ProjectForm extends VerticalPanel {
 		VerticalPanel vp = new VerticalPanel();
 
 		vp.setSpacing(30);
+
+		repositoryType = new RepositoryTypeList(project.getRepositoryType());
+		vp.add(new FormField("Repository Type", repositoryType));
 
 		name.setWidth("500px");
 		name.setValue(project.getName());
@@ -69,7 +75,8 @@ public class ProjectForm extends VerticalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				project.setRepositoryType(Project.REPOSITORY_TYPE_SUBVERSION);
+				project.setRepositoryType(repositoryType
+						.getValue(repositoryType.getSelectedIndex()));
 				project.setName(name.getValue());
 				project.setRepositoryURL(url.getValue());
 				project.setRoot(root.getValue());
