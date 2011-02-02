@@ -9,7 +9,7 @@ import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.entities.project.ProjectBacklog;
 import sourceagile.shared.entities.project.ProjectComponents;
 
-public class ConvertProject {
+public class ConvertDatabaseToProject {
 
 	public static Project getProject(
 			sourceagile.server.databaseAccess.entities.Project databaseProject) {
@@ -114,98 +114,6 @@ public class ConvertProject {
 				.getBacklogStatus());
 
 		return projectBacklog;
-	}
-
-	public static sourceagile.server.databaseAccess.entities.Project getDatabaseProject(
-			Project project) {
-
-		sourceagile.server.databaseAccess.entities.Project projectDatabase = new sourceagile.server.databaseAccess.entities.Project();
-
-		// projectDatabase.getProjectID(project.getProjectID());
-
-		projectDatabase.setRepositoryType(project.getRepositoryType());
-
-		projectDatabase.setName(project.getName());
-
-		projectDatabase.setDescription(project.getDescription());
-
-		projectDatabase.setRepositoryURL(project.getRepositoryURL());
-
-		projectDatabase.setDomain(project.getDomain());
-
-		projectDatabase.setRoot(project.getRoot());
-
-		projectDatabase.setTestRoot(project.getTestRoot());
-
-		projectDatabase.setRelatedLinks(project.getRelatedLinks());
-
-		List<sourceagile.server.databaseAccess.entities.ProjectComponents> projectComponents = new ArrayList<sourceagile.server.databaseAccess.entities.ProjectComponents>();
-
-		for (ProjectComponents projectComponentDatabase : project
-				.getProjectComponents()) {
-
-			projectComponents
-					.add(getDatabaseProjectComponent(projectComponentDatabase));
-		}
-
-		projectDatabase.setProjectComponents(projectComponents);
-
-		List<sourceagile.server.databaseAccess.entities.ProjectBacklog> projectBacklogs = new ArrayList<sourceagile.server.databaseAccess.entities.ProjectBacklog>();
-
-		for (ProjectBacklog projectBacklogDatabase : project
-				.getProjectBacklog()) {
-
-			projectBacklogs
-					.add(getDatabaseProjectBacklog(projectBacklogDatabase));
-		}
-
-		projectDatabase.setProjectBacklog(projectBacklogs);
-
-		return projectDatabase;
-	}
-
-	private static sourceagile.server.databaseAccess.entities.ProjectComponents getDatabaseProjectComponent(
-			ProjectComponents projectComponent) {
-
-		sourceagile.server.databaseAccess.entities.ProjectComponents projectComponentDatabase = new sourceagile.server.databaseAccess.entities.ProjectComponents();
-
-		// projectComponent.setComponentID(projectComponentDatabase
-		// .getComponentID().getId());
-
-		projectComponentDatabase.setComponentName(projectComponent
-				.getComponentName());
-
-		projectComponentDatabase.setComponentPath(projectComponent
-				.getComponentPath());
-
-		return projectComponentDatabase;
-	}
-
-	private static sourceagile.server.databaseAccess.entities.ProjectBacklog getDatabaseProjectBacklog(
-			ProjectBacklog projectBacklog) {
-
-		sourceagile.server.databaseAccess.entities.ProjectBacklog projectBacklogDatabase = new sourceagile.server.databaseAccess.entities.ProjectBacklog();
-
-		// projectBacklogDatabase.setProjectBacklogID(projectBacklogDatabase
-		// .getProjectBacklogID().getId());
-
-		projectBacklogDatabase.setBacklogDate(projectBacklog.getBacklogDate());
-
-		projectBacklogDatabase.setBacklogName(projectBacklog.getBacklogName());
-
-		projectBacklogDatabase.setBacklogDescription(projectBacklog
-				.getBacklogDescription());
-
-		projectBacklogDatabase.setBacklogEstimative(projectBacklog
-				.getBacklogEstimative());
-
-		projectBacklogDatabase.setBacklogPriority(projectBacklog
-				.getBacklogPriority());
-
-		projectBacklogDatabase.setBacklogStatus(projectBacklog
-				.getBacklogStatus());
-
-		return projectBacklogDatabase;
 	}
 
 }
