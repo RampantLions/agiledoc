@@ -20,7 +20,7 @@ public class NewsPanel extends VerticalPanel {
 		vpNews.setSpacing(30);
 
 		HTML htmlNewsTitle = new HTML(
-				"<font color=blue><b>*** Source Agile NEWS ***</b></font>");
+				"<font color=blue><b>*** Live Source NEWS ***</b></font>");
 
 		vpNews.add(htmlNewsTitle);
 
@@ -31,6 +31,16 @@ public class NewsPanel extends VerticalPanel {
 
 	private void showNews(VerticalPanel vpNews) {
 
+		HTML labelNews5 = new HTML(
+				"Qua, Feb 2 13:45 <br>DEMO software live on Google Cloud! Big step! ");
+
+		vpNews.add(labelNews5);
+
+		HTML labelNews6 = new HTML(
+				"Seg, Jan 31 17:11 <br>Ideas comming up for a new Blog for the system... ");
+
+		vpNews.add(labelNews6);
+
 		HTML labelNews2 = new HTML(
 				"Fri, Jan 28 21:37 <br>Toolkit video available on youtube. Stay tuned! ");
 
@@ -40,6 +50,10 @@ public class NewsPanel extends VerticalPanel {
 				"Mon, Jan 24 15:43 <br>Wrapping up for Fullerton Code Camp!");
 
 		vpNews.add(labelNews4);
+
+	}
+
+	private void showOlds(VerticalPanel vpNews) {
 
 		HTML labelNews1 = new HTML(
 				"Fri, Jan 21 10:09<br>Prototype 6 launched this morning. ");
