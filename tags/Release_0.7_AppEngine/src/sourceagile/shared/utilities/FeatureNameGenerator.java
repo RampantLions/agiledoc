@@ -1,8 +1,5 @@
 package sourceagile.shared.utilities;
 
-/**
- * @task
- */
 public class FeatureNameGenerator {
 
 	/**
@@ -66,7 +63,7 @@ public class FeatureNameGenerator {
 			}
 
 		} else {
-			
+
 			spacedName = name.toUpperCase();
 		}
 

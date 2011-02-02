@@ -14,11 +14,12 @@ import com.google.gwt.xml.client.Element;
 import com.google.gwt.xml.client.XMLParser;
 import com.gwtext.client.widgets.SyntaxHighlightPanel;
 
-public class ExportXML {
+public class ExportXmlFile {
 
 	private static final String xmlHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
 
 	private static final String PROJECT = "project";
+	private static final String PROJECT_ID = "projectID";
 	private static final String PROJECT_NAME = "projectName";
 	private static final String PROJECT_DOMAIN = "projectDomain";
 	private static final String PROJECT_DESCRIPTION = "projectDescription";
@@ -30,13 +31,18 @@ public class ExportXML {
 
 	private static final String ENTRIES = "entries";
 	private static final String ENTRY = "entry";
+	private static final String FILE_NAME = "fileName";
+	private static final String FILE_PATH = "filePath";
+	private static final String FILE_AUTHOR = "fileAuthor";
+	private static final String FILE_DATE = "fileDate";
 	private static final String CLASS_NAME = "className";
-	private static final String CLASS_PATH = "classPath";
 
 	private static final String FEATURE_TYPE = "featureType";
 	private static final String FEATURE_PATH = "featurePath";
 	private static final String FEATURE_NAME = "featureName";
+	private static final String FEATURE_FOLDER = "featureFolder";
 	private static final String FEATURE_DESCRIPTION = "featureDescription";
+	private static final String IS_TODO = "isTodo";
 
 	private static final String METHODS = "methods";
 	private static final String METHOD = "method";
@@ -85,16 +91,23 @@ public class ExportXML {
 						&& entry.getClassDoc() != null
 						&& entry.getClassDoc().getClassName() != null) {
 
-					// if (!entry.getClassDoc().isTodo()) {
-
 					Element entryElement = getEntryNode(xmlDocument, entry,
 							projectComponent.getComponentPath());
 
-					entryElement.appendChild(getElement(xmlDocument,
-							CLASS_NAME, entry.getClassDoc().getClassName()));
+					entryElement.appendChild(getElement(xmlDocument, FILE_NAME,
+							entry.getFileName()));
+
+					entryElement.appendChild(getElement(xmlDocument, FILE_PATH,
+							entry.getFilePath()));
 
 					entryElement.appendChild(getElement(xmlDocument,
-							CLASS_PATH, entry.getFilePath()));
+							FILE_AUTHOR, entry.getUser().getName()));
+
+					entryElement.appendChild(getElement(xmlDocument, FILE_DATE,
+							entry.getDateModified().getTime() + ""));
+
+					entryElement.appendChild(getElement(xmlDocument,
+							CLASS_NAME, entry.getClassDoc().getClassName()));
 
 					String featurePath = entry.getFilePath().substring(
 							projectComponent.getComponentPath().length());
@@ -109,6 +122,10 @@ public class ExportXML {
 
 					entryElement.appendChild(getElement(xmlDocument,
 							FEATURE_NAME, entry.getFeature().getFeatureName()));
+
+					entryElement.appendChild(getElement(xmlDocument,
+							FEATURE_FOLDER, entry.getFeature()
+									.getFeatureFolder()));
 
 					entryElement.appendChild(getElement(xmlDocument,
 							FEATURE_DESCRIPTION, entry.getClassDoc()
@@ -149,6 +166,11 @@ public class ExportXML {
 
 		Element projectElement = xmlDocument.createElement(PROJECT);
 
+		projectElement
+				.appendChild(getElement(xmlDocument, PROJECT_ID,
+						ProjectInitialization.currentProject.getProjectID()
+								.toString()));
+
 		projectElement.appendChild(getElement(xmlDocument, PROJECT_NAME,
 				ProjectInitialization.currentProject.getName()));
 
@@ -175,6 +197,8 @@ public class ExportXML {
 		}
 
 		entryElement.setAttribute(FEATURE_TYPE, tagType);
+
+		entryElement.setAttribute(IS_TODO, (entry.getClassDoc().isTodo() + ""));
 
 		return entryElement;
 	}
