@@ -21,10 +21,8 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
  * 
- * 
- * @architecture
+ * @Architecture
  */
-
 @SuppressWarnings("serial")
 public class SubversionRepositoryClassImplementation extends
 		RemoteServiceServlet implements LoadRemoteClasses {

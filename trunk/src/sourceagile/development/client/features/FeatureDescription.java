@@ -133,43 +133,46 @@ public class FeatureDescription extends VerticalPanel {
 
 		boolean hasReference = false;
 
-		for (final String link : imports) {
+		if (imports != null) {
 
-			final String domain = ProjectInitialization.currentProject
-					.getDomain().replaceAll("/", ".");
+			for (final String link : imports) {
 
-			if (link.contains(domain)) {
+				final String domain = ProjectInitialization.currentProject
+						.getDomain().replaceAll("/", ".");
 
-				Anchor classeAnchor = new Anchor(
-						FeatureNameGenerator.getLastNameSpaced(link, "\\."));
-				classeAnchor.addClickHandler(new ClickHandler() {
-					public void onClick(ClickEvent sender) {
+				if (link.contains(domain)) {
 
-						String className = FeatureNameGenerator.getLastName(
-								link, "\\.");
+					Anchor classeAnchor = new Anchor(
+							FeatureNameGenerator.getLastNameSpaced(link, "\\."));
+					classeAnchor.addClickHandler(new ClickHandler() {
+						public void onClick(ClickEvent sender) {
 
-						String classPath = "";
-						int classPathInit = domain.length() + 1;
-						int classPathEnd = link.length() - className.length()
-								- 1;
-						if (classPathInit < classPathEnd) {
+							String className = FeatureNameGenerator
+									.getLastName(link, "\\.");
 
-							classPath = link.substring(classPathInit,
-									classPathEnd);
+							String classPath = "";
+							int classPathInit = domain.length() + 1;
+							int classPathEnd = link.length()
+									- className.length() - 1;
+							if (classPathInit < classPathEnd) {
+
+								classPath = link.substring(classPathInit,
+										classPathEnd);
+							}
+
+							ClassFile entry = new ClassFile();
+							entry.setFilePath(classPath.replaceAll("\\.", "/"));
+							entry.setFileName(className + ".java");
+
+							new GetRemoteClass(entry,
+									OptionsIcons.OPTION_DESCRIPTION);
 						}
+					});
 
-						ClassFile entry = new ClassFile();
-						entry.setFilePath(classPath.replaceAll("\\.", "/"));
-						entry.setFileName(className + ".java");
+					links.add(classeAnchor);
 
-						new GetRemoteClass(entry,
-								OptionsIcons.OPTION_DESCRIPTION);
-					}
-				});
-
-				links.add(classeAnchor);
-
-				hasReference = true;
+					hasReference = true;
+				}
 			}
 		}
 

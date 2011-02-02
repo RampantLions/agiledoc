@@ -10,10 +10,6 @@ import org.tmatesoft.svn.core.io.SVNRepository;
 
 import sourceagile.shared.entities.entry.ClassFile;
 
-/**
- * List all the files from the Subversion Repository
- * 
- */
 public class ListRepositoryComponentClasses {
 
 	public static HashMap<String, ClassFile> listRepositoryComponentFiles(

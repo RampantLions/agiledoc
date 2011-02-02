@@ -18,16 +18,16 @@ public interface LoadRemoteClassesAsync {
 	void createClass(Project project, User user, ClassFile classFile,
 			String newSubfolderName, AsyncCallback<Void> callback);
 
-	void listHistory(Project project, User user,
-			AsyncCallback<ArrayList<Productivity>> callback);
-
 	void listClasses(Project project, User user,
 			AsyncCallback<ClassFile[]> callback);
 
-	void editClass(Project project, User user, ClassFile classFile,
-			String classDescription, AsyncCallback<Void> callback);
-
 	void listComponentClasses(Project project, User user, String componentPath,
 			AsyncCallback<HashMap<String, ClassFile>> callback);
+
+	void listHistory(Project project, User user,
+			AsyncCallback<ArrayList<Productivity>> callback);
+
+	void editClass(Project project, User user, ClassFile classFile,
+			String classDescription, AsyncCallback<Void> callback);
 
 }
