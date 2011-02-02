@@ -31,7 +31,7 @@ public class LoginPage extends HorizontalPanel {
 
 		VerticalPanel vp = new VerticalPanel();
 
-		vp.setSize("800px", "100%");
+		vp.setSize("650px", "100%");
 
 		vp.setSpacing(20);
 
