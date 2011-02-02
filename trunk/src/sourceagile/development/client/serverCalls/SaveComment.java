@@ -1,8 +1,6 @@
 package sourceagile.development.client.serverCalls;
 
-import sourceagile.client.ProjectInitialization;
 import sourceagile.shared.entities.Comments;
-import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -26,20 +24,5 @@ public class SaveComment {
 			}
 
 		});
-	}
-
-	private void updateProjectEntries(ClassFile entry) {
-
-		for (int i = 0; i < ProjectInitialization.projectEntries.length; i++) {
-
-			ClassFile classFile = ProjectInitialization.projectEntries[i];
-
-			if (entry.compareTo(classFile) == 0) {
-
-				ProjectInitialization.projectEntries[i] = entry;
-
-				break;
-			}
-		}
 	}
 }

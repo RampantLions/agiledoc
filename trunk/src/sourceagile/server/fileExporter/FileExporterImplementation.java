@@ -20,7 +20,7 @@ public class FileExporterImplementation extends RemoteServiceServlet implements
 
 		try {
 
-			tempFile = new File("help/" + fileName + "_Specification.xml");
+			tempFile = new File("files/" + fileName + "_Specification.xml");
 
 			OutputStream out = new FileOutputStream(tempFile);
 			out.write(fileContent.getBytes());

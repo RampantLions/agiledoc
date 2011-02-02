@@ -15,7 +15,8 @@ public class FoldersList extends ListBox {
 
 		this.addItem(folderName, folderName);
 
-		for (ClassFile classFile : ProjectInitialization.projectEntries) {
+		for (ClassFile classFile : ProjectInitialization.projectEntries
+				.values()) {
 
 			String featureFolder = classFile.getFeature().getFeatureFolder();
 

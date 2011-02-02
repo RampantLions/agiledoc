@@ -27,7 +27,8 @@ public class GetRemoteClass {
 
 					public void onSuccess(ClassFile entry) {
 
-						updateProjectEntries(entry);
+						ProjectInitialization.projectEntries.put(
+								entry.toString(), entry);
 
 						Development.showClass(entry, viewOption);
 					}
@@ -38,20 +39,5 @@ public class GetRemoteClass {
 					}
 
 				});
-	}
-
-	private void updateProjectEntries(ClassFile entry) {
-
-		for (int i = 0; i < ProjectInitialization.projectEntries.length; i++) {
-
-			ClassFile classFile = ProjectInitialization.projectEntries[i];
-
-			if (entry.compareTo(classFile) == 0) {
-
-				ProjectInitialization.projectEntries[i] = entry;
-
-				break;
-			}
-		}
 	}
 }

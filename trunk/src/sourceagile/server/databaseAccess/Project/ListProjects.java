@@ -26,7 +26,7 @@ public class ListProjects {
 
 		for (sourceagile.server.databaseAccess.entities.Project databaseProject : projectsDatabase) {
 
-			projects.add(ConvertProject.getProject(databaseProject));
+			projects.add(ConvertDatabaseToProject.getProject(databaseProject));
 		}
 
 		return projects;

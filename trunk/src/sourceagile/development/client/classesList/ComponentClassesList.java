@@ -1,5 +1,7 @@
 package sourceagile.development.client.classesList;
 
+import java.util.HashMap;
+
 import sourceagile.development.client.Development;
 import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
@@ -19,7 +21,7 @@ import com.gwtext.client.widgets.tree.event.TreeNodeListenerAdapter;
 public class ComponentClassesList {
 
 	public ComponentClassesList(TreePanel tree, TreeNode componentNode,
-			ClassFile[] entries, String specificationPath) {
+			HashMap<String, ClassFile> entries, String specificationPath) {
 
 		String currentPath = componentNode.getId();
 
@@ -29,7 +31,7 @@ public class ComponentClassesList {
 			specPathSize = specificationPath.split("/").length;
 		}
 
-		for (ClassFile entry : entries) {
+		for (ClassFile entry : entries.values()) {
 
 			if (specificationPath != null
 					&& entry.getFilePath().startsWith(specificationPath)) {

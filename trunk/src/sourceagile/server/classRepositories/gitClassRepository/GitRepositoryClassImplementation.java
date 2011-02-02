@@ -1,5 +1,7 @@
 package sourceagile.server.classRepositories.gitClassRepository;
 
+import java.util.HashMap;
+
 import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClasses;
 import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.entry.ClassFile;
@@ -12,9 +14,9 @@ public class GitRepositoryClassImplementation extends RemoteServiceServlet
 		implements LoadGitRemoteClasses {
 
 	// @Override
-	public ClassFile[] listClasses(Project project, User user) {
+	public HashMap<String, ClassFile> listClasses(Project project, User user) {
 
-		ClassFile[] entries = null;
+		HashMap<String, ClassFile> entries = null;
 
 		/*
 		 * try {

@@ -16,7 +16,7 @@ public interface LoadRemoteClasses extends RemoteService {
 
 	ClassFile getClass(Project project, User user, ClassFile entry);
 
-	ClassFile[] listClasses(Project project, User user);
+	HashMap<String, ClassFile> listClasses(Project project, User user);
 
 	void createClass(Project project, User user, ClassFile classFile,
 			String newSubfolderName);

@@ -3,14 +3,13 @@ package sourceagile.client.project;
 import java.util.List;
 
 import sourceagile.shared.entities.project.Project;
-import sourceagile.shared.entities.project.ProjectBacklog;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
 /**
  * 
- * @architecture
+ * @Architecture
  */
 @RemoteServiceRelativePath("projectDatabaseAccess")
 public interface ProjectDatabaseServerCalls extends RemoteService {
@@ -21,6 +20,6 @@ public interface ProjectDatabaseServerCalls extends RemoteService {
 
 	void saveProject(Project project);
 
-	void saveProjectBacklog(Long projectID, ProjectBacklog projectBacklog);
+	void updateProject(Project project);
 
 }

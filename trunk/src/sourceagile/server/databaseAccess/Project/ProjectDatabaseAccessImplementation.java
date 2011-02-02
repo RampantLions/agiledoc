@@ -7,9 +7,7 @@ import javax.jdo.PersistenceManager;
 import sourceagile.authentication.client.serverCalls.AuthenticationServerCalls;
 import sourceagile.client.project.ProjectDatabaseServerCalls;
 import sourceagile.server.databaseAccess.DatabaseConnection;
-import sourceagile.server.databaseAccess.ProjectBacklog.SaveProjectBacklog;
 import sourceagile.shared.entities.project.Project;
-import sourceagile.shared.entities.project.ProjectBacklog;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
@@ -58,12 +56,13 @@ public class ProjectDatabaseAccessImplementation extends RemoteServiceServlet
 	}
 
 	@Override
-	public void saveProjectBacklog(Long projectID, ProjectBacklog projectBacklog) {
+	public void updateProject(Project project) {
 
 		PersistenceManager persistenceManager = DatabaseConnection.connect();
 
-		SaveProjectBacklog.save(persistenceManager, projectID, projectBacklog);
+		SaveProject.update(persistenceManager, project);
 
 		persistenceManager.close();
 	}
+
 }

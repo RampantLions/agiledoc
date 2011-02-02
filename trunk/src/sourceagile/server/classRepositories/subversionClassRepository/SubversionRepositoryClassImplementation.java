@@ -49,9 +49,9 @@ public class SubversionRepositoryClassImplementation extends
 	}
 
 	@Override
-	public ClassFile[] listClasses(Project project, User user) {
+	public HashMap<String, ClassFile> listClasses(Project project, User user) {
 
-		ClassFile[] entries = null;
+		HashMap<String, ClassFile> entries = null;
 
 		try {
 			SVNRepository repository = SubversionRepositoryConnection

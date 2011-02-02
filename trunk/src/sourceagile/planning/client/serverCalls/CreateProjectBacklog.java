@@ -10,8 +10,8 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class CreateProjectBacklog {
 
-	final ProjectDatabaseServerCallsAsync databaseServerCalls = GWT
-			.create(ProjectDatabaseServerCalls.class);
+	final ProjectBacklogServerCallsAsync databaseServerCalls = GWT
+			.create(ProjectBacklogServerCalls.class);
 
 	public CreateProjectBacklog(ProjectBacklog projectBacklog) {
 

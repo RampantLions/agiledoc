@@ -49,7 +49,7 @@ public class CurrentProductivityColumnsChart extends VerticalPanel {
 
 		ProjectInitialization.projectTotals = new Productivity();
 
-		for (ClassFile entry : ProjectInitialization.projectEntries) {
+		for (ClassFile entry : ProjectInitialization.projectEntries.values()) {
 
 			int constructorsCount = 0;
 			if (entry.getClassDoc() != null) {
@@ -91,7 +91,7 @@ public class CurrentProductivityColumnsChart extends VerticalPanel {
 		ProjectInitialization.projectTotals
 				.setClassesCount(ProjectInitialization.projectTotals
 						.getClassesCount()
-						+ ProjectInitialization.projectEntries.length);
+						+ ProjectInitialization.projectEntries.size());
 	}
 
 	private static void setRows(DataTable data) {

@@ -1,6 +1,7 @@
 package sourceagile.client.serverCalls;
 
 import java.util.Date;
+import java.util.HashMap;
 
 import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.entry.ClassDocumentation;
@@ -33,7 +34,7 @@ public class ConvertRemoteClassesXML {
 	private static final String METHOD_NAME = "methodName";
 	private static final String METHOD_DESCRIPTION = "methodDescription";
 
-	public static ClassFile[] getClasses(String xmlContent) {
+	public static HashMap<String, ClassFile> getClasses(String xmlContent) {
 
 		Document xmlDoc = XMLParser.parse(xmlContent);
 		XMLParser.removeWhitespace(xmlDoc);
@@ -42,11 +43,12 @@ public class ConvertRemoteClassesXML {
 		return getProjectEntries(projectElement);
 	}
 
-	private static ClassFile[] getProjectEntries(Element projectElement) {
+	private static HashMap<String, ClassFile> getProjectEntries(
+			Element projectElement) {
 
 		NodeList entries = projectElement.getElementsByTagName(ENTRY);
 
-		ClassFile[] classFiles = new ClassFile[entries.getLength()];
+		HashMap<String, ClassFile> classFiles = new HashMap<String, ClassFile>();
 
 		for (int i = 0; i < entries.getLength(); i++) {
 
@@ -54,7 +56,7 @@ public class ConvertRemoteClassesXML {
 
 			ClassFile classFile = getClassFileFromElement(entryElement);
 
-			classFiles[i] = classFile;
+			classFiles.put(classFile.toString(), classFile);
 		}
 
 		return classFiles;

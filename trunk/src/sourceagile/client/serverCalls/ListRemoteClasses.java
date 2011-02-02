@@ -1,5 +1,7 @@
 package sourceagile.client.serverCalls;
 
+import java.util.HashMap;
+
 import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
 import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClasses;
@@ -22,9 +24,6 @@ import com.google.gwt.user.client.ui.RootPanel;
 public class ListRemoteClasses {
 
 	public ListRemoteClasses() {
-
-		RootPanel.get("htmlID").clear();
-		RootPanel.get("htmlID").add(new LoadingPanel());
 
 		RootPanel.get("htmlID").clear();
 		RootPanel.get("htmlID").add(new LoadingPanel());
@@ -52,7 +51,7 @@ public class ListRemoteClasses {
 	private void listRemoteClassesFromXML() {
 
 		RequestBuilder requestBuilder = new RequestBuilder(RequestBuilder.GET,
-				"help/TicTacToe_Specification.xml");
+				"files/TicTacToe_Specification.xml");
 
 		try {
 			requestBuilder.sendRequest(null, new RequestCallback() {
@@ -60,7 +59,7 @@ public class ListRemoteClasses {
 				public void onResponseReceived(Request request,
 						Response response) {
 
-					ClassFile[] classFiles = ConvertRemoteClassesXML
+					HashMap<String, ClassFile> classFiles = ConvertRemoteClassesXML
 							.getClasses(response.getText());
 
 					ProjectInitialization.projectEntries = classFiles;
@@ -91,9 +90,10 @@ public class ListRemoteClasses {
 
 		subversionRemoteFunctions.listClasses(
 				ProjectInitialization.currentProject,
-				GlobalVariables.currentUser, new AsyncCallback<ClassFile[]>() {
+				GlobalVariables.currentUser,
+				new AsyncCallback<HashMap<String, ClassFile>>() {
 
-					public void onSuccess(ClassFile[] entries) {
+					public void onSuccess(HashMap<String, ClassFile> entries) {
 
 						ProjectInitialization.projectEntries = entries;
 
@@ -109,7 +109,6 @@ public class ListRemoteClasses {
 						// Show the RPC error message to the user
 
 					}
-
 				});
 	}
 
@@ -119,9 +118,10 @@ public class ListRemoteClasses {
 				.create(LoadGitRemoteClasses.class);
 
 		gitRemoteFunctions.listClasses(ProjectInitialization.currentProject,
-				GlobalVariables.currentUser, new AsyncCallback<ClassFile[]>() {
+				GlobalVariables.currentUser,
+				new AsyncCallback<HashMap<String, ClassFile>>() {
 
-					public void onSuccess(ClassFile[] entries) {
+					public void onSuccess(HashMap<String, ClassFile> entries) {
 
 						ProjectInitialization.projectEntries = entries;
 
@@ -138,5 +138,4 @@ public class ListRemoteClasses {
 
 				});
 	}
-
 }

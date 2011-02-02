@@ -1,8 +1,11 @@
 package sourceagile.development.client.classesList;
 
+import java.util.HashMap;
+
 import sourceagile.development.client.Development;
 import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.utilities.SortClassFiles;
 
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -14,11 +17,11 @@ import com.gwtext.client.widgets.tree.event.TreeNodeListenerAdapter;
 
 public class ListFiles extends VerticalPanel {
 
-	public ListFiles(ClassFile[] entries) {
+	public ListFiles(HashMap<String, ClassFile> entries) {
 
 		Label space = new Label(" ");
 		this.add(space);
-		
+
 		TreePanel treePanel = new TreePanel();
 		treePanel.setBorder(false);
 		treePanel.setLines(false);
@@ -33,7 +36,9 @@ public class ListFiles extends VerticalPanel {
 
 		String currentPath = "root";
 
-		for (ClassFile entry : entries) {
+		ClassFile[] classFiles = SortClassFiles.getSortedArray(entries);
+
+		for (ClassFile entry : classFiles) {
 
 			String[] entryPath = entry.getFilePath().split("/");
 
@@ -83,5 +88,4 @@ public class ListFiles extends VerticalPanel {
 
 		return treeNode;
 	}
-
 }
