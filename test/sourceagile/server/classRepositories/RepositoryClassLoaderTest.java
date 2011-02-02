@@ -1,6 +1,7 @@
 package sourceagile.server.classRepositories;
 
 import java.io.File;
+import java.util.HashMap;
 
 import junit.framework.TestCase;
 
@@ -24,9 +25,9 @@ public class RepositoryClassLoaderTest extends TestCase {
 
 		User user = UserData.load()[0];
 		Project project = ProjectsData.load()[1];
-		ClassFile[] listFeatures = new SubversionRepositoryClassImplementation()
+		HashMap<String, ClassFile> listFeatures = new SubversionRepositoryClassImplementation()
 				.listClasses(project, user);
-		Approvals.approve("Entry", listFeatures);
+		Approvals.approve("Entry", listFeatures.values());
 
 	}
 

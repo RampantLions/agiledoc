@@ -1,5 +1,7 @@
 package sourceagile.server.classRepositories;
 
+import java.util.HashMap;
+
 import junit.framework.TestCase;
 import sourceagile.ProjectsData;
 import sourceagile.server.classRepositories.subversionClassRepository.SubversionRepositoryClassImplementation;
@@ -13,7 +15,7 @@ public class UpdateDocumentationTest extends TestCase {
 
 		User user = UserData.load()[0];
 		Project project = ProjectsData.load()[1];
-		ClassFile[] listFeatures = new SubversionRepositoryClassImplementation()
+		HashMap<String, ClassFile> listFeatures = new SubversionRepositoryClassImplementation()
 				.listClasses(project, user);
 		// new DocumentationUpdater().update(listFeatures[0], "doPlay",
 		// "New Documentation");
