@@ -101,7 +101,7 @@ public class ExportXmlFile {
 							entry.getFilePath()));
 
 					entryElement.appendChild(getElement(xmlDocument,
-							FILE_AUTHOR, entry.getUser().getNickName()));
+							FILE_AUTHOR, entry.getUser().getName()));
 
 					entryElement.appendChild(getElement(xmlDocument, FILE_DATE,
 							entry.getDateModified().getTime() + ""));
