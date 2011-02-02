@@ -18,7 +18,7 @@ import sourceagile.shared.entities.entry.ClassFile;
 
 /**
  * List all the files from the Subversion Repository
- *
+ * 
  */
 public class ListRepositoryClasses {
 
@@ -45,8 +45,8 @@ public class ListRepositoryClasses {
 		return entries;
 	}
 
-	private static void listFilesFromFolder(SVNRepository repository, String path,
-			Collection subversionEntries, List<ClassFile> entries)
+	private static void listFilesFromFolder(SVNRepository repository,
+			String path, Collection subversionEntries, List<ClassFile> entries)
 			throws SVNException, IOException {
 
 		Iterator iterator = subversionEntries.iterator();
@@ -63,7 +63,7 @@ public class ListRepositoryClasses {
 
 				ClassFile entry = getClassFromRepositoryFile(subversionEntry,
 						path);
-				//GetRepositoryClass.getClassFile(repository, entry);
+				// GetRepositoryClass.getClassFile(repository, entry);
 
 				entries.add(entry);
 			}
@@ -94,7 +94,7 @@ public class ListRepositoryClasses {
 		user.setName(subversionEntry.getAuthor());
 		entry.setUser(user);
 
-		//GetRepositoryClass.setEntryFeature(entry);
+		// GetRepositoryClass.setEntryFeature(entry);
 
 		return entry;
 	}

@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import sourceagile.client.ProjectInitialization;
 import sourceagile.documentation.client.Documentation;
-import sourceagile.documentation.client.export.ExportXML;
+import sourceagile.documentation.client.export.ExportXmlFile;
 import sourceagile.shared.entities.Comments;
 import sourceagile.shared.utilities.FileNameGenerator;
 
@@ -26,11 +26,12 @@ public class ListAllComments {
 
 						Documentation.documentationPanel.clear();
 
-						String fileContent = ExportXML.getEntriesXML(comments);
+						String fileContent = ExportXmlFile
+								.getEntriesXML(comments);
 
 						if (fileContent.length() < 100000) {
 
-							Documentation.documentationPanel.add(ExportXML
+							Documentation.documentationPanel.add(ExportXmlFile
 									.getSyntaxPanel(fileContent,
 											"Specification XML format"));
 						}
