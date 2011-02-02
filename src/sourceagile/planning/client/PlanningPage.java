@@ -1,5 +1,7 @@
 package sourceagile.planning.client;
 
+import java.util.HashMap;
+
 import sourceagile.client.GlobalVariables;
 import sourceagile.planning.client.TodoClasses.AddTodoClass;
 import sourceagile.planning.client.TodoClasses.PlanningClassesList;
@@ -24,7 +26,7 @@ public class PlanningPage extends VerticalPanel {
 
 	public VerticalPanel vpProjectBacklog = new VerticalPanel();
 
-	public PlanningPage(ClassFile[] entries) {
+	public PlanningPage(HashMap<String, ClassFile> entries) {
 
 		VerticalPanel vp = new VerticalPanel();
 		vp.setSize("97%", "100%");

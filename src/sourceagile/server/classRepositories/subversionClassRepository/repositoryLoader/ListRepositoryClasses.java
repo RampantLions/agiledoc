@@ -1,12 +1,10 @@
 package sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 
 import org.tmatesoft.svn.core.SVNDirEntry;
 import org.tmatesoft.svn.core.SVNException;
@@ -18,36 +16,34 @@ import sourceagile.shared.entities.entry.ClassFile;
 
 /**
  * List all the files from the Subversion Repository
- *
+ * 
  */
 public class ListRepositoryClasses {
 
-	public static ClassFile[] listAllRepositoryFiles(SVNRepository repository)
-			throws SVNException, IOException {
+	public static HashMap<String, ClassFile> listAllRepositoryFiles(
+			SVNRepository repository) throws SVNException, IOException {
 
-		List<ClassFile> entriesList = listRepositoryFolder(repository, "",
-				new ArrayList<ClassFile>());
+		HashMap<String, ClassFile> classFiles = new HashMap<String, ClassFile>();
 
-		ClassFile[] entries = sortClassesList(entriesList);
+		listRepositoryFolder(repository, "", classFiles);
 
-		return entries;
+		return classFiles;
 	}
 
-	public static List<ClassFile> listRepositoryFolder(
-			SVNRepository repository, String folderPath, List<ClassFile> entries)
+	public static void listRepositoryFolder(SVNRepository repository,
+			String folderPath, HashMap<String, ClassFile> entries)
 			throws SVNException, IOException {
 
 		Collection subFolderEntries = repository.getDir(folderPath, -1, null,
 				(Collection) null);
 
 		listFilesFromFolder(repository, folderPath, subFolderEntries, entries);
-
-		return entries;
 	}
 
-	private static void listFilesFromFolder(SVNRepository repository, String path,
-			Collection subversionEntries, List<ClassFile> entries)
-			throws SVNException, IOException {
+	private static void listFilesFromFolder(SVNRepository repository,
+			String path, Collection subversionEntries,
+			HashMap<String, ClassFile> entries) throws SVNException,
+			IOException {
 
 		Iterator iterator = subversionEntries.iterator();
 
@@ -63,9 +59,9 @@ public class ListRepositoryClasses {
 
 				ClassFile entry = getClassFromRepositoryFile(subversionEntry,
 						path);
-				//GetRepositoryClass.getClassFile(repository, entry);
+				// GetRepositoryClass.getClassFile(repository, entry);
 
-				entries.add(entry);
+				entries.put(entry.toString(), entry);
 			}
 		}
 	}
@@ -94,20 +90,9 @@ public class ListRepositoryClasses {
 		user.setName(subversionEntry.getAuthor());
 		entry.setUser(user);
 
-		//GetRepositoryClass.setEntryFeature(entry);
+		// GetRepositoryClass.setEntryFeature(entry);
 
 		return entry;
-	}
-
-	public static ClassFile[] sortClassesList(List<ClassFile> entriesList) {
-
-		ClassFile[] entries = new ClassFile[entriesList.size()];
-
-		entriesList.toArray(entries);
-
-		Arrays.sort(entries);
-
-		return entries;
 	}
 
 }

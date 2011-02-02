@@ -1,9 +1,7 @@
 package sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.io.SVNRepository;
@@ -16,13 +14,12 @@ public class ListRepositoryComponentClasses {
 			SVNRepository repository, String componentPath)
 			throws SVNException, IOException {
 
-		List<ClassFile> entriesList = ListRepositoryClasses
-				.listRepositoryFolder(repository, componentPath,
-						new ArrayList<ClassFile>());
-
 		HashMap<String, ClassFile> classesMap = new HashMap<String, ClassFile>();
 
-		for (ClassFile classFile : entriesList) {
+		ListRepositoryClasses.listRepositoryFolder(repository, componentPath,
+				classesMap);
+
+		for (ClassFile classFile : classesMap.values()) {
 
 			GetRepositoryClass.getClassFile(repository, classFile);
 

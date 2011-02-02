@@ -12,7 +12,7 @@ public class SaveProject {
 		final ProjectDatabaseServerCallsAsync databaseServerCalls = GWT
 				.create(ProjectDatabaseServerCalls.class);
 
-		databaseServerCalls.saveProject(project, new AsyncCallback<Void>() {
+		databaseServerCalls.updateProject(project, new AsyncCallback<Void>() {
 
 			public void onSuccess(Void result) {
 

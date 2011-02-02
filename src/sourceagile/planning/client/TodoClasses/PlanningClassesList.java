@@ -1,5 +1,7 @@
 package sourceagile.planning.client.TodoClasses;
 
+import java.util.HashMap;
+
 import sourceagile.development.client.Development;
 import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
@@ -17,7 +19,7 @@ import com.google.gwt.user.client.ui.Image;
  */
 public class PlanningClassesList extends FlexTable {
 
-	public PlanningClassesList(ClassFile[] entries) {
+	public PlanningClassesList(HashMap<String, ClassFile> entries) {
 
 		setBorderWidth(1);
 		setWidth("900px");
@@ -44,12 +46,12 @@ public class PlanningClassesList extends FlexTable {
 		this.getColumnFormatter().setWidth(3, "50px");
 	}
 
-	private void gridRows(ClassFile[] entries) {
+	private void gridRows(HashMap<String, ClassFile> entries) {
 
 		if (entries != null) {
 
 			int row = 0;
-			for (ClassFile entry : entries) {
+			for (ClassFile entry : entries.values()) {
 
 				if (entry.getClassDoc() != null && entry.getClassDoc().isTodo()) {
 

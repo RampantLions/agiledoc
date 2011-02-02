@@ -18,9 +18,6 @@ public interface LoadRemoteClassesAsync {
 	void createClass(Project project, User user, ClassFile classFile,
 			String newSubfolderName, AsyncCallback<Void> callback);
 
-	void listClasses(Project project, User user,
-			AsyncCallback<ClassFile[]> callback);
-
 	void listComponentClasses(Project project, User user, String componentPath,
 			AsyncCallback<HashMap<String, ClassFile>> callback);
 
@@ -29,5 +26,8 @@ public interface LoadRemoteClassesAsync {
 
 	void editClass(Project project, User user, ClassFile classFile,
 			String classDescription, AsyncCallback<Void> callback);
+
+	void listClasses(Project currentProject, User currentUser,
+			AsyncCallback<HashMap<String, ClassFile>> asyncCallback);
 
 }

@@ -14,7 +14,7 @@ public class Project implements Serializable {
 
 	public static final String REPOSITORY_TYPE_SUBVERSION = "Subversion";
 	public static final String REPOSITORY_TYPE_GIT = "Git";
-	public static final String REPOSITORY_TYPE_XML = "Xml";
+	public static final String REPOSITORY_TYPE_XML = "XML";
 
 	private Long projectID;
 

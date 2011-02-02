@@ -32,7 +32,8 @@ public class ListTaggedClasses extends VerticalPanel {
 
 			boolean showComponent = false;
 
-			for (final ClassFile entry : ProjectInitialization.projectEntries) {
+			for (final ClassFile entry : ProjectInitialization.projectEntries
+					.values()) {
 
 				if (projectComponent.getComponentPath() != null
 						&& entry.getFilePath().startsWith(

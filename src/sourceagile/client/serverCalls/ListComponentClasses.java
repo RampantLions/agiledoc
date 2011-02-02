@@ -25,21 +25,15 @@ public class ListComponentClasses {
 					GlobalVariables.currentUser, component.getComponentPath(),
 					new AsyncCallback<HashMap<String, ClassFile>>() {
 
-						public void onSuccess(HashMap<String, ClassFile> entries) {
+						public void onSuccess(
+								HashMap<String, ClassFile> classComponent) {
 
-							if (ProjectInitialization.projectEntries != null) {
+							for (ClassFile classFileComponent : classComponent
+									.values()) {
 
-								for (int i = 0; i < ProjectInitialization.projectEntries.length; i++) {
-
-									ClassFile projectClass = ProjectInitialization.projectEntries[i];
-
-									if (projectClass.getFilePath().startsWith(
-											component.getComponentPath())) {
-
-										ProjectInitialization.projectEntries[i] = entries
-												.get(projectClass.toString());
-									}
-								}
+								ProjectInitialization.projectEntries.put(
+										classFileComponent.toString(),
+										classFileComponent);
 							}
 						}
 
@@ -47,7 +41,6 @@ public class ListComponentClasses {
 							// Show the RPC error message to the user
 
 						}
-
 					});
 		}
 	}

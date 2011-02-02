@@ -8,6 +8,7 @@ import sourceagile.shared.entities.Comments;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Method;
 import sourceagile.shared.entities.project.ProjectComponents;
+import sourceagile.shared.utilities.SortClassFiles;
 
 import com.google.gwt.xml.client.Document;
 import com.google.gwt.xml.client.Element;
@@ -83,7 +84,10 @@ public class ExportXmlFile {
 
 			componentElement.appendChild(entriesElement);
 
-			for (ClassFile entry : ProjectInitialization.projectEntries) {
+			ClassFile[] classFiles = SortClassFiles
+					.getSortedArray(ProjectInitialization.projectEntries);
+
+			for (ClassFile entry : classFiles) {
 
 				if (entry.getFilePath() != null
 						&& entry.getFilePath().startsWith(
