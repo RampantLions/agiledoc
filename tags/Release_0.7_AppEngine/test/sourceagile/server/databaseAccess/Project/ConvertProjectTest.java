@@ -20,15 +20,17 @@ public class ConvertProjectTest extends TestCase {
 
 		Project project = ProjectsData.loadProject0();
 
-		sourceagile.server.databaseAccess.entities.Project getDatabaseProjectTested = ConvertProject
-				.getDatabaseProject(project);
+		sourceagile.server.databaseAccess.entities.Project databaseProjectTested = ConvertProjectToDatabase
+				.getDatabaseProject(
+						new sourceagile.server.databaseAccess.entities.Project(),
+						project);
 
-		assertNotNull(getDatabaseProjectTested);
+		assertNotNull(databaseProjectTested);
 
-		Project getProjectTested = ConvertProject
-				.getProject(getDatabaseProjectTested);
+		Project projectTested = ConvertDatabaseToProject
+				.getProject(databaseProjectTested);
 
-		assertNotNull(getProjectTested);
+		assertNotNull(projectTested);
 	}
 
 }
