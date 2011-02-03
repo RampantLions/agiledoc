@@ -12,13 +12,19 @@ import com.google.gwt.user.client.ui.HTML;
  */
 public class ButtonJavadoc extends HTML {
 
+	public static final String imageUnpressed = "<a href='#'><img src='images/javadoc.gif'></a>";
+	public static final String imagePressed = "<a href='#'><img src='images/javadocHighlighted.gif'></a>";
+
 	public ButtonJavadoc(final ClassFile entry) {
 
-		this.setHTML("<a href='#'><img src='images/javadoc.gif'></a>");
+		this.setHTML(imageUnpressed);
 		this.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
+
+				OptionsIcons.toggledButtons();
+				OptionsIcons.buttonJavadoc.setHTML(imagePressed);
 
 				new JavadocView(entry);
 			}

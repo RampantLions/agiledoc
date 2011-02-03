@@ -4,6 +4,8 @@ import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
 import sourceagile.development.client.classesList.ComponentsList;
 import sourceagile.development.client.classesList.ListFiles;
+import sourceagile.development.client.features.ButtonFeatureDescription;
+import sourceagile.development.client.features.ButtonSourceCode;
 import sourceagile.development.client.features.FeatureDescription;
 import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.development.client.features.OptionsIcons;
@@ -11,6 +13,7 @@ import sourceagile.development.client.sourceCode.SourceCodeView;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
@@ -76,6 +79,10 @@ public class Development {
 
 		optionsPanel.add(linkFeatures);
 
+		Label labelspace = new Label(" ");
+		labelspace.setWidth("50px");
+		optionsPanel.add(labelspace);
+
 		optionsPanel.add(linkSource);
 
 		return optionsPanel;
@@ -109,10 +116,16 @@ public class Development {
 
 		if (viewOption == OptionsIcons.OPTION_DESCRIPTION) {
 
+			OptionsIcons.buttonDescription
+					.setHTML(ButtonFeatureDescription.imagePressed);
+
 			FeatureVizualizationPanel.featureContent
 					.add(new FeatureDescription(entry));
 
 		} else if (viewOption == OptionsIcons.OPTION_SOURCE) {
+
+			OptionsIcons.buttonSourceCode
+					.setHTML(ButtonSourceCode.imagePressed);
 
 			new SourceCodeView(entry);
 		}

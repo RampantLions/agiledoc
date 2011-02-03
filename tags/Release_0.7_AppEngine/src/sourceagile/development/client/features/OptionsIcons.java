@@ -11,20 +11,39 @@ public class OptionsIcons extends HorizontalPanel {
 	public static final int OPTION_SOURCE = 4;
 	public static final int OPTION_ALLCLASSES = 5;
 
+	public static ButtonFeatureDescription buttonDescription;
+	public static ButtonEditFeature buttonEditFeature;
+	public static ButtonTest buttonTest;
+	public static ButtonJavadoc buttonJavadoc;
+	public static ButtonSourceCode buttonSourceCode;
+
 	public OptionsIcons(ClassFile entry) {
 
 		setSpacing(10);
 
-		add(new ButtonFeatureDescription(entry));
+		buttonDescription = new ButtonFeatureDescription(entry);
+		add(buttonDescription);
 
-		add(new ButtonEditFeature(entry));
+		buttonEditFeature = new ButtonEditFeature(entry);
+		add(buttonEditFeature);
 
-		add(new ButtonTest(entry));
+		buttonTest = new ButtonTest(entry);
+		add(buttonTest);
 
-		add(new ButtonJavadoc(entry));
+		buttonJavadoc = new ButtonJavadoc(entry);
+		add(buttonJavadoc);
 
-		add(new ButtonSourceCode(entry));
+		buttonSourceCode = new ButtonSourceCode(entry);
+		add(buttonSourceCode);
 
 	}
 
+	public static void toggledButtons() {
+
+		buttonDescription.setHTML(ButtonFeatureDescription.imageUnpressed);
+		buttonEditFeature.setHTML(ButtonEditFeature.imageUnpressed);
+		buttonJavadoc.setHTML(ButtonJavadoc.imageUnpressed);
+		buttonTest.setHTML(ButtonTest.imageUnpressed);
+		buttonSourceCode.setHTML(ButtonSourceCode.imageUnpressed);
+	}
 }
