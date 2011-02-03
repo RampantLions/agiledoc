@@ -1,5 +1,6 @@
 package sourceagile.development.client.features;
 
+import sourceagile.development.client.sourceCode.SourceCodeView;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -106,7 +107,7 @@ public class OptionsIcons extends HorizontalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				// new SourceCodeView(entry);
+				new SourceCodeView(entry);
 			}
 		});
 

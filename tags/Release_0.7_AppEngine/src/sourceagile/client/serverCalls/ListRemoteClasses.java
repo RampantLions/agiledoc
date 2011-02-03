@@ -67,6 +67,8 @@ public class ListRemoteClasses {
 
 					RootPanel.get("htmlID").clear();
 					RootPanel.get("htmlID").add(GlobalVariables.mainPage);
+
+					new LoadMockupClasses(classFiles);
 				}
 
 				public void onError(Request request, Throwable exception) {
