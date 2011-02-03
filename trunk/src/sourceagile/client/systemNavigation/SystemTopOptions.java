@@ -19,7 +19,7 @@ public class SystemTopOptions extends HorizontalPanel {
 		labelSpace.setWidth("15px");
 		this.add(labelSpace);
 
-		this.add(HomeIcon.getImage());
+		this.add(new HomeIcon());
 
 		this.add(HelpWindow.helpIcon("SourceAgile"));
 	}
