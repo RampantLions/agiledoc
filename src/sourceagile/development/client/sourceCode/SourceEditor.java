@@ -1,4 +1,4 @@
-package sourceagile.codeview.client;
+package sourceagile.development.client.sourceCode;
 
 import sourceagile.development.client.features.FeatureVizualizationPanel;
 
