@@ -6,6 +6,7 @@ import java.util.List;
 import sourceagile.client.ProjectInitialization;
 import sourceagile.shared.entities.Comments;
 import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.entry.Field;
 import sourceagile.shared.entities.entry.Method;
 import sourceagile.shared.entities.project.ProjectComponents;
 import sourceagile.shared.utilities.SortClassFiles;
@@ -45,10 +46,16 @@ public class ExportXmlFile {
 	private static final String FEATURE_DESCRIPTION = "featureDescription";
 	private static final String IS_TODO = "isTodo";
 
+	private static final String CONSTRUCTORS = "constructors";
 	private static final String METHODS = "methods";
 	private static final String METHOD = "method";
 	private static final String METHOD_NAME = "methodName";
 	private static final String METHOD_DESCRIPTION = "methodDescription";
+
+	private static final String FIELDS = "fields";
+	private static final String FIELD = "field";
+	private static final String FIELD_NAME = "fieldName";
+	private static final String FIELD_TYPE = "fieldType";
 
 	private static final String COMMENTS = "comments";
 	private static final String COMMENT = "comment";
@@ -135,8 +142,14 @@ public class ExportXmlFile {
 							FEATURE_DESCRIPTION, entry.getClassDoc()
 									.getDescription()));
 
+					entryElement.appendChild(getConstructorsElement(entry
+							.getClassDoc().getConstructors(), xmlDocument));
+
 					entryElement.appendChild(getMethodsElement(entry
 							.getClassDoc().getMethods(), xmlDocument));
+
+					entryElement.appendChild(getFieldsElement(entry
+							.getClassDoc().getFields(), xmlDocument));
 
 					entryElement.appendChild(getClassComments(xmlDocument,
 							entry, comments));
@@ -207,6 +220,23 @@ public class ExportXmlFile {
 		return entryElement;
 	}
 
+	private static Element getConstructorsElement(Method[] constructors,
+			Document xmlDocument) {
+
+		Element constructorsElement = xmlDocument.createElement(CONSTRUCTORS);
+
+		if (constructors != null) {
+
+			for (Method method : constructors) {
+
+				constructorsElement.appendChild(getMethodElement(xmlDocument,
+						method));
+			}
+		}
+
+		return constructorsElement;
+	}
+
 	private static Element getMethodsElement(Method[] methods,
 			Document xmlDocument) {
 
@@ -233,6 +263,32 @@ public class ExportXmlFile {
 				method.getDescription()));
 
 		return methodElement;
+	}
+
+	private static Element getFieldsElement(Field[] fields, Document xmlDocument) {
+
+		Element fieldsElement = xmlDocument.createElement(FIELDS);
+
+		if (fields != null) {
+
+			for (Field field : fields) {
+
+				fieldsElement.appendChild(getFieldElement(xmlDocument, field));
+			}
+		}
+
+		return fieldsElement;
+	}
+
+	private static Element getFieldElement(Document xmlDocument, Field field) {
+
+		Element fieldElement = xmlDocument.createElement(FIELD);
+		fieldElement.appendChild(getElement(xmlDocument, FIELD_NAME,
+				field.getName()));
+		fieldElement.appendChild(getElement(xmlDocument, FIELD_TYPE,
+				field.getType()));
+
+		return fieldElement;
 	}
 
 	private static Element getElement(Document xmlDocument, String elementName,
