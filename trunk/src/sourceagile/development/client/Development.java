@@ -2,12 +2,12 @@ package sourceagile.development.client;
 
 import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
-import sourceagile.codeview.client.SourceCodeView;
 import sourceagile.development.client.classesList.ListFiles;
 import sourceagile.development.client.classesList.ComponentsList;
 import sourceagile.development.client.features.FeatureDescription;
 import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.development.client.features.OptionsIcons;
+import sourceagile.development.client.sourceCode.SourceCodeView;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;

@@ -1,6 +1,6 @@
 package sourceagile.development.client.features;
 
-import sourceagile.codeview.client.SourceCodeView;
+import sourceagile.development.client.sourceCode.SourceCodeView;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.testing.client.serverCalls.GetRemoteTestClass;
 
