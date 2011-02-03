@@ -7,6 +7,7 @@ import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Feature;
+import sourceagile.shared.entities.entry.Field;
 import sourceagile.shared.entities.entry.Method;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 
@@ -30,9 +31,15 @@ public class ConvertRemoteClassesXML {
 	private static final String FEATURE_DESCRIPTION = "featureDescription";
 	private static final String IS_TODO = "isTodo";
 
+	private static final String CONSTRUCTORS = "constructors";
+	private static final String METHODS = "methods";
 	private static final String METHOD = "method";
 	private static final String METHOD_NAME = "methodName";
 	private static final String METHOD_DESCRIPTION = "methodDescription";
+
+	private static final String FIELD = "field";
+	private static final String FIELD_NAME = "fieldName";
+	private static final String FIELD_TYPE = "fieldType";
 
 	public static HashMap<String, ClassFile> getClasses(String xmlContent) {
 
@@ -137,14 +144,18 @@ public class ConvertRemoteClassesXML {
 					.getChildNodes().toString());
 		}
 
-		classDocumentation.setMethods(entryMethods(entryElement));
+		classDocumentation.setConstructors(entryMethods(entryElement
+				.getElementsByTagName(CONSTRUCTORS).item(0).getChildNodes()));
+
+		classDocumentation.setMethods(entryMethods(entryElement
+				.getElementsByTagName(METHODS).item(0).getChildNodes()));
+
+		classDocumentation.setFields(getFields(entryElement));
 
 		return classDocumentation;
 	}
 
-	private static Method[] entryMethods(Element entryElement) {
-
-		NodeList xmlMethods = entryElement.getElementsByTagName(METHOD);
+	private static Method[] entryMethods(NodeList xmlMethods) {
 
 		Method[] methods = new Method[xmlMethods.getLength()];
 
@@ -168,5 +179,29 @@ public class ConvertRemoteClassesXML {
 		}
 
 		return methods;
+	}
+
+	private static Field[] getFields(Element entryElement) {
+
+		NodeList xmlFields = entryElement.getElementsByTagName(FIELD);
+
+		Field[] fields = new Field[xmlFields.getLength()];
+
+		for (int i = 0; i < xmlFields.getLength(); i++) {
+
+			Element fieldElement = (Element) xmlFields.item(i);
+
+			Field field = new Field();
+
+			field.setName(fieldElement.getElementsByTagName(FIELD_NAME).item(0)
+					.getChildNodes().toString());
+
+			field.setType(fieldElement.getElementsByTagName(FIELD_TYPE).item(0)
+					.getChildNodes().toString());
+
+			fields[i] = field;
+		}
+
+		return fields;
 	}
 }
