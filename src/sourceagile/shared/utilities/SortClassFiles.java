@@ -12,7 +12,7 @@ public class SortClassFiles {
 
 		ClassFile[] entries = new ClassFile[classesMap.size()];
 
-		classesMap.keySet().toArray(entries);
+		classesMap.values().toArray(entries);
 
 		Arrays.sort(entries);
 
