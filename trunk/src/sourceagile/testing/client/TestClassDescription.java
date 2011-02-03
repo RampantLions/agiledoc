@@ -1,9 +1,9 @@
 package sourceagile.testing.client;
 
-import sourceagile.codeview.client.SourceCodeView;
 import sourceagile.development.client.Development;
 import sourceagile.development.client.features.FeatureDescription;
 import sourceagile.development.client.features.FeatureVizualizationPanel;
+import sourceagile.development.client.sourceCode.SourceCodeView;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.utilities.LoadingPanel;
 import sourceagile.testing.client.serverCalls.AddTestClass;
