@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectID>3</projectID>
+	<projectName>Help Agile</projectName>
+	<projectDomain>helpagile</projectDomain>
+	<projectDescription>Help Agile is an automatic generated specification
+		and user documentation for your software.</projectDescription>
+	<projectComponents>
+		<projectComponent componentName="Help Agile"
+			componentPath="client">
+			<entries>
+				<entry featureType="Architecture" isTodo="false">
+					<className>HelpAgile</className>
+					<classPath>client</classPath>
+					<featurePath></featurePath>
+					<featureName>Help Agile</featureName>
+					<featureDescription>Entry point classes define
+						&lt;code&gt;onModuleLoad()&lt;/code&gt; for Google Web
+						Toolkit.</featureDescription>
+					<methods>
+						<method>
+							<methodName>onModuleLoad</methodName>
+							<methodDescription>This is the entry point method.
+							</methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>HelpInitialization</className>
+					<classPath>client</classPath>
+					<featurePath></featurePath>
+					<featureName>Help Initialization</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>initHelp</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>initHelp</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>InternationalizationConstants</className>
+					<classPath>client</classPath>
+					<featurePath></featurePath>
+					<featureName>Internationalization Constants</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>userManual</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>specification</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>introduction</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>featuresList</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>architecture</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>entities</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>topics</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>HelpHint</className>
+					<classPath>client/exportation</classPath>
+					<featurePath>exportation</featurePath>
+					<featureName>Help Hint</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getHelpHint</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getHelpHint</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getHelpHintLinked</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>HelpWindow</className>
+					<classPath>client/exportation</classPath>
+					<featurePath>exportation</featurePath>
+					<featureName>Help Window</featureName>
+					<featureDescription>Open a window with the help instructions for
+						this application.</featureDescription>
+					<methods>
+						<method>
+							<methodName>open</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>helpLink</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>helpLinkText</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>helpIcon</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>Help</className>
+					<classPath>client/userInterface</classPath>
+					<featurePath>userInterface</featurePath>
+					<featureName>Help</featureName>
+					<featureDescription>Instructions for the application functions
+						while using the it, to try solve
+						user problems.</featureDescription>
+					<methods>
+						<method>
+							<methodName>setHelpPage</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="Feature" isTodo="false">
+					<className>ListEntriesFiltered</className>
+					<classPath>client/userInterface</classPath>
+					<featurePath>userInterface</featurePath>
+					<featureName>List Entries Filtered</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>ProjectDescription</className>
+					<classPath>client/userInterface</classPath>
+					<featurePath>userInterface</featurePath>
+					<featureName>Project Description</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>ButtonSaveComment</className>
+					<classPath>client/userInterface/feature</classPath>
+					<featurePath>userInterface/feature</featurePath>
+					<featureName>Button Save Comment</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>setComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="Feature" isTodo="false">
+					<className>CommentsForm</className>
+					<classPath>client/userInterface/feature</classPath>
+					<featurePath>userInterface/feature</featurePath>
+					<featureName>Comments Form</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>FeaturePanel</className>
+					<classPath>client/userInterface/feature</classPath>
+					<featurePath>userInterface/feature</featurePath>
+					<featureName>Feature Panel</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="Feature" isTodo="false">
+					<className>HelpItemDescription</className>
+					<classPath>client/userInterface/feature</classPath>
+					<featurePath>userInterface/feature</featurePath>
+					<featureName>Help Item Description</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>featureName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>featureMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>HelpHeader</className>
+					<classPath>client/userInterface/header</classPath>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Help Header</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>HelpTitle</className>
+					<classPath>client/userInterface/header</classPath>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Help Title</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>HomeIcon</className>
+					<classPath>client/userInterface/header</classPath>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Home Icon</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getImage</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>ProjectName</className>
+					<classPath>client/userInterface/header</classPath>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Project Name</featureName>
+					<featureDescription>Name and information about the current project
+						being showed in the user
+						manual.</featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="Feature" isTodo="false">
+					<className>SearchBox</className>
+					<classPath>client/userInterface/header</classPath>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Search Box</featureName>
+					<featureDescription>Execute searching on all the topics of this
+						help.</featureDescription>
+					<methods>
+						<method>
+							<methodName>getSearchIcon</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>ComponentClassesList</className>
+					<classPath>client/userInterface/menu</classPath>
+					<featurePath>userInterface/menu</featurePath>
+					<featureName>Component Classes List</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getFeatureLink</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<className>ComponentsList</className>
+					<classPath>client/userInterface/menu</classPath>
+					<featurePath>userInterface/menu</featurePath>
+					<featureName>Components List</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>checkIfHasClasses</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>HelpMenu</className>
+					<classPath>client/userInterface/menu</classPath>
+					<featurePath>userInterface/menu</featurePath>
+					<featureName>Help Menu</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>ConvertSpecificationXML</className>
+					<classPath>client/utilities</classPath>
+					<featurePath>utilities</featurePath>
+					<featureName>Convert Specification</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>convertHelpEntries</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectElement</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectComponents</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectEntries</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getHelpEntryFromElement</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>entryMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>FeatureNameGenerator</className>
+					<classPath>client/utilities</classPath>
+					<featurePath>utilities</featurePath>
+					<featureName>Feature Name Generator</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>spacedName</methodName>
+							<methodDescription>Fill with spaces a name that is truncated.
+							</methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="Architecture" isTodo="false">
+					<className>LoadSpecificationXML</className>
+					<classPath>client/utilities</classPath>
+					<featurePath>utilities</featurePath>
+					<featureName>Load Specification</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>loadXMLFile</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="true">
+					<className>SearchEngine</className>
+					<classPath>client/utilities</classPath>
+					<featurePath>utilities</featurePath>
+					<featureName>Search Engine</featureName>
+					<featureDescription>Realizes the search of the system.
+					</featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>StringUtilsServerCalls</className>
+					<classPath>client/utilities/ServerCalls</classPath>
+					<featurePath>utilities/ServerCalls</featurePath>
+					<featureName>String Utils Server Calls</featureName>
+					<featureDescription>The client side stub for the RPC service.
+					</featureDescription>
+					<methods>
+						<method>
+							<methodName>unescapeHtml</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>StringUtilsServerCallsAsync</className>
+					<classPath>client/utilities/ServerCalls</classPath>
+					<featurePath>utilities/ServerCalls</featurePath>
+					<featureName>String Utils Server Calls Async</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>unescapeHtml</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<className>StringUtilsService</className>
+					<classPath>client/utilities/ServerCalls</classPath>
+					<featurePath>utilities/ServerCalls</featurePath>
+					<featureName>String Utils Service</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>unescapeHtml</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+	</projectComponents>
+</project>
