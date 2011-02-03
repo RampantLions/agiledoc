@@ -19,8 +19,10 @@ public class ListFiles extends VerticalPanel {
 
 	public ListFiles(HashMap<String, ClassFile> entries) {
 
-		Label space = new Label(" ");
-		this.add(space);
+		this.setSpacing(10);
+
+		Label labelSpace = new Label(" ");
+		this.add(labelSpace);
 
 		TreePanel treePanel = new TreePanel();
 		treePanel.setBorder(false);
