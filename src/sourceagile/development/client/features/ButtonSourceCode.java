@@ -13,13 +13,19 @@ import com.google.gwt.user.client.ui.HTML;
  */
 public class ButtonSourceCode extends HTML {
 
+	public static final String imageUnpressed = "<a href='#'><img src='images/source.gif'></a>";
+	public static final String imagePressed = "<a href='#'><img src='images/sourceHighlighted.gif'></a>";
+
 	public ButtonSourceCode(final ClassFile entry) {
 
-		this.setHTML("<a href='#'><img src='images/source.gif'></a>");
+		this.setHTML(imageUnpressed);
 		this.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
+
+				OptionsIcons.toggledButtons();
+				OptionsIcons.buttonSourceCode.setHTML(imagePressed);
 
 				new SourceCodeView(entry);
 			}
