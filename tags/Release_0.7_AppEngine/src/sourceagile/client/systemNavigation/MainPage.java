@@ -35,7 +35,7 @@ public class MainPage extends VerticalPanel {
 
 		panelMenus.add(new ProjectMenu());
 
-		panelMenus.add(new SystemOptions());
+		panelMenus.add(new SystemTopOptions());
 
 		this.add(panelMenus);
 	}

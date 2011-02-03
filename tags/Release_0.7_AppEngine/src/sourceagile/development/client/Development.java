@@ -7,11 +7,9 @@ import sourceagile.development.client.classesList.ListFiles;
 import sourceagile.development.client.features.FeatureDescription;
 import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.development.client.features.OptionsIcons;
+import sourceagile.development.client.sourceCode.SourceCodeView;
 import sourceagile.shared.entities.entry.ClassFile;
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -24,6 +22,9 @@ public class Development {
 
 	public static VerticalPanel featuresTreePanel = new VerticalPanel();
 	public static VerticalPanel featureVisualizationPanel = new VerticalPanel();
+
+	public static LinkFeatures linkFeatures = new LinkFeatures();
+	public static LinkSource linkSource = new LinkSource();
 
 	public Development() {
 
@@ -53,7 +54,7 @@ public class Development {
 
 		hp.add(vpTree);
 
-		showTree(viewOption);
+		showClassesTree(viewOption);
 
 		featureVisualizationPanel.clear();
 		featureVisualizationPanel.setSpacing(20);
@@ -73,45 +74,28 @@ public class Development {
 
 		HorizontalPanel optionsPanel = new HorizontalPanel();
 
-		HTML htmlFeatures = new HTML("<font size=1>Features</font>");
-		htmlFeatures.setWidth("60px");
+		optionsPanel.add(linkFeatures);
 
-		htmlFeatures.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				showTree(OptionsIcons.OPTION_ALLCLASSES);
-			}
-		});
-
-		optionsPanel.add(htmlFeatures);
-
-		HTML htmlSource = new HTML("<font size=1>Source</font>");
-
-		htmlSource.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				showTree(OptionsIcons.OPTION_SOURCE);
-			}
-		});
-
-		optionsPanel.add(htmlSource);
+		optionsPanel.add(linkSource);
 
 		return optionsPanel;
 	}
 
-	private static void showTree(int viewOption) {
+	public static void showClassesTree(int viewOption) {
 
 		featuresTreePanel.clear();
 
 		if (viewOption == OptionsIcons.OPTION_SOURCE) {
 
+			linkFeatures.setHTML(LinkFeatures.textUnpressed);
+			linkSource.setHTML(LinkSource.textPressed);
+
 			featuresTreePanel.add(new ListFiles(
 					ProjectInitialization.projectEntries));
 		} else {
+
+			linkFeatures.setHTML(LinkFeatures.textPressed);
+			linkSource.setHTML(LinkSource.textUnpressed);
 
 			featuresTreePanel.add(new ComponentsList());
 		}
@@ -130,8 +114,7 @@ public class Development {
 
 		} else if (viewOption == OptionsIcons.OPTION_SOURCE) {
 
-			// new SourceCodeView(entry);
+			new SourceCodeView(entry);
 		}
 	}
-
 }
