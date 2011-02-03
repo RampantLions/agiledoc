@@ -22,7 +22,7 @@ public class ProjectSelectionPanel extends VerticalPanel {
 
 	public ProjectSelectionPanel(List<Project> projects) {
 
-		projectList = new ProjectList(projects);
+		projectList = new ProjectList(true);
 
 		this.add(new Label(internationalizationConstants.selectAProject()
 				+ ": "));
