@@ -1,10 +1,14 @@
-package sourceagile.development.client.features;
+package sourceagile.development.client.features.edit;
 
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 
 import com.google.gwt.user.client.ui.ListBox;
 
+/**
+ * 
+ * @UserManual
+ */
 public class ClassTypeList extends ListBox {
 
 	public ClassTypeList(String classType) {

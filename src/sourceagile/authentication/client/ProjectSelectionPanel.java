@@ -2,6 +2,7 @@ package sourceagile.authentication.client;
 
 import java.util.List;
 
+import sourceagile.client.GlobalVariables;
 import sourceagile.client.InternationalizationConstants;
 import sourceagile.shared.entities.project.Project;
 
@@ -22,7 +23,14 @@ public class ProjectSelectionPanel extends VerticalPanel {
 
 	public ProjectSelectionPanel(List<Project> projects) {
 
-		projectList = new ProjectList(projects);
+		if (GlobalVariables.isReadyOnly) {
+
+			projectList = new ProjectList();
+
+		} else {
+
+			projectList = new ProjectList(projects);
+		}
 
 		this.add(new Label(internationalizationConstants.selectAProject()
 				+ ": "));
