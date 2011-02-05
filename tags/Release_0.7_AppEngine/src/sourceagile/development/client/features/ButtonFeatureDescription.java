@@ -23,6 +23,8 @@ public class ButtonFeatureDescription extends HTML {
 			@Override
 			public void onClick(ClickEvent event) {
 
+				FeatureVizualizationPanel.featureContent.clear();
+
 				OptionsIcons.toggledButtons();
 				OptionsIcons.buttonDescription.setHTML(imagePressed);
 

@@ -9,6 +9,7 @@ import sourceagile.shared.entities.entry.ClassFile;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.FlexTable;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 
@@ -72,9 +73,9 @@ public class PlanningClassesList extends FlexTable {
 		}
 	}
 
-	private static Image iconEditTodoFeature(final ClassFile entry) {
+	private static HTML iconEditTodoFeature(final ClassFile entry) {
 
-		Image img = new Image("images/edit.gif");
+		HTML img = new HTML("<a href='#'><img src='images/list.gif'></a>");
 		img.addClickHandler(new ClickHandler() {
 
 			@Override
@@ -84,7 +85,7 @@ public class PlanningClassesList extends FlexTable {
 			}
 		});
 
-		img.setTitle("Edit Planned Feature");
+		img.setTitle("Show Planning Feature");
 
 		return img;
 	}
