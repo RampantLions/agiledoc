@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectName>Help Agile</projectName>
+	<projectDomain>helpagile</projectDomain>
+	<projectDescription>Help Agile is an automatic generated specification
+		and user documentation for your software.</projectDescription>
+	<projectComponents>
+		<projectComponent componentName="Help Agile"
+			componentPath="client">
+			<entries>
+				<entry featureType="">
+					<className>HelpAgile</className>
+					<classPath>client</classPath>
+					<featurePath></featurePath>
+					<featureName>Help Agile</featureName>
+					<featureDescription>Entry point classes define
+						&lt;code&gt;onModuleLoad()&lt;/code&gt;.</featureDescription>
+					<methods>
+						<method>
+							<methodName>onModuleLoad</methodName>
+							<methodDescription>This is the entry point method.
+							</methodDescription>
+						</method>
+						<method>
+							<methodName>initHelp</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>initHelp</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>InternationalizationConstants</className>
+					<classPath>client</classPath>
+					<featurePath></featurePath>
+					<featureName>Internationalization Constants</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>userManual</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>specification</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>introduction</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>featuresList</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>architecture</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>entities</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>topics</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="Entity">
+					<className>HelpEntry</className>
+					<classPath>client/entities</classPath>
+					<featurePath>entities</featurePath>
+					<featureName>Help Entry</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getFilePath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFilePath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFileName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFileName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFeatureType</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFeatureType</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFeaturePath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFeaturePath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFeatureName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFeatureName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFeatureDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFeatureDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="Entity">
+					<className>HelpMethod</className>
+					<classPath>client/entities</classPath>
+					<featurePath>entities</featurePath>
+					<featureName>Help Method</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getReturnType</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setReturnType</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getParameters</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setParameters</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getSpacedName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setSpacedName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>toString</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="Entity">
+					<className>Project</className>
+					<classPath>client/entities/project</classPath>
+					<featurePath>entities/project</featurePath>
+					<featureName>Project</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDomain</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDomain</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectComponents</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setProjectComponents</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="Entity">
+					<className>ProjectComponents</className>
+					<classPath>client/entities/project</classPath>
+					<featurePath>entities/project</featurePath>
+					<featureName>Project Components</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getComponentName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setComponentName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getComponentPath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setComponentPath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>HelpHint</className>
+					<classPath>client/exportation</classPath>
+					<featurePath>exportation</featurePath>
+					<featureName>Help Hint</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getHelpHint</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getHelpHint</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="UserManual">
+					<className>HelpWindow</className>
+					<classPath>client/exportation</classPath>
+					<featurePath>exportation</featurePath>
+					<featureName>Help Window</featureName>
+					<featureDescription>Open a window with the help instructions for
+						this application.</featureDescription>
+					<methods>
+						<method>
+							<methodName>open</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>helpLink</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>helpIcon</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>Help</className>
+					<classPath>client/userInterface</classPath>
+					<featurePath>userInterface</featurePath>
+					<featureName>Help</featureName>
+					<featureDescription>Instructions for the application functions
+						while using the it, to try solve
+						user problems.</featureDescription>
+					<methods>
+						<method>
+							<methodName>setHelpPage</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="Feature">
+					<className>HelpItemDescription</className>
+					<classPath>client/userInterface</classPath>
+					<featurePath>userInterface</featurePath>
+					<featureName>Help Item Description</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>entryMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="Feature">
+					<className>ListEntriesFiltered</className>
+					<classPath>client/userInterface</classPath>
+					<featurePath>userInterface</featurePath>
+					<featureName>List Entries Filtered</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="UserManual">
+					<className>ProjectDescription</className>
+					<classPath>client/userInterface</classPath>
+					<featurePath>userInterface</featurePath>
+					<featureName>Project Description</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>HelpHeader</className>
+					<classPath>client/userInterface/header</classPath>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Help Header</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>HelpTitle</className>
+					<classPath>client/userInterface/header</classPath>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Help Title</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>ProjectInfo</className>
+					<classPath>client/userInterface/header</classPath>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Project Info</featureName>
+					<featureDescription>Name and information about the current project
+						being showed in the user
+						manual.</featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="Feature">
+					<className>Search</className>
+					<classPath>client/userInterface/header</classPath>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Search</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getSearchIcon</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>ComponentClassesList</className>
+					<classPath>client/userInterface/menu</classPath>
+					<featurePath>userInterface/menu</featurePath>
+					<featureName>Component Classes List</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>getFeatureLink</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="UserManual">
+					<className>ComponentsList</className>
+					<classPath>client/userInterface/menu</classPath>
+					<featurePath>userInterface/menu</featurePath>
+					<featureName>Components List</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>HelpMenu</className>
+					<classPath>client/userInterface/menu</classPath>
+					<featurePath>userInterface/menu</featurePath>
+					<featureName>Help Menu</featureName>
+					<featureDescription></featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>ConvertSpecificationXML</className>
+					<classPath>client/utilities</classPath>
+					<featurePath>utilities</featurePath>
+					<featureName>Convert Specification</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>convertHelpEntries</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectElement</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectComponents</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectEntries</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getHelpEntryFromElement</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>entryMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>FeatureNameGenerator</className>
+					<classPath>client/utilities</classPath>
+					<featurePath>utilities</featurePath>
+					<featureName>Feature Name Generator</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>spacedName</methodName>
+							<methodDescription>Fill with spaces a name that is truncated.
+							</methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="Architecture">
+					<className>LoadSpecificationXML</className>
+					<classPath>client/utilities</classPath>
+					<featurePath>utilities</featurePath>
+					<featureName>Load Specification</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>loadXMLFile</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>SearchEngine</className>
+					<classPath>client/utilities</classPath>
+					<featurePath>utilities</featurePath>
+					<featureName>Search Engine</featureName>
+					<featureDescription>Realizes the search of the system.
+					</featureDescription>
+					<methods />
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>StringUtilsServerCalls</className>
+					<classPath>client/utilities/ServerCalls</classPath>
+					<featurePath>utilities/ServerCalls</featurePath>
+					<featureName>String Utils Server Calls</featureName>
+					<featureDescription>The client side stub for the RPC service.
+					</featureDescription>
+					<methods>
+						<method>
+							<methodName>unescapeHtml</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>StringUtilsServerCallsAsync</className>
+					<classPath>client/utilities/ServerCalls</classPath>
+					<featurePath>utilities/ServerCalls</featurePath>
+					<featureName>String Utils Server Calls Async</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>unescapeHtml</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+				<entry featureType="">
+					<className>StringUtilsService</className>
+					<classPath>client/utilities/ServerCalls</classPath>
+					<featurePath>utilities/ServerCalls</featurePath>
+					<featureName>String Utils Service</featureName>
+					<featureDescription></featureDescription>
+					<methods>
+						<method>
+							<methodName>unescapeHtml</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+	</projectComponents>
+</project>
