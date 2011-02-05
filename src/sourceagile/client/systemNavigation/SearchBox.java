@@ -33,11 +33,12 @@ public class SearchBox extends HorizontalPanel {
 
 	private static HTML getSearchIcon() {
 
-		HTML img = new HTML("<a href='#'><img src='images/search.gif'></a>");
+		HTML searchButton = new HTML(
+				"<a href='#'><img src='images/search.gif'></a>");
 
-		img.setTitle(internationalizationConstants.search());
+		searchButton.setTitle(internationalizationConstants.search());
 
-		img.addClickHandler(new ClickHandler() {
+		searchButton.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
@@ -45,7 +46,7 @@ public class SearchBox extends HorizontalPanel {
 			}
 		});
 
-		return img;
+		return searchButton;
 	}
 
 }

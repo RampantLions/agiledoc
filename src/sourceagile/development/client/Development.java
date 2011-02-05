@@ -114,6 +114,8 @@ public class Development {
 		Development.featureVisualizationPanel
 				.add(new FeatureVizualizationPanel(entry));
 
+		FeatureVizualizationPanel.featureContent.clear();
+
 		if (viewOption == OptionsIcons.OPTION_DESCRIPTION) {
 
 			OptionsIcons.buttonDescription

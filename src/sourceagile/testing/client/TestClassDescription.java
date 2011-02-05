@@ -1,7 +1,9 @@
 package sourceagile.testing.client;
 
+import sourceagile.development.client.features.ButtonTest;
 import sourceagile.development.client.features.FeatureDescription;
 import sourceagile.development.client.features.FeatureVizualizationPanel;
+import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.user.client.ui.Label;
@@ -15,6 +17,8 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 public class TestClassDescription extends VerticalPanel {
 
 	public TestClassDescription(ClassFile classEntry, ClassFile testEntry) {
+
+		OptionsIcons.buttonTest.setHTML(ButtonTest.imagePressed);
 
 		if (testEntry != null) {
 
