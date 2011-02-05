@@ -26,6 +26,8 @@ public class ButtonFeatureDescription extends HTML {
 				OptionsIcons.toggledButtons();
 				OptionsIcons.buttonDescription.setHTML(imagePressed);
 
+				FeatureVizualizationPanel.featureContent.clear();
+
 				new FeatureDescription(entry);
 			}
 		});

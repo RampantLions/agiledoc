@@ -2,7 +2,6 @@ package sourceagile.testing.client.serverCalls;
 
 import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
-import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.core.client.GWT;
@@ -34,8 +33,7 @@ public class AddTestClass {
 
 						if (!newTask) {
 
-							new GetRemoteTestClass(classFile,
-									OptionsIcons.OPTION_TEST);
+							new GetRemoteTestClass(classFile);
 						}
 					}
 

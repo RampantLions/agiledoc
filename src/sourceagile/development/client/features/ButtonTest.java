@@ -27,7 +27,7 @@ public class ButtonTest extends HTML {
 				OptionsIcons.toggledButtons();
 				OptionsIcons.buttonTest.setHTML(imagePressed);
 
-				new GetRemoteTestClass(entry, OptionsIcons.OPTION_TEST);
+				new GetRemoteTestClass(entry);
 			}
 		});
 

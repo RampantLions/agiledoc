@@ -5,9 +5,9 @@ import sourceagile.client.InternationalizationConstants;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.TextBox;
 
 /**
@@ -31,13 +31,14 @@ public class SearchBox extends HorizontalPanel {
 
 	}
 
-	private static Image getSearchIcon() {
+	private static HTML getSearchIcon() {
 
-		Image img = new Image("images/search.gif");
+		HTML searchButton = new HTML(
+				"<a href='#'><img src='images/search.gif'></a>");
 
-		img.setTitle(internationalizationConstants.search());
+		searchButton.setTitle(internationalizationConstants.search());
 
-		img.addClickHandler(new ClickHandler() {
+		searchButton.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
@@ -45,7 +46,7 @@ public class SearchBox extends HorizontalPanel {
 			}
 		});
 
-		return img;
+		return searchButton;
 	}
 
 }

@@ -34,8 +34,6 @@ public class FeatureDescription extends VerticalPanel {
 
 		if (entry.getFeature() != null) {
 
-			FeatureVizualizationPanel.featureContent.clear();
-
 			this.add(featureName(entry, true));
 
 			this.add(featureDescription(entry.getClassDoc()));
