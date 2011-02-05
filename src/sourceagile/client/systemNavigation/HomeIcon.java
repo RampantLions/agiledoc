@@ -1,6 +1,7 @@
 package sourceagile.client.systemNavigation;
 
 import sourceagile.client.GlobalVariables;
+import sourceagile.client.systemNavigation.projectMenu.ProjectMenu;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -25,6 +26,8 @@ public class HomeIcon extends HTML {
 			public void onClick(ClickEvent event) {
 
 				GlobalVariables.mainPage = new MainPage();
+
+				ProjectMenu.untoggleButtons();
 
 				RootPanel.get("htmlID").clear();
 				RootPanel.get("htmlID").add(GlobalVariables.mainPage);
