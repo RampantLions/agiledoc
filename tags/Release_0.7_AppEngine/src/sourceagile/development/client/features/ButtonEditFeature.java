@@ -1,5 +1,6 @@
 package sourceagile.development.client.features;
 
+import sourceagile.development.client.features.edit.FeatureEdit;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;

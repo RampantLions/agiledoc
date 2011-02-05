@@ -1,13 +1,11 @@
-package sourceagile.development.client.features;
+package sourceagile.development.client.features.edit;
 
-import sourceagile.development.client.serverCalls.EditClass;
+import sourceagile.development.client.features.FeatureDescription;
+import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Method;
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTML;
@@ -17,18 +15,16 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-
-
-/** 
+/**
  * Edit the documentation of the class in a web form.
  * 
- * @Feature 
+ * @Feature
  */
 public class FeatureEdit extends VerticalPanel {
 
-	private TextArea classDescription = new TextArea();
-	private CheckBox isTodo = new CheckBox(" To Do");
-	private ClassTypeList classTypeList;
+	public static TextArea classDescription = new TextArea();
+	public static CheckBox isTodo = new CheckBox(" To Do");
+	public static ClassTypeList classTypeList;
 
 	public FeatureEdit(ClassFile entry) {
 
@@ -36,7 +32,7 @@ public class FeatureEdit extends VerticalPanel {
 
 		HorizontalPanel hp = new HorizontalPanel();
 
-		hp.add(FeatureDescription.featureName(entry.getFeature()));
+		hp.add(FeatureDescription.featureName(entry, false));
 
 		hp.add(featureTypes(entry.getClassDoc()));
 
@@ -49,7 +45,7 @@ public class FeatureEdit extends VerticalPanel {
 		}
 
 		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-		this.add(saveButton(entry));
+		this.add(new ButtonSave(entry));
 
 		FeatureVizualizationPanel.featureContent.add(this);
 	}
@@ -108,33 +104,5 @@ public class FeatureEdit extends VerticalPanel {
 		}
 
 		return table;
-	}
-
-	private Button saveButton(final ClassFile classFile) {
-
-		Button button = new Button("Save",
-
-		new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				classFile.getClassDoc().setTodo(isTodo.getValue());
-
-				String classType = classTypeList.getValue(classTypeList
-						.getSelectedIndex());
-
-				if (classType.length() == 0) {
-
-					classType = null;
-				}
-
-				classFile.getClassDoc().setTagType(classType);
-
-				new EditClass(classFile, classDescription.getValue());
-			}
-		});
-
-		return button;
 	}
 }

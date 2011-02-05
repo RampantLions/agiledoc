@@ -13,4 +13,6 @@ public class GlobalVariables {
 
 	public static User userLoggedIn = new User();
 
+	public static boolean isReadyOnly = true;
+
 }

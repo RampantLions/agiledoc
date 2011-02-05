@@ -1,6 +1,7 @@
 package sourceagile.development.client.features;
 
 import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.testing.client.serverCalls.GetRemoteTestClass;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -26,7 +27,7 @@ public class ButtonTest extends HTML {
 				OptionsIcons.toggledButtons();
 				OptionsIcons.buttonTest.setHTML(imagePressed);
 
-				// new GetRemoteTestClass(entry, OPTION_TEST);
+				new GetRemoteTestClass(entry);
 			}
 		});
 

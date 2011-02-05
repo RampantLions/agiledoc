@@ -24,6 +24,7 @@
 	<inherits name="sourceagile.authentication.Authentication" />	
 	<inherits name="sourceagile.planning.Planning" />
 	<inherits name="sourceagile.development.Development" />	
+	<inherits name="sourceagile.testing.Testing" />	
 	<inherits name="sourceagile.documentation.Documentation" />	
 
   <!-- Specify the app entry point class.                         -->
