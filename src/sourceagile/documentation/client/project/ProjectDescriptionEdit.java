@@ -1,7 +1,7 @@
-package sourceagile.documentation.client.projectDescription;
+package sourceagile.documentation.client.project;
 
 import sourceagile.client.ProjectInitialization;
-import sourceagile.client.project.SaveProject;
+import sourceagile.documentation.client.serverCalls.UpdateProjectDescription;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -11,20 +11,18 @@ import com.google.gwt.user.client.ui.RichTextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
- * List all the features assigned for the current project.
  * 
- * @feature
+ * @UserManual
  */
-public class ProjectDescription extends VerticalPanel {
+public class ProjectDescriptionEdit extends VerticalPanel {
 
 	private static RichTextArea description = new RichTextArea();
 
-	public ProjectDescription() {
+	public ProjectDescriptionEdit() {
 
 		this.setSpacing(30);
 
 		VerticalPanel vp = new VerticalPanel();
-		// vp.setBorderWidth(1);
 
 		description.setSize("100%", "500px");
 
@@ -55,7 +53,8 @@ public class ProjectDescription extends VerticalPanel {
 				ProjectInitialization.currentProject.setDescription(description
 						.getHTML());
 
-				new SaveProject(ProjectInitialization.currentProject);
+				new UpdateProjectDescription(
+						ProjectInitialization.currentProject);
 			}
 		});
 
