@@ -1,124 +1,60 @@
 package sourceagile.metrics.client;
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
-import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/** 
+/**
  * 
- * 
- * @Feature 
+ * @Feature
  */
-
 public class Metrics extends VerticalPanel {
 
-	RadioButton radioProductivity = new RadioButton("Effort",
-			" Effort");
+	public static VerticalPanel vpMetricsChart = new VerticalPanel();
 
-	RadioButton radioVelocity = new RadioButton("Velocity", " Velocity");
-	
-	RadioButton radioTotals = new RadioButton("Totals", " Totals");
-	
-	RadioButton radioDiagnosis = new RadioButton("Diagnosis", " Diagnosis");
-
-	final VerticalPanel vp1 = new VerticalPanel();
+	public static final String OPTION_TOTALS_CHART = "totalsChart";
 
 	public Metrics() {
+
+		this(null);
+	}
+
+	public Metrics(String chartOption) {
 
 		VerticalPanel vp = new VerticalPanel();
 		vp.setSize("97%", "100%");
 
-		vp1.setSize("100%", "100%");
-		vp1.setSpacing(30);
-		vp1.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+		vpMetricsChart.setSize("100%", "100%");
+		vpMetricsChart.setSpacing(30);
+		vpMetricsChart
+				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 
-		vp.add(chartOptions());
+		vp.add(new MetricsOptions());
 
-		vp.add(vp1);
+		vp.add(vpMetricsChart);
 
-		radioProductivity.setValue(true);
-
-		vp1.add(new ProductivityTimelineChart());
+		openDocumentationOption(chartOption);
 
 		this.add(vp);
 	}
 
-	private HorizontalPanel chartOptions() {
+	private void openDocumentationOption(String chartOption) {
 
-		HorizontalPanel hp = new HorizontalPanel();
+		if (chartOption != null && chartOption.equals(OPTION_TOTALS_CHART)) {
 
-		hp.setSpacing(30);
+			MetricsOptions.untoggleOptions();
+			MetricsOptions.radioTotals.setValue(true);
 
-		radioProductivity.addClickHandler(new ClickHandler() {
+			vpMetricsChart.clear();
 
-			@Override
-			public void onClick(ClickEvent event) {
+			vpMetricsChart.add(new CurrentProductivityColumnsChart());
 
-				radioVelocity.setValue(false);
-				radioTotals.setValue(false);
-				radioDiagnosis.setValue(false);
+		} else {
 
-				vp1.clear();
+			MetricsOptions.radioProductivity.setValue(true);
 
-				vp1.add(new ProductivityTimelineChart());
-			}
-		});
+			vpMetricsChart.add(new ProductivityTimelineChart());
+		}
 
-		hp.add(radioProductivity);
-
-		radioVelocity.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				radioProductivity.setValue(false);
-				radioTotals.setValue(false);
-				radioDiagnosis.setValue(false);
-
-				vp1.clear();
-
-				vp1.add(new VelocityTimelineChart());
-			}
-		});
-
-		hp.add(radioVelocity);
-		
-		radioTotals.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				radioProductivity.setValue(false);
-				radioVelocity.setValue(false);
-				radioDiagnosis.setValue(false);
-
-				vp1.clear();
-
-				vp1.add(new CurrentProductivityColumnsChart());
-			}
-		});
-
-		hp.add(radioTotals);
-		
-		radioDiagnosis.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				radioProductivity.setValue(false);
-				radioVelocity.setValue(false);
-				radioTotals.setValue(false);
-
-				vp1.clear();
-			}
-		});
-
-		hp.add(radioDiagnosis);
-
-		return hp;
 	}
 
 }
