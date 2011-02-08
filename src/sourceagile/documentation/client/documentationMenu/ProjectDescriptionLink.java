@@ -18,13 +18,22 @@ public class ProjectDescriptionLink extends Anchor {
 	private static InternationalizationConstants internationalizationConstants = GWT
 			.create(InternationalizationConstants.class);
 
+	public static final String textUnpressed = internationalizationConstants
+			.projectDescription();
+	public static final String textPressed = "<font color=orange><b>"
+			+ internationalizationConstants.projectDescription()
+			+ "</b></font>";
+
 	public ProjectDescriptionLink() {
 
-		this.setText(internationalizationConstants.projectDescription());
+		this.setHTML(textUnpressed);
 		this.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
+
+				Documentation.untoggleLinks();
+				Documentation.projectDescriptionLink.setHTML(textPressed);
 
 				Documentation.documentationPanel.clear();
 				Documentation.documentationPanel.add(new ProjectDescription());
