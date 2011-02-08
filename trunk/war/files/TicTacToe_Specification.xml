@@ -27,7 +27,14 @@
 					<featureFolder>Client</featureFolder>
 					<featureDescription>Form to identify the name and the password of
 						the player.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>Login</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods />
+					<fields />
 					<comments />
 				</entry>
 				<entry featureType="" isTodo="false">
@@ -41,7 +48,14 @@
 					<featureFolder>Client</featureFolder>
 					<featureDescription>Link to a safe exit from the game.
 					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>Logout</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods />
+					<fields />
 					<comments />
 				</entry>
 			</entries>
@@ -60,7 +74,14 @@
 					<featureFolder>Client</featureFolder>
 					<featureDescription>Loading the contents of the help system.
 					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>HelpInitialization</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods />
+					<fields />
 					<comments />
 				</entry>
 				<entry featureType="" isTodo="false">
@@ -73,12 +94,36 @@
 					<featureName>Initialization</featureName>
 					<featureFolder>Client</featureFolder>
 					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>Initialization</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods>
 						<method>
 							<methodName>initializeUsers</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<fields>
+						<field>
+							<fieldName>currentGame</fieldName>
+							<fieldType>GameEntity</fieldType>
+						</field>
+						<field>
+							<fieldName>waitingFlag</fieldName>
+							<fieldType>boolean</fieldType>
+						</field>
+						<field>
+							<fieldName>playerO</fieldName>
+							<fieldType>Player</fieldType>
+						</field>
+						<field>
+							<fieldName>playerX</fieldName>
+							<fieldType>Player</fieldType>
+						</field>
+					</fields>
 					<comments />
 				</entry>
 				<entry featureType="Architecture" isTodo="false">
@@ -92,12 +137,19 @@
 					<featureFolder>Client</featureFolder>
 					<featureDescription>Anchor class to init the system by the Google
 						Web Toolkit (EntryPoint).</featureDescription>
+					<constructors>
+						<method>
+							<methodName>TicTacToe</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods>
 						<method>
 							<methodName>onModuleLoad</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<fields />
 					<comments>
 						<comment>
 							<commentName>Fri Jan 21 17:30:01 PST 2011</commentName>
@@ -116,12 +168,24 @@
 					<featureName>Check Winner</featureName>
 					<featureFolder>Server Calls</featureFolder>
 					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>CheckWinner</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods>
 						<method>
 							<methodName>checkForWinner</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<fields>
+						<field>
+							<fieldName>greetingService</fieldName>
+							<fieldType>GreetingServiceAsync</fieldType>
+						</field>
+					</fields>
 					<comments />
 				</entry>
 				<entry featureType="Architecture" isTodo="false">
@@ -135,12 +199,14 @@
 					<featureFolder>Server Calls</featureFolder>
 					<featureDescription>The client side stub for the RPC service.
 					</featureDescription>
+					<constructors />
 					<methods>
 						<method>
 							<methodName>checkForWinner</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<fields />
 					<comments />
 				</entry>
 				<entry featureType="Architecture" isTodo="false">
@@ -154,12 +220,14 @@
 					<featureFolder>Server Calls</featureFolder>
 					<featureDescription>The async counterpart of
 						&lt;code&gt;GreetingService&lt;/code&gt;.</featureDescription>
+					<constructors />
 					<methods>
 						<method>
 							<methodName>checkForWinner</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<fields />
 					<comments />
 				</entry>
 				<entry featureType="UserManual" isTodo="false">
@@ -175,7 +243,19 @@
 						Accommodates the game grid and also
 						some options such as a restart button, help, game score, game status,
 						...</featureDescription>
+					<constructors>
+						<method>
+							<methodName>GameBoard</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods />
+					<fields>
+						<field>
+							<fieldName>gameGrid</fieldName>
+							<fieldType>GameGrid</fieldType>
+						</field>
+					</fields>
 					<comments />
 				</entry>
 				<entry featureType="Feature" isTodo="false">
@@ -190,6 +270,12 @@
 					<featureDescription>3x3 grid of cells in which players enter a mark
 						to indicate their desired
 						move.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>GameGrid</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods>
 						<method>
 							<methodName>makeMove</methodName>
@@ -200,6 +286,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<fields />
 					<comments />
 				</entry>
 				<entry featureType="Feature" isTodo="false">
@@ -213,6 +300,12 @@
 					<featureFolder>User Interface</featureFolder>
 					<featureDescription>Performs a move in the game.
 					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>PlayerMove</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods>
 						<method>
 							<methodName>makeMove</methodName>
@@ -230,6 +323,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<fields />
 					<comments>
 						<comment>
 							<commentName>Thu Jan 27 17:59:31 PST 2011</commentName>
@@ -248,7 +342,14 @@
 					<featureFolder>User Interface</featureFolder>
 					<featureDescription>Counts the time passed since the current game
 						started.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>Timer</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods />
+					<fields />
 					<comments />
 				</entry>
 				<entry featureType="Feature" isTodo="true">
@@ -268,6 +369,12 @@
 
 						TODO: Change winning sequence color from red to green.
 					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>WinningSequence</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods>
 						<method>
 							<methodName>showWinner</methodName>
@@ -278,6 +385,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<fields />
 					<comments />
 				</entry>
 			</entries>
@@ -295,6 +403,12 @@
 					<featureName>Game Entity</featureName>
 					<featureFolder>Shared</featureFolder>
 					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>GameEntity</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods>
 						<method>
 							<methodName>getDate</methodName>
@@ -329,6 +443,40 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<fields>
+						<field>
+							<fieldName>SEQUENCE_ROW</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>SEQUENCE_COLUMN</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>SEQUENCE_DIAGONAL_RIGHT</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>SEQUENCE_DIAGONAL_LEFT</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>date</fieldName>
+							<fieldType>java.util.Date</fieldType>
+						</field>
+						<field>
+							<fieldName>gameMoves</fieldName>
+							<fieldType>Player[][]</fieldType>
+						</field>
+						<field>
+							<fieldName>currentPlayer</fieldName>
+							<fieldType>Player</fieldType>
+						</field>
+						<field>
+							<fieldName>sequenceWinner</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+					</fields>
 					<comments />
 				</entry>
 				<entry featureType="Entity" isTodo="false">
@@ -342,6 +490,12 @@
 					<featureFolder>Shared</featureFolder>
 					<featureDescription>Information about each player of the game.
 					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>Player</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods>
 						<method>
 							<methodName>getName</methodName>
@@ -368,6 +522,28 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<fields>
+						<field>
+							<fieldName>PlayerIcon_X</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>PlayerIcon_O</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>name</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>email</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>playerIcon</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+					</fields>
 					<comments />
 				</entry>
 			</entries>
@@ -386,12 +562,19 @@
 					<featureFolder>Server</featureFolder>
 					<featureDescription>The server side implementation of the RPC
 						service.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>GreetingServiceImpl</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods>
 						<method>
 							<methodName>checkForWinner</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<fields />
 					<comments />
 				</entry>
 				<entry featureType="" isTodo="false">
@@ -405,6 +588,12 @@
 					<featureFolder>Server</featureFolder>
 					<featureDescription>Checks if the player movement ran a winning
 						sequence or not.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>MovimentJudgment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
 					<methods>
 						<method>
 							<methodName>checkForWinner</methodName>
@@ -427,6 +616,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
+					<fields />
 					<comments />
 				</entry>
 			</entries>
