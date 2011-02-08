@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import javax.jdo.PersistenceManager;
 
-import sourceagile.documentation.client.export.serverCalls.AllCommentsServerCalls;
+import sourceagile.documentation.client.serverCalls.AllCommentsServerCalls;
 import sourceagile.server.databaseAccess.DatabaseConnection;
 import sourceagile.shared.entities.Comments;
 

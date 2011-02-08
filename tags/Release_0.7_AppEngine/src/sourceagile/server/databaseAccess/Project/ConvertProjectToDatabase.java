@@ -7,6 +7,8 @@ import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.entities.project.ProjectBacklog;
 import sourceagile.shared.entities.project.ProjectComponents;
 
+import com.google.appengine.api.datastore.Text;
+
 public class ConvertProjectToDatabase {
 
 	public static sourceagile.server.databaseAccess.entities.Project getDatabaseProject(
@@ -17,7 +19,7 @@ public class ConvertProjectToDatabase {
 
 		projectDatabase.setName(project.getName());
 
-		projectDatabase.setDescription(project.getDescription());
+		projectDatabase.setDescription(new Text(project.getDescription()));
 
 		projectDatabase.setRepositoryURL(project.getRepositoryURL());
 
@@ -27,7 +29,7 @@ public class ConvertProjectToDatabase {
 
 		projectDatabase.setTestRoot(project.getTestRoot());
 
-		projectDatabase.setRelatedLinks(project.getRelatedLinks());
+		projectDatabase.setRelatedLinks(new Text(project.getRelatedLinks()));
 
 		return projectDatabase;
 	}
@@ -53,7 +55,7 @@ public class ConvertProjectToDatabase {
 		return databaseProjectComponents;
 	}
 
-	private static List<sourceagile.server.databaseAccess.entities.ProjectBacklog> getDatabaseProjectBacklog(
+	public static List<sourceagile.server.databaseAccess.entities.ProjectBacklog> getDatabaseProjectBacklog(
 			List<ProjectBacklog> projectBacklogs) {
 
 		List<sourceagile.server.databaseAccess.entities.ProjectBacklog> databaseProjectBacklogs = new ArrayList<sourceagile.server.databaseAccess.entities.ProjectBacklog>();

@@ -9,11 +9,18 @@ public class SaveProject {
 	public static void addNew(PersistenceManager persistenceManager,
 			Project project) {
 
-		persistenceManager
-				.makePersistent(ConvertProjectToDatabase
-						.getDatabaseProject(
-								new sourceagile.server.databaseAccess.entities.Project(),
-								project));
+		sourceagile.server.databaseAccess.entities.Project projectDatabase = ConvertProjectToDatabase
+				.getDatabaseProject(
+						new sourceagile.server.databaseAccess.entities.Project(),
+						project);
+
+		projectDatabase.setProjectComponents(ConvertProjectToDatabase
+				.getDatabaseProjectComponent(project.getProjectComponents()));
+
+		projectDatabase.setProjectBacklog(ConvertProjectToDatabase
+				.getDatabaseProjectBacklog(project.getProjectBacklog()));
+
+		persistenceManager.makePersistent(projectDatabase);
 	}
 
 	public static void update(PersistenceManager persistenceManager,

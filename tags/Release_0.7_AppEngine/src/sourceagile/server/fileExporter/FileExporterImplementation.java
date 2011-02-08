@@ -2,7 +2,7 @@ package sourceagile.server.fileExporter;
 
 import java.io.File;
 
-import sourceagile.documentation.client.export.serverCalls.ExportFileServerCalls;
+import sourceagile.documentation.client.serverCalls.ExportFileServerCalls;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
