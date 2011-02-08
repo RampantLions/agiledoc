@@ -25,7 +25,7 @@ public class ProjectSelectionPanel extends VerticalPanel {
 
 		if (GlobalVariables.isReadyOnly) {
 
-			projectList = new ProjectList();
+			projectList = new ProjectList(projects);
 
 		} else {
 
