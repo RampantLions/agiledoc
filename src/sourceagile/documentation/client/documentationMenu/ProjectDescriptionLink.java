@@ -2,7 +2,7 @@ package sourceagile.documentation.client.documentationMenu;
 
 import sourceagile.client.InternationalizationConstants;
 import sourceagile.documentation.client.Documentation;
-import sourceagile.documentation.client.projectDescription.ProjectDescription;
+import sourceagile.documentation.client.project.ProjectDescription;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -31,9 +31,6 @@ public class ProjectDescriptionLink extends Anchor {
 
 			@Override
 			public void onClick(ClickEvent event) {
-
-				Documentation.untoggleLinks();
-				Documentation.projectDescriptionLink.setHTML(textPressed);
 
 				Documentation.documentationPanel.clear();
 				Documentation.documentationPanel.add(new ProjectDescription());

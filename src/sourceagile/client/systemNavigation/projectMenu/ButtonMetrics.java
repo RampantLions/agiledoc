@@ -1,6 +1,8 @@
 package sourceagile.client.systemNavigation.projectMenu;
 
+import sourceagile.client.GlobalVariables;
 import sourceagile.client.InternationalizationConstants;
+import sourceagile.metrics.client.Metrics;
 
 import com.google.gwt.core.client.GWT;
 import com.gwtext.client.core.EventObject;
@@ -28,8 +30,8 @@ public class ButtonMetrics extends Button {
 				ProjectMenu.untoggleButtons();
 				ProjectMenu.buttonMetrics.toggle(true);
 
-				// GlobalVariables.mainPage.panelContent.clear();
-				// GlobalVariables.mainPage.panelContent.add(new Metrics());
+				GlobalVariables.mainPage.panelContent.clear();
+				GlobalVariables.mainPage.panelContent.add(new Metrics());
 			}
 		});
 	}

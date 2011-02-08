@@ -2,7 +2,7 @@ package sourceagile.documentation.client.documentationMenu;
 
 import sourceagile.client.InternationalizationConstants;
 import sourceagile.documentation.client.Documentation;
-import sourceagile.documentation.client.export.serverCalls.ListAllComments;
+import sourceagile.documentation.client.serverCalls.ListAllComments;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
