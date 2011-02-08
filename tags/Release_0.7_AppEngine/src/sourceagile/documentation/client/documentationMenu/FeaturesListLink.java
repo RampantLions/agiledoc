@@ -14,13 +14,19 @@ import com.google.gwt.user.client.ui.Anchor;
  */
 public class FeaturesListLink extends Anchor {
 
+	public static final String textUnpressed = "Features List";
+	public static final String textPressed = "<font color=orange><b>Features List</b></font>";
+
 	public FeaturesListLink() {
 
-		this.setText("Features List");
+		this.setHTML(textUnpressed);
 		this.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
+
+				Documentation.untoggleLinks();
+				Documentation.featuresListLink.setHTML(textPressed);
 
 				Documentation.documentationPanel.clear();
 				Documentation.documentationPanel.add(new ListTaggedClasses(

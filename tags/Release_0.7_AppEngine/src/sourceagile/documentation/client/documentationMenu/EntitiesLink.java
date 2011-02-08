@@ -14,13 +14,19 @@ import com.google.gwt.user.client.ui.Anchor;
  */
 public class EntitiesLink extends Anchor {
 
+	public static final String textUnpressed = "Entities";
+	public static final String textPressed = "<font color=orange><b>Entities</b></font>";
+
 	public EntitiesLink() {
 
-		this.setText("Entities");
+		this.setHTML(textUnpressed);
 		this.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
+
+				Documentation.untoggleLinks();
+				Documentation.entitiesLink.setHTML(textPressed);
 
 				Documentation.documentationPanel.clear();
 				Documentation.documentationPanel.add(new ListTaggedClasses(
