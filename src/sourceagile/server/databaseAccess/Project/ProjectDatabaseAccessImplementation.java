@@ -5,7 +5,8 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 
 import sourceagile.authentication.client.serverCalls.AuthenticationServerCalls;
-import sourceagile.client.project.ProjectDatabaseServerCalls;
+import sourceagile.client.serverCalls.ProjectDatabaseServerCalls;
+import sourceagile.documentation.client.serverCalls.ProjectUpdateServerCalls;
 import sourceagile.server.databaseAccess.DatabaseConnection;
 import sourceagile.shared.entities.project.Project;
 
@@ -17,7 +18,8 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
  */
 @SuppressWarnings("serial")
 public class ProjectDatabaseAccessImplementation extends RemoteServiceServlet
-		implements ProjectDatabaseServerCalls, AuthenticationServerCalls {
+		implements ProjectDatabaseServerCalls, AuthenticationServerCalls,
+		ProjectUpdateServerCalls {
 
 	@Override
 	public List<Project> listProjects() {
@@ -61,6 +63,15 @@ public class ProjectDatabaseAccessImplementation extends RemoteServiceServlet
 		PersistenceManager persistenceManager = DatabaseConnection.connect();
 
 		SaveProject.update(persistenceManager, project);
+
+		persistenceManager.close();
+	}
+
+	public void deleteProject(Project project) {
+
+		PersistenceManager persistenceManager = DatabaseConnection.connect();
+
+		DeleteProject.delete(persistenceManager, project);
 
 		persistenceManager.close();
 	}

@@ -25,7 +25,7 @@ public class ConvertDatabaseToProject {
 
 		project.setName(databaseProject.getName());
 
-		project.setDescription(databaseProject.getDescription());
+		project.setDescription(databaseProject.getDescription().getValue());
 
 		project.setRepositoryURL(databaseProject.getRepositoryURL());
 
@@ -35,7 +35,7 @@ public class ConvertDatabaseToProject {
 
 		project.setTestRoot(databaseProject.getTestRoot());
 
-		project.setRelatedLinks(databaseProject.getRelatedLinks());
+		project.setRelatedLinks(databaseProject.getRelatedLinks().getValue());
 
 		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 

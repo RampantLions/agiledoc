@@ -47,8 +47,8 @@ public class SubversionRepositoryClassImplementation extends
 
 	@Override
 	public ArrayList<Productivity> listHistory(Project project, User user) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return new ArrayList<Productivity>();
 	}
 
 	@Override
