@@ -14,7 +14,7 @@ public class ProjectList extends ListBox {
 
 		this.addItem("");
 
-		this.addItem("Tic Tac Toe DEMO", "1001");
+		this.addItem("Tic Tac Toe DEMO", "5001");
 	}
 
 	public ProjectList(List<Project> projects) {
