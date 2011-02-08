@@ -13,7 +13,7 @@
  * Author: Erik Scholtz 
  * Web: http://blog.elitecoderz.net
  */
-package sourceagile.documentation.client.projectDescription;
+package sourceagile.documentation.client.project;
 
 import java.util.HashMap;
 

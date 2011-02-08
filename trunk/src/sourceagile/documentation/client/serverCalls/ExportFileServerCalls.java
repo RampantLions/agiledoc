@@ -1,4 +1,4 @@
-package sourceagile.documentation.client.export.serverCalls;
+package sourceagile.documentation.client.serverCalls;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;

@@ -1,4 +1,4 @@
-package sourceagile.documentation.client.export.serverCalls;
+package sourceagile.documentation.client.serverCalls;
 
 import java.util.HashMap;
 
