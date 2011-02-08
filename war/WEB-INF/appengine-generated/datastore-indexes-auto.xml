@@ -1,0 +1,15 @@
+<!-- Indices written at Tue, 8 Feb 2011 18:49:40 UTC -->
+
+<datastore-indexes>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="ProjectBacklog" ancestor="true" source="auto">
+        <property name="projectBacklog_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="ProjectComponents" ancestor="true" source="auto">
+        <property name="projectComponents_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>
