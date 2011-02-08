@@ -1,5 +1,6 @@
 package sourceagile.client.project;
 
+import sourceagile.client.serverCalls.UpdateProject;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.utilities.FormField;
 
@@ -83,7 +84,7 @@ public class ProjectForm extends VerticalPanel {
 				project.setTestRoot(testRoot.getValue());
 				project.setDomain(domain.getValue());
 
-				new SaveProject(project);
+				new UpdateProject(project);
 			}
 		});
 

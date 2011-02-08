@@ -1,13 +1,13 @@
-package sourceagile.client.project;
+package sourceagile.client.serverCalls;
 
 import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-public class SaveProject {
+public class UpdateProject {
 
-	public SaveProject(Project project) {
+	public UpdateProject(Project project) {
 
 		final ProjectDatabaseServerCallsAsync databaseServerCalls = GWT
 				.create(ProjectDatabaseServerCalls.class);
