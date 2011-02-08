@@ -6,7 +6,7 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 
 import sourceagile.development.client.serverCalls.CommentsServerCalls;
-import sourceagile.documentation.client.export.serverCalls.AllCommentsServerCalls;
+import sourceagile.documentation.client.serverCalls.AllCommentsServerCalls;
 import sourceagile.server.databaseAccess.DatabaseConnection;
 import sourceagile.shared.entities.Comments;
 
