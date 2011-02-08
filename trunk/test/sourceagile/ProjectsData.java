@@ -82,6 +82,15 @@ public class ProjectsData {
 				+ "Australia, New Zealand, is a pencil-and-paper game for two players, O and X, who take turns marking the spaces in a 3x3 grid,"
 				+ " usually X going first. The player who succeeds in placing three respective marks in a horizontal, vertical, or diagonal row wins the game.");
 
+		project.setRelatedLinks("Tic Tac Toe online version:"
+				+ "(Google App Engine): http://tictactoe4j.appspot.com"
+				+ "What is Tic Tac Toe: "
+				+ "http://en.wikipedia.org/wiki/Tic-tac-toe"
+				+ "tictactoe4j  -  File Repository:"
+				+ "Google Code - Subversion:"
+				+ "# Non-members may check out a read-only working copy anonymously over HTTP."
+				+ "svn checkout http://tictactoe4j.googlecode.com/svn/trunk/ tictactoe4j-read-only");
+
 		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 
 		projectComponents.add(new ProjectComponents("Authentication",
