@@ -72,28 +72,38 @@ public class ProjectsData {
 		Project project = new Project();
 		// project.setProjectID(new Long(2));
 		project.setName("Tic Tac Toe");
-		project.setRepositoryType(sourceagile.shared.entities.project.Project.REPOSITORY_TYPE_SUBVERSION);
+		project.setRepositoryType(Project.REPOSITORY_TYPE_XML);
 		project.setRepositoryURL("https://tictactoe4j.googlecode.com/svn");
 		project.setRoot("/trunk/src/");
 		project.setTestRoot("/trunk/test/");
 		project.setDomain("tictactoe");
-		project.setRelatedLinks("http://en.wikipedia.org/wiki/Tic-tac-toe");
+
 		project.setDescription("Tic-tac-toe, also spelled tick tack toe, or noughts and crosses as it is known in the UK, Ireland, "
 				+ "Australia, New Zealand, is a pencil-and-paper game for two players, O and X, who take turns marking the spaces in a 3x3 grid,"
 				+ " usually X going first. The player who succeeds in placing three respective marks in a horizontal, vertical, or diagonal row wins the game.");
+
+		project.setRelatedLinks("Tic Tac Toe online version:"
+				+ "(Google App Engine): http://tictactoe4j.appspot.com"
+				+ "What is Tic Tac Toe: "
+				+ "http://en.wikipedia.org/wiki/Tic-tac-toe"
+				+ "tictactoe4j  -  File Repository:"
+				+ "Google Code - Subversion:"
+				+ "# Non-members may check out a read-only working copy anonymously over HTTP."
+				+ "svn checkout http://tictactoe4j.googlecode.com/svn/trunk/ tictactoe4j-read-only");
 
 		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 
 		projectComponents.add(new ProjectComponents("Authentication",
 				"authentication/client"));
 		projectComponents.add(new ProjectComponents("Gaming", "client"));
-		projectComponents
-				.add(new ProjectComponents("Infra Structure", "server"));
+		projectComponents.add(new ProjectComponents("Infra Structure/Server",
+				"server"));
+		projectComponents.add(new ProjectComponents("Infra Structure/Entities",
+				"shared"));
 
 		project.setProjectComponents(projectComponents);
 
 		return project;
-
 	}
 
 	public static Project loadProject2() {
