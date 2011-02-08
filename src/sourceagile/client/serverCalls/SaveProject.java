@@ -1,4 +1,4 @@
-package sourceagile.client.project;
+package sourceagile.client.serverCalls;
 
 import sourceagile.shared.entities.project.Project;
 

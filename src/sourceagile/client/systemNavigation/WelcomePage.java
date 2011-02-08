@@ -4,32 +4,38 @@ import sourceagile.client.GlobalVariables;
 
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.HasVerticalAlignment;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class WelcomePage extends VerticalPanel {
+public class WelcomePage extends HorizontalPanel {
 
 	public WelcomePage() {
 
-		this.setWidth("900px");
+		this.setVerticalAlignment(HasVerticalAlignment.ALIGN_BOTTOM);
 
-		this.setSpacing(40);
+		this.add(new AboutProject());
 
-		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+		this.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 
-		this.add(new Label(" "));
+		VerticalPanel vp = new VerticalPanel();
 
-		this.add(new HTML("<center><font size=4>Welcome to "
+		vp.setWidth("900px");
+
+		vp.setSpacing(40);
+
+		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+
+		vp.add(new Label(" "));
+
+		vp.add(new HTML("<center><font size=4>Welcome to "
 				+ "<br><br><b><font size=6 color=orange>LIVE SOURCE</font>"
 				+ "<font size=5><br>an Agile Toolkit</font></b> "
 				+ "<br><br><font size=4>" + GlobalVariables.systemVersion
-				+ "</center>"));
+				+ "<br><br><br></center>"));
 
-		this.add(new Label(" "));
-
-		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
-
-		this.add(new ProjectSummary());
+		this.add(vp);
 	}
 
 }
