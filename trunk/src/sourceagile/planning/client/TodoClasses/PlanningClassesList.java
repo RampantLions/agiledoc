@@ -2,16 +2,10 @@ package sourceagile.planning.client.TodoClasses;
 
 import java.util.HashMap;
 
-import sourceagile.development.client.Development;
-import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.FlexTable;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.Image;
 
 /**
  * List all the classes assigned as "To Do" in the current project.
@@ -64,47 +58,11 @@ public class PlanningClassesList extends FlexTable {
 
 					HorizontalPanel hp = new HorizontalPanel();
 					hp.setSpacing(10);
-					hp.add(iconEditTodoFeature(entry));
-					hp.add(iconDeleteTodoFeature(entry));
+					hp.add(new IconViewTodoClass(entry));
 
 					this.setWidget(row, 3, hp);
 				}
 			}
 		}
 	}
-
-	private static HTML iconEditTodoFeature(final ClassFile entry) {
-
-		HTML img = new HTML("<a href='#'><img src='images/list.gif'></a>");
-		img.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				new Development(entry, OptionsIcons.OPTION_DESCRIPTION);
-			}
-		});
-
-		img.setTitle("Show Planning Feature");
-
-		return img;
-	}
-
-	private static Image iconDeleteTodoFeature(final ClassFile entry) {
-
-		Image img = new Image("images/delete.gif");
-		img.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-
-				// new EditFeatureDescription(classe);
-			}
-		});
-
-		img.setTitle("Delete Planned Feature");
-
-		return img;
-	}
-
 }

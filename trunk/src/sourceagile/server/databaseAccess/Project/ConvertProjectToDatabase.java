@@ -53,7 +53,7 @@ public class ConvertProjectToDatabase {
 		return databaseProjectComponents;
 	}
 
-	private static List<sourceagile.server.databaseAccess.entities.ProjectBacklog> getDatabaseProjectBacklog(
+	public static List<sourceagile.server.databaseAccess.entities.ProjectBacklog> getDatabaseProjectBacklog(
 			List<ProjectBacklog> projectBacklogs) {
 
 		List<sourceagile.server.databaseAccess.entities.ProjectBacklog> databaseProjectBacklogs = new ArrayList<sourceagile.server.databaseAccess.entities.ProjectBacklog>();
