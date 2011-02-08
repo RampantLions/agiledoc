@@ -1,6 +1,8 @@
 package sourceagile.documentation.client;
 
 import sourceagile.client.ProjectInitialization;
+import sourceagile.development.client.Development;
+import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.ProjectComponents;
 
@@ -59,6 +61,8 @@ public class ListTaggedClasses extends VerticalPanel {
 						html.addClickHandler(new ClickHandler() {
 							public void onClick(ClickEvent sender) {
 
+								new Development(entry,
+										OptionsIcons.OPTION_DESCRIPTION);
 							}
 						});
 

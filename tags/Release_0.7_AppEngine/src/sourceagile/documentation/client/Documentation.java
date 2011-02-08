@@ -11,6 +11,8 @@ import sourceagile.documentation.client.documentationMenu.ExportXmlLink;
 import sourceagile.documentation.client.documentationMenu.FeaturesListLink;
 import sourceagile.documentation.client.documentationMenu.ProjectDescriptionLink;
 import sourceagile.documentation.client.documentationMenu.RelatedLinksLink;
+import sourceagile.documentation.client.project.ProjectDescription;
+import sourceagile.documentation.client.project.RelatedLinks;
 import sourceagile.shared.utilities.FileNameGenerator;
 
 import com.google.gwt.core.client.GWT;
@@ -26,6 +28,9 @@ public class Documentation {
 	public VerticalPanel documentationMenu = new VerticalPanel();
 	public static VerticalPanel documentationPanel = new VerticalPanel();
 
+	public static final String Option_ProjectDescription = "projectDescription";
+	public static final String Option_RelatedLinks = "relatedLinks";
+
 	public static ProjectDescriptionLink projectDescriptionLink = new ProjectDescriptionLink();
 	public static FeaturesListLink featuresListLink = new FeaturesListLink();
 	public static ArchitectureLink architectureLink = new ArchitectureLink();
@@ -38,6 +43,11 @@ public class Documentation {
 			.create(InternationalizationConstants.class);
 
 	public Documentation() {
+
+		this(null);
+	}
+
+	public Documentation(String option) {
 
 		GlobalVariables.mainPage.panelContent.clear();
 
@@ -58,6 +68,11 @@ public class Documentation {
 		vp.add(hp);
 
 		GlobalVariables.mainPage.panelContent.add(vp);
+
+		if (option != null) {
+
+			openDocumentationOption(option);
+		}
 	}
 
 	private VerticalPanel showDocumentationMenu() {
@@ -101,5 +116,20 @@ public class Documentation {
 		exportXmlLink.setHTML(ExportXmlLink.textUnpressed);
 		exportPdfLink.setHTML(ExportPdfLink.textUnpressed);
 		relatedLinksLink.setHTML(RelatedLinksLink.textUnpressed);
+	}
+
+	private void openDocumentationOption(String option) {
+
+		if (option.equals(Option_ProjectDescription)) {
+
+			projectDescriptionLink.setHTML(ProjectDescriptionLink.textPressed);
+			documentationPanel.add(new ProjectDescription());
+
+		} else if (option.equals(Option_RelatedLinks)) {
+
+			relatedLinksLink.setHTML(RelatedLinksLink.textPressed);
+			documentationPanel.add(new RelatedLinks());
+		}
+
 	}
 }
