@@ -129,4 +129,25 @@ public class ProjectsData {
 		return project;
 	}
 
+	public static Project loadProject3() {
+
+		Project project = new Project();
+		// project.setProjectID(new Long(3));
+		project.setName("Where is URL?");
+		project.setRepositoryType(sourceagile.shared.entities.project.Project.REPOSITORY_TYPE_SUBVERSION);
+		project.setRepositoryURL("http://platrasha.svnrepository.com/svn/code");
+		project.setRoot("/client/scheduler/src/");
+		project.setTestRoot("/client/scheduler/test/");
+		project.setDomain("com/platrasha/trip");
+		project.setDescription("");
+
+		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
+
+		projectComponents.add(new ProjectComponents("Client", "client"));
+
+		project.setProjectComponents(projectComponents);
+
+		return project;
+	}
+
 }
