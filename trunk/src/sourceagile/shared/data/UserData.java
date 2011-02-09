@@ -6,7 +6,7 @@ public class UserData {
 
 	public static User[] load() {
 
-		User[] users = new User[2];
+		User[] users = new User[3];
 
 		users[0] = new User();
 		users[0].setNickName("Alline Oliveira");
@@ -17,6 +17,11 @@ public class UserData {
 		users[1].setNickName("June Clarke");
 		users[1].setName("joonspoon");
 		users[1].setPassword("Vj6mz4MX9Wu7");
+
+		users[2] = new User();
+		users[2].setNickName("Alline Oliveira");
+		users[2].setName("alline");
+		users[2].setPassword("agile");
 
 		return users;
 	}
