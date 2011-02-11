@@ -1,7 +1,7 @@
 package sourceagile.planning.client;
 
 import sourceagile.client.GlobalVariables;
-import sourceagile.planning.client.projectBacklog.Story;
+import sourceagile.planning.client.projectBacklog.StoryForm;
 import sourceagile.shared.entities.project.ProjectBacklog;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -24,7 +24,7 @@ public class ButtonNewStory extends Button {
 			public void onClick(ClickEvent event) {
 
 				GlobalVariables.mainPage.panelContent.clear();
-				GlobalVariables.mainPage.panelContent.add(new Story(
+				GlobalVariables.mainPage.panelContent.add(new StoryForm(
 						new ProjectBacklog()));
 
 			}
