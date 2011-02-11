@@ -7,12 +7,12 @@ import sourceagile.shared.entities.project.ProjectBacklog;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.FlexTable;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.Image;
 
 /**
  * 
- * @feature
+ * @Feature
  */
 public class ProjectBacklogList extends FlexTable {
 
@@ -88,16 +88,16 @@ public class ProjectBacklogList extends FlexTable {
 		}
 	}
 
-	private static Image iconEdit(final ProjectBacklog projectBacklog) {
+	private static HTML iconEdit(final ProjectBacklog projectBacklog) {
 
-		Image img = new Image("images/edit.gif");
+		HTML img = new HTML("<a href='#'><img src='images/edit.gif'></a>");
 		img.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
 
 				GlobalVariables.mainPage.panelContent.clear();
-				GlobalVariables.mainPage.panelContent.add(new Story(
+				GlobalVariables.mainPage.panelContent.add(new StoryForm(
 						projectBacklog));
 			}
 		});
@@ -107,9 +107,9 @@ public class ProjectBacklogList extends FlexTable {
 		return img;
 	}
 
-	private static Image iconDelete(final ProjectBacklog backlogEntry) {
+	private static HTML iconDelete(final ProjectBacklog backlogEntry) {
 
-		Image img = new Image("images/delete.gif");
+		HTML img = new HTML("<a href='#'><img src='images/delete.gif'></a>");
 		img.addClickHandler(new ClickHandler() {
 
 			@Override
@@ -123,5 +123,4 @@ public class ProjectBacklogList extends FlexTable {
 
 		return img;
 	}
-
 }

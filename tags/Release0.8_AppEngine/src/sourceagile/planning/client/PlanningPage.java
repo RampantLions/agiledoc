@@ -3,8 +3,9 @@ package sourceagile.planning.client;
 import java.util.HashMap;
 
 import sourceagile.planning.client.TodoClasses.PlanningClassesList;
-import sourceagile.planning.client.projectBacklog.ProjectBacklogList;
+import sourceagile.planning.client.serverCalls.ListProjectBacklog;
 import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.utilities.LoadingPanel;
 
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
@@ -17,7 +18,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 public class PlanningPage extends VerticalPanel {
 
-	public VerticalPanel vpProjectBacklog = new VerticalPanel();
+	public static VerticalPanel vpProjectBacklog = new VerticalPanel();
 
 	public PlanningPage(HashMap<String, ClassFile> entries) {
 
@@ -47,11 +48,17 @@ public class PlanningPage extends VerticalPanel {
 		vp2.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
 		vp2.add(new ButtonNewStory());
 
+		vpProjectBacklog.add(new LoadingPanel());
+		vpProjectBacklog
+				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+
 		vp2.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-		vp2.add(new ProjectBacklogList());
+		vp2.add(vpProjectBacklog);
 
 		vp.add(vp2);
 
 		this.add(vp);
+
+		new ListProjectBacklog();
 	}
 }

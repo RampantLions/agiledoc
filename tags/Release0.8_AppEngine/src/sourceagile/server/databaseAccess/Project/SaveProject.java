@@ -18,7 +18,7 @@ public class SaveProject {
 				.getDatabaseProjectComponent(project.getProjectComponents()));
 
 		projectDatabase.setProjectBacklog(ConvertProjectToDatabase
-				.getDatabaseProjectBacklog(project.getProjectBacklog()));
+				.getDatabaseProjectBacklogs(project.getProjectBacklog()));
 
 		persistenceManager.makePersistent(projectDatabase);
 	}

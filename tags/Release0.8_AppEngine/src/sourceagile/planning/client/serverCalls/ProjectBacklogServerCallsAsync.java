@@ -10,7 +10,10 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
  */
 public interface ProjectBacklogServerCallsAsync {
 
-	void saveProjectBacklog(Long projectID, ProjectBacklog projectBacklog,
+	void addProjectBacklog(Long projectID, ProjectBacklog projectBacklog,
+			AsyncCallback<Void> callback);
+
+	void updateProjectBacklog(Long projectID, ProjectBacklog projectBacklog,
 			AsyncCallback<Void> callback);
 
 }
