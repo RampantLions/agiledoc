@@ -84,6 +84,8 @@ public class Documentation {
 
 		vp.setSpacing(20);
 
+		untoggleLinks();
+
 		vp.add(projectDescriptionLink);
 
 		vp.add(featuresListLink);
