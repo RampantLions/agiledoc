@@ -14,7 +14,7 @@ public class GwtStart implements EntryPoint {
 
 	public void onModuleLoad() {
 
-		HelpAgileExport.initHelp("SourceAgile");
+		HelpAgileExport.initHelp("LiveSource");
 
 		new ListProjects();
 	}
