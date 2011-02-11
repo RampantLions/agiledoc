@@ -1,4 +1,4 @@
-package sourceagile.server.databaseAccess.ProjectBacklog;
+package sourceagile.server.databaseAccess.projectBacklog;
 
 import javax.jdo.PersistenceManager;
 
@@ -17,11 +17,23 @@ public class ProjectBacklogDatabaseImplementation extends RemoteServiceServlet
 		implements ProjectBacklogServerCalls {
 
 	@Override
-	public void saveProjectBacklog(Long projectID, ProjectBacklog projectBacklog) {
+	public void addProjectBacklog(Long projectID, ProjectBacklog projectBacklog) {
 
 		PersistenceManager persistenceManager = DatabaseConnection.connect();
 
-		SaveProjectBacklog.save(persistenceManager, projectID, projectBacklog);
+		SaveProjectBacklog
+				.addNew(persistenceManager, projectID, projectBacklog);
+
+		persistenceManager.close();
+	}
+
+	@Override
+	public void updateProjectBacklog(Long projectID,
+			ProjectBacklog projectBacklog) {
+
+		PersistenceManager persistenceManager = DatabaseConnection.connect();
+
+		SaveProjectBacklog.update(persistenceManager, projectBacklog);
 
 		persistenceManager.close();
 	}

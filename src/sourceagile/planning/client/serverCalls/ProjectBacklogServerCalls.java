@@ -9,9 +9,11 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  * 
  * @Architecture
  */
-@RemoteServiceRelativePath("projectDatabaseAccess")
+@RemoteServiceRelativePath("projectBacklogDatabaseAccess")
 public interface ProjectBacklogServerCalls extends RemoteService {
 
-	void saveProjectBacklog(Long projectID, ProjectBacklog projectBacklog);
+	void addProjectBacklog(Long projectID, ProjectBacklog projectBacklog);
+
+	void updateProjectBacklog(Long projectID, ProjectBacklog projectBacklog);
 
 }
