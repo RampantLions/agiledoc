@@ -34,8 +34,9 @@ public class DatabaseConnection {
 
 	public static Properties getLocalDatabaseProperties() {
 
-		String databasePath = "C:\\eclipse\\workspace\\SourceAgile\\war\\data";
-		// String databasePath = "data";
+		// String databasePath =
+		// "C:\\eclipse\\workspace\\SourceAgile\\war\\data";
+		String databasePath = "data";
 
 		Properties properties = new Properties();
 
