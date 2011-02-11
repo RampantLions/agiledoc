@@ -53,7 +53,7 @@ public class ConvertProjectToDatabase {
 		return databaseProjectComponents;
 	}
 
-	public static List<sourceagile.server.databaseAccess.entities.ProjectBacklog> getDatabaseProjectBacklog(
+	public static List<sourceagile.server.databaseAccess.entities.ProjectBacklog> getDatabaseProjectBacklogs(
 			List<ProjectBacklog> projectBacklogs) {
 
 		List<sourceagile.server.databaseAccess.entities.ProjectBacklog> databaseProjectBacklogs = new ArrayList<sourceagile.server.databaseAccess.entities.ProjectBacklog>();
@@ -62,28 +62,33 @@ public class ConvertProjectToDatabase {
 
 			sourceagile.server.databaseAccess.entities.ProjectBacklog projectBacklogDatabase = new sourceagile.server.databaseAccess.entities.ProjectBacklog();
 
-			projectBacklogDatabase.setBacklogDate(projectBacklog
-					.getBacklogDate());
-
-			projectBacklogDatabase.setBacklogName(projectBacklog
-					.getBacklogName());
-
-			projectBacklogDatabase.setBacklogDescription(projectBacklog
-					.getBacklogDescription());
-
-			projectBacklogDatabase.setBacklogEstimative(projectBacklog
-					.getBacklogEstimative());
-
-			projectBacklogDatabase.setBacklogPriority(projectBacklog
-					.getBacklogPriority());
-
-			projectBacklogDatabase.setBacklogStatus(projectBacklog
-					.getBacklogStatus());
-
-			databaseProjectBacklogs.add(projectBacklogDatabase);
+			databaseProjectBacklogs.add(getDatabaseProjectBacklog(
+					projectBacklog, projectBacklogDatabase));
 		}
 
 		return databaseProjectBacklogs;
 	}
 
+	public static sourceagile.server.databaseAccess.entities.ProjectBacklog getDatabaseProjectBacklog(
+			ProjectBacklog projectBacklog,
+			sourceagile.server.databaseAccess.entities.ProjectBacklog projectBacklogDatabase) {
+
+		projectBacklogDatabase.setBacklogDate(projectBacklog.getBacklogDate());
+
+		projectBacklogDatabase.setBacklogName(projectBacklog.getBacklogName());
+
+		projectBacklogDatabase.setBacklogDescription(projectBacklog
+				.getBacklogDescription());
+
+		projectBacklogDatabase.setBacklogEstimative(projectBacklog
+				.getBacklogEstimative());
+
+		projectBacklogDatabase.setBacklogPriority(projectBacklog
+				.getBacklogPriority());
+
+		projectBacklogDatabase.setBacklogStatus(projectBacklog
+				.getBacklogStatus());
+
+		return projectBacklogDatabase;
+	}
 }

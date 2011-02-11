@@ -9,17 +9,17 @@ import sourceagile.shared.utilities.LoadingPanel;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-public class CreateProjectBacklog {
+public class UpdateProjectBacklog {
 
 	final ProjectBacklogServerCallsAsync databaseServerCalls = GWT
 			.create(ProjectBacklogServerCalls.class);
 
-	public CreateProjectBacklog(ProjectBacklog projectBacklog) {
+	public UpdateProjectBacklog(ProjectBacklog projectBacklog) {
 
 		GlobalVariables.mainPage.panelContent.add(new LoadingPanel());
 		GlobalVariables.mainPage.panelContent.clear();
 
-		databaseServerCalls.addProjectBacklog(
+		databaseServerCalls.updateProjectBacklog(
 				ProjectInitialization.currentProject.getProjectID(),
 				projectBacklog, new AsyncCallback<Void>() {
 
