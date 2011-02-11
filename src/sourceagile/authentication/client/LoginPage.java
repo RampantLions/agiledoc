@@ -77,7 +77,7 @@ public class LoginPage extends HorizontalPanel {
 
 		this.add(vp);
 
-		this.add(new NewsPanel());
+		this.add(new BlogArchiveList());
 	}
 
 	private HTML welcomePanel() {
