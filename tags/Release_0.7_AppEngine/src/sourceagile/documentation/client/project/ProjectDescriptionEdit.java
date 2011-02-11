@@ -1,7 +1,9 @@
 package sourceagile.documentation.client.project;
 
 import sourceagile.client.ProjectInitialization;
+import sourceagile.documentation.client.Documentation;
 import sourceagile.documentation.client.serverCalls.UpdateProjectDescription;
+import sourceagile.shared.utilities.LoadingPanel;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -23,7 +25,6 @@ public class ProjectDescriptionEdit extends VerticalPanel {
 		this.setSpacing(30);
 
 		VerticalPanel vp = new VerticalPanel();
-		// vp.setBorderWidth(1);
 
 		description.setSize("100%", "500px");
 
@@ -53,6 +54,9 @@ public class ProjectDescriptionEdit extends VerticalPanel {
 
 				ProjectInitialization.currentProject.setDescription(description
 						.getHTML());
+
+				Documentation.documentationPanel.clear();
+				Documentation.documentationPanel.add(new LoadingPanel());
 
 				new UpdateProjectDescription(
 						ProjectInitialization.currentProject);

@@ -39,12 +39,12 @@ public class Metrics extends VerticalPanel {
 
 	private void openDocumentationOption(String chartOption) {
 
+		MetricsOptions.untoggleOptions();
+		vpMetricsChart.clear();
+
 		if (chartOption != null && chartOption.equals(OPTION_TOTALS_CHART)) {
 
-			MetricsOptions.untoggleOptions();
 			MetricsOptions.radioTotals.setValue(true);
-
-			vpMetricsChart.clear();
 
 			vpMetricsChart.add(new CurrentProductivityColumnsChart());
 
