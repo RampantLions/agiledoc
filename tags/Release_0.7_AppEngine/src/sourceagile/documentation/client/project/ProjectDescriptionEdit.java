@@ -1,7 +1,7 @@
 package sourceagile.documentation.client.project;
 
 import sourceagile.client.ProjectInitialization;
-import sourceagile.documentation.client.serverCalls.UpdateRelatedLinks;
+import sourceagile.documentation.client.serverCalls.UpdateProjectDescription;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -54,7 +54,8 @@ public class ProjectDescriptionEdit extends VerticalPanel {
 				ProjectInitialization.currentProject.setDescription(description
 						.getHTML());
 
-				new UpdateRelatedLinks(ProjectInitialization.currentProject);
+				new UpdateProjectDescription(
+						ProjectInitialization.currentProject);
 			}
 		});
 
