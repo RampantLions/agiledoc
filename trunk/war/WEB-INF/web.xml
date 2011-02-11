@@ -12,6 +12,11 @@
 		<servlet-class>sourceagile.server.databaseAccess.Project.ProjectDatabaseAccessImplementation</servlet-class>
 	</servlet>
 
+	<servlet>
+		<servlet-name>projectBacklogDatabaseAccess</servlet-name>
+		<servlet-class>sourceagile.server.databaseAccess.projectBacklog.ProjectBacklogDatabaseImplementation</servlet-class>
+	</servlet>
+
   	<servlet>
 		<servlet-name>commentsDatabaseAccess</servlet-name>
 		<servlet-class>sourceagile.server.databaseAccess.Comments.CommentsDatabaseImplementation</servlet-class>
@@ -42,7 +47,12 @@
 		<url-pattern>/sourceagile/projectDatabaseAccess</url-pattern>
 	</servlet-mapping>
 	
-		<servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>projectBacklogDatabaseAccess</servlet-name>
+		<url-pattern>/sourceagileappengine/projectBacklogDatabaseAccess</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
 		<servlet-name>commentsDatabaseAccess</servlet-name>
 		<url-pattern>/sourceagile/commentsDatabaseAccess</url-pattern>
 	</servlet-mapping>
