@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectID>3</projectID>
+	<projectName>Help Agile</projectName>
+	<projectDomain>helpagile</projectDomain>
+	<projectDescription>Help Agile is an automatic generated specification
+		and user documentation for your software.</projectDescription>
+	<projectComponents>
+		<projectComponent componentName="Help Agile"
+			componentPath="client">
+			<entries>
+				<entry featureType="Architecture" isTodo="false">
+					<fileName>HelpAgile.java</fileName>
+					<filePath>client</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296199100127</fileDate>
+					<className>HelpAgile</className>
+					<featurePath></featurePath>
+					<featureName>Help Agile</featureName>
+					<featureFolder>Client</featureFolder>
+					<featureDescription>Entry point classes define
+						&lt;code&gt;onModuleLoad()&lt;/code&gt; for Google Web
+						Toolkit.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>HelpAgile</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>onModuleLoad</methodName>
+							<methodDescription>This is the entry point method.
+							</methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>HelpInitialization.java</fileName>
+					<filePath>client</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296199100127</fileDate>
+					<className>HelpInitialization</className>
+					<featurePath></featurePath>
+					<featureName>Help Initialization</featureName>
+					<featureFolder>Client</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>HelpInitialization</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>initHelp</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>initHelp</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>project</fieldName>
+							<fieldType>Project</fieldType>
+						</field>
+						<field>
+							<fieldName>helpEntries</fieldName>
+							<fieldType>HelpEntry[]</fieldType>
+						</field>
+						<field>
+							<fieldName>helpEntriesMap</fieldName>
+							<fieldType>java.util.HashMap&lt;java.lang.String, HelpEntry&gt;
+							</fieldType>
+						</field>
+						<field>
+							<fieldName>isSpecification</fieldName>
+							<fieldType>boolean</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>InternationalizationConstants.java</fileName>
+					<filePath>client</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296150413222</fileDate>
+					<className>InternationalizationConstants</className>
+					<featurePath></featurePath>
+					<featureName>Internationalization Constants</featureName>
+					<featureFolder>Client</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors />
+					<methods>
+						<method>
+							<methodName>userManual</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>specification</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>introduction</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>featuresList</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>architecture</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>entities</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>topics</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>HelpHint.java</fileName>
+					<filePath>client/exportation</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296199100127</fileDate>
+					<className>HelpHint</className>
+					<featurePath>exportation</featurePath>
+					<featureName>Help Hint</featureName>
+					<featureFolder>Exportation</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>HelpHint</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getHelpHint</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getHelpHint</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getHelpHintLinked</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>HelpWindow.java</fileName>
+					<filePath>client/exportation</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296173984365</fileDate>
+					<className>HelpWindow</className>
+					<featurePath>exportation</featurePath>
+					<featureName>Help Window</featureName>
+					<featureFolder>Exportation</featureFolder>
+					<featureDescription>Open a window with the help instructions for
+						this application.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>HelpWindow</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>open</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>helpLink</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>helpLinkText</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>helpIcon</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>helpURL</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>Help.java</fileName>
+					<filePath>client/userInterface</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296150413222</fileDate>
+					<className>Help</className>
+					<featurePath>userInterface</featurePath>
+					<featureName>Help</featureName>
+					<featureFolder>User Interface</featureFolder>
+					<featureDescription>Instructions for the application functions
+						while using the it, to try solve
+						user problems.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>Help</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>setHelpPage</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>documentationMenu</fieldName>
+							<fieldType>com.google.gwt.user.client.ui.VerticalPanel
+							</fieldType>
+						</field>
+						<field>
+							<fieldName>documentationPanel</fieldName>
+							<fieldType>com.google.gwt.user.client.ui.VerticalPanel
+							</fieldType>
+						</field>
+						<field>
+							<fieldName>internationalizationConstants</fieldName>
+							<fieldType>InternationalizationConstants</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="Feature" isTodo="false">
+					<fileName>ListEntriesFiltered.java</fileName>
+					<filePath>client/userInterface</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296201910357</fileDate>
+					<className>ListEntriesFiltered</className>
+					<featurePath>userInterface</featurePath>
+					<featureName>List Entries Filtered</featureName>
+					<featureFolder>User Interface</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>ListEntriesFiltered</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<fileName>ProjectDescription.java</fileName>
+					<filePath>client/userInterface</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296150413222</fileDate>
+					<className>ProjectDescription</className>
+					<featurePath>userInterface</featurePath>
+					<featureName>Project Description</featureName>
+					<featureFolder>User Interface</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>ProjectDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<fileName>ButtonSaveComment.java</fileName>
+					<filePath>client/userInterface/feature</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296199100127</fileDate>
+					<className>ButtonSaveComment</className>
+					<featurePath>userInterface/feature</featurePath>
+					<featureName>Button Save Comment</featureName>
+					<featureFolder>Feature</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>ButtonSaveComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>setComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Feature" isTodo="false">
+					<fileName>CommentsForm.java</fileName>
+					<filePath>client/userInterface/feature</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296199100127</fileDate>
+					<className>CommentsForm</className>
+					<featurePath>userInterface/feature</featurePath>
+					<featureName>Comments Form</featureName>
+					<featureFolder>Feature</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>CommentsForm</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields>
+						<field>
+							<fieldName>textAreaComment</fieldName>
+							<fieldType>com.gwtext.client.widgets.form.TextArea</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>FeaturePanel.java</fileName>
+					<filePath>client/userInterface/feature</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296199100127</fileDate>
+					<className>FeaturePanel</className>
+					<featurePath>userInterface/feature</featurePath>
+					<featureName>Feature Panel</featureName>
+					<featureFolder>Feature</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>FeaturePanel</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Feature" isTodo="false">
+					<fileName>HelpItemDescription.java</fileName>
+					<filePath>client/userInterface/feature</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296199100127</fileDate>
+					<className>HelpItemDescription</className>
+					<featurePath>userInterface/feature</featurePath>
+					<featureName>Help Item Description</featureName>
+					<featureFolder>Feature</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>HelpItemDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>featureName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>featureMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>HelpHeader.java</fileName>
+					<filePath>client/userInterface/header</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296272528591</fileDate>
+					<className>HelpHeader</className>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Help Header</featureName>
+					<featureFolder>Header</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>HelpHeader</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>HelpTitle.java</fileName>
+					<filePath>client/userInterface/header</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296272528591</fileDate>
+					<className>HelpTitle</className>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Help Title</featureName>
+					<featureFolder>Header</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>HelpTitle</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields>
+						<field>
+							<fieldName>internationalizationConstants</fieldName>
+							<fieldType>InternationalizationConstants</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<fileName>HomeIcon.java</fileName>
+					<filePath>client/userInterface/header</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296173984365</fileDate>
+					<className>HomeIcon</className>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Home Icon</featureName>
+					<featureFolder>Header</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>HomeIcon</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getImage</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<fileName>ProjectName.java</fileName>
+					<filePath>client/userInterface/header</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296173984365</fileDate>
+					<className>ProjectName</className>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Project Name</featureName>
+					<featureFolder>Header</featureFolder>
+					<featureDescription>Name and information about the current project
+						being showed in the user
+						manual.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>ProjectName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Feature" isTodo="false">
+					<fileName>SearchBox.java</fileName>
+					<filePath>client/userInterface/header</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296173984365</fileDate>
+					<className>SearchBox</className>
+					<featurePath>userInterface/header</featurePath>
+					<featureName>Search Box</featureName>
+					<featureFolder>Header</featureFolder>
+					<featureDescription>Execute searching on all the topics of this
+						help.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>SearchBox</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getSearchIcon</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>ComponentClassesList.java</fileName>
+					<filePath>client/userInterface/menu</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296201910357</fileDate>
+					<className>ComponentClassesList</className>
+					<featurePath>userInterface/menu</featurePath>
+					<featureName>Component Classes List</featureName>
+					<featureFolder>Menu</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>ComponentClassesList</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getFeatureLink</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="UserManual" isTodo="false">
+					<fileName>ComponentsList.java</fileName>
+					<filePath>client/userInterface/menu</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296199100127</fileDate>
+					<className>ComponentsList</className>
+					<featurePath>userInterface/menu</featurePath>
+					<featureName>Components List</featureName>
+					<featureFolder>Menu</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>ComponentsList</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>checkIfHasClasses</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>HelpMenu.java</fileName>
+					<filePath>client/userInterface/menu</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296199100127</fileDate>
+					<className>HelpMenu</className>
+					<featurePath>userInterface/menu</featurePath>
+					<featureName>Help Menu</featureName>
+					<featureFolder>Menu</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>HelpMenu</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields>
+						<field>
+							<fieldName>internationalizationConstants</fieldName>
+							<fieldType>InternationalizationConstants</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>ConvertSpecificationXML.java</fileName>
+					<filePath>client/utilities</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296201910357</fileDate>
+					<className>ConvertSpecificationXML</className>
+					<featurePath>utilities</featurePath>
+					<featureName>Convert Specification</featureName>
+					<featureFolder>Utilities</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>ConvertSpecificationXML</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>convertHelpEntries</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectElement</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectComponents</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProjectEntries</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getHelpEntryFromElement</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>entryMethods</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>PROJECT_ID</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>PROJECT_NAME</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>PROJECT_DOMAIN</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>PROJECT_DESCRIPTION</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>PROJECT_COMPONENT</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>COMPONENT_NAME</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>COMPONENT_PATH</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>ENTRY</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>FEATURE_TYPE</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>CLASS_NAME</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>CLASS_PATH</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>FEATURE_PATH</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>FEATURE_NAME</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>FEATURE_DESCRIPTION</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>IS_TODO</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>METHOD</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>METHOD_NAME</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>METHOD_DESCRIPTION</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>FeatureNameGenerator.java</fileName>
+					<filePath>client/utilities</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296150413222</fileDate>
+					<className>FeatureNameGenerator</className>
+					<featurePath>utilities</featurePath>
+					<featureName>Feature Name Generator</featureName>
+					<featureFolder>Utilities</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>FeatureNameGenerator</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>spacedName</methodName>
+							<methodDescription>Fill with spaces a name that is truncated.
+							</methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Architecture" isTodo="false">
+					<fileName>LoadSpecificationXML.java</fileName>
+					<filePath>client/utilities</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296150413222</fileDate>
+					<className>LoadSpecificationXML</className>
+					<featurePath>utilities</featurePath>
+					<featureName>Load Specification</featureName>
+					<featureFolder>Utilities</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>LoadSpecificationXML</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>loadXMLFile</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="true">
+					<fileName>SearchEngine.java</fileName>
+					<filePath>client/utilities</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296150413222</fileDate>
+					<className>SearchEngine</className>
+					<featurePath>utilities</featurePath>
+					<featureName>Search Engine</featureName>
+					<featureFolder>Utilities</featureFolder>
+					<featureDescription>Realizes the search of the system.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>SearchEngine</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>StringUtilsServerCalls.java</fileName>
+					<filePath>client/utilities/ServerCalls</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296150413222</fileDate>
+					<className>StringUtilsServerCalls</className>
+					<featurePath>utilities/ServerCalls</featurePath>
+					<featureName>String Utils Server Calls</featureName>
+					<featureFolder>Server Calls</featureFolder>
+					<featureDescription>The client side stub for the RPC service.
+					</featureDescription>
+					<constructors />
+					<methods>
+						<method>
+							<methodName>unescapeHtml</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>StringUtilsServerCallsAsync.java</fileName>
+					<filePath>client/utilities/ServerCalls</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296150413222</fileDate>
+					<className>StringUtilsServerCallsAsync</className>
+					<featurePath>utilities/ServerCalls</featurePath>
+					<featureName>String Utils Server Calls Async</featureName>
+					<featureFolder>Server Calls</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors />
+					<methods>
+						<method>
+							<methodName>unescapeHtml</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>StringUtilsService.java</fileName>
+					<filePath>client/utilities/ServerCalls</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1296150413222</fileDate>
+					<className>StringUtilsService</className>
+					<featurePath>utilities/ServerCalls</featurePath>
+					<featureName>String Utils Service</featureName>
+					<featureFolder>Server Calls</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>StringUtilsService</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>unescapeHtml</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>stringUtilsService</fieldName>
+							<fieldType>StringUtilsServerCallsAsync</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+	</projectComponents>
+</project>
