@@ -4,8 +4,6 @@ import java.util.HashMap;
 
 import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
-import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClasses;
-import sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClassesAsync;
 import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.Project;
@@ -32,7 +30,8 @@ public class ListRemoteClasses {
 				.equals(ProjectInitialization.currentProject
 						.getRepositoryType())) {
 
-			listRemoteClassesFromSubversion();
+			// listRemoteClassesFromSubversion();
+			listRemoteClassesFromXML();
 
 		} else if (Project.REPOSITORY_TYPE_GIT
 				.equals(ProjectInitialization.currentProject
@@ -68,6 +67,8 @@ public class ListRemoteClasses {
 
 					RootPanel.get("htmlID").clear();
 					RootPanel.get("htmlID").add(GlobalVariables.mainPage);
+
+					new LoadMockupClasses(classFiles);
 				}
 
 				public void onError(Request request, Throwable exception) {
@@ -114,28 +115,5 @@ public class ListRemoteClasses {
 
 	private void listRemoteClassesFromGit() {
 
-		final LoadGitRemoteClassesAsync gitRemoteFunctions = GWT
-				.create(LoadGitRemoteClasses.class);
-
-		gitRemoteFunctions.listClasses(ProjectInitialization.currentProject,
-				GlobalVariables.currentUser,
-				new AsyncCallback<HashMap<String, ClassFile>>() {
-
-					public void onSuccess(HashMap<String, ClassFile> entries) {
-
-						ProjectInitialization.projectEntries = entries;
-
-						GlobalVariables.mainPage = new MainPage();
-
-						RootPanel.get("htmlID").clear();
-						RootPanel.get("htmlID").add(GlobalVariables.mainPage);
-					}
-
-					public void onFailure(Throwable caught) {
-						// Show the RPC error message to the user
-
-					}
-
-				});
 	}
 }

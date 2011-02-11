@@ -6,9 +6,8 @@ import java.util.Date;
 
 import sourceagile.shared.entities.User;
 
-/**
- * 
- * @Entity
+/** 
+ * @entity 
  */
 public class ClassFile implements Serializable, Comparable<ClassFile> {
 

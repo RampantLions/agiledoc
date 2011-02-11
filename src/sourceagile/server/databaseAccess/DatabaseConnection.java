@@ -8,6 +8,7 @@ import javax.jdo.PersistenceManagerFactory;
 
 /**
  * 
+ * 
  * @Architecture
  */
 public class DatabaseConnection {
@@ -34,8 +35,9 @@ public class DatabaseConnection {
 
 	public static Properties getLocalDatabaseProperties() {
 
-		String databasePath = "C:\\eclipse\\workspace\\SourceAgile\\war\\data";
-		// String databasePath = "data";
+		// String databasePath =
+		// "C:\\alline\\eclipse\\workspace\\SourceAgile\\war\\data";
+		String databasePath = "data";
 
 		Properties properties = new Properties();
 
@@ -58,7 +60,7 @@ public class DatabaseConnection {
 	public static PersistenceManager connect() {
 
 		PersistenceManagerFactory PMF = JDOHelper
-				.getPersistenceManagerFactory(getLocalDatabaseProperties());
+				.getPersistenceManagerFactory(getAppengineDatabaseProperties());
 
 		PersistenceManager persistenceManager = PMF.getPersistenceManager();
 

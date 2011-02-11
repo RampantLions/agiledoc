@@ -9,6 +9,8 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
+import com.google.appengine.api.datastore.Key;
+
 @PersistenceCapable
 public class ProjectBacklog implements Serializable {
 
@@ -16,7 +18,7 @@ public class ProjectBacklog implements Serializable {
 
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	private Long projectBacklogID;
+	private Key projectBacklogID;
 
 	@Persistent
 	private String backlogName;
@@ -37,7 +39,7 @@ public class ProjectBacklog implements Serializable {
 	@Persistent
 	private String backlogStatus;
 
-	public Long getProjectBacklogID() {
+	public Key getProjectBacklogID() {
 		return projectBacklogID;
 	}
 

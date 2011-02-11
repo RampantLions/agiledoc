@@ -7,6 +7,8 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
+import com.google.appengine.api.datastore.Key;
+
 @PersistenceCapable
 public class ProjectComponents implements Serializable,
 		Comparable<ProjectComponents> {
@@ -15,7 +17,7 @@ public class ProjectComponents implements Serializable,
 
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	private Long componentID;
+	private Key componentID;
 
 	@Persistent
 	private String componentName;
@@ -33,7 +35,7 @@ public class ProjectComponents implements Serializable,
 		this.componentPath = componentPath;
 	}
 
-	public Long getComponentID() {
+	public Key getComponentID() {
 		return componentID;
 	}
 

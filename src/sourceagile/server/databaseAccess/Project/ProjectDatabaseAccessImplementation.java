@@ -12,6 +12,10 @@ import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
+/**
+ * 
+ * @Architecture
+ */
 @SuppressWarnings("serial")
 public class ProjectDatabaseAccessImplementation extends RemoteServiceServlet
 		implements ProjectDatabaseServerCalls, AuthenticationServerCalls,

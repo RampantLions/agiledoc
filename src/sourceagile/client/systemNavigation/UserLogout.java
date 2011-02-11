@@ -32,7 +32,7 @@ public class UserLogout extends HorizontalPanel {
 			userName = GlobalVariables.userLoggedIn.getEmail();
 		}
 
-		if (userName == null) {
+		if (userName == null || userName.equals("")) {
 
 			userName = "Public";
 		}

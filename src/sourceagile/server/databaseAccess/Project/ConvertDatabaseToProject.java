@@ -18,14 +18,14 @@ public class ConvertDatabaseToProject {
 
 		if (databaseProject.getProjectID() != null) {
 
-			project.setProjectID(databaseProject.getProjectID());
+			project.setProjectID(databaseProject.getProjectID().getId());
 		}
 
 		project.setRepositoryType(databaseProject.getRepositoryType());
 
 		project.setName(databaseProject.getName());
 
-		project.setDescription(databaseProject.getDescription());
+		project.setDescription(databaseProject.getDescription().getValue());
 
 		project.setRepositoryURL(databaseProject.getRepositoryURL());
 
@@ -35,7 +35,7 @@ public class ConvertDatabaseToProject {
 
 		project.setTestRoot(databaseProject.getTestRoot());
 
-		project.setRelatedLinks(databaseProject.getRelatedLinks());
+		project.setRelatedLinks(databaseProject.getRelatedLinks().getValue());
 
 		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 
@@ -73,7 +73,7 @@ public class ConvertDatabaseToProject {
 		if (projectComponentDatabase.getComponentID() != null) {
 
 			projectComponent.setComponentID(projectComponentDatabase
-					.getComponentID());
+					.getComponentID().getId());
 		}
 
 		projectComponent.setComponentName(projectComponentDatabase
@@ -93,7 +93,7 @@ public class ConvertDatabaseToProject {
 		if (projectBacklogDatabase.getProjectBacklogID() != null) {
 
 			projectBacklog.setProjectBacklogID(projectBacklogDatabase
-					.getProjectBacklogID());
+					.getProjectBacklogID().getId());
 		}
 
 		projectBacklog.setBacklogDate(new Date(projectBacklogDatabase

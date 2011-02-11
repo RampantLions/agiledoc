@@ -26,7 +26,8 @@ public class ListAllComments {
 
 						Documentation.documentationPanel.clear();
 
-						String fileContent = ExportXmlFile.getEntriesXML(comments);
+						String fileContent = ExportXmlFile
+								.getEntriesXML(comments);
 
 						if (fileContent.length() < 100000) {
 

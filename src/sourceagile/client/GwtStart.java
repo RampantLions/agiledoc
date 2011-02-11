@@ -6,7 +6,7 @@ import sourceagile.authentication.client.serverCalls.ListProjects;
 import com.google.gwt.core.client.EntryPoint;
 
 /**
- * GWT Entrance (EntryPoint)
+ * Anchor class to init the system by the Google Web Toolkit (EntryPoint).
  * 
  * @Architecture
  */
@@ -14,7 +14,7 @@ public class GwtStart implements EntryPoint {
 
 	public void onModuleLoad() {
 
-		HelpAgileExport.initHelp("LiveSource");
+		HelpAgileExport.initHelp("SourceAgile");
 
 		new ListProjects();
 	}

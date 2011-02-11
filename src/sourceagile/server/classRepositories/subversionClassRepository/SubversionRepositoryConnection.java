@@ -13,9 +13,8 @@ import sourceagile.shared.entities.project.Project;
 /**
  * Open a connection with the repository that was entered in the project data.
  * 
- * @architecture
+ * @Architecture
  */
-
 public class SubversionRepositoryConnection {
 
 	public static SVNRepository connectClassRepository(Project project,

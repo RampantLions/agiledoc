@@ -202,5 +202,4 @@ public class FeatureDescription extends VerticalPanel {
 
 		return vp;
 	}
-
 }

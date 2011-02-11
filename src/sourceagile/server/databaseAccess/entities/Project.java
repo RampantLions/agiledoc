@@ -4,11 +4,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.jdo.annotations.Column;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.Text;
 
 @PersistenceCapable
 public class Project implements Serializable {
@@ -17,14 +19,13 @@ public class Project implements Serializable {
 
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	private Long projectID;
+	private Key projectID;
 
 	@Persistent
 	private String name;
 
 	@Persistent
-	@Column(jdbcType = "LONGVARCHAR")
-	private String description;
+	private Text description;
 
 	@Persistent
 	private String repositoryType;
@@ -42,8 +43,7 @@ public class Project implements Serializable {
 	private String domain;
 
 	@Persistent
-	@Column(jdbcType = "LONGVARCHAR")
-	private String relatedLinks;
+	private Text relatedLinks;
 
 	@Persistent(defaultFetchGroup = "true")
 	private List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
@@ -51,7 +51,7 @@ public class Project implements Serializable {
 	@Persistent(defaultFetchGroup = "true")
 	private List<ProjectBacklog> projectBacklog = new ArrayList<ProjectBacklog>();
 
-	public Long getProjectID() {
+	public Key getProjectID() {
 		return projectID;
 	}
 
@@ -61,14 +61,6 @@ public class Project implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	public String getRepositoryType() {
@@ -111,11 +103,19 @@ public class Project implements Serializable {
 		this.testRoot = testRoot;
 	}
 
-	public String getRelatedLinks() {
+	public Text getDescription() {
+		return description;
+	}
+
+	public void setDescription(Text description) {
+		this.description = description;
+	}
+
+	public Text getRelatedLinks() {
 		return relatedLinks;
 	}
 
-	public void setRelatedLinks(String relatedLinks) {
+	public void setRelatedLinks(Text relatedLinks) {
 		this.relatedLinks = relatedLinks;
 	}
 

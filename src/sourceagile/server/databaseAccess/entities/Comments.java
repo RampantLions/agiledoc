@@ -9,6 +9,8 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
+import com.google.appengine.api.datastore.Key;
+
 @PersistenceCapable
 public class Comments implements Serializable {
 
@@ -16,7 +18,7 @@ public class Comments implements Serializable {
 
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	private Long commmentID;
+	private Key commmentID;
 
 	@Persistent
 	private String commentAuthor;
@@ -34,7 +36,7 @@ public class Comments implements Serializable {
 	@Persistent
 	private String commentClass;
 
-	public Long getCommmentID() {
+	public Key getCommmentID() {
 		return commmentID;
 	}
 

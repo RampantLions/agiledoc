@@ -72,12 +72,12 @@ public class ProjectsData {
 		Project project = new Project();
 		// project.setProjectID(new Long(2));
 		project.setName("Tic Tac Toe");
-		project.setRepositoryType(sourceagile.shared.entities.project.Project.REPOSITORY_TYPE_SUBVERSION);
+		project.setRepositoryType(Project.REPOSITORY_TYPE_XML);
 		project.setRepositoryURL("https://tictactoe4j.googlecode.com/svn");
 		project.setRoot("/trunk/src/");
 		project.setTestRoot("/trunk/test/");
 		project.setDomain("tictactoe");
-		project.setRelatedLinks("http://en.wikipedia.org/wiki/Tic-tac-toe");
+
 		project.setDescription("Tic-tac-toe, also spelled tick tack toe, or noughts and crosses as it is known in the UK, Ireland, "
 				+ "Australia, New Zealand, is a pencil-and-paper game for two players, O and X, who take turns marking the spaces in a 3x3 grid,"
 				+ " usually X going first. The player who succeeds in placing three respective marks in a horizontal, vertical, or diagonal row wins the game.");
@@ -104,7 +104,6 @@ public class ProjectsData {
 		project.setProjectComponents(projectComponents);
 
 		return project;
-
 	}
 
 	public static Project loadProject2() {
@@ -123,27 +122,6 @@ public class ProjectsData {
 		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 
 		projectComponents.add(new ProjectComponents("Help Agile", "client"));
-
-		project.setProjectComponents(projectComponents);
-
-		return project;
-	}
-
-	public static Project loadProject3() {
-
-		Project project = new Project();
-		// project.setProjectID(new Long(3));
-		project.setName("Where is URL?");
-		project.setRepositoryType(sourceagile.shared.entities.project.Project.REPOSITORY_TYPE_SUBVERSION);
-		project.setRepositoryURL("http://platrasha.svnrepository.com/svn/code");
-		project.setRoot("/client/scheduler/src/");
-		project.setTestRoot("/client/scheduler/test/");
-		project.setDomain("com/platrasha/trip");
-		project.setDescription("");
-
-		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
-
-		projectComponents.add(new ProjectComponents("Client", "client"));
 
 		project.setProjectComponents(projectComponents);
 

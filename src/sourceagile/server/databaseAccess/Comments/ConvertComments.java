@@ -11,7 +11,7 @@ public class ConvertComments {
 
 		Comments comment = new Comments();
 
-		comment.setCommmentID(commentDatabase.getCommmentID());
+		comment.setCommmentID(commentDatabase.getCommmentID().getId());
 
 		comment.setCommentAuthor(commentDatabase.getCommentAuthor());
 

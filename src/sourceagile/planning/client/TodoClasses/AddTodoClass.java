@@ -6,7 +6,6 @@ import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.utilities.FileNameGenerator;
 import sourceagile.shared.utilities.FormField;
-import sourceagile.testing.client.serverCalls.AddTestClass;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -129,7 +128,7 @@ public class AddTodoClass extends VerticalPanel {
 
 				if (createTest.getValue()) {
 
-					new AddTestClass(classFile, newSubfolderName, true);
+					// new AddTestClass(classFile, newSubfolderName, true);
 				}
 
 			}

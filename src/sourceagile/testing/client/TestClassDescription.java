@@ -26,7 +26,7 @@ public class TestClassDescription extends VerticalPanel {
 
 			FeatureVizualizationPanel.featureContent
 					.add(new ButtonViewTestSourceCode(testEntry));
-
+			
 			Label labelSpace = new Label(" ");
 			labelSpace.setHeight("10px");
 
