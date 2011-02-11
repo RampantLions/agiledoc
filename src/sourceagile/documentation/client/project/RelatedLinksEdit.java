@@ -1,7 +1,9 @@
 package sourceagile.documentation.client.project;
 
 import sourceagile.client.ProjectInitialization;
+import sourceagile.documentation.client.Documentation;
 import sourceagile.documentation.client.serverCalls.UpdateRelatedLinks;
+import sourceagile.shared.utilities.LoadingPanel;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -52,6 +54,9 @@ public class RelatedLinksEdit extends VerticalPanel {
 
 				ProjectInitialization.currentProject
 						.setRelatedLinks(relatedLinks.getHTML());
+
+				Documentation.documentationPanel.clear();
+				Documentation.documentationPanel.add(new LoadingPanel());
 
 				new UpdateRelatedLinks(ProjectInitialization.currentProject);
 			}
