@@ -79,7 +79,7 @@
 		allowfullscreen="true" height="355"
 		width="400"&gt;&lt;/object&gt;&lt;div style="padding: 5px 0pt
 		12px;"&gt;&lt;/div&gt;&lt;/div&gt;&lt;td&gt;&lt;object id="scPlayer"
-		�="" type="application/x-shockwave-flash"
+		type="application/x-shockwave-flash"
 		data="http://content.screencast.com/users/AllineO/folders/LIVE%20SOURCE/media/b5eb8a45-99e2-4a2a-b075-d75efb5532ab/mp4h264player.swf"
 		height="380px" width="400px"&gt; &lt;param name="movie"
 		value="http://content.screencast.com/users/AllineO/folders/LIVE%20SOURCE/media/b5eb8a45-99e2-4a2a-b075-d75efb5532ab/mp4h264player.swf"&gt;
@@ -96,6 +96,22 @@
 		width="1146"&gt;&lt;/iframe&gt;
 		&lt;/object&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
 	</projectDescription>
+	<projectLinks>&lt;div&gt;&lt;br&gt;&lt;/div&gt;Live
+		Source online:&lt;br&gt;(Google App Engine): &lt;a
+		href="http://sourceagile.appspot.com"
+		target="_blank"&gt;http://sourceagile.appspot.com&lt;/a&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;Live
+
+		Source Blog:&lt;/div&gt;&lt;div&gt;&lt;a
+		href="http://livesourceagile.bloggerspot.com"
+		target="_blank"&gt;http://livesourceagile.bloggerspot.com&lt;/a&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Live
+
+		Source - File Repository:&lt;br&gt;&lt;br&gt;Google Code -
+		Subversion:&lt;br&gt; #
+		Non-members may check out a read-only working copy anonymously over
+		HTTP.&lt;/div&gt;&lt;div&gt; svn checkout
+		&lt;a href="http://sourceagile.googlecode.com/svn/trunk/"
+		target="_blank"&gt;http://sourceagile.googlecode.com/svn/trunk/&lt;/a&gt;
+		sourceagile-read-only&lt;/div&gt;&lt;/div&gt;</projectLinks>
 	<projectComponents>
 		<projectComponent componentName="Authentication"
 			componentPath="authentication/client">
@@ -1631,7 +1647,7 @@
 					<fileName>ExportXmlFile.java</fileName>
 					<filePath>documentation/client/export</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1296765537673</fileDate>
+					<fileDate>1297480539969</fileDate>
 					<className>ExportXmlFile</className>
 					<featurePath>export</featurePath>
 					<featureName>Export Xml File</featureName>
@@ -1712,6 +1728,10 @@
 						</field>
 						<field>
 							<fieldName>PROJECT_DESCRIPTION</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>PROJECT_LINKS</fieldName>
 							<fieldType>java.lang.String</fieldType>
 						</field>
 						<field>
@@ -4389,8 +4409,8 @@
 				<entry featureType="" isTodo="false">
 					<fileName>ConvertProjectToDatabase.java</fileName>
 					<filePath>server/databaseAccess/Project</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1297206323358</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
 					<className>ConvertProjectToDatabase</className>
 					<featurePath>Project</featurePath>
 					<featureName>Convert Project To Database</featureName>
@@ -4409,6 +4429,10 @@
 						</method>
 						<method>
 							<methodName>getDatabaseProjectComponent</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDatabaseProjectBacklogs</methodName>
 							<methodDescription></methodDescription>
 						</method>
 						<method>
@@ -4506,8 +4530,8 @@
 				<entry featureType="" isTodo="false">
 					<fileName>ProjectDatabaseAccessImplementation.java</fileName>
 					<filePath>server/databaseAccess/Project</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1297206323358</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
 					<className>ProjectDatabaseAccessImplementation</className>
 					<featurePath>Project</featurePath>
 					<featureName>Project Database Access Implementation</featureName>
@@ -4547,8 +4571,8 @@
 				<entry featureType="" isTodo="false">
 					<fileName>SaveProject.java</fileName>
 					<filePath>server/databaseAccess/Project</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1297206323358</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
 					<className>SaveProject</className>
 					<featurePath>Project</featurePath>
 					<featureName>Save Project</featureName>
@@ -4567,81 +4591,6 @@
 						</method>
 						<method>
 							<methodName>update</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<fields />
-					<comments />
-				</entry>
-				<entry featureType="" isTodo="false">
-					<fileName>ListProjectBacklog.java</fileName>
-					<filePath>server/databaseAccess/ProjectBacklog</filePath>
-					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1294895491117</fileDate>
-					<className>ListProjectBacklog</className>
-					<featurePath>ProjectBacklog</featurePath>
-					<featureName>List Project Backlog</featureName>
-					<featureFolder>Project Backlog</featureFolder>
-					<featureDescription></featureDescription>
-					<constructors>
-						<method>
-							<methodName>ListProjectBacklog</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</constructors>
-					<methods>
-						<method>
-							<methodName>list</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<fields />
-					<comments />
-				</entry>
-				<entry featureType="Architecture" isTodo="false">
-					<fileName>ProjectBacklogDatabaseImplementation.java</fileName>
-					<filePath>server/databaseAccess/ProjectBacklog</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1296687269491</fileDate>
-					<className>ProjectBacklogDatabaseImplementation</className>
-					<featurePath>ProjectBacklog</featurePath>
-					<featureName>Project Backlog Database Implementation</featureName>
-					<featureFolder>Project Backlog</featureFolder>
-					<featureDescription></featureDescription>
-					<constructors>
-						<method>
-							<methodName>ProjectBacklogDatabaseImplementation</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</constructors>
-					<methods>
-						<method>
-							<methodName>saveProjectBacklog</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
-					<fields />
-					<comments />
-				</entry>
-				<entry featureType="" isTodo="false">
-					<fileName>SaveProjectBacklog.java</fileName>
-					<filePath>server/databaseAccess/ProjectBacklog</filePath>
-					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1294895491117</fileDate>
-					<className>SaveProjectBacklog</className>
-					<featurePath>ProjectBacklog</featurePath>
-					<featureName>Save Project Backlog</featureName>
-					<featureFolder>Project Backlog</featureFolder>
-					<featureDescription></featureDescription>
-					<constructors>
-						<method>
-							<methodName>SaveProjectBacklog</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</constructors>
-					<methods>
-						<method>
-							<methodName>save</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
@@ -5070,6 +5019,89 @@
 					</fields>
 					<comments />
 				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>GetProjectBacklog.java</fileName>
+					<filePath>server/databaseAccess/projectBacklog</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1297465029873</fileDate>
+					<className>GetProjectBacklog</className>
+					<featurePath>projectBacklog</featurePath>
+					<featureName>Get Project Backlog</featureName>
+					<featureFolder>Project Backlog</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>GetProjectBacklog</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getProjectBacklogDatabase</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Architecture" isTodo="false">
+					<fileName>ProjectBacklogDatabaseImplementation.java</fileName>
+					<filePath>server/databaseAccess/projectBacklog</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1297465029873</fileDate>
+					<className>ProjectBacklogDatabaseImplementation</className>
+					<featurePath>projectBacklog</featurePath>
+					<featureName>Project Backlog Database Implementation</featureName>
+					<featureFolder>Project Backlog</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>ProjectBacklogDatabaseImplementation</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>addProjectBacklog</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>updateProjectBacklog</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>SaveProjectBacklog.java</fileName>
+					<filePath>server/databaseAccess/projectBacklog</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1297465029873</fileDate>
+					<className>SaveProjectBacklog</className>
+					<featurePath>projectBacklog</featurePath>
+					<featureName>Save Project Backlog</featureName>
+					<featureFolder>Project Backlog</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>SaveProjectBacklog</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>addNew</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>update</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
 			</entries>
 		</projectComponent>
 		<projectComponent componentName="Infra Structure/Doclet"
@@ -5261,8 +5293,8 @@
 				<entry featureType="UserManual" isTodo="false">
 					<fileName>ButtonNewStory.java</fileName>
 					<filePath>planning/client</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1297206323358</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
 					<className>ButtonNewStory</className>
 					<featurePath></featurePath>
 					<featureName>Button New Story</featureName>
@@ -5301,8 +5333,8 @@
 				<entry featureType="Feature" isTodo="false">
 					<fileName>PlanningPage.java</fileName>
 					<filePath>planning/client</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1296687269491</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
 					<className>PlanningPage</className>
 					<featurePath></featurePath>
 					<featureName>Planning Page</featureName>
@@ -5315,16 +5347,7 @@
 							<methodDescription></methodDescription>
 						</method>
 					</constructors>
-					<methods>
-						<method>
-							<methodName>buttonNewTask</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>buttonNewStory</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
+					<methods />
 					<fields>
 						<field>
 							<fieldName>vpProjectBacklog</fieldName>
@@ -5468,11 +5491,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="false">
+				<entry featureType="Feature" isTodo="false">
 					<fileName>ProjectBacklogList.java</fileName>
 					<filePath>planning/client/projectBacklog</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1296007048565</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
 					<className>ProjectBacklogList</className>
 					<featurePath>projectBacklog</featurePath>
 					<featureName>Project Backlog List</featureName>
@@ -5505,19 +5528,19 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="false">
-					<fileName>Story.java</fileName>
+				<entry featureType="UserManual" isTodo="false">
+					<fileName>StoryForm.java</fileName>
 					<filePath>planning/client/projectBacklog</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1296007048565</fileDate>
-					<className>Story</className>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
+					<className>StoryForm</className>
 					<featurePath>projectBacklog</featurePath>
-					<featureName>Story</featureName>
+					<featureName>Story Form</featureName>
 					<featureFolder>Project Backlog</featureFolder>
 					<featureDescription></featureDescription>
 					<constructors>
 						<method>
-							<methodName>Story</methodName>
+							<methodName>StoryForm</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</constructors>
@@ -5544,14 +5567,26 @@
 							<fieldName>storyDescription</fieldName>
 							<fieldType>com.google.gwt.user.client.ui.TextArea</fieldType>
 						</field>
+						<field>
+							<fieldName>storyPriority</fieldName>
+							<fieldType>com.google.gwt.user.client.ui.TextBox</fieldType>
+						</field>
+						<field>
+							<fieldName>storyEstimative</fieldName>
+							<fieldType>com.google.gwt.user.client.ui.TextBox</fieldType>
+						</field>
+						<field>
+							<fieldName>storyStatus</fieldName>
+							<fieldType>com.google.gwt.user.client.ui.TextBox</fieldType>
+						</field>
 					</fields>
 					<comments />
 				</entry>
 				<entry featureType="" isTodo="false">
 					<fileName>CreateProjectBacklog.java</fileName>
 					<filePath>planning/client/serverCalls</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1296687269491</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
 					<className>CreateProjectBacklog</className>
 					<featurePath>serverCalls</featurePath>
 					<featureName>Create Project Backlog</featureName>
@@ -5600,10 +5635,76 @@
 					<comments />
 				</entry>
 				<entry featureType="Architecture" isTodo="false">
+					<fileName>GetProjectServerCalls.java</fileName>
+					<filePath>planning/client/serverCalls</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
+					<className>GetProjectServerCalls</className>
+					<featurePath>serverCalls</featurePath>
+					<featureName>Get Project Server Calls</featureName>
+					<featureFolder>Server Calls</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors />
+					<methods>
+						<method>
+							<methodName>getProject</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Architecture" isTodo="false">
+					<fileName>GetProjectServerCallsAsync.java</fileName>
+					<filePath>planning/client/serverCalls</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
+					<className>GetProjectServerCallsAsync</className>
+					<featurePath>serverCalls</featurePath>
+					<featureName>Get Project Server Calls Async</featureName>
+					<featureFolder>Server Calls</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors />
+					<methods>
+						<method>
+							<methodName>getProject</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>ListProjectBacklog.java</fileName>
+					<filePath>planning/client/serverCalls</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
+					<className>ListProjectBacklog</className>
+					<featurePath>serverCalls</featurePath>
+					<featureName>List Project Backlog</featureName>
+					<featureFolder>Server Calls</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>ListProjectBacklog</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields>
+						<field>
+							<fieldName>databaseServerCalls</fieldName>
+							<fieldType>sourceagile.planning.client.serverCalls.GetProjectServerCallsAsync
+							</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="Architecture" isTodo="false">
 					<fileName>ProjectBacklogServerCalls.java</fileName>
 					<filePath>planning/client/serverCalls</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1296687269491</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
 					<className>ProjectBacklogServerCalls</className>
 					<featurePath>serverCalls</featurePath>
 					<featureName>Project Backlog Server Calls</featureName>
@@ -5612,7 +5713,11 @@
 					<constructors />
 					<methods>
 						<method>
-							<methodName>saveProjectBacklog</methodName>
+							<methodName>addProjectBacklog</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>updateProjectBacklog</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
@@ -5622,8 +5727,8 @@
 				<entry featureType="Architecture" isTodo="false">
 					<fileName>ProjectBacklogServerCallsAsync.java</fileName>
 					<filePath>planning/client/serverCalls</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1296687269491</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
 					<className>ProjectBacklogServerCallsAsync</className>
 					<featurePath>serverCalls</featurePath>
 					<featureName>Project Backlog Server Calls Async</featureName>
@@ -5632,11 +5737,41 @@
 					<constructors />
 					<methods>
 						<method>
-							<methodName>saveProjectBacklog</methodName>
+							<methodName>addProjectBacklog</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>updateProjectBacklog</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
 					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="false">
+					<fileName>UpdateProjectBacklog.java</fileName>
+					<filePath>planning/client/serverCalls</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1297461935133</fileDate>
+					<className>UpdateProjectBacklog</className>
+					<featurePath>serverCalls</featurePath>
+					<featureName>Update Project Backlog</featureName>
+					<featureFolder>Server Calls</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>UpdateProjectBacklog</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields>
+						<field>
+							<fieldName>databaseServerCalls</fieldName>
+							<fieldType>sourceagile.planning.client.serverCalls.ProjectBacklogServerCallsAsync
+							</fieldType>
+						</field>
+					</fields>
 					<comments />
 				</entry>
 			</entries>
