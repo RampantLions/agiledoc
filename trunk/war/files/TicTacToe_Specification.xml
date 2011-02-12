@@ -12,10 +12,10 @@
 		The player who succeeds in placing three respective marks in a
 		horizontal, vertical, or diagonal row wins the
 		game.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div
-		style="text-align: center;"&gt;&amp;nbsp;&lt;object id="scPlayer"
-		�width="500" type="application/x-shockwave-flash"
+		style="text-align: center;"&gt;&lt;object id="scPlayer"
+		type="application/x-shockwave-flash"
 		data="http://content.screencast.com/users/AllineO/folders/LIVE%20SOURCE/media/5226bb95-167a-4c6f-9c49-5a356bb459aa/mp4h264player.swf"
-		height="300"&gt; &lt;param name="movie"
+		height="300" width="500"&gt; &lt;param name="movie"
 		value="http://content.screencast.com/users/AllineO/folders/LIVE%20SOURCE/media/5226bb95-167a-4c6f-9c49-5a356bb459aa/mp4h264player.swf"&gt;
 		&lt;param name="quality" value="high"&gt; &lt;param name="bgcolor"
 		value="#FFFFFF"&gt; &lt;param name="flashVars"
@@ -29,6 +29,19 @@
 		frameborder="0" height="751" scrolling="no"
 		width="1146"&gt;&lt;/iframe&gt;
 		&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;</projectDescription>
+	<projectLinks>&lt;div&gt;&lt;br&gt;&lt;/div&gt;Tic Tac Toe online
+		version:&lt;br&gt;(Google App Engine): &lt;a
+		href="http://tictactoe4j.appspot.com"
+		target="_blank"&gt;http://tictactoe4j.appspot.com&lt;/a&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;What
+		is Tic Tac Toe:&lt;/div&gt;&lt;div&gt;&lt;a
+		href="http://en.wikipedia.org/wiki/Tic-tac-toe"
+		target="_blank"&gt;http://en.wikipedia.org/wiki/Tic-tac-toe&lt;/a&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;tictactoe4j
+		- File Repository:&lt;br&gt;Google Code - Subversion:&lt;br&gt; #
+		Non-members may check out a read-only working copy anonymously over
+		HTTP.&lt;/div&gt;&lt;div&gt; svn checkout &lt;a
+		href="http://tictactoe4j.googlecode.com/svn/trunk/"
+		target="_blank"&gt;http://tictactoe4j.googlecode.com/svn/trunk/&lt;/a&gt;
+		tictactoe4j-read-only&lt;/div&gt;&lt;/div&gt;&lt;br&gt;</projectLinks>
 	<projectComponents>
 		<projectComponent componentName="Authentication"
 			componentPath="authentication/client">
@@ -374,11 +387,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="Feature" isTodo="true">
+				<entry featureType="Feature" isTodo="false">
 					<fileName>WinningSequence.java</fileName>
 					<filePath>client/userInterface</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1297393584028</fileDate>
+					<fileDate>1297465798518</fileDate>
 					<className>WinningSequence</className>
 					<featurePath>userInterface</featurePath>
 					<featureName>Winning Sequence</featureName>
@@ -387,10 +400,7 @@
 						horizontal, vertical, or diagonal
 						series, the current Player wins the game, the system highlights the
 						winning
-						sequence and the game is over.
-
-						TODO: Change the winning sequence color from RED to GREEN.
-					</featureDescription>
+						sequence and the game is over.</featureDescription>
 					<constructors>
 						<method>
 							<methodName>WinningSequence</methodName>
