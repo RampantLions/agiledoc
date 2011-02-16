@@ -25,6 +25,7 @@ public class ExportXmlFile {
 	private static final String PROJECT_NAME = "projectName";
 	private static final String PROJECT_DOMAIN = "projectDomain";
 	private static final String PROJECT_DESCRIPTION = "projectDescription";
+	private static final String PROJECT_LINKS = "projectLinks";
 
 	private static final String PROJECT_COMPONENTS = "projectComponents";
 	private static final String PROJECT_COMPONENT = "projectComponent";
@@ -196,6 +197,9 @@ public class ExportXmlFile {
 
 		projectElement.appendChild(getElement(xmlDocument, PROJECT_DESCRIPTION,
 				ProjectInitialization.currentProject.getDescription()));
+
+		projectElement.appendChild(getElement(xmlDocument, PROJECT_LINKS,
+				ProjectInitialization.currentProject.getRelatedLinks()));
 
 		return projectElement;
 	}
