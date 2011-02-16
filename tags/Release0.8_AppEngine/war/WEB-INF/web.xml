@@ -31,6 +31,11 @@
 		<servlet-class>sourceagile.server.fileExporter.FileExporterImplementation</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>classesDoclet</servlet-name>
+		<servlet-class>sourceagile.server.doclet.ClassesDocletImplementation</servlet-class>
+	</servlet>
+	
 	<servlet-mapping>
 		<servlet-name>projectDatabaseAccess</servlet-name>
 		<url-pattern>/sourceagileappengine/projectDatabaseAccess</url-pattern>
@@ -55,6 +60,13 @@
 		<servlet-name>fileExporter</servlet-name>
 		<url-pattern>/sourceagileappengine/fileExporter</url-pattern>
 	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>classesDoclet</servlet-name>
+		<url-pattern>/sourceagileappengine/classesDoclet</url-pattern>
+	</servlet-mapping>
+	
+
   
   <!-- Default page to serve -->
   <welcome-file-list>
