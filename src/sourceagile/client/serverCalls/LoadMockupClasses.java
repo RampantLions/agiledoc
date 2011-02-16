@@ -29,8 +29,14 @@ public class LoadMockupClasses {
 							Response response) {
 
 						classFile.setSourceCode(response.getText());
+
 						ProjectInitialization.projectEntries.put(
 								classFile.toString(), classFile);
+
+						// if (classFile.getFileName().contains(".java")) {
+
+						// new GetClassDoclet(classFile);
+						// }
 					}
 
 					public void onError(Request request, Throwable exception) {
