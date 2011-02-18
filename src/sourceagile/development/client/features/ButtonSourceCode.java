@@ -1,5 +1,6 @@
 package sourceagile.development.client.features;
 
+import helpagile.client.exportation.HelpHint;
 import sourceagile.development.client.sourceCode.SourceCodeView;
 import sourceagile.shared.entities.entry.ClassFile;
 
@@ -31,6 +32,7 @@ public class ButtonSourceCode extends HTML {
 			}
 		});
 
-		this.setTitle("Source Code");
+		HelpHint.setHintHandler(this, this.getClass().getName(), "Source Code",
+				null);
 	}
 }

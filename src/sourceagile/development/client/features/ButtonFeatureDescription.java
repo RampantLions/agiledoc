@@ -1,5 +1,6 @@
 package sourceagile.development.client.features;
 
+import helpagile.client.exportation.HelpHint;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -32,6 +33,7 @@ public class ButtonFeatureDescription extends HTML {
 			}
 		});
 
-		this.setTitle("Feature Description");
+		HelpHint.setHintHandler(this, this.getClass().getName(),
+				"Feature Description", null);
 	}
 }

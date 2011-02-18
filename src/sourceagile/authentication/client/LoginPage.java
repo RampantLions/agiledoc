@@ -70,7 +70,7 @@ public class LoginPage extends HorizontalPanel {
 
 		hpButtonLogin.add(new ButtonLogin());
 
-		hpButtonLogin.add(HelpWindow.helpLink("SourceAgile", "false",
+		hpButtonLogin.add(HelpWindow.helpLink("LiveSource", "false", null,
 				"Read more"));
 
 		vp.add(hpButtonLogin);

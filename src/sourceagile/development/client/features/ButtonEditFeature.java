@@ -1,5 +1,6 @@
 package sourceagile.development.client.features;
 
+import helpagile.client.exportation.HelpHint;
 import sourceagile.development.client.features.edit.FeatureEdit;
 import sourceagile.shared.entities.entry.ClassFile;
 
@@ -31,6 +32,8 @@ public class ButtonEditFeature extends HTML {
 			}
 		});
 
-		this.setTitle("Edit");
+		HelpHint.setHintHandler(this,
+				"sourceagile.development.client.features.ButtonEditFeature",
+				"Edit", null);
 	}
 }

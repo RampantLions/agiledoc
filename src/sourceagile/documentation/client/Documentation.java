@@ -92,10 +92,10 @@ public class Documentation {
 
 		vp.add(entitiesLink);
 
-		vp.add(HelpWindow.helpLink(projectName, "true",
+		vp.add(HelpWindow.helpLink(projectName, "true", null,
 				internationalizationConstants.specification()));
 
-		vp.add(HelpWindow.helpLink(projectName, "false",
+		vp.add(HelpWindow.helpLink(projectName, "false", null,
 				internationalizationConstants.userManual()));
 
 		vp.add(exportXmlLink);
