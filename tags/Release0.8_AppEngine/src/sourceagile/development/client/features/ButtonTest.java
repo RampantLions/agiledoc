@@ -1,5 +1,6 @@
 package sourceagile.development.client.features;
 
+import helpagile.client.exportation.HelpHint;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.testing.client.serverCalls.GetRemoteTestClass;
 
@@ -31,6 +32,6 @@ public class ButtonTest extends HTML {
 			}
 		});
 
-		this.setTitle("Test");
+		HelpHint.setHintHandler(this, this.getClass().getName(), "Test", null);
 	}
 }
