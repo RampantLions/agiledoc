@@ -1,5 +1,9 @@
 /** Add css rules here for your application. */
 
+a:link,a:visited {
+	text-decoration: none;
+	cursor: hand;
+}
 
 /** Example rules used by the template application (remove for your app) */
 h1 {
