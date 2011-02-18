@@ -119,7 +119,7 @@ public class AboutProject extends VerticalPanel {
 		String projectName = FileNameGenerator
 				.compactName(ProjectInitialization.currentProject.getName());
 
-		HTML htmlSpecification = HelpWindow.helpLink(projectName, "true",
+		HTML htmlSpecification = HelpWindow.helpLink(projectName, "true", null,
 				internationalizationConstants.specification());
 
 		return htmlSpecification;
