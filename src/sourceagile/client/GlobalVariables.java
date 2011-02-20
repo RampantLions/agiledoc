@@ -5,6 +5,8 @@ import sourceagile.shared.entities.User;
 
 public class GlobalVariables {
 
+	public static String locale;
+
 	public static MainPage mainPage;
 
 	public static String systemVersion = "Prototype Version 0.8";
