@@ -22,6 +22,8 @@ public class ProjectDescription extends VerticalPanel {
 		Documentation.projectDescriptionLink
 				.setHTML(ProjectDescriptionLink.textPressed);
 
+		this.setWidth("700px");
+
 		this.setSpacing(40);
 
 		HTML projectDesctiptionText = new HTML(
