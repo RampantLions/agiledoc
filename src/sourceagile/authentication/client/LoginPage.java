@@ -5,8 +5,10 @@ import helpagile.client.exportation.HelpWindow;
 import java.util.List;
 
 import sourceagile.client.GlobalVariables;
+import sourceagile.client.InternationalizationConstants;
 import sourceagile.shared.entities.project.Project;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
@@ -19,15 +21,26 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * @UserManual
  */
-public class LoginPage extends HorizontalPanel {
+public class LoginPage extends VerticalPanel {
+
+	private InternationalizationConstants internationalizationConstants = GWT
+			.create(InternationalizationConstants.class);
 
 	public LoginPage(List<Project> projects) {
 
 		this.setSize("100%", "100%");
 
-		this.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
+		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 
-		this.setSpacing(20);
+		this.add(new LanguageOptions());
+
+		HorizontalPanel hpMain = new HorizontalPanel();
+
+		hpMain.setSize("100%", "100%");
+
+		hpMain.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
+
+		hpMain.setSpacing(20);
 
 		VerticalPanel vp = new VerticalPanel();
 
@@ -71,21 +84,26 @@ public class LoginPage extends HorizontalPanel {
 		hpButtonLogin.add(new ButtonLogin());
 
 		hpButtonLogin.add(HelpWindow.helpLink("LiveSource", "false", null,
-				"Read more"));
+				internationalizationConstants.readMore()));
 
 		vp.add(hpButtonLogin);
 
-		this.add(vp);
+		hpMain.add(vp);
 
-		this.add(new BlogArchiveList());
+		hpMain.add(new BlogArchiveList());
+
+		this.add(hpMain);
 	}
 
 	private HTML welcomePanel() {
 
-		return new HTML("<center><font size=5>Welcome to </font>"
+		HTML html = new HTML("<center><font size=5>"
+				+ internationalizationConstants.welcomeTo() + " </font>"
 				+ "<br><br><b><font size=6 color=orange>LIVE SOURCE</font>"
-				+ "<font size=5><br>an Agile Toolkit</font></b> "
+				+ "<font size=5><br>Agile Toolkit</font></b> "
 				+ "<br><br><font size=4>" + GlobalVariables.systemVersion
 				+ "</font></center>");
+
+		return html;
 	}
 }
