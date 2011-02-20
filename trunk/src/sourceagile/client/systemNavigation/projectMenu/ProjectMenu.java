@@ -17,7 +17,9 @@ public class ProjectMenu extends HorizontalPanel {
 
 		this.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 
-		this.setWidth("350px");
+		this.setSpacing(5);
+
+		this.setWidth("200px");
 
 		this.add(buttonPlanning);
 
