@@ -21,7 +21,7 @@ public class SystemTopOptions extends HorizontalPanel {
 
 		this.add(new HomeIcon());
 
-		this.add(HelpWindow.helpIcon("SourceAgile"));
+		this.add(HelpWindow.helpIcon("LiveSource"));
 	}
 
 }
