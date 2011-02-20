@@ -90,4 +90,10 @@ public interface InternationalizationConstants extends Constants {
 
 	@DefaultStringValue("Export")
 	String export();
+
+	@DefaultStringValue("Edit")
+	String edit();
+
+	@DefaultStringValue("Test")
+	String test();
 }

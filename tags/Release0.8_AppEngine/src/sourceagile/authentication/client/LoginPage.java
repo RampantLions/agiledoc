@@ -84,7 +84,8 @@ public class LoginPage extends VerticalPanel {
 		hpButtonLogin.add(new ButtonLogin());
 
 		hpButtonLogin.add(HelpWindow.helpLink("LiveSource", "false", null,
-				internationalizationConstants.readMore()));
+				internationalizationConstants.readMore(),
+				GlobalVariables.locale));
 
 		vp.add(hpButtonLogin);
 
