@@ -1,6 +1,7 @@
 package sourceagile.client.systemNavigation;
 
 import helpagile.client.exportation.HelpWindow;
+import sourceagile.client.GlobalVariables;
 
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -21,7 +22,7 @@ public class SystemTopOptions extends HorizontalPanel {
 
 		this.add(new HomeIcon());
 
-		this.add(HelpWindow.helpIcon("LiveSource"));
+		this.add(HelpWindow.helpIcon("LiveSource", GlobalVariables.locale));
 	}
 
 }

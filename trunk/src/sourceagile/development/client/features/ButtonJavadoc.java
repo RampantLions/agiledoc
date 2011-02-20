@@ -1,6 +1,7 @@
 package sourceagile.development.client.features;
 
 import helpagile.client.exportation.HelpHint;
+import sourceagile.client.GlobalVariables;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -31,7 +32,9 @@ public class ButtonJavadoc extends HTML {
 			}
 		});
 
+		this.setTitle("Javadoc");
+
 		HelpHint.setHintHandler(this, this.getClass().getName(), "Javadoc",
-				null);
+				null, GlobalVariables.locale);
 	}
 }

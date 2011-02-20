@@ -14,6 +14,9 @@ public class GwtStart implements EntryPoint {
 
 	public void onModuleLoad() {
 
+		GlobalVariables.locale = com.google.gwt.user.client.Window.Location
+				.getParameter("locale");
+
 		HelpInitialization.initHelp("LiveSource");
 
 		new ListProjects();

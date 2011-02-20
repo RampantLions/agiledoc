@@ -124,7 +124,8 @@ public class AboutProject extends VerticalPanel {
 				.compactName(ProjectInitialization.currentProject.getName());
 
 		HTML htmlSpecification = HelpWindow.helpLink(projectName, "true", null,
-				internationalizationConstants.specification());
+				internationalizationConstants.specification(),
+				GlobalVariables.locale);
 
 		return htmlSpecification;
 	}
