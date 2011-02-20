@@ -7,21 +7,23 @@ import sourceagile.documentation.client.serverCalls.ListAllComments;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.user.client.ui.HTML;
 
 /**
  * 
  * @UserManual
  */
-public class ExportXmlLink extends Anchor {
+public class ExportXmlLink extends HTML {
 
 	private static InternationalizationConstants internationalizationConstants = GWT
 			.create(InternationalizationConstants.class);
 
-	public static final String textUnpressed = internationalizationConstants
-			.export() + " XML";
-	public static final String textPressed = "<font color=orange><b>"
-			+ internationalizationConstants.export() + " XML" + "</b></font>";
+	public static final String textUnpressed = "<a href='#'>"
+			+ internationalizationConstants.export() + " XML</a>";
+	public static final String textPressed = "<a href='#'><font color=orange><b>"
+			+ internationalizationConstants.export()
+			+ " XML"
+			+ "</b></font></a>";
 
 	public ExportXmlLink() {
 
