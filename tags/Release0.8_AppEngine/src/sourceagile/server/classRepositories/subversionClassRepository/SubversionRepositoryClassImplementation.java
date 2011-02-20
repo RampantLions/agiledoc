@@ -3,7 +3,10 @@ package sourceagile.server.classRepositories.subversionClassRepository;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.tmatesoft.svn.core.io.SVNRepository;
+
 import sourceagile.client.serverCalls.LoadRemoteClasses;
+import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.ListRepositoryClasses;
 import sourceagile.shared.entities.Productivity;
 import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.entry.ClassFile;
@@ -27,8 +30,21 @@ public class SubversionRepositoryClassImplementation extends
 
 	@Override
 	public HashMap<String, ClassFile> listClasses(Project project, User user) {
-		// TODO Auto-generated method stub
-		return null;
+
+		HashMap<String, ClassFile> entries = null;
+
+		try {
+			SVNRepository repository = SubversionRepositoryConnection
+					.connectClassRepository(project, user);
+
+			entries = ListRepositoryClasses.listAllRepositoryFiles(repository);
+
+		} catch (Exception e) {
+
+			System.out.println(e.toString());
+		}
+
+		return entries;
 	}
 
 	@Override
