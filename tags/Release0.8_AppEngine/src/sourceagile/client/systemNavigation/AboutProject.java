@@ -34,7 +34,8 @@ public class AboutProject extends VerticalPanel {
 
 		vp.setSpacing(15);
 
-		vp.add(new HTML("<font color=blue><b>About "
+		vp.add(new HTML("<font color=blue><b> "
+				+ internationalizationConstants.about() + " "
 				+ ProjectInitialization.currentProject.getName()
 				+ "</b></font><br><br>"));
 
@@ -49,7 +50,8 @@ public class AboutProject extends VerticalPanel {
 
 	private Anchor anchorDescription() {
 
-		Anchor projectDescription = new Anchor("Description");
+		Anchor projectDescription = new Anchor(
+				internationalizationConstants.description());
 		projectDescription.addClickHandler(new ClickHandler() {
 
 			@Override
@@ -65,7 +67,8 @@ public class AboutProject extends VerticalPanel {
 
 	private Anchor anchorRelatedLinks() {
 
-		Anchor relatedLinks = new Anchor("Related Links");
+		Anchor relatedLinks = new Anchor(
+				internationalizationConstants.relatedLinks());
 		relatedLinks.addClickHandler(new ClickHandler() {
 
 			@Override
@@ -81,7 +84,8 @@ public class AboutProject extends VerticalPanel {
 
 	private Anchor anchorTotals() {
 
-		Anchor projectTotals = new Anchor("Totals");
+		Anchor projectTotals = new Anchor(
+				internationalizationConstants.totals());
 		projectTotals.addClickHandler(new ClickHandler() {
 
 			@Override
@@ -100,7 +104,7 @@ public class AboutProject extends VerticalPanel {
 
 	private Anchor anchorAddTask() {
 
-		Anchor addTask = new Anchor("Add new task");
+		Anchor addTask = new Anchor(internationalizationConstants.addNewTask());
 		addTask.addClickHandler(new ClickHandler() {
 
 			@Override

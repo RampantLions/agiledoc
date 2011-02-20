@@ -30,8 +30,7 @@ public class ListRemoteClasses {
 				.equals(ProjectInitialization.currentProject
 						.getRepositoryType())) {
 
-			// listRemoteClassesFromSubversion();
-			listRemoteClassesFromXML();
+			listRemoteClassesFromSubversion();
 
 		} else if (Project.REPOSITORY_TYPE_GIT
 				.equals(ProjectInitialization.currentProject

@@ -18,7 +18,7 @@ public class HomeIcon extends HTML {
 
 		this.setHTML("<a href='#'><img src='images/home.gif'></a>");
 
-		this.setTitle("Project Home");
+		this.setTitle("Home");
 
 		this.addClickHandler(new ClickHandler() {
 

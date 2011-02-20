@@ -24,9 +24,9 @@ public class ProjectName extends VerticalPanel {
 		setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 
-		HTML html = new HTML("<b>"
+		HTML html = new HTML("<a href='#'><b>"
 				+ ProjectInitialization.currentProject.getName() + "</b><br> "
-				+ internationalizationConstants.project());
+				+ internationalizationConstants.project() + "</a>");
 
 		html.addClickHandler(new ClickHandler() {
 
