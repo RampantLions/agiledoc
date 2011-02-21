@@ -1,5 +1,6 @@
 package sourceagile.client.project;
 
+import sourceagile.client.GlobalVariables;
 import sourceagile.client.serverCalls.SaveProject;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.utilities.FormField;
@@ -60,9 +61,11 @@ public class ProjectForm extends VerticalPanel {
 
 		HorizontalPanel hp = new HorizontalPanel();
 
-		hp.setSpacing(50);
+		hp.setWidth("300px");
 
 		hp.add(buttonSaveProject(project));
+
+		hp.add(buttonProjectComponents());
 
 		vp.add(hp);
 
@@ -91,4 +94,23 @@ public class ProjectForm extends VerticalPanel {
 		return button;
 	}
 
+	private Button buttonProjectComponents() {
+
+		Button button = new Button("Project Components", new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				GlobalVariables.mainPage.panelContent.clear();
+				GlobalVariables.mainPage.panelContent
+						.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+				GlobalVariables.mainPage.panelContent
+						.add(new ProjectComponentsPage());
+				GlobalVariables.mainPage.panelContent
+						.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
+			}
+		});
+
+		return button;
+	}
 }
