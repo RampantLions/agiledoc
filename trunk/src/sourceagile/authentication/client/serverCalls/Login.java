@@ -2,7 +2,6 @@ package sourceagile.authentication.client.serverCalls;
 
 import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
-import sourceagile.shared.data.UserData;
 import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.project.Project;
 
@@ -20,7 +19,7 @@ public class Login {
 
 			public void onSuccess(Project project) {
 
-				GlobalVariables.currentUser = UserData.load()[0];
+				GlobalVariables.currentUser = userLogged;
 
 				GlobalVariables.userLoggedIn = userLogged;
 
