@@ -136,14 +136,19 @@ public class ProjectsData {
 		project.setName("Where is URL?");
 		project.setRepositoryType(sourceagile.shared.entities.project.Project.REPOSITORY_TYPE_SUBVERSION);
 		project.setRepositoryURL("http://platrasha.svnrepository.com/svn/code");
-		project.setRoot("/client/scheduler/src/");
-		project.setTestRoot("/client/scheduler/test/");
-		project.setDomain("com/platrasha/trip");
+		project.setRoot("/client/scheduler/src/com/platrasha/trip/client/scheduler/client/");
+		project.setTestRoot("/client/scheduler/test/com/platrasha/trip/client/scheduler/client/");
+		project.setDomain("daywidget");
 		project.setDescription("");
 
 		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 
-		projectComponents.add(new ProjectComponents("Client", "client"));
+		projectComponents.add(new ProjectComponents("Date", "date"));
+		projectComponents.add(new ProjectComponents("Editor", "editor"));
+		projectComponents.add(new ProjectComponents("Events", "events"));
+		projectComponents.add(new ProjectComponents("Panels", "panels"));
+		projectComponents.add(new ProjectComponents("Table", "table"));
+		projectComponents.add(new ProjectComponents("Utils", "utils"));
 
 		project.setProjectComponents(projectComponents);
 
