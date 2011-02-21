@@ -29,7 +29,7 @@ public class ButtonLogin extends Button {
 
 				User userLog = new User();
 
-				userLog.setEmail(LoginForm.fieldEmail.getValue());
+				userLog.setName(LoginForm.fieldEmail.getValue());
 				userLog.setPassword(LoginForm.fieldPassword.getValue());
 
 				Long projectSelected = new Long(
