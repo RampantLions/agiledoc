@@ -43,7 +43,7 @@ public class GetRepositoryClass {
 
 		File file = getTempFile(baos, entry);
 
-		entry.setClassDoc(GetClassDoc.getClassDoc(file));
+		entry.setClassDoc(GetClassDoc.getClassDoc(file, entry.getClassLocale()));
 
 		setEntryFeature(entry);
 	}
@@ -78,10 +78,10 @@ public class GetRepositoryClass {
 		Feature feature = new Feature();
 
 		feature.setFeatureFolder(FeatureNameGenerator.getLastNameSpaced(
-				entry.getFilePath(), "/"));
+				entry.getFilePath(), "/", entry.getClassLocale()));
 
-		feature.setFeatureName(FeatureNameGenerator.getFileSpacedName(entry
-				.getFileName()));
+		feature.setFeatureName(FeatureNameGenerator.getFileSpacedName(
+				entry.getFileName(), entry.getClassLocale()));
 
 		entry.setFeature(feature);
 	}

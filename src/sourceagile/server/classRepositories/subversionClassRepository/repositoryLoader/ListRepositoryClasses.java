@@ -21,27 +21,29 @@ import sourceagile.shared.entities.entry.ClassFile;
 public class ListRepositoryClasses {
 
 	public static HashMap<String, ClassFile> listAllRepositoryFiles(
-			SVNRepository repository) throws SVNException, IOException {
+			SVNRepository repository, String locale) throws SVNException,
+			IOException {
 
 		HashMap<String, ClassFile> classFiles = new HashMap<String, ClassFile>();
 
-		listRepositoryFolder(repository, "", classFiles);
+		listRepositoryFolder(repository, "", locale, classFiles);
 
 		return classFiles;
 	}
 
 	public static void listRepositoryFolder(SVNRepository repository,
-			String folderPath, HashMap<String, ClassFile> entries)
+			String folderPath, String locale, HashMap<String, ClassFile> entries)
 			throws SVNException, IOException {
 
 		Collection subFolderEntries = repository.getDir(folderPath, -1, null,
 				(Collection) null);
 
-		listFilesFromFolder(repository, folderPath, subFolderEntries, entries);
+		listFilesFromFolder(repository, folderPath, locale, subFolderEntries,
+				entries);
 	}
 
 	private static void listFilesFromFolder(SVNRepository repository,
-			String path, Collection subversionEntries,
+			String path, String locale, Collection subversionEntries,
 			HashMap<String, ClassFile> entries) throws SVNException,
 			IOException {
 
@@ -54,11 +56,14 @@ public class ListRepositoryClasses {
 			if (subversionEntry.getKind() != SVNNodeKind.FILE) {
 
 				listRepositoryFolder(repository,
-						getFolderPath(path, subversionEntry), entries);
+						getFolderPath(path, subversionEntry), locale, entries);
 			} else {
 
 				ClassFile entry = getClassFromRepositoryFile(subversionEntry,
 						path);
+
+				entry.setClassLocale(locale);
+
 				// GetRepositoryClass.getClassFile(repository, entry);
 
 				entries.put(entry.toString(), entry);

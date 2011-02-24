@@ -11,13 +11,13 @@ import sourceagile.shared.entities.entry.ClassFile;
 public class ListRepositoryComponentClasses {
 
 	public static HashMap<String, ClassFile> listRepositoryComponentFiles(
-			SVNRepository repository, String componentPath)
+			SVNRepository repository, String componentPath, String locale)
 			throws SVNException, IOException {
 
 		HashMap<String, ClassFile> classesMap = new HashMap<String, ClassFile>();
 
 		ListRepositoryClasses.listRepositoryFolder(repository, componentPath,
-				classesMap);
+				locale, classesMap);
 
 		for (ClassFile classFile : classesMap.values()) {
 
