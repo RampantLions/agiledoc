@@ -1,5 +1,6 @@
 package sourceagile.development.client.features.edit;
 
+import sourceagile.client.GlobalVariables;
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 
@@ -16,17 +17,17 @@ public class ClassTypeList extends ListBox {
 		this.setWidth("100px");
 
 		this.addItem("");
-		this.addItem(FeatureNameGenerator
-				.spacedName(ClassDocumentation.ARCHITECTURE_TAG),
+		this.addItem(FeatureNameGenerator.spacedName(
+				ClassDocumentation.ARCHITECTURE_TAG, GlobalVariables.locale),
 				ClassDocumentation.ARCHITECTURE_TAG);
-		this.addItem(
-				FeatureNameGenerator.spacedName(ClassDocumentation.ENTITY_TAG),
+		this.addItem(FeatureNameGenerator.spacedName(
+				ClassDocumentation.ENTITY_TAG, GlobalVariables.locale),
 				ClassDocumentation.ENTITY_TAG);
-		this.addItem(
-				FeatureNameGenerator.spacedName(ClassDocumentation.FEATURE_TAG),
+		this.addItem(FeatureNameGenerator.spacedName(
+				ClassDocumentation.FEATURE_TAG, GlobalVariables.locale),
 				ClassDocumentation.FEATURE_TAG);
-		this.addItem(FeatureNameGenerator
-				.spacedName(ClassDocumentation.USER_FEATURE_TAG),
+		this.addItem(FeatureNameGenerator.spacedName(
+				ClassDocumentation.USER_FEATURE_TAG, GlobalVariables.locale),
 				ClassDocumentation.USER_FEATURE_TAG);
 
 		if (ClassDocumentation.ARCHITECTURE_TAG.equals(classType)) {

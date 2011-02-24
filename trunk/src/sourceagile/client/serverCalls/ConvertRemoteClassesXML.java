@@ -3,6 +3,7 @@ package sourceagile.client.serverCalls;
 import java.util.Date;
 import java.util.HashMap;
 
+import sourceagile.client.ProjectInitialization;
 import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
@@ -88,9 +89,6 @@ public class ConvertRemoteClassesXML {
 
 		classFile.setUser(getFileUser(entryElement));
 
-		classFile.setFilePath(entryElement.getElementsByTagName(FILE_PATH)
-				.item(0).getChildNodes().toString());
-
 		classFile.setFeature(getClassFeature(entryElement));
 
 		classFile.setClassDoc(getClassDocumentation(entryElement));
@@ -168,8 +166,9 @@ public class ConvertRemoteClassesXML {
 			method.setName(methodElement.getElementsByTagName(METHOD_NAME)
 					.item(0).getChildNodes().toString());
 
-			method.setSpacedName(FeatureNameGenerator.spacedName(method
-					.getName()));
+			method.setSpacedName(FeatureNameGenerator.spacedName(
+					method.getName(),
+					ProjectInitialization.currentProject.getProjectLocale()));
 
 			method.setDescription(methodElement
 					.getElementsByTagName(METHOD_DESCRIPTION).item(0)
