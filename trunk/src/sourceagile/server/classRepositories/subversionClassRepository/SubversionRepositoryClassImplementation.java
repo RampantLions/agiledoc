@@ -38,7 +38,8 @@ public class SubversionRepositoryClassImplementation extends
 					.connectClassRepository(project, user);
 
 			entries = ListRepositoryComponentClasses
-					.listRepositoryComponentFiles(repository, componentPath);
+					.listRepositoryComponentFiles(repository, componentPath,
+							project.getProjectLocale());
 
 		} catch (Exception e) {
 
@@ -57,7 +58,8 @@ public class SubversionRepositoryClassImplementation extends
 			SVNRepository repository = SubversionRepositoryConnection
 					.connectClassRepository(project, user);
 
-			entries = ListRepositoryClasses.listAllRepositoryFiles(repository);
+			entries = ListRepositoryClasses.listAllRepositoryFiles(repository,
+					project.getProjectLocale());
 
 		} catch (Exception e) {
 
