@@ -28,6 +28,12 @@ public class Project implements Serializable {
 	private Text description;
 
 	@Persistent
+	private String programLanguage;
+
+	@Persistent
+	private String projectLocale;
+
+	@Persistent
 	private String repositoryType;
 
 	@Persistent
@@ -61,6 +67,22 @@ public class Project implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getProgramLanguage() {
+		return programLanguage;
+	}
+
+	public void setProgramLanguage(String programLanguage) {
+		this.programLanguage = programLanguage;
+	}
+
+	public String getProjectLocale() {
+		return projectLocale;
+	}
+
+	public void setProjectLocale(String projectLocale) {
+		this.projectLocale = projectLocale;
 	}
 
 	public String getRepositoryType() {

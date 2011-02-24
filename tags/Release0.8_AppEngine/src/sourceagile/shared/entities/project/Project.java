@@ -16,11 +16,19 @@ public class Project implements Serializable {
 	public static final String REPOSITORY_TYPE_GIT = "Git";
 	public static final String REPOSITORY_TYPE_XML = "XML";
 
+	public static final String LOCALE_ENGLISH = "en";
+	public static final String LOCALE_PORTUGUESE = "pt_BR";
+	public static final String LOCALE_SPANISH = "es";
+
 	private Long projectID;
 
 	private String name;
 
 	private String description;
+
+	private String programLanguage;
+
+	private String projectLocale;
 
 	private String repositoryType;
 
@@ -60,6 +68,22 @@ public class Project implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getProgramLanguage() {
+		return programLanguage;
+	}
+
+	public void setProgramLanguage(String programLanguage) {
+		this.programLanguage = programLanguage;
+	}
+
+	public String getProjectLocale() {
+		return projectLocale;
+	}
+
+	public void setProjectLocale(String projectLocale) {
+		this.projectLocale = projectLocale;
 	}
 
 	public String getRepositoryType() {

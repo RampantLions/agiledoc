@@ -6,8 +6,9 @@ import java.util.Date;
 
 import sourceagile.shared.entities.User;
 
-/** 
- * @entity 
+/**
+ * 
+ * @Entity
  */
 public class ClassFile implements Serializable, Comparable<ClassFile> {
 
@@ -28,6 +29,8 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 	private User user;
 
 	private String sourceCode;
+
+	private String classLocale;
 
 	private ArrayList<String> sourceCodeTokenized;
 
@@ -85,6 +88,14 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 	public void setClassDomain(String classDomain) {
 		this.classDomain = classDomain;
+	}
+
+	public String getClassLocale() {
+		return classLocale;
+	}
+
+	public void setClassLocale(String classLocale) {
+		this.classLocale = classLocale;
 	}
 
 	public String getSourceCode() {
