@@ -7,6 +7,7 @@ import sourceagile.client.ProjectInitialization;
 import sourceagile.client.systemNavigation.MainPage;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.Project;
+import sourceagile.shared.utilities.FileNameGenerator;
 import sourceagile.shared.utilities.LoadingPanel;
 
 import com.google.gwt.core.client.GWT;
@@ -48,8 +49,12 @@ public class ListRemoteClasses {
 
 	private void listRemoteClassesFromXML() {
 
-		RequestBuilder requestBuilder = new RequestBuilder(RequestBuilder.GET,
-				"files/TicTacToe_Specification.xml");
+		RequestBuilder requestBuilder = new RequestBuilder(
+				RequestBuilder.GET,
+				"files/"
+						+ FileNameGenerator
+								.compactName(ProjectInitialization.currentProject
+										.getName()) + "_Specification.xml");
 
 		try {
 			requestBuilder.sendRequest(null, new RequestCallback() {
