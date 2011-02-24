@@ -1,28 +1,28 @@
 package sourceagile.server.doclet.antlr;
 
-import java.io.ByteArrayOutputStream;
-
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
+import org.antlr.runtime.TokenRewriteStream;
 
 import sourceagile.shared.entities.entry.ClassFile;
 
 public class GetJavaTokens {
 
-	public static void loadClassDocumentationANTLR(ByteArrayOutputStream baos,
-			ClassFile entry) {
+	public static CommonTokenStream loadClassDocumentationANTLR(ClassFile entry) {
 
-		CharStream cs = new ANTLRStringStream(baos.toString());
+		CharStream cs = new ANTLRStringStream(entry.getSourceCode());
 
 		JavaLexer lexer = new JavaLexer(cs);
 
-		CommonTokenStream tokens = new CommonTokenStream();
+		TokenRewriteStream tokens = new TokenRewriteStream();
 		tokens.setTokenSource(lexer);
 
-		// JavaParser parser = new JavaParser(tokens);
+		JavaParser parser = new JavaParser(tokens);
 
 		// RuleReturnScope result = parser.compilationUnit();
+
+		return tokens;
 	}
 
 }
