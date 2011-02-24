@@ -36,7 +36,7 @@ public class GetClassMethods {
 	/**
 	 * List all the methods of a class.
 	 */
-	public static Method[] listMethods(MethodDoc[] methodsDoc) {
+	public static Method[] listMethods(MethodDoc[] methodsDoc, String locale) {
 
 		Method[] meths = new Method[methodsDoc.length];
 
@@ -47,7 +47,8 @@ public class GetClassMethods {
 			meths[i] = new Method();
 
 			meths[i].setName(met.name());
-			meths[i].setSpacedName(FeatureNameGenerator.spacedName(met.name()));
+			meths[i].setSpacedName(FeatureNameGenerator.spacedName(met.name(),
+					locale));
 			meths[i].setModifiers(met.modifiers());
 			meths[i].setReturnType(met.returnType().toString());
 			meths[i].setParameters(getParameterString(met.parameters()));

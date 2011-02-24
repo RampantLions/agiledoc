@@ -19,7 +19,7 @@ public class GetClassDoc {
 		return doclet.getRootDoc();
 	}
 
-	public static ClassDocumentation getClassDoc(File file) {
+	public static ClassDocumentation getClassDoc(File file, String locale) {
 
 		RootDoc rootDoc = getRootDoc(file);
 
@@ -29,64 +29,63 @@ public class GetClassDoc {
 			ClassDoc[] classes = rootDoc.classes();
 
 			if (classes != null && classes.length > 0) {
-				ClassDoc classDoc = classes[0];
 
-				classDocumentation.setClassName(classDoc.name());
-
-				classDocumentation.setClassPackage(classDoc.containingPackage()
-						.name());
-
-				classDocumentation.setDescription(classDoc.commentText());
-
-				if (classDoc.superclass() != null) {
-
-					classDocumentation.setSuperclass(classDoc.superclass()
-							.toString());
-				}
-
-				classDocumentation.setModifiers(classDoc.modifiers());
-
-				classDocumentation.setConstructors(GetClassMethods
-						.listConstructors(classDoc.constructors()));
-
-				classDocumentation.setMethods(GetClassMethods
-						.listMethods(classDoc.methods()));
-
-				classDocumentation.setFields(listFields(classDoc.fields()));
-
-				String[] imports = listImports(classDoc.importedClasses());
-
-				if (classDoc.tags(ClassDocumentation.TODO_TAG).length > 0) {
-
-					classDocumentation.setTodo(true);
-				}
-
-				if (classDoc.tags(ClassDocumentation.USER_FEATURE_TAG).length > 0) {
-
-					classDocumentation
-							.setTagType(ClassDocumentation.USER_FEATURE_TAG);
-
-				} else if (classDoc.tags(ClassDocumentation.FEATURE_TAG).length > 0) {
-
-					classDocumentation
-							.setTagType(ClassDocumentation.FEATURE_TAG);
-
-				} else if (classDoc.tags(ClassDocumentation.ARCHITECTURE_TAG).length > 0) {
-
-					classDocumentation
-							.setTagType(ClassDocumentation.ARCHITECTURE_TAG);
-
-				} else if (classDoc.tags(ClassDocumentation.ENTITY_TAG).length > 0) {
-
-					classDocumentation
-							.setTagType(ClassDocumentation.ENTITY_TAG);
-				}
-
-				classDocumentation.setImports(imports);
+				convertClassDoc(classDocumentation, classes[0], locale);
 			}
 		}
 
 		return classDocumentation;
+	}
+
+	private static void convertClassDoc(ClassDocumentation classDocumentation,
+			ClassDoc classDoc, String locale) {
+
+		classDocumentation.setClassName(classDoc.name());
+
+		classDocumentation.setClassPackage(classDoc.containingPackage().name());
+
+		classDocumentation.setDescription(classDoc.commentText());
+
+		if (classDoc.superclass() != null) {
+
+			classDocumentation.setSuperclass(classDoc.superclass().toString());
+		}
+
+		classDocumentation.setModifiers(classDoc.modifiers());
+
+		classDocumentation.setConstructors(GetClassMethods
+				.listConstructors(classDoc.constructors()));
+
+		classDocumentation.setMethods(GetClassMethods.listMethods(
+				classDoc.methods(), locale));
+
+		classDocumentation.setFields(listFields(classDoc.fields()));
+
+		String[] imports = listImports(classDoc.importedClasses());
+
+		if (classDoc.tags(ClassDocumentation.TODO_TAG).length > 0) {
+
+			classDocumentation.setTodo(true);
+		}
+
+		if (classDoc.tags(ClassDocumentation.USER_FEATURE_TAG).length > 0) {
+
+			classDocumentation.setTagType(ClassDocumentation.USER_FEATURE_TAG);
+
+		} else if (classDoc.tags(ClassDocumentation.FEATURE_TAG).length > 0) {
+
+			classDocumentation.setTagType(ClassDocumentation.FEATURE_TAG);
+
+		} else if (classDoc.tags(ClassDocumentation.ARCHITECTURE_TAG).length > 0) {
+
+			classDocumentation.setTagType(ClassDocumentation.ARCHITECTURE_TAG);
+
+		} else if (classDoc.tags(ClassDocumentation.ENTITY_TAG).length > 0) {
+
+			classDocumentation.setTagType(ClassDocumentation.ENTITY_TAG);
+		}
+
+		classDocumentation.setImports(imports);
 	}
 
 	private static String[] listImports(ClassDoc[] imports) {
