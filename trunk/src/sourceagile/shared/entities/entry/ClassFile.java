@@ -30,6 +30,8 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 	private String sourceCode;
 
+	private String classLocale;
+
 	private ArrayList<String> sourceCodeTokenized;
 
 	public String getFilePath() {
@@ -86,6 +88,14 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 	public void setClassDomain(String classDomain) {
 		this.classDomain = classDomain;
+	}
+
+	public String getClassLocale() {
+		return classLocale;
+	}
+
+	public void setClassLocale(String classLocale) {
+		this.classLocale = classLocale;
 	}
 
 	public String getSourceCode() {

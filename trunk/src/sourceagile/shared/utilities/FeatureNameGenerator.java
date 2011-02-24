@@ -1,17 +1,17 @@
 package sourceagile.shared.utilities;
 
-/**
- * @task
- */
+import sourceagile.shared.entities.project.Project;
+
 public class FeatureNameGenerator {
 
 	/**
 	 * Return the last name of a names sequence separated by dots already
 	 * separated by spaces between the upper case letters.
 	 */
-	public static String getLastNameSpaced(String fullName, String splitChar) {
+	public static String getLastNameSpaced(String fullName, String splitChar,
+			String locale) {
 
-		return spacedName(getLastName(fullName, splitChar));
+		return spacedName(getLastName(fullName, splitChar), locale);
 	}
 
 	/**
@@ -25,9 +25,9 @@ public class FeatureNameGenerator {
 		return lastName;
 	}
 
-	public static String getFileSpacedName(String fileName) {
+	public static String getFileSpacedName(String fileName, String locale) {
 
-		return spacedName(removeFileExtension(fileName));
+		return spacedName(removeFileExtension(fileName), locale);
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class FeatureNameGenerator {
 	/**
 	 * Fill with spaces a name that is truncated.
 	 */
-	public static String spacedName(String name) {
+	public static String spacedName(String name, String locale) {
 
 		String spacedName = null;
 
@@ -54,23 +54,64 @@ public class FeatureNameGenerator {
 
 			spacedName = name.substring(0, 1).toUpperCase() + words[0];
 
-			int position = spacedName.length();
+			int wordPosition = spacedName.length();
 
 			for (int i = 1; i < words.length; i++) {
 
-				String firstLetter = name.substring(position, position + 1);
+				String firstLetter = name.substring(wordPosition,
+						wordPosition + 1);
 
-				spacedName += " " + firstLetter.toUpperCase() + words[i];
+				if (verifyPortugueseJunctions(firstLetter + words[i], locale)) {
 
-				position += (words[i].length() + 1);
+					firstLetter = firstLetter.toLowerCase();
+
+				} else {
+
+					firstLetter = firstLetter.toUpperCase();
+				}
+
+				spacedName += " " + firstLetter + words[i];
+
+				wordPosition += (words[i].length() + 1);
 			}
 
 		} else {
-			
+
 			spacedName = name.toUpperCase();
 		}
 
 		return spacedName;
+	}
+
+	public static boolean verifyPortugueseJunctions(String word, String locale) {
+
+		boolean isJunction = false;
+
+		if ((Project.LOCALE_PORTUGUESE).equals(locale)) {
+
+			if (word.toLowerCase().equals("o")
+					|| word.toLowerCase().equals("os")
+					|| word.toLowerCase().equals("de")
+					|| word.toLowerCase().equals("um")
+					|| word.toLowerCase().equals("a")
+					|| word.toLowerCase().equals("as")
+					|| word.toLowerCase().equals("e")
+					|| word.toLowerCase().equals("do")
+					|| word.toLowerCase().equals("dos")
+					|| word.toLowerCase().equals("da")
+					|| word.toLowerCase().equals("das")
+					|| word.toLowerCase().equals("no")
+					|| word.toLowerCase().equals("nos")
+					|| word.toLowerCase().equals("na")
+					|| word.toLowerCase().equals("nas")
+					|| word.toLowerCase().equals("para")
+					|| word.toLowerCase().equals("com")) {
+
+				isJunction = true;
+			}
+		}
+
+		return isJunction;
 	}
 
 }
