@@ -21,8 +21,6 @@ public class Login {
 
 				GlobalVariables.currentUser = userLogged;
 
-				GlobalVariables.userLoggedIn = userLogged;
-
 				new ProjectInitialization(project);
 			}
 
