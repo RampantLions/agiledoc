@@ -30,6 +30,12 @@ public class Project implements Serializable {
 	private String repositoryType;
 
 	@Persistent
+	private String programLanguage;
+
+	@Persistent
+	private String projectLocale;
+
+	@Persistent
 	private String repositoryURL;
 
 	@Persistent
@@ -77,6 +83,22 @@ public class Project implements Serializable {
 
 	public void setRepositoryType(String repositoryType) {
 		this.repositoryType = repositoryType;
+	}
+
+	public String getProgramLanguage() {
+		return programLanguage;
+	}
+
+	public void setProgramLanguage(String programLanguage) {
+		this.programLanguage = programLanguage;
+	}
+
+	public String getProjectLocale() {
+		return projectLocale;
+	}
+
+	public void setProjectLocale(String projectLocale) {
+		this.projectLocale = projectLocale;
 	}
 
 	public String getRoot() {
