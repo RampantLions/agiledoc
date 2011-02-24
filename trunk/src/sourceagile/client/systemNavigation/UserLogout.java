@@ -26,10 +26,10 @@ public class UserLogout extends HorizontalPanel {
 
 	private String getUserName() {
 
-		String userName = GlobalVariables.userLoggedIn.getName();
+		String userName = GlobalVariables.currentUser.getName();
 		if (userName == null) {
 
-			userName = GlobalVariables.userLoggedIn.getEmail();
+			userName = GlobalVariables.currentUser.getEmail();
 		}
 
 		if (userName == null) {
