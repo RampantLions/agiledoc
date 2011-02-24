@@ -37,7 +37,8 @@ public class SubversionRepositoryClassImplementation extends
 			SVNRepository repository = SubversionRepositoryConnection
 					.connectClassRepository(project, user);
 
-			entries = ListRepositoryClasses.listAllRepositoryFiles(repository);
+			entries = ListRepositoryClasses.listAllRepositoryFiles(repository,
+					project.getProjectLocale());
 
 		} catch (Exception e) {
 

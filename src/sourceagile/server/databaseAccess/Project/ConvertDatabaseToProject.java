@@ -27,6 +27,10 @@ public class ConvertDatabaseToProject {
 
 		project.setDescription(databaseProject.getDescription().getValue());
 
+		project.setProgramLanguage(databaseProject.getProgramLanguage());
+
+		project.setProjectLocale(databaseProject.getProjectLocale());
+
 		project.setRepositoryURL(databaseProject.getRepositoryURL());
 
 		project.setDomain(databaseProject.getDomain());

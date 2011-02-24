@@ -40,7 +40,8 @@ public class FeatureDescription extends VerticalPanel {
 
 			this.add(featureMethods(entry.getClassDoc().getMethods()));
 
-			this.add(featureReferences(entry.getClassDoc().getImports()));
+			this.add(featureReferences(entry.getClassDoc().getImports(),
+					entry.getClassLocale()));
 
 			this.add(featureCreation(entry));
 
@@ -123,7 +124,8 @@ public class FeatureDescription extends VerticalPanel {
 		return table;
 	}
 
-	private static VerticalPanel featureReferences(String[] imports) {
+	private static VerticalPanel featureReferences(String[] imports,
+			String locale) {
 
 		VerticalPanel vp = new VerticalPanel();
 
@@ -141,7 +143,8 @@ public class FeatureDescription extends VerticalPanel {
 				if (link.contains(domain)) {
 
 					Anchor classeAnchor = new Anchor(
-							FeatureNameGenerator.getLastNameSpaced(link, "\\."));
+							FeatureNameGenerator.getLastNameSpaced(link, "\\.",
+									locale));
 					classeAnchor.addClickHandler(new ClickHandler() {
 						public void onClick(ClickEvent sender) {
 
@@ -202,4 +205,5 @@ public class FeatureDescription extends VerticalPanel {
 
 		return vp;
 	}
+
 }
