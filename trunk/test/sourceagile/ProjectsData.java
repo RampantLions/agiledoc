@@ -155,4 +155,37 @@ public class ProjectsData {
 		return project;
 	}
 
+	private static Project loadProject4() {
+
+		Project proj = new Project();
+		// proj.setProjectID(new Long(4));
+		proj.setName("Jogo Da Velha");
+		proj.setProgramLanguage(Project.LOCALE_PORTUGUESE);
+		proj.setRepositoryType(Project.REPOSITORY_TYPE_SUBVERSION);
+		proj.setRepositoryURL("https://tictactoe4j.googlecode.com/svn");
+		proj.setRoot("/tags/Release_0.7_JogoDaVelha/src/");
+		proj.setTestRoot("/tags/Release_0.7_JogoDaVelha/test/");
+		proj.setDomain("jogoDaVelha");
+		proj.setRelatedLinks("http://pt.wikipedia.org/wiki/Jogo_da_velha");
+
+		proj.setDescription("O Jogo da Velha (português brasileiro) ou jogo do galo (português europeu) "
+				+ "é um jogo e passatempo popular."
+				+ " Um jogo de lápis e papel para dois jogadores, O e X, que se revezam marcando os espaços "
+				+ " em uma grade 3x3. O jogador que conseguir colocar três respectivas marcas em uma linha horizontal,"
+				+ " vertical ou diagonal, ganha o jogo.");
+
+		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
+
+		projectComponents.add(new ProjectComponents("Autenticacao",
+				"autenticacao/client"));
+		projectComponents.add(new ProjectComponents("Jogo", "client"));
+		projectComponents.add(new ProjectComponents("Infra-estrutura/Servidor",
+				"server"));
+		projectComponents.add(new ProjectComponents(
+				"Infra-estrutura/Entidades", "shared"));
+
+		proj.setProjectComponents(projectComponents);
+
+		return proj;
+	}
 }

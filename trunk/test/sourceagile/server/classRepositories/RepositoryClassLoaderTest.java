@@ -40,7 +40,8 @@ public class RepositoryClassLoaderTest extends TestCase {
 
 		entryFeature.setSourceCode(FileUtils.readFile(file));
 
-		entryFeature.setClassDoc(GetClassDoc.getClassDoc(file));
+		entryFeature.setClassDoc(GetClassDoc.getClassDoc(file,
+				Project.LOCALE_ENGLISH));
 
 		Approvals.approve(ClassDocumetationUtilities.toString(entryFeature
 				.getClassDoc()));
