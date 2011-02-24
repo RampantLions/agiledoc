@@ -19,6 +19,12 @@
                   name="repositoryType"
                   persistence-modifier="persistent"/>
             <field
+                  name="programLanguage"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="projectLocale"
+                  persistence-modifier="persistent"/>
+            <field
                   name="repositoryURL"
                   persistence-modifier="persistent"/>
             <field
