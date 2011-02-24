@@ -195,11 +195,24 @@ public class ExportXmlFile {
 		projectElement.appendChild(getElement(xmlDocument, PROJECT_DOMAIN,
 				ProjectInitialization.currentProject.getDomain()));
 
+		String description = "";
+		if (ProjectInitialization.currentProject.getDescription() != null) {
+
+			description = ProjectInitialization.currentProject.getDescription();
+		}
+
 		projectElement.appendChild(getElement(xmlDocument, PROJECT_DESCRIPTION,
-				ProjectInitialization.currentProject.getDescription()));
+				description));
+
+		String relatedLinks = "";
+		if (ProjectInitialization.currentProject.getRelatedLinks() != null) {
+
+			relatedLinks = ProjectInitialization.currentProject
+					.getRelatedLinks();
+		}
 
 		projectElement.appendChild(getElement(xmlDocument, PROJECT_LINKS,
-				ProjectInitialization.currentProject.getRelatedLinks()));
+				relatedLinks));
 
 		return projectElement;
 	}

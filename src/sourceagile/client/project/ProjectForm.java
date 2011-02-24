@@ -20,6 +20,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 public class ProjectForm extends VerticalPanel {
 
 	public static final TextBox name = new TextBox();
+	public static LocaleList locale;
 	public static RepositoryTypeList repositoryType;
 	public static final TextBox url = new TextBox();
 	public static final TextBox root = new TextBox();
@@ -34,12 +35,15 @@ public class ProjectForm extends VerticalPanel {
 
 		vp.setSpacing(30);
 
-		repositoryType = new RepositoryTypeList(project.getRepositoryType());
-		vp.add(new FormField("Repository Type", repositoryType));
-
 		name.setWidth("500px");
 		name.setValue(project.getName());
 		vp.add(new FormField("Project Name", name));
+
+		locale = new LocaleList(project.getProjectLocale());
+		vp.add(new FormField("Project Language", locale));
+
+		repositoryType = new RepositoryTypeList(project.getRepositoryType());
+		vp.add(new FormField("Repository Type", repositoryType));
 
 		url.setWidth("500px");
 		url.setValue(project.getRepositoryURL());
@@ -81,6 +85,8 @@ public class ProjectForm extends VerticalPanel {
 
 				project.setRepositoryType(repositoryType
 						.getValue(repositoryType.getSelectedIndex()));
+				project.setProjectLocale(locale.getValue(locale
+						.getSelectedIndex()));
 				project.setName(name.getValue());
 				project.setRepositoryURL(url.getValue());
 				project.setRoot(root.getValue());

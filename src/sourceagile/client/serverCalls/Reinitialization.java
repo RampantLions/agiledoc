@@ -1,22 +1,23 @@
 package sourceagile.client.serverCalls;
 
+import sourceagile.client.ProjectInitialization;
 import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-public class UpdateProject {
+public class Reinitialization {
 
-	public UpdateProject(final Project project) {
+	public Reinitialization(Long projectID) {
 
 		final ProjectDatabaseServerCallsAsync databaseServerCalls = GWT
 				.create(ProjectDatabaseServerCalls.class);
 
-		databaseServerCalls.updateProject(project, new AsyncCallback<Void>() {
+		databaseServerCalls.getProject(projectID, new AsyncCallback<Project>() {
 
-			public void onSuccess(Void result) {
+			public void onSuccess(Project project) {
 
-				new Reinitialization(project.getProjectID());
+				new ProjectInitialization(project);
 			}
 
 			public void onFailure(Throwable caught) {

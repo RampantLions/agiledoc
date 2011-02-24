@@ -53,7 +53,9 @@ public class ComponentsList extends VerticalPanel {
 					componentParentNode.appendChild(emptyNode);
 
 					TreeNode node = new TreeNode(
-							FeatureNameGenerator.spacedName(componentPath[i]));
+							FeatureNameGenerator.spacedName(componentPath[i],
+									ProjectInitialization.currentProject
+											.getProjectLocale()));
 					node.setId(currentComponentPath);
 
 					componentParentNode.appendChild(node);

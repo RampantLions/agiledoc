@@ -1,7 +1,6 @@
 package sourceagile.client.project;
 
 import sourceagile.client.GlobalVariables;
-import sourceagile.shared.entities.project.ProjectComponents;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -48,7 +47,7 @@ public class ProjectComponentsPage extends VerticalPanel {
 				GlobalVariables.mainPage.panelContent
 						.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 				GlobalVariables.mainPage.panelContent
-						.add(new ProjectComponentForm(new ProjectComponents()));
+						.add(new ProjectComponentForm(null));
 				GlobalVariables.mainPage.panelContent
 						.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 
