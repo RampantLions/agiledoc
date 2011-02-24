@@ -176,7 +176,7 @@ public class ProjectsData {
 
 		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 
-		projectComponents.add(new ProjectComponents("Autenticacao",
+		projectComponents.add(new ProjectComponents("Autenticação",
 				"autenticacao/client"));
 		projectComponents.add(new ProjectComponents("Jogo", "client"));
 		projectComponents.add(new ProjectComponents("Infra-estrutura/Servidor",
