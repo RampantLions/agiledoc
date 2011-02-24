@@ -1,25 +1,21 @@
-package sourceagile.authentication.client.serverCalls;
+package sourceagile.client.serverCalls;
 
-import sourceagile.client.GlobalVariables;
 import sourceagile.client.ProjectInitialization;
-import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-public class Login {
+public class Reinitialization {
 
-	public Login(final User userLogged, Long projectID) {
+	public Reinitialization(Long projectID) {
 
-		final AuthenticationServerCallsAsync databaseServerCalls = GWT
-				.create(AuthenticationServerCalls.class);
+		final ProjectDatabaseServerCallsAsync databaseServerCalls = GWT
+				.create(ProjectDatabaseServerCalls.class);
 
 		databaseServerCalls.getProject(projectID, new AsyncCallback<Project>() {
 
 			public void onSuccess(Project project) {
-
-				GlobalVariables.currentUser = userLogged;
 
 				new ProjectInitialization(project);
 			}

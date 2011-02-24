@@ -43,26 +43,26 @@ public class ProjectComponentsList extends FlexTable {
 
 	private void gridRows() {
 
-		int row = 0;
-		for (ProjectComponents component : ProjectInitialization.currentProject
-				.getProjectComponents()) {
+		for (int i = 0; i < ProjectInitialization.currentProject
+				.getProjectComponents().size(); i++) {
 
-			row++;
+			ProjectComponents component = ProjectInitialization.currentProject
+					.getProjectComponents().get(i);
 
-			this.setText(row, 0, component.getComponentName());
-			this.setText(row, 1, component.getComponentPath());
+			this.setText(i, 0, component.getComponentName());
+			this.setText(i, 1, component.getComponentPath());
 
 			HorizontalPanel hp = new HorizontalPanel();
 			hp.setSpacing(10);
-			hp.add(iconEdit(component));
-			hp.add(iconDelete(component));
+			hp.add(iconEdit(i));
+			hp.add(iconDelete(i));
 
-			this.setWidget(row, 2, hp);
+			this.setWidget(i, 2, hp);
 
 		}
 	}
 
-	private static HTML iconEdit(final ProjectComponents component) {
+	private static HTML iconEdit(final Integer componentIndex) {
 
 		HTML img = new HTML("<a href='#'><img src='images/edit.gif'></a>");
 		img.addClickHandler(new ClickHandler() {
@@ -74,7 +74,7 @@ public class ProjectComponentsList extends FlexTable {
 				GlobalVariables.mainPage.panelContent
 						.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 				GlobalVariables.mainPage.panelContent
-						.add(new ProjectComponentForm(component));
+						.add(new ProjectComponentForm(componentIndex));
 				GlobalVariables.mainPage.panelContent
 						.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 			}
@@ -85,7 +85,7 @@ public class ProjectComponentsList extends FlexTable {
 		return img;
 	}
 
-	private static HTML iconDelete(final ProjectComponents component) {
+	private static HTML iconDelete(Integer componentIndex) {
 
 		HTML img = new HTML("<a href='#'><img src='images/delete.gif'></a>");
 		img.addClickHandler(new ClickHandler() {

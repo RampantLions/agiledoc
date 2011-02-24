@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import sourceagile.client.ProjectInitialization;
 import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.utilities.FileNameGenerator;
 
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
@@ -19,7 +20,11 @@ public class LoadMockupClasses {
 		for (final ClassFile classFile : classFiles.values()) {
 
 			RequestBuilder requestBuilder = new RequestBuilder(
-					RequestBuilder.GET, "files/mockup/tictactoe/"
+					RequestBuilder.GET,
+					"files/mockup/"
+							+ FileNameGenerator
+									.compactName(ProjectInitialization.currentProject
+											.getName()) + "/"
 							+ classFile.getFileName());
 
 			try {

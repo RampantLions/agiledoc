@@ -49,8 +49,9 @@ public class ComponentClassesList {
 						if (tree.getNodeById(currentPath) == null) {
 
 							TreeNode node = new TreeNode(
-									FeatureNameGenerator
-											.spacedName(entryPath[i]));
+									FeatureNameGenerator.spacedName(
+											entryPath[i],
+											entry.getClassLocale()));
 							node.setExpanded(true);
 							node.setId(currentPath);
 							node.setIcon("js/ext/resources/images/default/tree/empty.gif");
