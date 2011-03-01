@@ -1,4 +1,4 @@
-package sourceagile.server.doclet.antlr;
+package sourceagile.server.doclet.antlr.java;
 
 import org.antlr.runtime.*;
 import java.util.Stack;

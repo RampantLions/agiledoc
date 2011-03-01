@@ -40,7 +40,7 @@ public class ProjectForm extends VerticalPanel {
 		vp.add(new FormField("Project Name", name));
 
 		locale = new LocaleList(project.getProjectLocale());
-		vp.add(new FormField("Project Language", locale));
+		vp.add(new FormField("Project Locale", locale));
 
 		repositoryType = new RepositoryTypeList(project.getRepositoryType());
 		vp.add(new FormField("Repository Type", repositoryType));

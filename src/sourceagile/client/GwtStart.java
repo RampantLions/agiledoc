@@ -2,6 +2,7 @@ package sourceagile.client;
 
 import helpagile.client.HelpInitialization;
 import sourceagile.authentication.client.serverCalls.ListProjects;
+import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.core.client.EntryPoint;
 
@@ -14,12 +15,25 @@ public class GwtStart implements EntryPoint {
 
 	public void onModuleLoad() {
 
-		GlobalVariables.locale = com.google.gwt.user.client.Window.Location
+		String locale = com.google.gwt.user.client.Window.Location
 				.getParameter("locale");
+
+		if (locale == null) {
+
+			locale = Project.LOCALE_ENGLISH;
+		}
+
+		GlobalVariables.locale = locale;
 
 		HelpInitialization.initHelp("LiveSource");
 
-		new ListProjects();
+		String projectLocale = GlobalVariables.locale;
+		if (Project.LOCALE_SPANISH.equals(GlobalVariables.locale)) {
+
+			projectLocale = Project.LOCALE_ENGLISH;
+		}
+
+		new ListProjects(projectLocale);
 	}
 
 }
