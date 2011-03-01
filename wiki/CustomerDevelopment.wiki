@@ -1,4 +1,4 @@
-= LIVE SOURCE Ecosystem =
+= <font color="orange">LIVE SOURCE Ecosystem</font> =
 
 <img border="2" width="800px" src="http://agiledoc.googlecode.com/svn/wiki/LiveSourceEcosystem.jpg" >
 
