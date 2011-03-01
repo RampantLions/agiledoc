@@ -7,7 +7,7 @@
 = <font color="orange">LIVE SOURCE Core Values</font> =
 
 == Programmers ==
-* Better Communication with Stakeholders
+  * Better Communication with Stakeholders
 * More Recognition from Stakeholders after transparency
 * Better software quality and management through a web toolkit.
 * Easier tool for programming and deploying
