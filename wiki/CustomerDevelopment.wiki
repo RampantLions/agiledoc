@@ -13,4 +13,4 @@ Add your content here.  Format your content with:
   * Automatic links to other wiki pages
 
 
-<img src="http://agiledoc.googlecode.com/svn/wiki/LiveSourceEcosystem.jpg" border=1>
+<img src="http://agiledoc.googlecode.com/svn/wiki/LiveSourceEcosystem.jpg" border="1">
