@@ -1,6 +1,6 @@
 = LIVE SOURCE Ecosystem =
 
-<img border="1" src="http://agiledoc.googlecode.com/svn/wiki/LiveSourceEcosystem.jpg" >
+<img border="1" width="400px" src="http://agiledoc.googlecode.com/svn/wiki/LiveSourceEcosystem.jpg" >
 
 
 
