@@ -8,15 +8,29 @@
 
 == Programmers ==
   * Better Communication with Stakeholders
-* More Recognition from Stakeholders after transparency
-* Better software quality and management through a web toolkit.
-* Easier tool for programming and deploying
+  * Greater Recognition from Stakeholders after transparency
+  * Greater knowledge of the business part of the software
+  * More source code quality and management through a web toolkit
+  * Easier tool for programming and deploying
 
 == Project Managers ==
+  * More transparency from the Programmers
+  * Better Communication with the Programmers
+  * Greater Recognition from Stakeholders after transparency from the development team
+  * Greater knowledge of the technical part of the software
+  * Better control of the requirements development
+
 
 == Software Company Owners ==
+  * More transparency from the Development Team
+  * Better Communication with the Technical Team
+  * Greater knowledge of the technical part of the software
+  * Better control of the requirements development
+  * Less cost for the software development (Money save)
+ 
 
 == Software Customers ==
+  * Less cost for the software product (Money save)
 
 
 
