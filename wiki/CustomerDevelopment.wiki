@@ -1,17 +1,23 @@
-= Customer Development =
+= LIVE SOURCE Ecosystem =
 
-<img src="http://agiledoc.googlecode.com/svn/wiki/LiveSourceEcosystem.jpg" border="1">
-
-
+<img border="1" src="http://agiledoc.googlecode.com/svn/wiki/LiveSourceEcosystem.jpg" >
 
 
+
+= LIVE SOURCE Core Values =
 
 Add your content here.
 
 
-= Details =
+= Minimum Viable Products =
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
+
+
+= RISKS =
+
+
+= Value Path =
