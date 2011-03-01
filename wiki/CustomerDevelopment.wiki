@@ -33,17 +33,26 @@
 == Software Customers ==
   * Less cost for the software product (Money save)
 
-
+<br><br>
 
 = <font color="orange">Minimum Viable Products</font> =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== Programmers ==
+  * 
+
+== Project Managers ==
+  * 
 
 
+== Software Company Owners ==
+  * 
+ 
+
+== Software Customers ==
+  * 
+
+<br><br>
 = <font color="orange">RISKS</font> =
 
-
+<br><br>
 = <font color="orange">Value Path</font> =
