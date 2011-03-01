@@ -1,8 +1,8 @@
 package sourceagile.server.doclet;
 
 import sourceagile.client.serverCalls.ClassesDoclet;
-import sourceagile.server.doclet.antlr.ConvertTokensToDocumentation;
-import sourceagile.server.doclet.antlr.GetJavaTokens;
+import sourceagile.server.doclet.antlr.java.ConvertTokensToDocumentation;
+import sourceagile.server.doclet.antlr.java.GetJavaTokens;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;

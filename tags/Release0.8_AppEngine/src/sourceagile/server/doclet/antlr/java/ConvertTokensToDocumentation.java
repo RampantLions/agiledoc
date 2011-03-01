@@ -1,4 +1,4 @@
-package sourceagile.server.doclet.antlr;
+package sourceagile.server.doclet.antlr.java;
 
 import java.util.ArrayList;
 import java.util.List;

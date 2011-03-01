@@ -91,7 +91,7 @@ public class LoginPage extends VerticalPanel {
 
 		hpMain.add(vp);
 
-		hpMain.add(new BlogArchiveList());
+		hpMain.add(new BlogArchiveList(GlobalVariables.locale));
 
 		this.add(hpMain);
 	}
