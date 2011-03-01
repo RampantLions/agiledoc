@@ -160,7 +160,7 @@ public class ProjectsData {
 		Project proj = new Project();
 		// proj.setProjectID(new Long(4));
 		proj.setName("Jogo Da Velha");
-		proj.setProgramLanguage(Project.LOCALE_PORTUGUESE);
+		proj.setProjectLocale(Project.LOCALE_PORTUGUESE);
 		proj.setRepositoryType(Project.REPOSITORY_TYPE_SUBVERSION);
 		proj.setRepositoryURL("https://tictactoe4j.googlecode.com/svn");
 		proj.setRoot("/tags/Release_0.7_JogoDaVelha/src/");
