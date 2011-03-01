@@ -1,10 +1,10 @@
 = <font color="orange">LIVE SOURCE Ecosystem</font> =
 
-<img border="2" width="800px" src="http://agiledoc.googlecode.com/svn/wiki/LiveSourceEcosystem.jpg" >
+||<img border="2" width="800px" src="http://agiledoc.googlecode.com/svn/wiki/LiveSourceEcosystem.jpg" >||
 
 
 
-= LIVE SOURCE Core Values =
+= <font color="orange">LIVE SOURCE Core Values</font> =
 
 == Programmers ==
 
@@ -16,7 +16,7 @@
 
 
 
-= Minimum Viable Products =
+= <font color="orange">Minimum Viable Products</font> =
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
@@ -24,7 +24,7 @@ Add your content here.  Format your content with:
   * Automatic links to other wiki pages
 
 
-= RISKS =
+= <font color="orange">RISKS</font> =
 
 
-= Value Path =
+= <font color="orange">Value Path</font> =
