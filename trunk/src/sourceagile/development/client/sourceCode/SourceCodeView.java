@@ -12,10 +12,12 @@ import com.gwtext.client.widgets.SyntaxHighlightPanel;
 
 
 
+
+
 /** 
- * Show the source code of the class with the syntax highlighted.
+ * Show the source code of the class with the syntax highlighted in this web bases.
  * 
- * @Feature 
+ * @MainFeature 
  */
 public class SourceCodeView {
 
