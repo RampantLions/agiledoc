@@ -22,7 +22,7 @@ public class TestClassDescriptionTest extends GWTTestCase {
 
 		ClassFile testEntry = null;
 
-		new TestClassDescription(classEntry, testEntry);
+		new UnitTestView(classEntry, testEntry);
 
 		assertTrue(true);
 	}
