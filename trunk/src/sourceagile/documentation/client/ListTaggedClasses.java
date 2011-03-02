@@ -11,9 +11,12 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
+
+
+/** 
+ * Show the list of classes from the source code that are selected with a specific tag. Enable people to identify important parts of a software like Requirements, Architecture, Entity model, etc.
  * 
- * @Feature
+ * @MainFeature 
  */
 public class ListTaggedClasses extends VerticalPanel {
 
