@@ -60,3 +60,32 @@ Market - Will programmers accept open the source code for Stakeholders?
 
 <br><br>
 = <font color="orange">Value Path</font> =
+
+1.
+  * Prototype Core Functions
+
+2. 
+  * Interview Programmers
+  * Interview Project Managers
+  * Interview Software Company Owners
+
+3. 
+  * Validate technical viability of the MVPs
+
+4. 
+  * Develop MVPs
+
+5.
+  * Usability test with Programmers and Stakeholders
+
+6. 
+  * Insert real projects as Early adopters
+
+7. 
+  * Get fundraising
+
+8. 
+  * Distribute free licensing for open source projects
+
+9. 
+  * Advertise the Toolkit for software company owners
