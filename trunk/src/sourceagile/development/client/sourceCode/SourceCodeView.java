@@ -57,7 +57,7 @@ public class SourceCodeView {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				new SourceEditor(entry.getSourceCode());
+				new SourceCodeEdition(entry.getSourceCode());
 
 			}
 		});
