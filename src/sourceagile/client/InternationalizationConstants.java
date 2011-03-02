@@ -76,6 +76,9 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Features List")
 	String featuresList();
 
+	@DefaultStringValue("Requirements List")
+	String requirementsList();
+
 	@DefaultStringValue("Architecture")
 	String architecture();
 

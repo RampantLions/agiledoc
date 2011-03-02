@@ -3,7 +3,7 @@ package sourceagile.development.client.features;
 import helpagile.client.exportation.HelpHint;
 import sourceagile.client.GlobalVariables;
 import sourceagile.client.InternationalizationConstants;
-import sourceagile.development.client.features.edit.FeatureEdit;
+import sourceagile.development.client.features.edit.FeatureEdition;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.core.client.GWT;
@@ -34,7 +34,7 @@ public class ButtonEditFeature extends HTML {
 				OptionsIcons.toggledButtons();
 				OptionsIcons.buttonEditFeature.setHTML(imagePressed);
 
-				new FeatureEdit(entry);
+				new FeatureEdition(entry);
 			}
 		});
 

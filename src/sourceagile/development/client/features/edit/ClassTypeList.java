@@ -17,18 +17,26 @@ public class ClassTypeList extends ListBox {
 		this.setWidth("100px");
 
 		this.addItem("");
+
 		this.addItem(FeatureNameGenerator.spacedName(
 				ClassDocumentation.ARCHITECTURE_TAG, GlobalVariables.locale),
 				ClassDocumentation.ARCHITECTURE_TAG);
+
 		this.addItem(FeatureNameGenerator.spacedName(
 				ClassDocumentation.ENTITY_TAG, GlobalVariables.locale),
 				ClassDocumentation.ENTITY_TAG);
+
 		this.addItem(FeatureNameGenerator.spacedName(
-				ClassDocumentation.FEATURE_TAG, GlobalVariables.locale),
-				ClassDocumentation.FEATURE_TAG);
+				ClassDocumentation.MAIN_FEATURE_TAG, GlobalVariables.locale),
+				ClassDocumentation.MAIN_FEATURE_TAG);
+
 		this.addItem(FeatureNameGenerator.spacedName(
-				ClassDocumentation.USER_FEATURE_TAG, GlobalVariables.locale),
-				ClassDocumentation.USER_FEATURE_TAG);
+				ClassDocumentation.REQUIREMENT_TAG, GlobalVariables.locale),
+				ClassDocumentation.REQUIREMENT_TAG);
+
+		this.addItem(FeatureNameGenerator.spacedName(
+				ClassDocumentation.USER_MANUAL_TAG, GlobalVariables.locale),
+				ClassDocumentation.USER_MANUAL_TAG);
 
 		if (ClassDocumentation.ARCHITECTURE_TAG.equals(classType)) {
 
@@ -38,13 +46,17 @@ public class ClassTypeList extends ListBox {
 
 			this.setSelectedIndex(2);
 
-		} else if (ClassDocumentation.FEATURE_TAG.equals(classType)) {
+		} else if (ClassDocumentation.MAIN_FEATURE_TAG.equals(classType)) {
 
 			this.setSelectedIndex(3);
 
-		} else if (ClassDocumentation.USER_FEATURE_TAG.equals(classType)) {
+		} else if (ClassDocumentation.REQUIREMENT_TAG.equals(classType)) {
 
 			this.setSelectedIndex(4);
+
+		} else if (ClassDocumentation.USER_MANUAL_TAG.equals(classType)) {
+
+			this.setSelectedIndex(5);
 		}
 	}
 }
