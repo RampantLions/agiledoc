@@ -5,9 +5,12 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.gwtext.client.widgets.form.TextArea;
 
-/**
+
+
+/** 
+ * Enable the team to storage comments and discussions in a very precise way for a specific part of the software. 
  * 
- * @UserManual
+ * @UserManual 
  */
 public class CommentsForm extends VerticalPanel {
 
