@@ -3,6 +3,7 @@ package sourceagile.documentation.client;
 import sourceagile.client.ProjectInitialization;
 import sourceagile.development.client.Development;
 import sourceagile.development.client.features.OptionsIcons;
+import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.ProjectComponents;
 
@@ -78,7 +79,10 @@ public class ListTaggedClasses extends VerticalPanel {
 
 			if (showComponent) {
 
-				this.add(htmlComponentName);
+				if (!ClassDocumentation.MAIN_FEATURE_TAG.equals(tagType)) {
+
+					this.add(htmlComponentName);
+				}
 
 				this.add(vp);
 			}

@@ -68,14 +68,19 @@ public class EditClassDescription {
 		if (classFile.getClassDoc().getTagType() != null) {
 
 			if (classFile.getClassDoc().getTagType()
-					.equals(ClassDocumentation.USER_FEATURE_TAG)) {
+					.equals(ClassDocumentation.USER_MANUAL_TAG)) {
 
-				tagType = "\n * @" + ClassDocumentation.USER_FEATURE_TAG;
+				tagType = "\n * @" + ClassDocumentation.USER_MANUAL_TAG;
 
 			} else if (classFile.getClassDoc().getTagType()
-					.equals(ClassDocumentation.FEATURE_TAG)) {
+					.equals(ClassDocumentation.REQUIREMENT_TAG)) {
 
-				tagType = "\n * @" + ClassDocumentation.FEATURE_TAG;
+				tagType = "\n * @" + ClassDocumentation.REQUIREMENT_TAG;
+
+			} else if (classFile.getClassDoc().getTagType()
+					.equals(ClassDocumentation.MAIN_FEATURE_TAG)) {
+
+				tagType = "\n * @" + ClassDocumentation.MAIN_FEATURE_TAG;
 
 			} else if (classFile.getClassDoc().getTagType()
 					.equals(ClassDocumentation.ARCHITECTURE_TAG)) {
