@@ -8,6 +8,8 @@ import java.io.Serializable;
  */
 public class User implements Serializable {
 
+	public static final String ADMIN_USER = "admin";
+
 	private static final long serialVersionUID = 1L;
 
 	private String nickName;
