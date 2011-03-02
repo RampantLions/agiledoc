@@ -5,6 +5,12 @@ import sourceagile.development.client.features.FeatureVizualizationPanel;
 import com.weborient.codemirror.client.CodeMirrorConfiguration;
 import com.weborient.codemirror.client.CodeMirrorEditorWidget;
 
+/** 
+ * Edit the source code in a web bases.
+ * 
+ * @MainFeature 
+ */
+
 public class SourceEditor {
 
 	public SourceEditor(String classSource) {
