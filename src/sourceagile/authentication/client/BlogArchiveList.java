@@ -91,7 +91,7 @@ public class BlogArchiveList extends VerticalPanel {
 
 		HTML labelNews6 = new HTML(
 				"<a href='http://livesourcebrasil.blogspot.com/2011/02/o-problema-da-comunicacao-no-ambiente.html'"
-						+ " target='_blank'>O problema da comunica&ccedil;&atil;o no ambiente de desenvolvimento de software</a>");
+						+ " target='_blank'>O problema da comunica&ccedil;&atilde;o no ambiente de desenvolvimento de software</a>");
 
 		vpNews.add(labelNews6);
 

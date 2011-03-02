@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.jdo.PersistenceManager;
 
+import sourceagile.administration.client.project.ProjectAdministrationServerCalls;
 import sourceagile.authentication.client.serverCalls.AuthenticationServerCalls;
 import sourceagile.client.serverCalls.ProjectDatabaseServerCalls;
 import sourceagile.documentation.client.serverCalls.ProjectUpdateServerCalls;
@@ -15,7 +16,8 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 @SuppressWarnings("serial")
 public class ProjectDatabaseAccessImplementation extends RemoteServiceServlet
-		implements ProjectDatabaseServerCalls, AuthenticationServerCalls,
+		implements ProjectAdministrationServerCalls,
+		ProjectDatabaseServerCalls, AuthenticationServerCalls,
 		ProjectUpdateServerCalls, GetProjectServerCalls {
 
 	@Override
