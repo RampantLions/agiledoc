@@ -38,18 +38,14 @@
 = <font color="orange">Minimum Viable Products</font> =
 
 == Programmers ==
-  * 
+  * Source Code Edition on a Web bases
+  * Project Deploying on a Web bases
+  * Business information view of the source code
 
 == Project Managers ==
-  * 
+  * Business information view of the source code 
+  * Messaging with programmers straight from the source code in an easy and precise way
 
-
-== Software Company Owners ==
-  * 
- 
-
-== Software Customers ==
-  * 
 
 <br><br>
 = <font color="orange">RISKS</font> =
