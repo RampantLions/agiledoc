@@ -68,13 +68,17 @@ public class GetClassDoc {
 			classDocumentation.setTodo(true);
 		}
 
-		if (classDoc.tags(ClassDocumentation.USER_FEATURE_TAG).length > 0) {
+		if (classDoc.tags(ClassDocumentation.USER_MANUAL_TAG).length > 0) {
 
-			classDocumentation.setTagType(ClassDocumentation.USER_FEATURE_TAG);
+			classDocumentation.setTagType(ClassDocumentation.USER_MANUAL_TAG);
 
-		} else if (classDoc.tags(ClassDocumentation.FEATURE_TAG).length > 0) {
+		} else if (classDoc.tags(ClassDocumentation.REQUIREMENT_TAG).length > 0) {
 
-			classDocumentation.setTagType(ClassDocumentation.FEATURE_TAG);
+			classDocumentation.setTagType(ClassDocumentation.REQUIREMENT_TAG);
+
+		} else if (classDoc.tags(ClassDocumentation.MAIN_FEATURE_TAG).length > 0) {
+
+			classDocumentation.setTagType(ClassDocumentation.MAIN_FEATURE_TAG);
 
 		} else if (classDoc.tags(ClassDocumentation.ARCHITECTURE_TAG).length > 0) {
 
