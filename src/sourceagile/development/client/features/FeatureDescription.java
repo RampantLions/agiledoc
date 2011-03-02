@@ -19,11 +19,12 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 
 
+
+
 /** 
  * Show the documentation of the class in a specification format.
- 
- TODO: Show the component and the path at the top of the description. TODO:
- Show the Taggings for the feature that is being displayed.
+
+ TODO: Show the component and the path at the top of the description.
  * 
  * @TODO
  * @MainFeature 
