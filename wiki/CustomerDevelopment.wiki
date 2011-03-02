@@ -38,8 +38,8 @@
 = <font color="orange">Minimum Viable Products</font> =
 
 == Programmers ==
-  * Source Code Edition on a Web bases
-  * Project Deploying on a Web bases
+  * Source Code Edition via Web
+  * Project Deploying via Web
   * Business information view of the source code
 
 == Project Managers ==
@@ -49,6 +49,14 @@
 
 <br><br>
 = <font color="orange">RISKS</font> =
+
+Technology - Is that possible to deploy a software via web?
+
+Market - Do the software company owners want to have more knowledge of the technical part of their products?
+
+Market - Will programmers accept open the source code for Stakeholders?
+
+
 
 <br><br>
 = <font color="orange">Value Path</font> =
