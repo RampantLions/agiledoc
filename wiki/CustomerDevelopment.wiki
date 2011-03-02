@@ -5,14 +5,30 @@
 
 <br><br>
 
+= <font color="orange">Today's Problems</font> =
+
+== Software Company Owners ==
+  * High cost of software development
+  * Bad estimatives from Technical teams
+  * Schedule breakers, huge delays
+
+== Project Managers ==
+  * pain of communicating with programmers
+
+== Programmers ==
+  * pain of existing deploying systems
+
+<br><br>
+
 = <font color="orange">LIVE SOURCE Core Values</font> =
 
 == Programmers ==
-  * Better Communication with Stakeholders
-  * Greater Recognition from Stakeholders after transparency
+  * Better Communication with company Stakeholders
+  * Increased Recognition/Appreciation/Status/Job Security from Stakeholders after transparency
   * Greater knowledge of the business part of the software
-  * More source code quality and management through a web toolkit
+  * Better source code quality and better source management/maintenability/extensibility through the web toolkit
   * Easier tool for programming and deploying
+  * Better salaries, easier job
 
 == Project Managers ==
   * More transparency from the Programmers
@@ -56,6 +72,7 @@ Market - Do the software company owners want to have more knowledge of the techn
 
 Market - Will programmers accept open the source code for Stakeholders?
 
+Market - Does programmers want to deploy on a web tool?
 
 
 <br><br>
