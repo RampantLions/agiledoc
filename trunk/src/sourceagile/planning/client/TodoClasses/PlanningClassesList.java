@@ -9,10 +9,11 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 
 
 
+
+
 /** 
  * List all the classes assigned as "To Do" in the current project. Enable stakeholders to easily identify pending requirements straight in the source code in a very precise way.
  * 
- * @TODO
  * @MainFeature 
  */
 public class PlanningClassesList extends FlexTable {
