@@ -21,8 +21,10 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 
 
+
+
 /** 
- * Show the documentation of the class in a specification format.
+ * Show the structure and the documentation of the class in a specification format. Enable Stakeholders understand the "business part" only of the source code.
 
  TODO: Show the component and the path at the top of the description.
  * 
