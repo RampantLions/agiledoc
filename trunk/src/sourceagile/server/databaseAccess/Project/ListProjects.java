@@ -31,7 +31,12 @@ public class ListProjects {
 
 		if (locale != null) {
 
-			String filter = "projectLocale.startsWith(\"locale\")";
+			String filter = "projectLocale == locale";
+
+			if (Project.LOCALE_ENGLISH.equals(locale)) {
+
+				filter += " || projectLocale == null";
+			}
 
 			query = persistenceManager.newQuery(extent, filter);
 
