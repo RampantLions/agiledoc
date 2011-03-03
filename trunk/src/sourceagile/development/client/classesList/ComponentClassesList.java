@@ -13,15 +13,11 @@ import com.gwtext.client.widgets.tree.TreeNode;
 import com.gwtext.client.widgets.tree.TreePanel;
 import com.gwtext.client.widgets.tree.event.TreeNodeListenerAdapter;
 
-/**
- * 
- * 
- * @feature
- */
 public class ComponentClassesList {
 
 	public ComponentClassesList(TreePanel tree, TreeNode componentNode,
-			HashMap<String, ClassFile> entries, String specificationPath) {
+			HashMap<String, ClassFile> entries, String specificationPath,
+			int viewOption) {
 
 		String currentPath = componentNode.getId();
 
@@ -33,44 +29,40 @@ public class ComponentClassesList {
 
 		for (ClassFile entry : entries.values()) {
 
-			if (specificationPath != null
-					&& entry.getFilePath().startsWith(specificationPath)) {
+			String[] entryPath = entry.getFilePath().split("/");
 
-				String[] entryPath = entry.getFilePath().split("/");
-
-				for (int i = specPathSize; i < entryPath.length; i++) {
-
-					TreeNode parentNode = tree.getNodeById(currentPath);
-
-					if (!entryPath[i].equals("")) {
-
-						currentPath += "/" + entryPath[i];
-
-						if (tree.getNodeById(currentPath) == null) {
-
-							TreeNode node = new TreeNode(
-									FeatureNameGenerator.spacedName(
-											entryPath[i],
-											entry.getClassLocale()));
-							node.setExpanded(true);
-							node.setId(currentPath);
-							node.setIcon("js/ext/resources/images/default/tree/empty.gif");
-
-							parentNode.appendChild(node);
-						}
-					}
-				}
+			for (int i = specPathSize; i < entryPath.length; i++) {
 
 				TreeNode parentNode = tree.getNodeById(currentPath);
 
-				TreeNode node = getFeatureLink(entry);
-				node.setId(entry.getFilePath() + "." + entry.getFileName());
-				node.setExpanded(true);
+				if (!entryPath[i].equals("")) {
 
-				parentNode.appendChild(node);
+					currentPath += "/" + entryPath[i];
 
-				currentPath = componentNode.getId();
+					if (tree.getNodeById(currentPath) == null) {
+
+						TreeNode node = new TreeNode(
+								FeatureNameGenerator.spacedName(entryPath[i],
+										entry.getClassLocale()));
+						node.setExpanded(true);
+						node.setId(currentPath);
+						node.setIcon("js/ext/resources/images/default/tree/empty.gif");
+
+						parentNode.appendChild(node);
+					}
+				}
 			}
+
+			TreeNode parentNode = tree.getNodeById(currentPath);
+
+			TreeNode node = getFeatureLink(entry);
+			node.setId(entry.getFilePath() + "." + entry.getFileName());
+			node.setExpanded(true);
+
+			parentNode.appendChild(node);
+
+			currentPath = componentNode.getId();
+
 		}
 	}
 

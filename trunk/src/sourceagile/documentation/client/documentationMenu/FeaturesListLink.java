@@ -20,9 +20,9 @@ public class FeaturesListLink extends HTML {
 			.create(InternationalizationConstants.class);
 
 	public static final String textUnpressed = "<a href='#'>"
-			+ internationalizationConstants.featuresList() + "</a>";
+			+ internationalizationConstants.mainFeatures() + "</a>";
 	public static final String textPressed = "<a href='#'><font color=orange><b>"
-			+ internationalizationConstants.featuresList() + "</b></font></a>";
+			+ internationalizationConstants.mainFeatures() + "</b></font></a>";
 
 	public FeaturesListLink() {
 
