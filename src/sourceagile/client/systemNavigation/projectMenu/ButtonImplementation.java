@@ -13,14 +13,14 @@ import com.gwtext.client.widgets.event.ButtonListenerAdapter;
  * 
  * @UserManual
  */
-public class ButtonDevelopment extends Button {
+public class ButtonImplementation extends Button {
 
 	private static InternationalizationConstants internationalizationConstants = GWT
 			.create(InternationalizationConstants.class);
 
-	public ButtonDevelopment() {
+	public ButtonImplementation() {
 
-		this.setText(internationalizationConstants.development());
+		this.setText(internationalizationConstants.implementation());
 
 		this.addListener(new ButtonListenerAdapter() {
 
@@ -30,7 +30,7 @@ public class ButtonDevelopment extends Button {
 				ProjectMenu.untoggleButtons();
 				ProjectMenu.buttonDevelopment.toggle(true);
 
-				new Development(OptionsIcons.OPTION_ALLCLASSES);
+				new Development(OptionsIcons.OPTION_REQUIREMENTS);
 			}
 		});
 	}

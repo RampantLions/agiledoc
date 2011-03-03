@@ -52,8 +52,8 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Search")
 	String search();
 
-	@DefaultStringValue("Development")
-	String development();
+	@DefaultStringValue("Implementation")
+	String implementation();
 
 	@DefaultStringValue("Diagnosis")
 	String diagnosis();
@@ -70,11 +70,14 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Source")
 	String source();
 
+	@DefaultStringValue("Requirements")
+	String requirements();
+
 	@DefaultStringValue("Project Description")
 	String projectDescription();
 
-	@DefaultStringValue("Features List")
-	String featuresList();
+	@DefaultStringValue("Main Features")
+	String mainFeatures();
 
 	@DefaultStringValue("Requirements List")
 	String requirementsList();
