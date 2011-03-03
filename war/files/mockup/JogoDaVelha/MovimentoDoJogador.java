@@ -6,10 +6,12 @@ import jogoDaVelha.shared.Jogador;
 
 import com.google.gwt.user.client.ui.HTMLTable.Cell;
 
-/**
+
+
+/** 
  * Efetiva o movimento do jogador na grade do jogo.
  * 
- * @Feature
+ * @MainFeature 
  */
 public class MovimentoDoJogador {
 

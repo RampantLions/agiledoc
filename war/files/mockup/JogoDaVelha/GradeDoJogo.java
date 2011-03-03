@@ -8,9 +8,12 @@ import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 
-/**
- * 3x3 grid of cells in which players enter a mark to indicate their desired
- * move.
+
+
+/** 
+ * Grade 3 x 3 onde cada jogador entra suas jogadas com o seu símbolo correspondente no jogo.
+ * 
+ * @Requirement 
  */
 public class GradeDoJogo extends Grid {
 

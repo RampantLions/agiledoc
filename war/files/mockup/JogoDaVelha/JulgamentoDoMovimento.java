@@ -3,9 +3,12 @@ package jogoDaVelha.server;
 import jogoDaVelha.shared.EntidadeJogo;
 import jogoDaVelha.shared.Jogador;
 
-/**
+
+
+/** 
  * Verifica se o movimento do jogador executou uma seqüência ganhadora ou não.
  * 
+ * @Requirement 
  */
 public class JulgamentoDoMovimento {
 
