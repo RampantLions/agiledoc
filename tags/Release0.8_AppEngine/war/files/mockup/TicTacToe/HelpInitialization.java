@@ -1,6 +1,5 @@
 package tictactoe.client;
 
-import helpagile.client.HelpAgileExport;
 import helpagile.client.exportation.HelpWindow;
 import helpagile.client.utilities.ConvertSpecificationXML;
 import tictactoe.client.userInterface.GameBoard;
@@ -27,7 +26,7 @@ public class HelpInitialization {
 				ConvertSpecificationXML.convertHelpEntries(response.getText());
 
 				RootPanel.get("gameBoardHtmlTagId").add(
-						HelpWindow.helpIcon("TicTacToe"));
+						HelpWindow.helpIcon("TicTacToe", "en"));
 
 				RootPanel.get("gameBoardHtmlTagId").add(new GameBoard());
 			}
@@ -40,7 +39,8 @@ public class HelpInitialization {
 
 		};
 
-		HelpAgileExport.initHelp("TicTacToe", requestCallback);
+		helpagile.client.HelpInitialization.initHelp("TicTacToe", null,
+				requestCallback);
 
 	}
 }
