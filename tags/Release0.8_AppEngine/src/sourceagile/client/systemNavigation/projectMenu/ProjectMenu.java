@@ -7,7 +7,7 @@ public class ProjectMenu extends HorizontalPanel {
 
 	public static ButtonPlanning buttonPlanning = new ButtonPlanning();
 
-	public static ButtonDevelopment buttonDevelopment = new ButtonDevelopment();
+	public static ButtonImplementation buttonDevelopment = new ButtonImplementation();
 
 	public static ButtonDocumentation buttonDocumentation = new ButtonDocumentation();
 
