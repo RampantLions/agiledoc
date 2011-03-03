@@ -26,12 +26,13 @@ public class Development {
 	public static VerticalPanel featuresTreePanel = new VerticalPanel();
 	public static VerticalPanel featureVisualizationPanel = new VerticalPanel();
 
+	public static LinkRequirements linkRequirements = new LinkRequirements();
 	public static LinkFeatures linkFeatures = new LinkFeatures();
 	public static LinkSource linkSource = new LinkSource();
 
 	public Development() {
 
-		this(null, OptionsIcons.OPTION_DESCRIPTION);
+		this(null, OptionsIcons.OPTION_REQUIREMENTS);
 	}
 
 	public Development(int viewOption) {
@@ -77,11 +78,17 @@ public class Development {
 
 		HorizontalPanel optionsPanel = new HorizontalPanel();
 
-		optionsPanel.add(linkFeatures);
+		optionsPanel.add(linkRequirements);
 
 		Label labelspace = new Label(" ");
-		labelspace.setWidth("50px");
+		labelspace.setWidth("30px");
 		optionsPanel.add(labelspace);
+
+		optionsPanel.add(linkFeatures);
+
+		Label labelspace2 = new Label(" ");
+		labelspace2.setWidth("30px");
+		optionsPanel.add(labelspace2);
 
 		optionsPanel.add(linkSource);
 
@@ -92,9 +99,16 @@ public class Development {
 
 		featuresTreePanel.clear();
 
-		if (viewOption == OptionsIcons.OPTION_SOURCE) {
+		toggledLinks();
 
-			linkFeatures.setHTML(LinkFeatures.textUnpressed);
+		if (viewOption == OptionsIcons.OPTION_REQUIREMENTS) {
+
+			linkRequirements.setHTML(LinkRequirements.textPressed);
+
+			featuresTreePanel.add(new ComponentsList(viewOption));
+
+		} else if (viewOption == OptionsIcons.OPTION_SOURCE) {
+
 			linkSource.setHTML(LinkSource.textPressed);
 
 			featuresTreePanel.add(new ListFiles(
@@ -102,9 +116,8 @@ public class Development {
 		} else {
 
 			linkFeatures.setHTML(LinkFeatures.textPressed);
-			linkSource.setHTML(LinkSource.textUnpressed);
 
-			featuresTreePanel.add(new ComponentsList());
+			featuresTreePanel.add(new ComponentsList(viewOption));
 		}
 	}
 
@@ -131,5 +144,12 @@ public class Development {
 
 			new SourceCodeView(entry);
 		}
+	}
+
+	public static void toggledLinks() {
+
+		linkRequirements.setHTML(LinkRequirements.textUnpressed);
+		linkFeatures.setHTML(LinkFeatures.textUnpressed);
+		linkSource.setHTML(LinkSource.textUnpressed);
 	}
 }

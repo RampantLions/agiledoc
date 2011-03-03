@@ -9,7 +9,10 @@ import sourceagile.shared.entities.entry.ClassFile;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.MouseOverEvent;
+import com.google.gwt.event.dom.client.MouseOverHandler;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.PopupPanel;
 
 /**
  * 
@@ -22,6 +25,8 @@ public class ButtonSourceCode extends HTML {
 
 	public static final String imageUnpressed = "<a href='#'><img src='images/source.gif'></a>";
 	public static final String imagePressed = "<a href='#'><img src='images/sourceHighlighted.gif'></a>";
+
+	public PopupPanel sourceHint;
 
 	public ButtonSourceCode(final ClassFile entry) {
 
@@ -38,10 +43,19 @@ public class ButtonSourceCode extends HTML {
 			}
 		});
 
-		// this.setTitle(internationalizationConstants.source());
+		sourceHint = HelpHint.getHelpHintLinked(this.getClass().getName(),
+				internationalizationConstants.source(), GlobalVariables.locale);
 
-		HelpHint.setHintHandler(this, this.getClass().getName(),
-				internationalizationConstants.source(), null,
-				GlobalVariables.locale);
+		this.addMouseOverHandler(new MouseOverHandler() {
+
+			@Override
+			public void onMouseOver(MouseOverEvent event) {
+
+				OptionsIcons.hideHints();
+
+				HelpHint.executeMouseOverHandler(event, sourceHint, null);
+
+			}
+		});
 	}
 }

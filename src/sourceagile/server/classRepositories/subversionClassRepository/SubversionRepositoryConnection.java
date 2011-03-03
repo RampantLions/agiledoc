@@ -13,7 +13,7 @@ import sourceagile.shared.entities.project.Project;
 /**
  * Open a connection with the repository that was entered in the project data.
  * 
- * @architecture
+ * @Architecture
  */
 
 public class SubversionRepositoryConnection {
@@ -22,7 +22,7 @@ public class SubversionRepositoryConnection {
 			User user) throws SVNException {
 
 		String URI = project.getRepositoryURL() + project.getRoot()
-				+ project.getDomain();
+				+ project.getDomain().replaceAll("\\.", "/");
 
 		return connect(URI, user);
 	}

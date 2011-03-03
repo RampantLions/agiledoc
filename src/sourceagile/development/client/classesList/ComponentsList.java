@@ -1,8 +1,12 @@
 package sourceagile.development.client.classesList;
 
+import java.util.HashMap;
 import java.util.List;
 
 import sourceagile.client.ProjectInitialization;
+import sourceagile.development.client.features.OptionsIcons;
+import sourceagile.shared.entities.entry.ClassDocumentation;
+import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.ProjectComponents;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 
@@ -12,7 +16,7 @@ import com.gwtext.client.widgets.tree.TreePanel;
 
 public class ComponentsList extends VerticalPanel {
 
-	public ComponentsList() {
+	public ComponentsList(int viewOption) {
 
 		List<ProjectComponents> projectComponents = ProjectInitialization.currentProject
 				.getProjectComponents();
@@ -35,42 +39,75 @@ public class ComponentsList extends VerticalPanel {
 
 		for (ProjectComponents projectComponent : projectComponents) {
 
-			String[] componentPath = projectComponent.getComponentName().split(
-					"/");
+			HashMap<String, ClassFile> componentClasses = listComponentClasses(
+					ProjectInitialization.projectEntries,
+					projectComponent.getComponentPath(), viewOption);
 
-			for (int i = 0; i < componentPath.length; i++) {
+			if (componentClasses != null && componentClasses.size() > 0) {
+
+				String[] componentPath = projectComponent.getComponentName()
+						.split("/");
+
+				for (int i = 0; i < componentPath.length; i++) {
+
+					TreeNode componentParentNode = treePanel
+							.getNodeById(currentComponentPath);
+
+					currentComponentPath += "/" + componentPath[i];
+
+					if (treePanel.getNodeById(currentComponentPath) == null) {
+
+						TreeNode emptyNode = new TreeNode("");
+						emptyNode
+								.setIcon("js/ext/resources/images/default/tree/empty.gif");
+						componentParentNode.appendChild(emptyNode);
+
+						TreeNode node = new TreeNode(
+								FeatureNameGenerator.spacedName(
+										componentPath[i],
+										ProjectInitialization.currentProject
+												.getProjectLocale()));
+						node.setId(currentComponentPath);
+
+						componentParentNode.appendChild(node);
+					}
+				}
 
 				TreeNode componentParentNode = treePanel
 						.getNodeById(currentComponentPath);
 
-				currentComponentPath += "/" + componentPath[i];
+				new ComponentClassesList(treePanel, componentParentNode,
+						componentClasses, projectComponent.getComponentPath(),
+						viewOption);
 
-				if (treePanel.getNodeById(currentComponentPath) == null) {
+				currentComponentPath = "componentRoot";
 
-					TreeNode emptyNode = new TreeNode("");
-					emptyNode
-							.setIcon("js/ext/resources/images/default/tree/empty.gif");
-					componentParentNode.appendChild(emptyNode);
+			}
+		}
+	}
 
-					TreeNode node = new TreeNode(
-							FeatureNameGenerator.spacedName(componentPath[i],
-									ProjectInitialization.currentProject
-											.getProjectLocale()));
-					node.setId(currentComponentPath);
+	private HashMap<String, ClassFile> listComponentClasses(
+			HashMap<String, ClassFile> entries, String specificationPath,
+			int viewOption) {
 
-					componentParentNode.appendChild(node);
+		HashMap<String, ClassFile> componentClasses = new HashMap<String, ClassFile>();
+
+		for (ClassFile entry : entries.values()) {
+
+			if (specificationPath != null
+					&& entry.getFilePath().startsWith(specificationPath)) {
+
+				if (OptionsIcons.OPTION_REQUIREMENTS != viewOption
+						|| (entry.getClassDoc() != null && (ClassDocumentation.REQUIREMENT_TAG
+								.equals(entry.getClassDoc().getTagType()) || ClassDocumentation.MAIN_FEATURE_TAG
+								.equals(entry.getClassDoc().getTagType())))) {
+
+					componentClasses.put(entry.toString(), entry);
 				}
 			}
-
-			TreeNode componentParentNode = treePanel
-					.getNodeById(currentComponentPath);
-
-			new ComponentClassesList(treePanel, componentParentNode,
-					ProjectInitialization.projectEntries,
-					projectComponent.getComponentPath());
-
-			currentComponentPath = "componentRoot";
 		}
+
+		return componentClasses;
 	}
 
 }
