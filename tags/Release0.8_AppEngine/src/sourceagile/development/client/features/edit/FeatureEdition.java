@@ -20,13 +20,13 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * @Feature
  */
-public class FeatureEdit extends VerticalPanel {
+public class FeatureEdition extends VerticalPanel {
 
 	public static TextArea classDescription = new TextArea();
 	public static CheckBox isTodo = new CheckBox(" To Do");
 	public static ClassTypeList classTypeList;
 
-	public FeatureEdit(ClassFile entry) {
+	public FeatureEdition(ClassFile entry) {
 
 		FeatureVizualizationPanel.featureContent.clear();
 

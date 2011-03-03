@@ -3,6 +3,7 @@ package sourceagile.documentation.client;
 import sourceagile.client.ProjectInitialization;
 import sourceagile.development.client.Development;
 import sourceagile.development.client.features.OptionsIcons;
+import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.ProjectComponents;
 
@@ -12,8 +13,11 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
+ * Show the list of classes from the source code that are selected with a
+ * specific tag. Enable people to identify important parts of a software like
+ * Requirements, Architecture, Entity model, etc.
  * 
- * @Feature
+ * @MainFeature
  */
 public class ListTaggedClasses extends VerticalPanel {
 
@@ -42,40 +46,56 @@ public class ListTaggedClasses extends VerticalPanel {
 								projectComponent.getComponentPath())) {
 
 					if (entry.getClassDoc() != null
-							&& entry.getClassDoc().getTagType() != null
-							&& entry.getClassDoc().getTagType().equals(tagType)) {
+							&& entry.getClassDoc().getTagType() != null) {
 
-						String name = "<br><B>"
-								+ entry.getFeature().getFeatureName() + "</B> ";
+						if ((!ClassDocumentation.REQUIREMENT_TAG
+								.equals(tagType) && entry.getClassDoc()
+								.getTagType().equals(tagType))
+								|| (ClassDocumentation.REQUIREMENT_TAG
+										.equals(tagType) && (entry
+										.getClassDoc()
+										.getTagType()
+										.equals(ClassDocumentation.MAIN_FEATURE_TAG) || entry
+										.getClassDoc()
+										.getTagType()
+										.equals(ClassDocumentation.REQUIREMENT_TAG)))) {
 
-						if (entry.getClassDoc().isTodo()) {
+							String name = "<br><B>"
+									+ entry.getFeature().getFeatureName()
+									+ "</B> ";
 
-							name += "&nbsp;&nbsp;&nbsp;<font color=blue>(Planning)</font>";
-						}
+							if (entry.getClassDoc().isTodo()) {
 
-						String description = "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-								+ entry.getClassDoc().getDescription();
-
-						HTML html = new HTML(name + description);
-
-						html.addClickHandler(new ClickHandler() {
-							public void onClick(ClickEvent sender) {
-
-								new Development(entry,
-										OptionsIcons.OPTION_DESCRIPTION);
+								name += "&nbsp;&nbsp;&nbsp;<font color=blue>(Planning)</font>";
 							}
-						});
 
-						vp.add(html);
+							String description = "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+									+ entry.getClassDoc().getDescription();
 
-						showComponent = true;
+							HTML html = new HTML(name + description);
+
+							html.addClickHandler(new ClickHandler() {
+								public void onClick(ClickEvent sender) {
+
+									new Development(entry,
+											OptionsIcons.OPTION_DESCRIPTION);
+								}
+							});
+
+							vp.add(html);
+
+							showComponent = true;
+						}
 					}
 				}
 			}
 
 			if (showComponent) {
 
-				this.add(htmlComponentName);
+				if (!ClassDocumentation.MAIN_FEATURE_TAG.equals(tagType)) {
+
+					this.add(htmlComponentName);
+				}
 
 				this.add(vp);
 			}

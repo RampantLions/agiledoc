@@ -21,7 +21,7 @@ public class SubversionRepositoryConnection {
 			User user) throws SVNException {
 
 		String URI = project.getRepositoryURL() + project.getRoot()
-				+ project.getDomain();
+				+ project.getDomain().replaceAll("\\.", "/");
 
 		return connect(URI, user);
 	}
