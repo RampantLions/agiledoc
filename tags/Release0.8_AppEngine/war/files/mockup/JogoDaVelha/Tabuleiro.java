@@ -6,9 +6,15 @@ import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
- * The web page where the game is shown. Accommodates the game grid and also
- * some options such as a restart button, help, game score, game status, ...
+
+
+
+
+/** 
+ * Acomoda a grade do jogo na pagina web. Tambem acomoda outros componentes como link para o sistema de ajuda, botao de reestartar o jogo, placar, ...
+O tabuleiro e exibido assim que o jogo se inicia.
+ * 
+ * @MainFeature 
  */
 public class Tabuleiro extends VerticalPanel {
 

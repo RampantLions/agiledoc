@@ -8,7 +8,7 @@ import com.google.gwt.core.client.EntryPoint;
  * 
  * @Architecture
  */
-public class JogoDaVelha implements EntryPoint {
+public class GwtEntryPoint implements EntryPoint {
 
 	public void onModuleLoad() {
 

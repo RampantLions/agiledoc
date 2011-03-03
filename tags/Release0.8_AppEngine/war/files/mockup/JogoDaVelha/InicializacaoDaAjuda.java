@@ -26,7 +26,7 @@ public class InicializacaoDaAjuda {
 				ConvertSpecificationXML.convertHelpEntries(response.getText());
 
 				RootPanel.get("gameBoardHtmlTagId").add(
-						HelpWindow.helpIcon("TicTacToe"));
+						HelpWindow.helpIcon("JogoDaVelha", "pt_BR"));
 
 				RootPanel.get("gameBoardHtmlTagId").add(new Tabuleiro());
 			}
@@ -39,7 +39,7 @@ public class InicializacaoDaAjuda {
 
 		};
 
-		helpagile.client.HelpInitialization.initHelp("TicTacToe", null,
+		helpagile.client.HelpInitialization.initHelp("JogoDaVelha", null,
 				requestCallback);
 
 	}
