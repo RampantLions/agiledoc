@@ -27,7 +27,6 @@
 	<inherits name="sourceagile.development.Development" />
 	<inherits name="sourceagile.documentation.Documentation" />
 	<inherits name="sourceagile.testing.Testing" />
-	<inherits name="sourceagile.codeview.CodeView" />
 	<inherits name="sourceagile.metrics.Metrics" />
 
 	<!-- Specify the app entry point class. -->
