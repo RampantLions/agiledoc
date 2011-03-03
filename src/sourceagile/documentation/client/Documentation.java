@@ -11,6 +11,7 @@ import sourceagile.documentation.client.documentationMenu.ExportXmlLink;
 import sourceagile.documentation.client.documentationMenu.FeaturesListLink;
 import sourceagile.documentation.client.documentationMenu.ProjectDescriptionLink;
 import sourceagile.documentation.client.documentationMenu.RelatedLinksLink;
+import sourceagile.documentation.client.documentationMenu.RequirementsListLink;
 import sourceagile.documentation.client.project.ProjectDescription;
 import sourceagile.documentation.client.project.RelatedLinks;
 import sourceagile.shared.utilities.FileNameGenerator;
@@ -33,6 +34,7 @@ public class Documentation {
 
 	public static ProjectDescriptionLink projectDescriptionLink = new ProjectDescriptionLink();
 	public static FeaturesListLink featuresListLink = new FeaturesListLink();
+	public static RequirementsListLink requirementsListLink = new RequirementsListLink();
 	public static ArchitectureLink architectureLink = new ArchitectureLink();
 	public static EntitiesLink entitiesLink = new EntitiesLink();
 	public static ExportXmlLink exportXmlLink = new ExportXmlLink();
@@ -84,9 +86,13 @@ public class Documentation {
 
 		vp.setSpacing(20);
 
+		untoggleLinks();
+
 		vp.add(projectDescriptionLink);
 
 		vp.add(featuresListLink);
+
+		vp.add(requirementsListLink);
 
 		vp.add(architectureLink);
 
@@ -113,6 +119,7 @@ public class Documentation {
 
 		projectDescriptionLink.setHTML(ProjectDescriptionLink.textUnpressed);
 		featuresListLink.setHTML(FeaturesListLink.textUnpressed);
+		requirementsListLink.setHTML(RequirementsListLink.textUnpressed);
 		architectureLink.setHTML(ArchitectureLink.textUnpressed);
 		entitiesLink.setHTML(EntitiesLink.textUnpressed);
 		exportXmlLink.setHTML(ExportXmlLink.textUnpressed);

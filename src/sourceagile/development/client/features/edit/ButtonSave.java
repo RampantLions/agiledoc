@@ -31,10 +31,10 @@ public class ButtonSave extends Button {
 				} else {
 
 					classFile.getClassDoc().setTodo(
-							FeatureEdit.isTodo.getValue());
+							FeatureEdition.isTodo.getValue());
 
-					String classType = FeatureEdit.classTypeList
-							.getValue(FeatureEdit.classTypeList
+					String classType = FeatureEdition.classTypeList
+							.getValue(FeatureEdition.classTypeList
 									.getSelectedIndex());
 
 					if (classType.length() == 0) {
@@ -44,7 +44,7 @@ public class ButtonSave extends Button {
 
 					classFile.getClassDoc().setTagType(classType);
 
-					new EditClass(classFile, FeatureEdit.classDescription
+					new EditClass(classFile, FeatureEdition.classDescription
 							.getValue());
 				}
 			}

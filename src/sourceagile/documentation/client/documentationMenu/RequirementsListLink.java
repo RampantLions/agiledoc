@@ -14,17 +14,18 @@ import com.google.gwt.user.client.ui.HTML;
  * 
  * @UserManual
  */
-public class FeaturesListLink extends HTML {
+public class RequirementsListLink extends HTML {
 
 	private static InternationalizationConstants internationalizationConstants = GWT
 			.create(InternationalizationConstants.class);
 
 	public static final String textUnpressed = "<a href='#'>"
-			+ internationalizationConstants.mainFeatures() + "</a>";
+			+ internationalizationConstants.requirementsList() + "</a>";
 	public static final String textPressed = "<a href='#'><font color=orange><b>"
-			+ internationalizationConstants.mainFeatures() + "</b></font></a>";
+			+ internationalizationConstants.requirementsList()
+			+ "</b></font></a>";
 
-	public FeaturesListLink() {
+	public RequirementsListLink() {
 
 		this.setHTML(textUnpressed);
 		this.addClickHandler(new ClickHandler() {
@@ -33,11 +34,11 @@ public class FeaturesListLink extends HTML {
 			public void onClick(ClickEvent event) {
 
 				Documentation.untoggleLinks();
-				Documentation.featuresListLink.setHTML(textPressed);
+				Documentation.requirementsListLink.setHTML(textPressed);
 
 				Documentation.documentationPanel.clear();
 				Documentation.documentationPanel.add(new ListTaggedClasses(
-						ClassDocumentation.MAIN_FEATURE_TAG));
+						ClassDocumentation.REQUIREMENT_TAG));
 			}
 		});
 
