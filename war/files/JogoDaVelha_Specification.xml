@@ -15,11 +15,11 @@
 		<projectComponent componentName="Autentica��o"
 			componentPath="autenticacao/client">
 			<entries>
-				<entry featureType="" isTodo="true">
+				<entry featureType="Requirement" isTodo="true">
 					<fileName>EntradaNoJogo.java</fileName>
 					<filePath>autenticacao/client</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1298497486873</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1299178211270</fileDate>
 					<className>EntradaNoJogo</className>
 					<featurePath></featurePath>
 					<featureName>Entrada no Jogo</featureName>
@@ -36,11 +36,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="true">
+				<entry featureType="Requirement" isTodo="true">
 					<fileName>SaidaDoJogo.java</fileName>
 					<filePath>autenticacao/client</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1298497486873</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1299178222836</fileDate>
 					<className>SaidaDoJogo</className>
 					<featurePath></featurePath>
 					<featureName>Saida do Jogo</featureName>
@@ -246,11 +246,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="false">
+				<entry featureType="Requirement" isTodo="false">
 					<fileName>JulgamentoDoMovimento.java</fileName>
 					<filePath>server</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1298508445896</fileDate>
+					<fileDate>1299178243133</fileDate>
 					<className>JulgamentoDoMovimento</className>
 					<featurePath></featurePath>
 					<featureName>Julgamento do Movimento</featureName>
@@ -293,10 +293,37 @@
 		<projectComponent componentName="Jogo" componentPath="client">
 			<entries>
 				<entry featureType="Architecture" isTodo="false">
+					<fileName>GwtEntryPoint.java</fileName>
+					<filePath>client</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1299178309934</fileDate>
+					<className>GwtEntryPoint</className>
+					<featurePath></featurePath>
+					<featureName>Gwt Entry Point</featureName>
+					<featureFolder>Client</featureFolder>
+					<featureDescription>Classe �ncora para inicializa��o do sistema
+						pelo Google Web Toolkit
+						(EntryPoint).</featureDescription>
+					<constructors>
+						<method>
+							<methodName>GwtEntryPoint</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>onModuleLoad</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Architecture" isTodo="false">
 					<fileName>InicializacaoDaAjuda.java</fileName>
 					<filePath>client</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1298497486873</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1299182884541</fileDate>
 					<className>InicializacaoDaAjuda</className>
 					<featurePath></featurePath>
 					<featureName>Inicializacao da Ajuda</featureName>
@@ -330,33 +357,6 @@
 						</method>
 					</constructors>
 					<methods />
-					<fields />
-					<comments />
-				</entry>
-				<entry featureType="Architecture" isTodo="false">
-					<fileName>JogoDaVelha.java</fileName>
-					<filePath>client</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1298497486873</fileDate>
-					<className>JogoDaVelha</className>
-					<featurePath></featurePath>
-					<featureName>Jogo da Velha</featureName>
-					<featureFolder>Client</featureFolder>
-					<featureDescription>Classe �ncora para inicializa��o do sistema
-						pelo Google Web Toolkit
-						(EntryPoint).</featureDescription>
-					<constructors>
-						<method>
-							<methodName>JogoDaVelha</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</constructors>
-					<methods>
-						<method>
-							<methodName>onModuleLoad</methodName>
-							<methodDescription></methodDescription>
-						</method>
-					</methods>
 					<fields />
 					<comments />
 				</entry>
@@ -469,18 +469,18 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="false">
+				<entry featureType="Requirement" isTodo="false">
 					<fileName>GradeDoJogo.java</fileName>
 					<filePath>client/interfaceComOUsuario</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1298497486873</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1299178555016</fileDate>
 					<className>GradeDoJogo</className>
 					<featurePath>interfaceComOUsuario</featurePath>
 					<featureName>Grade do Jogo</featureName>
 					<featureFolder>Interface com o Usuario</featureFolder>
-					<featureDescription>3x3 grid of cells in which players enter a mark
-						to indicate their desired
-						move.</featureDescription>
+					<featureDescription>Grade 3 x 3 onde cada jogador entra suas
+						jogadas com o seu s�mbolo correspondente no jogo.
+					</featureDescription>
 					<constructors>
 						<method>
 							<methodName>GradeDoJogo</methodName>
@@ -500,11 +500,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="Feature" isTodo="false">
+				<entry featureType="MainFeature" isTodo="false">
 					<fileName>MovimentoDoJogador.java</fileName>
 					<filePath>client/interfaceComOUsuario</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1298508436116</fileDate>
+					<fileDate>1299178586270</fileDate>
 					<className>MovimentoDoJogador</className>
 					<featurePath>interfaceComOUsuario</featurePath>
 					<featureName>Movimento do Jogador</featureName>
@@ -565,11 +565,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="Feature" isTodo="false">
+				<entry featureType="MainFeature" isTodo="false">
 					<fileName>SequenciaGanhadora.java</fileName>
 					<filePath>client/interfaceComOUsuario</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1298508436116</fileDate>
+					<fileDate>1299182884541</fileDate>
 					<className>SequenciaGanhadora</className>
 					<featurePath>interfaceComOUsuario</featurePath>
 					<featureName>Sequencia Ganhadora</featureName>
@@ -594,19 +594,20 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="false">
+				<entry featureType="MainFeature" isTodo="false">
 					<fileName>Tabuleiro.java</fileName>
 					<filePath>client/interfaceComOUsuario</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1298497486873</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1299178770728</fileDate>
 					<className>Tabuleiro</className>
 					<featurePath>interfaceComOUsuario</featurePath>
 					<featureName>Tabuleiro</featureName>
 					<featureFolder>Interface com o Usuario</featureFolder>
-					<featureDescription>The web page where the game is shown.
-						Accommodates the game grid and also
-						some options such as a restart button, help, game score, game status,
-						...</featureDescription>
+					<featureDescription>Acomoda a grade do jogo na pagina web. Tambem
+						acomoda outros componentes como link para o sistema de ajuda,
+						botao de reestartar o jogo, placar, ...
+						O tabuleiro e exibido assim que o jogo se inicia.
+					</featureDescription>
 					<constructors>
 						<method>
 							<methodName>Tabuleiro</methodName>
