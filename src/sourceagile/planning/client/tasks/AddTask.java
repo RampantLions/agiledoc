@@ -1,4 +1,4 @@
-package sourceagile.planning.client.TodoClasses;
+package sourceagile.planning.client.tasks;
 
 import sourceagile.client.ProjectInitialization;
 import sourceagile.planning.client.serverCalls.CreateTodoClass;
@@ -28,7 +28,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * @feature
  */
-public class AddTodoClass extends VerticalPanel {
+public class AddTask extends VerticalPanel {
 
 	private ListBox folders = new FoldersList();
 	private TextBox newFolderName = new TextBox();
@@ -36,7 +36,7 @@ public class AddTodoClass extends VerticalPanel {
 	private TextArea taskDescription = new TextArea();
 	private CheckBox createTest = new CheckBox(" Create Test");
 
-	public AddTodoClass() {
+	public AddTask() {
 
 		Label space = new Label(" ");
 		space.setHeight("50px");
