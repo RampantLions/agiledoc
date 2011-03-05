@@ -29,26 +29,30 @@ public class ComponentClassesList {
 
 		for (ClassFile entry : entries.values()) {
 
-			String[] entryPath = entry.getFilePath().split("/");
+			if (OptionsIcons.OPTION_REQUIREMENTS != viewOption) {
 
-			for (int i = specPathSize; i < entryPath.length; i++) {
+				String[] entryPath = entry.getFilePath().split("/");
 
-				TreeNode parentNode = tree.getNodeById(currentPath);
+				for (int i = specPathSize; i < entryPath.length; i++) {
 
-				if (!entryPath[i].equals("")) {
+					TreeNode parentNode = tree.getNodeById(currentPath);
 
-					currentPath += "/" + entryPath[i];
+					if (!entryPath[i].equals("")) {
 
-					if (tree.getNodeById(currentPath) == null) {
+						currentPath += "/" + entryPath[i];
 
-						TreeNode node = new TreeNode(
-								FeatureNameGenerator.spacedName(entryPath[i],
-										entry.getClassLocale()));
-						node.setExpanded(true);
-						node.setId(currentPath);
-						node.setIcon("js/ext/resources/images/default/tree/empty.gif");
+						if (tree.getNodeById(currentPath) == null) {
 
-						parentNode.appendChild(node);
+							TreeNode node = new TreeNode(
+									FeatureNameGenerator.spacedName(
+											entryPath[i],
+											entry.getClassLocale()));
+							node.setExpanded(true);
+							node.setId(currentPath);
+							node.setIcon("js/ext/resources/images/default/tree/empty.gif");
+
+							parentNode.appendChild(node);
+						}
 					}
 				}
 			}

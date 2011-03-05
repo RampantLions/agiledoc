@@ -7,7 +7,7 @@ import sourceagile.client.ProjectInitialization;
 import sourceagile.client.systemNavigation.projectMenu.ProjectMenu;
 import sourceagile.documentation.client.Documentation;
 import sourceagile.metrics.client.Metrics;
-import sourceagile.planning.client.TodoClasses.AddTodoClass;
+import sourceagile.planning.client.tasks.AddTask;
 import sourceagile.shared.utilities.FileNameGenerator;
 
 import com.google.gwt.core.client.GWT;
@@ -111,7 +111,7 @@ public class AboutProject extends VerticalPanel {
 			public void onClick(ClickEvent event) {
 
 				GlobalVariables.mainPage.panelContent.clear();
-				GlobalVariables.mainPage.panelContent.add(new AddTodoClass());
+				GlobalVariables.mainPage.panelContent.add(new AddTask());
 			}
 		});
 
