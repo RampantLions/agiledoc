@@ -2,8 +2,8 @@ package sourceagile.planning.client;
 
 import java.util.HashMap;
 
-import sourceagile.planning.client.TodoClasses.PlanningClassesList;
 import sourceagile.planning.client.serverCalls.ListProjectBacklog;
+import sourceagile.planning.client.tasks.PlanningClassesList;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.utilities.LoadingPanel;
 
