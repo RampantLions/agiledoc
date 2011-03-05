@@ -49,7 +49,7 @@
 	
 	<servlet-mapping>
 		<servlet-name>projectBacklogDatabaseAccess</servlet-name>
-		<url-pattern>/sourceagileappengine/projectBacklogDatabaseAccess</url-pattern>
+		<url-pattern>/sourceagile/projectBacklogDatabaseAccess</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
