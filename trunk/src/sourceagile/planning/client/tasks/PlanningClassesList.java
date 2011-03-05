@@ -1,4 +1,4 @@
-package sourceagile.planning.client.TodoClasses;
+package sourceagile.planning.client.tasks;
 
 import java.util.HashMap;
 

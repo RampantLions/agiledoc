@@ -1,4 +1,4 @@
-package sourceagile.planning.client.TodoClasses;
+package sourceagile.planning.client.tasks;
 
 import sourceagile.client.ProjectInitialization;
 import sourceagile.shared.entities.entry.ClassFile;
@@ -18,13 +18,17 @@ public class FoldersList extends ListBox {
 		for (ClassFile classFile : ProjectInitialization.projectEntries
 				.values()) {
 
-			String featureFolder = classFile.getFeature().getFeatureFolder();
+			if (classFile.getFeature() != null) {
 
-			if (!featureFolder.equals(folderName)) {
+				String featureFolder = classFile.getFeature()
+						.getFeatureFolder();
 
-				folderName = classFile.getFeature().getFeatureFolder();
+				if (!featureFolder.equals(folderName)) {
 
-				this.addItem(folderName, classFile.getFilePath());
+					folderName = classFile.getFeature().getFeatureFolder();
+
+					this.addItem(folderName, classFile.getFilePath());
+				}
 			}
 		}
 	}
