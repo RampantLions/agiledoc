@@ -34,19 +34,19 @@ public class ProjectBacklogList extends FlexTable {
 		this.getColumnFormatter().setWidth(0, "200px");
 
 		this.setHTML(0, 1, "<B>Description</B>");
-		this.getColumnFormatter().setWidth(1, "450px");
+		this.getColumnFormatter().setWidth(1, "250px");
 
 		this.setHTML(0, 2, "<B>Created</B>");
 		this.getColumnFormatter().setWidth(2, "150px");
 
 		this.setHTML(0, 3, "<B>Priority</B>");
-		this.getColumnFormatter().setWidth(3, "50px");
+		this.getColumnFormatter().setWidth(3, "60px");
 
 		this.setHTML(0, 4, "<B>Estimative</B>");
-		this.getColumnFormatter().setWidth(4, "50px");
+		this.getColumnFormatter().setWidth(4, "60px");
 
 		this.setHTML(0, 5, "<B>Status</B>");
-		this.getColumnFormatter().setWidth(5, "50px");
+		this.getColumnFormatter().setWidth(5, "60px");
 
 		this.setHTML(0, 6, " ");
 		this.getColumnFormatter().setWidth(6, "50px");

@@ -49,6 +49,8 @@ public class PlanningPage extends VerticalPanel {
 		vp2.add(new ButtonNewStory());
 
 		vpProjectBacklog.add(new LoadingPanel());
+		vpProjectBacklog
+				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 
 		vp2.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		vp2.add(vpProjectBacklog);

@@ -27,7 +27,7 @@ public class StoryForm extends VerticalPanel {
 	private TextArea storyDescription = new TextArea();
 	private TextBox storyPriority = new TextBox();
 	private TextBox storyEstimative = new TextBox();
-	private TextBox storyStatus = new TextBox();
+	private StatusList storyStatus;
 
 	public StoryForm(ProjectBacklog projectBacklog) {
 
@@ -79,8 +79,7 @@ public class StoryForm extends VerticalPanel {
 		storyEstimative.setValue(estimative);
 		vp.add(new FormField("Estimative", storyEstimative));
 
-		storyStatus.setWidth("100px");
-		storyStatus.setValue(projectBacklog.getBacklogStatus());
+		storyStatus = new StatusList(projectBacklog.getBacklogStatus());
 		vp.add(new FormField("Status", storyStatus));
 
 		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
@@ -134,7 +133,8 @@ public class StoryForm extends VerticalPanel {
 					.getValue()));
 		}
 
-		projectBacklog.setBacklogStatus(storyStatus.getValue());
+		projectBacklog.setBacklogStatus(storyStatus.getValue(storyStatus
+				.getSelectedIndex()));
 
 		projectBacklog.setBacklogDate(new Date());
 
