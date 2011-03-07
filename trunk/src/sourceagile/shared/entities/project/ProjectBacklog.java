@@ -11,6 +11,11 @@ public class ProjectBacklog implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	public static final String STATUS_STANDBY = "StandBy";
+	public static final String STATUS_DEVELOPING = "Developing";
+	public static final String STATUS_DISCARDED = "Discarded";
+	public static final String STATUS_DONE = "Done";
+
 	private Long projectBacklogID;
 
 	private String backlogName;
