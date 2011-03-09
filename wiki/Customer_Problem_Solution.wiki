@@ -1,28 +1,41 @@
 = CPS 1 = 
 
- Customer:  Startup Software Companies (Owners) <br>
+ Customer:  Startup Software Companies wich Owner is not a Developer <br>
  Problem:   Not enough developers available to build their products <br>
  Solution:  CrowdLowd <br><br><br>
 
 
-
 = CPS 2 = 
 
-  Customer:  Medium/Big Software Companies (Owners) <br>
-  Problem:   High Developers rotativity (turnovers) <br>
-  Solution:  Better salaries/benefits <br><br><br>
-
+ Customer:  Startup Software Companies wich Owner is a Developer <br>
+ Problem:   Not enough time to develop and manage the company <br>
+ Solution:  Good Co-founder <br><br><br>
 
 
 = CPS 3 = 
 
-  Customer:  Medium/Big Software Companies (Owners) <br>
-  Problem:   High cost of Developers salary <br>
-  Solution:  Improve developers graduations <br><br><br>
+ Customer:  Startup Software Companies (Owners) that practice Agile Development <br>
+ Problem:   Hard to practice Agile development <br>
+ Solution:  More adaptations, more customizations, better cheap/free tools <br><br><br>
 
 
 = CPS 4 = 
 
-  Customer:  Agilistas <br>
+  Customer:  Medium/Big Software Companies (Owners) <br>
+  Problem:   High Developers rotativity (turnovers) <br>
+  Solution:  Better salaries/benefits, practice agile development <br><br><br>
+
+
+
+= CPS 5 = 
+
+  Customer:  Medium/Big Software Companies (Owners) <br>
+  Problem:   High cost of Developers salary <br>
+  Solution:  Improve developers graduations, more cost/benefits transparency  <br><br><br>
+
+
+= CPS 6 = 
+
+  Customer:  Agilistas (Academics) <br>
   Problem:   Hard to practice the Agile practices <br>
   Solution:  More adaptation, more customization, better tools <br><br><br>
