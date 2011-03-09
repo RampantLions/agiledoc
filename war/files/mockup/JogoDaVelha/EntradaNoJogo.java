@@ -1,11 +1,10 @@
 package jogoDaVelha.autenticacao.client;
 
-
-
-/** 
- * Formulário para identificação do nome e da senha do jogador.
+/**
+ * Formulario para identificacao do nome e da senha do jogador.
  * 
- * @TODO 
+ * @TODO
+ * @Requirement
  */
 public class EntradaNoJogo {
 
