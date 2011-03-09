@@ -1,7 +1,10 @@
 = CPS 1 = 
 
-  Customer:  Startup Software Companies (Owners)
-  Problem:   Not enough developers available to build their products.
+Customer:  Startup Software Companies (Owners)
+5. Problem:   Not enough developers available to build their products
+
+  
+  P.
   Solution:  CrowdLowd
 
 
