@@ -11,12 +11,17 @@
   * High cost of software development
   * Bad estimatives from Technical teams
   * Schedule breakers, huge delays
+  * Agile development hard to practice
 
 == Project Managers ==
   * pain of communicating with programmers
+  * programmers hide source code reality
+  * Agile development hard to practice
 
 == Programmers ==
   * pain of existing deploying systems
+  * hierarchical environment is not advantageous
+  * Agile development hard to practice
 
 <br><br>
 
