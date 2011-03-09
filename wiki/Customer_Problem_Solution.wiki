@@ -39,6 +39,8 @@
  Customer:  Medium/Big Software Companies (Owners) that practice Agile Development <br>
  Problem:   Hard to practice Agile development <br>
  Solution:  More adaptations, more customizations, better agile development tools <br><br><br>
+ Today solutions: No tools or project management tools only or issue tracking tools or paper/cards substitution tools.
+ Live Source solution: easy-to-use tool that get the most straight from the software source code.
 
 
 = CPS 7 = 
