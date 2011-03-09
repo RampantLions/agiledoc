@@ -6,6 +6,7 @@ import sourceagile.development.client.Development;
 import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.Project;
+import sourceagile.shared.utilities.FileNameGenerator;
 import sourceagile.shared.utilities.LoadingPanel;
 import sourceagile.testing.client.UnitTestView;
 
@@ -75,8 +76,12 @@ public class GetRemoteTestClass {
 		final String testClassName = classFile.getClassDoc().getClassName()
 				+ "Test.java";
 
-		RequestBuilder requestBuilder = new RequestBuilder(RequestBuilder.GET,
-				"files/mockup/tictactoe/tests/" + testClassName);
+		RequestBuilder requestBuilder = new RequestBuilder(
+				RequestBuilder.GET,
+				"files/mockup/"
+						+ FileNameGenerator
+								.compactName(ProjectInitialization.currentProject
+										.getName()) + "/tests/" + testClassName);
 
 		try {
 			requestBuilder.sendRequest(null, new RequestCallback() {
@@ -102,8 +107,7 @@ public class GetRemoteTestClass {
 							.add(new FeatureVizualizationPanel(classFile));
 
 					FeatureVizualizationPanel.featureContent
-							.add(new UnitTestView(classFile,
-									classFileTest));
+							.add(new UnitTestView(classFile, classFileTest));
 				}
 
 				public void onError(Request request, Throwable exception) {
