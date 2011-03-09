@@ -2,7 +2,7 @@
 
  Customer:  Startup Software Companies (Owners) <br>
  Problem:   Not enough developers available to build their products <br>
- Solution:  CrowdLowd <br>
+ Solution:  CrowdLowd <br><br>
 
 
 
@@ -10,7 +10,7 @@
 
   Customer:  Medium/Big Software Companies (Owners) <br>
   Problem:   High Developers rotativity (turnovers) <br>
-  Solution:  Better salaries/benefits <br>
+  Solution:  Better salaries/benefits <br><br>
 
 
 
@@ -18,11 +18,11 @@
 
   Customer:  Medium/Big Software Companies (Owners) <br>
   Problem:   High cost of Developers salary <br>
-  Solution:  Improve developers graduations <br>
+  Solution:  Improve developers graduations <br><br>
 
 
 = CPS 4 = 
 
   Customer:  Agilistas <br>
   Problem:   Hard to practice the Agile practices <br>
-  Solution:  More adaptation, more customization, better tools <br>
+  Solution:  More adaptation, more customization, better tools <br><br>
