@@ -34,7 +34,7 @@
  Solution:  More adaptations, more customizations, better cheap/free agile development tools <br><br><br>
 
 
-= CPS 6 = 
+= <font color=red>CPS 6</font> = 
 
  Customer:  Medium/Big Software Companies (Owners) that practice Agile Development <br>
  Problem:   Hard to practice Agile development <br>
