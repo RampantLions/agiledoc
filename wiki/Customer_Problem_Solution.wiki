@@ -45,4 +45,4 @@
 
   Customer:  Agilistas (Academics) <br>
   Problem:   Hard to practice the Agile practices <br>
-  Solution:  More adaptation, more customization, better agile development tools <br><br><br>
+  Solution:  More adaptation, more customization, better agile development tools (with free licence for academics) <br><br><br>
