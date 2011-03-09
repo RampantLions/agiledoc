@@ -2,12 +2,11 @@ package jogoDaVelha.autenticacao.client;
 
 import com.google.gwt.user.client.ui.Anchor;
 
-
-
-/** 
- * Link para saída segura do jogo.
+/**
+ * Link para saida segura do jogo.
  * 
- * @TODO 
+ * @TODO
+ * @Requirement
  */
 public class SaidaDoJogo extends Anchor {
 
