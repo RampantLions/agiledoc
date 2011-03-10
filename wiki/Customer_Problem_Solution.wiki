@@ -48,3 +48,7 @@
   Customer:  Agilistas (Academics) <br>
   Problem:   Hard to practice the Agile practices <br>
   Solution:  More adaptation, more customization, better agile development tools (with free licence for academics) <br><br><br>
+
+
+
+My Company, Alline Watkins Corporation, developed a toolkit web site called Live Source, that helps other software companies to be more agile, extracting features, documentation and improving team communication all easy-to-use straight from their softwares source code.
