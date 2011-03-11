@@ -1,33 +1,49 @@
 package jogoDaVelha.server;
 
+import jogoDaVelha.GameEntityTest;
+import jogoDaVelha.PlayersTest;
+import jogoDaVelha.shared.EntidadeJogo;
 import junit.framework.TestCase;
-import jogoDaVelha.server.JulgamentoDoMovimento;
 
 /**
- * Test Class for: JulgamentoDoMovimento.
- * Verifica se o movimento do jogador executou uma seqüência ganhadora ou não.
- *
+ * Test Class for: JulgamentoDoMovimento. Verifica se o movimento do jogador
+ * executou uma seqüência ganhadora ou não.
+ * 
  */
 public class JulgamentoDoMovimentoTest extends TestCase {
 
-	public void testJulgamentoDoMovimento() { 
+	public void testCheckForWinner_Loose() {
 
-		// new JulgamentoDoMovimento();
+		int currentMoveRow = 1;
 
-		assertTrue(true);
+		int currentMoveColumn = 2;
+
+		EntidadeJogo gameEntity = GameEntityTest.returnGameEntity();
+
+		gameEntity.getMovimentosNoJogo()[currentMoveRow][currentMoveColumn] = PlayersTest
+				.returnPlayerO();
+
+		EntidadeJogo checkForWinnerTested = JulgamentoDoMovimento
+				.checkForWinner(gameEntity, currentMoveRow, currentMoveColumn);
+
+		assertEquals(checkForWinnerTested, null);
 	}
 
-	public void testCheckForWinner() { 
+	public void testCheckForWinner_Win() {
 
-		// EntidadeJogo currentGame;
+		EntidadeJogo gameEntity = GameEntityTest.returnGameEntity();
 
-		//  int currentMoveRow;
+		int currentMoveRow = 2;
 
-		//  int currentMoveColumn;
+		int currentMoveColumn = 2;
 
-		// EntidadeJogo checkForWinnerTested = JulgamentoDoMovimento.checkForWinner(currentGame,currentMoveRow,currentMoveColumn);
+		gameEntity.getMovimentosNoJogo()[currentMoveRow][currentMoveColumn] = PlayersTest
+				.returnPlayerX();
 
-		// assertEquals(checkForWinnerTested, null);
+		EntidadeJogo checkForWinnerTested = JulgamentoDoMovimento
+				.checkForWinner(gameEntity, currentMoveRow, currentMoveColumn);
+
+		assertEquals(checkForWinnerTested, EntidadeJogo.SEQUENCE_DIAGONAL_LEFT);
 	}
 
 }
