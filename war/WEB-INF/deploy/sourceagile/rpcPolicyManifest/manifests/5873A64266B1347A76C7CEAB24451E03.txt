@@ -1,0 +1,2 @@
+serviceClass: sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClasses
+path: 4ABC7BE94610D20E7AACC0F63E68DA87.gwt.rpc

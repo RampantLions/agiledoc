@@ -1,0 +1,2 @@
+serviceClass: sourceagile.client.serverCalls.ProjectDatabaseServerCalls
+path: 5471772AC97F5613F6D7808F19113AFE.gwt.rpc

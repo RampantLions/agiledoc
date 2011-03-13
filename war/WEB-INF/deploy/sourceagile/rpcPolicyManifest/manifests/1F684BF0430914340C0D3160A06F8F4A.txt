@@ -1,0 +1,2 @@
+serviceClass: sourceagile.testing.client.serverCalls.LoadRemoteTestClasses
+path: C203CD9E0410555E5101E524EF65B6C3.gwt.rpc

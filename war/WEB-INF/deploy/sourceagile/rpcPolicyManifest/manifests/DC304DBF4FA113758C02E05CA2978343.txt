@@ -1,0 +1,2 @@
+serviceClass: sourceagile.client.serverCalls.LoadRemoteClasses
+path: 634118564CB982696A07D9AE58199F24.gwt.rpc
