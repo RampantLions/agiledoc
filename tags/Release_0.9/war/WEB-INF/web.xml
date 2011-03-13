@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  
+  <!-- Servlets -->
+  
+  	<servlet>
+		<servlet-name>projectDatabaseAccess</servlet-name>
+		<servlet-class>sourceagile.server.databaseAccess.Project.ProjectDatabaseAccessImplementation</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>projectBacklogDatabaseAccess</servlet-name>
+		<servlet-class>sourceagile.server.databaseAccess.projectBacklog.ProjectBacklogDatabaseImplementation</servlet-class>
+	</servlet>
+
+  	<servlet>
+		<servlet-name>commentsDatabaseAccess</servlet-name>
+		<servlet-class>sourceagile.server.databaseAccess.Comments.CommentsDatabaseImplementation</servlet-class>
+	</servlet>
+  
+	<servlet>
+		<servlet-name>subversionRepositoryClassLoader</servlet-name>
+		<servlet-class>sourceagile.server.classRepositories.subversionClassRepository.SubversionRepositoryClassImplementation</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>gitRepositoryClassLoader</servlet-name>
+		<servlet-class>sourceagile.server.classRepositories.gitClassRepository.GitRepositoryClassImplementation</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>repositoryTestClassLoader</servlet-name>
+		<servlet-class>sourceagile.server.classRepositories.subversionClassRepository.repositoryTest.RepositoryClassTestImplementation</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>fileExporter</servlet-name>
+		<servlet-class>sourceagile.server.fileExporter.FileExporterImplementation</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>projectDatabaseAccess</servlet-name>
+		<url-pattern>/sourceagile/projectDatabaseAccess</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>projectBacklogDatabaseAccess</servlet-name>
+		<url-pattern>/sourceagile/projectBacklogDatabaseAccess</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>commentsDatabaseAccess</servlet-name>
+		<url-pattern>/sourceagile/commentsDatabaseAccess</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>subversionRepositoryClassLoader</servlet-name>
+		<url-pattern>/sourceagile/subversionRepositoryClassLoader</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>gitRepositoryClassLoader</servlet-name>
+		<url-pattern>/sourceagile/gitRepositoryClassLoader</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>repositoryTestClassLoader</servlet-name>
+		<url-pattern>/sourceagile/repositoryTestClassLoader</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>fileExporter</servlet-name>
+		<url-pattern>/sourceagile/fileExporter</url-pattern>
+	</servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>SourceAgile.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
