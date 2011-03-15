@@ -6,8 +6,7 @@
 || *Try* || Create your own project on the system || Very easy to learn and start <br> Wizard to configure the buyer's project <br> Minimum steps as possible to start to try <br> Configuration Examples <br> Contact email for support|| Is the wizard good? <br> What can be better on the wizard? <br> What do you think when configuring your project on the system? <br> Do you feel unsafe? ||
 || *Use* || Play around the system for the first time || Very easy to use <br> Clear Main features and easy to reach || What do you expect from the tool? <br> How do you think you will find this specific feature? <br> Is the system easy to use? <br> Where do you have problems? <br> What changes do you suggest? <br> What is missing? <br> What features did you use? <br> How usefull are them? <br> Why did you use those features? ||
 || *Come back* || After try, came back to use the system again || Very usefull features || ||
-|| *Use periodically* ||  || ||
-|| *Refer* ||  || ||
-|| *Add more users to the project* ||  || ||
-|| *Upgrade to Premium* ||  || ||
-
+|| *Use periodically* ||  || || ||
+|| *Refer* ||  || || ||
+|| *Add more users to the project* ||  || || ||
+|| *Upgrade to Premium* ||  || || ||
