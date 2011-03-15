@@ -11,6 +11,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -32,33 +33,47 @@ public class TaskBoard extends VerticalPanel {
 
 		HorizontalPanel hpBoard = new HorizontalPanel();
 
-		vpNotStarted.setSpacing(10);
+		vpNotStarted.setSpacing(15);
 		vpNotStarted.setWidth("250px");
+		vpNotStarted.setVerticalAlignment(HasVerticalAlignment.ALIGN_TOP);
 		vpNotStarted
 				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		vpNotStarted.add(new HTML("<B>Not Started</B>"));
 		hpBoard.add(vpNotStarted);
 
 		VerticalPanel vpSeparation1 = new VerticalPanel();
-		vpSeparation1.setBorderWidth(1);
-
+		vpSeparation1.setHeight("500px");
+		vpSeparation1.setStyleName("taskBoard");
 		hpBoard.add(vpSeparation1);
 
-		vpInProgress.setSpacing(10);
+		vpInProgress.setSpacing(15);
 		vpInProgress.setWidth("250px");
+		vpInProgress.setVerticalAlignment(HasVerticalAlignment.ALIGN_TOP);
 		vpInProgress
 				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		vpInProgress.add(new HTML("<B>In Progress</B>"));
 		hpBoard.add(vpInProgress);
 
-		vpDone.setSpacing(10);
+		VerticalPanel vpSeparation2 = new VerticalPanel();
+		vpSeparation2.setHeight("500px");
+		vpSeparation2.setStyleName("taskBoard");
+		hpBoard.add(vpSeparation2);
+
+		vpDone.setSpacing(15);
 		vpDone.setWidth("250px");
+		vpDone.setVerticalAlignment(HasVerticalAlignment.ALIGN_TOP);
 		vpDone.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		vpDone.add(new HTML("<B>Done</B>"));
 		hpBoard.add(vpDone);
 
-		vpBlocked.setSpacing(10);
+		VerticalPanel vpSeparation3 = new VerticalPanel();
+		vpSeparation3.setHeight("500px");
+		vpSeparation3.setStyleName("taskBoard");
+		hpBoard.add(vpSeparation3);
+
+		vpBlocked.setSpacing(15);
 		vpBlocked.setWidth("250px");
+		vpBlocked.setVerticalAlignment(HasVerticalAlignment.ALIGN_TOP);
 		vpBlocked.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		vpBlocked.add(new HTML("<B>Blocked</B>"));
 		hpBoard.add(vpBlocked);
