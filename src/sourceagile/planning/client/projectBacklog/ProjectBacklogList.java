@@ -12,7 +12,7 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 
 /**
  * 
- * @Feature
+ * @MainFeature
  */
 public class ProjectBacklogList extends FlexTable {
 
@@ -60,7 +60,7 @@ public class ProjectBacklogList extends FlexTable {
 
 			row++;
 
-			this.setText(row, 0, backlogEntry.getBacklogName());
+			this.setWidget(row, 0, getName(backlogEntry));
 			this.setText(row, 1, backlogEntry.getBacklogDescription());
 			this.setText(row, 2, backlogEntry.getBacklogDate().toString());
 
@@ -86,6 +86,25 @@ public class ProjectBacklogList extends FlexTable {
 			this.setWidget(row, 6, hp);
 
 		}
+	}
+
+	private HTML getName(final ProjectBacklog backlogEntry) {
+
+		HTML htmlName = new HTML("<a href=#>" + backlogEntry.getBacklogName()
+				+ "</a>");
+
+		htmlName.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				GlobalVariables.mainPage.panelContent.clear();
+				GlobalVariables.mainPage.panelContent.add(new StoryForm(
+						backlogEntry));
+			}
+		});
+
+		return htmlName;
 	}
 
 	private static HTML iconEdit(final ProjectBacklog projectBacklog) {

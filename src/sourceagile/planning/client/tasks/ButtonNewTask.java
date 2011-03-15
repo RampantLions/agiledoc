@@ -1,7 +1,6 @@
-package sourceagile.planning.client;
+package sourceagile.planning.client.tasks;
 
 import sourceagile.client.GlobalVariables;
-import sourceagile.planning.client.tasks.AddTask;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

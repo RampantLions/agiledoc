@@ -46,6 +46,9 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Totals")
 	String totals();
 
+	@DefaultStringValue("Task Board")
+	String taskBoard();
+
 	@DefaultStringValue("Add New Task")
 	String addNewTask();
 
