@@ -1,7 +1,6 @@
-package sourceagile.planning.client;
+package sourceagile.planning.client.projectBacklog;
 
 import sourceagile.client.GlobalVariables;
-import sourceagile.planning.client.projectBacklog.StoryForm;
 import sourceagile.shared.entities.project.ProjectBacklog;
 
 import com.google.gwt.event.dom.client.ClickEvent;
