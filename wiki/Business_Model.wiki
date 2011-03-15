@@ -1,4 +1,5 @@
-|| *Stage* || *Buyer's Process* || *Business Task* ||
-|| *Presented* || Heard about the tool in an event || Event Marketing and presentations ||
-|| *Suspect* || Search for Live Source on the Web || Web page reachable by easy keywords ||
-|| *Reach* || Clicks on the search result <br> and decide to read the Tool's Home Page || Web page attractive and easy to understand ||
+|| *Stage* || *Buyer's Process* || *Business Task* || *Customer Discovery* ||
+|| *Presented* || Heard about the tool in an event || Event Marketing and presentations || What captures your attention in an event? <br> Are you current looking for what? <br> How do you trust on a recomendation? ||
+|| *Suspect* || Search for Live Source on the Web || Web page reachable by easy keywords || What keywords you will use? ||
+|| *Reach* || Clicks on the search result <br> and decide to read the Tool's Home Page || Web page that introduces and links to the SaaS <br> Web page attractive and easy to understand || What capture your attention in the home page? <br> What do you want to see in the web page? <br> What will make you try the product? ||
+|| *Sign up* || Clicks on the search result <br> and decide to read the Tool's Home Page || Web page attractive and easy to understand || What capture your attention in the home page? <br> What do you want to see in the web page? <br> What will make you try the product? ||
