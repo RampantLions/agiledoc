@@ -1,4 +1,4 @@
 || *Stage* || *Buyer's Process* || *Business Task* ||
 || *Presented* || Heard about the tool in an event || Event Marketing and presentations ||
 || *Suspect* || Search for Live Source on the Web || Web page reachable by easy keywords ||
-|| *Reach* || Clicks on the search <br> and decide to read the Tool's Home Page || Web page reachable by easy keywords ||
+|| *Reach* || Clicks on the search result <br> and decide to read the Tool's Home Page || Web page attractive and easy to understand ||
