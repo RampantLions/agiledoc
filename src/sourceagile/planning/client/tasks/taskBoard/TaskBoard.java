@@ -89,9 +89,15 @@ public class TaskBoard extends VerticalPanel {
 
 			if (entry.getClassDoc() != null) {
 
-				if (entry.getClassDoc().isTodo()) {
+				if (ClassDocumentation.TODO_STATUS.equals(entry.getClassDoc()
+						.getClassStatus())) {
 
 					vpNotStarted.add(getDescription(entry));
+
+				} else if (ClassDocumentation.INPROGRESS_STATUS.equals(entry
+						.getClassDoc().getClassStatus())) {
+
+					vpInProgress.add(getDescription(entry));
 
 				} else if (ClassDocumentation.REQUIREMENT_TAG.equals(entry
 						.getClassDoc().getTagType())
@@ -99,6 +105,11 @@ public class TaskBoard extends VerticalPanel {
 								.getClassDoc().getTagType())) {
 
 					vpDone.add(getDescription(entry));
+
+				} else if (ClassDocumentation.BLOCKED_STATUS.equals(entry
+						.getClassDoc().getClassStatus())) {
+
+					vpBlocked.add(getDescription(entry));
 				}
 			}
 		}
@@ -114,8 +125,8 @@ public class TaskBoard extends VerticalPanel {
 
 		vpIn.setSpacing(5);
 
-		HTML htmlName = new HTML("<a href=#>"
-				+ entry.getClassDoc().getDescription() + "</a>");
+		HTML htmlName = new HTML("<font size=1><a href=#>"
+				+ entry.getClassDoc().getDescription() + "</a></font>");
 
 		htmlName.addClickHandler(new ClickHandler() {
 
