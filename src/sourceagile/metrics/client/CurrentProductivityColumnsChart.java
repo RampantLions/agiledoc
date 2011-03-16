@@ -15,7 +15,7 @@ import com.google.gwt.visualization.client.visualizations.ColumnChart.Options;
  * Show a Columns Chart with the total amount of tasks, classes and methods in
  * the current project.
  * 
- * @Feature
+ * @MainFeature
  */
 public class CurrentProductivityColumnsChart extends VerticalPanel {
 
@@ -70,7 +70,7 @@ public class CurrentProductivityColumnsChart extends VerticalPanel {
 								.getMethodsCount()
 								+ (constructorsCount + methodsCount));
 
-				if (entry.getClassDoc().isTodo()) {
+				if (entry.getClassDoc().getClassStatus() != null) {
 
 					ProjectInitialization.projectTotals
 							.setToDoCount(ProjectInitialization.projectTotals

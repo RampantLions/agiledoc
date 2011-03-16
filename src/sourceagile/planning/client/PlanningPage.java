@@ -2,19 +2,24 @@ package sourceagile.planning.client;
 
 import java.util.HashMap;
 
+import sourceagile.planning.client.projectBacklog.ButtonNewStory;
 import sourceagile.planning.client.serverCalls.ListProjectBacklog;
+import sourceagile.planning.client.tasks.ButtonNewTask;
 import sourceagile.planning.client.tasks.PlanningClassesList;
+import sourceagile.planning.client.tasks.taskBoard.TaskBoardLink;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.utilities.LoadingPanel;
 
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.HasVerticalAlignment;
+import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
  * Show the list of planning tasks.
  * 
- * @Feature
  */
 public class PlanningPage extends VerticalPanel {
 
@@ -29,7 +34,18 @@ public class PlanningPage extends VerticalPanel {
 		vp1.setSize("100%", "100%");
 		vp1.setSpacing(10);
 		vp1.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
-		vp1.add(new ButtonNewTask());
+
+		HorizontalPanel hp = new HorizontalPanel();
+		hp.setVerticalAlignment(HasVerticalAlignment.ALIGN_BOTTOM);
+		hp.add(new TaskBoardLink());
+
+		Label space = new Label(" ");
+		space.setWidth("740px");
+		hp.add(space);
+
+		hp.add(new ButtonNewTask());
+
+		vp1.add(hp);
 
 		vp1.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		vp1.add(new PlanningClassesList(entries));
