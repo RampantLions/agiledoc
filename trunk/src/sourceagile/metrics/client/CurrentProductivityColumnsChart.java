@@ -70,7 +70,7 @@ public class CurrentProductivityColumnsChart extends VerticalPanel {
 								.getMethodsCount()
 								+ (constructorsCount + methodsCount));
 
-				if (entry.getClassDoc().isTodo()) {
+				if (entry.getClassDoc().getClassStatus() != null) {
 
 					ProjectInitialization.projectTotals
 							.setToDoCount(ProjectInitialization.projectTotals

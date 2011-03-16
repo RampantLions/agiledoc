@@ -51,7 +51,8 @@ public class PlanningClassesList extends FlexTable {
 			int row = 0;
 			for (ClassFile entry : entries.values()) {
 
-				if (entry.getClassDoc() != null && entry.getClassDoc().isTodo()) {
+				if (entry.getClassDoc() != null
+						&& entry.getClassDoc().getClassStatus() != null) {
 
 					row++;
 

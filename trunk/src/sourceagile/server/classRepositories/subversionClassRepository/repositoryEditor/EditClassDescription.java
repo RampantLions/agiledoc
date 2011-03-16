@@ -58,9 +58,9 @@ public class EditClassDescription {
 			String classDescription) {
 
 		String todo = "";
-		if (classFile.getClassDoc().isTodo()) {
+		if (classFile.getClassDoc().getClassStatus() != null) {
 
-			todo = "\n * @" + ClassDocumentation.TODO_TAG;
+			todo = "\n * @" + classFile.getClassDoc().getClassStatus();
 		}
 
 		String tagType = "";
