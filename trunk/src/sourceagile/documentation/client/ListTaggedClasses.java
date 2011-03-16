@@ -64,7 +64,7 @@ public class ListTaggedClasses extends VerticalPanel {
 									+ entry.getFeature().getFeatureName()
 									+ "</B> ";
 
-							if (entry.getClassDoc().isTodo()) {
+							if (entry.getClassDoc().getClassStatus() != null) {
 
 								name += "&nbsp;&nbsp;&nbsp;<font color=blue>(Planning)</font>";
 							}
