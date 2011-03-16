@@ -2,15 +2,21 @@ package sourceagile.planning.client.tasks;
 
 import java.util.HashMap;
 
+import sourceagile.development.client.Development;
+import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.FlexTable;
-import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.HTML;
 
 /**
- * List all the classes assigned as "To Do" in the current project.
+ * List all the classes assigned as "To Do" in the current project. Enable
+ * stakeholders to easily identify pending requirements straight in the source
+ * code in a very precise way.
  * 
- * @Feature
+ * @MainFeature
  */
 public class PlanningClassesList extends FlexTable {
 
@@ -36,9 +42,6 @@ public class PlanningClassesList extends FlexTable {
 
 		this.setHTML(0, 2, "<B>Created</B>");
 		this.getColumnFormatter().setWidth(2, "150px");
-
-		this.setHTML(0, 3, " ");
-		this.getColumnFormatter().setWidth(3, "50px");
 	}
 
 	private void gridRows(HashMap<String, ClassFile> entries) {
@@ -48,21 +51,34 @@ public class PlanningClassesList extends FlexTable {
 			int row = 0;
 			for (ClassFile entry : entries.values()) {
 
-				if (entry.getClassDoc() != null && entry.getClassDoc().isTodo()) {
+				if (entry.getClassDoc() != null
+						&& entry.getClassDoc().getClassStatus() != null
+						&& entry.getClassDoc().getClassStatus().length() > 0) {
 
 					row++;
 
-					this.setText(row, 0, entry.getFeature().getFeatureName());
+					this.setWidget(row, 0, getName(entry));
 					this.setText(row, 1, entry.getClassDoc().getDescription());
 					this.setText(row, 2, entry.getDateModified().toString());
-
-					HorizontalPanel hp = new HorizontalPanel();
-					hp.setSpacing(10);
-					hp.add(new IconViewTodoClass(entry));
-
-					this.setWidget(row, 3, hp);
 				}
 			}
 		}
+	}
+
+	private HTML getName(final ClassFile entry) {
+
+		HTML htmlName = new HTML("<a href=#>"
+				+ entry.getFeature().getFeatureName() + "</a>");
+
+		htmlName.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				new Development(entry, OptionsIcons.OPTION_DESCRIPTION);
+			}
+		});
+
+		return htmlName;
 	}
 }
