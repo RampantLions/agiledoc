@@ -3,28 +3,52 @@
 	<projectID>12</projectID>
 	<projectName>Jogo Da Velha</projectName>
 	<projectDomain>jogoDaVelha</projectDomain>
-	<projectDescription>O Jogo da Velha (portugu&amp;ecirc;s brasileiro) ou
-		jogo do galo (portugu&amp;ecirc;s europeu) &amp;eacute; um jogo e
-		passatempo popular. Um jogo de l&amp;aacute;pis e papel para dois
-		jogadores, O e X, que se revezam marcando os espa&amp;ccedil;os em uma
-		grade 3x3. O jogador que conseguir colocar tr&amp;ecirc;s respectivas
-		marcas em uma linha horizontal, vertical ou diagonal, ganha o jogo.
+	<projectDescription>&lt;P&gt;O Jogo da Velha (portugues brasileiro) ou
+		jogo do galo (portugues europeu) e um jogo e passatempo popular. Um
+		jogo de lapis e papel para dois jogadores, O e X, que se revezam
+		marcando os espacos em uma grade 3x3. O jogador que conseguir colocar
+		tres respectivas marcas em uma linha horizontal, vertical ou diagonal,
+		ganha o jogo.&lt;/P&gt;
+		&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+		&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+		&lt;P&gt;
+		&lt;OBJECT id=scPlayer
+		data="http://content.screencast.com/users/AllineO/folders/LIVE%20SOURCE%20BRASIL/media/05f391e3-d007-4281-a900-cb213f470158/mp4h264player.swf"
+		width=500 height=300 type=application/x-shockwave-flash&gt;
+		&lt;iframe type="text/html" frameborder="0" scrolling="no"
+		style="overflow:hidden;"
+		src="http://www.screencast.com/users/AllineO/folders/LIVE%20SOURCE%20BRASIL/media/05f391e3-d007-4281-a900-cb213f470158/embed"
+		height="300" width="500" &gt;&lt;/iframe&gt; &lt;/OBJECT&gt;&lt;/P&gt;
 	</projectDescription>
-	<projectLinks></projectLinks>
+	<projectLinks>&lt;DIV&gt;&lt;BR&gt;&lt;/DIV&gt;Jogo da
+		Velha&amp;nbsp;vers�o&amp;nbsp;online:&lt;BR&gt;(Google App Engine):
+		&lt;A href="http://jogodavelha.tictactoe4j.appspot.com"
+		target=_blank&gt;http://jogodavelha.tictactoe4j.appspot.com&lt;/A&gt;&amp;nbsp;&lt;BR&gt;
+		&lt;DIV&gt;
+		&lt;DIV&gt;&lt;BR&gt;&lt;/DIV&gt;
+		&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+		&lt;DIV&gt;Reposit�rio de Arquivos:&lt;BR&gt;Google Code -
+		Subversion:&lt;BR&gt;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;#
+		Non-members may check out a read-only working copy anonymously over
+		HTTP.&lt;/DIV&gt;
+		&lt;DIV&gt;&amp;nbsp;&amp;nbsp; &amp;nbsp;svn checkout &lt;A
+		href="http://tictactoe4j.googlecode.com/svn/trunk/"
+		target=_blank&gt;http://tictactoe4j.googlecode.com/svn/trunk/&lt;/A&gt;
+		tictactoe4j-read-only&lt;/DIV&gt;&lt;/DIV&gt;</projectLinks>
 	<projectComponents>
 		<projectComponent componentName="Autentica��o"
 			componentPath="autenticacao/client">
 			<entries>
-				<entry featureType="Requirement" isTodo="true">
+				<entry featureType="Requirement" isTodo="ToDo">
 					<fileName>EntradaNoJogo.java</fileName>
 					<filePath>autenticacao/client</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1299178211270</fileDate>
+					<fileDate>1299872393176</fileDate>
 					<className>EntradaNoJogo</className>
 					<featurePath></featurePath>
 					<featureName>Entrada no Jogo</featureName>
 					<featureFolder>Client</featureFolder>
-					<featureDescription>Formul�rio para identifica��o do nome e da
+					<featureDescription>Formulario para identificacao do nome e da
 						senha do jogador.</featureDescription>
 					<constructors>
 						<method>
@@ -36,16 +60,16 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="Requirement" isTodo="true">
+				<entry featureType="Requirement" isTodo="ToDo">
 					<fileName>SaidaDoJogo.java</fileName>
 					<filePath>autenticacao/client</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1299178222836</fileDate>
+					<fileDate>1299872393176</fileDate>
 					<className>SaidaDoJogo</className>
 					<featurePath></featurePath>
 					<featureName>Saida do Jogo</featureName>
 					<featureFolder>Client</featureFolder>
-					<featureDescription>Link para sa�da segura do jogo.
+					<featureDescription>Link para saida segura do jogo.
 					</featureDescription>
 					<constructors>
 						<method>
@@ -62,11 +86,11 @@
 		<projectComponent componentName="Infra-estrutura/Entidades"
 			componentPath="shared">
 			<entries>
-				<entry featureType="Entity" isTodo="false">
+				<entry featureType="Entity" isTodo="">
 					<fileName>EntidadeJogo.java</fileName>
 					<filePath>shared</filePath>
-					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1298508452668</fileDate>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
 					<className>EntidadeJogo</className>
 					<featurePath></featurePath>
 					<featureName>Entidade Jogo</featureName>
@@ -148,11 +172,11 @@
 					</fields>
 					<comments />
 				</entry>
-				<entry featureType="Entity" isTodo="false">
+				<entry featureType="Entity" isTodo="">
 					<fileName>Jogador.java</fileName>
 					<filePath>shared</filePath>
-					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1298508452668</fileDate>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
 					<className>Jogador</className>
 					<featurePath></featurePath>
 					<featureName>Jogador</featureName>
@@ -220,11 +244,11 @@
 		<projectComponent componentName="Infra-estrutura/Servidor"
 			componentPath="server">
 			<entries>
-				<entry featureType="Architecture" isTodo="false">
+				<entry featureType="Architecture" isTodo="">
 					<fileName>InterfaceComOServidorImpl.java</fileName>
 					<filePath>server</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1298497486873</fileDate>
+					<fileDate>1299344201861</fileDate>
 					<className>InterfaceComOServidorImpl</className>
 					<featurePath></featurePath>
 					<featureName>Interface com o Servidor Impl</featureName>
@@ -246,11 +270,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="Requirement" isTodo="false">
+				<entry featureType="Requirement" isTodo="">
 					<fileName>JulgamentoDoMovimento.java</fileName>
 					<filePath>server</filePath>
-					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1299178243133</fileDate>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
 					<className>JulgamentoDoMovimento</className>
 					<featurePath></featurePath>
 					<featureName>Julgamento do Movimento</featureName>
@@ -292,11 +316,11 @@
 		</projectComponent>
 		<projectComponent componentName="Jogo" componentPath="client">
 			<entries>
-				<entry featureType="Architecture" isTodo="false">
+				<entry featureType="Architecture" isTodo="">
 					<fileName>GwtEntryPoint.java</fileName>
 					<filePath>client</filePath>
-					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1299178309934</fileDate>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
 					<className>GwtEntryPoint</className>
 					<featurePath></featurePath>
 					<featureName>Gwt Entry Point</featureName>
@@ -319,11 +343,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="Architecture" isTodo="false">
+				<entry featureType="Architecture" isTodo="">
 					<fileName>InicializacaoDaAjuda.java</fileName>
 					<filePath>client</filePath>
-					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1299182884541</fileDate>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
 					<className>InicializacaoDaAjuda</className>
 					<featurePath></featurePath>
 					<featureName>Inicializacao da Ajuda</featureName>
@@ -340,11 +364,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="false">
+				<entry featureType="" isTodo="">
 					<fileName>InicializacaoDoJogo.java</fileName>
 					<filePath>client</filePath>
-					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1298508412946</fileDate>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
 					<className>InicializacaoDoJogo</className>
 					<featurePath></featurePath>
 					<featureName>Inicializacao do Jogo</featureName>
@@ -360,11 +384,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="false">
+				<entry featureType="" isTodo="">
 					<fileName>VariaveisGlobais.java</fileName>
 					<filePath>client</filePath>
-					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1298508420026</fileDate>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
 					<className>VariaveisGlobais</className>
 					<featurePath></featurePath>
 					<featureName>Variaveis Globais</featureName>
@@ -397,11 +421,11 @@
 					</fields>
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="false">
+				<entry featureType="" isTodo="">
 					<fileName>ChamadaParaOJulgamentoDoMovimento.java</fileName>
 					<filePath>client/arquitetura</filePath>
-					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1298508428570</fileDate>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
 					<className>ChamadaParaOJulgamentoDoMovimento</className>
 					<featurePath>arquitetura</featurePath>
 					<featureName>Chamada para o Julgamento do Movimento</featureName>
@@ -427,11 +451,11 @@
 					</fields>
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="false">
+				<entry featureType="" isTodo="">
 					<fileName>InterfaceComOServidor.java</fileName>
 					<filePath>client/arquitetura</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1298497486873</fileDate>
+					<fileDate>1299344201861</fileDate>
 					<className>InterfaceComOServidor</className>
 					<featurePath>arquitetura</featurePath>
 					<featureName>Interface com o Servidor</featureName>
@@ -448,11 +472,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="false">
+				<entry featureType="" isTodo="">
 					<fileName>InterfaceComOServidorAsync.java</fileName>
 					<filePath>client/arquitetura</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1298497486873</fileDate>
+					<fileDate>1299344201861</fileDate>
 					<className>InterfaceComOServidorAsync</className>
 					<featurePath>arquitetura</featurePath>
 					<featureName>Interface com o Servidor Async</featureName>
@@ -469,11 +493,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="Requirement" isTodo="false">
+				<entry featureType="Requirement" isTodo="">
 					<fileName>GradeDoJogo.java</fileName>
 					<filePath>client/interfaceComOUsuario</filePath>
-					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1299178555016</fileDate>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
 					<className>GradeDoJogo</className>
 					<featurePath>interfaceComOUsuario</featurePath>
 					<featureName>Grade do Jogo</featureName>
@@ -500,11 +524,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="MainFeature" isTodo="false">
+				<entry featureType="MainFeature" isTodo="">
 					<fileName>MovimentoDoJogador.java</fileName>
 					<filePath>client/interfaceComOUsuario</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1299178586270</fileDate>
+					<fileDate>1299357885161</fileDate>
 					<className>MovimentoDoJogador</className>
 					<featurePath>interfaceComOUsuario</featurePath>
 					<featureName>Movimento do Jogador</featureName>
@@ -544,11 +568,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="true">
+				<entry featureType="Requirement" isTodo="InProgress">
 					<fileName>PontuacaoDoJogo.java</fileName>
 					<filePath>client/interfaceComOUsuario</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1298497486873</fileDate>
+					<fileDate>1299344201861</fileDate>
 					<className>PontuacaoDoJogo</className>
 					<featurePath>interfaceComOUsuario</featurePath>
 					<featureName>Pontuacao do Jogo</featureName>
@@ -565,11 +589,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="MainFeature" isTodo="false">
+				<entry featureType="MainFeature" isTodo="">
 					<fileName>SequenciaGanhadora.java</fileName>
 					<filePath>client/interfaceComOUsuario</filePath>
-					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1299182884541</fileDate>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
 					<className>SequenciaGanhadora</className>
 					<featurePath>interfaceComOUsuario</featurePath>
 					<featureName>Sequencia Ganhadora</featureName>
@@ -587,18 +611,18 @@
 					</constructors>
 					<methods>
 						<method>
-							<methodName>showWinner</methodName>
+							<methodName>exibeGanhador</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="MainFeature" isTodo="false">
+				<entry featureType="MainFeature" isTodo="">
 					<fileName>Tabuleiro.java</fileName>
 					<filePath>client/interfaceComOUsuario</filePath>
-					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1299178770728</fileDate>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
 					<className>Tabuleiro</className>
 					<featurePath>interfaceComOUsuario</featurePath>
 					<featureName>Tabuleiro</featureName>
