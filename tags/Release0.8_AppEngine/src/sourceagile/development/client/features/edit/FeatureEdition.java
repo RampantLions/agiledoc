@@ -6,7 +6,6 @@ import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Method;
 
-import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
@@ -16,14 +15,15 @@ import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
- * Edit the documentation of the class in a web form.
+ * Edit the documentation of a class in a web form. Good for Stakeholders send
+ * precise messages to programmers.
  * 
- * @Feature
+ * @MainFeature
  */
 public class FeatureEdition extends VerticalPanel {
 
 	public static TextArea classDescription = new TextArea();
-	public static CheckBox isTodo = new CheckBox(" To Do");
+	public static ClassStatusList classStatusList;
 	public static ClassTypeList classTypeList;
 
 	public FeatureEdition(ClassFile entry) {
@@ -62,9 +62,10 @@ public class FeatureEdition extends VerticalPanel {
 		hp.add(new Label("Type:"));
 		hp.add(classTypeList);
 
-		isTodo.setValue(classDoc.isTodo());
+		classStatusList = new ClassStatusList(classDoc.getClassStatus());
 
-		hp.add(isTodo);
+		hp.add(new Label("Status:"));
+		hp.add(classStatusList);
 
 		return hp;
 	}

@@ -30,8 +30,16 @@ public class ButtonSave extends Button {
 
 				} else {
 
-					classFile.getClassDoc().setTodo(
-							FeatureEdition.isTodo.getValue());
+					String classStatus = FeatureEdition.classStatusList
+							.getValue(FeatureEdition.classStatusList
+									.getSelectedIndex());
+
+					if (classStatus.length() == 0) {
+
+						classStatus = null;
+					}
+
+					classFile.getClassDoc().setClassStatus(classStatus);
 
 					String classType = FeatureEdition.classTypeList
 							.getValue(FeatureEdition.classTypeList
