@@ -47,11 +47,11 @@
 		<projectComponent componentName="Authentication"
 			componentPath="authentication/client">
 			<entries>
-				<entry featureType="Requirement" isTodo="true">
+				<entry featureType="Requirement" isTodo="ToDo">
 					<fileName>Login.java</fileName>
 					<filePath>authentication/client</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1299173306598</fileDate>
+					<fileDate>1300162743928</fileDate>
 					<className>Login</className>
 					<featurePath></featurePath>
 					<featureName>Login</featureName>
@@ -68,11 +68,11 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="Requirement" isTodo="true">
+				<entry featureType="Requirement" isTodo="ToDo">
 					<fileName>Logout.java</fileName>
 					<filePath>authentication/client</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1299173327553</fileDate>
+					<fileDate>1300162761714</fileDate>
 					<className>Logout</className>
 					<featurePath></featurePath>
 					<featureName>Logout</featureName>
@@ -94,7 +94,7 @@
 		<projectComponent componentName="Gaming"
 			componentPath="client">
 			<entries>
-				<entry featureType="" isTodo="false">
+				<entry featureType="" isTodo="">
 					<fileName>GameInitialization.java</fileName>
 					<filePath>client</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
@@ -114,7 +114,7 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="false">
+				<entry featureType="" isTodo="">
 					<fileName>GlobalVariables.java</fileName>
 					<filePath>client</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
@@ -151,7 +151,7 @@
 					</fields>
 					<comments />
 				</entry>
-				<entry featureType="Architecture" isTodo="false">
+				<entry featureType="Architecture" isTodo="">
 					<fileName>GwtEntryPoint.java</fileName>
 					<filePath>client</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
@@ -177,7 +177,7 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="Architecture" isTodo="false">
+				<entry featureType="Architecture" isTodo="">
 					<fileName>HelpInitialization.java</fileName>
 					<filePath>client</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
@@ -198,7 +198,7 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="" isTodo="false">
+				<entry featureType="" isTodo="">
 					<fileName>CheckWinner.java</fileName>
 					<filePath>client/serverCalls</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
@@ -228,7 +228,7 @@
 					</fields>
 					<comments />
 				</entry>
-				<entry featureType="Architecture" isTodo="false">
+				<entry featureType="Architecture" isTodo="">
 					<fileName>GreetingService.java</fileName>
 					<filePath>client/serverCalls</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
@@ -249,7 +249,7 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="Architecture" isTodo="false">
+				<entry featureType="Architecture" isTodo="">
 					<fileName>GreetingServiceAsync.java</fileName>
 					<filePath>client/serverCalls</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
@@ -270,7 +270,7 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="MainFeature" isTodo="false">
+				<entry featureType="MainFeature" isTodo="">
 					<fileName>GameBoard.java</fileName>
 					<filePath>client/userInterface</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
@@ -299,11 +299,11 @@
 					</fields>
 					<comments />
 				</entry>
-				<entry featureType="Requirement" isTodo="false">
+				<entry featureType="Requirement" isTodo="">
 					<fileName>GameGrid.java</fileName>
 					<filePath>client/userInterface</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1299177497904</fileDate>
+					<fileDate>1300162789959</fileDate>
 					<className>GameGrid</className>
 					<featurePath>userInterface</featurePath>
 					<featureName>Game Grid</featureName>
@@ -330,7 +330,7 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="MainFeature" isTodo="false">
+				<entry featureType="MainFeature" isTodo="">
 					<fileName>PlayerMove.java</fileName>
 					<filePath>client/userInterface</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
@@ -377,11 +377,11 @@
 						</comment>
 					</comments>
 				</entry>
-				<entry featureType="" isTodo="true">
+				<entry featureType="Requirement" isTodo="InProgress">
 					<fileName>Timer.java</fileName>
 					<filePath>client/userInterface</filePath>
-					<fileAuthor>Alline.Oliveira</fileAuthor>
-					<fileDate>1296103865055</fileDate>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1300163195878</fileDate>
 					<className>Timer</className>
 					<featurePath>userInterface</featurePath>
 					<featureName>Timer</featureName>
@@ -398,7 +398,7 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="MainFeature" isTodo="false">
+				<entry featureType="MainFeature" isTodo="">
 					<fileName>WinningSequence.java</fileName>
 					<filePath>client/userInterface</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
@@ -432,7 +432,7 @@
 		<projectComponent componentName="Infra Structure/Entities"
 			componentPath="shared">
 			<entries>
-				<entry featureType="Entity" isTodo="false">
+				<entry featureType="Entity" isTodo="">
 					<fileName>GameEntity.java</fileName>
 					<filePath>shared</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
@@ -518,7 +518,7 @@
 					</fields>
 					<comments />
 				</entry>
-				<entry featureType="Entity" isTodo="false">
+				<entry featureType="Entity" isTodo="">
 					<fileName>Player.java</fileName>
 					<filePath>shared</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
@@ -590,7 +590,7 @@
 		<projectComponent componentName="Infra Structure/Server"
 			componentPath="server">
 			<entries>
-				<entry featureType="Architecture" isTodo="false">
+				<entry featureType="Architecture" isTodo="">
 					<fileName>GreetingServiceImpl.java</fileName>
 					<filePath>server</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
@@ -616,7 +616,7 @@
 					<fields />
 					<comments />
 				</entry>
-				<entry featureType="Requirement" isTodo="false">
+				<entry featureType="Requirement" isTodo="">
 					<fileName>MovimentJudgment.java</fileName>
 					<filePath>server</filePath>
 					<fileAuthor>Alline.Oliveira</fileAuthor>
