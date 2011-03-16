@@ -6,16 +6,14 @@ public class ClassDocumentation implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public static final String TODO_TAG = "TODO";
-
-	public static final String USER_MANUAL_TAG = "UserManual";
-
-	public static final String REQUIREMENT_TAG = "Requirement";
+	public static final String TODO_STATUS = "ToDo";
+	public static final String INPROGRESS_STATUS = "InProgress";
+	public static final String BLOCKED_STATUS = "Blocked";
 
 	public static final String MAIN_FEATURE_TAG = "MainFeature";
-
+	public static final String REQUIREMENT_TAG = "Requirement";
+	public static final String USER_MANUAL_TAG = "UserManual";
 	public static final String ARCHITECTURE_TAG = "Architecture";
-
 	public static final String ENTITY_TAG = "Entity";
 
 	private String className;
@@ -36,7 +34,7 @@ public class ClassDocumentation implements Serializable {
 
 	private Method[] methods;
 
-	private boolean todo;
+	private String classStatus;
 
 	private String tagType;
 
@@ -112,12 +110,12 @@ public class ClassDocumentation implements Serializable {
 		this.fields = fields;
 	}
 
-	public boolean isTodo() {
-		return todo;
+	public String getClassStatus() {
+		return classStatus;
 	}
 
-	public void setTodo(boolean todo) {
-		this.todo = todo;
+	public void setClassStatus(String classStatus) {
+		this.classStatus = classStatus;
 	}
 
 	public String getTagType() {
