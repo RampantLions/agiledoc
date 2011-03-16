@@ -17,7 +17,7 @@ public class ClassDocumetationUtilities {
 				Arrays.toString(doc.getImports()),
 				prettyPrint(doc.getConstructors()),
 				prettyPrint(doc.getFields()), prettyPrint(doc.getMethods()),
-				doc.isTodo());
+				doc.getClassStatus());
 	}
 
 	public static String prettyPrint(Object[] methods) {
