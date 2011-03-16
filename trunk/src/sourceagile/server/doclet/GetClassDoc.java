@@ -63,10 +63,63 @@ public class GetClassDoc {
 
 		String[] imports = listImports(classDoc.importedClasses());
 
-		if (classDoc.tags(ClassDocumentation.TODO_TAG).length > 0) {
+		setStatus(classDocumentation, classDoc);
 
-			classDocumentation.setTodo(true);
+		setType(classDocumentation, classDoc);
+
+		classDocumentation.setImports(imports);
+	}
+
+	private static String[] listImports(ClassDoc[] imports) {
+
+		String[] importsString = new String[imports.length];
+
+		for (int t = 0; t < imports.length; t++) {
+
+			importsString[t] = imports[t].toString();
 		}
+
+		return importsString;
+	}
+
+	private static Field[] listFields(FieldDoc[] fieldDoc) {
+
+		Field[] fields = new Field[fieldDoc.length];
+
+		for (int i = 0; i < fieldDoc.length; i++) {
+
+			FieldDoc field = fieldDoc[i];
+
+			fields[i] = new Field();
+
+			fields[i].setName(field.name());
+			fields[i].setType(field.type().toString());
+		}
+
+		return fields;
+	}
+
+	private static void setStatus(ClassDocumentation classDocumentation,
+			ClassDoc classDoc) {
+
+		if (classDoc.tags(ClassDocumentation.TODO_STATUS).length > 0) {
+
+			classDocumentation.setClassStatus(ClassDocumentation.TODO_STATUS);
+
+		} else if (classDoc.tags(ClassDocumentation.INPROGRESS_STATUS).length > 0) {
+
+			classDocumentation
+					.setClassStatus(ClassDocumentation.INPROGRESS_STATUS);
+
+		} else if (classDoc.tags(ClassDocumentation.BLOCKED_STATUS).length > 0) {
+
+			classDocumentation
+					.setClassStatus(ClassDocumentation.BLOCKED_STATUS);
+		}
+	}
+
+	private static void setType(ClassDocumentation classDocumentation,
+			ClassDoc classDoc) {
 
 		if (classDoc.tags(ClassDocumentation.USER_MANUAL_TAG).length > 0) {
 
@@ -88,37 +141,6 @@ public class GetClassDoc {
 
 			classDocumentation.setTagType(ClassDocumentation.ENTITY_TAG);
 		}
-
-		classDocumentation.setImports(imports);
-	}
-
-	private static String[] listImports(ClassDoc[] imports) {
-
-		String[] importsString = new String[imports.length];
-
-		for (int t = 0; t < imports.length; t++) {
-
-			importsString[t] = imports[t].toString();
-		}
-
-		return importsString;
-	}
-
-	public static Field[] listFields(FieldDoc[] fieldDoc) {
-
-		Field[] fields = new Field[fieldDoc.length];
-
-		for (int i = 0; i < fieldDoc.length; i++) {
-
-			FieldDoc field = fieldDoc[i];
-
-			fields[i] = new Field();
-
-			fields[i].setName(field.name());
-			fields[i].setType(field.type().toString());
-		}
-
-		return fields;
 	}
 
 }
