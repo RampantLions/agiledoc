@@ -1,7 +1,10 @@
 package sourceagile.development.client.sourceCode;
 
 import sourceagile.development.client.features.FeatureVizualizationPanel;
+import sourceagile.shared.entities.entry.ClassFile;
 
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.weborient.codemirror.client.CodeMirrorConfiguration;
 import com.weborient.codemirror.client.CodeMirrorEditorWidget;
 
@@ -12,7 +15,7 @@ import com.weborient.codemirror.client.CodeMirrorEditorWidget;
  */
 public class SourceCodeEdition {
 
-	public SourceCodeEdition(String classSource) {
+	public SourceCodeEdition(ClassFile entry) {
 
 		FeatureVizualizationPanel.featureContent.clear();
 
@@ -36,9 +39,22 @@ public class SourceCodeEdition {
 		// these two methods should be called after the widget has been added
 		// other wise you'll get an error
 
-		widget.setText(classSource);
+		widget.setText(entry.getSourceCode());
 
 		// String text = widget.getText();
+
+		FeatureVizualizationPanel.featureContent
+				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+
+		HorizontalPanel hp = new HorizontalPanel();
+
+		hp.setSpacing(20);
+
+		hp.add(new ButtonInProgress(entry));
+
+		hp.add(new ButtonBlocked(entry));
+
+		FeatureVizualizationPanel.featureContent.add(hp);
 
 	}
 }

@@ -223,16 +223,23 @@ public class ExportXmlFile {
 		Element entryElement = xmlDocument.createElement(ENTRY);
 
 		String tagType = "";
+		String classStatus = "";
+		if (entry.getClassDoc() != null) {
 
-		if (entry.getClassDoc() != null
-				&& entry.getClassDoc().getTagType() != null) {
+			if (entry.getClassDoc().getTagType() != null) {
 
-			tagType = entry.getClassDoc().getTagType();
+				tagType = entry.getClassDoc().getTagType();
+			}
+
+			if (entry.getClassDoc().getClassStatus() != null) {
+
+				classStatus = entry.getClassDoc().getClassStatus();
+			}
 		}
 
 		entryElement.setAttribute(FEATURE_TYPE, tagType);
 
-		entryElement.setAttribute(IS_TODO, (entry.getClassDoc().isTodo() + ""));
+		entryElement.setAttribute(IS_TODO, classStatus);
 
 		return entryElement;
 	}

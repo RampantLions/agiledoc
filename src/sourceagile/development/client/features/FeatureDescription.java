@@ -17,19 +17,15 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-
-
-
-
-
-
-/** 
- * Show the structure and the documentation of the class in a specification format. Enable Stakeholders understand the "business part" only of the source code.
-
- TODO: Show the component and the path at the top of the description.
+/**
+ * Show the structure and the documentation of the class in a specification
+ * format. Enable Stakeholders understand the "business part" only of the source
+ * code.
+ * 
+ * TODO: Show the component and the path at the top of the description.
  * 
  * @TODO
- * @MainFeature 
+ * @MainFeature
  */
 public class FeatureDescription extends VerticalPanel {
 
@@ -68,7 +64,7 @@ public class FeatureDescription extends VerticalPanel {
 		String name = "<BR><BR><B><FONT SIZE=4>" + "&nbsp;&nbsp;"
 				+ entry.getFeature().getFeatureName() + "</FONT></B>";
 
-		if (withPlanningTag && entry.getClassDoc().isTodo()) {
+		if (withPlanningTag && entry.getClassDoc().getClassStatus() != null) {
 
 			name += "&nbsp;&nbsp;&nbsp;<font color=blue>(Planning)</font>";
 		}
