@@ -130,8 +130,7 @@ public class ConvertRemoteClassesXML {
 
 		classDocumentation.setTagType(entryElement.getAttribute(FEATURE_TYPE));
 
-		classDocumentation.setTodo(Boolean.parseBoolean(entryElement
-				.getAttribute(IS_TODO)));
+		classDocumentation.setClassStatus(entryElement.getAttribute(IS_TODO));
 
 		Element featureDescriptionElement = (Element) entryElement
 				.getElementsByTagName(FEATURE_DESCRIPTION).item(0);
