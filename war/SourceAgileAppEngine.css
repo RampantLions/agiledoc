@@ -1,5 +1,10 @@
 /** Add css rules here for your application. */
 
+.taskBoard {
+	border-right: 1px solid;
+	border-right-color: orange;
+}
+
 a:link,a:visited {
 	text-decoration: none;
 	cursor: hand;
