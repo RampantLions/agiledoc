@@ -1,19 +1,19 @@
-<!-- Indices written at Fri, 11 Mar 2011 19:47:51 UTC -->
+<!-- Indices written at Tue, 15 Mar 2011 23:57:23 UTC -->
 
 <datastore-indexes>
 
-    <!-- Used 3 times in query history -->
+    <!-- Used 7 times in query history -->
     <datastore-index kind="Project" ancestor="false" source="auto">
         <property name="projectLocale" direction="asc"/>
         <property name="name" direction="asc"/>
     </datastore-index>
 
-    <!-- Used 2 times in query history -->
+    <!-- Used 9 times in query history -->
     <datastore-index kind="ProjectBacklog" ancestor="true" source="auto">
         <property name="projectBacklog_INTEGER_IDX" direction="asc"/>
     </datastore-index>
 
-    <!-- Used 2 times in query history -->
+    <!-- Used 9 times in query history -->
     <datastore-index kind="ProjectComponents" ancestor="true" source="auto">
         <property name="projectComponents_INTEGER_IDX" direction="asc"/>
     </datastore-index>
