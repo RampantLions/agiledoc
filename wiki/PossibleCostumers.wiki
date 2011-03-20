@@ -1,4 +1,3 @@
-
 = Software Product Owners =
 (Software Startup's CEOs, Tech Entrepreneurs,...)
 
@@ -21,3 +20,25 @@ Thoughts: small market size today, ok market size in the next years.
 = Developers = 
 
 Thoughts: ok market size, very exigent customers, need to be a genius to satisfy this customers.
+
+
+
+
+
+h2.Projects
+
+Third, brainstorm three separate ideas, creating three "Projects." The ideas can be based on your current favorite idea. Name each "Project" and write one paragraph describing each.
+
+h3.Agile Product Owners Toolkit
+
+Team Communication, Techinical skills to communicate,
+
+
+h3.Agilistas Toolkit
+
+Learn, adapt and build agile skills while practicing it. And keep practing it after.
+
+
+h3. Independent  Programmers
+
+Open source projects, easier to share
