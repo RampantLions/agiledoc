@@ -1,0 +1,23 @@
+
+= Software Product Owners =
+(Software Startup's CEOs, Tech Entrepreneurs,...)
+
+Thoughts: Big market size
+
+
+
+= Project Managers = 
+(PMOs, Tech Leaders, IT Managers, ...)
+
+Thoughts: Small market size, old management era is over, this area tends to die in the next few years)
+
+
+= Agilistas = 
+(Agile people, Scrum people, Lean Adopters, any other next new development wave adopters)
+
+Thoughts: small market size today, ok market size in the next years.
+
+
+= Developers = 
+
+Thoughts: ok market size, very exigent customers, need to be a genius to satisfy this customers.
