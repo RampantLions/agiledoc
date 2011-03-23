@@ -21,10 +21,10 @@ Thoughts: small market size today, ok market size in the next years.
 
 Thoughts: ok market size, very exigent customers, need to be a genius to satisfy this customers.
 
-
+<br><br>
 <hr>
----- 
-
+<hr>
+<br><br>
 = Product Owners Agile Toolkit =
 
 name: TECH Easy
