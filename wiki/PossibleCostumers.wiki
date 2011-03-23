@@ -24,21 +24,22 @@ Thoughts: ok market size, very exigent customers, need to be a genius to satisfy
 
 
 
+= Product Owners Agile Toolkit =
 
-h2.Projects
-
-Third, brainstorm three separate ideas, creating three "Projects." The ideas can be based on your current favorite idea. Name each "Project" and write one paragraph describing each.
-
-h3.Agile Product Owners Toolkit
-
-Team Communication, Techinical skills to communicate,
+name: TECH Easy
+A web-based tool to help software Product Owners with a better and more precise Team Communication. Also helps the Product Owner with the techinical skills necessary to communicate requirements and bugs to the development team.
+keywords:  Agile Toolkit, Product Owner, bug report tool, change requirement tool.
 
 
-h3.Agilistas Toolkit
+= Agilists and Project Managers Toolkit =
 
-Learn, adapt and build agile skills while practicing it. And keep practing it after.
+name: AGILE Easy
+Learn, adapt yourself and leverage your agile skills while practicing it. A web-based Toolkit that follows an Agile person on their day-to-day meetings, plannings, reports, communications, etc.
+keywords: Agile learning tool, Agile planning tool, Agile communication tool
 
 
-h3. Independent  Programmers
+= Easy Specification and Knowledge Sharing  for Programmers =
 
-Open source projects, easier to share
+name: LIVE Source
+A web-based Agile Toolkit that makes easier for programmers to specify and to share the technology and the knowledge of their softwares. 
+keywords: Agile Development, technical knowledge sharing, software specificiation
