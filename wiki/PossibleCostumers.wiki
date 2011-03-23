@@ -43,4 +43,17 @@ keywords: Agile learning tool, Agile planning tool, Agile communication tool
 
 name: LIVE Source
 A web-based Agile Toolkit that makes easier for programmers to specify and to share the technology and the knowledge of their softwares. 
-keywords: Agile Development, technical knowledge sharing, software specificiation
+keywords: Agile Development, technical knowledge sharing, software specification
+
+
+
+<br><br>
+<hr>
+<hr>
+<br><br>
+
+- Role of main beneficiary 
+- Size of team
+- Development environment / issues
+- Budget issue / size 
+- Size of company 
