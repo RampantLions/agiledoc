@@ -46,7 +46,7 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Totals")
 	String totals();
 
-	@DefaultStringValue("Task Board")
+	@DefaultStringValue("Live Task Board")
 	String taskBoard();
 
 	@DefaultStringValue("Add New Task")
@@ -112,7 +112,7 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Create Unit Test")
 	String createUnitTest();
 
-	@DefaultStringValue("View Source Code")
+	@DefaultStringValue("View Source Code of the Unit Test")
 	String viewSourceCode();
 
 }

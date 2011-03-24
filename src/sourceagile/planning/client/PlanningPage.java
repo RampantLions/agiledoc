@@ -40,7 +40,7 @@ public class PlanningPage extends VerticalPanel {
 		hp.add(new TaskBoardLink());
 
 		Label space = new Label(" ");
-		space.setWidth("740px");
+		space.setWidth("720px");
 		hp.add(space);
 
 		hp.add(new ButtonNewTask());
