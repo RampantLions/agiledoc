@@ -3,7 +3,7 @@
 	<target name="default" depends="buildwar,deploy"></target>
 
 	<target name="buildwar">
-		<war basedir="war" destfile="SourceAgile.war" webxml="war/WEB-INF/web.xml">
+		<war basedir="war" destfile="LiveSource.war" webxml="war/WEB-INF/web.xml">
 			<exclude name="WEB-INF/**" />
 			<webinf dir="war/WEB-INF/">
 				<include name="**/*.jar" />
@@ -12,7 +12,7 @@
 	</target>
 
 	<target name="deploy">
-		<copy file="SourceAgile.war" todir="." />
+		<copy file="LiveSource.war" todir="." />
 	</target>
 
 </project>
