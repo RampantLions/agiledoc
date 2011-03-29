@@ -106,6 +106,9 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Test")
 	String test();
 
+	@DefaultStringValue("Execute")
+	String execute();
+
 	@DefaultStringValue("No test created.")
 	String noTestCreated();
 
