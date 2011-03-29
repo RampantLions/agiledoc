@@ -31,9 +31,13 @@ public class ListComponentClasses {
 							for (ClassFile classFileComponent : classComponent
 									.values()) {
 
+								String entryKey = ProjectInitialization.currentProject
+										.getRepositoryURL()
+										+ "/"
+										+ classFileComponent.toString();
+
 								ProjectInitialization.projectEntries.put(
-										classFileComponent.toString(),
-										classFileComponent);
+										entryKey, classFileComponent);
 							}
 						}
 
