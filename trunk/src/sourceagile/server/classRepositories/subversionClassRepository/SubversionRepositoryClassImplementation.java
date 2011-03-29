@@ -34,8 +34,8 @@ public class SubversionRepositoryClassImplementation extends
 		HashMap<String, ClassFile> entries = null;
 
 		try {
-			SVNRepository repository = SubversionRepositoryConnection
-					.connectClassRepository(project, user);
+			SVNRepository repository = SubversionRepositoryConnection.connect(
+					project.getRepositoryURL(), user);
 
 			entries = ListRepositoryComponentClasses
 					.listRepositoryComponentFiles(repository, componentPath,

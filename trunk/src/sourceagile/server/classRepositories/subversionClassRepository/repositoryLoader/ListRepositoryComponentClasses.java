@@ -25,7 +25,10 @@ public class ListRepositoryComponentClasses {
 
 			GetRepositoryClass.setEntryFeature(classFile);
 
-			classesMap.put(classFile.toString(), classFile);
+			String classKey = repository.getLocation() + "/"
+					+ classFile.toString();
+
+			classesMap.put(classKey, classFile);
 		}
 
 		return classesMap;
