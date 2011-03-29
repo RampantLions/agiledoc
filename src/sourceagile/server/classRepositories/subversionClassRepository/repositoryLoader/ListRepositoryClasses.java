@@ -64,9 +64,10 @@ public class ListRepositoryClasses {
 
 				entry.setClassLocale(locale);
 
-				// GetRepositoryClass.getClassFile(repository, entry);
+				String entryKey = repository.getLocation() + "/"
+						+ getFolderPath(path, subversionEntry);
 
-				entries.put(entry.toString(), entry);
+				entries.put(entryKey, entry);
 			}
 		}
 	}

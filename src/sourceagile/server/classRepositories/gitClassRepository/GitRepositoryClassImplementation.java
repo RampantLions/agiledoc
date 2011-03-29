@@ -35,7 +35,7 @@ public class GitRepositoryClassImplementation extends RemoteServiceServlet
 		try {
 
 			File repositoryDirectory = new File(
-					"https://github.com/allineo/TravelLog/blob/master/src/log4j.xml");
+					"C:\\eclipse\\workspace\\TravelLog");
 
 			DotGit dotGit = DotGit.getInstance(repositoryDirectory);
 			WorkingTree wt = dotGit.getWorkingTree();
@@ -93,5 +93,4 @@ public class GitRepositoryClassImplementation extends RemoteServiceServlet
 
 		return entries;
 	}
-
 }
