@@ -43,11 +43,11 @@ public class ProjectComponentForm extends VerticalPanel {
 
 		name.setWidth("500px");
 		name.setValue(component.getComponentName());
-		vp.add(new FormField("Component Name", name));
+		vp.add(FormField.getFormField("Component Name", name));
 
 		path.setWidth("500px");
 		path.setValue(component.getComponentPath());
-		vp.add(new FormField("Component Path", path));
+		vp.add(FormField.getFormField("Component Path", path));
 
 		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 

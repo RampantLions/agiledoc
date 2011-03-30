@@ -33,10 +33,8 @@ public class ButtonLogin extends Button {
 				userLog.setName(LoginForm.fieldEmail.getValue());
 				userLog.setPassword(LoginForm.fieldPassword.getValue());
 
-				Long projectSelected = new Long(
-						ProjectSelectionPanel.projectList
-								.getValue(ProjectSelectionPanel.projectList
-										.getSelectedIndex()));
+				Long projectSelected = new Long(LoginForm.projectList
+						.getValue(LoginForm.projectList.getSelectedIndex()));
 
 				new Login(userLog, projectSelected);
 			}
