@@ -62,11 +62,11 @@ public class AddTask extends VerticalPanel {
 
 		taskName.setWidth("500px");
 		taskName.setValue("");
-		vp.add(new FormField("Name", taskName));
+		vp.add(FormField.getFormField("Name", taskName));
 
 		taskDescription.setSize("700px", "80px");
 		taskDescription.setValue("");
-		vp.add(new FormField("Description", taskDescription));
+		vp.add(FormField.getFormField("Description", taskDescription));
 
 		createTest.setValue(true);
 		vp.add(createTest);
@@ -82,7 +82,7 @@ public class AddTask extends VerticalPanel {
 		HorizontalPanel hp = new HorizontalPanel();
 		hp.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 
-		hp.add(new FormField("Folder", folders));
+		hp.add(FormField.getFormField("Folder", folders));
 
 		hp.add(newFolderPanel());
 

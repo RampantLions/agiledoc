@@ -1,7 +1,7 @@
 package sourceagile.development.client.sourceCode;
 
 import sourceagile.client.GlobalVariables;
-import sourceagile.development.client.serverCalls.EditClass;
+import sourceagile.development.client.serverCalls.EditSourceCode;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -32,8 +32,7 @@ public class ButtonSave extends Button {
 
 					classFile.setSourceCode(SourceCodeEdition.widget.getText());
 
-					new EditClass(classFile, classFile.getClassDoc()
-							.getDescription());
+					new EditSourceCode(classFile);
 				}
 			}
 		});

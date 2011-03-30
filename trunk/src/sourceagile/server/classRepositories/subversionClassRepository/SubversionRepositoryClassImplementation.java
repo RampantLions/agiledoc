@@ -8,6 +8,7 @@ import org.tmatesoft.svn.core.io.SVNRepository;
 import sourceagile.client.serverCalls.LoadRemoteClasses;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor.AddTodoClass;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor.EditClassDescription;
+import sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor.EditFile;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.GetRepositoryClass;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.ListRepositoryClasses;
 import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.ListRepositoryComponentClasses;
@@ -120,7 +121,22 @@ public class SubversionRepositoryClassImplementation extends
 
 			System.out.println(e.toString());
 		}
+	}
 
+	@Override
+	public void editSourceCode(Project project, User user, ClassFile classFile) {
+
+		try {
+
+			SVNRepository repository = SubversionRepositoryConnection.connect(
+					project.getRepositoryURL(), user);
+
+			new EditFile(repository, classFile);
+
+		} catch (Exception e) {
+
+			System.out.println(e.toString());
+		}
 	}
 
 	@Override

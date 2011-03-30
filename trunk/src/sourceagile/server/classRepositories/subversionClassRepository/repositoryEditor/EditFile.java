@@ -11,6 +11,12 @@ import sourceagile.shared.entities.entry.ClassFile;
 
 public class EditFile {
 
+	public EditFile(SVNRepository repository, ClassFile classFile)
+			throws SVNException {
+
+		this(repository, classFile, classFile.getSourceCode());
+	}
+
 	public EditFile(SVNRepository repository, ClassFile classFile,
 			String classSourceUpdated) throws SVNException {
 
