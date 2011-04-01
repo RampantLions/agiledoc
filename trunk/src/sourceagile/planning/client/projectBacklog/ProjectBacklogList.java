@@ -30,13 +30,13 @@ public class ProjectBacklogList extends FlexTable {
 
 	private void gridColumns() {
 
-		this.setHTML(0, 0, "<B>Name</B>");
+		this.setHTML(0, 0, "<B>Story Name</B>");
 		this.getColumnFormatter().setWidth(0, "200px");
 
-		this.setHTML(0, 1, "<B>Description</B>");
+		this.setHTML(0, 1, "<B>Story Description</B>");
 		this.getColumnFormatter().setWidth(1, "250px");
 
-		this.setHTML(0, 2, "<B>Created</B>");
+		this.setHTML(0, 2, "<B>Created on</B>");
 		this.getColumnFormatter().setWidth(2, "150px");
 
 		this.setHTML(0, 3, "<B>Priority</B>");
