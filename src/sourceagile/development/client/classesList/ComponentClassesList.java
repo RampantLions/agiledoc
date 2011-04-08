@@ -49,7 +49,7 @@ public class ComponentClassesList {
 											entry.getClassLocale()));
 							node.setExpanded(true);
 							node.setId(currentPath);
-							node.setIcon("js/ext/resources/images/default/tree/empty.gif");
+							node.setIcon("/js/ext/resources/images/default/tree/empty.gif");
 
 							parentNode.appendChild(node);
 						}
@@ -79,7 +79,7 @@ public class ComponentClassesList {
 
 		TreeNode treeNode = new TreeNode(className);
 
-		treeNode.setIcon("js/ext/resources/images/default/tree/world.gif");
+		treeNode.setIcon("/js/ext/resources/images/default/tree/world.gif");
 
 		treeNode.addListener(new TreeNodeListenerAdapter() {
 			public void onClick(Node node, EventObject e) {

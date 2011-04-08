@@ -34,7 +34,7 @@ public class LanguageOptions extends HorizontalPanel {
 	private HTML englishLanguage() {
 
 		HTML imageUSA = new HTML("<a href='" + GWT.getHostPageBaseURL()
-				+ "?locale=en' ><img src='images/USA.jpg' ></a>");
+				+ "?locale=en' ><img src='/images/USA.jpg' ></a>");
 
 		imageUSA.setTitle(internationalizationConstants.english());
 
@@ -44,7 +44,7 @@ public class LanguageOptions extends HorizontalPanel {
 	private HTML portugueseLanguage() {
 
 		HTML imageBrasil = new HTML("<a href='" + GWT.getHostPageBaseURL()
-				+ "?locale=pt_BR' ><img src='images/Brasil.jpg' ></a>");
+				+ "?locale=pt_BR' ><img src='/images/Brasil.jpg' ></a>");
 
 		imageBrasil.setTitle(internationalizationConstants.portugues());
 
@@ -54,7 +54,7 @@ public class LanguageOptions extends HorizontalPanel {
 	private HTML spainLanguage() {
 
 		HTML imageEspana = new HTML("<a href='" + GWT.getHostPageBaseURL()
-				+ "?locale=es'><img src='images/Espana.jpg' ></a>");
+				+ "?locale=es'><img src='/images/Espana.jpg' ></a>");
 
 		imageEspana.setTitle(internationalizationConstants.espanol());
 

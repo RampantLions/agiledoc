@@ -59,7 +59,7 @@ public class ComponentsList extends VerticalPanel {
 
 						TreeNode emptyNode = new TreeNode("");
 						emptyNode
-								.setIcon("js/ext/resources/images/default/tree/empty.gif");
+								.setIcon("/js/ext/resources/images/default/tree/empty.gif");
 						componentParentNode.appendChild(emptyNode);
 
 						TreeNode node = new TreeNode(

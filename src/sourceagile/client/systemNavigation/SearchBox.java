@@ -34,7 +34,7 @@ public class SearchBox extends HorizontalPanel {
 	private static HTML getSearchIcon() {
 
 		HTML searchButton = new HTML(
-				"<a href='#'><img src='images/search.gif'></a>");
+				"<a href='#'><img src='/images/search.gif'></a>");
 
 		searchButton.setTitle(internationalizationConstants.search());
 
