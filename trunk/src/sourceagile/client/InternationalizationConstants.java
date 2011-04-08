@@ -46,8 +46,11 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Related Links")
 	String relatedLinks();
 
-	@DefaultStringValue("Totals")
+	@DefaultStringValue("Project Numbers")
 	String totals();
+
+	@DefaultStringValue("Project Configuration")
+	String projectConfiguration();
 
 	@DefaultStringValue("Live Task Board")
 	String taskBoard();

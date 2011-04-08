@@ -79,7 +79,7 @@ public class ListFiles extends VerticalPanel {
 
 		TreeNode treeNode = new TreeNode(entry.getFileName());
 
-		treeNode.setIcon("js/ext/resources/images/default/tree/java.gif");
+		treeNode.setIcon("/js/ext/resources/images/default/tree/java.gif");
 
 		treeNode.addListener(new TreeNodeListenerAdapter() {
 			public void onClick(Node node, EventObject e) {

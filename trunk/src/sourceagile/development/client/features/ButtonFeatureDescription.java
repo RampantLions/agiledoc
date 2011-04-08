@@ -22,8 +22,8 @@ public class ButtonFeatureDescription extends HTML {
 	private static InternationalizationConstants internationalizationConstants = GWT
 			.create(InternationalizationConstants.class);
 
-	public static final String imageUnpressed = "<a href='#'><img src='images/list.gif'></a>";
-	public static final String imagePressed = "<a href='#'><img src='images/listHighlighted.gif'></a>";
+	public static final String imageUnpressed = "<a href='#'><img src='/images/list.gif'></a>";
+	public static final String imagePressed = "<a href='#'><img src='/images/listHighlighted.gif'></a>";
 
 	public PopupPanel descriptionHint;
 

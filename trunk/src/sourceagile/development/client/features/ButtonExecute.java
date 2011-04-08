@@ -21,8 +21,8 @@ public class ButtonExecute extends HTML {
 	private static InternationalizationConstants internationalizationConstants = GWT
 			.create(InternationalizationConstants.class);
 
-	public static final String imageUnpressed = "<img src='images/play.gif'>";
-	public static final String imagePressed = "<a href='#'><img src='images/playHighlighted.gif'></a>";
+	public static final String imageUnpressed = "<img src='/images/play.gif'>";
+	public static final String imagePressed = "<a href='#'><img src='/images/playHighlighted.gif'></a>";
 
 	public PopupPanel executeHint;
 
