@@ -79,7 +79,7 @@
   
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>SourceAgile.html</welcome-file>
+    <welcome-file>staticFiles/LiveSourceHome.html</welcome-file>
   </welcome-file-list>
 
 </web-app>
