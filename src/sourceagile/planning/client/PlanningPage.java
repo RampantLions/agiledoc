@@ -33,6 +33,13 @@ public class PlanningPage extends VerticalPanel {
 		VerticalPanel vp1 = new VerticalPanel();
 		vp1.setSize("100%", "100%");
 		vp1.setSpacing(10);
+
+		vp1.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+
+		HTML tasksTitle = new HTML(
+				"<br><br><br><b><font color='blue' size='3'>Project Tasks</font></b> ");
+		vp1.add(tasksTitle);
+
 		vp1.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
 
 		HorizontalPanel hp = new HorizontalPanel();
