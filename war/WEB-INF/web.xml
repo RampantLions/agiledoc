@@ -79,7 +79,7 @@
   
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>staticFiles/LiveSourceHome.html</welcome-file>
+    <welcome-file>LiveSourceHome.html</welcome-file>
   </welcome-file-list>
 
 </web-app>
