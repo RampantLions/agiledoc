@@ -23,8 +23,8 @@ public class ButtonEditFeature extends HTML {
 	private static InternationalizationConstants internationalizationConstants = GWT
 			.create(InternationalizationConstants.class);
 
-	public static final String imageUnpressed = "<a href='#'><img src='/images/edit.gif'></a>";
-	public static final String imagePressed = "<a href='#'><img src='/images/editHighlighted.gif'></a>";
+	public static final String imageUnpressed = "<a href='#'><img src='images/edit.gif'></a>";
+	public static final String imagePressed = "<a href='#'><img src='images/editHighlighted.gif'></a>";
 
 	public PopupPanel editHint;
 
