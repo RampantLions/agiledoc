@@ -46,40 +46,43 @@ public class FeatureNameGenerator {
 	 */
 	public static String spacedName(String name, String locale) {
 
-		String spacedName = null;
+		String spacedName = name;
 
 		if (name.length() > 0) {
 
 			String[] words = (name.substring(1)).split("[A-Z]");
 
-			spacedName = name.substring(0, 1).toUpperCase() + words[0];
+			if (words.length > 0) {
 
-			int wordPosition = spacedName.length();
+				spacedName = name.substring(0, 1).toUpperCase() + words[0];
 
-			for (int i = 1; i < words.length; i++) {
+				int wordPosition = spacedName.length();
 
-				String firstLetter = name.substring(wordPosition,
-						wordPosition + 1);
+				for (int i = 1; i < words.length; i++) {
 
-				if (verifyPortugueseJunctions(firstLetter + words[i], locale)) {
+					String firstLetter = name.substring(wordPosition,
+							wordPosition + 1);
 
-					firstLetter = firstLetter.toLowerCase();
+					if (verifyPortugueseJunctions(firstLetter + words[i],
+							locale)) {
 
-				} else {
+						firstLetter = firstLetter.toLowerCase();
 
-					firstLetter = firstLetter.toUpperCase();
+					} else {
+
+						firstLetter = firstLetter.toUpperCase();
+					}
+
+					spacedName += " " + firstLetter + words[i];
+
+					wordPosition += (words[i].length() + 1);
 				}
 
-				spacedName += " " + firstLetter + words[i];
+			} else {
 
-				wordPosition += (words[i].length() + 1);
+				spacedName = name.toUpperCase();
 			}
-
-		} else {
-
-			spacedName = name.toUpperCase();
 		}
-
 		return spacedName;
 	}
 
