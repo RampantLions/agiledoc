@@ -28,6 +28,9 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Log In")
 	String logIn();
 
+	@DefaultStringValue("New Project")
+	String newProject();
+
 	@DefaultStringValue("How To Use")
 	String howToUse();
 
@@ -51,6 +54,9 @@ public interface InternationalizationConstants extends Constants {
 
 	@DefaultStringValue("Project Configuration")
 	String projectConfiguration();
+
+	@DefaultStringValue("Reload Project")
+	String reloadProject();
 
 	@DefaultStringValue("Live Task Board")
 	String taskBoard();

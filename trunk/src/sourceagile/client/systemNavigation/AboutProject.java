@@ -47,6 +47,7 @@ public class AboutProject extends VerticalPanel {
 		vp.add(anchorAddTask());
 		vp.add(anchorSpecificationPortal());
 		vp.add(anchorProjectConfiguration());
+		vp.add(anchorReloadProject());
 
 		this.add(vp);
 	}
@@ -150,6 +151,22 @@ public class AboutProject extends VerticalPanel {
 						ProjectInitialization.currentProject));
 				GlobalVariables.mainPage.panelContent
 						.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
+			}
+		});
+
+		return html;
+	}
+
+	private Anchor anchorReloadProject() {
+
+		Anchor html = new Anchor(internationalizationConstants.reloadProject());
+
+		html.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				new ProjectInitialization(ProjectInitialization.currentProject);
 			}
 		});
 

@@ -23,8 +23,8 @@ public class ButtonSourceCode extends HTML {
 	private static InternationalizationConstants internationalizationConstants = GWT
 			.create(InternationalizationConstants.class);
 
-	public static final String imageUnpressed = "<a href='#'><img src='/images/source.gif'></a>";
-	public static final String imagePressed = "<a href='#'><img src='/images/sourceHighlighted.gif'></a>";
+	public static final String imageUnpressed = "<a href='#'><img src='images/source.gif'></a>";
+	public static final String imagePressed = "<a href='#'><img src='images/sourceHighlighted.gif'></a>";
 
 	public PopupPanel sourceHint;
 

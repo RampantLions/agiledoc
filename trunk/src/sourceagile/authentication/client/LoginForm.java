@@ -54,6 +54,7 @@ public class LoginForm extends HorizontalPanel {
 				projectList));
 
 		this.add(new ButtonLogin());
+		this.add(new ButtonNewProject());
 	}
 
 	private HTML logoPanel() {
