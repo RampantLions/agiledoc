@@ -95,6 +95,8 @@ public class ProjectForm extends VerticalPanel {
 				project.setDomain(domain.getValue());
 
 				new AddNewProject(project);
+
+				ButtonNewProject.dialogbox.hide(true);
 			}
 		});
 
@@ -103,7 +105,7 @@ public class ProjectForm extends VerticalPanel {
 
 	private Button buttonCancel() {
 
-		Button button = new Button("Cancel", new ClickHandler() {
+		Button button = new Button("Close", new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {

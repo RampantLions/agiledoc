@@ -7,4 +7,5 @@
 	<inherits name="com.weborient.codemirror.CodemirrorGwt" />
 	
 	<source path="client"/>
+	<inherits name="sourceagile.SourceAgile"/>
 </module>
