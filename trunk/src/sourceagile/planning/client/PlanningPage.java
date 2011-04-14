@@ -1,7 +1,10 @@
 package sourceagile.planning.client;
 
+import helpagile.client.exportation.HelpWindow;
+
 import java.util.HashMap;
 
+import sourceagile.client.GlobalVariables;
 import sourceagile.planning.client.projectBacklog.ButtonNewStory;
 import sourceagile.planning.client.serverCalls.ListProjectBacklog;
 import sourceagile.planning.client.tasks.ButtonNewTask;
@@ -51,6 +54,7 @@ public class PlanningPage extends VerticalPanel {
 		hp.add(space);
 
 		hp.add(new ButtonNewTask());
+		hp.add(HelpWindow.helpIcon("LiveSource", GlobalVariables.locale));
 
 		vp1.add(hp);
 
@@ -69,7 +73,13 @@ public class PlanningPage extends VerticalPanel {
 		vp2.add(html);
 
 		vp2.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
-		vp2.add(new ButtonNewStory());
+
+		HorizontalPanel hp2 = new HorizontalPanel();
+
+		hp2.add(new ButtonNewStory());
+		hp2.add(HelpWindow.helpIcon("LiveSource", GlobalVariables.locale));
+
+		vp2.add(hp2);
 
 		vpProjectBacklog.add(new LoadingPanel());
 		vpProjectBacklog

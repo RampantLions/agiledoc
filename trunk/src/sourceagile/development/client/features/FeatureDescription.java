@@ -37,12 +37,22 @@ public class FeatureDescription extends VerticalPanel {
 
 			this.add(featureName(entry, true));
 
-			this.add(featureDescription(entry.getClassDoc()));
+			if (entry.getClassDoc() != null) {
 
-			this.add(featureMethods(entry.getClassDoc().getMethods()));
+				this.add(featureDescription(entry.getClassDoc()));
 
-			this.add(featureReferences(entry.getClassDoc().getImports(),
-					entry.getClassLocale()));
+				if (entry.getClassDoc().getMethods() != null) {
+
+					this.add(featureMethods(entry.getClassDoc().getMethods()));
+				}
+
+				if (entry.getClassDoc().getImports() != null) {
+
+					this.add(featureReferences(
+							entry.getClassDoc().getImports(),
+							entry.getClassLocale()));
+				}
+			}
 
 			this.add(featureCreation(entry));
 
