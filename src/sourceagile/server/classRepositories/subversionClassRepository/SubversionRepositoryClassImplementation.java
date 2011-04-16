@@ -112,8 +112,8 @@ public class SubversionRepositoryClassImplementation extends
 
 		try {
 
-			SVNRepository repository = SubversionRepositoryConnection
-					.connectClassRepository(project, user);
+			SVNRepository repository = SubversionRepositoryConnection.connect(
+					project.getRepositoryURL(), user);
 
 			new EditClassDescription(repository, classFile, classDescription);
 
