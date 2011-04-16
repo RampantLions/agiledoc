@@ -18,8 +18,8 @@ public class TaskBoardLink extends HTML {
 	private static InternationalizationConstants internationalizationConstants = GWT
 			.create(InternationalizationConstants.class);
 
-	public static final String textUnpressed = "<a href='#'>"
-			+ internationalizationConstants.taskBoard() + "</a>";
+	public static final String textUnpressed = "<font color='orange'><b><a href='#'>"
+			+ internationalizationConstants.taskBoard() + "</a></b></font>";
 
 	public TaskBoardLink() {
 
