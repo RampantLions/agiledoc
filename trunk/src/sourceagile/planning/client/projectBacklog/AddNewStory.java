@@ -17,9 +17,12 @@ import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-/**
+
+
+/** 
  * 
- * @UserManual
+ * 
+ * @Requirement 
  */
 public class AddNewStory extends VerticalPanel {
 
