@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectID>12</projectID>
+	<projectName>Jogo Da Velha DEMO</projectName>
+	<projectDomain>jogoDaVelha</projectDomain>
+	<projectDescription>&lt;P&gt;O Jogo da Velha (portugu�s brasileiro) ou
+		jogo do galo (portugu�s europeu) � um jogo e passatempo popular. Um
+		jogo de l�pis e papel para dois jogadores, O e X, que se revezam
+		marcando os espa�os em uma grade 3x3. O jogador que conseguir colocar
+		tr�s respectivas marcas em uma linha horizontal, vertical ou diagonal,
+		ganha o jogo.&lt;/P&gt;
+		&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+		&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+		&lt;P&gt;
+		&lt;OBJECT id=scPlayer
+		data="http://content.screencast.com/users/AllineO/folders/LIVE%20SOURCE%20BRASIL/media/05f391e3-d007-4281-a900-cb213f470158/mp4h264player.swf"
+		width=500 height=300 type=application/x-shockwave-flash&gt;
+		&lt;iframe type="text/html" frameborder="0" scrolling="no"
+		style="overflow:hidden;"
+		src="http://www.screencast.com/users/AllineO/folders/LIVE%20SOURCE%20BRASIL/media/05f391e3-d007-4281-a900-cb213f470158/embed"
+		height="300" width="500" &gt;&lt;/iframe&gt; &lt;/OBJECT&gt;&lt;/P&gt;
+	</projectDescription>
+	<projectLinks>&lt;DIV&gt;&lt;BR&gt;&lt;/DIV&gt;Jogo da
+		Velha&amp;nbsp;vers�o&amp;nbsp;online:&lt;BR&gt;(Google App Engine):
+		&lt;A href="http://jogodavelha.tictactoe4j.appspot.com"
+		target=_blank&gt;http://jogodavelha.tictactoe4j.appspot.com&lt;/A&gt;&amp;nbsp;&lt;BR&gt;
+		&lt;DIV&gt;
+		&lt;DIV&gt;&lt;BR&gt;&lt;/DIV&gt;
+		&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+		&lt;DIV&gt;Reposit�rio de Arquivos:&lt;BR&gt;Google Code -
+		Subversion:&lt;BR&gt;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;#
+		Non-members may check out a read-only working copy anonymously over
+		HTTP.&lt;/DIV&gt;
+		&lt;DIV&gt;&amp;nbsp;&amp;nbsp; &amp;nbsp;svn checkout &lt;A
+		href="http://tictactoe4j.googlecode.com/svn/trunk/"
+		target=_blank&gt;http://tictactoe4j.googlecode.com/svn/trunk/&lt;/A&gt;
+		tictactoe4j-read-only&lt;/DIV&gt;&lt;/DIV&gt;</projectLinks>
+	<projectComponents>
+		<projectComponent componentName="Autentica��o"
+			componentPath="src/jogoDaVelha/autenticacao/client">
+			<entries>
+				<entry featureType="Requirement" isTodo="ToDo">
+					<fileName>EntradaNoJogo.java</fileName>
+					<filePath>src/jogoDaVelha/autenticacao/client</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1300224227457</fileDate>
+					<className>EntradaNoJogo</className>
+					<featurePath></featurePath>
+					<featureName>Entrada no Jogo</featureName>
+					<featureFolder>Client</featureFolder>
+					<featureDescription>Formulario para identificacao do nome e da
+						senha do jogador.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>EntradaNoJogo</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Requirement" isTodo="ToDo">
+					<fileName>SaidaDoJogo.java</fileName>
+					<filePath>src/jogoDaVelha/autenticacao/client</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1300224239837</fileDate>
+					<className>SaidaDoJogo</className>
+					<featurePath></featurePath>
+					<featureName>Saida do Jogo</featureName>
+					<featureFolder>Client</featureFolder>
+					<featureDescription>Link para saida segura do jogo.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>SaidaDoJogo</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Infra-estrutura/Entidades"
+			componentPath="src/jogoDaVelha/shared">
+			<entries>
+				<entry featureType="Entity" isTodo="">
+					<fileName>EntidadeJogo.java</fileName>
+					<filePath>src/jogoDaVelha/shared</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>EntidadeJogo</className>
+					<featurePath></featurePath>
+					<featureName>Entidade Jogo</featureName>
+					<featureFolder>Shared</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>EntidadeJogo</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getMovimentosNoJogo</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setMovimentosNoJogo</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getJogadorCorrente</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setCurrentPlayer</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getSequenciaGanhadora</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setSequenceWinner</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>SEQUENCE_ROW</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>SEQUENCE_COLUMN</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>SEQUENCE_DIAGONAL_RIGHT</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>SEQUENCE_DIAGONAL_LEFT</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>data</fieldName>
+							<fieldType>java.util.Date</fieldType>
+						</field>
+						<field>
+							<fieldName>movimentosNoJogo</fieldName>
+							<fieldType>Jogador[][]</fieldType>
+						</field>
+						<field>
+							<fieldName>jogadorCorrente</fieldName>
+							<fieldType>Jogador</fieldType>
+						</field>
+						<field>
+							<fieldName>sequenciaGanhadora</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="Entity" isTodo="">
+					<fileName>Jogador.java</fileName>
+					<filePath>src/jogoDaVelha/shared</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>Jogador</className>
+					<featurePath></featurePath>
+					<featureName>Jogador</featureName>
+					<featureFolder>Shared</featureFolder>
+					<featureDescription>Information about each player of the game.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>Jogador</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getEmail</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setEmail</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getSimboloDoJogador</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setPlayerSymbol</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>PlayerSymbol_X</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>PlayerSymbol_O</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>nome</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>email</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>simboloDoJogador</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Infra-estrutura/Servidor"
+			componentPath="src/jogoDaVelha/server">
+			<entries>
+				<entry featureType="Architecture" isTodo="">
+					<fileName>InterfaceComOServidorImpl.java</fileName>
+					<filePath>src/jogoDaVelha/server</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>InterfaceComOServidorImpl</className>
+					<featurePath></featurePath>
+					<featureName>Interface com o Servidor Impl</featureName>
+					<featureFolder>Server</featureFolder>
+					<featureDescription>The server side implementation of the RPC
+						service.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>InterfaceComOServidorImpl</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>checkForWinner</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Requirement" isTodo="">
+					<fileName>JulgamentoDoMovimento.java</fileName>
+					<filePath>src/jogoDaVelha/server</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>JulgamentoDoMovimento</className>
+					<featurePath></featurePath>
+					<featureName>Julgamento do Movimento</featureName>
+					<featureFolder>Server</featureFolder>
+					<featureDescription>Verifica se o movimento do jogador executou uma
+						seq��ncia ganhadora ou n�o.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>JulgamentoDoMovimento</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>checkForWinner</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>checkWinnerRow</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>checkWinnerColumn</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>checkWinnerDiagonalRight</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>checkWinnerDiagonalLeft</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Jogo"
+			componentPath="src/jogoDaVelha/client">
+			<entries>
+				<entry featureType="Architecture" isTodo="">
+					<fileName>GwtEntryPoint.java</fileName>
+					<filePath>src/jogoDaVelha/client</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>GwtEntryPoint</className>
+					<featurePath></featurePath>
+					<featureName>Gwt Entry Point</featureName>
+					<featureFolder>Client</featureFolder>
+					<featureDescription>Classe �ncora para inicializa��o do sistema
+						pelo Google Web Toolkit
+						(EntryPoint).</featureDescription>
+					<constructors>
+						<method>
+							<methodName>GwtEntryPoint</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>onModuleLoad</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Architecture" isTodo="">
+					<fileName>InicializacaoDaAjuda.java</fileName>
+					<filePath>src/jogoDaVelha/client</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>InicializacaoDaAjuda</className>
+					<featurePath></featurePath>
+					<featureName>Inicializacao da Ajuda</featureName>
+					<featureFolder>Client</featureFolder>
+					<featureDescription>Loading the contents of the help system.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>InicializacaoDaAjuda</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>InicializacaoDoJogo.java</fileName>
+					<filePath>src/jogoDaVelha/client</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>InicializacaoDoJogo</className>
+					<featurePath></featurePath>
+					<featureName>Inicializacao do Jogo</featureName>
+					<featureFolder>Client</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>InicializacaoDoJogo</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>VariaveisGlobais.java</fileName>
+					<filePath>src/jogoDaVelha/client</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>VariaveisGlobais</className>
+					<featurePath></featurePath>
+					<featureName>Variaveis Globais</featureName>
+					<featureFolder>Client</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>VariaveisGlobais</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields>
+						<field>
+							<fieldName>statusCorrenteDoJogo</fieldName>
+							<fieldType>EntidadeJogo</fieldType>
+						</field>
+						<field>
+							<fieldName>flagDeAguardoDoMovimento</fieldName>
+							<fieldType>boolean</fieldType>
+						</field>
+						<field>
+							<fieldName>playerO</fieldName>
+							<fieldType>Jogador</fieldType>
+						</field>
+						<field>
+							<fieldName>playerX</fieldName>
+							<fieldType>Jogador</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>ChamadaParaOJulgamentoDoMovimento.java</fileName>
+					<filePath>src/jogoDaVelha/client/arquitetura</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>ChamadaParaOJulgamentoDoMovimento</className>
+					<featurePath>arquitetura</featurePath>
+					<featureName>Chamada para o Julgamento do Movimento</featureName>
+					<featureFolder>Arquitetura</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>ChamadaParaOJulgamentoDoMovimento</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>verificaSeGanhou</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>greetingService</fieldName>
+							<fieldType>InterfaceComOServidorAsync</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>InterfaceComOServidor.java</fileName>
+					<filePath>src/jogoDaVelha/client/arquitetura</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>InterfaceComOServidor</className>
+					<featurePath>arquitetura</featurePath>
+					<featureName>Interface com o Servidor</featureName>
+					<featureFolder>Arquitetura</featureFolder>
+					<featureDescription>The client side stub for the RPC service.
+					</featureDescription>
+					<constructors />
+					<methods>
+						<method>
+							<methodName>checkForWinner</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>InterfaceComOServidorAsync.java</fileName>
+					<filePath>src/jogoDaVelha/client/arquitetura</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>InterfaceComOServidorAsync</className>
+					<featurePath>arquitetura</featurePath>
+					<featureName>Interface com o Servidor Async</featureName>
+					<featureFolder>Arquitetura</featureFolder>
+					<featureDescription>Interface Ass�ncrona para o servidor de
+						Infra-estrutura do sistema.</featureDescription>
+					<constructors />
+					<methods>
+						<method>
+							<methodName>checkForWinner</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Requirement" isTodo="">
+					<fileName>GradeDoJogo.java</fileName>
+					<filePath>src/jogoDaVelha/client/interfaceComOUsuario</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>GradeDoJogo</className>
+					<featurePath>interfaceComOUsuario</featurePath>
+					<featureName>Grade do Jogo</featureName>
+					<featureFolder>Interface com o Usuario</featureFolder>
+					<featureDescription>Grade 3 x 3 onde cada jogador entra suas
+						jogadas com o seu s�mbolo correspondente no jogo.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>GradeDoJogo</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>makeMove</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>formatGridCells</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="MainFeature" isTodo="">
+					<fileName>MovimentoDoJogador.java</fileName>
+					<filePath>src/jogoDaVelha/client/interfaceComOUsuario</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1300224313405</fileDate>
+					<className>MovimentoDoJogador</className>
+					<featurePath>interfaceComOUsuario</featurePath>
+					<featureName>Movimento do Jogador</featureName>
+					<featureFolder>Interface com o Usuario</featureFolder>
+					<featureDescription>Efetiva o movimento do jogador na grade do
+						jogo.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>MovimentoDoJogador</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>mover</methodName>
+							<methodDescription>Quando o jogador clica numa celula na grade do
+								tabuleiro o jogo desenha
+								um 0 ou X dependendo de qual e o jogador atual.
+							</methodDescription>
+						</method>
+						<method>
+							<methodName>eCelulaVazia</methodName>
+							<methodDescription>Um jogador podera selecionar somente as
+								celulas que ainda nao foram
+								selecionadas.</methodDescription>
+						</method>
+						<method>
+							<methodName>exibeSimboloDoJogador</methodName>
+							<methodDescription>Exibe o simbolo correto do jogador corrente na
+								grade do jogo.</methodDescription>
+						</method>
+						<method>
+							<methodName>inverterJogadorCorrente</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Requirement" isTodo="InProgress">
+					<fileName>PontuacaoDoJogo.java</fileName>
+					<filePath>src/jogoDaVelha/client/interfaceComOUsuario</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1300224268482</fileDate>
+					<className>PontuacaoDoJogo</className>
+					<featurePath>interfaceComOUsuario</featurePath>
+					<featureName>Pontuacao do Jogo</featureName>
+					<featureFolder>Interface com o Usuario</featureFolder>
+					<featureDescription>Caixa com a pontuacao do jogo corrente.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>PontuacaoDoJogo</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="MainFeature" isTodo="">
+					<fileName>SequenciaGanhadora.java</fileName>
+					<filePath>src/jogoDaVelha/client/interfaceComOUsuario</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>SequenciaGanhadora</className>
+					<featurePath>interfaceComOUsuario</featurePath>
+					<featureName>Sequencia Ganhadora</featureName>
+					<featureFolder>Interface com o Usuario</featureFolder>
+					<featureDescription>No aparecimento de 3 simbolos iguais
+						consecutivos no tabuleiro (horizontal,
+						vertical ou diagonal), o jogador corrente vence, o sistema exibe a
+						sequencia
+						ganhadora em vermelho e o jogo e finalizado.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>SequenciaGanhadora</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>exibeGanhador</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="MainFeature" isTodo="">
+					<fileName>Tabuleiro.java</fileName>
+					<filePath>src/jogoDaVelha/client/interfaceComOUsuario</filePath>
+					<fileAuthor>Alline.Oliveira</fileAuthor>
+					<fileDate>1299344201861</fileDate>
+					<className>Tabuleiro</className>
+					<featurePath>interfaceComOUsuario</featurePath>
+					<featureName>Tabuleiro</featureName>
+					<featureFolder>Interface com o Usuario</featureFolder>
+					<featureDescription>Acomoda a grade do jogo na pagina web. Tambem
+						acomoda outros componentes como link para o sistema de ajuda,
+						botao de reestartar o jogo, placar, ...
+						O tabuleiro e exibido assim que o jogo se inicia.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>Tabuleiro</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields>
+						<field>
+							<fieldName>gameGrid</fieldName>
+							<fieldType>GradeDoJogo</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Static Files"
+			componentPath="war/staticFiles">
+			<entries />
+		</projectComponent>
+	</projectComponents>
+</project>
