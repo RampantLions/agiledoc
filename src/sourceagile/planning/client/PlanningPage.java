@@ -9,7 +9,7 @@ import sourceagile.planning.client.projectBacklog.ButtonNewStory;
 import sourceagile.planning.client.serverCalls.ListProjectBacklog;
 import sourceagile.planning.client.tasks.ButtonNewTask;
 import sourceagile.planning.client.tasks.PlanningClassesList;
-import sourceagile.planning.client.tasks.taskBoard.TaskBoardLink;
+import sourceagile.planning.client.tasks.LiveTaskBoard.LiveTaskBoardLink;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.utilities.LoadingPanel;
 
@@ -46,7 +46,7 @@ public class PlanningPage extends VerticalPanel {
 
 		HorizontalPanel hp = new HorizontalPanel();
 		hp.setVerticalAlignment(HasVerticalAlignment.ALIGN_BOTTOM);
-		hp.add(new TaskBoardLink());
+		hp.add(new LiveTaskBoardLink());
 
 		Label space = new Label(" ");
 		space.setWidth("740px");
