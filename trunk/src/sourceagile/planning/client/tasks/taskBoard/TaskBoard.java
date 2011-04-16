@@ -125,9 +125,16 @@ public class TaskBoard extends VerticalPanel {
 
 		vpIn.setSpacing(5);
 
-		HTML htmlName = new HTML("<font size=1><a href=#>"
-				+ entry.getClassDoc().getClassName() + "<br>"
-				+ entry.getClassDoc().getDescription() + "</a></font>");
+		String task = entry.getFeature().getFeatureName();
+
+		if (entry.getClassDoc().getDescription() != null
+				&& !entry.getClassDoc().getDescription().equals("")) {
+
+			task += ": " + entry.getClassDoc().getDescription();
+		}
+
+		HTML htmlName = new HTML("<font size=1><a href=#>" + task
+				+ "</a></font>");
 
 		htmlName.addClickHandler(new ClickHandler() {
 
