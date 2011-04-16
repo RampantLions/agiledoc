@@ -99,7 +99,7 @@ public class ProjectBacklogList extends FlexTable {
 			public void onClick(ClickEvent event) {
 
 				GlobalVariables.mainPage.panelContent.clear();
-				GlobalVariables.mainPage.panelContent.add(new StoryForm(
+				GlobalVariables.mainPage.panelContent.add(new AddNewStory(
 						backlogEntry));
 			}
 		});
@@ -116,7 +116,7 @@ public class ProjectBacklogList extends FlexTable {
 			public void onClick(ClickEvent event) {
 
 				GlobalVariables.mainPage.panelContent.clear();
-				GlobalVariables.mainPage.panelContent.add(new StoryForm(
+				GlobalVariables.mainPage.panelContent.add(new AddNewStory(
 						projectBacklog));
 			}
 		});

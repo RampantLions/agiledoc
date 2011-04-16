@@ -37,7 +37,7 @@ public class ButtonNewStory extends HTML {
 			public void onClick(ClickEvent event) {
 
 				GlobalVariables.mainPage.panelContent.clear();
-				GlobalVariables.mainPage.panelContent.add(new StoryForm(
+				GlobalVariables.mainPage.panelContent.add(new AddNewStory(
 						new ProjectBacklog()));
 
 			}

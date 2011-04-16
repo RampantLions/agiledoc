@@ -21,7 +21,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * @UserManual
  */
-public class StoryForm extends VerticalPanel {
+public class AddNewStory extends VerticalPanel {
 
 	private TextBox storyName = new TextBox();
 	private TextArea storyDescription = new TextArea();
@@ -29,7 +29,7 @@ public class StoryForm extends VerticalPanel {
 	private TextBox storyEstimative = new TextBox();
 	private StatusList storyStatus;
 
-	public StoryForm(ProjectBacklog projectBacklog) {
+	public AddNewStory(ProjectBacklog projectBacklog) {
 
 		Label space = new Label(" ");
 		space.setHeight("50px");
