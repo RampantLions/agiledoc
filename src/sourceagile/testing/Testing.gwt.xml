@@ -3,4 +3,6 @@
 <module>
 	<inherits name="com.google.gwt.user.User" />
 	<source path="client"/>
+	<inherits name="sourceagile.SourceAgile"/>
+	<inherits name="com.google.gwt.junit.JUnit"/>
 </module>
