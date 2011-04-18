@@ -4,7 +4,6 @@ import sourceagile.development.client.features.FeatureVizualizationPanel;
 import sourceagile.shared.entities.entry.ClassFile;
 
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
-import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.weborient.codemirror.client.CodeMirrorConfiguration;
 import com.weborient.codemirror.client.CodeMirrorEditorWidget;
 
@@ -15,9 +14,14 @@ import com.weborient.codemirror.client.CodeMirrorEditorWidget;
  */
 public class SourceCodeEdition {
 
+	public static CodeMirrorEditorWidget widget;
+
 	public SourceCodeEdition(ClassFile entry) {
 
 		FeatureVizualizationPanel.featureContent.clear();
+
+		FeatureVizualizationPanel.featureContent
+				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 
 		// use the configuration class in order
 		// to override the default widget configuraions
@@ -31,8 +35,7 @@ public class SourceCodeEdition {
 
 		// pass the configuration object to the widget
 
-		CodeMirrorEditorWidget widget = new CodeMirrorEditorWidget(
-				configuration);
+		widget = new CodeMirrorEditorWidget(configuration);
 
 		FeatureVizualizationPanel.featureContent.add(widget);
 
@@ -46,15 +49,7 @@ public class SourceCodeEdition {
 		FeatureVizualizationPanel.featureContent
 				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 
-		HorizontalPanel hp = new HorizontalPanel();
-
-		hp.setSpacing(20);
-
-		hp.add(new ButtonInProgress(entry));
-
-		hp.add(new ButtonBlocked(entry));
-
-		FeatureVizualizationPanel.featureContent.add(hp);
+		FeatureVizualizationPanel.featureContent.add(new ButtonSave(entry));
 
 	}
 }
