@@ -3,7 +3,6 @@ package sourceagile.planning.client.projectBacklog;
 import helpagile.client.exportation.HelpHint;
 import sourceagile.client.GlobalVariables;
 import sourceagile.client.InternationalizationConstants;
-import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.project.ProjectBacklog;
 
 import com.google.gwt.core.client.GWT;
@@ -43,16 +42,15 @@ public class ButtonNewStory extends HTML {
 			}
 		});
 
-		addStoryHint = HelpHint.getHelpHintLinked(this.getClass().getName(),
-				internationalizationConstants.addNewTask(),
+		addStoryHint = HelpHint.getHelpHintLinked("src."
+				+ this.getClass().getName(),
+				internationalizationConstants.addNewStory(),
 				GlobalVariables.locale);
 
 		this.addMouseOverHandler(new MouseOverHandler() {
 
 			@Override
 			public void onMouseOver(MouseOverEvent event) {
-
-				OptionsIcons.hideHints();
 
 				HelpHint.executeMouseOverHandler(event, addStoryHint, null);
 
