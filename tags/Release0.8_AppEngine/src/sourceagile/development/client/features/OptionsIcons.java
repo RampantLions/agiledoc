@@ -17,6 +17,7 @@ public class OptionsIcons extends HorizontalPanel {
 	public static ButtonTest buttonTest;
 	public static ButtonJavadoc buttonJavadoc;
 	public static ButtonSourceCode buttonSourceCode;
+	public static ButtonExecute buttonExecute;
 
 	public OptionsIcons(ClassFile entry) {
 
@@ -37,6 +38,9 @@ public class OptionsIcons extends HorizontalPanel {
 		buttonSourceCode = new ButtonSourceCode(entry);
 		add(buttonSourceCode);
 
+		buttonExecute = new ButtonExecute(entry);
+		add(buttonExecute);
+
 	}
 
 	public static void toggledButtons() {
@@ -46,6 +50,7 @@ public class OptionsIcons extends HorizontalPanel {
 		buttonJavadoc.setHTML(ButtonJavadoc.imageUnpressed);
 		buttonTest.setHTML(ButtonTest.imageUnpressed);
 		buttonSourceCode.setHTML(ButtonSourceCode.imageUnpressed);
+		buttonExecute.setHTML(ButtonExecute.imageUnpressed);
 	}
 
 	public static void hideHints() {
@@ -55,5 +60,6 @@ public class OptionsIcons extends HorizontalPanel {
 		buttonJavadoc.javadocHint.hide();
 		buttonTest.testHint.hide();
 		buttonSourceCode.sourceHint.hide();
+		buttonExecute.executeHint.hide();
 	}
 }

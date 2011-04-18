@@ -7,6 +7,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.gwtext.client.widgets.SyntaxHighlightPanel;
 
@@ -22,6 +23,9 @@ public class SourceCodeView {
 
 		FeatureVizualizationPanel.featureContent.clear();
 
+		FeatureVizualizationPanel.featureContent
+				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
+
 		FeatureVizualizationPanel.featureContent.add(getSyntaxPanel(entry));
 
 		FeatureVizualizationPanel.featureContent
@@ -29,7 +33,17 @@ public class SourceCodeView {
 
 		FeatureVizualizationPanel.featureContent.add(new Label(" "));
 
-		FeatureVizualizationPanel.featureContent.add(buttonEdit(entry));
+		HorizontalPanel hp = new HorizontalPanel();
+
+		hp.setSpacing(20);
+
+		hp.add(new ButtonInProgress(entry));
+
+		hp.add(new ButtonBlocked(entry));
+
+		hp.add(buttonEdit(entry));
+
+		FeatureVizualizationPanel.featureContent.add(hp);
 
 		FeatureVizualizationPanel.featureContent
 				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
@@ -37,14 +51,30 @@ public class SourceCodeView {
 
 	private SyntaxHighlightPanel getSyntaxPanel(ClassFile entry) {
 
+		// SyntaxHighlightPanel.SYNTAX_JAVA
 		SyntaxHighlightPanel syntaxPanel = new SyntaxHighlightPanel(
-				entry.getSourceCode(), SyntaxHighlightPanel.SYNTAX_JAVA);
+				entry.getSourceCode(), getFileExtension(entry));
+
+		syntaxPanel.enable();
 
 		syntaxPanel.setSize(700, 600);
 		syntaxPanel.setTitle(entry.getFileName());
 		syntaxPanel.setAutoScroll(true);
 
 		return syntaxPanel;
+	}
+
+	private String getFileExtension(ClassFile entry) {
+
+		String fileExtension = null;
+		String[] fileNameArray = entry.getFileName().split("\\.");
+
+		if (fileNameArray.length > 1) {
+
+			fileExtension = fileNameArray[1];
+		}
+
+		return fileExtension;
 	}
 
 	private Button buttonEdit(final ClassFile entry) {
