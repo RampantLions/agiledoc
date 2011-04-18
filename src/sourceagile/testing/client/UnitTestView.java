@@ -9,16 +9,14 @@ import sourceagile.shared.entities.entry.ClassFile;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-
-
-/** 
- * Show the specification of the Test Class. Connect the source code straight with its Unit Testing in a very precise way. 
+/**
+ * Show the specification of the Test Class.
  * 
- * @MainFeature 
+ * @MainFeature
  */
-public class TestClassDescription extends VerticalPanel {
+public class UnitTestView extends VerticalPanel {
 
-	public TestClassDescription(ClassFile classEntry, ClassFile testEntry) {
+	public UnitTestView(ClassFile classEntry, ClassFile testEntry) {
 
 		OptionsIcons.buttonTest.setHTML(ButtonTest.imagePressed);
 

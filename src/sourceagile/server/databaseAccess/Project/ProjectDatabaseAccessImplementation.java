@@ -23,13 +23,13 @@ public class ProjectDatabaseAccessImplementation extends RemoteServiceServlet
 		ProjectUpdateServerCalls, GetProjectServerCalls {
 
 	@Override
-	public List<Project> listProjects(String locale) {
+	public List<Project> listProjects() {
 
 		PersistenceManager persistenceManager = DatabaseConnection.connect();
 
 		List<Project> projects = null;
 
-		projects = ListProjects.list(persistenceManager, locale);
+		projects = ListProjects.list(persistenceManager);
 
 		persistenceManager.close();
 
