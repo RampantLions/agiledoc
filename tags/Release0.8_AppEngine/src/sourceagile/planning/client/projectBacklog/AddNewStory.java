@@ -21,7 +21,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * @UserManual
  */
-public class StoryForm extends VerticalPanel {
+public class AddNewStory extends VerticalPanel {
 
 	private TextBox storyName = new TextBox();
 	private TextArea storyDescription = new TextArea();
@@ -29,7 +29,7 @@ public class StoryForm extends VerticalPanel {
 	private TextBox storyEstimative = new TextBox();
 	private StatusList storyStatus;
 
-	public StoryForm(ProjectBacklog projectBacklog) {
+	public AddNewStory(ProjectBacklog projectBacklog) {
 
 		Label space = new Label(" ");
 		space.setHeight("50px");
@@ -53,11 +53,11 @@ public class StoryForm extends VerticalPanel {
 
 		storyName.setWidth("500px");
 		storyName.setValue(projectBacklog.getBacklogName());
-		vp.add(new FormField("Story Name", storyName));
+		vp.add(FormField.getFormField("Story Name", storyName));
 
 		storyDescription.setSize("700px", "80px");
 		storyDescription.setValue(projectBacklog.getBacklogDescription());
-		vp.add(new FormField("Description", storyDescription));
+		vp.add(FormField.getFormField("Description", storyDescription));
 
 		String priority = null;
 		if (projectBacklog.getBacklogPriority() != null) {
@@ -67,7 +67,7 @@ public class StoryForm extends VerticalPanel {
 
 		storyPriority.setWidth("50px");
 		storyPriority.setValue(priority);
-		vp.add(new FormField("Priority", storyPriority));
+		vp.add(FormField.getFormField("Priority", storyPriority));
 
 		String estimative = null;
 		if (projectBacklog.getBacklogEstimative() != null) {
@@ -77,10 +77,10 @@ public class StoryForm extends VerticalPanel {
 
 		storyEstimative.setWidth("50px");
 		storyEstimative.setValue(estimative);
-		vp.add(new FormField("Estimative", storyEstimative));
+		vp.add(FormField.getFormField("Estimative", storyEstimative));
 
 		storyStatus = new StatusList(projectBacklog.getBacklogStatus());
-		vp.add(new FormField("Status", storyStatus));
+		vp.add(FormField.getFormField("Status", storyStatus));
 
 		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		vp.add(saveButton(projectBacklog));

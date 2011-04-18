@@ -12,7 +12,7 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 
 /**
  * 
- * @Feature
+ * @MainFeature
  */
 public class ProjectBacklogList extends FlexTable {
 
@@ -30,13 +30,13 @@ public class ProjectBacklogList extends FlexTable {
 
 	private void gridColumns() {
 
-		this.setHTML(0, 0, "<B>Name</B>");
+		this.setHTML(0, 0, "<B>Story Name</B>");
 		this.getColumnFormatter().setWidth(0, "200px");
 
-		this.setHTML(0, 1, "<B>Description</B>");
+		this.setHTML(0, 1, "<B>Story Description</B>");
 		this.getColumnFormatter().setWidth(1, "250px");
 
-		this.setHTML(0, 2, "<B>Created</B>");
+		this.setHTML(0, 2, "<B>Created on</B>");
 		this.getColumnFormatter().setWidth(2, "150px");
 
 		this.setHTML(0, 3, "<B>Priority</B>");
@@ -60,7 +60,7 @@ public class ProjectBacklogList extends FlexTable {
 
 			row++;
 
-			this.setText(row, 0, backlogEntry.getBacklogName());
+			this.setWidget(row, 0, getName(backlogEntry));
 			this.setText(row, 1, backlogEntry.getBacklogDescription());
 			this.setText(row, 2, backlogEntry.getBacklogDate().toString());
 
@@ -88,6 +88,25 @@ public class ProjectBacklogList extends FlexTable {
 		}
 	}
 
+	private HTML getName(final ProjectBacklog backlogEntry) {
+
+		HTML htmlName = new HTML("<a href=#>" + backlogEntry.getBacklogName()
+				+ "</a>");
+
+		htmlName.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				GlobalVariables.mainPage.panelContent.clear();
+				GlobalVariables.mainPage.panelContent.add(new AddNewStory(
+						backlogEntry));
+			}
+		});
+
+		return htmlName;
+	}
+
 	private static HTML iconEdit(final ProjectBacklog projectBacklog) {
 
 		HTML img = new HTML("<a href='#'><img src='images/edit.gif'></a>");
@@ -97,7 +116,7 @@ public class ProjectBacklogList extends FlexTable {
 			public void onClick(ClickEvent event) {
 
 				GlobalVariables.mainPage.panelContent.clear();
-				GlobalVariables.mainPage.panelContent.add(new StoryForm(
+				GlobalVariables.mainPage.panelContent.add(new AddNewStory(
 						projectBacklog));
 			}
 		});
