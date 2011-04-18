@@ -4,6 +4,7 @@ import helpagile.client.exportation.HelpWindow;
 import sourceagile.client.GlobalVariables;
 import sourceagile.client.InternationalizationConstants;
 import sourceagile.client.ProjectInitialization;
+import sourceagile.client.project.ProjectForm;
 import sourceagile.client.systemNavigation.projectMenu.ProjectMenu;
 import sourceagile.documentation.client.Documentation;
 import sourceagile.metrics.client.Metrics;
@@ -15,6 +16,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
@@ -34,16 +36,18 @@ public class AboutProject extends VerticalPanel {
 
 		vp.setSpacing(15);
 
-		vp.add(new HTML("<font color=blue><b> "
-				+ internationalizationConstants.about() + " "
-				+ ProjectInitialization.currentProject.getName()
-				+ "</b></font><br><br>"));
+		// vp.add(new HTML("<font color=blue><b> "
+		// + internationalizationConstants.about() + " "
+		// + ProjectInitialization.currentProject.getName()
+		// + "</b></font><br><br>"));
 
 		vp.add(anchorDescription());
 		vp.add(anchorRelatedLinks());
 		vp.add(anchorTotals());
 		vp.add(anchorAddTask());
 		vp.add(anchorSpecificationPortal());
+		vp.add(anchorProjectConfiguration());
+		vp.add(anchorReloadProject());
 
 		this.add(vp);
 	}
@@ -128,5 +132,44 @@ public class AboutProject extends VerticalPanel {
 				GlobalVariables.locale);
 
 		return htmlSpecification;
+	}
+
+	private Anchor anchorProjectConfiguration() {
+
+		Anchor html = new Anchor(
+				internationalizationConstants.projectConfiguration());
+
+		html.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				GlobalVariables.mainPage.panelContent.clear();
+				GlobalVariables.mainPage.panelContent
+						.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+				GlobalVariables.mainPage.panelContent.add(new ProjectForm(
+						ProjectInitialization.currentProject));
+				GlobalVariables.mainPage.panelContent
+						.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
+			}
+		});
+
+		return html;
+	}
+
+	private Anchor anchorReloadProject() {
+
+		Anchor html = new Anchor(internationalizationConstants.reloadProject());
+
+		html.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+
+				new ProjectInitialization(ProjectInitialization.currentProject);
+			}
+		});
+
+		return html;
 	}
 }
