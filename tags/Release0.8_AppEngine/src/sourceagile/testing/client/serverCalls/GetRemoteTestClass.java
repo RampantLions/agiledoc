@@ -8,7 +8,7 @@ import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.utilities.FileNameGenerator;
 import sourceagile.shared.utilities.LoadingPanel;
-import sourceagile.testing.client.TestClassDescription;
+import sourceagile.testing.client.UnitTestView;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.http.client.Request;
@@ -60,7 +60,7 @@ public class GetRemoteTestClass {
 								.add(new FeatureVizualizationPanel(entry));
 
 						FeatureVizualizationPanel.featureContent
-								.add(new TestClassDescription(entry, testEntry));
+								.add(new UnitTestView(entry, testEntry));
 					}
 
 					public void onFailure(Throwable caught) {
@@ -107,8 +107,7 @@ public class GetRemoteTestClass {
 							.add(new FeatureVizualizationPanel(classFile));
 
 					FeatureVizualizationPanel.featureContent
-							.add(new TestClassDescription(classFile,
-									classFileTest));
+							.add(new UnitTestView(classFile, classFileTest));
 				}
 
 				public void onError(Request request, Throwable exception) {
@@ -123,4 +122,5 @@ public class GetRemoteTestClass {
 			e.printStackTrace();
 		}
 	}
+
 }

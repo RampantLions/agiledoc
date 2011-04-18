@@ -75,4 +75,10 @@ public class SubversionRepositoryClassImplementation extends
 
 	}
 
+	@Override
+	public void editSourceCode(Project project, User user, ClassFile classFile) {
+		// TODO Auto-generated method stub
+
+	}
+
 }

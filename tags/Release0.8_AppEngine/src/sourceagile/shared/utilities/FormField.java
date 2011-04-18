@@ -3,24 +3,47 @@ package sourceagile.shared.utilities;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public class FormField extends HorizontalPanel {
+public class FormField {
 
-	public FormField(String label, Widget field) {
+	public static HorizontalPanel getFormField(String label, Widget field) {
 
-		this(label, "150px", field);
+		return getFormField(label, "150px", field);
 	}
 
-	public FormField(String label, String labelSize, Widget field) {
+	public static HorizontalPanel getFormField(String label, String labelSize,
+			Widget field) {
 
-		this.setSpacing(5);
-		this.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
+		HorizontalPanel hp = new HorizontalPanel();
+
+		hp.setSpacing(5);
+		hp.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 
 		Label title = new Label(label + ": ");
 		title.setWidth(labelSize);
-		this.add(title);
+		hp.add(title);
 
-		this.add(field);
+		hp.add(field);
+
+		return hp;
+	}
+
+	public static VerticalPanel getVerticalFormField(String label,
+			String labelSize, Widget field) {
+
+		VerticalPanel vp = new VerticalPanel();
+
+		vp.setSpacing(5);
+		vp.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
+
+		Label title = new Label(label + ": ");
+		title.setWidth(labelSize);
+		vp.add(title);
+
+		vp.add(field);
+
+		return vp;
 	}
 }
