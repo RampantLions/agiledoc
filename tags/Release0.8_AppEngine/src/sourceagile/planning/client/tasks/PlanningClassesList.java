@@ -34,13 +34,13 @@ public class PlanningClassesList extends FlexTable {
 
 	private void gridColumns() {
 
-		this.setHTML(0, 0, "<B>Name</B>");
+		this.setHTML(0, 0, "<B>Task Name</B>");
 		this.getColumnFormatter().setWidth(0, "200px");
 
-		this.setHTML(0, 1, "<B>Description</B>");
+		this.setHTML(0, 1, "<B>Task Description</B>");
 		this.getColumnFormatter().setWidth(1, "450px");
 
-		this.setHTML(0, 2, "<B>Created</B>");
+		this.setHTML(0, 2, "<B>Created on</B>");
 		this.getColumnFormatter().setWidth(2, "150px");
 	}
 
@@ -52,8 +52,7 @@ public class PlanningClassesList extends FlexTable {
 			for (ClassFile entry : entries.values()) {
 
 				if (entry.getClassDoc() != null
-						&& entry.getClassDoc().getClassStatus() != null
-						&& entry.getClassDoc().getClassStatus().length() > 0) {
+						&& entry.getClassDoc().getClassStatus() != null) {
 
 					row++;
 
