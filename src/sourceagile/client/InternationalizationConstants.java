@@ -64,6 +64,9 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Add New Task")
 	String addNewTask();
 
+	@DefaultStringValue("Add New Story")
+	String addNewStory();
+
 	@DefaultStringValue("Search")
 	String search();
 

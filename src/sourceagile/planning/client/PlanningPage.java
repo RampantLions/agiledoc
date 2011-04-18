@@ -53,7 +53,9 @@ public class PlanningPage extends VerticalPanel {
 		hp.add(space);
 
 		hp.add(new ButtonNewTask());
-		hp.add(HelpWindow.helpIcon("LiveSource", GlobalVariables.locale));
+		hp.add(HelpWindow.helpIcon("LiveSource",
+				"src.sourceagile.planning.client.tasks.PlanningClassesList",
+				GlobalVariables.locale));
 
 		vp1.add(hp);
 
@@ -75,7 +77,11 @@ public class PlanningPage extends VerticalPanel {
 		HorizontalPanel hp2 = new HorizontalPanel();
 
 		hp2.add(new ButtonNewStory());
-		hp2.add(HelpWindow.helpIcon("LiveSource", GlobalVariables.locale));
+		hp2.add(HelpWindow
+				.helpIcon(
+						"LiveSource",
+						"src.sourceagile.planning.client.projectBacklog.ProjectBacklogList",
+						GlobalVariables.locale));
 
 		vp2.add(hp2);
 

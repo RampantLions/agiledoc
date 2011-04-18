@@ -16,7 +16,7 @@ public class HomeIcon extends HTML {
 
 	public HomeIcon() {
 
-		this.setHTML("<a href='#'><img src='/images/home.gif'></a>");
+		this.setHTML("<a href='#'><img src='images/home.gif'></a>");
 
 		this.setTitle("Home");
 
