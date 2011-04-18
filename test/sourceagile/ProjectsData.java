@@ -73,9 +73,9 @@ public class ProjectsData {
 		// project.setProjectID(new Long(2));
 		project.setName("Tic Tac Toe");
 		project.setRepositoryType(sourceagile.shared.entities.project.Project.REPOSITORY_TYPE_SUBVERSION);
-		project.setRepositoryURL("https://tictactoe4j.googlecode.com/svn");
-		project.setRoot("/trunk/src/");
-		project.setTestRoot("/trunk/test/");
+		project.setRepositoryURL("https://tictactoe4j.googlecode.com/svn/trunk");
+		project.setRoot("/src/");
+		project.setTestRoot("/test/");
 		project.setDomain("tictactoe");
 		project.setRelatedLinks("http://en.wikipedia.org/wiki/Tic-tac-toe");
 		project.setDescription("Tic-tac-toe, also spelled tick tack toe, or noughts and crosses as it is known in the UK, Ireland, "
@@ -94,12 +94,13 @@ public class ProjectsData {
 		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
 
 		projectComponents.add(new ProjectComponents("Authentication",
-				"authentication/client"));
-		projectComponents.add(new ProjectComponents("Gaming", "client"));
+				"src/tictactoe/authentication/client"));
+		projectComponents.add(new ProjectComponents("Gaming",
+				"src/tictactoe/client"));
 		projectComponents.add(new ProjectComponents("Infra Structure/Server",
-				"server"));
+				"src/tictactoe/server"));
 		projectComponents.add(new ProjectComponents("Infra Structure/Entities",
-				"shared"));
+				"src/tictactoe/shared"));
 
 		project.setProjectComponents(projectComponents);
 
@@ -187,5 +188,66 @@ public class ProjectsData {
 		proj.setProjectComponents(projectComponents);
 
 		return proj;
+	}
+
+	public static Project loadProject5() {
+
+		Project project = new Project();
+		// project.setProjectID(new Long(2));
+		project.setName("TravelLog");
+		project.setProjectLocale(Project.LOCALE_ENGLISH);
+		project.setRepositoryType(sourceagile.shared.entities.project.Project.REPOSITORY_TYPE_XML);
+		project.setRepositoryURL("https://travellog-aws.googlecode.com/svn/TravelLog");
+		project.setRoot("/src/");
+		project.setTestRoot("/test/");
+		project.setDomain("com.amazon.aws.samplecode.travellog");
+
+		project.setDescription("A Java Web Application demostration the use of Amazon S3, Amazon "
+				+ "SimpleDB and Amazon SNS. "
+				+ "Share unlimited photos and videos, and stay in touch while you travel."
+				+ " A travel journal contains descriptions of the traveler's experiences, "
+				+ " is normally written during the course of the journey, intended on "
+				+ " updating friends or family on the journey.");
+
+		project.setRelatedLinks("TravelLog online version:"
+				+ "http:// "
+				+ "What is a Travel Log: "
+				+ "http://en.wikipedia.org/wiki/Travel_journal"
+				+ "tictactoe4j  -  File Repository:"
+				+ "Google Code - Subversion:"
+				+ "# Non-members may check out a read-only working copy anonymously over HTTP."
+				+ "svn checkout http://travellog-aws.googlecode.com/svn/trunk/ travellog-aws-read-only");
+
+		List<ProjectComponents> projectComponents = new ArrayList<ProjectComponents>();
+
+		projectComponents.add(new ProjectComponents("Features/Comments",
+				"src/com/amazon/aws/samplecode/travellog/features/comments"));
+		projectComponents.add(new ProjectComponents("Features/Journal",
+				"src/com/amazon/aws/samplecode/travellog/features/journal"));
+		projectComponents.add(new ProjectComponents("Features/Photos",
+				"src/com/amazon/aws/samplecode/travellog/features/photos"));
+		projectComponents.add(new ProjectComponents("Features/Users",
+				"src/com/amazon/aws/samplecode/travellog/features/users"));
+		projectComponents.add(new ProjectComponents("Features/Web",
+				"src/com/amazon/aws/samplecode/travellog/web"));
+		projectComponents.add(new ProjectComponents("Java/Amazon Server",
+				"src/com/amazon/aws/samplecode/travellog/aws"));
+		projectComponents.add(new ProjectComponents("Java/Database",
+				"src/com/amazon/aws/samplecode/travellog/dao"));
+		projectComponents.add(new ProjectComponents("Java/Entity",
+				"src/com/amazon/aws/samplecode/travellog/entity"));
+		projectComponents.add(new ProjectComponents("Java/Utilities",
+				"src/com/amazon/aws/samplecode/travellog/util"));
+		projectComponents.add(new ProjectComponents("Script Files/CSS",
+				"WebContent/css"));
+		projectComponents.add(new ProjectComponents("Script Files/JSP",
+				"WebContent/WEB-INF/jsp"));
+		projectComponents.add(new ProjectComponents("Script Files/JavaScript",
+				"WebContent/js"));
+
+		project.setProjectComponents(projectComponents);
+
+		return project;
+
 	}
 }
