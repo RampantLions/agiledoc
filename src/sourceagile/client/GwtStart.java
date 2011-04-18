@@ -7,7 +7,7 @@ import sourceagile.shared.entities.project.Project;
 import com.google.gwt.core.client.EntryPoint;
 
 /**
- * Anchor class to init the system by the Google Web Toolkit (EntryPoint).
+ * GWT Entrance (EntryPoint)
  * 
  * @Architecture
  */
@@ -33,7 +33,7 @@ public class GwtStart implements EntryPoint {
 			projectLocale = Project.LOCALE_ENGLISH;
 		}
 
-		new ListProjects(projectLocale);
+		new ListProjects();
 	}
 
 }

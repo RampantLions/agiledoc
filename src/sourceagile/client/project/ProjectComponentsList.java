@@ -64,7 +64,7 @@ public class ProjectComponentsList extends FlexTable {
 
 	private static HTML iconEdit(final Integer componentIndex) {
 
-		HTML img = new HTML("<a href='#'><img src='images/edit.gif'></a>");
+		HTML img = new HTML("<a href='#'><img src='/images/edit.gif'></a>");
 		img.addClickHandler(new ClickHandler() {
 
 			@Override
@@ -87,7 +87,7 @@ public class ProjectComponentsList extends FlexTable {
 
 	private static HTML iconDelete(Integer componentIndex) {
 
-		HTML img = new HTML("<a href='#'><img src='images/delete.gif'></a>");
+		HTML img = new HTML("<a href='#'><img src='/images/delete.gif'></a>");
 		img.addClickHandler(new ClickHandler() {
 
 			@Override

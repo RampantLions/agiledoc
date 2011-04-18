@@ -30,4 +30,7 @@ public interface LoadRemoteClassesAsync {
 	void listClasses(Project currentProject, User currentUser,
 			AsyncCallback<HashMap<String, ClassFile>> asyncCallback);
 
+	void editSourceCode(Project project, User user, ClassFile classFile,
+			AsyncCallback<Void> callback);
+
 }

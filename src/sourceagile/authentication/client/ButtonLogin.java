@@ -5,11 +5,12 @@ import sourceagile.client.InternationalizationConstants;
 import sourceagile.shared.entities.User;
 
 import com.google.gwt.core.client.GWT;
-import com.gwtext.client.core.EventObject;
-import com.gwtext.client.widgets.Button;
-import com.gwtext.client.widgets.event.ButtonListenerAdapter;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.ui.Button;
 
 /**
+ * 
  * 
  * @UserManual
  */
@@ -22,20 +23,18 @@ public class ButtonLogin extends Button {
 
 		this.setText(internationalizationConstants.logIn());
 
-		this.addListener(new ButtonListenerAdapter() {
+		this.addClickHandler(new ClickHandler() {
 
 			@Override
-			public void onClick(Button button, EventObject e) {
+			public void onClick(ClickEvent event) {
 
 				User userLog = new User();
 
 				userLog.setName(LoginForm.fieldEmail.getValue());
 				userLog.setPassword(LoginForm.fieldPassword.getValue());
 
-				Long projectSelected = new Long(
-						ProjectSelectionPanel.projectList
-								.getValue(ProjectSelectionPanel.projectList
-										.getSelectedIndex()));
+				Long projectSelected = new Long(LoginForm.projectList
+						.getValue(LoginForm.projectList.getSelectedIndex()));
 
 				new Login(userLog, projectSelected);
 			}

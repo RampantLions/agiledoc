@@ -8,7 +8,7 @@ import com.google.gwt.user.client.ui.ListBox;
 
 public class ProjectList extends ListBox {
 
-	public ProjectList(List<Project> projects, String locale) {
+	public ProjectList(List<Project> projects) {
 
 		this.setWidth("200px");
 
@@ -19,4 +19,5 @@ public class ProjectList extends ListBox {
 			this.addItem(project.getName(), project.getProjectID().toString());
 		}
 	}
+
 }

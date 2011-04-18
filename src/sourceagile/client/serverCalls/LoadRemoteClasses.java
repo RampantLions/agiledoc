@@ -28,4 +28,6 @@ public interface LoadRemoteClasses extends RemoteService {
 
 	void editClass(Project project, User user, ClassFile classFile,
 			String classDescription);
+
+	void editSourceCode(Project project, User user, ClassFile classFile);
 }
