@@ -37,29 +37,29 @@ public class ProjectForm extends VerticalPanel {
 
 		name.setWidth("500px");
 		name.setValue(project.getName());
-		vp.add(new FormField("Project Name", name));
+		vp.add(FormField.getFormField("Project Name", name));
 
 		locale = new LocaleList(project.getProjectLocale());
-		vp.add(new FormField("Project Locale", locale));
+		vp.add(FormField.getFormField("Project Language", locale));
 
 		repositoryType = new RepositoryTypeList(project.getRepositoryType());
-		vp.add(new FormField("Repository Type", repositoryType));
+		vp.add(FormField.getFormField("Repository Type", repositoryType));
 
 		url.setWidth("500px");
 		url.setValue(project.getRepositoryURL());
-		vp.add(new FormField("Repository URL", url));
+		vp.add(FormField.getFormField("Repository URL", url));
 
 		root.setWidth("500px");
 		root.setValue(project.getRoot());
-		vp.add(new FormField("Root", root));
+		vp.add(FormField.getFormField("Root", root));
 
 		testRoot.setWidth("300px");
 		testRoot.setValue(project.getTestRoot());
-		vp.add(new FormField("Test Root", testRoot));
+		vp.add(FormField.getFormField("Test Root", testRoot));
 
 		domain.setWidth("300px");
 		domain.setValue(project.getDomain());
-		vp.add(new FormField("Domain", domain));
+		vp.add(FormField.getFormField("Domain", domain));
 
 		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 

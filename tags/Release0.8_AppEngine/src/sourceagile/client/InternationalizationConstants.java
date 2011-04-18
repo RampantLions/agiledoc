@@ -28,6 +28,12 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Log In")
 	String logIn();
 
+	@DefaultStringValue("New Project")
+	String newProject();
+
+	@DefaultStringValue("How To Use")
+	String howToUse();
+
 	@DefaultStringValue("Read more")
 	String readMore();
 
@@ -43,10 +49,16 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Related Links")
 	String relatedLinks();
 
-	@DefaultStringValue("Totals")
+	@DefaultStringValue("Project Numbers")
 	String totals();
 
-	@DefaultStringValue("Task Board")
+	@DefaultStringValue("Project Configuration")
+	String projectConfiguration();
+
+	@DefaultStringValue("Reload Project")
+	String reloadProject();
+
+	@DefaultStringValue("Live Task Board")
 	String taskBoard();
 
 	@DefaultStringValue("Add New Task")
@@ -106,13 +118,16 @@ public interface InternationalizationConstants extends Constants {
 	@DefaultStringValue("Test")
 	String test();
 
+	@DefaultStringValue("Execute")
+	String execute();
+
 	@DefaultStringValue("No test created.")
 	String noTestCreated();
 
 	@DefaultStringValue("Create Unit Test")
 	String createUnitTest();
 
-	@DefaultStringValue("View Source Code")
+	@DefaultStringValue("View Source Code of the Unit Test")
 	String viewSourceCode();
 
 }

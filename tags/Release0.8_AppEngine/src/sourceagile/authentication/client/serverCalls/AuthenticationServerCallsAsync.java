@@ -6,10 +6,14 @@ import sourceagile.shared.entities.project.Project;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
+/**
+ * 
+ * @architecture
+ */
 public interface AuthenticationServerCallsAsync {
 
-	void getProject(Long projectID, AsyncCallback<Project> callback);
+	void listProjects(AsyncCallback<List<Project>> callback);
 
-	void listProjects(String locale, AsyncCallback<List<Project>> callback);
+	void getProject(Long projectID, AsyncCallback<Project> callback);
 
 }

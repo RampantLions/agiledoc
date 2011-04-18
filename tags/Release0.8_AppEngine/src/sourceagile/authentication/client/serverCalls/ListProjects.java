@@ -12,7 +12,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 
 public class ListProjects {
 
-	public ListProjects(String locale) {
+	public ListProjects() {
 
 		RootPanel.get("htmlID").clear();
 		RootPanel.get("htmlID").add(new LoadingPanel());
@@ -20,21 +20,20 @@ public class ListProjects {
 		final AuthenticationServerCallsAsync databaseServerCalls = GWT
 				.create(AuthenticationServerCalls.class);
 
-		databaseServerCalls.listProjects(locale,
-				new AsyncCallback<List<Project>>() {
+		databaseServerCalls.listProjects(new AsyncCallback<List<Project>>() {
 
-					public void onSuccess(List<Project> projects) {
+			public void onSuccess(List<Project> projects) {
 
-						RootPanel.get("htmlID").clear();
-						RootPanel.get("htmlID").add(new LoginPage(projects));
-					}
+				RootPanel.get("htmlID").clear();
+				RootPanel.get("htmlID").add(new LoginPage(projects));
+			}
 
-					public void onFailure(Throwable caught) {
-						// Show the RPC error message to the user
+			public void onFailure(Throwable caught) {
+				// Show the RPC error message to the user
 
-					}
+			}
 
-				});
+		});
 
 	}
 
