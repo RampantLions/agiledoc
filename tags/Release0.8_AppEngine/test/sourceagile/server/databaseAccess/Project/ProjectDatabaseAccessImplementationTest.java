@@ -10,7 +10,7 @@ public class ProjectDatabaseAccessImplementationTest extends TestCase {
 	public void testListProjects() {
 
 		List<Project> listProjectsTested = new ProjectDatabaseAccessImplementation()
-				.listProjects(Project.LOCALE_ENGLISH);
+				.listProjects();
 
 		assertNotNull(listProjectsTested);
 	}
