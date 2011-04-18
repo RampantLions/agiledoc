@@ -3,7 +3,6 @@ package sourceagile.planning.client.tasks;
 import helpagile.client.exportation.HelpHint;
 import sourceagile.client.GlobalVariables;
 import sourceagile.client.InternationalizationConstants;
-import sourceagile.development.client.features.OptionsIcons;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -41,7 +40,8 @@ public class ButtonNewTask extends HTML {
 			}
 		});
 
-		addTaskHint = HelpHint.getHelpHintLinked(this.getClass().getName(),
+		addTaskHint = HelpHint.getHelpHintLinked("src."
+				+ this.getClass().getName(),
 				internationalizationConstants.addNewTask(),
 				GlobalVariables.locale);
 
@@ -49,8 +49,6 @@ public class ButtonNewTask extends HTML {
 
 			@Override
 			public void onMouseOver(MouseOverEvent event) {
-
-				OptionsIcons.hideHints();
 
 				HelpHint.executeMouseOverHandler(event, addTaskHint, null);
 
