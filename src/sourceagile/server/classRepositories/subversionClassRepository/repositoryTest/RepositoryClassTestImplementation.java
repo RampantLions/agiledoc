@@ -19,8 +19,8 @@ public class RepositoryClassTestImplementation extends RemoteServiceServlet
 
 		try {
 
-			SVNRepository repository = SubversionRepositoryConnection
-					.connectTestRepository(project, user);
+			SVNRepository repository = SubversionRepositoryConnection.connect(
+					project.getRepositoryURL(), user);
 
 			entry = GetRepositoryTestClass.getTestClassFile(repository, entry);
 
@@ -38,8 +38,8 @@ public class RepositoryClassTestImplementation extends RemoteServiceServlet
 
 		try {
 
-			SVNRepository repository = SubversionRepositoryConnection
-					.connectTestRepository(project, user);
+			SVNRepository repository = SubversionRepositoryConnection.connect(
+					project.getRepositoryURL(), user);
 
 			new CreateTestClass(repository, entry, newSubfolderName);
 
