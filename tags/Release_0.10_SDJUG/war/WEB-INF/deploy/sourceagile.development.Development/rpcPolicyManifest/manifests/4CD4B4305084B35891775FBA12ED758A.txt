@@ -1,0 +1,2 @@
+serviceClass: sourceagile.administration.client.project.ProjectAdministrationServerCalls
+path: FAC52DC0080163647FAB942FAE50671C.gwt.rpc

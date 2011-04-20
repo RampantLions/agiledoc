@@ -1,0 +1,2 @@
+serviceClass: sourceagile.documentation.client.serverCalls.ProjectUpdateServerCalls
+path: 62F3BB076B64E1F497A26A2A7090821A.gwt.rpc

@@ -1,0 +1,2372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectID>19</projectID>
+	<projectName>TravelLog</projectName>
+	<projectDomain>com.amazon.aws.samplecode.travellog</projectDomain>
+	<projectDescription>&lt;span class="Apple-style-span"
+		style="border-collapse: separate; color: rgb(0, 0, 0); font-family:
+		'Times New Roman'; font-style: normal; font-variant: normal;
+		font-weight: normal; letter-spacing: normal; line-height: normal;
+		orphans: 2; text-align: -webkit-auto; text-indent: 0px;
+		text-transform: none; white-space: normal; widows: 2; word-spacing:
+		0px; -webkit-border-horizontal-spacing: 0px;
+		-webkit-border-vertical-spacing: 0px;
+		-webkit-text-decorations-in-effect: none; -webkit-text-size-adjust:
+		auto; -webkit-text-stroke-width: 0px; font-size: medium; "&gt;&lt;span
+		class="Apple-style-span" style="border-collapse: collapse;
+		font-family: arial, sans-serif; font-size: 13px; "&gt;A Java Web
+		Application demostration the use of Amazon S3, Amazon SimpleDB and
+		Amazon SNS.&lt;br&gt;share unlimited photos and videos, and stay in
+		touch while you travel.&lt;br&gt;&lt;br&gt;A travel journal contains
+		descriptions of the traveler's experiences, is normally written during
+		the course of the journey, intended on updating friends or family on
+		the journey.&lt;/span&gt;&lt;/span&gt;</projectDescription>
+	<projectLinks>TravelLog online version:&lt;br&gt;http://
+		&lt;br&gt;&lt;br&gt;&lt;br&gt;What is a Travel
+		Log:&lt;br&gt;http://en.wikipedia.org/wiki/Travel_journal&lt;br&gt;&lt;br&gt;&lt;br&gt;TravelLog&amp;nbsp;
+		-&amp;nbsp; File Repository:&amp;nbsp; Google Code -
+		Subversion:&lt;br&gt;# Non-members may check out a read-only working
+		copy anonymously over HTTP.&lt;br&gt;svn checkout
+		http://travellog-aws.googlecode.com/svn/trunk/
+		travellog-aws-read-only&lt;br&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+		&lt;br&gt;</projectLinks>
+	<projectComponents>
+		<projectComponent componentName="Features/Comments"
+			componentPath="src/com/amazon/aws/samplecode/travellog/features/comments">
+			<entries>
+				<entry featureType="MainFeature" isTodo="ToDo">
+					<fileName>AddComment.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/comments
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1303232408812</fileDate>
+					<className>AddComment</className>
+					<featurePath></featurePath>
+					<featureName>Add Comment</featureName>
+					<featureFolder>Comments</featureFolder>
+					<featureDescription>Any user can add comments to a specific entry
+						in the Journal.
+
+						TODO: Automatically shows the user name as default on the add comments
+						form.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>AddComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>verifyComment</methodName>
+							<methodDescription>Before adding the comment, the TravelLog
+								checks whether all fields are
+								filled in correctly.</methodDescription>
+						</method>
+						<method>
+							<methodName>addComment</methodName>
+							<methodDescription>TravelLog insert the new comment in the
+								database with the current date
+								and time.</methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Requirement" isTodo="">
+					<fileName>DeleteComment.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/comments
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302977696084</fileDate>
+					<className>DeleteComment</className>
+					<featurePath></featurePath>
+					<featureName>Delete Comment</featureName>
+					<featureFolder>Comments</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>DeleteComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>doDelete</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>GetComment.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/comments
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302977496614</fileDate>
+					<className>GetComment</className>
+					<featurePath></featurePath>
+					<featureName>Get Comment</featureName>
+					<featureFolder>Comments</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>GetComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>get</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Requirement" isTodo="">
+					<fileName>ListComments.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/comments
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302980437799</fileDate>
+					<className>ListComments</className>
+					<featurePath></featurePath>
+					<featureName>List Comments</featureName>
+					<featureFolder>Comments</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>ListComments</methodName>
+							<methodDescription>Creates a map of comments tied to entry id's
+								used to display comments in
+								the UI</methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Features/Journal"
+			componentPath="src/com/amazon/aws/samplecode/travellog/features/journal">
+			<entries>
+				<entry featureType="MainFeature" isTodo="">
+					<fileName>CreateJournal.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/journal
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302941699725</fileDate>
+					<className>CreateJournal</className>
+					<featurePath></featurePath>
+					<featureName>Create Journal</featureName>
+					<featureFolder>Journal</featureFolder>
+					<featureDescription>Add a description to every day of a trip.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>CreateJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>preloadJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Requirement" isTodo="">
+					<fileName>DeleteJournal.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/journal
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302979295007</fileDate>
+					<className>DeleteJournal</className>
+					<featurePath></featurePath>
+					<featureName>Delete Journal</featureName>
+					<featureFolder>Journal</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>DeleteJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>delete</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>GetJournal.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/journal
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302941699725</fileDate>
+					<className>GetJournal</className>
+					<featurePath></featurePath>
+					<featureName>Get Journal</featureName>
+					<featureFolder>Journal</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>GetJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>get</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Requirement" isTodo="">
+					<fileName>ListJournalEntries.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/journal
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302980453736</fileDate>
+					<className>ListJournalEntries</className>
+					<featurePath></featurePath>
+					<featureName>List Journal Entries</featureName>
+					<featureFolder>Journal</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>ListJournalEntries</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>list</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Features/Photos"
+			componentPath="src/com/amazon/aws/samplecode/travellog/features/photos">
+			<entries>
+				<entry featureType="Requirement" isTodo="">
+					<fileName>DeletePhoto.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/photos
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302979342542</fileDate>
+					<className>DeletePhoto</className>
+					<featurePath></featurePath>
+					<featureName>Delete Photo</featureName>
+					<featureFolder>Photos</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>DeletePhoto</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>delete</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>GetPhoto.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/photos
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302941699725</fileDate>
+					<className>GetPhoto</className>
+					<featurePath></featurePath>
+					<featureName>Get Photo</featureName>
+					<featureFolder>Photos</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>GetPhoto</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>get</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Requirement" isTodo="">
+					<fileName>ListPhotos.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/photos
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302980467546</fileDate>
+					<className>ListPhotos</className>
+					<featurePath></featurePath>
+					<featureName>List Photos</featureName>
+					<featureFolder>Photos</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>ListPhotos</methodName>
+							<methodDescription>Creates a map of photos tied to entry id's
+								used to display photos in the
+								UI</methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="MainFeature" isTodo="">
+					<fileName>UploadPhoto.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/photos
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1303232796777</fileDate>
+					<className>UploadPhoto</className>
+					<featurePath></featurePath>
+					<featureName>Upload Photo</featureName>
+					<featureFolder>Photos</featureFolder>
+					<featureDescription>Send to the Journal the photos you collected in
+						your trip.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>UploadPhoto</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>savePhoto</methodName>
+							<methodDescription>Add a new photo on the TravelLog photo
+								repository and them save the photo
+								entry on the database.</methodDescription>
+						</method>
+						<method>
+							<methodName>updatePhoto</methodName>
+							<methodDescription>Update the information from an existing photo
+								that was already previously
+								uploaded.</methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Features/Users"
+			componentPath="src/com/amazon/aws/samplecode/travellog/features/users">
+			<entries>
+				<entry featureType="Requirement" isTodo="">
+					<fileName>ListUsers.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/users
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302985141612</fileDate>
+					<className>ListUsers</className>
+					<featurePath></featurePath>
+					<featureName>List Users</featureName>
+					<featureFolder>Users</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>ListUsers</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>list</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Requirement" isTodo="">
+					<fileName>SaveUser.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/users
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302983501950</fileDate>
+					<className>SaveUser</className>
+					<featurePath></featurePath>
+					<featureName>Save User</featureName>
+					<featureFolder>Users</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>SaveUser</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>save</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Requirement" isTodo="">
+					<fileName>VerifyUser.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/features/users
+					</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1303233242927</fileDate>
+					<className>VerifyUser</className>
+					<featurePath></featurePath>
+					<featureName>Verify User</featureName>
+					<featureFolder>Users</featureFolder>
+					<featureDescription>Before add a user, TravelLog verifies if the
+						username and password fields are filled in correctly.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>VerifyUser</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>verify</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Features/Web"
+			componentPath="src/com/amazon/aws/samplecode/travellog/web">
+			<entries>
+				<entry featureType="Architecture" isTodo="">
+					<fileName>AjaxController.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/web</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302940110931</fileDate>
+					<className>AjaxController</className>
+					<featurePath></featurePath>
+					<featureName>Ajax Controller</featureName>
+					<featureFolder>Web</featureFolder>
+					<featureDescription>This class is a controller to handle the Ajax
+						requests from the TravelLog UI.
+						It leverages Direct Web Remoting (DWR) to simplify the Ajax coding.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>AjaxController</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getEntry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getPhoto</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setTravelLogDAO</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>dao</fieldName>
+							<fieldType>TravelLogDAO</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="Requirement" isTodo="">
+					<fileName>Home.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/web</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302983513011</fileDate>
+					<className>Home</className>
+					<featurePath></featurePath>
+					<featureName>Home</featureName>
+					<featureFolder>Web</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>Home</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods />
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="Architecture" isTodo="">
+					<fileName>SpringAuthenticator.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/web</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302940085547</fileDate>
+					<className>SpringAuthenticator</className>
+					<featurePath></featurePath>
+					<featureName>Spring Authenticator</featureName>
+					<featureFolder>Web</featureFolder>
+					<featureDescription>This is the authentication implementation for
+						the TravelLog app. It implements the
+						Spring UserDetails service to retrieve user information from SimpleDB.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>SpringAuthenticator</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>loadUserByUsername</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setTravelLogDAO</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>dao</fieldName>
+							<fieldType>TravelLogDAO</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="Architecture" isTodo="">
+					<fileName>TravelLogController.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/web</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1303232508789</fileDate>
+					<className>TravelLogController</className>
+					<featurePath></featurePath>
+					<featureName>Travel Log Controller</featureName>
+					<featureFolder>Web</featureFolder>
+					<featureDescription>By default, this is the root or default
+						resource in your application, but can
+						be configured for each environment.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>TravelLogController</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>doHealthCheck</methodName>
+							<methodDescription>AWS Elastic Beanstalk checks your
+								application's health by periodically
+								sending an HTTP HEAD request to a resource in your application. By
+								default, this is the root or default resource in your
+								application, but
+								can be configured for each environment.
+
+								Here, we report success as long as the app server is up, but skip
+								generating the whole page since this is a HEAD request only. You
+								can
+								employ more sophisticated health checks in your application.
+							</methodDescription>
+						</method>
+						<method>
+							<methodName>doHome</methodName>
+							<methodDescription>The main request handler that builds out the
+								home page for the journal</methodDescription>
+						</method>
+						<method>
+							<methodName>doLoginFailure</methodName>
+							<methodDescription>If we have a login failure this request
+								mapping flags the error to be
+								shown in the UI.</methodDescription>
+						</method>
+						<method>
+							<methodName>doCreateAccount</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>doCreateJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>doDeleteEntry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>doDeletePhoto</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>doDeleteComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>doSaveEntry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>doSaveComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>doUploadPhoto</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>doLogout</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>doBackupRestore</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setTravelLogDAO</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>initBinder</methodName>
+							<methodDescription>Method establishes the transformation of
+								incoming date strings into Date
+								objects</methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>dao</fieldName>
+							<fieldType>TravelLogDAO</fieldType>
+						</field>
+						<field>
+							<fieldName>logger</fieldName>
+							<fieldType>java.util.logging.Logger</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>TravelLogInitializer.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/web</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1301079790922</fileDate>
+					<className>TravelLogInitializer</className>
+					<featurePath></featurePath>
+					<featureName>Travel Log Initializer</featureName>
+					<featureFolder>Web</featureFolder>
+					<featureDescription>This will do required initialization steps for
+						the first time that the
+						application is launched.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>TravelLogInitializer</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>init</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>serialVersionUID</fieldName>
+							<fieldType>long</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="Requirement" isTodo="">
+					<fileName>Wizard.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/web</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302984004261</fileDate>
+					<className>Wizard</className>
+					<featurePath></featurePath>
+					<featureName>Wizard</featureName>
+					<featureFolder>Web</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>Wizard</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>runWizard</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Java/Amazon Server"
+			componentPath="src/com/amazon/aws/samplecode/travellog/aws">
+			<entries>
+				<entry featureType="" isTodo="">
+					<fileName>S3PhotoUtil.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/aws</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1301079790922</fileDate>
+					<className>S3PhotoUtil</className>
+					<featurePath></featurePath>
+					<featureName>S3 Photo Util</featureName>
+					<featureFolder>Aws</featureFolder>
+					<featureDescription>This is a utility class that handles the logic
+						of storing and removing photos
+						from S3. When storing it will take the original photo and create two
+						resized
+						versions: a thumbnail, and a "websize" version. It will then store the
+						original,
+						and the resized images on S3.
+
+						These resized images are an ideal case for using S3's reduced
+						redundancy storage.
+						The images, if lost, can be regenerated from the original image which
+						will be stored
+						with full redundancy. This way there is some cost savings without
+						risking
+						true data loss since we can always regenerate the lost data.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>S3PhotoUtil</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>deletePhotoFromS3</methodName>
+							<methodDescription>Deletes a photo from S3 based on the paths
+								stored in the Photo object.
+								This will delete both the original photo and the resized versions
+								that were created during the storage process.
+							</methodDescription>
+						</method>
+						<method>
+							<methodName>deleteFromPath</methodName>
+							<methodDescription>A convenience method to create a storage
+								object for the specified path
+								and then delete that object from S3</methodDescription>
+						</method>
+						<method>
+							<methodName>loadOriginalPhoto</methodName>
+							<methodDescription>Loads original photo from S3, returning the
+								raw image data.</methodDescription>
+						</method>
+						<method>
+							<methodName>storePhoto</methodName>
+							<methodDescription>Stores a photo on S3 and then updates the
+								underlying Photo object with
+								the URL's that point to the image locations on S3.
+
+								The scaling process creates three separate images, a web size, a
+								thumbnail,
+								and then the untouched original upload. The original is stored
+								using full
+								S3 redundancy, but the thumbnail and web size versions are stored
+								using
+								reduced redundancy. In the event of a loss of reduced redundancy data,
+								the
+								thumbnail and websize data could be regenerated if need be but that's not
+								implemented here.</methodDescription>
+						</method>
+						<method>
+							<methodName>storeThumbnail</methodName>
+							<methodDescription>Scales the incoming photo data to a thumbnail
+								size, stores it on S3, and then
+								returns the storage path for the photo on S3. This method uses reduced
+								redundancy storage to reduce storage costs. Should there be a
+								loss of the
+								thumbnail data on S3, it could be regenerated from the original full size
+								image.</methodDescription>
+						</method>
+						<method>
+							<methodName>storeWebsize</methodName>
+							<methodDescription>Scales the incoming photo data to a web size,
+								stores it on S3, and then
+								returns the storage path for the photo on S3. This method uses reduced
+								redundancy storage to reduce storage costs. Should there be a
+								loss of the
+								data on S3, it could be regenerated from the original full size
+								image.</methodDescription>
+						</method>
+						<method>
+							<methodName>storeOriginal</methodName>
+							<methodDescription>Stores the original full size image on S3, and
+								then
+								returns the storage path for the photo on S3. This method uses full
+								redundancy storage because if we lose the original there's no
+								way to recreate it.
+								Also, in the event of data loss of a thumbnail or web size of the
+								original, this
+								could be used to recreate the smaller images.</methodDescription>
+						</method>
+						<method>
+							<methodName>getStorageObject</methodName>
+							<methodDescription>Convenience method to construct a
+								TravelLogStorageObject containing the information
+								we need to store a photo on S3</methodDescription>
+						</method>
+						<method>
+							<methodName>scalePhoto</methodName>
+							<methodDescription>This method will scale the photo data to the
+								specified size.
+								It will only decrease the size of the photo, not
+								increase it.</methodDescription>
+						</method>
+						<method>
+							<methodName>scalePhoto</methodName>
+							<methodDescription>This method will scale the photo data passed
+								in through the constructor
+								to the specified size. It will only decrease the size of the
+								photo, not
+								increase it.</methodDescription>
+						</method>
+						<method>
+							<methodName>scalePhoto</methodName>
+							<methodDescription>private method that does the heavy lifting for
+								scaling photos.
+								It doesn't make sense to call directly as we need to specify the
+								jpeg encoding details, etc, before we render the new image.
+							</methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>FULLSIZE_SUFFIX</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>WEBSIZE_SUFFIX</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>THUMB_SUFFIX</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>THUMBNAIL_LONG_EDGE</fieldName>
+							<fieldType>int</fieldType>
+						</field>
+						<field>
+							<fieldName>WEBSIZE_LONG_EDGE</fieldName>
+							<fieldType>int</fieldType>
+						</field>
+						<field>
+							<fieldName>PHOTO_BUCKET</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>uniqueBucketName</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>logger</fieldName>
+							<fieldType>java.util.logging.Logger</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="Architecture" isTodo="">
+					<fileName>S3StorageManager.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/aws</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302984142194</fileDate>
+					<className>S3StorageManager</className>
+					<featurePath></featurePath>
+					<featureName>S3 Storage Manager</featureName>
+					<featureFolder>Aws</featureFolder>
+					<featureDescription>This is a class for storage of any kind of data
+						on S3. There is some functionality included in this
+						class that's not used in the TravelLog application but should serve to
+						illustrate additional
+						capabilities of S3.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>S3StorageManager</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getLastUpdate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>store</methodName>
+							<methodDescription>Stores a given item on S3</methodDescription>
+						</method>
+						<method>
+							<methodName>checkForAndCreateBucket</methodName>
+							<methodDescription>This method will call out to S3 to make sure
+								that the specified bucket
+								exists. If it does not exist it will create it.</methodDescription>
+						</method>
+						<method>
+							<methodName>storePublicRead</methodName>
+							<methodDescription>This is a convenience method that stores an
+								object as publicly readable</methodDescription>
+						</method>
+						<method>
+							<methodName>loadInputStream</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getS3Object</methodName>
+							<methodDescription>Returns the raw S3 object from S3 service
+							</methodDescription>
+						</method>
+						<method>
+							<methodName>loadStream</methodName>
+							<methodDescription>Loads the raw object data from S3 storage
+							</methodDescription>
+						</method>
+						<method>
+							<methodName>delete</methodName>
+							<methodDescription>Deletes the specified S3 object from the S3
+								storage service. If a
+								storage path is passed in that has child S3 objects, it will
+								recursively
+								delete the underlying objects.</methodDescription>
+						</method>
+						<method>
+							<methodName>getSignedUrl</methodName>
+							<methodDescription>This method will obtain a presigned URL that
+								will expire on the given
+								date.</methodDescription>
+						</method>
+						<method>
+							<methodName>getKey</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getSecret</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>lastUpdate</fieldName>
+							<fieldType>java.util.Date</fieldType>
+						</field>
+						<field>
+							<fieldName>s3client</fieldName>
+							<fieldType>AmazonS3</fieldType>
+						</field>
+						<field>
+							<fieldName>bucketMap</fieldName>
+							<fieldType>java.util.Map&lt;java.lang.String,
+								java.lang.Boolean&gt;</fieldType>
+						</field>
+						<field>
+							<fieldName>logger</fieldName>
+							<fieldType>java.util.logging.Logger</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>TravelLogSNSManager.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/aws</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1301079790922</fileDate>
+					<className>TravelLogSNSManager</className>
+					<featurePath></featurePath>
+					<featureName>Travel Log S N S Manager</featureName>
+					<featureFolder>Aws</featureFolder>
+					<featureDescription>This is a utility class to manage SNS
+						communication for entries and
+						comments. It's largely responsible for taking the entities passed in
+						to the methods, breaking them down into SNS requests, and then
+						sending those requests to the SNS client.
+
+						The SNS process involves three steps, all covered within this class:
+						&lt;ol&gt;
+						&lt;li&gt;Creating a new topic&lt;/li&gt;
+						&lt;li&gt;Subscribing to a topic&lt;/li&gt;
+						&lt;li&gt;Posting a new message to a topic&lt;/li&gt;
+						&lt;/ol&gt;
+
+						We do not have support here for unsubscribing from a topic. SNS
+						automatically handles the process of confirming a user's desire
+						to be subscribed. Each message sent also includes an unsubscribe
+						link. So this process can largely be dealt with automatically.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>TravelLogSNSManager</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>createTopic</methodName>
+							<methodDescription>Creates the SNS topic associated with an
+								entry. When the topic is created,
+								we will get an ARN (Amazon Resource Name) which uniquely
+								identifies the
+								SNS topic. We write that ARN to the entry entity so that we can
+								refer to it
+								later when subscribing commenters, etc.</methodDescription>
+						</method>
+						<method>
+							<methodName>deleteTopic</methodName>
+							<methodDescription>Deletes a previously created topic associated
+								with the entry.</methodDescription>
+						</method>
+						<method>
+							<methodName>publish</methodName>
+							<methodDescription>Publishes a comment to the specified entry.
+								The method takes the comment and
+								builds an SNS PublishRequest object. Then the comment is published to
+								the topic associated
+								with the incoming entry.</methodDescription>
+						</method>
+						<method>
+							<methodName>subscribe</methodName>
+							<methodDescription>Subscribe a given commenter to future comments
+								posted to the given entry.</methodDescription>
+						</method>
+						<method>
+							<methodName>getTopicName</methodName>
+							<methodDescription>This method returns a unique topic name by
+								using the entry id.</methodDescription>
+						</method>
+						<method>
+							<methodName>getKey</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getSecret</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>EMAIL_PROTOCOL</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>logger</fieldName>
+							<fieldType>java.util.logging.Logger</fieldType>
+						</field>
+						<field>
+							<fieldName>snsClient</fieldName>
+							<fieldType>AmazonSNSClient</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>TravelLogStorageObject.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/aws</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1301079790922</fileDate>
+					<className>TravelLogStorageObject</className>
+					<featurePath></featurePath>
+					<featureName>Travel Log Storage Object</featureName>
+					<featureFolder>Aws</featureFolder>
+					<featureDescription>This is a general purpose object used for
+						storing data on S3.
+						The mimeType and data variables need only be set if you are
+						planning to initiate a storage call. If you do not specify a
+						mimeType "text/html" is the default.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>TravelLogStorageObject</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>setBucketName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getBucketName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getData</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setData</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getStoragePath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setStoragePath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getAwsUrl</methodName>
+							<methodDescription>Convenience method to construct the URL that
+								points to
+								an object stored on S3 based on the bucket name and
+								storage path.</methodDescription>
+						</method>
+						<method>
+							<methodName>getMimeType</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setMimeType</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>bucketName</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>data</fieldName>
+							<fieldType>byte[]</fieldType>
+						</field>
+						<field>
+							<fieldName>storagePath</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>mimeType</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Java/Database"
+			componentPath="src/com/amazon/aws/samplecode/travellog/dao">
+			<entries>
+				<entry featureType="" isTodo="">
+					<fileName>TravelLogDAO.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/dao</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1301079790922</fileDate>
+					<className>TravelLogDAO</className>
+					<featurePath></featurePath>
+					<featureName>Travel Log</featureName>
+					<featureFolder>Dao</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors />
+					<methods>
+						<method>
+							<methodName>getJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>saveJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>deleteJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getJournals</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getEntry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>saveEntry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>deleteEntry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getEntries</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getComments</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>saveComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>saveCommenter</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>deleteComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>deleteCommenter</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>savePhoto</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getPhoto</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getPhotos</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>deletePhoto</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getUser</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getUsers</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>saveUser</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>deleteUser</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>TravelLogDAOSimpleDBImpl.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/dao</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1301079790922</fileDate>
+					<className>TravelLogDAOSimpleDBImpl</className>
+					<featurePath></featurePath>
+					<featureName>Travel Log D A O Simple D B Impl</featureName>
+					<featureFolder>Dao</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>TravelLogDAOSimpleDBImpl</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>saveJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>deleteJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getJournals</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getUser</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>saveUser</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>deleteUser</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>deleteEntry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getEntries</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getEntry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>saveEntry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>deletePhoto</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>savePhoto</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getPhotos</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getPhoto</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getUsers</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>deleteComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>deleteCommenter</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getComments</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>saveComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>saveCommenter</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getComment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>properties</fieldName>
+							<fieldType>java.util.Map&lt;java.lang.String,
+								java.lang.String&gt;</fieldType>
+						</field>
+						<field>
+							<fieldName>factory</fieldName>
+							<fieldType>EntityManagerFactoryImpl</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Java/Entity"
+			componentPath="src/com/amazon/aws/samplecode/travellog/entity">
+			<entries>
+				<entry featureType="Entity" isTodo="">
+					<fileName>Comment.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/entity</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302237395526</fileDate>
+					<className>Comment</className>
+					<featurePath></featurePath>
+					<featureName>Comment</featureName>
+					<featureFolder>Entity</featureFolder>
+					<featureDescription>The comment object contains the information
+						associated with a single comment
+						record in the journal. It has a relationship with the commenter object
+						to track
+						who posted the comment, as well as the entry the comment is
+						associated with.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>Comment</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getBody</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setBody</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getCommenter</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setCommenter</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getId</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setId</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getEntry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setEntry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFormattedDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFormattedDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>id</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>body</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>commenter</fieldName>
+							<fieldType>Commenter</fieldType>
+						</field>
+						<field>
+							<fieldName>date</fieldName>
+							<fieldType>java.util.Date</fieldType>
+						</field>
+						<field>
+							<fieldName>entry</fieldName>
+							<fieldType>Entry</fieldType>
+						</field>
+						<field>
+							<fieldName>formattedDate</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>formatter</fieldName>
+							<fieldType>java.text.SimpleDateFormat</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="Entity" isTodo="">
+					<fileName>Commenter.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/entity</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302236651793</fileDate>
+					<className>Commenter</className>
+					<featurePath></featurePath>
+					<featureName>Commenter</featureName>
+					<featureFolder>Entity</featureFolder>
+					<featureDescription></featureDescription>
+					<constructors>
+						<method>
+							<methodName>Commenter</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getId</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setId</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getEmail</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setEmail</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setName</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>id</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>email</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>name</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>Entry.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/entity</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1301079790922</fileDate>
+					<className>Entry</className>
+					<featurePath></featurePath>
+					<featureName>Entry</featureName>
+					<featureFolder>Entity</featureFolder>
+					<featureDescription>The entry class maps to a single journal entry.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>Entry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setJournal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getId</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setId</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getTitle</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setTitle</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getEntryText</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setEntryText</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDestination</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDestination</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFormattedDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFormattedDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getSnsArn</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setSnsArn</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFormatter</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>id</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>title</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>entryText</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>destination</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>date</fieldName>
+							<fieldType>java.util.Date</fieldType>
+						</field>
+						<field>
+							<fieldName>formattedDate</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>snsArn</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>formatter</fieldName>
+							<fieldType>java.text.SimpleDateFormat</fieldType>
+						</field>
+						<field>
+							<fieldName>journal</fieldName>
+							<fieldType>Journal</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="Entity" isTodo="">
+					<fileName>Journal.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/entity</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302236484911</fileDate>
+					<className>Journal</className>
+					<featurePath></featurePath>
+					<featureName>Journal</featureName>
+					<featureFolder>Entity</featureFolder>
+					<featureDescription>Maps to a journal. In the current
+						implementation there is ever
+						only one journal, but data structure could support multiple journals
+						if needed later.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>Journal</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getId</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setId</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getTitle</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setTitle</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getStartDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setStartDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getEndDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setEndDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDateRangeString</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDateRangeString</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>id</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>title</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>description</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>startDate</fieldName>
+							<fieldType>java.util.Date</fieldType>
+						</field>
+						<field>
+							<fieldName>endDate</fieldName>
+							<fieldType>java.util.Date</fieldType>
+						</field>
+						<field>
+							<fieldName>formatter</fieldName>
+							<fieldType>java.text.SimpleDateFormat</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="Entity" isTodo="">
+					<fileName>Photo.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/entity</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302236466190</fileDate>
+					<className>Photo</className>
+					<featurePath></featurePath>
+					<featureName>Photo</featureName>
+					<featureFolder>Entity</featureFolder>
+					<featureDescription>The photo class represents the metadata for a
+						given uploaded photo. It does not itself handle
+						the storage of the actual binary photo data. Instead, when a photo is
+						stored, the S3PhotoUtil class
+						handles the process of resizing images and storing them on S3. Once
+						stored on S3, the paths to the
+						images are recorded in the Photo class and stored in SimpleDB.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>Photo</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getId</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setId</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getOriginalPath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setOriginalPath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getWebsizePath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setWebsizePath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getThumbnailPath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setThumbnailPath</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getEntry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setEntry</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getTitle</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setTitle</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getSubject</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setSubject</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDescription</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getFormattedDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setFormattedDate</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>id</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>originalPath</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>websizePath</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>thumbnailPath</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>title</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>subject</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>description</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>date</fieldName>
+							<fieldType>java.util.Date</fieldType>
+						</field>
+						<field>
+							<fieldName>formattedDate</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>formatter</fieldName>
+							<fieldType>java.text.SimpleDateFormat</fieldType>
+						</field>
+						<field>
+							<fieldName>entry</fieldName>
+							<fieldType>Entry</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="Entity" isTodo="">
+					<fileName>User.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/entity</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1302237452151</fileDate>
+					<className>User</className>
+					<featurePath></featurePath>
+					<featureName>User</featureName>
+					<featureFolder>Entity</featureFolder>
+					<featureDescription>Contains the basic user information for the
+						administrator of the journal. Could be expanded later
+						to provide user accounts that do not qualify as admin, but this
+						would require additional
+						infrastructure for managing users, resetting passwords, etc.
+
+						Implements the UserDetails interface to support authentication via Spring.
+						Currently there is
+						only one role supported, ROLE_ADMIN, and it is hard coded since we
+						only ever have a single admin
+						user. This would need to be expanded to provide additional user
+						accounts.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>User</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getId</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setId</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getUsername</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setUsername</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getPassword</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>setPassword</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getAuthorities</methodName>
+							<methodDescription>All methods below this point are to implement
+								the UserDetails interface.
+								They are all Transient because they are hard coded in the class for
+								the
+								time being. If account expiration, etc, were implemented as part of
+								a broader
+								move to make this a multi-user app, these would be stored as well.
+							</methodDescription>
+						</method>
+						<method>
+							<methodName>isAccountNonExpired</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>isAccountNonLocked</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>isCredentialsNonExpired</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>isEnabled</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>serialVersionUID</fieldName>
+							<fieldType>long</fieldType>
+						</field>
+						<field>
+							<fieldName>id</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>username</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>password</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>ROLE_ADMIN</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>auth</fieldName>
+							<fieldType>GrantedAuthority</fieldType>
+						</field>
+						<field>
+							<fieldName>authorities</fieldName>
+							<fieldType>java.util.Collection&lt;GrantedAuthority&gt;
+							</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Java/Utilities"
+			componentPath="src/com/amazon/aws/samplecode/travellog/util">
+			<entries>
+				<entry featureType="" isTodo="">
+					<fileName>Configuration.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/util</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1301079790922</fileDate>
+					<className>Configuration</className>
+					<featurePath></featurePath>
+					<featureName>Configuration</featureName>
+					<featureFolder>Util</featureFolder>
+					<featureDescription>A simple class to manage loading the property
+						file containing needed configuration data
+						from the package. Once loaded the configuration is held in memory as a
+						singleton. Since
+						we already require the simplejpa.properties file to support
+						SimpleJPA, we use that
+						to store additional configuration values.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>Configuration</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>getInstance</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>getProperty</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>configuration</fieldName>
+							<fieldType>com.amazon.aws.samplecode.travellog.util.Configuration
+							</fieldType>
+						</field>
+						<field>
+							<fieldName>props</fieldName>
+							<fieldType>java.util.Properties</fieldType>
+						</field>
+						<field>
+							<fieldName>PROPERTY_PATH</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>logger</fieldName>
+							<fieldType>java.util.logging.Logger</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>DataExtractor.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/util</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1301079790922</fileDate>
+					<className>DataExtractor</className>
+					<featurePath></featurePath>
+					<featureName>Data Extractor</featureName>
+					<featureFolder>Util</featureFolder>
+					<featureDescription>This class extracts data from SimpleDB and
+						builds a series of
+						properties files that represent the journal data. The data is then
+						bundled as a zip file and optionally stored out on S3 or to the file
+						system.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>DataExtractor</methodName>
+							<methodDescription>Constructor to store the extracted zip to a
+								file path</methodDescription>
+						</method>
+						<method>
+							<methodName>DataExtractor</methodName>
+							<methodDescription>Constructor to store the extracted zip to an
+								S3 bucket. We will use full
+								redundancy storage here since this is a backup that we want to make sure
+								remains intact.</methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>run</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>buildProps</methodName>
+							<methodDescription>The methods below here are all used to convert
+								objects read from SimpleDB
+								into a series of property files. Each method handles a specific type
+								of object.</methodDescription>
+						</method>
+						<method>
+							<methodName>buildProps</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>buildProps</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>buildProps</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>logger</fieldName>
+							<fieldType>java.util.logging.Logger</fieldType>
+						</field>
+						<field>
+							<fieldName>dao</fieldName>
+							<fieldType>TravelLogDAO</fieldType>
+						</field>
+						<field>
+							<fieldName>outputPath</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>bucketName</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>storagePath</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>formatter</fieldName>
+							<fieldType>java.text.SimpleDateFormat</fieldType>
+						</field>
+						<field>
+							<fieldName>hourFormatter</fieldName>
+							<fieldType>java.text.SimpleDateFormat</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>DataLoader.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/util</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1301079790922</fileDate>
+					<className>DataLoader</className>
+					<featurePath></featurePath>
+					<featureName>Data Loader</featureName>
+					<featureFolder>Util</featureFolder>
+					<featureDescription>This class is responsible for calling out to S3
+						and downloading prepackaged data
+						for loading into the travellog system. The zip bundles that are
+						downloaded are
+						just a collection of properties files that map to the entities we
+						store in the
+						database.</featureDescription>
+					<constructors>
+						<method>
+							<methodName>DataLoader</methodName>
+							<methodDescription>Basic constructor for the data loader, setting
+								up where to retrieve the zip bundle from</methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>run</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>loadData</methodName>
+							<methodDescription>This method will go into a specified directory
+								and load all the data
+								into the journal. The file structure is made up of a series of
+								property files to provide a simple name/value pair matching that
+								can
+								then be loaded through our SimpleJPA objects.
+
+								The journal object is in a file "journal" and then entries are in
+								sequential
+								order like this:
+
+								&lt;ul&gt;
+								&lt;li&gt;entry.1&lt;/li&gt;
+								&lt;li&gt;entry.2&lt;/li&gt;
+								&lt;li&gt;entry.3&lt;/li&gt;
+								&lt;ul&gt;
+
+								Photo metadata is stored with a prefix like this:
+								&lt;ul&gt;
+								&lt;li&gt;photo.[entry #].[sequence].txt&lt;/li&gt;
+								&lt;/ul&gt;
+
+								So for example, photos associated with entry #2 would be as
+								follows:
+								&lt;ul&gt;
+								&lt;li&gt;photo.1.1&lt;/li&gt;
+								&lt;li&gt;photo.1.2&lt;/li&gt;
+								&lt;/ul&gt;
+
+								Photos will be loaded in the order of the sequence id. The txt file
+								contains
+								a property "file" that points to the actual image that should be
+								loaded.
+
+								Comments use the same nomenclature as photos.</methodDescription>
+						</method>
+						<method>
+							<methodName>purgeData</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>buildJournalFromProps</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>buildEntryFromProps</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>buildPhotoFromProps</methodName>
+							<methodDescription></methodDescription>
+						</method>
+						<method>
+							<methodName>buildCommentFromProps</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</methods>
+					<fields>
+						<field>
+							<fieldName>bucketName</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>storagePath</fieldName>
+							<fieldType>java.lang.String</fieldType>
+						</field>
+						<field>
+							<fieldName>entryMap</fieldName>
+							<fieldType>java.util.Map&lt;java.lang.Integer, Entry&gt;
+							</fieldType>
+						</field>
+						<field>
+							<fieldName>journal</fieldName>
+							<fieldType>Journal</fieldType>
+						</field>
+						<field>
+							<fieldName>formatter</fieldName>
+							<fieldType>java.text.SimpleDateFormat</fieldType>
+						</field>
+						<field>
+							<fieldName>hourFormatter</fieldName>
+							<fieldType>java.text.SimpleDateFormat</fieldType>
+						</field>
+						<field>
+							<fieldName>dao</fieldName>
+							<fieldType>TravelLogDAO</fieldType>
+						</field>
+						<field>
+							<fieldName>logger</fieldName>
+							<fieldType>java.util.logging.Logger</fieldType>
+						</field>
+					</fields>
+					<comments />
+				</entry>
+				<entry featureType="" isTodo="">
+					<fileName>TravelLogFileUtil.java</fileName>
+					<filePath>src/com/amazon/aws/samplecode/travellog/util</filePath>
+					<fileAuthor>alline.oliveira</fileAuthor>
+					<fileDate>1301079790922</fileDate>
+					<className>TravelLogFileUtil</className>
+					<featurePath></featurePath>
+					<featureName>Travel Log File Util</featureName>
+					<featureFolder>Util</featureFolder>
+					<featureDescription>A simple utility class for handling files. At
+						the moment all it provides is the ability
+						to extract a zip file into a specified directory.
+					</featureDescription>
+					<constructors>
+						<method>
+							<methodName>TravelLogFileUtil</methodName>
+							<methodDescription></methodDescription>
+						</method>
+					</constructors>
+					<methods>
+						<method>
+							<methodName>extractZipToDirectory</methodName>
+							<methodDescription>This method extracts data to a given
+								directory.</methodDescription>
+						</method>
+					</methods>
+					<fields />
+					<comments />
+				</entry>
+			</entries>
+		</projectComponent>
+		<projectComponent componentName="Script Files/CSS"
+			componentPath="WebContent/css">
+			<entries />
+		</projectComponent>
+		<projectComponent componentName="Script Files/JSP"
+			componentPath="WebContent/WEB-INF/jsp">
+			<entries />
+		</projectComponent>
+		<projectComponent componentName="Script Files/JavaScript"
+			componentPath="WebContent/js">
+			<entries />
+		</projectComponent>
+	</projectComponents>
+</project>

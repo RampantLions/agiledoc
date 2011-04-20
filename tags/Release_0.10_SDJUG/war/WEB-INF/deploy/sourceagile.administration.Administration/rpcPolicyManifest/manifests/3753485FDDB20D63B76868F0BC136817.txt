@@ -1,0 +1,2 @@
+serviceClass: sourceagile.planning.client.serverCalls.GetProjectServerCalls
+path: AA9E7EE9E00BBDA6C0B3DD94B7498BC7.gwt.rpc

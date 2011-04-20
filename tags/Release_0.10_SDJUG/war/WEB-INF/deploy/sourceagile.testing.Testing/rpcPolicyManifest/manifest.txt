@@ -1,0 +1,14 @@
+# Module sourceagile.testing.Testing
+# RPC service class, partial path of RPC policy file
+sourceagile.planning.client.serverCalls.GetProjectServerCalls, AA9E7EE9E00BBDA6C0B3DD94B7498BC7.gwt.rpc
+sourceagile.authentication.client.serverCalls.AuthenticationServerCalls, 6B0B94E403584FC4683E204D2F4535D5.gwt.rpc
+sourceagile.administration.client.project.ProjectAdministrationServerCalls, FAC52DC0080163647FAB942FAE50671C.gwt.rpc
+sourceagile.documentation.client.serverCalls.ExportFileServerCalls, 82DB4774BF091FE810C7549FA8920ECF.gwt.rpc
+sourceagile.planning.client.serverCalls.ProjectBacklogServerCalls, CB8FC12FFFB40B832D0E52D322BBA469.gwt.rpc
+sourceagile.client.serverCalls.gitRepository.LoadGitRemoteClasses, 844E5B0A42BCD5764196547F2D518908.gwt.rpc
+sourceagile.testing.client.serverCalls.LoadRemoteTestClasses, F4190D4947E09EFA77C7F437560B10AE.gwt.rpc
+sourceagile.client.serverCalls.ProjectDatabaseServerCalls, 5471772AC97F5613F6D7808F19113AFE.gwt.rpc
+sourceagile.documentation.client.serverCalls.AllCommentsServerCalls, AA33820CBE6FCC345C33523594791289.gwt.rpc
+sourceagile.documentation.client.serverCalls.ProjectUpdateServerCalls, 62F3BB076B64E1F497A26A2A7090821A.gwt.rpc
+sourceagile.development.client.serverCalls.CommentsServerCalls, E9AAA99AC05FF6A4150AC0E950C65FA8.gwt.rpc
+sourceagile.client.serverCalls.LoadRemoteClasses, F5CB78A1254796AD68D6C5536B945204.gwt.rpc

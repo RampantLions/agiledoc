@@ -1,0 +1,2 @@
+serviceClass: sourceagile.documentation.client.serverCalls.ExportFileServerCalls
+path: 82DB4774BF091FE810C7549FA8920ECF.gwt.rpc
