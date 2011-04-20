@@ -1,0 +1,2 @@
+serviceClass: sourceagile.planning.client.serverCalls.ProjectBacklogServerCalls
+path: CB8FC12FFFB40B832D0E52D322BBA469.gwt.rpc

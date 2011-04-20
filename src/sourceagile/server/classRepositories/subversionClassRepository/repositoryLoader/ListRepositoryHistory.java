@@ -49,9 +49,9 @@ public class ListRepositoryHistory {
 					SVNLogEntryPath entryPath = (SVNLogEntryPath) logEntry
 							.getChangedPaths().get(changedPaths.next());
 
-					if (entryPath.getKind() == SVNNodeKind.FILE
-							&& entryPath.getPath().contains(
-									project.getRoot() + project.getDomain())) {
+					if (entryPath.getKind() == SVNNodeKind.FILE) {
+						// && entryPath.getPath().contains(project.getRoot() +
+						// project.getDomain().replaceAll(".", "/"))
 
 						if (entryPath.getType() == SVNLogEntryPath.TYPE_ADDED) {
 

@@ -16,8 +16,10 @@ public class CreateTestClass {
 
 		String fileName = classFile.getClassDoc().getClassName() + "Test.java";
 
-		new AddFile(repository, classFile.getFilePath(), newSubfolderName,
-				fileName, classContent(classFile, newSubfolderName));
+		String testClassPath = classFile.getFilePath().replace("src", "test");
+
+		new AddFile(repository, testClassPath, newSubfolderName, fileName,
+				classContent(classFile, newSubfolderName));
 	}
 
 	private String classContent(ClassFile classFile, String newSubfolderName) {

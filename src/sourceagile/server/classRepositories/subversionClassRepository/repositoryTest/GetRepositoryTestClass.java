@@ -30,6 +30,8 @@ public class GetRepositoryTestClass {
 			classPath = entryTest.getFilePath() + "/" + entryTest.getFileName();
 		}
 
+		classPath = classPath.replace("src", "test");
+
 		ByteArrayOutputStream baos = GetRepositoryClass.getRemoteClass(
 				repository, classPath);
 

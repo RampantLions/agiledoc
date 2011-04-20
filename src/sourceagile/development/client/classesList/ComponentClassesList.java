@@ -77,6 +77,11 @@ public class ComponentClassesList {
 			className = entry.getFeature().getFeatureName();
 		}
 
+		if (entry.getClassDoc().getClassStatus() != null) {
+
+			className += " <font color='red' size=1>*</font>";
+		}
+
 		TreeNode treeNode = new TreeNode(className);
 
 		treeNode.setIcon("js/ext/resources/images/default/tree/world.gif");

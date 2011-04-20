@@ -9,10 +9,8 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/svnkit.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/gwt-visualization.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/antlr-3.3-complete.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/gwtext.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/javagit-0.1.0.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/helpAgile.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/ApprovalTests.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/jdo-api-3.0.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/datanucleus-core-2.2.0-m3.jar"/>
@@ -20,5 +18,7 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/derby.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/datanucleus-rdbms-2.2.0-m3.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/asm-3.3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/helpAgile.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

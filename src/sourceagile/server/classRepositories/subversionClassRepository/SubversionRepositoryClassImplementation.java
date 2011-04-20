@@ -145,8 +145,8 @@ public class SubversionRepositoryClassImplementation extends
 		ArrayList<Productivity> productivity = null;
 
 		try {
-			SVNRepository repository = SubversionRepositoryConnection
-					.connectClassRepository(project, user);
+			SVNRepository repository = SubversionRepositoryConnection.connect(
+					project.getRepositoryURL(), user);
 
 			productivity = ListRepositoryHistory.getRemoteClasses(project,
 					repository);

@@ -1,0 +1,2 @@
+serviceClass: sourceagile.authentication.client.serverCalls.AuthenticationServerCalls
+path: 6B0B94E403584FC4683E204D2F4535D5.gwt.rpc

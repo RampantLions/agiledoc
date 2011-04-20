@@ -1,0 +1,2 @@
+serviceClass: sourceagile.documentation.client.serverCalls.AllCommentsServerCalls
+path: AA33820CBE6FCC345C33523594791289.gwt.rpc
