@@ -3,8 +3,33 @@
 	<projectID>19</projectID>
 	<projectName>TravelLog</projectName>
 	<projectDomain>com.amazon.aws.samplecode.travellog</projectDomain>
-	<projectDescription></projectDescription>
-	<projectLinks></projectLinks>
+	<projectDescription>&lt;span class="Apple-style-span"
+		style="border-collapse: separate; color: rgb(0, 0, 0); font-family:
+		'Times New Roman'; font-style: normal; font-variant: normal;
+		font-weight: normal; letter-spacing: normal; line-height: normal;
+		orphans: 2; text-align: -webkit-auto; text-indent: 0px;
+		text-transform: none; white-space: normal; widows: 2; word-spacing:
+		0px; -webkit-border-horizontal-spacing: 0px;
+		-webkit-border-vertical-spacing: 0px;
+		-webkit-text-decorations-in-effect: none; -webkit-text-size-adjust:
+		auto; -webkit-text-stroke-width: 0px; font-size: medium; "&gt;&lt;span
+		class="Apple-style-span" style="border-collapse: collapse;
+		font-family: arial, sans-serif; font-size: 13px; "&gt;A Java Web
+		Application demostration the use of Amazon S3, Amazon SimpleDB and
+		Amazon SNS.&lt;br&gt;share unlimited photos and videos, and stay in
+		touch while you travel.&lt;br&gt;&lt;br&gt;A travel journal contains
+		descriptions of the traveler's experiences, is normally written during
+		the course of the journey, intended on updating friends or family on
+		the journey.&lt;/span&gt;&lt;/span&gt;</projectDescription>
+	<projectLinks>TravelLog online version:&lt;br&gt;http://
+		&lt;br&gt;&lt;br&gt;&lt;br&gt;What is a Travel
+		Log:&lt;br&gt;http://en.wikipedia.org/wiki/Travel_journal&lt;br&gt;&lt;br&gt;&lt;br&gt;TravelLog&amp;nbsp;
+		-&amp;nbsp; File Repository:&amp;nbsp; Google Code -
+		Subversion:&lt;br&gt;# Non-members may check out a read-only working
+		copy anonymously over HTTP.&lt;br&gt;svn checkout
+		http://travellog-aws.googlecode.com/svn/trunk/
+		travellog-aws-read-only&lt;br&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+		&lt;br&gt;</projectLinks>
 	<projectComponents>
 		<projectComponent componentName="Features/Comments"
 			componentPath="src/com/amazon/aws/samplecode/travellog/features/comments">
@@ -14,13 +39,13 @@
 					<filePath>src/com/amazon/aws/samplecode/travellog/features/comments
 					</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1302941699725</fileDate>
+					<fileDate>1303232408812</fileDate>
 					<className>AddComment</className>
 					<featurePath></featurePath>
 					<featureName>Add Comment</featureName>
 					<featureFolder>Comments</featureFolder>
-					<featureDescription>Any user can add comments to a journal in the
-						system.
+					<featureDescription>Any user can add comments to a specific entry
+						in the Journal.
 
 						TODO: Automatically shows the user name as default on the add comments
 						form.</featureDescription>
@@ -33,11 +58,15 @@
 					<methods>
 						<method>
 							<methodName>verifyComment</methodName>
-							<methodDescription></methodDescription>
+							<methodDescription>Before adding the comment, the TravelLog
+								checks whether all fields are
+								filled in correctly.</methodDescription>
 						</method>
 						<method>
 							<methodName>addComment</methodName>
-							<methodDescription></methodDescription>
+							<methodDescription>TravelLog insert the new comment in the
+								database with the current date
+								and time.</methodDescription>
 						</method>
 					</methods>
 					<fields />
@@ -313,12 +342,13 @@
 					<filePath>src/com/amazon/aws/samplecode/travellog/features/photos
 					</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1302941699725</fileDate>
+					<fileDate>1303232796777</fileDate>
 					<className>UploadPhoto</className>
 					<featurePath></featurePath>
 					<featureName>Upload Photo</featureName>
 					<featureFolder>Photos</featureFolder>
-					<featureDescription></featureDescription>
+					<featureDescription>Send to the Journal the photos you collected in
+						your trip.</featureDescription>
 					<constructors>
 						<method>
 							<methodName>UploadPhoto</methodName>
@@ -328,11 +358,15 @@
 					<methods>
 						<method>
 							<methodName>savePhoto</methodName>
-							<methodDescription></methodDescription>
+							<methodDescription>Add a new photo on the TravelLog photo
+								repository and them save the photo
+								entry on the database.</methodDescription>
 						</method>
 						<method>
 							<methodName>updatePhoto</methodName>
-							<methodDescription></methodDescription>
+							<methodDescription>Update the information from an existing photo
+								that was already previously
+								uploaded.</methodDescription>
 						</method>
 					</methods>
 					<fields />
@@ -348,7 +382,7 @@
 					<filePath>src/com/amazon/aws/samplecode/travellog/features/users
 					</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1302983501950</fileDate>
+					<fileDate>1302985141612</fileDate>
 					<className>ListUsers</className>
 					<featurePath></featurePath>
 					<featureName>List Users</featureName>
@@ -400,12 +434,14 @@
 					<filePath>src/com/amazon/aws/samplecode/travellog/features/users
 					</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1302983501950</fileDate>
+					<fileDate>1303233242927</fileDate>
 					<className>VerifyUser</className>
 					<featurePath></featurePath>
 					<featureName>Verify User</featureName>
 					<featureFolder>Users</featureFolder>
-					<featureDescription></featureDescription>
+					<featureDescription>Before add a user, TravelLog verifies if the
+						username and password fields are filled in correctly.
+					</featureDescription>
 					<constructors>
 						<method>
 							<methodName>VerifyUser</methodName>
@@ -415,10 +451,6 @@
 					<methods>
 						<method>
 							<methodName>verify</methodName>
-							<methodDescription></methodDescription>
-						</method>
-						<method>
-							<methodName>saveUser</methodName>
 							<methodDescription></methodDescription>
 						</method>
 					</methods>
@@ -532,7 +564,7 @@
 					<fileName>TravelLogController.java</fileName>
 					<filePath>src/com/amazon/aws/samplecode/travellog/web</filePath>
 					<fileAuthor>alline.oliveira</fileAuthor>
-					<fileDate>1302984523084</fileDate>
+					<fileDate>1303232508789</fileDate>
 					<className>TravelLogController</className>
 					<featurePath></featurePath>
 					<featureName>Travel Log Controller</featureName>
