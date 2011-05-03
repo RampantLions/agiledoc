@@ -5,6 +5,7 @@ import sourceagile.client.ProjectInitialization;
 import sourceagile.client.serverCalls.LoadRemoteClasses;
 import sourceagile.client.serverCalls.LoadRemoteClassesAsync;
 import sourceagile.development.client.Development;
+import sourceagile.development.client.FilesViewList;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.utilities.LoadingPanel;
 
@@ -33,7 +34,7 @@ public class GetRemoteClass {
 						ProjectInitialization.projectEntries.put(entryKey,
 								entry);
 
-						Development.showClass(entry, viewOption);
+						FilesViewList.showClass(entry, viewOption);
 					}
 
 					public void onFailure(Throwable caught) {
