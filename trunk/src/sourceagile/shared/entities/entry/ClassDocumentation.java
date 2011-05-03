@@ -11,8 +11,8 @@ public class ClassDocumentation implements Serializable {
 	public static final String BLOCKED_STATUS = "Blocked";
 
 	public static final String MAIN_FEATURE_TAG = "MainFeature";
-	public static final String REQUIREMENT_TAG = "Requirement";
-	public static final String USER_MANUAL_TAG = "UserManual";
+	public static final String FEATURE_TAG = "Feature";
+	public static final String USER_INTERFACE_TAG = "UserInterface";
 	public static final String ARCHITECTURE_TAG = "Architecture";
 	public static final String ENTITY_TAG = "Entity";
 

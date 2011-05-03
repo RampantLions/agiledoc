@@ -1,6 +1,4 @@
-package sourceagile.shared.data;
-
-import sourceagile.shared.entities.User;
+package sourceagile.shared.entities;
 
 public class UserData {
 
@@ -16,7 +14,7 @@ public class UserData {
 		users[1] = new User();
 		users[1].setNickName("June Clarke");
 		users[1].setName("joonspoon");
-		users[1].setPassword("Vj6mz4MX9Wu7");
+		users[1].setPassword("************");
 
 		users[2] = new User();
 		users[2].setNickName("Alline Oliveira");
