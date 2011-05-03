@@ -74,7 +74,8 @@ public class FeatureDescription extends VerticalPanel {
 		String name = "<BR><BR><B><FONT SIZE=4>" + "&nbsp;&nbsp;"
 				+ entry.getFeature().getFeatureName() + "</FONT></B>";
 
-		if (withPlanningTag && entry.getClassDoc().getClassStatus() != null) {
+		if (withPlanningTag && entry.getClassDoc() != null
+				&& entry.getClassDoc().getClassStatus() != null) {
 
 			name += "&nbsp;&nbsp;&nbsp;<font color=blue>(Planning)</font>";
 		}

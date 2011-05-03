@@ -79,7 +79,7 @@ public class CurrentProductivityColumnsChart extends VerticalPanel {
 
 				if (entry.getClassDoc().getTagType() != null
 						&& entry.getClassDoc().getTagType()
-								.equals(ClassDocumentation.REQUIREMENT_TAG)) {
+								.equals(ClassDocumentation.FEATURE_TAG)) {
 
 					ProjectInitialization.projectTotals
 							.setFeatureCount(ProjectInitialization.projectTotals

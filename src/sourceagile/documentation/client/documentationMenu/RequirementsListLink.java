@@ -38,7 +38,7 @@ public class RequirementsListLink extends HTML {
 
 				Documentation.documentationPanel.clear();
 				Documentation.documentationPanel.add(new ListTaggedClasses(
-						ClassDocumentation.REQUIREMENT_TAG));
+						ClassDocumentation.FEATURE_TAG));
 			}
 		});
 

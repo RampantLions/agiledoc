@@ -31,12 +31,12 @@ public class ClassTypeList extends ListBox {
 				ClassDocumentation.MAIN_FEATURE_TAG);
 
 		this.addItem(FeatureNameGenerator.spacedName(
-				ClassDocumentation.REQUIREMENT_TAG, GlobalVariables.locale),
-				ClassDocumentation.REQUIREMENT_TAG);
+				ClassDocumentation.FEATURE_TAG, GlobalVariables.locale),
+				ClassDocumentation.FEATURE_TAG);
 
 		this.addItem(FeatureNameGenerator.spacedName(
-				ClassDocumentation.USER_MANUAL_TAG, GlobalVariables.locale),
-				ClassDocumentation.USER_MANUAL_TAG);
+				ClassDocumentation.USER_INTERFACE_TAG, GlobalVariables.locale),
+				ClassDocumentation.USER_INTERFACE_TAG);
 
 		if (ClassDocumentation.ARCHITECTURE_TAG.equals(classType)) {
 
@@ -50,11 +50,11 @@ public class ClassTypeList extends ListBox {
 
 			this.setSelectedIndex(3);
 
-		} else if (ClassDocumentation.REQUIREMENT_TAG.equals(classType)) {
+		} else if (ClassDocumentation.FEATURE_TAG.equals(classType)) {
 
 			this.setSelectedIndex(4);
 
-		} else if (ClassDocumentation.USER_MANUAL_TAG.equals(classType)) {
+		} else if (ClassDocumentation.USER_INTERFACE_TAG.equals(classType)) {
 
 			this.setSelectedIndex(5);
 		}

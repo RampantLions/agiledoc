@@ -99,7 +99,7 @@ public class LiveTaskBoard extends VerticalPanel {
 
 					vpInProgress.add(getDescription(entry));
 
-				} else if (ClassDocumentation.REQUIREMENT_TAG.equals(entry
+				} else if (ClassDocumentation.FEATURE_TAG.equals(entry
 						.getClassDoc().getTagType())
 						|| ClassDocumentation.MAIN_FEATURE_TAG.equals(entry
 								.getClassDoc().getTagType())) {

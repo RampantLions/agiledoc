@@ -48,17 +48,17 @@ public class ListTaggedClasses extends VerticalPanel {
 					if (entry.getClassDoc() != null
 							&& entry.getClassDoc().getTagType() != null) {
 
-						if ((!ClassDocumentation.REQUIREMENT_TAG
+						if ((!ClassDocumentation.FEATURE_TAG
 								.equals(tagType) && entry.getClassDoc()
 								.getTagType().equals(tagType))
-								|| (ClassDocumentation.REQUIREMENT_TAG
+								|| (ClassDocumentation.FEATURE_TAG
 										.equals(tagType) && (entry
 										.getClassDoc()
 										.getTagType()
 										.equals(ClassDocumentation.MAIN_FEATURE_TAG) || entry
 										.getClassDoc()
 										.getTagType()
-										.equals(ClassDocumentation.REQUIREMENT_TAG)))) {
+										.equals(ClassDocumentation.FEATURE_TAG)))) {
 
 							String name = "<br><B>"
 									+ entry.getFeature().getFeatureName()
