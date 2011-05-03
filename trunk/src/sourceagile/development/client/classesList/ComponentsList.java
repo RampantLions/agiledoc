@@ -102,7 +102,7 @@ public class ComponentsList extends VerticalPanel {
 					&& entry.getFilePath().startsWith(specificationPath)) {
 
 				if (OptionsIcons.OPTION_REQUIREMENTS != viewOption
-						|| (entry.getClassDoc() != null && (ClassDocumentation.REQUIREMENT_TAG
+						|| (entry.getClassDoc() != null && (ClassDocumentation.FEATURE_TAG
 								.equals(entry.getClassDoc().getTagType()) || ClassDocumentation.MAIN_FEATURE_TAG
 								.equals(entry.getClassDoc().getTagType())))) {
 
