@@ -1,10 +1,10 @@
-package sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor;
+package sourceagile.server.classRepositories.subversionClassRepository;
 
-import org.tmatesoft.svn.core.SVNException;
-import org.tmatesoft.svn.core.io.SVNRepository;
-
+import sourceagile.server.classRepositories.subversionFileRepository.AddFile;
+import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.project.Project;
 
 public class AddTodoClass {
 
@@ -16,13 +16,13 @@ public class AddTodoClass {
 	public static final String VOID = "void";
 	public static final String NEW = "new";
 
-	public AddTodoClass(SVNRepository repository, ClassFile classFile,
-			String newSubfolderName) throws SVNException {
+	public AddTodoClass(Project project, User user, ClassFile classFile,
+			String newSubfolderName) {
 
-		String fileName = classFile.getFileName();
-
-		new AddFile(repository, classFile.getFilePath(), newSubfolderName,
-				fileName, classContent(classFile, newSubfolderName));
+		AddFile.save(project.getRepositoryURL(), user.getName(),
+				user.getPassword(), classFile.getFilePath(), newSubfolderName,
+				classFile.getFileName(),
+				classContent(classFile, newSubfolderName));
 	}
 
 	private String classContent(ClassFile classFile, String newSubfolderName) {

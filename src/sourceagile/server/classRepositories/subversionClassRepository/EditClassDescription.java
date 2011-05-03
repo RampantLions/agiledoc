@@ -1,20 +1,20 @@
-package sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor;
+package sourceagile.server.classRepositories.subversionClassRepository;
 
 import java.util.ArrayList;
 
-import org.tmatesoft.svn.core.SVNException;
-import org.tmatesoft.svn.core.io.SVNRepository;
-
+import sourceagile.server.classRepositories.subversionFileRepository.EditFile;
 import sourceagile.server.doclet.tokenizer.JavaTokens;
 import sourceagile.server.doclet.tokenizer.Tokenize;
 import sourceagile.server.doclet.tokenizer.TokenizeClassDeclaration;
+import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.entry.ClassDocumentation;
 import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.project.Project;
 
 public class EditClassDescription {
 
-	public EditClassDescription(SVNRepository repository, ClassFile classFile,
-			String classDescription) throws SVNException {
+	public EditClassDescription(Project project, User user,
+			ClassFile classFile, String classDescription) {
 
 		Tokenize.getClassArrayIndex(classFile);
 
@@ -50,7 +50,9 @@ public class EditClassDescription {
 			classSourceUpdated += classSourceTokenized.get(i);
 		}
 
-		new EditFile(repository, classFile, classSourceUpdated);
+		EditFile.update(project.getRepositoryURL(), user.getName(),
+				user.getPassword(), classFile.getFilePath(),
+				classFile.getFileName(), classSourceUpdated);
 
 	}
 
@@ -68,14 +70,14 @@ public class EditClassDescription {
 		if (classFile.getClassDoc().getTagType() != null) {
 
 			if (classFile.getClassDoc().getTagType()
-					.equals(ClassDocumentation.USER_MANUAL_TAG)) {
+					.equals(ClassDocumentation.USER_INTERFACE_TAG)) {
 
-				tagType = "\n * @" + ClassDocumentation.USER_MANUAL_TAG;
+				tagType = "\n * @" + ClassDocumentation.USER_INTERFACE_TAG;
 
 			} else if (classFile.getClassDoc().getTagType()
-					.equals(ClassDocumentation.REQUIREMENT_TAG)) {
+					.equals(ClassDocumentation.FEATURE_TAG)) {
 
-				tagType = "\n * @" + ClassDocumentation.REQUIREMENT_TAG;
+				tagType = "\n * @" + ClassDocumentation.FEATURE_TAG;
 
 			} else if (classFile.getClassDoc().getTagType()
 					.equals(ClassDocumentation.MAIN_FEATURE_TAG)) {

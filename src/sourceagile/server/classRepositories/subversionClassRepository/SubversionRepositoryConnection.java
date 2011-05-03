@@ -49,4 +49,18 @@ public class SubversionRepositoryConnection {
 		return repository;
 	}
 
+	public static SVNRepository connect(String URI, String username,
+			String password) throws SVNException {
+
+		DAVRepositoryFactory.setup();
+
+		SVNRepository repository = SVNRepositoryFactory.create(SVNURL
+				.parseURIDecoded(URI));
+
+		repository.setAuthenticationManager(new BasicAuthenticationManager(
+				username, password));
+
+		return repository;
+	}
+
 }
