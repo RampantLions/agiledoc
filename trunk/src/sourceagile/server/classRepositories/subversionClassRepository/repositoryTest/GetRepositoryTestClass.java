@@ -1,18 +1,14 @@
 package sourceagile.server.classRepositories.subversionClassRepository.repositoryTest;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-
-import org.tmatesoft.svn.core.SVNException;
-import org.tmatesoft.svn.core.io.SVNRepository;
-
-import sourceagile.server.classRepositories.subversionClassRepository.repositoryLoader.GetRepositoryClass;
+import sourceagile.server.classRepositories.subversionClassRepository.GetClass;
+import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.entry.ClassFile;
+import sourceagile.shared.entities.project.Project;
 
 public class GetRepositoryTestClass {
 
-	public static ClassFile getTestClassFile(SVNRepository repository,
-			ClassFile entry) throws SVNException, IOException {
+	public static ClassFile getTestClassFile(Project project, User user,
+			ClassFile entry) {
 
 		ClassFile entryTest = new ClassFile();
 
@@ -30,12 +26,7 @@ public class GetRepositoryTestClass {
 			classPath = entryTest.getFilePath() + "/" + entryTest.getFileName();
 		}
 
-		ByteArrayOutputStream baos = GetRepositoryClass.getRemoteClass(
-				repository, classPath);
-
-		entryTest.setSourceCode(baos.toString());
-
-		GetRepositoryClass.loadClassDocumentation(baos, entryTest);
+		GetClass.getClass(project, user, entryTest);
 
 		return entryTest;
 	}

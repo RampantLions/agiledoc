@@ -1,22 +1,22 @@
 package sourceagile.server.classRepositories.subversionClassRepository.repositoryTest;
 
-import org.tmatesoft.svn.core.SVNException;
-import org.tmatesoft.svn.core.io.SVNRepository;
-
-import sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor.AddFile;
-import sourceagile.server.classRepositories.subversionClassRepository.repositoryEditor.AddTodoClass;
+import sourceagile.server.classRepositories.subversionClassRepository.AddTodoClass;
+import sourceagile.server.classRepositories.subversionFileRepository.AddFile;
+import sourceagile.shared.entities.User;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Method;
+import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.utilities.FeatureNameGenerator;
 
 public class CreateTestClass {
 
-	public CreateTestClass(SVNRepository repository, ClassFile classFile,
-			String newSubfolderName) throws SVNException {
+	public CreateTestClass(Project project, User user, ClassFile classFile,
+			String newSubfolderName) {
 
 		String fileName = classFile.getClassDoc().getClassName() + "Test.java";
 
-		new AddFile(repository, classFile.getFilePath(), newSubfolderName,
+		AddFile.save(project.getRepositoryURL(), user.getName(),
+				user.getPassword(), classFile.getFilePath(), newSubfolderName,
 				fileName, classContent(classFile, newSubfolderName));
 	}
 
