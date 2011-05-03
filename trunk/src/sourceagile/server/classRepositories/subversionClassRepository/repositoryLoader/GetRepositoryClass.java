@@ -10,7 +10,6 @@ import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.SVNProperties;
 import org.tmatesoft.svn.core.io.SVNRepository;
 
-import sourceagile.server.doclet.GetClassDoc;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.entities.entry.Feature;
 import sourceagile.shared.utilities.FeatureNameGenerator;
@@ -38,12 +37,24 @@ public class GetRepositoryClass {
 		return entry;
 	}
 
+	public static void loadClassDocumentation(String baos, ClassFile entry)
+			throws IOException {
+
+		File file = getTempFile(baos, entry);
+
+		// entry.setClassDoc(GetClassDoc.getClassDoc(file,
+		// entry.getClassLocale()));
+
+		setEntryFeature(entry);
+	}
+
 	public static void loadClassDocumentation(ByteArrayOutputStream baos,
 			ClassFile entry) throws IOException {
 
 		File file = getTempFile(baos, entry);
 
-		entry.setClassDoc(GetClassDoc.getClassDoc(file, entry.getClassLocale()));
+		// entry.setClassDoc(GetClassDoc.getClassDoc(file,
+		// entry.getClassLocale()));
 
 		setEntryFeature(entry);
 	}
@@ -57,6 +68,20 @@ public class GetRepositoryClass {
 		repository.getFile(className, -1, fileProperties, baos);
 
 		return baos;
+	}
+
+	private static File getTempFile(String baos, ClassFile entry)
+			throws IOException {
+
+		File tempFile = null;
+
+		tempFile = File.createTempFile(entry.getFileName(), ".java");
+
+		OutputStream out = new FileOutputStream(tempFile);
+		out.write(baos.getBytes());
+		out.close();
+
+		return tempFile;
 	}
 
 	private static File getTempFile(ByteArrayOutputStream baos, ClassFile entry)
