@@ -28,9 +28,26 @@ public class LoginPage extends VerticalPanel {
 
 		this.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 
-		this.add(new LoginForm(projects));
+		VerticalPanel vp = new VerticalPanel();
 
-		this.add(new Label(" "));
+		vp.add(new LoginForm(projects));
+
+		vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
+
+		HorizontalPanel hpButtons = new HorizontalPanel();
+
+		hpButtons.add(new ButtonNewProject());
+
+		Label labelSpace = new Label(" ");
+		labelSpace.setWidth("30px");
+
+		hpButtons.add(labelSpace);
+
+		hpButtons.add(new ButtonLogin());
+
+		vp.add(hpButtons);
+
+		this.add(vp);
 
 		HorizontalPanel hpMain = new HorizontalPanel();
 

@@ -107,7 +107,7 @@ public class ListRemoteClasses {
 						RootPanel.get("htmlID").clear();
 						RootPanel.get("htmlID").add(GlobalVariables.mainPage);
 
-						new ListComponentClasses();
+						new LoadFilesContent();
 					}
 
 					public void onFailure(Throwable caught) {

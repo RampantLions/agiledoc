@@ -9,7 +9,7 @@ public class GlobalVariables {
 
 	public static MainPage mainPage;
 
-	public static String systemVersion = "Prototype Version 0.9";
+	public static String systemVersion = "Prototype Version 0.10";
 
 	public static User currentUser = new User();
 

@@ -31,8 +31,6 @@ public class LoginForm extends HorizontalPanel {
 
 	public LoginForm(List<Project> projects) {
 
-		this.setSpacing(10);
-
 		this.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 
 		this.add(logoPanel());
@@ -53,8 +51,6 @@ public class LoginForm extends HorizontalPanel {
 				internationalizationConstants.selectAProject(), "150px",
 				projectList));
 
-		this.add(new ButtonLogin());
-		this.add(new ButtonNewProject());
 	}
 
 	private HTML logoPanel() {

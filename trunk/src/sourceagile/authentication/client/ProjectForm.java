@@ -1,7 +1,5 @@
 package sourceagile.authentication.client;
 
-import sourceagile.administration.client.project.LocaleList;
-import sourceagile.administration.client.project.RepositoryTypeList;
 import sourceagile.authentication.client.serverCalls.AddNewProject;
 import sourceagile.shared.entities.project.Project;
 import sourceagile.shared.utilities.FormField;
