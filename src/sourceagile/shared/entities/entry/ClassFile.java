@@ -14,11 +14,20 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 	private static final long serialVersionUID = 1L;
 
+	public static String EXTENSION_FEATURE = "feature";
+	public static String EXTENSION_JAVA = "java";
+	public static String EXTENSION_JSP = "jsp";
+	public static String EXTENSION_CSS = "css";
+	public static String EXTENSION_HTML = "html";
+	public static String EXTENSION_XML = "xml";
+
 	private String classDomain;
 
 	private String filePath;
 
 	private String fileName;
+
+	private String fileExtension;
 
 	private Feature feature;
 
@@ -48,6 +57,14 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
+	}
+
+	public String getFileExtension() {
+		return fileExtension;
+	}
+
+	public void setFileExtension(String fileExtension) {
+		this.fileExtension = fileExtension;
 	}
 
 	public Date getDateModified() {
@@ -130,15 +147,10 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 
 		String filePath = this.fileName;
 
-		if (!(this.filePath == null || this.filePath.length() == 0)) {
+		if (this.filePath != null && this.filePath.length() > 0) {
 
-			filePath = this.filePath.replaceAll("\\.", "/") + "/" + filePath;
+			filePath = this.filePath + "/" + this.fileName;
 
-			if (this.classDomain != null) {
-
-				filePath = this.classDomain.replaceAll("\\.", "/") + "/"
-						+ filePath;
-			}
 		}
 
 		return filePath;
