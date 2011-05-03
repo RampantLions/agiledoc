@@ -2,7 +2,7 @@ package sourceagile.development.client.classesList;
 
 import java.util.HashMap;
 
-import sourceagile.development.client.Development;
+import sourceagile.development.client.FilesViewList;
 import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.utilities.FeatureNameGenerator;
@@ -77,6 +77,11 @@ public class ComponentClassesList {
 			className = entry.getFeature().getFeatureName();
 		}
 
+		if (entry.getClassDoc().getClassStatus() != null) {
+
+			className += " <font color='red' size=1>*</font>";
+		}
+
 		TreeNode treeNode = new TreeNode(className);
 
 		treeNode.setIcon("js/ext/resources/images/default/tree/world.gif");
@@ -84,7 +89,7 @@ public class ComponentClassesList {
 		treeNode.addListener(new TreeNodeListenerAdapter() {
 			public void onClick(Node node, EventObject e) {
 
-				Development.showClass(entry, OptionsIcons.OPTION_DESCRIPTION);
+				FilesViewList.showClass(entry, OptionsIcons.OPTION_DESCRIPTION);
 			}
 		});
 

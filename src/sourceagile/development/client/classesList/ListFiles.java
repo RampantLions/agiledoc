@@ -2,7 +2,7 @@ package sourceagile.development.client.classesList;
 
 import java.util.HashMap;
 
-import sourceagile.development.client.Development;
+import sourceagile.development.client.FilesViewList;
 import sourceagile.development.client.features.OptionsIcons;
 import sourceagile.shared.entities.entry.ClassFile;
 import sourceagile.shared.utilities.SortClassFiles;
@@ -12,7 +12,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.gwtext.client.core.EventObject;
 import com.gwtext.client.data.Node;
 import com.gwtext.client.widgets.tree.TreeNode;
-import com.gwtext.client.widgets.tree.TreePanel;
 import com.gwtext.client.widgets.tree.event.TreeNodeListenerAdapter;
 
 public class ListFiles extends VerticalPanel {
@@ -24,16 +23,10 @@ public class ListFiles extends VerticalPanel {
 		Label labelSpace = new Label(" ");
 		this.add(labelSpace);
 
-		TreePanel treePanel = new TreePanel();
-		treePanel.setBorder(false);
-		treePanel.setLines(false);
-
 		TreeNode root = new TreeNode("");
 		root.setId("root");
 
-		treePanel.setRootNode(root);
-		treePanel.setRootVisible(false);
-		treePanel.expandAll();
+		FilesTreePanel treePanel = new FilesTreePanel(root);
 		this.add(treePanel);
 
 		String currentPath = "root";
@@ -84,7 +77,7 @@ public class ListFiles extends VerticalPanel {
 		treeNode.addListener(new TreeNodeListenerAdapter() {
 			public void onClick(Node node, EventObject e) {
 
-				Development.showClass(entry, OptionsIcons.OPTION_SOURCE);
+				FilesViewList.showClass(entry, OptionsIcons.OPTION_SOURCE);
 			}
 		});
 
