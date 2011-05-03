@@ -21,9 +21,6 @@ public interface LoadRemoteClasses extends RemoteService {
 	void createClass(Project project, User user, ClassFile classFile,
 			String newSubfolderName);
 
-	HashMap<String, ClassFile> listComponentClasses(Project project, User user,
-			String componentPath);
-
 	ArrayList<Productivity> listHistory(Project project, User user);
 
 	void editClass(Project project, User user, ClassFile classFile,
