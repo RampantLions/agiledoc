@@ -2,7 +2,9 @@ package sourceagile.development.client;
 
 import sourceagile.client.ProjectInitialization;
 import sourceagile.development.client.classesList.ListDevelopmentFiles;
+import sourceagile.development.client.classesList.ListFeatureFiles;
 import sourceagile.development.client.classesList.ListFiles;
+import sourceagile.development.client.classesList.ListFilesFiltered;
 import sourceagile.development.client.features.ButtonFeatureDescription;
 import sourceagile.development.client.features.ButtonSourceCode;
 import sourceagile.development.client.features.FeatureDescription;
@@ -17,27 +19,27 @@ import com.google.gwt.user.client.ui.ListBox;
 
 public class FilesViewList extends ListBox {
 
-	public static final String VIEW_MAIN_FEATURES = "Main Features";
-	public static final String VIEW_FEATURES = "Features";
-	public static final String VIEW_USER_INTERFACE = "User Interface";
+	public static final String VIEW_MAIN_FEATURES = "MainFeature";
+	public static final String VIEW_FEATURES = "Feature";
+	public static final String VIEW_USER_INTERFACE = "UserInterface";
 	public static final String VIEW_ARCHITECTURE = "Architecture";
-	public static final String VIEW_ENTITIES = "Entities";
-	public static final String VIEW_DEVELOPMENT_FILES = "Development Files";
-	public static final String VIEW_SOURCE_CODE = "Source Code";
+	public static final String VIEW_ENTITIES = "Entity";
+	public static final String VIEW_DEVELOPMENT_FILES = "DevelopmentFiles";
+	public static final String VIEW_SOURCE_CODE = "SourceCode";
 
 	public FilesViewList() {
 
 		this.setWidth("200px");
 
-		this.addItem(VIEW_MAIN_FEATURES);
-		this.addItem(VIEW_FEATURES);
-		this.addItem(VIEW_USER_INTERFACE);
-		this.addItem(VIEW_ARCHITECTURE);
-		this.addItem(VIEW_ENTITIES);
-		this.addItem(VIEW_DEVELOPMENT_FILES);
-		this.addItem(VIEW_SOURCE_CODE);
+		this.addItem("Main Features", VIEW_MAIN_FEATURES);
+		this.addItem("Features", VIEW_FEATURES);
+		this.addItem("User Interface", VIEW_USER_INTERFACE);
+		this.addItem("Architecture", VIEW_ARCHITECTURE);
+		this.addItem("Entities", VIEW_ENTITIES);
+		this.addItem("Development Files", VIEW_DEVELOPMENT_FILES);
+		this.addItem("Source Code", VIEW_SOURCE_CODE);
 
-		this.setSelectedIndex(5);
+		this.setSelectedIndex(1);
 
 		this.addChangeHandler(new ChangeHandler() {
 
@@ -53,7 +55,20 @@ public class FilesViewList extends ListBox {
 
 		Development.featuresTreePanel.clear();
 
-		if (VIEW_DEVELOPMENT_FILES.equals(viewOption)) {
+		if (VIEW_MAIN_FEATURES.equals(viewOption)
+				|| VIEW_ARCHITECTURE.equals(viewOption)
+				|| VIEW_ENTITIES.equals(viewOption)) {
+
+			Development.featuresTreePanel.add(new ListFilesFiltered(
+					ProjectInitialization.projectEntries, viewOption));
+
+		} else if (VIEW_FEATURES.equals(viewOption)
+				|| VIEW_USER_INTERFACE.equals(viewOption)) {
+
+			Development.featuresTreePanel.add(new ListFeatureFiles(
+					ProjectInitialization.projectEntries, viewOption));
+
+		} else if (VIEW_DEVELOPMENT_FILES.equals(viewOption)) {
 
 			Development.featuresTreePanel.add(new ListDevelopmentFiles(
 					ProjectInitialization.projectEntries));
@@ -64,8 +79,8 @@ public class FilesViewList extends ListBox {
 					ProjectInitialization.projectEntries));
 		} else {
 
-			Development.featuresTreePanel.add(new ListDevelopmentFiles(
-					ProjectInitialization.projectEntries));
+			Development.featuresTreePanel.add(new ListFeatureFiles(
+					ProjectInitialization.projectEntries, VIEW_FEATURES));
 		}
 	}
 
