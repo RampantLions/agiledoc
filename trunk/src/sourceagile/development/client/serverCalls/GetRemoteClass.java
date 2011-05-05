@@ -28,11 +28,8 @@ public class GetRemoteClass {
 
 					public void onSuccess(ClassFile entry) {
 
-						String entryKey = ProjectInitialization.currentProject
-								.getRepositoryURL() + "/" + entry.toString();
-
-						ProjectInitialization.projectEntries.put(entryKey,
-								entry);
+						ProjectInitialization.projectEntries.put(
+								entry.toString(), entry);
 
 						FilesViewList.showClass(entry, viewOption);
 					}

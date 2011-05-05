@@ -45,7 +45,7 @@ public class Development {
 
 		hp.add(vpTree);
 
-		FilesViewList.showClassesTree(FilesViewList.VIEW_DEVELOPMENT_FILES);
+		FilesViewList.showClassesTree(FilesViewList.VIEW_FEATURES);
 
 		featureVisualizationPanel.clear();
 		featureVisualizationPanel.setSpacing(20);
