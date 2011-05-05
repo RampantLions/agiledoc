@@ -17,6 +17,7 @@ public class ClassFile implements Serializable, Comparable<ClassFile> {
 	public static String EXTENSION_FEATURE = "feature";
 	public static String EXTENSION_JAVA = "java";
 	public static String EXTENSION_JSP = "jsp";
+	public static String EXTENSION_JS = "js";
 	public static String EXTENSION_CSS = "css";
 	public static String EXTENSION_HTML = "html";
 	public static String EXTENSION_XML = "xml";
