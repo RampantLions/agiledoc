@@ -19,7 +19,7 @@ public class ListHistory {
 
 		ArrayList<Productivity> productivityArray = new ArrayList<Productivity>();
 
-		JSONArray jsonArray = ListRepositoryHistory.getRemoteClasses(
+		JSONArray jsonArray = ListRepositoryHistory.getHistory(
 				project.getRepositoryURL(), user.getName(), user.getPassword());
 
 		for (int i = 0; i < jsonArray.length(); i++) {

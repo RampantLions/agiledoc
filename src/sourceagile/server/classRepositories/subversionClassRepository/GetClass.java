@@ -19,7 +19,7 @@ public class GetClass {
 
 	public static ClassFile getClass(Project project, User user, ClassFile entry) {
 
-		String sourceCode = GetFileContent.getClassFile(
+		String sourceCode = GetFileContent.getContent(
 				project.getRepositoryURL(), user.getName(), user.getPassword(),
 				entry.toString());
 
