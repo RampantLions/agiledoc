@@ -12,11 +12,13 @@ public class GetRepositoryTestClass {
 
 		ClassFile entryTest = new ClassFile();
 
-		String className = entry.getClassDoc().getClassName() + "Test.java";
+		String testClassName = entry.getClassDoc().getClassName() + "Test.java";
 
-		entryTest.setFileName(className);
+		entryTest.setFileName(testClassName);
 
-		entryTest.setFilePath(entry.getFilePath());
+		String testFilePath = entry.getFilePath().replace("src", "test");
+
+		entryTest.setFilePath(testFilePath);
 
 		String classPath = entryTest.getFileName();
 
