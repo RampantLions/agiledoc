@@ -13,11 +13,14 @@ public class CreateTestClass {
 	public CreateTestClass(Project project, User user, ClassFile classFile,
 			String newSubfolderName) {
 
-		String fileName = classFile.getClassDoc().getClassName() + "Test.java";
+		String testFileName = classFile.getClassDoc().getClassName()
+				+ "Test.java";
+
+		String testFilePath = classFile.getFilePath().replace("src", "test");
 
 		AddFile.save(project.getRepositoryURL(), user.getName(),
-				user.getPassword(), classFile.getFilePath(), newSubfolderName,
-				fileName, classContent(classFile, newSubfolderName));
+				user.getPassword(), testFilePath, newSubfolderName,
+				testFileName, classContent(classFile, newSubfolderName));
 	}
 
 	private String classContent(ClassFile classFile, String newSubfolderName) {
