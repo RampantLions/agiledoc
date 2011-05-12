@@ -20,7 +20,8 @@ public class UnitTestView extends VerticalPanel {
 
 		OptionsIcons.buttonTest.setHTML(ButtonTest.imagePressed);
 
-		if (testEntry != null) {
+		if (testEntry != null && testEntry.getSourceCode() != null
+				&& testEntry.getSourceCode().length() > 0) {
 
 			FeatureVizualizationPanel.featureContent.clear();
 
