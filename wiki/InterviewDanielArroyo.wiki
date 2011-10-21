@@ -1,0 +1,291 @@
+eu: hey!
+08:32 
+Daniel: hi
+ 
+eu: did I tell you that I applyed to YCombinator?
+ 
+Daniel: ys
+  
+did you get in?
+ 
+eu: ok...
+  
+they will say on 31st
+08:33 
+Daniel: good luck
+ 
+eu: but i dont know
+  
+...
+  
+we never know
+  
+:-)
+ 
+Daniel: that's right
+ 
+eu: the team is very good, but we just met
+08:34 
+Daniel: oh it's not livesource?
+ 
+eu: they will not like it
+  
+it is
+08:35 
+Daniel: ok, so you have a time now
+08:36 
+eu: can i ask you some question
+ 
+Daniel: sure
+08:39 
+eu: ok
+  
+i just want to know how are you developming software
+  
+you use your computer at home
+  
+right?
+ 
+Daniel: yes
+08:40 
+eu: what tools do you use?
+ 
+Daniel: titanium studio
+ 
+eu: ok
+  
+what is that?
+08:41 
+i am looking at it
+ 
+Daniel: http://www.appcelerator.com/products/titanium-studio/
+ 
+eu: can you develop on your mobile?
+ 
+Daniel: no
+08:42 
+eu: so you have to install this IDE on your PC?
+08:43 
+Daniel: yes
+08:44 
+eu: ok
+  
+but you can make apps for mobile
+  
+right?
+ 
+Daniel: for mobile yes
+  
+on mobile no
+ 
+eu: ok
+  
+good
+08:45 
+would you like to develop on your mobile?
+  
+or tablet?
+  
+or browser?
+ 
+Daniel: not really
+  
+;(
+  
+;)
+  
+I don't see the point
+ 
+eu: ok
+  
+so
+  
+you are always at home when you want to work
+  
+rigth?
+08:47 
+Daniel: not all times
+  
+but I have a laptop
+ 
+eu: ok
+  
+do you prefer laptop or desktop?
+08:48 
+Daniel: desktop because of the bigger screen
+ 
+eu: ok
+  
+that is very commom
+  
+does it happen that you need to make some changes in your code and you are not at home and you dont have your laptop?
+08:49 
+Daniel: yes, but it can wait
+08:50 
+eu: ok
+08:51 
+so just to do my statistics
+  
+from 1 to 5
+  
+how much wolud you like to develop using your browser?
+08:52 
+Daniel: 3
+ 
+eu: that is not so bad
+  
+:-)
+ 
+Daniel: it has benefits if it worked
+  
+I just have my doubts that it's possible
+ 
+eu: how much would you like titanium to have a broswer/ mobile environment?
+08:53 
+1 to 5
+ 
+Daniel: but if you showed me a browser-based experience that worked, I would like it
+ 
+eu: ok
+ 
+Daniel: 4
+ 
+eu: I am trying hard
+  
+I want it for me
+  
+install and run eclipse it is a hell
+08:54 
+and I want to develop everywhere
+  
+:-)
+  
+just to finish
+  
+you develop php, right?
+08:55 
+Daniel: ye
+ 
+eu: are you developing native app too?
+ 
+Daniel: what is native?
+  
+mobile?
+ 
+eu: android?
+ 
+Daniel: no
+ 
+eu: ok
+08:56 
+your app was develop in php for mobile browser right?
+ 
+Daniel: no
+  
+well
+ 
+eu: ?
+ 
+Daniel: what app?
+ 
+eu: how was it?
+  
+flaretag mobile app
+  
+you showed me
+  
+it was cool
+ 
+Daniel: I don't have a mobile app
+  
+it's a mobile website
+  
+usint PHP yes
+ 
+eu: but was in the mobile browser
+  
+yes
+08:57 
+ok
+  
+exactly
+  
+was good
+  
+so just to make sure
+  
+you make changes on your source code
+  
+and them you test it lovally
+  
+locally
+  
+rigth?
+ 
+Daniel: mos times ;)
+08:58 
+eu: and them you update your source code on that cloud
+  
+phofog
+  
+you dont need to compile anything
+  
+right?
+ 
+Daniel: nope
+ 
+eu: it runs straight on the source files, right?
+  
+you dont have any precompiled classes?
+08:59 
+all php script files?
+ 
+Daniel: nothing like that in php
+ 
+eu: do you have outside of php?
+ 
+Daniel: no
+ 
+eu: ok
+  
+so just to confirm
+09:00 
+you update your source code on the phpfog git repository
+  
+and the changes go straight to the end users
+  
+right?
+  
+that is so much easier than java :-)
+ 
+Daniel: yes
+09:01 
+eu: ok!
+  
+that is all
+  
+:-)
+  
+such a good customer you are
+09:02 
+:-)
+ 
+Daniel: really?
+  
+I feel that I don't have time for much
+ 
+eu: so easy to obtain answers
+  
+not really
+  
+you are my basement
+  
+:-D
+09:03 
+Daniel: basement? that sounds dark and wet
+ 
+eu: :-)
+  
+solid and concrete
+09:04 
+Daniel: that too
